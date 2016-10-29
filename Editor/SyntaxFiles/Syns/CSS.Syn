@@ -1,5 +1,5 @@
 <?HTML version="1.0"  encoding="utf-8" ?>
-<Language Name="CSS" Startblock="HTML StyleMain">
+<Language Name="CSS" Startblock="HTML  
 	<FileTypes>
 		<FileType Extension=".css" Name="Style sheet file" />
 
