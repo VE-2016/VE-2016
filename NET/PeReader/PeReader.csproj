@@ -50,7 +50,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\common\include\version.cs">
+    <Compile Include="..\Common\Include\version.cs">
       <Link>Build\version.cs</Link>
     </Compile>
     <Compile Include="Attributes.cs" />
