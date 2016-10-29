@@ -1,0 +1,9 @@
+F:\Application\MSBuildProjects4\GACManager\GACManager\GACManagerApi\bin\Release\GACManagerApi.dll
+F:\Application\MSBuildProjects4\GACManager\GACManager\GACManagerApi\bin\Release\GACManagerApi.pdb
+F:\Application\MSBuildProjects4\GACManager\GACManager\GACManagerApi\obj\Release\GACManagerApi.dll
+F:\Application\MSBuildProjects4\GACManager\GACManager\GACManagerApi\obj\Release\GACManagerApi.pdb
+C:\MSBuildProjects-beta\GACManager\GACManager\GACManagerApi\bin\Release\GACManagerApi.dll
+C:\MSBuildProjects-beta\GACManager\GACManager\GACManagerApi\bin\Release\GACManagerApi.pdb
+C:\MSBuildProjects-beta\GACManager\GACManager\GACManagerApi\obj\Release\GACManagerApi.dll
+C:\MSBuildProjects-beta\GACManager\GACManager\GACManagerApi\obj\Release\GACManagerApi.pdb
+C:\MSBuildProjects-beta\GACManager\GACManager\GACManagerApi\obj\Release\GACManagerApi.csprojResolveAssemblyReference.cache

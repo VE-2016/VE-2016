@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Migrated rules for MetadataHelper.ruleset" Description="This rule set was created from the CodeAnalysisRules property for the &quot;Debug (Any CPU)&quot; configuration in project &quot;F:\Application-Studio\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataHelper\MetadataHelper.csproj&quot;." ToolsVersion="12.0">
+  <IncludeAll Action="Warning" />
+  <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
+    <Rule Id="CA1002" Action="None" />
+    <Rule Id="CA1004" Action="None" />
+    <Rule Id="CA1005" Action="None" />
+    <Rule Id="CA1011" Action="None" />
+    <Rule Id="CA1014" Action="None" />
+    <Rule Id="CA1024" Action="None" />
+    <Rule Id="CA1033" Action="None" />
+    <Rule Id="CA1034" Action="None" />
+    <Rule Id="CA1051" Action="None" />
+    <Rule Id="CA1060" Action="None" />
+    <Rule Id="CA1062" Action="None" />
+    <Rule Id="CA1305" Action="None" />
+    <Rule Id="CA1307" Action="None" />
+    <Rule Id="CA1500" Action="None" />
+    <Rule Id="CA1502" Action="None" />
+    <Rule Id="CA1704" Action="None" />
+    <Rule Id="CA1709" Action="None" />
+    <Rule Id="CA1715" Action="None" />
+    <Rule Id="CA1716" Action="None" />
+    <Rule Id="CA1720" Action="None" />
+    <Rule Id="CA1721" Action="None" />
+    <Rule Id="CA1725" Action="None" />
+    <Rule Id="CA1806" Action="None" />
+    <Rule Id="CA1814" Action="None" />
+    <Rule Id="CA1815" Action="None" />
+    <Rule Id="CA2001" Action="None" />
+    <Rule Id="CA2006" Action="None" />
+    <Rule Id="CA2101" Action="None" />
+    <Rule Id="CA2104" Action="None" />
+    <Rule Id="CA2105" Action="None" />
+    <Rule Id="CA2201" Action="None" />
+    <Rule Id="CA2233" Action="None" />
+  </Rules>
+</RuleSet>

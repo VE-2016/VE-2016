@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+
+<CodeDoc>
+	<Class name="DockContentEventArgs">
+		<ClassDef>
+			<summary>Provides data for <see cref="AIMS.Libraries.Forms.Docking.DockPanel.ContentAdded"/> and 
+			<see cref="AIMS.Libraries.Forms.Docking.DockPanel.ContentRemoved"/> events.</summary>
+		</ClassDef>
+		<Constructor name="(IDockContent)">
+			<summary>Initializes a new instance of <see cref="AIMS.Libraries.Forms.Docking.DockContentEventArgs"/> class.</summary>
+			<param name="content">The <see cref="AIMS.Libraries.Forms.Docking.IDockContent"/> object.</param>
+		</Constructor>
+		<Property name="Content">
+			<summary>Gets the <see cref="AIMS.Libraries.Forms.Docking.IDockContent"/> object.</summary>
+			<value>The <see cref="AIMS.Libraries.Forms.Docking.IDockContent"/> object.</value>
+		</Property>
+	</Class>
+</CodeDoc>

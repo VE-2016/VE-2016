@@ -1,0 +1,12 @@
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Release\CodeEditor.SyntaxDocument.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Release\AIMS.Libraries.CodeEditor.Syntax.RowEventArgs.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Release\AIMS.Libraries.CodeEditor.Syntax.TextStyleDesignerDialog.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Release\CodeEditor.SyntaxDocument.csproj.GenerateResource.Cache
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Release\AIMS.SyntaxDocument.dll
+F:\Application\MSBuildProjects4\Script_Control\Bin\AIMS.SyntaxDocument.dll
+C:\Bin\SyntaxDocument.dll
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxDocument\obj\Release\CodeEditor.SyntaxDocument.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxDocument\obj\Release\AIMS.Libraries.CodeEditor.Syntax.RowEventArgs.resources
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxDocument\obj\Release\AIMS.Libraries.CodeEditor.Syntax.TextStyleDesignerDialog.resources
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxDocument\obj\Release\CodeEditor.SyntaxDocument.csproj.GenerateResource.Cache
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxDocument\obj\Release\SyntaxDocument.dll

@@ -1,0 +1,149 @@
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Bin\AIMS.SyntaxFiles.dll
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Bin\AIMS.SyntaxFiles.pdb
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\CodeEditor.SyntaxFiles.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.dll
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.pdb
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.SyntaxFiles.dll
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.SyntaxFiles.pdb
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\CodeEditor.SyntaxFiles.csprojResolveAssemblyReference.cache
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.dll
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.pdb
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.SyntaxFiles.dll
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.SyntaxFiles.pdb
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\CodeEditor.SyntaxFiles.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.dll
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.pdb
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.SyntaxFiles.dll
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.SyntaxFiles.pdb
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\CodeEditor.SyntaxFiles.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.dll
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.pdb
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Bin\AIMS.SyntaxFiles.dll
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Bin\AIMS.SyntaxFiles.pdb
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\CodeEditor.SyntaxFiles.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.dll
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.pdb
+F:\Application-Studio\MSBuildProjects2\Script_Control\Bin\AIMS.SyntaxFiles.dll
+F:\Application-Studio\MSBuildProjects2\Script_Control\Bin\AIMS.SyntaxFiles.pdb
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\CodeEditor.SyntaxFiles.csprojResolveAssemblyReference.cache
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.dll
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.pdb
+F:\Application\MSBuildProjects4\Script_Control\Bin\AIMS.SyntaxFiles.dll
+F:\Application\MSBuildProjects4\Script_Control\Bin\AIMS.SyntaxFiles.pdb
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\CodeEditor.SyntaxFiles.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.dll
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.pdb
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\CodeEditor.SyntaxFiles.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects3\Script_Control\Bin\AIMS.SyntaxFiles.dll
+F:\Application\MSBuildProjects3\Script_Control\Bin\AIMS.SyntaxFiles.pdb
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.dll
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.pdb
+F:\Application\MSBuildProjects2\Script_Control\Bin\AIMS.SyntaxFiles.dll
+F:\Application\MSBuildProjects2\Script_Control\Bin\AIMS.SyntaxFiles.pdb
+F:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\CodeEditor.SyntaxFiles.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.dll
+F:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.pdb
+F:\Application\Bin\AIMS.SyntaxFiles.dll
+F:\Application\Bin\AIMS.SyntaxFiles.pdb
+F:\Application\MSBuildProjects2\ScriptEditor\Code Editor\SyntaxFiles\Project\obj\Debug\CodeEditor.SyntaxFiles.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects2\ScriptEditor\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.dll
+F:\Application\MSBuildProjects2\ScriptEditor\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.pdb
+F:\Application\MSBuildProjects2\ScriptEditor\SyntaxFiles\obj\Debug\CodeEditor.SyntaxFiles.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects2\ScriptEditor\SyntaxFiles\obj\Debug\AIMS.SyntaxFiles.dll
+F:\Application\MSBuildProjects2\ScriptEditor\SyntaxFiles\obj\Debug\AIMS.SyntaxFiles.pdb
+f:\Application\MSBuildProjects\ScriptEditor\SyntaxFiles\obj\Debug\CodeEditor.SyntaxFiles.csprojResolveAssemblyReference.cache
+f:\Application\MSBuildProjects\ScriptEditor\SyntaxFiles\obj\Debug\AIMS.SyntaxFiles.dll
+f:\Application\MSBuildProjects\ScriptEditor\SyntaxFiles\obj\Debug\AIMS.SyntaxFiles.pdb
+F:\Bin\AIMS.SyntaxFiles.dll
+F:\Bin\AIMS.SyntaxFiles.pdb
+F:\Application\MSBuildProjects-new\ScriptEditor\SyntaxFiles\obj\Debug\CodeEditor.SyntaxFiles.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects-new\ScriptEditor\SyntaxFiles\obj\Debug\AIMS.SyntaxFiles.dll
+F:\Application\MSBuildProjects-new\ScriptEditor\SyntaxFiles\obj\Debug\AIMS.SyntaxFiles.pdb
+C:\Bin\SyntaxFiles.dll
+C:\Bin\SyntaxFiles.pdb
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\SyntaxFiles.dll
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\SyntaxFiles.pdb
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\CodeEditor.dll
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\SyntaxDocument.dll
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\VSParsers.dll
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\ICSharpCode.NRefactory.dll
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\Microsoft.CodeAnalysis.Workspaces.dll
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\Microsoft.CodeAnalysis.dll
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\Microsoft.DotNet.CodeFormatting.dll
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\Microsoft.CodeAnalysis.Workspaces.Desktop.dll
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\ICSharpCode.NRefactory.CSharp.dll
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\ICSharpCode.NRefactory.Cecil.dll
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\GACProject.exe
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\System.Collections.Immutable.dll
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\Microsoft.Build.Framework.dll
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\Microsoft.Build.dll
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\GACManagerApi.dll
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\Microsoft.CodeAnalysis.CSharp.dll
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\Microsoft.Build.Tasks.Core.dll
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\Microsoft.Build.Engine.dll
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\Microsoft.Build.Utilities.Core.dll
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\CodeEditor.pdb
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\SyntaxDocument.pdb
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\VSParsers.pdb
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\ICSharpCode.NRefactory.xml
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\Microsoft.CodeAnalysis.Workspaces.xml
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\Microsoft.CodeAnalysis.xml
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\Microsoft.DotNet.CodeFormatting.pdb
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\Microsoft.CodeAnalysis.Workspaces.Desktop.xml
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\ICSharpCode.NRefactory.CSharp.xml
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\ICSharpCode.NRefactory.Cecil.xml
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\GACProject.pdb
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\System.Collections.Immutable.xml
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\GACManagerApi.pdb
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\Microsoft.CodeAnalysis.CSharp.xml
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\Bin\Microsoft.CodeAnalysis.VisualBasic.xml
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\obj\Debug\CodeEditor.SyntaxFiles.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\obj\Debug\SyntaxFiles.dll
+C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\obj\Debug\SyntaxFiles.pdb
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\SyntaxFiles.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\SyntaxFiles.pdb
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\CodeEditor.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\SyntaxDocument.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\WeifenLuo.WinFormsUI.Docking.ThemeVS2012Light.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\WeifenLuo.WinFormsUI.Docking.ThemeVS2013Blue.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\VSParsers.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\ICSharpCode.NRefactory.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\Microsoft.CodeAnalysis.Workspaces.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\Microsoft.CodeAnalysis.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\Microsoft.DotNet.CodeFormatting.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\Microsoft.CodeAnalysis.Workspaces.Desktop.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\ICSharpCode.NRefactory.CSharp.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\ICSharpCode.NRefactory.Cecil.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\GACProject.exe
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\System.Collections.Immutable.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\Microsoft.Build.Framework.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\WeifenLuo.WinFormsUI.Docking.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\Microsoft.Build.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\GACManagerApi.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\Microsoft.CodeAnalysis.CSharp.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\Microsoft.Build.Tasks.Core.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\Microsoft.Build.Engine.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\Microsoft.Build.Utilities.Core.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\CodeEditor.pdb
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\SyntaxDocument.pdb
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\WeifenLuo.WinFormsUI.Docking.ThemeVS2012Light.pdb
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\WeifenLuo.WinFormsUI.Docking.ThemeVS2013Blue.pdb
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\VSParsers.pdb
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\ICSharpCode.NRefactory.xml
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\Microsoft.CodeAnalysis.Workspaces.xml
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\Microsoft.CodeAnalysis.xml
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\Microsoft.DotNet.CodeFormatting.pdb
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\Microsoft.CodeAnalysis.Workspaces.Desktop.xml
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\ICSharpCode.NRefactory.CSharp.xml
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\ICSharpCode.NRefactory.Cecil.xml
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\GACProject.pdb
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\System.Collections.Immutable.xml
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\WeifenLuo.WinFormsUI.Docking.pdb
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\GACManagerApi.pdb
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\Microsoft.CodeAnalysis.CSharp.xml
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\Bin\Microsoft.CodeAnalysis.VisualBasic.xml
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\obj\Debug\CodeEditor.SyntaxFiles.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\obj\Debug\SyntaxFiles.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\obj\Debug\SyntaxFiles.pdb

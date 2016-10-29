@@ -1,0 +1,12 @@
+C:\MSBuildProjects-beta\Editor\Themes\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2013Blue.dll
+C:\MSBuildProjects-beta\Editor\Themes\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2013Blue.pdb
+C:\MSBuildProjects-beta\Editor\Themes\bin\Debug\WeifenLuo.WinFormsUI.Docking.dll
+C:\MSBuildProjects-beta\Editor\Themes\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
+C:\MSBuildProjects-beta\Editor\Themes\obj\Debug\ThemeVS2013Blue.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\Editor\Themes\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2012Light.Resources.resources
+C:\MSBuildProjects-beta\Editor\Themes\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2012Light.Strings.resources
+C:\MSBuildProjects-beta\Editor\Themes\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2013Blue.Resources.resources
+C:\MSBuildProjects-beta\Editor\Themes\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2013Blue.Strings.resources
+C:\MSBuildProjects-beta\Editor\Themes\obj\Debug\ThemeVS2013Blue.csproj.GenerateResource.Cache
+C:\MSBuildProjects-beta\Editor\Themes\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2013Blue.dll
+C:\MSBuildProjects-beta\Editor\Themes\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2013Blue.pdb

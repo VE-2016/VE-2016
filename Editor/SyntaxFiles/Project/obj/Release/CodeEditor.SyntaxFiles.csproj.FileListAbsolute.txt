@@ -1,0 +1,3 @@
+F:\Application\MSBuildProjects4\Script_Control\Bin\AIMS.SyntaxFiles.dll
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Release\CodeEditor.SyntaxFiles.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.SyntaxFiles.dll

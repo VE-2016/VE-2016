@@ -1,0 +1,80 @@
+C:\Rajneesh\Bin\AIMS.Docking.dll
+C:\Rajneesh\Bin\AIMS.Docking.pdb
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\ResolveAssemblyReference.cache
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PaneDiamond.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PaneDiamond.Bottom.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PaneDiamond.Fill.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PaneDiamond.HotSpot.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PaneDiamond.HotSpotIndex.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PaneDiamond.Left.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PaneDiamond.Right.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PaneDiamond.Top.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PanelBottom.Active.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PanelBottom.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PanelFill.Active.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PanelFill.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PanelLeft.Active.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PanelLeft.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PanelRight.Active.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PanelRight.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PanelTop.Active.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PanelTop.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockPaneCaption.AutoHideNo.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockPaneCaption.AutoHideYes.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockPaneCaption.CloseDisabled.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockPaneCaption.CloseEnabled.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockPanel.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockPaneStrip.CloseDisabled.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockPaneStrip.CloseEnabled.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockPaneStrip.ScrollLeftDisabled.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockPaneStrip.ScrollLeftEnabled.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockPaneStrip.ScrollRightDisabled.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockPaneStrip.ScrollRightEnabled.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.MdiClientController.bmp
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.InertButton.resources
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockContainer.resources
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockWindow.resources
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Strings.resources
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\Forms.Docking.csproj.GenerateResource.Cache
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Docking.dll
+C:\Rajneesh\Article\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Docking.pdb
+C:\Users\Rajneesh\Desktop\Script Control\Bin\AIMS.Docking.dll
+C:\Users\Rajneesh\Desktop\Script Control\Bin\AIMS.Docking.pdb
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PaneDiamond.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PaneDiamond.Bottom.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PaneDiamond.Fill.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PaneDiamond.HotSpot.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PaneDiamond.HotSpotIndex.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PaneDiamond.Left.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PaneDiamond.Right.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PaneDiamond.Top.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PanelBottom.Active.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PanelBottom.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PanelFill.Active.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PanelFill.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PanelLeft.Active.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PanelLeft.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PanelRight.Active.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PanelRight.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PanelTop.Active.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockIndicator.PanelTop.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockPaneCaption.AutoHideNo.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockPaneCaption.AutoHideYes.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockPaneCaption.CloseDisabled.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockPaneCaption.CloseEnabled.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockPanel.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockPaneStrip.CloseDisabled.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockPaneStrip.CloseEnabled.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockPaneStrip.ScrollLeftDisabled.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockPaneStrip.ScrollLeftEnabled.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockPaneStrip.ScrollRightDisabled.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.DockPaneStrip.ScrollRightEnabled.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Resources.MdiClientController.bmp
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.InertButton.resources
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockContainer.resources
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockWindow.resources
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Strings.resources
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\Forms.Docking.csproj.GenerateResource.Cache
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Docking.dll
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Docking.pdb

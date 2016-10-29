@@ -1,0 +1,112 @@
+F:\Application-Studio\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.PeReader.xml
+F:\Application-Studio\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.PeReader.dll
+F:\Application-Studio\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.PeReader.pdb
+F:\Application-Studio\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.dll
+F:\Application-Studio\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.dll
+F:\Application-Studio\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
+F:\Application-Studio\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.xml
+F:\Application-Studio\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+F:\Application-Studio\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.xml
+F:\Application-Studio\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\PeReader.csprojResolveAssemblyReference.cache
+F:\Application-Studio\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\Microsoft.Cci.PeReaderErrorMessages.resources
+F:\Application-Studio\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\PeReader.csproj.GenerateResource.Cache
+F:\Application-Studio\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\Microsoft.Cci.PeReader.dll
+F:\Application-Studio\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\Microsoft.Cci.PeReader.pdb
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.PeReader.xml
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.PeReader.dll
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.PeReader.pdb
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.dll
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.dll
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.xml
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.xml
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\PeReader.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\Microsoft.Cci.PeReaderErrorMessages.resources
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\PeReader.csproj.GenerateResource.Cache
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\Microsoft.Cci.PeReader.dll
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\Microsoft.Cci.PeReader.pdb
+F:\Application\MSBuildProjects3\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.PeReader.xml
+F:\Application\MSBuildProjects3\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.PeReader.dll
+F:\Application\MSBuildProjects3\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.PeReader.pdb
+F:\Application\MSBuildProjects3\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.dll
+F:\Application\MSBuildProjects3\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.dll
+F:\Application\MSBuildProjects3\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
+F:\Application\MSBuildProjects3\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.xml
+F:\Application\MSBuildProjects3\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+F:\Application\MSBuildProjects3\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.xml
+F:\Application\MSBuildProjects3\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\PeReader.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects3\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\Microsoft.Cci.PeReaderErrorMessages.resources
+F:\Application\MSBuildProjects3\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\PeReader.csproj.GenerateResource.Cache
+F:\Application\MSBuildProjects3\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\Microsoft.Cci.PeReader.dll
+F:\Application\MSBuildProjects3\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\Microsoft.Cci.PeReader.pdb
+F:\Application\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.PeReader.xml
+F:\Application\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.PeReader.dll
+F:\Application\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.PeReader.pdb
+F:\Application\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.dll
+F:\Application\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.dll
+F:\Application\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
+F:\Application\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.xml
+F:\Application\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+F:\Application\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.xml
+F:\Application\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\PeReader.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\Microsoft.Cci.PeReaderErrorMessages.resources
+F:\Application\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\PeReader.csproj.GenerateResource.Cache
+F:\Application\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\Microsoft.Cci.PeReader.dll
+F:\Application\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\Microsoft.Cci.PeReader.pdb
+f:\Application\MSBuildProjects\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.PeReader.xml
+f:\Application\MSBuildProjects\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.PeReader.dll
+f:\Application\MSBuildProjects\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.PeReader.pdb
+f:\Application\MSBuildProjects\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.dll
+f:\Application\MSBuildProjects\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.dll
+f:\Application\MSBuildProjects\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
+f:\Application\MSBuildProjects\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.xml
+f:\Application\MSBuildProjects\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+f:\Application\MSBuildProjects\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.xml
+f:\Application\MSBuildProjects\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\PeReader.csprojResolveAssemblyReference.cache
+f:\Application\MSBuildProjects\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\Microsoft.Cci.PeReaderErrorMessages.resources
+f:\Application\MSBuildProjects\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\PeReader.csproj.GenerateResource.Cache
+f:\Application\MSBuildProjects\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\Microsoft.Cci.PeReader.dll
+f:\Application\MSBuildProjects\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\Microsoft.Cci.PeReader.pdb
+F:\Application\MSBuildProjects-new\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.PeReader.xml
+F:\Application\MSBuildProjects-new\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.PeReader.dll
+F:\Application\MSBuildProjects-new\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.PeReader.pdb
+F:\Application\MSBuildProjects-new\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.dll
+F:\Application\MSBuildProjects-new\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.dll
+F:\Application\MSBuildProjects-new\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
+F:\Application\MSBuildProjects-new\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.xml
+F:\Application\MSBuildProjects-new\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+F:\Application\MSBuildProjects-new\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.xml
+F:\Application\MSBuildProjects-new\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\PeReader.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects-new\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\Microsoft.Cci.PeReaderErrorMessages.resources
+F:\Application\MSBuildProjects-new\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\PeReader.csproj.GenerateResource.Cache
+F:\Application\MSBuildProjects-new\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\Microsoft.Cci.PeReader.dll
+F:\Application\MSBuildProjects-new\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\Microsoft.Cci.PeReader.pdb
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.PeReader.xml
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.PeReader.dll
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.PeReader.pdb
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.dll
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.dll
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.xml
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.xml
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\PeReader.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\Microsoft.Cci.PeReaderErrorMessages.resources
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\PeReader.csproj.GenerateResource.Cache
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\Microsoft.Cci.PeReader.dll
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\PeReader\obj\Debug\Microsoft.Cci.PeReader.pdb
+C:\MSBuildProjects-beta\NET\PeReader\bin\Debug\Microsoft.Cci.PeReader.xml
+C:\MSBuildProjects-beta\NET\PeReader\bin\Debug\Microsoft.Cci.PeReader.dll
+C:\MSBuildProjects-beta\NET\PeReader\bin\Debug\Microsoft.Cci.PeReader.pdb
+C:\MSBuildProjects-beta\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.dll
+C:\MSBuildProjects-beta\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.dll
+C:\MSBuildProjects-beta\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
+C:\MSBuildProjects-beta\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.xml
+C:\MSBuildProjects-beta\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\MSBuildProjects-beta\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.xml
+C:\MSBuildProjects-beta\NET\PeReader\obj\Debug\PeReader.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\NET\PeReader\obj\Debug\Microsoft.Cci.PeReaderErrorMessages.resources
+C:\MSBuildProjects-beta\NET\PeReader\obj\Debug\PeReader.csproj.GenerateResource.Cache
+C:\MSBuildProjects-beta\NET\PeReader\obj\Debug\Microsoft.Cci.PeReader.dll
+C:\MSBuildProjects-beta\NET\PeReader\obj\Debug\Microsoft.Cci.PeReader.pdb

@@ -1,0 +1,15 @@
+F:\Application\MSBuildProjects4\Script_Control\Bin\AIMS.Docking.dll
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Release\AIMS.Libraries.Forms.Docking.InertButton.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Release\AIMS.Libraries.Forms.Docking.DockContainer.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Release\AIMS.Libraries.Forms.Docking.DockWindow.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Release\AIMS.Libraries.Forms.Docking.Strings.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Release\Forms.Docking.csproj.GenerateResource.Cache
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Release\AIMS.Docking.dll
+C:\Bin\Docking.dll
+C:\MSBuildProjects-beta\ScriptEditor\WinForms\Docking\Project\obj\Release\Forms.Docking.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\ScriptEditor\WinForms\Docking\Project\obj\Release\AIMS.Libraries.Forms.Docking.InertButton.resources
+C:\MSBuildProjects-beta\ScriptEditor\WinForms\Docking\Project\obj\Release\AIMS.Libraries.Forms.Docking.DockContainer.resources
+C:\MSBuildProjects-beta\ScriptEditor\WinForms\Docking\Project\obj\Release\AIMS.Libraries.Forms.Docking.DockWindow.resources
+C:\MSBuildProjects-beta\ScriptEditor\WinForms\Docking\Project\obj\Release\AIMS.Libraries.Forms.Docking.Strings.resources
+C:\MSBuildProjects-beta\ScriptEditor\WinForms\Docking\Project\obj\Release\Forms.Docking.csproj.GenerateResource.Cache
+C:\MSBuildProjects-beta\ScriptEditor\WinForms\Docking\Project\obj\Release\Docking.dll

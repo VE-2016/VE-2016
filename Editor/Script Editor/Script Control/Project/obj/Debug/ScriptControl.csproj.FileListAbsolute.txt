@@ -1,0 +1,360 @@
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Bin\AIMS.ScriptControl.dll
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Bin\AIMS.ScriptControl.pdb
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.AddWebReferenceDialog.resources
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.WebServicesView.resources
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.NewFileDialog.resources
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.resources
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.QuickClassBrowserPanel.resources
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.SelectReferenceDialog.resources
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ScriptControl.resources
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Document.resources
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ErrorList.resources
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Output.resources
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ProjectExplorer.resources
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.dll
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.pdb
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.ScriptControl.dll
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.ScriptControl.pdb
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csprojResolveAssemblyReference.cache
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.AddWebReferenceDialog.resources
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.WebServicesView.resources
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.NewFileDialog.resources
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.resources
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.QuickClassBrowserPanel.resources
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.SelectReferenceDialog.resources
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ScriptControl.resources
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Document.resources
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ErrorList.resources
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Output.resources
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ProjectExplorer.resources
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csproj.GenerateResource.Cache
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.dll
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.pdb
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.ScriptControl.dll
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.ScriptControl.pdb
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.AddWebReferenceDialog.resources
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.WebServicesView.resources
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.NewFileDialog.resources
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.resources
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.QuickClassBrowserPanel.resources
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.SelectReferenceDialog.resources
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ScriptControl.resources
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Document.resources
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ErrorList.resources
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Output.resources
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ProjectExplorer.resources
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.dll
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.pdb
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.ScriptControl.dll
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.ScriptControl.pdb
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.AddWebReferenceDialog.resources
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.WebServicesView.resources
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.NewFileDialog.resources
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.resources
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.QuickClassBrowserPanel.resources
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.SelectReferenceDialog.resources
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ScriptControl.resources
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Document.resources
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ErrorList.resources
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Output.resources
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ProjectExplorer.resources
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.dll
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.pdb
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Bin\AIMS.ScriptControl.dll
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Bin\AIMS.ScriptControl.pdb
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.AddWebReferenceDialog.resources
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.WebServicesView.resources
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.NewFileDialog.resources
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.resources
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.QuickClassBrowserPanel.resources
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.SelectReferenceDialog.resources
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ScriptControl.resources
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Document.resources
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ErrorList.resources
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Output.resources
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ProjectExplorer.resources
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.dll
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.pdb
+F:\Application-Studio\MSBuildProjects2\Script_Control\Bin\AIMS.ScriptControl.dll
+F:\Application-Studio\MSBuildProjects2\Script_Control\Bin\AIMS.ScriptControl.pdb
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csprojResolveAssemblyReference.cache
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.AddWebReferenceDialog.resources
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.WebServicesView.resources
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.WebForm.resources
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.DocumentForm.resources
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.NewFileDialog.resources
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.resources
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.QuickClassBrowserPanel.resources
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.SelectReferenceDialog.resources
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ScriptControl.resources
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Document.resources
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ErrorList.resources
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Output.resources
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ProjectExplorer.resources
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csproj.GenerateResource.Cache
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.dll
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.pdb
+F:\Application\MSBuildProjects4\Script_Control\Bin\AIMS.ScriptControl.dll
+F:\Application\MSBuildProjects4\Script_Control\Bin\AIMS.ScriptControl.pdb
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.AddWebReferenceDialog.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.WebServicesView.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.WebForm.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.DocumentForm.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.NewFileDialog.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.QuickClassBrowserPanel.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.SelectReferenceDialog.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ScriptControl.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Document.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ErrorList.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Output.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ProjectExplorer.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csproj.GenerateResource.Cache
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.dll
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.pdb
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.AddWebReferenceDialog.resources
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.WebServicesView.resources
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.WebForm.resources
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.DocumentForm.resources
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.NewFileDialog.resources
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.resources
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.QuickClassBrowserPanel.resources
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.SelectReferenceDialog.resources
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ScriptControl.resources
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Document.resources
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ErrorList.resources
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Output.resources
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ProjectExplorer.resources
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csproj.GenerateResource.Cache
+F:\Application\MSBuildProjects3\Script_Control\Bin\AIMS.ScriptControl.dll
+F:\Application\MSBuildProjects3\Script_Control\Bin\AIMS.ScriptControl.pdb
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.dll
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.pdb
+f:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csprojResolveAssemblyReference.cache
+f:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.AddWebReferenceDialog.resources
+f:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.WebServicesView.resources
+f:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.WebForm.resources
+f:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.DocumentForm.resources
+f:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.NewFileDialog.resources
+f:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.resources
+f:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.QuickClassBrowserPanel.resources
+f:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.SelectReferenceDialog.resources
+f:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ScriptControl.resources
+f:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Document.resources
+f:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ErrorList.resources
+f:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Output.resources
+f:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ProjectExplorer.resources
+f:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csproj.GenerateResource.Cache
+f:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.dll
+f:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.pdb
+f:\Application\MSBuildProjects2\Script_Control\Bin\AIMS.ScriptControl.dll
+f:\Application\MSBuildProjects2\Script_Control\Bin\AIMS.ScriptControl.pdb
+F:\Application\MSBuildProjects2\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects2\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.AddWebReferenceDialog.resources
+F:\Application\MSBuildProjects2\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.WebServicesView.resources
+F:\Application\MSBuildProjects2\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.FileForm.resources
+F:\Application\MSBuildProjects2\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.WebForm.resources
+F:\Application\MSBuildProjects2\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.DocumentForm.resources
+F:\Application\MSBuildProjects2\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.NewFileDialog.resources
+F:\Application\MSBuildProjects2\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.resources
+F:\Application\MSBuildProjects2\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.QuickClassBrowserPanel.resources
+F:\Application\MSBuildProjects2\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.SelectReferenceDialog.resources
+F:\Application\MSBuildProjects2\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ScriptControl.resources
+F:\Application\MSBuildProjects2\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Document.resources
+F:\Application\MSBuildProjects2\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ErrorList.resources
+F:\Application\MSBuildProjects2\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Output.resources
+F:\Application\MSBuildProjects2\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ProjectExplorer.resources
+F:\Application\MSBuildProjects2\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csproj.GenerateResource.Cache
+F:\Application\MSBuildProjects2\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.dll
+F:\Application\MSBuildProjects2\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.pdb
+f:\Application\MSBuildProjects\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csprojResolveAssemblyReference.cache
+f:\Application\MSBuildProjects\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.AddWebReferenceDialog.resources
+f:\Application\MSBuildProjects\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.WebServicesView.resources
+f:\Application\MSBuildProjects\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.FileForm.resources
+f:\Application\MSBuildProjects\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.WebForm.resources
+f:\Application\MSBuildProjects\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.DocumentForm.resources
+f:\Application\MSBuildProjects\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.NewFileDialog.resources
+f:\Application\MSBuildProjects\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.resources
+f:\Application\MSBuildProjects\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.QuickClassBrowserPanel.resources
+f:\Application\MSBuildProjects\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.SelectReferenceDialog.resources
+f:\Application\MSBuildProjects\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ScriptControl.resources
+f:\Application\MSBuildProjects\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Document.resources
+f:\Application\MSBuildProjects\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ErrorList.resources
+f:\Application\MSBuildProjects\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Output.resources
+f:\Application\MSBuildProjects\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ProjectExplorer.resources
+f:\Application\MSBuildProjects\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csproj.GenerateResource.Cache
+f:\Application\MSBuildProjects\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.dll
+f:\Application\MSBuildProjects\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.pdb
+F:\Application\Bin\AIMS.ScriptControl.dll
+F:\Application\Bin\AIMS.ScriptControl.pdb
+F:\Application\MSBuildProjects-new\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects-new\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.AddWebReferenceDialog.resources
+F:\Application\MSBuildProjects-new\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.WebServicesView.resources
+F:\Application\MSBuildProjects-new\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.FileForm.resources
+F:\Application\MSBuildProjects-new\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.WebForm.resources
+F:\Application\MSBuildProjects-new\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.DocumentForm.resources
+F:\Application\MSBuildProjects-new\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.NewFileDialog.resources
+F:\Application\MSBuildProjects-new\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.resources
+F:\Application\MSBuildProjects-new\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.QuickClassBrowserPanel.resources
+F:\Application\MSBuildProjects-new\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.SelectReferenceDialog.resources
+F:\Application\MSBuildProjects-new\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ScriptControl.resources
+F:\Application\MSBuildProjects-new\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Document.resources
+F:\Application\MSBuildProjects-new\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ErrorList.resources
+F:\Application\MSBuildProjects-new\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Output.resources
+F:\Application\MSBuildProjects-new\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ProjectExplorer.resources
+F:\Application\MSBuildProjects-new\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csproj.GenerateResource.Cache
+F:\Application\MSBuildProjects-new\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.dll
+F:\Application\MSBuildProjects-new\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.pdb
+C:\Bin\ScriptControl.dll
+C:\Bin\ScriptControl.pdb
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.AddWebReferenceDialog.resources
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.WebServicesView.resources
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.FileForm.resources
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.WebForm.resources
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.DocumentForm.resources
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.NewFileDialog.resources
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.resources
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.QuickClassBrowserPanel.resources
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.SelectReferenceDialog.resources
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ScriptControl.resources
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Document.resources
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ErrorList.resources
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Output.resources
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ProjectExplorer.resources
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csproj.GenerateResource.Cache
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\ScriptControl.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\ScriptControl.pdb
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\CodeEditor.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Docking.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\ICSharpCode.NRefactory.Cecil.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\ICSharpCode.NRefactory.CSharp.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\ICSharpCode.NRefactory.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\ICSharpCode.NRefactory.Xml.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Mono.Cecil.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Mono.Cecil.Mdb.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Mono.Cecil.Pdb.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Mono.Cecil.Rocks.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\SyntaxDocument.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\SyntaxFiles.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\VSParsers.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\WeifenLuo.WinFormsUI.Docking.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\WeifenLuo.WinFormsUI.Docking.ThemeVS2012Light.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\WeifenLuo.WinFormsUI.Docking.ThemeVS2013Blue.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Microsoft.Build.Framework.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Microsoft.Build.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\GACManagerApi.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\GACProject.exe
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Microsoft.CodeAnalysis.Workspaces.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Microsoft.CodeAnalysis.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Microsoft.DotNet.CodeFormatting.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Microsoft.CodeAnalysis.Workspaces.Desktop.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\System.Collections.Immutable.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Microsoft.Build.Engine.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Microsoft.CodeAnalysis.CSharp.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Microsoft.Build.Tasks.Core.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Microsoft.Build.Utilities.Core.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\VSParsers.pdb
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\CodeEditor.pdb
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\SyntaxDocument.pdb
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\SyntaxFiles.pdb
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\WeifenLuo.WinFormsUI.Docking.ThemeVS2012Light.pdb
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\WeifenLuo.WinFormsUI.Docking.ThemeVS2013Blue.pdb
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Docking.pdb
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\ICSharpCode.NRefactory.xml
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\ICSharpCode.NRefactory.Cecil.xml
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\ICSharpCode.NRefactory.CSharp.xml
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\ICSharpCode.NRefactory.Xml.xml
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\GACManagerApi.pdb
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\GACProject.pdb
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Microsoft.CodeAnalysis.Workspaces.xml
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Microsoft.CodeAnalysis.xml
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Microsoft.DotNet.CodeFormatting.pdb
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Microsoft.CodeAnalysis.Workspaces.Desktop.xml
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\System.Collections.Immutable.xml
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Microsoft.CodeAnalysis.CSharp.xml
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\Bin\Microsoft.CodeAnalysis.VisualBasic.xml
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\ScriptControl.dll
+C:\MSBuildProjects-beta\ScriptEditor\Script Editor\Script Control\Project\obj\Debug\ScriptControl.pdb
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\ScriptControl.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\ScriptControl.pdb
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\CodeEditor.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Docking.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\ICSharpCode.NRefactory.Cecil.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\ICSharpCode.NRefactory.CSharp.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\ICSharpCode.NRefactory.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\ICSharpCode.NRefactory.Xml.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Mono.Cecil.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Mono.Cecil.Mdb.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Mono.Cecil.Pdb.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Mono.Cecil.Rocks.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\SyntaxDocument.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\SyntaxFiles.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\VSParsers.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\WeifenLuo.WinFormsUI.Docking.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\WeifenLuo.WinFormsUI.Docking.ThemeVS2012Light.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\WeifenLuo.WinFormsUI.Docking.ThemeVS2013Blue.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Microsoft.Build.Framework.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Microsoft.Build.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\GACManagerApi.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\GACProject.exe
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Microsoft.CodeAnalysis.Workspaces.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Microsoft.CodeAnalysis.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Microsoft.DotNet.CodeFormatting.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Microsoft.CodeAnalysis.Workspaces.Desktop.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\System.Collections.Immutable.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Microsoft.Build.Engine.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Microsoft.CodeAnalysis.CSharp.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Microsoft.Build.Tasks.Core.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Microsoft.Build.Utilities.Core.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\VSParsers.pdb
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\CodeEditor.pdb
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\SyntaxDocument.pdb
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\SyntaxFiles.pdb
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\WeifenLuo.WinFormsUI.Docking.ThemeVS2012Light.pdb
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\WeifenLuo.WinFormsUI.Docking.ThemeVS2013Blue.pdb
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\WeifenLuo.WinFormsUI.Docking.pdb
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Docking.pdb
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\ICSharpCode.NRefactory.xml
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\ICSharpCode.NRefactory.Cecil.xml
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\ICSharpCode.NRefactory.CSharp.xml
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\ICSharpCode.NRefactory.Xml.xml
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\GACManagerApi.pdb
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\GACProject.pdb
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Microsoft.CodeAnalysis.Workspaces.xml
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Microsoft.CodeAnalysis.xml
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Microsoft.DotNet.CodeFormatting.pdb
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Microsoft.CodeAnalysis.Workspaces.Desktop.xml
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\System.Collections.Immutable.xml
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Microsoft.CodeAnalysis.CSharp.xml
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\Bin\Microsoft.CodeAnalysis.VisualBasic.xml
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.AddWebReferenceDialog.resources
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.WebServicesView.resources
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.FileForm.resources
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.WebForm.resources
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.DocumentForm.resources
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.NewFileDialog.resources
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.resources
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.QuickClassBrowserPanel.resources
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.SelectReferenceDialog.resources
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ScriptControl.resources
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Document.resources
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ErrorList.resources
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Output.resources
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ProjectExplorer.resources
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csproj.GenerateResource.Cache
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\obj\Debug\ScriptControl.dll
+C:\MSBuildProjects-beta\Editor\Script Editor\Script Control\Project\obj\Debug\ScriptControl.pdb

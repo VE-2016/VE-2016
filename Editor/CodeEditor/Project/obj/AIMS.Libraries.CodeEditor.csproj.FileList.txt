@@ -1,0 +1,16 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\AIMS.Libraries.CodeEditor.CodeEditorControl.bmp
+obj\Debug\AIMS.Libraries.CodeEditor.FlippedCursor.cur
+obj\Debug\AIMS.Libraries.CodeEditor.Editors.Dialogs.Settings.resources
+obj\Debug\AIMS.Libraries.CodeEditor.csproj.GenerateResource.Cache
+..\..\..\Bin\AIMS.Libraries.CodeEditor.dll
+..\..\..\Bin\AIMS.Libraries.CodeEditor.pdb
+obj\Debug\AIMS.Libraries.CodeEditor.dll
+obj\Debug\AIMS.Libraries.CodeEditor.pdb
+obj\Debug\AIMS.Libraries.CodeEditor.WinForms.AutoListForm.resources
+obj\Debug\AIMS.Libraries.CodeEditor.WinForms.TabListBox.resources
+obj\Debug\AIMS.Libraries.CodeEditor.WinForms.EditViewControl.resources
+obj\Debug\AIMS.Libraries.CodeEditor.WinForms.FindReplaceForm.resources
+obj\Debug\AIMS.Libraries.CodeEditor.WinForms.GotoLineForm.resources
+obj\Debug\AIMS.Libraries.CodeEditor.WinForms.InfoTipForm.resources
+obj\Debug\AIMS.Libraries.CodeEditor.CodeEditorControl.resources

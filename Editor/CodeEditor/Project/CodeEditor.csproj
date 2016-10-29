@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{94BFA44A-F4D0-4605-88E6-3ADD498F5E16}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AIMS.Libraries.CodeEditor</RootNamespace>
+    <AssemblyName>AIMS.CodeEditor</AssemblyName>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\..\Bin\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.NRefactory">
+      <HintPath>..\..\..\..\..\MSBuildProjects3\packages\ICSharpCode.NRefactory.5.5.1\lib\Net40\ICSharpCode.NRefactory.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory.Cecil">
+      <HintPath>..\..\..\..\..\MSBuildProjects3\packages\ICSharpCode.NRefactory.5.5.1\lib\Net40\ICSharpCode.NRefactory.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory.CSharp">
+      <HintPath>..\..\..\..\..\MSBuildProjects3\packages\ICSharpCode.NRefactory.5.5.1\lib\Net40\ICSharpCode.NRefactory.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory.Xml">
+      <HintPath>..\..\..\..\..\MSBuildProjects3\packages\ICSharpCode.NRefactory.5.5.1\lib\Net40\ICSharpCode.NRefactory.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.Build.Utilities.v4.0" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\FontEnum.cs" />
+    <Compile Include="Core\GDIBrushes.cs" />
+    <Compile Include="Core\GDIFont.cs" />
+    <Compile Include="Core\GDIObject.cs" />
+    <Compile Include="Core\GDIPens.cs" />
+    <Compile Include="Core\GDISurface.cs" />
+    <Compile Include="Core\IMEWindow.cs" />
+    <Compile Include="Core\MemHandler.cs" />
+    <Compile Include="Core\WeakTimer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\Autolist\AutoListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\Autolist\AutoListIcons.cs" />
+    <Compile Include="Editors\Autolist\TabListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\CompletionWindow\AbstractCompletionWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\CompletionWindow\DeclarationViewWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\CompletionWindow\ICompletionData.cs" />
+    <Compile Include="Editors\CompletionWindow\ICompletionDataProvider.cs" />
+    <Compile Include="Editors\EditView\CSDemo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\EditView\CSDemo.Designer.cs">
+      <DependentUpon>CSDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\EditView\CSharpCompletionDataFactory.cs" />
+    <Compile Include="Editors\EditView\EditViewControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\InfoTip\InfoTipForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\InsightWindow\IInsightDataProvider.cs" />
+    <Compile Include="Editors\InsightWindow\InsightWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\IPainter.cs" />
+    <Compile Include="Editors\Dialogs\FindReplace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\Dialogs\GotoLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\Dialogs\Settings.cs" />
+    <Compile Include="Editors\Events.cs" />
+    <Compile Include="Editors\CodeEditorControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\CodeEditorDesigner.cs" />
+    <Compile Include="Editors\Keywords.cs" />
+    <Compile Include="Editors\LineMarginRender.cs" />
+    <Compile Include="Editors\Localizations.cs" />
+    <Compile Include="Editors\Util\BrushRegistry.cs" />
+    <Compile Include="Editors\Util\FileReader.cs" />
+    <Compile Include="Editors\Util\LookupTable.cs" />
+    <None Include="Editors\Util\TextUtility.cs" />
+    <Compile Include="Editors\Util\TipPainter.cs" />
+    <Compile Include="Editors\Util\TipPainterTools.cs" />
+    <Compile Include="Editors\Util\TipSection.cs" />
+    <Compile Include="Editors\Util\TipSpacer.cs" />
+    <Compile Include="Editors\Util\TipSplitter.cs" />
+    <Compile Include="Editors\Util\TipText.cs" />
+    <Compile Include="Intellisense.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TypeExplorer.cs" />
+    <Compile Include="TypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TypeForm.Designer.cs">
+      <DependentUpon>TypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Win32\NativeGdi32Api.cs" />
+    <Compile Include="Win32\NativeImm32Api.cs" />
+    <Compile Include="Win32\Enums.cs" />
+    <Compile Include="Win32\NativeUser32Api.cs" />
+    <Compile Include="Win32\Structures.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Editors\Caret.cs" />
+    <Compile Include="Editors\KeyboadActionList.cs" />
+    <Compile Include="Editors\KeyboardAction.cs" />
+    <Compile Include="Editors\Painter_GDI.cs" />
+    <Compile Include="Editors\Selection.cs" />
+    <Compile Include="Editors\Structs.cs" />
+    <Compile Include="Win32\WinForms\BorderControl.cs" />
+    <Compile Include="Win32\WinForms\BorderStyle.cs" />
+    <Compile Include="Core\DrawingTools.cs" />
+    <Compile Include="Win32\WinForms\Events.cs" />
+    <Compile Include="Win32\WinForms\FormatLabelControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Win32\WinForms\FormatLabelElement.cs" />
+    <Compile Include="Win32\WinForms\FormatLabelRow.cs" />
+    <Compile Include="Win32\WinForms\FormatLabelWord.cs" />
+    <Compile Include="Win32\WinForms\IntelliMouse.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Win32\WinForms\IntelliMouseEvents.cs" />
+    <Compile Include="Win32\WinForms\RegionHandler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Win32\WinForms\SplitViewChildWidget.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Win32\WinForms\SplitViewThumbControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Win32\WinForms\SplitViewWidget.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Win32\WinForms\Widget.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Editors\Autolist\AutoListForm.resx">
+      <DependentUpon>AutoListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\Autolist\TabListBox.resx">
+      <DependentUpon>TabListBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\EditView\CSDemo.resx">
+      <DependentUpon>CSDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\EditView\EditViewControl.resx">
+      <DependentUpon>EditViewControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\InfoTip\InfoTipForm.resx">
+      <DependentUpon>InfoTipForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\Dialogs\FindReplace.resx">
+      <DependentUpon>FindReplace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\Dialogs\GotoLine.resx">
+      <DependentUpon>GotoLine.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\Dialogs\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeEditorControl.bmp" />
+    <EmbeddedResource Include="Editors\CodeEditorControl.resx">
+      <DependentUpon>CodeEditorControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FlippedCursor.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\MoveDown.cur" />
+    <EmbeddedResource Include="Resources\MoveUp.cur" />
+    <EmbeddedResource Include="Resources\MoveUpDown.cur" />
+    <EmbeddedResource Include="TypeForm.resx">
+      <DependentUpon>TypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Win32\WinForms\IntelliMouse.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IntelliMouse.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\GACManager\GACManager\GACProject\GACProject.csproj">
+      <Project>{5df52008-1897-488c-8aff-c764447de35c}</Project>
+      <Name>GACProject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\GACManager\Reflector .NET\AndersLiu.Reflector\AndersLiu.Reflector.csproj">
+      <Project>{ca57cd94-4d73-416c-9d95-786ab7e4280e}</Project>
+      <Name>AndersLiu.Reflector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\SolutionParser-master\src\Onion.SolutionParser.Parser\VSParsers.csproj">
+      <Project>{91fef9d7-5376-4ea4-be09-cfb0ebb083fd}</Project>
+      <Name>VSParsers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SyntaxDocument\Project\CodeEditor.SyntaxDocument.csproj">
+      <Project>{3f43bab0-22b4-4fd6-9655-8ba214a093a5}</Project>
+      <Name>CodeEditor.SyntaxDocument</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BuildSolution_64x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Class_yellow_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Component_32xSM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Field_blue_16x_32.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Interface_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Method_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Property_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\field_16xSM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Field_blue_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Event_orange_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowdw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Namespace_16xMD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Structure_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Interface_blue_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Method_purple_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delegate_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FilteredObject13400_128x128.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

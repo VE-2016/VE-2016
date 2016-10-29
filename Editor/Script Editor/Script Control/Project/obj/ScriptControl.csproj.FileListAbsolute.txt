@@ -1,0 +1,34 @@
+C:\Rajneesh\Article\Source Code\Script Editor\Script Control\Project\obj\Debug\ResolveAssemblyReference.cache
+C:\Rajneesh\Article\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.AddWebReferenceDialog.resources
+C:\Rajneesh\Article\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.WebServicesView.resources
+C:\Rajneesh\Article\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.NewFileDialog.resources
+C:\Rajneesh\Article\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.resources
+C:\Rajneesh\Article\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.QuickClassBrowserPanel.resources
+C:\Rajneesh\Article\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.SelectReferenceDialog.resources
+C:\Rajneesh\Article\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ScriptControl.resources
+C:\Rajneesh\Article\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Document.resources
+C:\Rajneesh\Article\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ErrorList.resources
+C:\Rajneesh\Article\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Output.resources
+C:\Rajneesh\Article\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ProjectExplorer.resources
+C:\Rajneesh\Article\Source Code\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csproj.GenerateResource.Cache
+C:\Rajneesh\Article\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.dll
+C:\Rajneesh\Article\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.pdb
+C:\Rajneesh\Bin\AIMS.ScriptControl.dll
+C:\Rajneesh\Bin\AIMS.ScriptControl.pdb
+C:\Users\Rajneesh\Desktop\Script Control\Bin\AIMS.ScriptControl.dll
+C:\Users\Rajneesh\Desktop\Script Control\Bin\AIMS.ScriptControl.pdb
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.AddWebReferenceDialog.resources
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.WebServicesView.resources
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.NewFileDialog.resources
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.resources
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.QuickClassBrowserPanel.resources
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog.SelectReferenceDialog.resources
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ScriptControl.resources
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Document.resources
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ErrorList.resources
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.Output.resources
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.Libraries.Scripting.ScriptControl.ProjectExplorer.resources
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\ScriptControl.csproj.GenerateResource.Cache
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.dll
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Script Editor\Script Control\Project\obj\Debug\AIMS.ScriptControl.pdb

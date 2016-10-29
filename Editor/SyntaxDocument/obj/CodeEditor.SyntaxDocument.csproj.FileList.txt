@@ -1,0 +1,12 @@
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\AIMS.Libraries.CodeEditor.Syntax.RowEventArgs.resources
+obj\Release\AIMS.Libraries.CodeEditor.Syntax.TextStyleDesignerDialog.resources
+obj\Release\CodeEditor.SyntaxDocument.csproj.GenerateResource.Cache
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\AIMS.Libraries.CodeEditor.Syntax.RowEventArgs.resources
+obj\Debug\AIMS.Libraries.CodeEditor.Syntax.TextStyleDesignerDialog.resources
+obj\Debug\CodeEditor.SyntaxDocument.csproj.GenerateResource.Cache
+obj\Debug\SyntaxDocument.dll
+obj\Debug\SyntaxDocument.pdb
+..\..\..\..\..\Bin\AIMS.SyntaxDocument.dll
+obj\Release\AIMS.SyntaxDocument.dll

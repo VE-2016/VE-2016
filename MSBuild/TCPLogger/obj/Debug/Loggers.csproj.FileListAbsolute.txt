@@ -1,0 +1,9 @@
+C:\MSBuildProjects-beta\Loggers\bin\Debug\Loggers.dll
+C:\MSBuildProjects-beta\Loggers\bin\Debug\Loggers.pdb
+C:\MSBuildProjects-beta\Loggers\obj\Debug\Loggers.dll
+C:\MSBuildProjects-beta\Loggers\obj\Debug\Loggers.pdb
+C:\MSBuildProjects-beta\MSBuild\TCPLogger\bin\Debug\Loggers.dll
+C:\MSBuildProjects-beta\MSBuild\TCPLogger\bin\Debug\Loggers.pdb
+C:\MSBuildProjects-beta\MSBuild\TCPLogger\obj\Debug\Loggers.dll
+C:\MSBuildProjects-beta\MSBuild\TCPLogger\obj\Debug\Loggers.pdb
+C:\MSBuildProjects-beta\MSBuild\TCPLogger\obj\Debug\Loggers.csprojResolveAssemblyReference.cache

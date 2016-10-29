@@ -1,0 +1,14 @@
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\CodeEditor\Project\obj\Release\CodeEditor.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\CodeEditor\Project\obj\Release\AIMS.Libraries.CodeEditor.WinForms.AutoListForm.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\CodeEditor\Project\obj\Release\AIMS.Libraries.CodeEditor.WinForms.TabListBox.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\CodeEditor\Project\obj\Release\AIMS.Libraries.CodeEditor.WinForms.EditViewControl.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\CodeEditor\Project\obj\Release\AIMS.Libraries.CodeEditor.WinForms.InfoTipForm.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\CodeEditor\Project\obj\Release\AIMS.Libraries.CodeEditor.WinForms.FindReplaceForm.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\CodeEditor\Project\obj\Release\AIMS.Libraries.CodeEditor.WinForms.GotoLineForm.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\CodeEditor\Project\obj\Release\AIMS.Libraries.CodeEditor.Editors.Dialogs.Settings.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\CodeEditor\Project\obj\Release\AIMS.Libraries.CodeEditor.CodeEditorControl.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\CodeEditor\Project\obj\Release\AIMS.Libraries.CodeEditor.TypeForm.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\CodeEditor\Project\obj\Release\AIMS.Libraries.CodeEditor.WinForms.IntelliMouse.IntelliMouseControl.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\CodeEditor\Project\obj\Release\CodeEditor.csproj.GenerateResource.Cache
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\CodeEditor\Project\obj\Release\AIMS.CodeEditor.dll
+F:\Application\MSBuildProjects4\Script_Control\Bin\AIMS.CodeEditor.dll

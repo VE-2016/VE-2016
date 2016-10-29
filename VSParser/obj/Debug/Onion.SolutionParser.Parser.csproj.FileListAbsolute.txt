@@ -1,0 +1,8 @@
+C:\QuickSharp_2\SolutionParser-master\src\Onion.SolutionParser.Parser\bin\Debug\Onion.SolutionParser.Parser.dll
+C:\QuickSharp_2\SolutionParser-master\src\Onion.SolutionParser.Parser\bin\Debug\Onion.SolutionParser.Parser.pdb
+C:\QuickSharp_2\SolutionParser-master\src\Onion.SolutionParser.Parser\obj\Debug\Onion.SolutionParser.Parser.dll
+C:\QuickSharp_2\SolutionParser-master\src\Onion.SolutionParser.Parser\obj\Debug\Onion.SolutionParser.Parser.pdb
+F:\Application-Studio\MSBuildProjects2\SolutionParser-master\src\Onion.SolutionParser.Parser\bin\Debug\Onion.SolutionParser.Parser.dll
+F:\Application-Studio\MSBuildProjects2\SolutionParser-master\src\Onion.SolutionParser.Parser\bin\Debug\Onion.SolutionParser.Parser.pdb
+F:\Application-Studio\MSBuildProjects2\SolutionParser-master\src\Onion.SolutionParser.Parser\obj\Debug\Onion.SolutionParser.Parser.dll
+F:\Application-Studio\MSBuildProjects2\SolutionParser-master\src\Onion.SolutionParser.Parser\obj\Debug\Onion.SolutionParser.Parser.pdb

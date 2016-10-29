@@ -1,0 +1,79 @@
+// <file>
+//     <copyright see="prj:///doc/copyright.txt"/>
+//     <license see="prj:///doc/license.txt"/>
+//     <owner name="Rajneesh Noonia" email="Rajneesh.Noonia@Xansa.com"/>
+//     <version>$Revision: 1609 $</version>
+// </file>
+
+using System;
+
+namespace AIMS.Libraries.Scripting.NRefactory
+{
+    /// <summary>
+    /// Interface for all specials.
+    /// </summary>
+    public interface ISpecial
+    {
+        Location StartPosition { get; }
+        Location EndPosition { get; }
+
+        object AcceptVisitor(ISpecialVisitor visitor, object data);
+    }
+
+    public interface ISpecialVisitor
+    {
+        object Visit(ISpecial special, object data);
+        object Visit(BlankLine special, object data);
+        object Visit(Comment special, object data);
+        object Visit(PreprocessingDirective special, object data);
+    }
+
+    public abstract class AbstractSpecial : ISpecial
+    {
+        public abstract object AcceptVisitor(ISpecialVisitor visitor, object data);
+
+        private Location _startPosition,_endPosition;
+
+        protected AbstractSpecial(Location position)
+        {
+            _startPosition = position;
+            _endPosition = position;
+        }
+
+        protected AbstractSpecial(Location startPosition, Location endPosition)
+        {
+            _startPosition = startPosition;
+            _endPosition = endPosition;
+        }
+
+        public Location StartPosition
+        {
+            get
+            {
+                return _startPosition;
+            }
+            set
+            {
+                _startPosition = value;
+            }
+        }
+
+        public Location EndPosition
+        {
+            get
+            {
+                return _endPosition;
+            }
+            set
+            {
+                _endPosition = value;
+            }
+        }
+
+        public override string ToString()
+        {
+            return String.Format("[{0}: Start = {1}, End = {2}]",
+                                 GetType().Name, StartPosition, EndPosition);
+        }
+    }
+}

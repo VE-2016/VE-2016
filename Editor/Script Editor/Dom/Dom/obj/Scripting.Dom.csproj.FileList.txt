@@ -1,0 +1,7 @@
+obj\Release\ResolveAssemblyReference.cache
+..\..\..\..\..\Bin\AIMS.Scripting.Dom.dll
+obj\Release\AIMS.Scripting.Dom.dll
+..\..\..\..\..\Bin\AIMS.Scripting.Dom.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\AIMS.Scripting.Dom.dll
+obj\Debug\AIMS.Scripting.Dom.pdb

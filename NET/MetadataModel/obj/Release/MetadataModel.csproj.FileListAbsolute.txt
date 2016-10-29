@@ -1,0 +1,10 @@
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Release\Microsoft.Cci.MetadataModel.xml
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Release\Microsoft.Cci.MetadataModel.dll
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Release\Microsoft.Cci.MetadataModel.pdb
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\obj\Release\Microsoft.Cci.MetadataModel.dll
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\obj\Release\Microsoft.Cci.MetadataModel.pdb
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Release\Microsoft.Cci.MetadataModel.xml
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Release\Microsoft.Cci.MetadataModel.dll
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Release\Microsoft.Cci.MetadataModel.pdb
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\obj\Release\Microsoft.Cci.MetadataModel.dll
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\obj\Release\Microsoft.Cci.MetadataModel.pdb

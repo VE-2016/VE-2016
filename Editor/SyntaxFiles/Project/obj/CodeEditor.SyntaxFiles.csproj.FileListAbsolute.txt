@@ -1,0 +1,174 @@
+D:\AIMS\AIMS\Bin\SyntaxFiles.dll
+D:\AIMS\AIMS\Bin\SyntaxFiles.pdb
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\ResolveAssemblyReference.cache
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Lang6502.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.CPP.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Cobol.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.CSharp.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.CSS.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.DataFlex.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Delphi.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.DOSBatch.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Fortran90.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.AutoIt.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Java.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.JavaScript.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.JSP.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.LotusScript.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.MSIL.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.MySql_SQL.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.NPath.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Oracle_SQL.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Perl.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.PHP.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Povray.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Python.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Rtf.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.SmallTalk.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.SqlServer2K.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.SqlServer7.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.SystemPolicies.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Template.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Text.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.TurboPascal.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.VBNET.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.VB.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.VBScript.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.VRML97.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.XML.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.HTML.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Nemerle.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.SqlServer2K5.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Gemix.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\SyntaxFiles.dll
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Debug\SyntaxFiles.pdb
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\ResolveAssemblyReference.cache
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Lang6502.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.CPP.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Cobol.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.CSharp.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.CSS.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.DataFlex.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Delphi.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.DOSBatch.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Fortran90.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.AutoIt.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Java.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.JavaScript.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.JSP.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.LotusScript.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.MSIL.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.MySql_SQL.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.NPath.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Oracle_SQL.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Perl.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.PHP.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Povray.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Python.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Rtf.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.SmallTalk.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.SqlServer2K.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.SqlServer7.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.SystemPolicies.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Template.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Text.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.TurboPascal.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.VBNET.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.VB.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.VBScript.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.VRML97.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.XML.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.HTML.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Nemerle.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.SqlServer2K5.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Gemix.syn
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\SyntaxFiles.dll
+D:\AIMS\AIMS\Source\Libraries\Code Editor\SyntaxFiles\Project\obj\Release\SyntaxFiles.pdb
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\ResolveAssemblyReference.cache
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Lang6502.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.CPP.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Cobol.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.CSharp.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.CSS.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.DataFlex.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Delphi.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.DOSBatch.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Fortran90.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.AutoIt.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Java.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.JavaScript.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.JSP.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.LotusScript.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.MSIL.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.MySql_SQL.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.NPath.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Oracle_SQL.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Perl.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.PHP.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Povray.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Python.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Rtf.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.SmallTalk.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.SqlServer2K.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.SqlServer7.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.SystemPolicies.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Template.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Text.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.TurboPascal.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.VBNET.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.VB.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.VBScript.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.VRML97.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.XML.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.HTML.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Nemerle.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.SqlServer2K5.syn
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Gemix.syn
+C:\Rajneesh\Bin\AIMS.SyntaxFiles.dll
+C:\Rajneesh\Bin\AIMS.SyntaxFiles.pdb
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.dll
+C:\Rajneesh\Article\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.pdb
+C:\Users\Rajneesh\Desktop\Script Control\Bin\AIMS.SyntaxFiles.dll
+C:\Users\Rajneesh\Desktop\Script Control\Bin\AIMS.SyntaxFiles.pdb
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Lang6502.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.CPP.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Cobol.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.CSharp.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.CSS.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.DataFlex.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Delphi.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.DOSBatch.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Fortran90.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.AutoIt.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Java.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.JavaScript.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.JSP.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.LotusScript.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.MSIL.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.MySql_SQL.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.NPath.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Oracle_SQL.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Perl.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.PHP.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Povray.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Python.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Rtf.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.SmallTalk.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.SqlServer2K.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.SqlServer7.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.SystemPolicies.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Template.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Text.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.TurboPascal.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.VBNET.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.VB.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.VBScript.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.VRML97.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.XML.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.HTML.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Nemerle.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.SqlServer2K5.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.Libraries.CodeEditor.SyntaxFiles.Syns.Gemix.syn
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.dll
+C:\Users\Rajneesh\Desktop\Script Control\Script Control\Source Code\Code Editor\SyntaxFiles\Project\obj\Debug\AIMS.SyntaxFiles.pdb

@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3814F627-858A-42A3-9AAF-CD649413F2A8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AIMS.Libraries.CodeEditor.SyntaxFiles</RootNamespace>
+    <AssemblyName>SyntaxFiles</AssemblyName>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeEditorSyntaxLoader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Syns\Lang6502.syn" />
+    <EmbeddedResource Include="Syns\CPP.syn" />
+    <EmbeddedResource Include="Syns\Cobol.syn" />
+    <EmbeddedResource Include="Syns\CSharp.syn">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Syns\CSS.syn" />
+    <EmbeddedResource Include="Syns\DataFlex.syn" />
+    <EmbeddedResource Include="Syns\Delphi.syn" />
+    <EmbeddedResource Include="Syns\DOSBatch.syn" />
+    <EmbeddedResource Include="Syns\Fortran90.syn" />
+    <EmbeddedResource Include="Syns\AutoIt.syn" />
+    <None Include="Syns\FoxPro.syn" />
+    <EmbeddedResource Include="Syns\Java.syn" />
+    <EmbeddedResource Include="Syns\JavaScript.syn" />
+    <EmbeddedResource Include="Syns\JSP.syn" />
+    <EmbeddedResource Include="Syns\LotusScript.syn" />
+    <EmbeddedResource Include="Syns\MSIL.syn" />
+    <EmbeddedResource Include="Syns\MySql_SQL.syn" />
+    <EmbeddedResource Include="Syns\NPath.syn" />
+    <EmbeddedResource Include="Syns\Oracle_SQL.syn" />
+    <EmbeddedResource Include="Syns\Perl.syn" />
+    <EmbeddedResource Include="Syns\PHP.syn" />
+    <EmbeddedResource Include="Syns\Povray.syn" />
+    <EmbeddedResource Include="Syns\Python.syn" />
+    <EmbeddedResource Include="Syns\Rtf.syn" />
+    <EmbeddedResource Include="Syns\SmallTalk.syn" />
+    <EmbeddedResource Include="Syns\SqlServer2K.syn" />
+    <EmbeddedResource Include="Syns\SqlServer7.syn" />
+    <EmbeddedResource Include="Syns\SystemPolicies.syn" />
+    <EmbeddedResource Include="Syns\Template.syn" />
+    <EmbeddedResource Include="Syns\Text.syn" />
+    <EmbeddedResource Include="Syns\TurboPascal.syn" />
+    <EmbeddedResource Include="Syns\VBNET.syn" />
+    <EmbeddedResource Include="Syns\VB.syn" />
+    <EmbeddedResource Include="Syns\VBScript.syn" />
+    <EmbeddedResource Include="Syns\VRML97.syn" />
+    <EmbeddedResource Include="Syns\XML.syn" />
+    <EmbeddedResource Include="Syns\HTML.syn" />
+    <EmbeddedResource Include="Syns\Nemerle.syn" />
+    <EmbeddedResource Include="Syns\SqlServer2K5.syn" />
+    <EmbeddedResource Include="Syns\Gemix.syn" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeEditor\CodeEditor.csproj">
+      <Project>{94bfa44a-f4d0-4605-88e6-3add498f5e16}</Project>
+      <Name>CodeEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SyntaxDocument\CodeEditor.SyntaxDocument.csproj">
+      <Project>{3f43bab0-22b4-4fd6-9655-8ba214a093a5}</Project>
+      <Name>CodeEditor.SyntaxDocument</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Themes\ThemeVS2012Light.csproj">
+      <Project>{4ed4fdb5-9fd0-49e6-876d-1635f727c755}</Project>
+      <Name>ThemeVS2012Light</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Themes\ThemeVS2013Blue.csproj">
+      <Project>{245e07f6-10d5-4cfa-b003-0deb06b223da}</Project>
+      <Name>ThemeVS2013Blue</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

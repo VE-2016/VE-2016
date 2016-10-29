@@ -1,0 +1,10 @@
+C:\MSBuildProjects-beta\ScriptEditor\WinFormsUI\bin\Release\WeifenLuo.WinFormsUI.Docking.ThemeVS2013Blue.dll
+C:\MSBuildProjects-beta\ScriptEditor\WinFormsUI\bin\Release\WeifenLuo.WinFormsUI.Docking.ThemeVS2013Blue.pdb
+C:\MSBuildProjects-beta\ScriptEditor\WinFormsUI\obj\Release\WeifenLuo.WinFormsUI.ThemeVS2012Light.Resources.resources
+C:\MSBuildProjects-beta\ScriptEditor\WinFormsUI\obj\Release\WeifenLuo.WinFormsUI.ThemeVS2012Light.Strings.resources
+C:\MSBuildProjects-beta\ScriptEditor\WinFormsUI\obj\Release\WeifenLuo.WinFormsUI.ThemeVS2013Blue.Resources.resources
+C:\MSBuildProjects-beta\ScriptEditor\WinFormsUI\obj\Release\WeifenLuo.WinFormsUI.ThemeVS2013Blue.Strings.resources
+C:\MSBuildProjects-beta\ScriptEditor\WinFormsUI\obj\Release\ThemeVS2013Blue.csproj.GenerateResource.Cache
+C:\MSBuildProjects-beta\ScriptEditor\WinFormsUI\obj\Release\WeifenLuo.WinFormsUI.Docking.ThemeVS2013Blue.dll
+C:\MSBuildProjects-beta\ScriptEditor\WinFormsUI\obj\Release\WeifenLuo.WinFormsUI.Docking.ThemeVS2013Blue.pdb
+C:\MSBuildProjects-beta\ScriptEditor\WinFormsUI\bin\Release\WeifenLuo.WinFormsUI.Docking.pdb

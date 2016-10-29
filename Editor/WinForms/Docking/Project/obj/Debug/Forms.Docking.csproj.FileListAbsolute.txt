@@ -1,0 +1,133 @@
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Bin\AIMS.Docking.dll
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Bin\AIMS.Docking.pdb
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\Forms.Docking.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.InertButton.resources
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockContainer.resources
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockWindow.resources
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Strings.resources
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\Forms.Docking.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Docking.dll
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Docking.pdb
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.Docking.dll
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.Docking.pdb
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\Forms.Docking.csprojResolveAssemblyReference.cache
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.InertButton.resources
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockContainer.resources
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockWindow.resources
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Strings.resources
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\Forms.Docking.csproj.GenerateResource.Cache
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Docking.dll
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Docking.pdb
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.Docking.dll
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.Docking.pdb
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.InertButton.resources
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockContainer.resources
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockWindow.resources
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Strings.resources
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\Forms.Docking.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Docking.dll
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Docking.pdb
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.Docking.dll
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.Docking.pdb
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\Forms.Docking.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.InertButton.resources
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockContainer.resources
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockWindow.resources
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Strings.resources
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\Forms.Docking.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Docking.dll
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Docking.pdb
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Bin\AIMS.Docking.dll
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Bin\AIMS.Docking.pdb
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.InertButton.resources
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockContainer.resources
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockWindow.resources
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Strings.resources
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\Forms.Docking.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Docking.dll
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Docking.pdb
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\Forms.Docking.csprojResolveAssemblyReference.cache
+F:\Application-Studio\MSBuildProjects2\Script_Control\Bin\AIMS.Docking.dll
+F:\Application-Studio\MSBuildProjects2\Script_Control\Bin\AIMS.Docking.pdb
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\Forms.Docking.csprojResolveAssemblyReference.cache
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.InertButton.resources
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockContainer.resources
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockWindow.resources
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Strings.resources
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\Forms.Docking.csproj.GenerateResource.Cache
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Docking.dll
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Docking.pdb
+F:\Application\MSBuildProjects4\Script_Control\Bin\AIMS.Docking.dll
+F:\Application\MSBuildProjects4\Script_Control\Bin\AIMS.Docking.pdb
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\Forms.Docking.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.InertButton.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockContainer.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockWindow.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Strings.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\Forms.Docking.csproj.GenerateResource.Cache
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Docking.dll
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Docking.pdb
+F:\Application\MSBuildProjects3\Script_Control\Bin\AIMS.Docking.dll
+F:\Application\MSBuildProjects3\Script_Control\Bin\AIMS.Docking.pdb
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.InertButton.resources
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockContainer.resources
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockWindow.resources
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Strings.resources
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\Forms.Docking.csproj.GenerateResource.Cache
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Docking.dll
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Docking.pdb
+F:\Application\MSBuildProjects2\Script_Control\Bin\AIMS.Docking.dll
+F:\Application\MSBuildProjects2\Script_Control\Bin\AIMS.Docking.pdb
+F:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\Forms.Docking.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.InertButton.resources
+F:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockContainer.resources
+F:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockWindow.resources
+F:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Strings.resources
+F:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\Forms.Docking.csproj.GenerateResource.Cache
+F:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Docking.dll
+F:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\WinForms\Docking\Project\obj\Debug\AIMS.Docking.pdb
+F:\Application\MSBuildProjects2\ScriptEditor\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.InertButton.resources
+F:\Application\MSBuildProjects2\ScriptEditor\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockContainer.resources
+F:\Application\MSBuildProjects2\ScriptEditor\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockWindow.resources
+F:\Application\MSBuildProjects2\ScriptEditor\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Strings.resources
+F:\Application\MSBuildProjects2\ScriptEditor\WinForms\Docking\Project\obj\Debug\Forms.Docking.csproj.GenerateResource.Cache
+F:\Application\MSBuildProjects2\ScriptEditor\WinForms\Docking\Project\obj\Debug\AIMS.Docking.dll
+F:\Application\MSBuildProjects2\ScriptEditor\WinForms\Docking\Project\obj\Debug\AIMS.Docking.pdb
+f:\Application\MSBuildProjects\ScriptEditor\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.InertButton.resources
+f:\Application\MSBuildProjects\ScriptEditor\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockContainer.resources
+f:\Application\MSBuildProjects\ScriptEditor\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockWindow.resources
+f:\Application\MSBuildProjects\ScriptEditor\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Strings.resources
+f:\Application\MSBuildProjects\ScriptEditor\WinForms\Docking\Project\obj\Debug\Forms.Docking.csproj.GenerateResource.Cache
+f:\Application\MSBuildProjects\ScriptEditor\WinForms\Docking\Project\obj\Debug\AIMS.Docking.dll
+f:\Application\MSBuildProjects\ScriptEditor\WinForms\Docking\Project\obj\Debug\AIMS.Docking.pdb
+F:\Application\MSBuildProjects\ScriptEditor\WinForms\Docking\Project\obj\Debug\Forms.Docking.csprojResolveAssemblyReference.cache
+F:\Application\Bin\AIMS.Docking.dll
+F:\Application\Bin\AIMS.Docking.pdb
+F:\Application\MSBuildProjects-new\ScriptEditor\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.InertButton.resources
+F:\Application\MSBuildProjects-new\ScriptEditor\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockContainer.resources
+F:\Application\MSBuildProjects-new\ScriptEditor\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockWindow.resources
+F:\Application\MSBuildProjects-new\ScriptEditor\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Strings.resources
+F:\Application\MSBuildProjects-new\ScriptEditor\WinForms\Docking\Project\obj\Debug\Forms.Docking.csproj.GenerateResource.Cache
+F:\Application\MSBuildProjects-new\ScriptEditor\WinForms\Docking\Project\obj\Debug\AIMS.Docking.dll
+F:\Application\MSBuildProjects-new\ScriptEditor\WinForms\Docking\Project\obj\Debug\AIMS.Docking.pdb
+C:\Bin\Docking.dll
+C:\Bin\Docking.pdb
+C:\MSBuildProjects-beta\ScriptEditor\WinForms\Docking\Project\Bin\Docking.dll
+C:\MSBuildProjects-beta\ScriptEditor\WinForms\Docking\Project\Bin\Docking.pdb
+C:\MSBuildProjects-beta\ScriptEditor\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.InertButton.resources
+C:\MSBuildProjects-beta\ScriptEditor\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockContainer.resources
+C:\MSBuildProjects-beta\ScriptEditor\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockWindow.resources
+C:\MSBuildProjects-beta\ScriptEditor\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Strings.resources
+C:\MSBuildProjects-beta\ScriptEditor\WinForms\Docking\Project\obj\Debug\Forms.Docking.csproj.GenerateResource.Cache
+C:\MSBuildProjects-beta\ScriptEditor\WinForms\Docking\Project\obj\Debug\Docking.dll
+C:\MSBuildProjects-beta\ScriptEditor\WinForms\Docking\Project\obj\Debug\Docking.pdb
+C:\MSBuildProjects-beta\Editor\WinForms\Docking\Project\Bin\Docking.dll
+C:\MSBuildProjects-beta\Editor\WinForms\Docking\Project\Bin\Docking.pdb
+C:\MSBuildProjects-beta\Editor\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.InertButton.resources
+C:\MSBuildProjects-beta\Editor\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockContainer.resources
+C:\MSBuildProjects-beta\Editor\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.DockWindow.resources
+C:\MSBuildProjects-beta\Editor\WinForms\Docking\Project\obj\Debug\AIMS.Libraries.Forms.Docking.Strings.resources
+C:\MSBuildProjects-beta\Editor\WinForms\Docking\Project\obj\Debug\Forms.Docking.csproj.GenerateResource.Cache
+C:\MSBuildProjects-beta\Editor\WinForms\Docking\Project\obj\Debug\Docking.dll
+C:\MSBuildProjects-beta\Editor\WinForms\Docking\Project\obj\Debug\Docking.pdb
+C:\MSBuildProjects-beta\Editor\WinForms\Docking\Project\obj\Debug\Forms.Docking.csprojResolveAssemblyReference.cache

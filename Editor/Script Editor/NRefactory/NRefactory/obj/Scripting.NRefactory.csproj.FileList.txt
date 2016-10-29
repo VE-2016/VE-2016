@@ -1,0 +1,6 @@
+..\..\..\..\..\Bin\AIMS.Scripting.NRefactory.dll
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\AIMS.Scripting.NRefactory.dll
+obj\Debug\AIMS.Scripting.NRefactory.pdb
+.\AIMS.Scripting.NRefactory.dll
+.\AIMS.Scripting.NRefactory.pdb

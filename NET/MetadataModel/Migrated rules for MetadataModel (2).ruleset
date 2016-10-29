@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Migrated rules for MetadataModel (2).ruleset" Description="This rule set was created from the CodeAnalysisRules property for the &quot;Release (Any CPU)&quot; configuration in project &quot;F:\Application-Studio\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\MetadataModel.csproj&quot;." ToolsVersion="12.0">
+  <IncludeAll Action="Warning" />
+  <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
+    <Rule Id="CA1004" Action="None" />
+    <Rule Id="CA1008" Action="None" />
+    <Rule Id="CA1021" Action="None" />
+    <Rule Id="CA1024" Action="None" />
+    <Rule Id="CA1040" Action="None" />
+    <Rule Id="CA1051" Action="None" />
+    <Rule Id="CA1062" Action="None" />
+    <Rule Id="CA1500" Action="None" />
+    <Rule Id="CA1706" Action="None" />
+    <Rule Id="CA1711" Action="None" />
+    <Rule Id="CA1718" Action="None" />
+    <Rule Id="CA1720" Action="None" />
+    <Rule Id="CA1721" Action="None" />
+    <Rule Id="CA2104" Action="None" />
+  </Rules>
+</RuleSet>

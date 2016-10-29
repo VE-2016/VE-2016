@@ -1,0 +1,78 @@
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Bin\AIMS.SyntaxDocument.dll
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Bin\AIMS.SyntaxDocument.pdb
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\CodeEditor.SyntaxDocument.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.RowEventArgs.resources
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.TextStyleDesignerDialog.resources
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\CodeEditor.SyntaxDocument.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.SyntaxDocument.dll
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\htmls\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.SyntaxDocument.pdb
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.SyntaxDocument.dll
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.SyntaxDocument.pdb
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\CodeEditor.SyntaxDocument.csprojResolveAssemblyReference.cache
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.RowEventArgs.resources
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.TextStyleDesignerDialog.resources
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\CodeEditor.SyntaxDocument.csproj.GenerateResource.Cache
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.SyntaxDocument.dll
+C:\Users\netlab\Downloads\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.SyntaxDocument.pdb
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.SyntaxDocument.dll
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.SyntaxDocument.pdb
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.RowEventArgs.resources
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.TextStyleDesignerDialog.resources
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\CodeEditor.SyntaxDocument.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.SyntaxDocument.dll
+C:\Users\user\Desktop\QuickSharpProjects\test\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.SyntaxDocument.pdb
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.SyntaxDocument.dll
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Bin\AIMS.SyntaxDocument.pdb
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.RowEventArgs.resources
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.TextStyleDesignerDialog.resources
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\CodeEditor.SyntaxDocument.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.SyntaxDocument.dll
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.SyntaxDocument.pdb
+C:\Users\user\Desktop\QuickSharpProjects\AdminConsoleProject\MSBuildProjects\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\CodeEditor.SyntaxDocument.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Bin\AIMS.SyntaxDocument.dll
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Bin\AIMS.SyntaxDocument.pdb
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.RowEventArgs.resources
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.TextStyleDesignerDialog.resources
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\CodeEditor.SyntaxDocument.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.SyntaxDocument.dll
+C:\Users\user\Desktop\QuickSharpProjects\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.SyntaxDocument.pdb
+F:\Application-Studio\MSBuildProjects2\Script_Control\Bin\AIMS.SyntaxDocument.dll
+F:\Application-Studio\MSBuildProjects2\Script_Control\Bin\AIMS.SyntaxDocument.pdb
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\CodeEditor.SyntaxDocument.csprojResolveAssemblyReference.cache
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.RowEventArgs.resources
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.TextStyleDesignerDialog.resources
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\CodeEditor.SyntaxDocument.csproj.GenerateResource.Cache
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.SyntaxDocument.dll
+F:\Application-Studio\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.SyntaxDocument.pdb
+F:\Application\MSBuildProjects4\Script_Control\Bin\AIMS.SyntaxDocument.dll
+F:\Application\MSBuildProjects4\Script_Control\Bin\AIMS.SyntaxDocument.pdb
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\CodeEditor.SyntaxDocument.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.RowEventArgs.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.TextStyleDesignerDialog.resources
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\CodeEditor.SyntaxDocument.csproj.GenerateResource.Cache
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.SyntaxDocument.dll
+F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.SyntaxDocument.pdb
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.RowEventArgs.resources
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.TextStyleDesignerDialog.resources
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\CodeEditor.SyntaxDocument.csproj.GenerateResource.Cache
+F:\Application\MSBuildProjects3\Script_Control\Bin\AIMS.SyntaxDocument.dll
+F:\Application\MSBuildProjects3\Script_Control\Bin\AIMS.SyntaxDocument.pdb
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\CodeEditor.SyntaxDocument.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.SyntaxDocument.dll
+F:\Application\MSBuildProjects3\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.SyntaxDocument.pdb
+F:\Application\MSBuildProjects2\Script_Control\Bin\AIMS.SyntaxDocument.dll
+F:\Application\MSBuildProjects2\Script_Control\Bin\AIMS.SyntaxDocument.pdb
+F:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\CodeEditor.SyntaxDocument.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.RowEventArgs.resources
+F:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.TextStyleDesignerDialog.resources
+F:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\CodeEditor.SyntaxDocument.csproj.GenerateResource.Cache
+F:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.SyntaxDocument.dll
+F:\Application\MSBuildProjects2\Script_Control\Script Control\Source Code\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.SyntaxDocument.pdb
+F:\Application\Bin\AIMS.SyntaxDocument.dll
+F:\Application\Bin\AIMS.SyntaxDocument.pdb
+F:\Application\MSBuildProjects2\ScriptEditor\Code Editor\SyntaxDocument\Project\obj\Debug\CodeEditor.SyntaxDocument.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects2\ScriptEditor\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.RowEventArgs.resources
+F:\Application\MSBuildProjects2\ScriptEditor\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.TextStyleDesignerDialog.resources
+F:\Application\MSBuildProjects2\ScriptEditor\Code Editor\SyntaxDocument\Project\obj\Debug\CodeEditor.SyntaxDocument.csproj.GenerateResource.Cache
+F:\Application\MSBuildProjects2\ScriptEditor\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.SyntaxDocument.dll
+F:\Application\MSBuildProjects2\ScriptEditor\Code Editor\SyntaxDocument\Project\obj\Debug\AIMS.SyntaxDocument.pdb

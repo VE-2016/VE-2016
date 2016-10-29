@@ -1,0 +1,44 @@
+F:\Application-Studio\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.xml
+F:\Application-Studio\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.dll
+F:\Application-Studio\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+F:\Application-Studio\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\obj\Debug\MetadataModel.csprojResolveAssemblyReference.cache
+F:\Application-Studio\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.dll
+F:\Application-Studio\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.pdb
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.xml
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.dll
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.dll
+F:\Application\MSBuildProjects4\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.pdb
+F:\Application\MSBuildProjects3\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.xml
+F:\Application\MSBuildProjects3\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.dll
+F:\Application\MSBuildProjects3\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+F:\Application\MSBuildProjects3\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.dll
+F:\Application\MSBuildProjects3\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.pdb
+F:\Application\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.xml
+F:\Application\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.dll
+F:\Application\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+F:\Application\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.dll
+F:\Application\MSBuildProjects2\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.pdb
+f:\Application\MSBuildProjects\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.xml
+f:\Application\MSBuildProjects\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.dll
+f:\Application\MSBuildProjects\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+f:\Application\MSBuildProjects\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\obj\Debug\MetadataModel.csprojResolveAssemblyReference.cache
+f:\Application\MSBuildProjects\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.dll
+f:\Application\MSBuildProjects\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.pdb
+F:\Application\MSBuildProjects-new\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.xml
+F:\Application\MSBuildProjects-new\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.dll
+F:\Application\MSBuildProjects-new\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+F:\Application\MSBuildProjects-new\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\obj\Debug\MetadataModel.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects-new\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.dll
+F:\Application\MSBuildProjects-new\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.xml
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.dll
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.dll
+C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\MSBuildProjects-beta\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.xml
+C:\MSBuildProjects-beta\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.dll
+C:\MSBuildProjects-beta\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\MSBuildProjects-beta\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.dll
+C:\MSBuildProjects-beta\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\MSBuildProjects-beta\NET\MetadataModel\obj\Debug\MetadataModel.csprojResolveAssemblyReference.cache

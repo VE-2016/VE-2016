@@ -1,0 +1,108 @@
+﻿// <file>
+//     <copyright see="prj:///doc/copyright.txt"/>
+//     <license see="prj:///doc/license.txt"/>
+//     <owner name="Rajneesh Noonia" email="Rajneesh.Noonia@Xansa.com"/>
+//     <version>$Revision: 2066 $</version>
+// </file>
+
+using System;
+
+namespace AIMS.Libraries.Scripting.Dom
+{
+    public class DefaultEvent : AbstractMember, IEvent
+    {
+        private IMethod _addMethod;
+        private IMethod _removeMethod;
+        private IMethod _raiseMethod;
+
+        public override string DocumentationTag
+        {
+            get
+            {
+                return "E:" + this.DotNetName;
+            }
+        }
+
+        public override IMember Clone()
+        {
+            DefaultEvent de = new DefaultEvent(Name, ReturnType, Modifiers, Region, BodyRegion, DeclaringType);
+            foreach (ExplicitInterfaceImplementation eii in InterfaceImplementations)
+            {
+                de.InterfaceImplementations.Add(eii.Clone());
+            }
+            return de;
+        }
+
+        public DefaultEvent(IClass declaringType, string name) : base(declaringType, name)
+        {
+        }
+
+        public DefaultEvent(string name, IReturnType type, ModifierEnum m, DomRegion region, DomRegion bodyRegion, IClass declaringType) : base(declaringType, name)
+        {
+            this.ReturnType = type;
+            this.Region = region;
+            this.BodyRegion = bodyRegion;
+            Modifiers = (ModifierEnum)m;
+            if (Modifiers == ModifierEnum.None)
+            {
+                Modifiers = ModifierEnum.Private;
+            }
+        }
+
+        public virtual int CompareTo(IEvent value)
+        {
+            int cmp;
+
+            if (0 != (cmp = base.CompareTo((IDecoration)value)))
+                return cmp;
+
+            if (FullyQualifiedName != null)
+            {
+                return FullyQualifiedName.CompareTo(value.FullyQualifiedName);
+            }
+
+            return 0;
+        }
+
+        int IComparable.CompareTo(object value)
+        {
+            return CompareTo((IEvent)value);
+        }
+
+        public virtual IMethod AddMethod
+        {
+            get
+            {
+                return _addMethod;
+            }
+            protected set
+            {
+                _addMethod = value;
+            }
+        }
+
+        public virtual IMethod RemoveMethod
+        {
+            get
+            {
+                return _removeMethod;
+            }
+            protected set
+            {
+                _removeMethod = value;
+            }
+        }
+
+        public virtual IMethod RaiseMethod
+        {
+            get
+            {
+                return _raiseMethod;
+            }
+            protected set
+            {
+                _raiseMethod = value;
+            }
+        }
+    }
+}
