@@ -103,7 +103,7 @@
     <None Include="Migrated rules for MetadataModel.ruleset" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\common\include\version.cs">
+    <Compile Include="..\Common\Include\version.cs">
       <Link>Build\version.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
