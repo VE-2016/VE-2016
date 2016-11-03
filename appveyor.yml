@@ -1,7 +1,7 @@
 version: 0.5.{build}
 os: Windows Server 2012 R2
-configuration: Release
-platform: x64
+configuration: Debug
+platform: Any CPU
 build:
   project: VStudio.sln
   
