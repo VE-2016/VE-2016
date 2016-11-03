@@ -3,5 +3,5 @@ os: Windows Server 2012 R2
 configuration: Debug
 platform: Any CPU
 build:
-  project: VSExplorer.csproj
+  project: VSExplorer\VSExplorer.csproj
   
