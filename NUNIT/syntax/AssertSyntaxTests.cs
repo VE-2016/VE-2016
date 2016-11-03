@@ -66,6 +66,27 @@ namespace NUnit.Framework.Tests
             string folder = "NUnit-folder";
 
             string folders = AppDomain.CurrentDomain.BaseDirectory + folder;
+            
+              if(File.Exists("cs-syntax.conf") == true)
+            {
+
+                string c = File.ReadAllText("cs-syntax.conf");
+
+                if (Path.IsPathRooted(c) == true)
+                    folder = c;
+                else
+                {
+
+                    string s = AppDomain.CurrentDomain.BaseDirectory + c;
+
+                    if (Directory.Exists(s) == true)
+                        folder = s;
+
+
+                }
+
+            }
+            
 
             FolderSearch(folders, ".sln");
 
