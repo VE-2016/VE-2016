@@ -73,14 +73,14 @@ namespace NUnit.Framework.Tests
                 string c = File.ReadAllText("cs-syntax.conf");
 
                 if (Path.IsPathRooted(c) == true)
-                    folder = c;
+                    folders = c;
                 else
                 {
 
                     string s = AppDomain.CurrentDomain.BaseDirectory + c;
 
                     if (Directory.Exists(s) == true)
-                        folder = s;
+                        folders = s;
 
 
                 }
