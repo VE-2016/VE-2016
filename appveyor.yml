@@ -3,7 +3,10 @@ os: Windows Server 2012 R2
 configuration: 
   - Debug
   - Release
-platform: Any CPU
+platform:
+  - Any CPU
+  - x86
+  - x64
 build:
   project: NUNIT\syntax\cs-syntax.csproj
 test: off
