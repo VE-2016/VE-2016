@@ -1,6 +1,6 @@
 version: 0.5.{build}
 os: Windows Server 2012 R2
-configuration: Debug Release
+configuration: Debug, Release
 platform: Any CPU
 build:
   project: NUNIT\syntax\cs-syntax.csproj
