@@ -63,7 +63,7 @@ namespace NUnit.Framework.Tests
         public void LoadSolutionTests()
         {
 
-            string folder = "..\..\..\..";
+            string folder = "..\\..\\..\\..";
 
             string folders = AppDomain.CurrentDomain.BaseDirectory + folder;
             
