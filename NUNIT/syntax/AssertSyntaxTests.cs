@@ -172,6 +172,9 @@ namespace NUnit.Framework.Tests
         {
             Microsoft.Build.Evaluation.Project pc = null;
 
+             if (vs == null)
+                return;
+            
             foreach (VSProject p in vs.projects)
             {
                 pc = p.LoadProjectToMemory();
