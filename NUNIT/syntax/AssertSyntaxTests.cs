@@ -151,6 +151,9 @@ namespace NUnit.Framework.Tests
                 if (File.Exists(p.FileName) == false)
                     continue;
 
+                if(p == null)
+                    continue;
+                
                 pc = p.LoadProjectToMemory();
 
                 p.Shuffle(pc);
