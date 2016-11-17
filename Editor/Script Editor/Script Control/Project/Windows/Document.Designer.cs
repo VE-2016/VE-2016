@@ -38,8 +38,8 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // 
             this.CodeEditorCtrl.ActiveView = AIMS.Libraries.CodeEditor.WinForms.ActiveView.BottomRight;
             this.CodeEditorCtrl.AutoListPosition = null;
-            this.CodeEditorCtrl.AutoListSelectedText = "";
-            this.CodeEditorCtrl.AutoListVisible = false;
+            //this.CodeEditorCtrl.AutoListSelectedText = "";
+            //this.CodeEditorCtrl.AutoListVisible = false;
             this.CodeEditorCtrl.BorderColor = System.Drawing.Color.White;
             this.CodeEditorCtrl.BorderStyle = AIMS.Libraries.CodeEditor.WinForms.ControlBorderStyle.FixedSingle;
             this.CodeEditorCtrl.ChildBorderColor = System.Drawing.SystemColors.Window;

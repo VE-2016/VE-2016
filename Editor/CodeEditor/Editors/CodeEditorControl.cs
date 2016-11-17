@@ -2267,7 +2267,7 @@ namespace AIMS.Libraries.CodeEditor
             
             
             {
-
+                
 
 
                 using (var workspace = MSBuildWorkspace.Create())
@@ -2464,12 +2464,9 @@ namespace AIMS.Libraries.CodeEditor
            if(csd == null)// if (vp.dicts == null)
             {
                 csd = vp.CSParsers();
-                // ArrayList L = vp.GetCompileItems();
-                // csd.AddProjectFiles(L);
                 vp.dicts = vp.csd.dict;
             }
-
-
+        
             Document.csd = csd;
 
             Dictionary<string, ITypeDefinition> dict = vp.dicts;
@@ -2477,8 +2474,7 @@ namespace AIMS.Libraries.CodeEditor
             PatternList pp = null;
 
             BlockType blc = null;
-
-
+         
             foreach (BlockType bl in Document.Parser.Language.Blocks)
             {
                 if (bl.Name == "CS Code")
@@ -2494,9 +2490,7 @@ namespace AIMS.Libraries.CodeEditor
                         {
                             pp = new PatternList();
 
-                            pp.Style.ForeColor = c;// SystemColors.ActiveCaption;
-
-                            //bl.KeywordsList.Add(pp);
+                            pp.Style.ForeColor = c;
 
                             pp.Name = "Keywords Types";
 
@@ -2516,12 +2510,7 @@ namespace AIMS.Libraries.CodeEditor
                 }
             }
 
-            //if (blc != null)
-            //    blc.KeywordsList.Add(pp);
-
-            //    string s = Document.Text;
-
-            //    Document.Text = s;
+         
         }
 
 
@@ -4727,6 +4716,9 @@ namespace AIMS.Libraries.CodeEditor
 
         public void LoadTypes(VSParsers.CSParsers cs)
         {
+            if (cs == null)
+                return;
+
             T = new ArrayList();
 
             ArrayList S = cs.GetAllTypes();

@@ -29,8 +29,7 @@ namespace AIMS.Libraries.CodeEditor.SyntaxFiles
             Language lg = Language.FromSyntaxFile(xml);
             editor.Document.Parser.Init(lg);
             Stream xmls = GetSyntaxStream(GetSyntaxFileName(language));
-            //Language lgs = Language.FromSyntaxFile(xmls);
-            //editor.Document.Parser.Init(lg);
+            
 
             return lg;
         }
@@ -41,10 +40,10 @@ namespace AIMS.Libraries.CodeEditor.SyntaxFiles
             return strm;
         }
 
-        public static void SetSyntax(CodeEditorControl editor, string filename)
-        {
-            editor.Document.Parser.Init(CodeEditorSyntaxLoader.LanguageList.GetLanguageFromFile(filename));
-        }
+        //public static void SetSyntax(CodeEditorControl editor, string filename)
+        //{
+        //    editor.Document.Parser.Init(CodeEditorSyntaxLoader.LanguageList.GetLanguageFromFile(filename));
+        //}
 
         public static Language GetLanguageFrom(SyntaxLanguage syntax)
         {

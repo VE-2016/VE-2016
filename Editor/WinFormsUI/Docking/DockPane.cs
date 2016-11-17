@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using System.Diagnostics.CodeAnalysis;
+using System.Threading;
 
 namespace WeifenLuo.WinFormsUI.Docking
 {
@@ -511,8 +512,13 @@ namespace WeifenLuo.WinFormsUI.Docking
             Dispose();
         }
 
+
+    
+
         public void CloseActiveContent()
         {
+
+            
             CloseContent(ActiveContent);
         }
 

@@ -10,60 +10,7 @@ using System.Runtime.InteropServices.ComTypes;
 
 namespace AIMS.Libraries.Scripting.ScriptControl.Converter
 {
-    internal class ConversionEventHandler : ITypeLibImporterNotifySink
-    {
-        private TlbImp _parent = null;
-
-        public ConversionEventHandler(TlbImp parent)
-        {
-            _parent = parent;
-        }
-
-        public void ReportEvent(ImporterEventKind eventKind, int eventCode, string eventMsg)
-        {
-            _parent.InvokeReportEvent(new ReportEventEventArgs(eventKind, eventCode, eventMsg));
-        }
-
-        public Assembly ResolveRef(object typeLib)
-        {
-            ITypeLib tLib = typeLib as ITypeLib;
-            string tLibname;
-            string outputFolder = "";
-            string interopFileName;
-            string asmPath;
-            try
-            {
-                tLibname = Marshal.GetTypeLibName(tLib);
-                IntPtr ppTlibAttri = IntPtr.Zero;
-                tLib.GetLibAttr(out ppTlibAttri);
-                System.Runtime.InteropServices.ComTypes.TYPELIBATTR tLibAttri = (System.Runtime.InteropServices.ComTypes.TYPELIBATTR)Marshal.PtrToStructure(ppTlibAttri, typeof(System.Runtime.InteropServices.ComTypes.TYPELIBATTR));
-                string guid = tLibAttri.guid.ToString();
-                RegistryKey typeLibsKey = Registry.ClassesRoot.OpenSubKey("TypeLib\\{" + guid + "}");
-                TypeLibrary typeLibrary = TypeLibrary.Create(typeLibsKey);
-                Converter.TlbImp importer = new Converter.TlbImp(_parent.References);
-                outputFolder = Path.GetDirectoryName(_parent.AsmPath);
-                interopFileName = Path.Combine(outputFolder, String.Concat("Interop.", typeLibrary.Name, ".dll"));
-
-                asmPath = interopFileName;
-                //asm.Save(Path.GetFileName(asmPath));
-                //Call ResolveRefEventArgs to notify extra assembly imported as depenedencies
-                ResolveRefEventArgs t = new ResolveRefEventArgs("Reference Interop '" + Path.GetFileName(asmPath) + "' created succesfully.");
-                _parent.InvokeResolveRef(t);
-                _parent.References.Add(new ComReferenceProjectItem(ScriptControl.GetProject(), typeLibrary));
-                return importer.Import(interopFileName, typeLibrary.Path, typeLibrary.Name, _parent);
-            }
-            catch (Exception Ex)
-            {
-                ResolveRefEventArgs t = new ResolveRefEventArgs(Ex.Message);
-                _parent.InvokeResolveRef(t);
-                return null;
-            }
-            finally
-            {
-                Marshal.ReleaseComObject(tLib);
-            }
-        }
-    }
+ 
 
     public class ReportEventEventArgs : EventArgs
     {
@@ -141,35 +88,10 @@ namespace AIMS.Libraries.Scripting.ScriptControl.Converter
             OnReportEvent(e);
         }
 
-        public TlbImp(ArrayList references)
-        {
-            References = references;
-        }
+    
 
-        public Assembly Import(string InteropFileName, string path, string name)
-        {
-            return Import(InteropFileName, path, name, null);
-        }
+     
 
-        public Assembly Import(string InteropFileName, string path, string name, TlbImp parent)
-        {
-            ITypeLib typeLib;
-            AsmPath = Path.GetDirectoryName(InteropFileName);
-            LoadTypeLibEx(path, RegKind.RegKind_None, out typeLib);
-
-            if (typeLib == null)
-            {
-                return null;
-            }
-            TypeLibConverter converter = new TypeLibConverter();
-            ConversionEventHandler eventHandler = new ConversionEventHandler(parent == null ? this : parent);
-            AssemblyBuilder asm =
-                converter.ConvertTypeLibToAssembly(typeLib, Path.GetFileName(InteropFileName), TypeLibImporterFlags.None, eventHandler, null, null, name, null);
-            string outputFolder = Path.GetDirectoryName(InteropFileName);
-            string interopFName = Path.Combine(outputFolder, String.Concat("Interop.", name, ".dll"));
-            asm.Save(Path.GetFileName(interopFName));
-            Marshal.ReleaseComObject(typeLib);
-            return asm as Assembly;
-        }
+     
     }
 }

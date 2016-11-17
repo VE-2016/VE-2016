@@ -25,7 +25,7 @@ namespace AIMS.Libraries.CodeEditor.WinForms
         public Widget()
         {
             SetStyle(ControlStyles.EnableNotifyMessage, true);
-            this.BorderStyle = ControlBorderStyle.FixedSingle;
+            this.BorderStyle = ControlBorderStyle.None; //ControlBorderStyle.FixedSingle;
             InitializeComponent();
         }
 
@@ -274,21 +274,21 @@ namespace AIMS.Libraries.CodeEditor.WinForms
 
         private void RenderBorder()
         {
-            try
-            {
-                IntPtr hdc = NativeUser32Api.GetWindowDC(this.Handle);
-                RECTAPI s = new RECTAPI();
-                NativeUser32Api.GetWindowRect(this.Handle, ref s);
+            //try
+            //{
+            //    IntPtr hdc = NativeUser32Api.GetWindowDC(this.Handle);
+            //    RECTAPI s = new RECTAPI();
+            //    NativeUser32Api.GetWindowRect(this.Handle, ref s);
 
-                using (Graphics g = Graphics.FromHdc(hdc))
-                {
-                    DrawingTools.DrawBorder((ControlBorderStyle)(int)this.BorderStyle, this.BorderColor, g, new Rectangle(0, 0, s.Width, s.Height));
-                }
-                NativeUser32Api.ReleaseDC(this.Handle, hdc);
-            }
-            catch (Exception ee) { }
+            //    using (Graphics g = Graphics.FromHdc(hdc))
+            //    {
+            //        DrawingTools.DrawBorder((ControlBorderStyle)(int)this.BorderStyle, this.BorderColor, g, new Rectangle(0, 0, s.Width, s.Height));
+            //    }
+            //    NativeUser32Api.ReleaseDC(this.Handle, hdc);
+            //}
+            //catch (Exception ee) { }
 
-            GC.Collect();
+            //GC.Collect();
         }
 
 

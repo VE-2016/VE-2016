@@ -41,7 +41,6 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         private ErrorList _winErrorList = null;
         private Output _winOutput = null;
         private ProjectExplorer _winProjExplorer = null;
-        private static IProject s_AIMSProject = null;
         private WeakReference _selectRefDialog = null;
         private IDictionary<string, object> _RemoteVariables = null;
         public event EventHandler Execute;
@@ -54,12 +53,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         protected override void OnResize(EventArgs e)
         {
-            //     if(dockContainer1 != null)   
-            //     if (dockContainer1.ActiveContent != null)
-            //         dockContainer1.ActivePane.PerformLayout();
-
-            //if(dockContainer1 !=null)
-            //this.dockContainer1.Size = new Size(this.Width, this.Height);
+           
             base.OnResize(e);
         }
 
@@ -155,46 +149,10 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             //_winProjExplorer.Language = NewLanguage;
         }
 
-        public IDictionary<string, object> RemoteVariables
-        {
-            get { return _RemoteVariables; }
-        }
-        public string DefaultNameSpace
-        {
-            get { return s_AIMSProject.RootNamespace; }
-        }
+ 
+   
 
-        public string DefaultClassName
-        {
-            get { return "Program"; }
-        }
-
-        public string StartMethodName
-        {
-            get { return "Main"; }
-        }
-
-        private string GetUserSrcCode()
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine("using System;");
-            sb.AppendLine("namespace " + this.DefaultNameSpace);
-            sb.AppendLine("{");
-            sb.AppendLine("\tpublic partial class " + this.DefaultClassName);
-            sb.AppendLine("\t{");
-            sb.AppendLine("\t\tpublic int " + this.StartMethodName + "()");
-            sb.AppendLine("\t\t{");
-            sb.AppendLine("\t\t\t");
-            sb.AppendLine("\t\t\treturn 0;");
-            sb.AppendLine("\t\t}");
-            sb.AppendLine("\t}");
-            sb.AppendLine("}");
-            return sb.ToString();
-        }
-        public string OutputAssemblyName
-        {
-            get { return s_AIMSProject.OutputAssemblyFullPath; }
-        }
+      
         private string GetAddObjectSrcCode()
         {
             //Add AddObject & ReturnCode stuff;
@@ -291,87 +249,9 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             return text;
         }
 
-        private string GetSystemSrcCode()
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine("#region System Generated Source Code.Please do not change ...");
-            sb.AppendLine("namespace " + this.DefaultNameSpace);
-            sb.AppendLine("{");
-            sb.AppendLine("\tusing System;");
-            sb.AppendLine("\tusing System.Collections.Generic;");
-            sb.AppendLine("\tusing System.Diagnostics;");
-            sb.AppendLine("\tusing System.Reflection;");
-            sb.AppendLine("\tpublic partial class " + this.DefaultClassName + " : MarshalByRefObject, IRun");
-            sb.AppendLine("\t{");
-            sb.AppendLine(GetAddObjectSrcCode());
-            sb.AppendLine("\t\t[DebuggerStepperBoundary()]");
-            sb.AppendLine("\t\tvoid IRun.Initialize(IDictionary<string, object> Variables)");
-            sb.AppendLine("\t\t{");
-            sb.AppendLine("\t\t\tforeach (string name in Variables.Keys)");
-            sb.AppendLine("\t\t\t{");
-            sb.AppendLine("\t\t\t\tobject value = null;");
-            sb.AppendLine("\t\t\t\ttry");
-            sb.AppendLine("\t\t\t\t{");
-            sb.AppendLine("\t\t\t\t\tVariables.TryGetValue(name, out value);");
-            sb.AppendLine("\t\t\t\t\tFieldInfo fInfo = this.GetType().GetField(name, BindingFlags.Public | BindingFlags.Static);");
-            sb.AppendLine("\t\t\t\t\tfInfo.SetValue(this, value);");
-            sb.AppendLine("\t\t\t\t}");
-            sb.AppendLine("\t\t\t\tcatch(Exception ex)");
-            sb.AppendLine("\t\t\t\t{");
-            sb.AppendLine("\t\t\t\t\tthrow ex;");
-            sb.AppendLine("\t\t\t\t}");
-            sb.AppendLine("\t\t\t}");
-            sb.AppendLine("\t\t}");
-            sb.AppendLine("");
-            sb.AppendLine("\t\t[DebuggerStepperBoundary()]");
-            sb.AppendLine("\t\tobject IRun.Run(string StartMethod, params object[] Parameters)");
-            sb.AppendLine("\t\t{");
-            sb.AppendLine("\t\t\ttry");
-            sb.AppendLine("\t\t\t{");
-            sb.AppendLine("\t\t\t\tMethodInfo methodInfo = this.GetType().GetMethod(StartMethod,BindingFlags.Instance | BindingFlags.Public | BindingFlags.CreateInstance);");
-            sb.AppendLine("\t\t\t\treturn methodInfo.Invoke(this, Parameters);");
-            sb.AppendLine("\t\t\t}");
-            sb.AppendLine("\t\t\tcatch (Exception ex)");
-            sb.AppendLine("\t\t\t{");
-            sb.AppendLine("\t\t\t\tthrow ex;");
-            sb.AppendLine("\t\t\t}");
-            sb.AppendLine("\t\t}");
-            sb.AppendLine("");
-            sb.AppendLine("\t\t[DebuggerStepperBoundary()]");
-            sb.AppendLine("\t\tvoid IRun.Dispose(IDictionary<string, object> Variables)");
-            sb.AppendLine("\t\t{");
-            sb.AppendLine("\t\t\tforeach (string name in Variables.Keys)");
-            sb.AppendLine("\t\t\t{");
-            sb.AppendLine("\t\t\t\tobject value = null; ;");
-            sb.AppendLine("\t\t\t\ttry");
-            sb.AppendLine("\t\t\t\t{");
-            sb.AppendLine("\t\t\t\t\tFieldInfo fInfo = this.GetType().GetField(name, BindingFlags.Public | BindingFlags.Static);");
-            sb.AppendLine("\t\t\t\t\tfInfo.SetValue(this, value);");
-            sb.AppendLine("\t\t\t\t}");
-            sb.AppendLine("\t\t\t\tcatch (Exception ex)");
-            sb.AppendLine("\t\t\t\t{");
-            sb.AppendLine("\t\t\t\t\tthrow ex;");
-            sb.AppendLine("\t\t\t\t}");
-            sb.AppendLine("\t\t\t}");
-            sb.AppendLine("\t\t}");
-            sb.AppendLine("\t}");
-            sb.AppendLine("}");
-            sb.AppendLine("#endregion");
-            return sb.ToString();
-        }
+     
 
-
-        public void StartEditor()
-        {
-            AddRefrence(new ReferenceProjectItem(s_AIMSProject, "System"));
-            AddRefrence(new ReferenceProjectItem(s_AIMSProject, "System.Windows.Forms"));
-            Parser.ProjectParser.ParseProjectContents("Program.Sys.cs", this.GetSystemSrcCode());
-            Document doc = this.AddDocument("Program.cs");
-            doc.Contents = this.GetUserSrcCode();
-            doc.ParseContentsNow();
-            doc.Editor.ActiveViewControl.Caret.Position = new TextPoint(0, 1);
-        }
-
+   
         public void ShowFind()
         {
             Document doc = this.dockContainer1.ActiveDocument as Document;
@@ -420,7 +300,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
             Parser.ProjectParser.Initilize(SupportedLanguage.CSharp);
             UpdateCutCopyToolbar();
-            s_AIMSProject = new DefaultProject();
+            
             _RemoteVariables = new Dictionary<string, object>();
 
             hst = new History();
@@ -431,10 +311,17 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
             this.BackColor = Color.White;
 
-            //if(CodeEditorControl.proxy.IsBbound() == false)
-            //CodeEditorControl.proxy.OpenFile += Proxy_OpenFile;
+        
+
+            MouseMoveTimer = new System.Threading.Timer(new TimerCallback(TimerProc), null, 600, 600);
+
+                      
+            
         }
 
+       
+
+        System.Threading.Timer MouseMoveTimer { get; set; }
         public void Proxy_OpenFile(object sender, Proxy.OpenFileEventArgs e)
         {
             string file = e.filename;
@@ -469,195 +356,11 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         private void InitilizeDocks()
         {
-            ////Error List
-            //_winErrorList = new ErrorList(this);
-            //_winErrorList.Text = "Error List";
-            //_winErrorList.Tag = "ERRORLIST";
-            //_winErrorList.HideOnClose = true;
-            //_winErrorList.Show(dockContainer1, DockState.DockBottomAutoHide);
-
-            //ProjectExplorer
-            //_winProjExplorer = new ProjectExplorer();
-            //_winProjExplorer.Text = "Solution Explorer";
-            //_winProjExplorer.Tag = "SOLUTIONEXPLORER";
-            //_winProjExplorer.HideOnClose = true;
-            //_winProjExplorer.Show(dockContainer1, DockState.DockRightAutoHide);
-
-            ////Output
-            //_winOutput = new Output();
-            //_winOutput.Text = "Output";
-            //_winOutput.Tag = "OUTPUT";
-            //_winOutput.HideOnClose = true;
-            //_winOutput.Show(dockContainer1, DockState.DockBottomAutoHide);
-            //_winOutput.Visible = false;
-
+   
             dockContainer1.ActiveDocumentChanged += new EventHandler(dockContainer1_ActiveDocumentChanged);
-            //_winProjExplorer.Visible = false;
-            //_winProjExplorer.FileClick += new EventHandler<ExplorerClickEventArgs>(_winProjExplorer_FileClick);
-            //_winProjExplorer.FileNameChanged += new EventHandler<ExplorerLabelEditEventArgs>(_winProjExplorer_FileNameChanged);
-            //_winProjExplorer.NewItemAdd += new EventHandler(_winProjExplorer_NewItemAdd);
-            //_winProjExplorer.FileItemDeleted += new EventHandler(_winProjExplorer_FileItemDeleted);
-            //_winErrorList.ItemDoubleClick += new EventHandler<ListViewItemEventArgs>(_winErrorList_ItemDoubleClick);
-            //_winProjExplorer.AddRefrenceItem += new EventHandler(_winProjExplorer_AddRefrenceItem);
-            //_winProjExplorer.AddWebRefrenceItem += new EventHandler(_winProjExplorer_AddWebRefrenceItem);
+  
         }
-
-        public void AddRefrence(ProjectItem Reference)
-        {
-            TreeNode refNode = _winProjExplorer.RefrenceNode;
-            ArrayList list = new ArrayList();
-            list.Add(Reference);
-            ConvertCOM(null, list, refNode);
-        }
-
-        private void _winProjExplorer_AddWebRefrenceItem(object sender, EventArgs e)
-        {
-            TreeNode t = (TreeNode)sender;
-            StringCollection files = new StringCollection();
-            foreach (string Name in Parser.ProjectParser.ProjectFiles.Keys)
-            {
-                files.Add(Name);
-            }
-            using (AddWebReferenceDialog refDialog = new AddWebReferenceDialog(s_AIMSProject, _scriptLanguage, files))
-            {
-                refDialog.NamespacePrefix = s_AIMSProject.RootNamespace;
-                if (refDialog.ShowDialog() == DialogResult.OK)
-                {
-                    // Do not overwrite existing web references.
-                    refDialog.WebReference.Name = WebReference.GetReferenceName(refDialog.WebReference.WebReferencesDirectory, refDialog.WebReference.Name);
-                    AddWebRefrenceToProject(t, refDialog.WebReference, refDialog.WebReferenceFileName);
-                }
-            }
-        }
-
-        private void AddWebRefrenceToProject(TreeNode node, WebReference webref, string fileName)
-        {
-            Parser.ProjectParser.ParseProjectContents(fileName, webref.GetSourceCode(), false);
-            _winProjExplorer.AddWebReference(fileName);
-            ArrayList refItems = new ArrayList();
-            foreach (ProjectItem item in webref.Items)
-            {
-                if (item is ReferenceProjectItem)
-                {
-                    refItems.Add(item);
-                }
-            }
-            if (refItems.Count > 0)
-                ConvertCOM(null, refItems, node);
-        }
-
-        private void _winProjExplorer_AddRefrenceItem(object sender, EventArgs e)
-        {
-            TreeNode t = (TreeNode)sender;
-            SelectReferenceDialog selDialog = null;
-            if (_selectRefDialog == null)
-            {
-                _selectRefDialog = new WeakReference(null);
-            }
-            if (!_selectRefDialog.IsAlive)
-            {
-                _selectRefDialog.Target = new SelectReferenceDialog(s_AIMSProject);
-            }
-
-            selDialog = (SelectReferenceDialog)_selectRefDialog.Target;
-            selDialog.ConfigureProject = s_AIMSProject;
-            if (selDialog.ShowDialog(this.ParentForm) == DialogResult.OK)
-            {
-                ConvertCOM(null, selDialog.ReferenceInformations, t);
-            }
-
-            _selectRefDialog.Target = selDialog;
-        }
-
-        private void ConvertCOM(object sender, ArrayList refrences, TreeNode node)
-        {
-            object[] param = new object[] { sender, (object)refrences, (object)node };
-            ThreadPool.QueueUserWorkItem(new WaitCallback(ConvertCOMThread), (object)param);
-        }
-
-        private void ConvertCOMThread(Object stateInfo)
-        {
-            object[] param = (object[])stateInfo;
-            object sender = param[0];
-            ArrayList refrences = param[1] as ArrayList;
-            TreeNode node = param[2] as TreeNode;
-            BeginInvoke(new MethodInvoker(delegate { tsMessage.Text = "Please wait..."; }));
-            foreach (ReferenceProjectItem reference in refrences)
-            {
-                try
-                {
-                    if (reference.ItemType == ItemType.COMReference)
-                    {
-                        if (Path.IsPathRooted(reference.FileName))
-                        {
-                            s_AIMSProject.AddProjectItem(reference);
-                        }
-                        else
-                        {
-                            ArrayList addedRefs = ImportCom(reference as ComReferenceProjectItem);
-                            foreach (ReferenceProjectItem refs in addedRefs)
-                            {
-                                s_AIMSProject.AddProjectItem(refs);
-                                BeginInvoke(new MethodInvoker(delegate
-                                {
-                                    TreeNode refNode = node.Nodes.Add(refs.Name);
-                                    refNode.ImageKey = "Reference.ico";
-                                    refNode.Tag = NodeType.Reference;
-                                }));
-                            }
-                        }
-                    }
-                    else if (reference.ItemType == ItemType.Reference)
-                    {
-                        s_AIMSProject.AddProjectItem(reference);
-                        BeginInvoke(new MethodInvoker(delegate
-                        {
-                            TreeNode refNode = node.Nodes.Add(reference.Name);
-                            refNode.ImageKey = "Reference.ico";
-                            refNode.Tag = NodeType.Reference;
-                        }));
-                    }
-                }
-                catch (Exception Ex)
-                {
-                    MessageBox.Show(Ex.Message);
-                }
-                BeginInvoke(new MethodInvoker(delegate { tsMessage.Text = "Ready"; }));
-            }
-        }
-
-        private ArrayList ImportCom(ComReferenceProjectItem t)
-        {
-            ArrayList refrences = new ArrayList();
-            refrences.Add(t as ReferenceProjectItem);
-            BeginInvoke(new MethodInvoker(delegate { tsMessage.Text = "Compiling COM component '" + t.Include + "' ..."; }));
-            Converter.TlbImp importer = new Converter.TlbImp(refrences);
-            importer.ReportEvent += new EventHandler<Converter.ReportEventEventArgs>(importer_ReportEvent);
-            importer.ResolveRef += new EventHandler<Converter.ResolveRefEventArgs>(importer_ResolveRef);
-            string outputFolder = Path.GetDirectoryName(s_AIMSProject.OutputAssemblyFullPath);
-            string interopFileName = Path.Combine(outputFolder, String.Concat("Interop.", t.Include, ".dll"));
-            string asmPath = interopFileName;
-            importer.Import(asmPath, t.FilePath, t.Name);
-            return refrences;
-        }
-
-        private void importer_ResolveRef(object sender, Converter.ResolveRefEventArgs e)
-        {
-            BeginInvoke(new MethodInvoker(delegate { tsMessage.Text = e.Message; }));
-            BeginInvoke(new MethodInvoker(delegate { _winOutput.AppendLine(e.Message); }));
-        }
-
-        private void importer_ReportEvent(object sender, Converter.ReportEventEventArgs e)
-        {
-            string msg;
-            msg = Environment.NewLine + "COM Importer Event ..." + Environment.NewLine;
-            msg += "Kind: " + e.EventKind.ToString() + Environment.NewLine;
-            msg += "Code: " + e.EventCode + Environment.NewLine;
-            msg += "Message: " + e.EventMsg;
-            BeginInvoke(new MethodInvoker(delegate { tsMessage.Text = e.EventMsg; }));
-            BeginInvoke(new MethodInvoker(delegate { _winOutput.AppendLine(msg); }));
-        }
-
+        
 
         private void _winProjExplorer_FileItemDeleted(object sender, EventArgs e)
         {
@@ -673,10 +376,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             Parser.ProjectParser.RemoveContentFile(node.Text);
         }
 
-        private void _winProjExplorer_NewItemAdd(object sender, EventArgs e)
-        {
-            AddNewItem();
-        }
+     
 
         private void _winProjExplorer_FileNameChanged(object sender, ExplorerLabelEditEventArgs e)
         {
@@ -828,6 +528,62 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             return dockContainer1.ActiveDocument as Document;
         }
 
+        object obs = new object();
+
+        public void TimerProc(object state)
+        {
+            lock (obs)
+            {
+
+                EditViewControl ev = GetCurrentView();
+                if (ev != null)
+                {
+                    Document doc = GetActiveDocument();
+
+                    if (doc == null) return;
+                    {
+
+                        doc.DockHandler.count++;
+
+
+                        doc.DockHandler.timer = true;
+
+                        if (doc.DockHandler.hasBeenDestroyed == true)
+                        {
+                            doc.DockHandler.timer = false;
+                            return;
+                        }
+
+                    }
+                   
+
+                    if (doc.DockHandler.hasBeenDestroyed == true)
+                    {
+                        doc.DockHandler.timer = false;
+                        return;
+                    }
+                    doc.DockHandler.timer = true;
+                    ev.BeginInvoke(new Action(() => { doc.DockHandler.timer = true; ev.TimerProc(null); doc.DockHandler.timer = false; }));
+                    doc.DockHandler.timer = false;
+
+
+                }
+            }
+        }
+
+        public void HideAndRedraw()
+        {
+            EditViewControl ev = GetCurrentView();
+            if(ev != null)
+            ev.HideAndRedraw();
+        }
+        public void ShowAndRedraw()
+        {
+            EditViewControl ev = GetCurrentView();
+            if (ev != null)
+            ev.ShowAndRedraw();
+        }
+
         public event EventHandler activeDocument;
 
         private bool _activated = false;
@@ -895,11 +651,11 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             if (dockContainer1.ActiveDocumentPane == null)
                 return;
 
-            this.dockContainer1.ActiveDocumentPane.Size = new Size(this.Size.Width, this.Size.Height);
+           // this.dockContainer1.ActiveDocumentPane.Size = new Size(this.Size.Width, this.Size.Height);
 
-            this.dockContainer1.ActiveDocumentPane.master = this;
+           // this.dockContainer1.ActiveDocumentPane.master = this;
 
-            this.dockContainer1.ActiveDocumentPane.DoResize();
+           // this.dockContainer1.ActiveDocumentPane.DoResize();
         }
 
         public DocumentForm OpenDocumentForm()
@@ -939,10 +695,13 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         public ParseInformation parse { get; set; }
 
 
-        public Document OpenDocuments(string Name, VSProvider.VSProject pp)
+        public Document OpenDocuments(string Name, VSProvider.VSProject pp, AutoResetEvent autoEvent = null  )
         {
             if (FileOpened(Name) != null)
                 return null;
+
+            if(pp != null)
+            vs = pp.vs;
 
             this.SuspendLayout();
 
@@ -967,13 +726,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             doc.LoadVSProject(pp, Name);
 
 
-            //string exts = Path.GetExtension(Name);
-            //ImageList imgs = CodeEditorControl.AutoListImages;
-            //if (imgs.Images.ContainsKey(exts) == true)
-            //    doc.DockHandler.Icon = Icon.FromHandle(((Bitmap)imgs.Images[exts]).GetHicon());
-            //else
-            //    doc.DockHandler.Icon = Icon.FromHandle(resource._class.GetHicon());
-
+    
             doc.TabPageContextMenu = new ContextMenu();
             doc.TabPageContextMenu.MenuItems.Add(new MenuItem("test for context menu"));
 
@@ -987,7 +740,9 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                 doc.Show(dockContainer1, DockState.Document);
                 dockContainer1.ResumeLayout();
 
-                //doc.ParseContentsNow();
+                doc.autoEvent = autoEvent;
+
+                
 
                 LoadKeywordsAsync(doc);
             }
@@ -1020,6 +775,8 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             }
 
             this.ResumeLayout();
+
+            
 
             return doc;
         }
@@ -1656,7 +1413,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
                 view.ScrollIntoView(p);
 
-
+                length = view.Document[Y].Text.Length - X;
 
                 int offset = view.Caret.GetOffset(X, Y);
                 //int s = view.GetLineIndex(start);
@@ -1741,42 +1498,10 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         private void tsbBuild_Click(object sender, EventArgs e)
         {
-            CompilerResults results = CompileScript();
-            LoadComileErrors(results.Errors);
+           
         }
 
-        private CompilerResults CompileScript()
-        {
-            CodeDomProvider provider = s_AIMSProject.LanguageProperties.CodeDomProvider;
-            CompilerParameters parameters = new CompilerParameters();
-            parameters.GenerateExecutable = false;
-            parameters.GenerateInMemory = false;
-            parameters.IncludeDebugInformation = true;
-            parameters.OutputAssembly = s_AIMSProject.OutputAssemblyFullPath;
-            foreach (ProjectItem item in s_AIMSProject.Items)
-            {
-                parameters.ReferencedAssemblies.Add(item.Include + ".dll");
-            }
-            parameters.ReferencedAssemblies.Add("AIMS.Scripting.ScriptRun.dll");
-
-            string[] sourceCode = new string[Parser.ProjectParser.ProjectFiles.Count];
-            int counter = 0;
-            string tmpFilePath = Path.Combine(Path.GetDirectoryName(s_AIMSProject.OutputAssemblyFullPath), "Temp");
-            if (Directory.Exists(tmpFilePath))
-                Directory.Delete(tmpFilePath, true);
-            Directory.CreateDirectory(tmpFilePath);
-            foreach (Parser.ProjectContentItem pcItem in Parser.ProjectParser.ProjectFiles.Values)
-            {
-                StreamWriter writer = new StreamWriter(Path.Combine(tmpFilePath, pcItem.FileName), false);
-                writer.Write(pcItem.Contents);
-                writer.Close();
-                sourceCode[counter++] = Path.Combine(tmpFilePath, pcItem.FileName);
-            }
-
-            CompilerResults results = provider.CompileAssemblyFromFile(parameters, sourceCode);
-            Directory.Delete(tmpFilePath, true);
-            return results;
-        }
+      
         private void tsbRun_Click(object sender, EventArgs e)
         {
             OnExecute();
@@ -1789,74 +1514,14 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         private void tsbNew_Click(object sender, EventArgs e)
         {
-            AddNewItem();
         }
 
-        private void AddNewItem()
-        {
-            dockContainer1.SuspendLayout();
-            StringCollection files = new StringCollection();
-            foreach (string Name in Parser.ProjectParser.ProjectFiles.Keys)
-            {
-                files.Add(Name);
-            }
-            NewFileDialog f = new NewFileDialog(_scriptLanguage, files);
-            f.ShowDialog(dockContainer1);
-            string fileName = f.FileName;
-            if (fileName.Length > 0)
-            {
-                Document doc = AddDocument(fileName);
-                doc.Editor.ActiveViewControl.Document.Text = GetInitialContents(f, fileName);
-                doc.ParseContentsNow();
-                doc.Editor.ActiveViewControl.Caret.Position = new TextPoint(0, 1);
-            }
-
-            dockContainer1.ResumeLayout();
-        }
+   
         #endregion
 
         #region Private Members
 
-        private string GetInitialContents(NewFileDialog f, string fileName)
-        {
-            string defNameSpace = NewFileDialog.GetDefaultNamespace(s_AIMSProject, fileName);
-            string defClassName = NewFileDialog.GenerateValidClassOrNamespaceName(Path.GetFileNameWithoutExtension(fileName), true);
-
-            StringBuilder contents = new StringBuilder();
-
-            if (_scriptLanguage == ScriptLanguage.CSharp)
-            {
-                contents.AppendLine("#region Usings ...");
-                contents.AppendLine("using System;");
-                contents.AppendLine("using System.Collections.Generic;");
-                contents.AppendLine("using System.Text;");
-                contents.AppendLine("#endregion");
-                contents.AppendLine("");
-                contents.AppendLine("namespace " + defNameSpace);
-                contents.AppendLine("{");
-                contents.AppendLine("    " + (f.SelectedItemType == SelectedItemType.Class ? "class " : "interface ") + defClassName);
-                contents.AppendLine("    {");
-                contents.AppendLine("");
-                contents.AppendLine("    }");
-                contents.AppendLine("}");
-            }
-            else
-            {
-                contents.AppendLine("#Region Usings ...");
-                contents.AppendLine("Imports System");
-                contents.AppendLine("Imports System.Collections.Generic");
-                contents.AppendLine("Imports System.Text");
-                contents.AppendLine("#End Region");
-                contents.AppendLine("");
-                contents.AppendLine("Namespace " + defNameSpace);
-                contents.AppendLine("    " + (f.SelectedItemType == SelectedItemType.Class ? "Class " : "Interface ") + defClassName);
-                contents.AppendLine("");
-                contents.AppendLine("    End " + (f.SelectedItemType == SelectedItemType.Class ? "Class" : "Interface"));
-                contents.AppendLine("End Namespace");
-            }
-
-            return contents.ToString();
-        }
+   
 
         private void UpdateCutCopyToolbar()
         {
@@ -1967,12 +1632,6 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             return (AutoListIcons)((int)AutoListIcons.iEvent + GetModifierOffset(evt.Modifiers));
         }
         #endregion
-
-
-        internal static IProject GetProject()
-        {
-            return s_AIMSProject;
-        }
 
 
         public void Undo()
@@ -2364,41 +2023,50 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             return L;
         }
 
+        object objects = new object();
+
         public void ClearHistory()
         {
-            string folder = AppDomain.CurrentDomain.BaseDirectory;
 
-
-
-            if (File.Exists(folder + "settings.suo") == true)
-                File.Delete(folder + "settings.suo");
-
-            File.Create("folder + settings.suo");
-
-            ArrayList L = new ArrayList();
-
-
-            // dockContainer1.RemovePanes();
-
-            foreach (IDockContent dc in dockContainer1.Documents)
+            //lock (objects)
             {
-                if (dc.GetType() == typeof(Document))
+
+                string folder = AppDomain.CurrentDomain.BaseDirectory;
+
+
+                if (File.Exists(folder + "settings.suo") == true)
+                    File.Delete(folder + "settings.suo");
+
+                FileStream fs = File.Create("folder + settings.suo");
+
+                fs.Close();
+
+                ArrayList L = new ArrayList();
+
+
+                // dockContainer1.RemovePanes();
+
+                foreach (IDockContent dc in dockContainer1.Documents)
                 {
-                    Document doc = dc as Document;
-                    L.Add(doc.Pane);
+                    if (dc.GetType() == typeof(Document))
+                    {
+                        Document doc = dc as Document;
+                        L.Add(doc.Pane);
+                    }
                 }
+                foreach (DockPane doc in L)
+                {
+                    doc.CloseActiveContent();
+
+                    dockContainer1.RemovePane(doc);
+                }
+
+                dockContainer1.Refresh();
+
+
+                hst = new History();
+
             }
-            foreach (DockPane doc in L)
-            {
-                doc.CloseActiveContent();
-
-                dockContainer1.RemovePane(doc);
-            }
-
-            dockContainer1.Refresh();
-
-
-            hst = new History();
         }
 
         public void CloseAll()
@@ -2413,6 +2081,9 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                 if (doc.GetType() == typeof(Document))
                 {
                     Document d = doc as Document;
+                    d.syntaxDocument1.Dispose();
+                    d.Editor.Document.Parser.Language.BlockTypeDispose();
+                    d.Editor.Dispose();
                     L.Add(d.Pane);
                 }
                 else if (doc.GetType() == typeof(DocumentForm))
@@ -2426,11 +2097,34 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                 doc.CloseActiveContent();
 
                 dockContainer1.RemovePane(doc);
+
+                
+
+                doc.Dispose();
             }
 
             dockContainer1.Refresh();
 
             hst = new History();
+
+            if (vs == null)
+                return;
+
+            foreach(VSProject p in vs.Projects)
+            {
+                if(VSParsers.CSParsers.df != null)
+                VSParsers.CSParsers.df.Clear();
+                if (VSParsers.CSParsers.dd != null)
+                    VSParsers.CSParsers.dd.Clear();
+            
+
+            }
+            if (VSProject.dc != null)
+                VSProject.dc.Clear();
+            if (VSProject.dcc != null)
+                VSProject.dcc.Clear();
+
+            
         }
 
         public ArrayList GetOpenFiles()

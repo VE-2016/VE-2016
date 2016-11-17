@@ -130,4 +130,3 @@ C:\MSBuildProjects-beta\Editor\WinForms\Docking\Project\obj\Debug\AIMS.Libraries
 C:\MSBuildProjects-beta\Editor\WinForms\Docking\Project\obj\Debug\Forms.Docking.csproj.GenerateResource.Cache
 C:\MSBuildProjects-beta\Editor\WinForms\Docking\Project\obj\Debug\Docking.dll
 C:\MSBuildProjects-beta\Editor\WinForms\Docking\Project\obj\Debug\Docking.pdb
-C:\MSBuildProjects-beta\Editor\WinForms\Docking\Project\obj\Debug\Forms.Docking.csprojResolveAssemblyReference.cache

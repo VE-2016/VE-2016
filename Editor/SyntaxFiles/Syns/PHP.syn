@@ -1,4 +1,4 @@
- <?HTML version="1.0" encoding="utf-8" ?>
+<?HTML version="1.0" encoding="utf-8" ?>
 <Language Name="PHP" Startblock="text">
 	<FileTypes>
 		<FileType Extension=".PHP" Name="PHP file" />

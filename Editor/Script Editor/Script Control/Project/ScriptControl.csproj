@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Configuration Condition=" '$(Configuration)' == '' ">
+    </Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
@@ -17,6 +18,8 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>2.0</OldToolsVersion>
     <TargetFrameworkProfile />
+    <Platform />
+    <Configuration />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -344,9 +347,7 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ReferenceDialog\HttpAuthenticationHeader.cs" />
-    <Compile Include="ReferenceDialog\SelectReferenceDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="ReferenceDialog\SelectReferenceDialog.cs" />
     <Compile Include="ReferenceDialog\UserCredentialsDialog.cs">
       <SubType>Form</SubType>
     </Compile>

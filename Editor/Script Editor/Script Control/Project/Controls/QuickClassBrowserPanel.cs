@@ -668,58 +668,59 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         // DO NOT EDIT IT MANUALLY! YOUR CHANGES ARE LIKELY TO BE LOST
         private void InitializeComponent()
         {
-            _membersComboBox = new System.Windows.Forms.ComboBox();
-            _classComboBox = new System.Windows.Forms.ComboBox();
-            _comboBox1 = new System.Windows.Forms.ComboBox();
+            this._membersComboBox = new System.Windows.Forms.ComboBox();
+            this._classComboBox = new System.Windows.Forms.ComboBox();
+            this._comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // membersComboBox
+            // _membersComboBox
             // 
-            _membersComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this._membersComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            _membersComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            _membersComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            _membersComboBox.Location = new System.Drawing.Point(419, 4);
-            _membersComboBox.Name = "membersComboBox";
-            _membersComboBox.Size = new System.Drawing.Size(243, 21);
-            _membersComboBox.TabIndex = 2;
-            _membersComboBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ComboBoxDrawItem);
-            _membersComboBox.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.MeasureComboBoxItem);
-            _membersComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSelectedIndexChanged);
+            this._membersComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this._membersComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._membersComboBox.Location = new System.Drawing.Point(419, 2);
+            this._membersComboBox.Name = "_membersComboBox";
+            this._membersComboBox.Size = new System.Drawing.Size(237, 21);
+            this._membersComboBox.TabIndex = 2;
+            this._membersComboBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ComboBoxDrawItem);
+            this._membersComboBox.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.MeasureComboBoxItem);
+            this._membersComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSelectedIndexChanged);
             // 
-            // classComboBox
+            // _classComboBox
             // 
-            _classComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            _classComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            _classComboBox.Location = new System.Drawing.Point(208, 3);
-            _classComboBox.Name = "classComboBox";
-            _classComboBox.Size = new System.Drawing.Size(205, 21);
-            _classComboBox.TabIndex = 1;
-            _classComboBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ComboBoxDrawItem);
-            _classComboBox.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.MeasureComboBoxItem);
-            _classComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSelectedIndexChanged);
+            this._classComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this._classComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._classComboBox.Location = new System.Drawing.Point(208, 2);
+            this._classComboBox.Name = "_classComboBox";
+            this._classComboBox.Size = new System.Drawing.Size(205, 21);
+            this._classComboBox.TabIndex = 1;
+            this._classComboBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ComboBoxDrawItem);
+            this._classComboBox.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.MeasureComboBoxItem);
+            this._classComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSelectedIndexChanged);
             // 
-            // comboBox1
+            // _comboBox1
             // 
-            _comboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            _comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            _comboBox1.Location = new System.Drawing.Point(3, 3);
-            _comboBox1.Name = "comboBox1";
-            _comboBox1.Size = new System.Drawing.Size(199, 21);
-            _comboBox1.TabIndex = 0;
-            _comboBox1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ComboBoxDrawItems);
-            _comboBox1.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.MeasureComboBoxItem);
+            this._comboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this._comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._comboBox1.Location = new System.Drawing.Point(0, 2);
+            this._comboBox1.Name = "_comboBox1";
+            this._comboBox1.Size = new System.Drawing.Size(202, 21);
+            this._comboBox1.TabIndex = 0;
+            this._comboBox1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ComboBoxDrawItems);
+            this._comboBox1.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.MeasureComboBoxItem);
             // 
             // QuickClassBrowserPanel
             // 
-            this.Controls.Add(_comboBox1);
-            this.Controls.Add(_membersComboBox);
-            this.Controls.Add(_classComboBox);
+            this.Controls.Add(this._comboBox1);
+            this.Controls.Add(this._membersComboBox);
+            this.Controls.Add(this._classComboBox);
             this.Name = "QuickClassBrowserPanel";
-            this.Size = new System.Drawing.Size(667, 30);
+            this.Size = new System.Drawing.Size(659, 25);
             this.Load += new System.EventHandler(this.QuickClassBrowserPanel_Load);
             this.Resize += new System.EventHandler(this.QuickClassBrowserPanelResize);
             this.ResumeLayout(false);
+
         }
 
         public EntityDeclaration GetCurrentSelectedClass()
@@ -920,14 +921,14 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             try
             {
                 namespaceComboBox = _comboBox1;
-                Size comboBoxSize = new Size(Width / 3 - 4 * 3, 21);
-                namespaceComboBox.Location = new Point(8, namespaceComboBox.Bounds.Top);
+                Size comboBoxSize = new Size(Width / 3 - 4 * 3 + 8, 21);
+                namespaceComboBox.Location = new Point(3, namespaceComboBox.Bounds.Top);
                 namespaceComboBox.Size = comboBoxSize;
 
                 //Size comboBoxSize = new Size(Width / 3 - 4 * 3, 21);
-                _classComboBox.Location = new Point(namespaceComboBox.Bounds.Right + 8, _classComboBox.Bounds.Top);
+                _classComboBox.Location = new Point(namespaceComboBox.Bounds.Right + 4, _classComboBox.Bounds.Top);
                 _classComboBox.Size = comboBoxSize;
-                _membersComboBox.Location = new Point(_classComboBox.Bounds.Right + 8, _classComboBox.Bounds.Top);
+                _membersComboBox.Location = new Point(_classComboBox.Bounds.Right + 4, _classComboBox.Bounds.Top);
                 _membersComboBox.Size = comboBoxSize;
             }
             catch (Exception ee) { }

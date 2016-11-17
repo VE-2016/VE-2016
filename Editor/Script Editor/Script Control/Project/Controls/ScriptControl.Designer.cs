@@ -28,12 +28,13 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScriptControl));
             this.ScriptStatus = new System.Windows.Forms.StatusStrip();
             this.tsMessage = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsProgress = new System.Windows.Forms.ToolStripProgressBar();
             this.tCursorPos = new System.Windows.Forms.ToolStripStatusLabel();
-            this.CtrlToolTip = new System.Windows.Forms.ToolTip();
+            this.CtrlToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
@@ -74,7 +75,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbErrorList = new System.Windows.Forms.ToolStripButton();
             this.tsbSolutionExplorer = new System.Windows.Forms.ToolStripButton();
-            this.syntaxDocument1 = new AIMS.Libraries.CodeEditor.Syntax.SyntaxDocument();
+            this.syntaxDocument1 = new AIMS.Libraries.CodeEditor.Syntax.SyntaxDocument(this.components);
             this.ScriptStatus.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();

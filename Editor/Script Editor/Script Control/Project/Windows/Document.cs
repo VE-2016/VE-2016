@@ -20,6 +20,7 @@ using WeifenLuo.WinFormsUI.Docking;
 
 using AIMS.Libraries.CodeEditor;
 using VSProvider;
+using System.Threading;
 
 namespace AIMS.Libraries.Scripting.ScriptControl
 {
@@ -146,15 +147,20 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         public object obs = new object();
 
+        public AutoResetEvent autoEvent;
+
         public void LoadKeywords(Document d)
         {
             CodeEditorCtrl.LoadKeywordTypes();
 
             d.Invoke(new Action(() =>
             {
-                /*d.ParseContentsNow(); d.Refresh(); */
+                
                 string s = CodeEditorCtrl.Document.Text;
                 CodeEditorCtrl.Document.Text = s;
+                if (autoEvent != null)
+                    autoEvent.Set();
+                
             }));
         }
 

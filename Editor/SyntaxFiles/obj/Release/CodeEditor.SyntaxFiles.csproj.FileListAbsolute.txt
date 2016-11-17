@@ -4,3 +4,5 @@ F:\Application\MSBuildProjects4\Script_Control\Script Control\Source Code\Code E
 C:\Bin\SyntaxFiles.dll
 C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\obj\Release\CodeEditor.SyntaxFiles.csprojResolveAssemblyReference.cache
 C:\MSBuildProjects-beta\ScriptEditor\SyntaxFiles\obj\Release\SyntaxFiles.dll
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\obj\Release\CodeEditor.SyntaxFiles.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\Editor\SyntaxFiles\obj\Release\SyntaxFiles.dll

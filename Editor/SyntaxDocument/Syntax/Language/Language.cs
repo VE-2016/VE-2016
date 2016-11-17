@@ -235,6 +235,13 @@ namespace AIMS.Libraries.CodeEditor.Syntax
             }
         }
 
+        public void BlockTypeDispose()
+        {
+            _Blocks.Clear();
+            _Blocks = null;
+            
+        }
+
         public TextStyle[] Styles
         {
             get

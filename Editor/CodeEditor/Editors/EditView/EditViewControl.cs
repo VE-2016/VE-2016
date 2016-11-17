@@ -502,22 +502,45 @@ namespace AIMS.Libraries.CodeEditor.WinForms
             _tooltip = null;
 
             this.SetStyle(ControlStyles.AllPaintingInWmPaint, false);
-            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, false);
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, false); //false
             this.SetStyle(ControlStyles.Selectable, true);
-            this.SetStyle(ControlStyles.ResizeRedraw, true);
-            this.SetStyle(ControlStyles.Opaque, true);
+            this.SetStyle(ControlStyles.ResizeRedraw, true); //true
+            this.SetStyle(ControlStyles.Opaque, true); // true
             this.SetStyle(ControlStyles.UserPaint, true);
 
             _contextMenuStrip1.ItemClicked += new ToolStripItemClickedEventHandler(contexMenu_ItemClicked);
 
             _toolStripMenuItem2.Click += _toolStripMenuItem2_Click;
 
-            MouseMoveTimer = new System.Threading.Timer(new TimerCallback(TimerProc), null, 1000, 1000);
+           // MouseMoveTimer = new System.Threading.Timer(new TimerCallback(TimerProc), null, 600, 600);
 
-            
+            this.BorderStyle = ControlBorderStyle.None;
+
+
+            //this.HandleDestroyed += EditViewControl_HandleDestroyed;
+
+           
         }
 
-              
+        public bool willbesestroyed = false;
+
+        public bool timerexited = true;
+
+        protected override void DestroyHandle()
+        {
+
+            willbesestroyed = true;
+
+            while (timerexited == false) ;
+
+
+        }
+
+        private void EditViewControl_HandleDestroyed(object sender, EventArgs e)
+        {
+            disposed = true;
+            MouseMoveTimer.Dispose();
+        }
 
         private void _toolStripMenuItem2_Click(object sender, EventArgs e)
         {
@@ -1149,19 +1172,24 @@ namespace AIMS.Libraries.CodeEditor.WinForms
                         {
                             TextPoint tp = this.Painter.CharFromPixel(x, y);
                             Word w = this.Document.GetWordFromPos(tp);
-                            if (w != null && w.Pattern != null && w.Pattern.Category != null)
+                            //if (w != null && w.Pattern != null && w.Pattern.Category != null)
                             {
-                                WordMouseEventArgs e = new WordMouseEventArgs();
-                                e.Pattern = w.Pattern;
-                                e.Button = MouseButtons.None;
-                                e.Cursor = System.Windows.Forms.Cursors.Hand;
-                                e.Word = w;
+                                // WordMouseEventArgs e = new WordMouseEventArgs();
+                                // e.Pattern = w.Pattern;
+                                // e.Button = MouseButtons.None;
+                                // e.Cursor = System.Windows.Forms.Cursors.Hand;
+                                // e.Word = w;
 
-                                this._CodeEditor.OnWordMouseHover(ref e);
+                                // this._CodeEditor.OnWordMouseHover(ref e);
 
-                                this.Cursor = e.Cursor;
+                               // if (mouseMove == true)
+                                //    mouseMove = false;
+                                //else 
+                                //WordResolve(x, y);
+
+                             //   this.Cursor = e.Cursor;
                             }
-                            else
+                            //else
                                 this.Cursor = System.Windows.Forms.Cursors.IBeam;
                         }
                     }
@@ -1171,6 +1199,93 @@ namespace AIMS.Libraries.CodeEditor.WinForms
                     }
                 }
             }
+        }
+
+        public void WordResolve(int X, int Y)
+        {
+
+            {
+               
+                X = _mouseX;
+                Y = _mouseY;
+
+                TextPoint pos = Painter.CharFromPixel(X, Y);
+                Row row = null;
+                if (pos.Y >= 0 && pos.Y < this.Document.Count)
+                    
+                    row = this.Document[pos.Y];
+
+                TextPoint p = pos;
+
+              
+                Word w = this.Document.GetWordFromPos(pos);
+              
+                if (w != null)
+                {
+                   
+                    if (mousemoveword != w.Text || mousemoveword == "")
+                    {
+                        mousemoveword = w.Text;
+
+                        if (CodeEditor.csd != null)
+                        {
+                           
+
+                            if (InfoTip.vp == null)
+                            {
+                                InfoTip.vp = CodeEditor.vp;
+                                InfoTip.keywords = ExtractKeywords();
+                            }
+
+                            
+                            {
+                                string s = "";
+
+                                if (w.Text != "")
+                                {
+                                    TextLocation pp = new TextLocation(pos.Y + 1, pos.X + 1);
+
+                                    //InfoTip.SetText(CodeEditor.csd.Resolve(pp, Document.Text, FileName), w.Text);
+
+                                    int a = X + 1;// View.CharWidth * w.Column  + View.GutterMarginWidth + 100;
+                                    int b = (Document[p.Y].VisibleIndex - View.FirstVisibleRow) * View.RowHeight;
+                                    int c = row.Expansion_EndChar * View.CharWidth + View.GutterMarginWidth + 100;
+                                    if (_mouseX <= c)
+                                    {
+                                        InfoTip.Location = new Point(a, b + 20);
+                                        if (CodeEditor.csd != null)
+                                        {
+                                            ResolveResult res = CodeEditor.csd.Resolve(pp, Document.Text, FileName);
+
+                                            s = InfoTip.SetText(res, w.Text);
+                                        }
+                                        if (s != "")
+                                            InfoTip.Show();
+                                        else InfoTip.Hide();
+                                    }
+                                    else
+                                    {
+                                        mousemoveword = "";
+                                        if (s == "") InfoTip.Hide();
+                                    }
+                                }
+                                else InfoTip.Hide();
+                            }
+                        }
+                        else InfoTip.Hide();
+                    }
+                    //else InfoTip.Hide();
+                }
+                else
+                {
+                    mousemoveword = "";
+                    InfoTip.Hide();
+                }
+
+
+
+            }
+
         }
 
         private void CopyText()
@@ -1477,6 +1592,8 @@ namespace AIMS.Libraries.CodeEditor.WinForms
                 hScroll.Hide();
         }
 
+        public bool shouldHideScroll = false;
+
         public void InitScrollbars()
         {
             if (Document.VisibleRows.Count > 0)
@@ -1491,6 +1608,9 @@ namespace AIMS.Libraries.CodeEditor.WinForms
             if (vScroll.Maximum > vScroll.LargeChange)
                 vScroll.Show();
             else
+                vScroll.Hide();
+
+            if (shouldHideScroll == true)
                 vScroll.Hide();
         }
 
@@ -3465,6 +3585,8 @@ namespace AIMS.Libraries.CodeEditor.WinForms
 
                 if (dd.csd == null)
                 {
+                        if(dd.vp != null)
+                            
                     dd.csd = dd.vp.CSParsers();
                 }
 
@@ -4293,6 +4415,9 @@ namespace AIMS.Libraries.CodeEditor.WinForms
 
         private bool _haswords = false;
 
+
+        public bool mouseMove = false;
+
         /// <summary>
         /// Overrides the default OnMouseMove
         /// </summary>
@@ -4302,6 +4427,8 @@ namespace AIMS.Libraries.CodeEditor.WinForms
             _mouseX = e.X;
             _mouseY = e.Y;
             _mouseButton = e.Button;
+
+            mouseMove = true;
 
             TextPoint pos = Painter.CharFromPixel(e.X, e.Y);
             Row row = null;
@@ -4490,84 +4617,84 @@ namespace AIMS.Libraries.CodeEditor.WinForms
                         }
                         //else
                         {
-                            //if (refresher == false)
+                            ////if (refresher == false)
+                            ////{
+                            ////TextPoint ppp = Painter.CharFromPixel(e.X, e.Y);
+                            //Word w = this.Document.GetWordFromPos(pos);
+                            ////Word w = this.Document.GetFormatWordFromPos(pos);
+                            ////if(Painter.IsMouseOverWord(pos.Y, e.X))
+                            //if (w != null)
                             //{
-                            //TextPoint ppp = Painter.CharFromPixel(e.X, e.Y);
-                            Word w = this.Document.GetWordFromPos(pos);
-                            //Word w = this.Document.GetFormatWordFromPos(pos);
-                            //if(Painter.IsMouseOverWord(pos.Y, e.X))
-                            if (w != null)
-                            {
-                                // MessageBox.Show("Entered word - " + w.Text);
+                            //    // MessageBox.Show("Entered word - " + w.Text);
 
-                                if (mousemoveword != w.Text || mousemoveword == "")
-                                {
-                                    mousemoveword = w.Text;
+                            //    if (mousemoveword != w.Text || mousemoveword == "")
+                            //    {
+                            //        mousemoveword = w.Text;
 
-                                    if (CodeEditor.csd != null)
-                                    {
-                                        //if (CodeEditor.vp != null)
-                                        //{
-                                        //    ArrayList L = CodeEditor.vp.GetCompileItems();
-                                        //    CodeEditor.csd = CodeEditor.vp.CSParsers(); 
-                                        //    CodeEditor.csd .AddProjectFiles(L);
-                                        //    InfoTip.vp = CodeEditor.vp;
-                                        //    InfoTip.keywords = ExtractKeywords();
-                                        //}
+                            //        if (CodeEditor.csd != null)
+                            //        {
+                            //            //if (CodeEditor.vp != null)
+                            //            //{
+                            //            //    ArrayList L = CodeEditor.vp.GetCompileItems();
+                            //            //    CodeEditor.csd = CodeEditor.vp.CSParsers(); 
+                            //            //    CodeEditor.csd .AddProjectFiles(L);
+                            //            //    InfoTip.vp = CodeEditor.vp;
+                            //            //    InfoTip.keywords = ExtractKeywords();
+                            //            //}
 
 
-                                        if (InfoTip.vp == null)
-                                        {
-                                            InfoTip.vp = CodeEditor.vp;
-                                            InfoTip.keywords = ExtractKeywords();
-                                        }
+                            //            if (InfoTip.vp == null)
+                            //            {
+                            //                InfoTip.vp = CodeEditor.vp;
+                            //                InfoTip.keywords = ExtractKeywords();
+                            //            }
 
-                                        //if (w.InfoTip != null)
-                                        {
-                                            string s = "";
+                            //            //if (w.InfoTip != null)
+                            //            {
+                            //                string s = "";
 
-                                            if (w.Text != "")
-                                            {
-                                                TextLocation pp = new TextLocation(pos.Y + 1, pos.X + 1);
+                            //                if (w.Text != "")
+                            //                {
+                            //                    TextLocation pp = new TextLocation(pos.Y + 1, pos.X + 1);
 
-                                                //InfoTip.SetText(CodeEditor.csd.Resolve(pp, Document.Text, FileName), w.Text);
+                            //                    //InfoTip.SetText(CodeEditor.csd.Resolve(pp, Document.Text, FileName), w.Text);
 
-                                                int a = e.X + 1;// View.CharWidth * w.Column  + View.GutterMarginWidth + 100;
-                                                int b = (Document[p.Y].VisibleIndex - View.FirstVisibleRow) * View.RowHeight;
-                                                int c = row.Expansion_EndChar * View.CharWidth + View.GutterMarginWidth + 100;
-                                                if (_mouseX <= c)
-                                                {
-                                                    InfoTip.Location = new Point(a, b + 20);
-                                                    if (CodeEditor.csd != null)
-                                                    {
-                                                        ResolveResult res = CodeEditor.csd.Resolve(pp, Document.Text, FileName);
+                            //                    int a = e.X + 1;// View.CharWidth * w.Column  + View.GutterMarginWidth + 100;
+                            //                    int b = (Document[p.Y].VisibleIndex - View.FirstVisibleRow) * View.RowHeight;
+                            //                    int c = row.Expansion_EndChar * View.CharWidth + View.GutterMarginWidth + 100;
+                            //                    if (_mouseX <= c)
+                            //                    {
+                            //                        InfoTip.Location = new Point(a, b + 20);
+                            //                        if (CodeEditor.csd != null)
+                            //                        {
+                            //                            ResolveResult res = CodeEditor.csd.Resolve(pp, Document.Text, FileName);
 
-                                                        s = InfoTip.SetText(res, w.Text);
-                                                    }
-                                                    if (s != "")
-                                                        InfoTip.Show();
-                                                    else InfoTip.Hide();
-                                                }
-                                                else
-                                                {
-                                                    mousemoveword = "";
-                                                    if (s == "") InfoTip.Hide();
-                                                }
-                                            }
-                                            else InfoTip.Hide();
-                                        }
-                                    }
-                                     else InfoTip.Hide();
-                                }
-                                 //else InfoTip.Hide();
-                            }
-                            else
-                            {
-                                mousemoveword = "";
-                                InfoTip.Hide();
-                            }
+                            //                            s = InfoTip.SetText(res, w.Text);
+                            //                        }
+                            //                        if (s != "")
+                            //                            InfoTip.Show();
+                            //                        else InfoTip.Hide();
+                            //                    }
+                            //                    else
+                            //                    {
+                            //                        mousemoveword = "";
+                            //                        if (s == "") InfoTip.Hide();
+                            //                    }
+                            //                }
+                            //                else InfoTip.Hide();
+                            //            }
+                            //        }
+                            //         else InfoTip.Hide();
+                            //    }
+                            //     //else InfoTip.Hide();
+                            //}
+                            //else
+                            //{
+                            //    mousemoveword = "";
+                            //    InfoTip.Hide();
+                            //}
 
-                            //refresher = true;
+                            ////refresher = true;
                         }
                     }
                 }
@@ -4595,8 +4722,73 @@ namespace AIMS.Libraries.CodeEditor.WinForms
 
         private string mousemoveword { get; set; }
 
-        private void TimerProc(object state)
+        bool disposed = false;
+
+        public void TimerProc(object state)
         {
+
+
+            if (this.IsDisposed == true)
+            {
+                              
+                disposed = true;
+                return;
+
+            }
+
+            timerexited = false;
+
+            if (this.IsDisposed == false)
+                
+                {
+                    if (disposed != true)
+                    {
+                        try
+                        {
+                            Point p = this.Selection.GetCursor();
+                            WordResolve(p.X, p.Y);
+                        }
+                        catch (Exception e)
+                        {
+
+                        }
+                    }
+                }
+            //));
+
+            timerexited = true;
+
+            _refresher = false;
+        }
+
+        public void TimerProcs(object state)
+        {
+
+
+            if (this.IsDisposed == true)
+            {
+                MouseMoveTimer.Dispose();
+
+                disposed = true;
+                return;
+
+            }
+            //if(disposed != true)
+            //this.Invoke(new Action(() => {
+            //    if (disposed != true)
+            //    {
+            //        try
+            //        {
+            //            Point p = this.Selection.GetCursor();
+            //            WordResolve(p.X, p.Y);
+            //        }
+            //        catch(Exception e)
+            //        {
+
+            //        }
+            //    }
+            //}));
+
             _refresher = false;
         }
 
@@ -4793,9 +4985,32 @@ namespace AIMS.Libraries.CodeEditor.WinForms
         /// <param name="e"></param>
         protected override void OnResize(EventArgs e)
         {
+           
             base.OnResize(e);
             DoResize();
+            
         }
+
+
+        public void HideAndRedraw()
+        {
+            if (this.vScroll != null)
+            {
+                this.shouldHideScroll = true;
+                this.vScroll.Hide();
+                this.Redraw();
+            }
+        }
+        public void ShowAndRedraw()
+        {
+            if (this.vScroll != null)
+            {
+                this.shouldHideScroll = false;
+                this.vScroll.Show();
+                this.Redraw();
+            }
+        }
+
 
         protected override void OnSizeChanged(EventArgs e)
         {
@@ -5125,6 +5340,7 @@ namespace AIMS.Libraries.CodeEditor.WinForms
         {
             this.View.YOffset = 0;
             this.Redraw();
+            
         }
 
         private void IntelliMouse_Scroll(object sender, ScrollEventArgs e)
@@ -6215,7 +6431,7 @@ namespace AIMS.Libraries.CodeEditor.WinForms
                 }
             }
 
-            return r.ToString();
+            return "";// r.ToString();
         }
 
 

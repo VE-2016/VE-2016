@@ -13,3 +13,10 @@ C:\MSBuildProjects-beta\ScriptEditor\WinForms\Docking\Project\obj\Release\AIMS.L
 C:\MSBuildProjects-beta\ScriptEditor\WinForms\Docking\Project\obj\Release\AIMS.Libraries.Forms.Docking.Strings.resources
 C:\MSBuildProjects-beta\ScriptEditor\WinForms\Docking\Project\obj\Release\Forms.Docking.csproj.GenerateResource.Cache
 C:\MSBuildProjects-beta\ScriptEditor\WinForms\Docking\Project\obj\Release\Docking.dll
+C:\MSBuildProjects-beta\Editor\WinForms\Docking\Project\obj\Release\Forms.Docking.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\Editor\WinForms\Docking\Project\obj\Release\AIMS.Libraries.Forms.Docking.InertButton.resources
+C:\MSBuildProjects-beta\Editor\WinForms\Docking\Project\obj\Release\AIMS.Libraries.Forms.Docking.DockContainer.resources
+C:\MSBuildProjects-beta\Editor\WinForms\Docking\Project\obj\Release\AIMS.Libraries.Forms.Docking.DockWindow.resources
+C:\MSBuildProjects-beta\Editor\WinForms\Docking\Project\obj\Release\AIMS.Libraries.Forms.Docking.Strings.resources
+C:\MSBuildProjects-beta\Editor\WinForms\Docking\Project\obj\Release\Forms.Docking.csproj.GenerateResource.Cache
+C:\MSBuildProjects-beta\Editor\WinForms\Docking\Project\obj\Release\Docking.dll

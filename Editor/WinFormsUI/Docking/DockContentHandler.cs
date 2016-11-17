@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
+using System.Threading;
 
 namespace WeifenLuo.WinFormsUI.Docking
 {
@@ -946,14 +947,38 @@ namespace WeifenLuo.WinFormsUI.Docking
             previousPane.DockPanel.ResumeLayout(true, true);
         }
 
+
+        public int count = 0;
+
+        public bool timer = false;
+
+        public bool hasBeenDestroyed = false;
+
         public void Close()
         {
+
+            if (hasBeenDestroyed == false)
+            {
+
+                int c = count;
+
+                hasBeenDestroyed = true;
+
+                while (timer == true && count == c) ;
+
+            }
+
             DockPanel dockPanel = DockPanel;
             if (dockPanel != null)
                 dockPanel.SuspendLayout(true);
+
+            Form.Dispose();
             Form.Close();
+            
             if (dockPanel != null)
                 dockPanel.ResumeLayout(true, true);
+
+            
         }
 
         private DockPaneStripBase.Tab _tab = null;
