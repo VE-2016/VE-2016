@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -82,6 +83,8 @@ namespace WinExplorer
 
             lv.FullRowSelect = true;
 
+            
+
             lv.Columns.Add("Name");
             lv.Columns.Add("Description");
         }
@@ -119,8 +122,109 @@ namespace WinExplorer
 
                 lv.Items.Add(v);
             }
+
+            lv.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
+        static public Dictionary<string, string> Templates()
+        {
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+
+            DirectoryInfo d = new DirectoryInfo(folders);
+
+            if (d == null)
+                return dict;
+
+            DirectoryInfo[] dd = d.GetDirectories();
+
+            foreach (DirectoryInfo s in dd)
+            {
+                string v = "";
+                v  = s.Name;
+
+                v += "$" + s.FullName;
+
+                string tag = "";
+                if (s.FullName.EndsWith("WindowsForm"))
+                    tag = "WindowsForm";
+                else if (s.FullName.EndsWith("UserControl"))
+                    tag = "UserControl";
+                else if (s.FullName.EndsWith("Component"))
+                    tag = "Component";
+                else if (s.FullName.EndsWith("Resources"))
+                    tag = "Resource";
+
+                v += "$" + tag;
+
+                dict.Add(s.Name, v);
+            }
+            return dict;
+        }
+
+        static public ArrayList ProjectFiles(string name, Dictionary<string, string> dict)
+        {
+            ArrayList L = new ArrayList();
+
+            foreach (string s in dict.Keys)
+            {
+                if (s != name)
+                    continue;
+
+                string[] cc = dict[s].Split("$".ToCharArray());
+
+                string p = cc[1];
+
+                DirectoryInfo d = new DirectoryInfo(p);
+
+                FileInfo[] f = d.GetFiles();
+
+                foreach (FileInfo g in f)
+                    L.Add(g.Name);
+
+                return L;
+            }
+
+            return L;
+        }
+        static public string ProjectFolder(string name, Dictionary<string, string> dict)
+        {
+            
+
+            foreach (string s in dict.Keys)
+            {
+                if (s != name)
+                    continue;
+
+                string[] cc = dict[s].Split("$".ToCharArray());
+
+                string p = cc[1];
+
+                return p;
+            }
+
+            return "";
+        }
+        static public string GetSubType(string name, Dictionary<string, string> dict)
+        {
+            
+
+            foreach (string s in dict.Keys)
+            {
+                if (s != name)
+                    continue;
+
+                string[] cc = dict[s].Split("$".ToCharArray());
+
+                if (cc.Length <= 2)
+                    return "";
+
+                string p = cc[2];
+
+                return p;
+            }
+
+            return "";
+        }
         public ArrayList GetProjectFiles(string name)
         {
             ArrayList L = new ArrayList();
@@ -254,9 +358,18 @@ namespace WinExplorer
 
             string s = v.SubItems[1].ToString();
 
-            //string file = Path.GetFileName(s);
+            s = s.Replace("{", "");
 
-            textBox1.Text = s;
+            s = s.Replace("}", "");
+
+            string[] cc = s.Split("\\".ToCharArray());
+
+            textBox1.Text = cc[cc.Length - 1];
+        }
+
+        private void listView1_SizeChanged(object sender, EventArgs e)
+        {
+            lv.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
     }
 }

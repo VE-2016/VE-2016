@@ -1,1 +1,1 @@
-C:\MSBuildProjects-new\VStudio.sln
+C:\MSBuildProjects-beta\VSExplorer\bin\Debug\Projects\SharpDisasm\SharpDisasm.sln

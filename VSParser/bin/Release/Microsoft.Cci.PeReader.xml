@@ -83,36 +83,36 @@
             <returns></returns>
         </member>
         <member name="T:Microsoft.Cci.MetadataReader.MethodBodyDocument">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:Microsoft.Cci.MetadataReader.MethodBodyDocument.#ctor(Microsoft.Cci.MetadataReader.ObjectModelImplementation.MethodDefinition)">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:Microsoft.Cci.MetadataReader.MethodBodyDocument.GetTypeFromToken(System.UInt32)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="standAloneSignatureToken"></param>
-            <returns></returns>
+             </summary>
+             <param name="standAloneSignatureToken"></param>
+             <returns></returns>
         </member>
         <member name="P:Microsoft.Cci.MetadataReader.MethodBodyDocument.Location">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="P:Microsoft.Cci.MetadataReader.MethodBodyDocument.MethodToken">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="P:Microsoft.Cci.MetadataReader.MethodBodyDocument.Name">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="T:Microsoft.Cci.MetadataReader.MethodBodyLocation">
             <summary>
@@ -211,12 +211,12 @@
             The module which this PEFile corresponds to.
             </summary>
         </member>
-        <member name="F:Microsoft.Cci.MetadataReader.PEFileToObjectModel.AssemblyReferenceArray">
+        <member name="F:Microsoft.Cci.MetadataReader.PEFileToObjectModel._assemblyReferenceArray">
             <summary>
             Cache for assembly references. This indexes from row id to assembly reference.
             </summary>
         </member>
-        <member name="F:Microsoft.Cci.MetadataReader.PEFileToObjectModel.ModuleReferenceArray">
+        <member name="F:Microsoft.Cci.MetadataReader.PEFileToObjectModel._moduleReferenceArray">
             <summary>
             Cache for module references. This indexes from row id to module reference.
             </summary>
@@ -239,12 +239,12 @@
             <param name="assemblyIdentity"></param>
             <returns></returns>
         </member>
-        <member name="F:Microsoft.Cci.MetadataReader.PEFileToObjectModel.FileReferenceArray">
+        <member name="F:Microsoft.Cci.MetadataReader.PEFileToObjectModel._fileReferenceArray">
             <summary>
             Cache for file referneces of the assembly.
             </summary>
         </member>
-        <member name="F:Microsoft.Cci.MetadataReader.PEFileToObjectModel.ResourceReferenceArray">
+        <member name="F:Microsoft.Cci.MetadataReader.PEFileToObjectModel._resourceReferenceArray">
             <summary>
             Cache for Resource referneces of the assembly.
             </summary>
@@ -293,7 +293,7 @@
             <param name="typeName"></param>
             <returns></returns>
         </member>
-        <member name="F:Microsoft.Cci.MetadataReader.PEFileToObjectModel.ModuleTypeRefReferenceArray">
+        <member name="F:Microsoft.Cci.MetadataReader.PEFileToObjectModel._moduleTypeRefReferenceArray">
             <summary>
             Cache for type ref's in the module.
             </summary>
@@ -340,7 +340,7 @@
         </member>
         <member name="T:Microsoft.Cci.PeReader">
             <summary>
-            Factory for loading assemblies and modules persisted as portable executable (pe) files. 
+            Factory for loading assemblies and modules persisted as portable executable (pe) files.
             </summary>
         </member>
         <member name="M:Microsoft.Cci.PeReader.#ctor(Microsoft.Cci.IMetadataReaderHost)">
@@ -350,7 +350,7 @@
             <param name="metadataReaderHost">
             The host is used for providing access to pe files (OpenBinaryDocument),
             applying host specific unification policies (UnifyAssembly, UnifyAssemblyReference, UnifyModuleReference) and for deciding
-            whether and how to load referenced assemblies and modules (ResolvingAssemblyReference, ResolvingModuleReference).    
+            whether and how to load referenced assemblies and modules (ResolvingAssemblyReference, ResolvingModuleReference).
             </param>
         </member>
         <member name="M:Microsoft.Cci.PeReader.RegisterCoreAssembly(Microsoft.Cci.MetadataReader.ObjectModelImplementation.Assembly)">

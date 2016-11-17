@@ -1090,7 +1090,55 @@ namespace WinExplorer
 
             _SolutionTreeView.EndUpdate();
         }
+        public void SetVSProject(string mainproject)
+        {
+            if (font == null)
+                font = new Font(_SolutionTreeView.Font, FontStyle.Regular);
 
+            if (fonts == null)
+                fonts = new Font(_SolutionTreeView.Font, FontStyle.Bold);
+
+            //WinExplorer.CreateView_Solution.ProjectItemInfo prs = eo.cvs.getactiveproject();
+
+            //if (prs == null)
+            //{
+            //    MessageBox.Show("No project has been selected..");
+            //    return;
+            //}
+
+            _SolutionTreeView.BeginUpdate();
+
+            VSSolution vs = GetVSSolution();
+
+            VSProject vp = vs.GetProjectbyName(mainproject);
+
+            //VSProject vp = GetVSProject();
+
+            vs.MainVSProject = vp;
+
+            MainProjectNode = eo.cvs.getprojectenode(vp.FileName);
+
+            //MainProjectItem = prs;
+
+            //MessageBox.Show("Main project name " + prs.ps.Name);
+
+            TreeNode nodes = MainProjectNode;
+
+            if (nodes != null)
+            {
+
+                while (nodes.Parent != null)
+                    nodes = nodes.Parent;
+
+                unboldnodes(nodes);
+
+            }
+
+            MainProjectNode.Text = MainProjectNode.Text;
+            MainProjectNode.NodeFont = fonts;
+
+            _SolutionTreeView.EndUpdate();
+        }
         public void main_project()
         {
             if (font == null)
@@ -1882,7 +1930,7 @@ namespace WinExplorer
             //var msbuildDir = ToolLocationHelper.GetPathToBuildTools("v140");
 
 
-            ef.ClearOutput();
+            ef.BeginInvoke(new Action(() => { ef.ClearOutput(); }));
 
             msbuilder_alls.Server server = null;
 
@@ -1902,9 +1950,11 @@ namespace WinExplorer
 
 
                 server = new msbuilder_alls.Server(ef);
-
+                server.Close();
 
             }
+
+           
   );
 
       
@@ -1919,6 +1969,8 @@ namespace WinExplorer
             //ef.Invoke(new Action(() => { ef.LoadCompileResults(logger.Es, logger.Ws, logger.Me); }));
 
             //server.running = false;
+            
+
             
         }
 
@@ -2733,6 +2785,65 @@ namespace WinExplorer
 
         }
 
+        public string SetPlatform(string plf)
+        {
+            
+            int i = 0;
+            while(i < _platList.Items.Count)
+            {
+
+                string c = _platList.Items[i].ToString();
+
+                if(c.ToLower() == plf.ToLower())
+                {
+
+                    _platList.BeginUpdate();
+                    _platList.SelectedIndex = i;
+                    _platList.SelectedItem = _platList.Items[i];
+                    _platList.Items[i] = _platList.Items[i].ToString();
+                   
+                    _platList.EndUpdate();
+                    
+
+                    return c;
+
+                }
+
+                i++;
+            }
+
+            return "";
+
+
+        }
+
+        public string SetConfiguration(string cfg)
+        {
+
+            int i = 0;
+            while (i < _configList.Items.Count)
+            {
+
+                string c = _configList.Items[i].ToString();
+
+                if (c.ToLower() == cfg.ToLower())
+                {
+                    _configList.SelectedIndex = i;
+
+                    return c;
+
+                }
+
+                i++;
+            }
+
+            return "";
+
+
+           
+
+        }
+
         public void LoadPlatforms(VSSolution vs)
         {
             ArrayList L = ConfigurationManagerForm.GetProjectPlatform(vs);
@@ -3079,6 +3190,8 @@ namespace WinExplorer
 
         public TreeView load_recent_solution(string recent)
         {
+            TreeView tv = null;
+
             if (File.Exists(recent) == false)
             {
                 MessageBox.Show("No sln file found...");
@@ -3089,15 +3202,39 @@ namespace WinExplorer
 
             load_tree_view(recent);
 
-            TreeView tv = (TreeView)LoadProject(recent);
+            _SolutionTreeView.Invoke(new Action(() => { 
 
+            tv = (TreeView)LoadProject(recent);
+
+            
             VSSolution vs = tv.Tag as VSSolution;
 
-            _SolutionTreeView.Invoke(new Action(() => { _ddButton.DropDownItems.Clear(); if (_SolutionTreeView.Nodes.Count > 0) _SolutionTreeView.Nodes[0].Expand(); LoadPlatforms(vs);
+            LoadPlatforms(vs);
+
+            // Command.counter--;
+
+            //_SolutionTreeView.Invoke(new Action(() =>
+            
+            //{
+                _ddButton.DropDownItems.Clear(); if (_SolutionTreeView.Nodes.Count > 0) _SolutionTreeView.Nodes[0].Expand(); // LoadPlatforms(vs);
                 if (vs != null) LoadProjects(vs);
+
+                _SolutionTreeView.Tag = vs;
+
             }));
 
-            _SolutionTreeView.Tag = vs;
+
+            ////_SolutionTreeView.Invoke(new Action(() => {
+            //    _ddButton.DropDownItems.Clear();
+            //    if (_SolutionTreeView.Nodes.Count > 0) _SolutionTreeView.Nodes[0].Expand();
+            //    LoadPlatforms(vs);
+            //    if (vs != null) LoadProjects(vs);
+            //    Command.running = false;
+            ////}));
+
+            //_SolutionTreeView.Tag = vs;
+
+            //Command.counter--;
 
             return tv;
         }
@@ -3264,11 +3401,7 @@ namespace WinExplorer
             {
                 s = Path.GetDirectoryName(s);
 
-                //              s = checkfolder(s);
-
                 es = Path.GetFullPath(s);
-
-                //es = ExpTree_Demo_CS.frmThreadCS.getpath(s);
 
                 selectdir(es, _maintv);
             }
@@ -4249,6 +4382,8 @@ namespace WinExplorer
 
             if (p == null)
                 return;
+
+            
             p.RunProject();
         }
 
@@ -4607,7 +4742,7 @@ namespace WinExplorer
             ppf.LoadResourcesView(r);
         }
 
-        public void LoadFile(string file, VSProject vp)
+        public void LoadFile(string file, VSProject vp,  AutoResetEvent autoEvent = null  )
         {
             if (script == null)
                 return;
@@ -4618,7 +4753,7 @@ namespace WinExplorer
             {
                 DocumentForm df = OpenDocumentForm(file);
 
-                df.FileName = vp.FileName;// file;// prs.ps.FileName;
+                df.FileName = vp.FileName;
 
                 df.resource = file;
 
@@ -4627,7 +4762,17 @@ namespace WinExplorer
                 return;
             }
 
-            script.BeginInvoke(new Action(() => { script.OpenDocuments(file, vp); }));
+            script.BeginInvoke(new Action(() => { script.OpenDocuments(file, vp, autoEvent);
+
+                //if (autoEvent != null)
+                //    autoEvent.Set();
+
+                Command.counter--;
+
+                
+            }));
+
+            
         }
 
         public void LoadFile(string file, string name)
@@ -5378,12 +5523,17 @@ namespace WinExplorer
             int i = 0;
             while (i < N)
             {
-                string g = L[i].ToString();
 
-                if (g.Trim() != "")
+                if (L[i] != null)
+                {
 
-                    c = c + "\n" + g;
 
+                    string g = L[i].ToString();
+
+                    if (g.Trim() != "")
+
+                        c = c + "\n" + g;
+                }
                 i++;
             }
 

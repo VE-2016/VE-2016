@@ -2,64 +2,72 @@ using System;
 
 namespace WinExplorer
 {
-    internal class MainApp
+    public class MainApp
     {
         /// <summary>
         /// Entry point into console application.
         /// </summary>
         private static void Init()
         {
-            // Create receiver, command, and invoker
-            Receiver receiver = new Receiver();
-            Command command = new ConcreteCommand(receiver);
-            Invoker invoker = new Invoker();
+            //// Create receiver, command, and invoker
+            //Receiver receiver = new Receiver();
+            //Command command = new ConcreteCommand(receiver);
+            //Invoker invoker = new Invoker();
 
-            // Set and execute command
-            invoker.SetCommand(command);
-            invoker.ExecuteCommand();
+            //// Set and execute command
+            //invoker.SetCommand(command);
+            //invoker.ExecuteCommand();
 
-            // Wait for user
-            Console.ReadKey();
+            //// Wait for user
+            //Console.ReadKey();
         }
     }
 
     /// <summary>
     /// The 'Command' abstract class
     /// </summary>
-    internal abstract class Command
+    public abstract class Command
     {
+
+        public static bool running = false;
+
+        public static int counter = 0;
+
         protected Receiver receiver;
 
+        public ExplorerForms ef { get; set; }
+
         // Constructor
-        public Command(Receiver receiver)
+        public Command(ExplorerForms ef)
         {
-            this.receiver = receiver;
+            this.ef = ef;
+            //this.receiver = receiver;
         }
 
-        public abstract void Execute();
+        public abstract object Execute(object obs = null);
     }
 
     /// <summary>
     /// The 'ConcreteCommand' class
     /// </summary>
-    internal class ConcreteCommand : Command
-    {
-        // Constructor
-        public ConcreteCommand(Receiver receiver) :
-          base(receiver)
-        {
-        }
+    //public class ConcreteCommand : Command
+    //{
+    //    // Constructor
+    //    public ConcreteCommand(Receiver receiver) :
+    //      base(receiver)
+    //    {
+    //    }
 
-        public override void Execute()
-        {
-            receiver.Action();
-        }
-    }
+    //    public override void Execute()
+    //    {
+    //        receiver.Action();
+    //    }
+    //}
 
     /// <summary>
     /// The 'Receiver' class
     /// </summary>
-    internal class Receiver
+    public class Receiver
     {
         public void Action()
         {
@@ -70,7 +78,7 @@ namespace WinExplorer
     /// <summary>
     /// The 'Invoker' class
     /// </summary>
-    internal class Invoker
+    public class Invoker
     {
         private Command _command;
 

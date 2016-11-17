@@ -1,0 +1,6 @@
+C:\MSBuildProjects-beta\VSExplorer\bin\Debug\Projects\MakeProject\ConsoleApplication5\bin\Release\ConsoleApplication5.exe.config
+C:\MSBuildProjects-beta\VSExplorer\bin\Debug\Projects\MakeProject\ConsoleApplication5\bin\Release\ConsoleApplication5.exe
+C:\MSBuildProjects-beta\VSExplorer\bin\Debug\Projects\MakeProject\ConsoleApplication5\bin\Release\ConsoleApplication5.pdb
+C:\MSBuildProjects-beta\VSExplorer\bin\Debug\Projects\MakeProject\ConsoleApplication5\obj\Release\ConsoleApplication5.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\VSExplorer\bin\Debug\Projects\MakeProject\ConsoleApplication5\obj\Release\ConsoleApplication5.exe
+C:\MSBuildProjects-beta\VSExplorer\bin\Debug\Projects\MakeProject\ConsoleApplication5\obj\Release\ConsoleApplication5.pdb

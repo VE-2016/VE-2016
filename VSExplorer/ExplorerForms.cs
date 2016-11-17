@@ -24,6 +24,9 @@ using NUnit.Gui.Model;
 using NUnit.Gui.Presenters;
 using NUnit.Gui;
 using utils;
+using System.Threading.Tasks;
+using System.Threading;
+using Microsoft.Diagnostics.Runtime;
 
 namespace WinExplorer
 {
@@ -49,12 +52,17 @@ namespace WinExplorer
         private extern static int SetWindowTheme(IntPtr hWnd, string pszSubAppName,
                                                 string pszSubIdList);
 
+        public static ExplorerForms ef { get; set; }
+
         /// <summary>
         /// Create the explorer window form.
         /// </summary>
-        /// <param name="formKey">The GUID key used to identify the form internally.</param>
-        public ExplorerForms(string formKey)
+       
+        public ExplorerForms()
         {
+
+            ef = this;
+
             this.CreateHandle();
 
             #region Form Setup and Events
@@ -128,7 +136,7 @@ namespace WinExplorer
             CodeEditorControl.AutoListImages = imgs;
 
 
-            LoadDocumentWindow(false);
+           // LoadDocumentWindow(false);
 
             LoadSE("Explorer", false);
             solutionExplorerToolStripMenuItem.Checked = true;
@@ -155,6 +163,9 @@ namespace WinExplorer
             //LoadWT("Document Outline", false);
             //ResumeLayout();
             LoadNU("NUnit", false);
+
+            LoadDocumentWindow(false);
+
             ResumeLayout();
 
             update_z_order(this);
@@ -958,7 +969,7 @@ namespace WinExplorer
                 ows.Show(dock, DockState.DockBottom);
 
 
-     
+
 
 
 
@@ -1118,7 +1129,7 @@ namespace WinExplorer
 
         public ToolWindow wt { get; set; }
 
-     
+
         private static NUnit.Gui.Views.MainForm nunit()
         {
             //Application.EnableVisualStyles();
@@ -1689,7 +1700,7 @@ namespace WinExplorer
 
                     if (vp != null)
                     {
-                        MessageBox.Show("Active project - " + vp.Name);
+                       // MessageBox.Show("Active project - " + vp.Name);
                     }
 
                     vp.SetPlatformConfig("", "");
@@ -1760,6 +1771,8 @@ namespace WinExplorer
 
         public void ClearOutput()
         {
+            if (efs != null)
+                efs.ClearOutput();
         }
 
 
@@ -2243,35 +2256,35 @@ namespace WinExplorer
             richTextBox1.AppendText(s);
         }
 
-        public void SetActiveDocument()
-        {
-            string s = "";
+        //public void SetActiveDocument()
+        //{
+        //    string s = "";
 
-            if (scriptControl1.dockContainer1 != null)
-            {
-                if (scriptControl1.dockContainer1.ActiveDocumentPane != null)
-                {
-                    s = "Script control DC - " + scriptControl1.dockContainer1.Size.Width + " - " + scriptControl1.dockContainer1.Size.Height + "\n";
-                    richTextBox1.AppendText(s);
+        //    if (scriptControl1.dockContainer1 != null)
+        //    {
+        //        if (scriptControl1.dockContainer1.ActiveDocumentPane != null)
+        //        {
+        //            s = "Script control DC - " + scriptControl1.dockContainer1.Size.Width + " - " + scriptControl1.dockContainer1.Size.Height + "\n";
+        //            richTextBox1.AppendText(s);
 
-                    s = "Script control DC Pane- " + scriptControl1.dockContainer1.ActiveDocumentPane.Size.Width + " - " + scriptControl1.dockContainer1.ActiveDocumentPane.Height + "\n";
-                    richTextBox1.AppendText(s);
+        //            s = "Script control DC Pane- " + scriptControl1.dockContainer1.ActiveDocumentPane.Size.Width + " - " + scriptControl1.dockContainer1.ActiveDocumentPane.Height + "\n";
+        //            richTextBox1.AppendText(s);
 
-                    AIMS.Libraries.Scripting.ScriptControl.Document d = scriptControl1.dockContainer1.ActiveDocument as AIMS.Libraries.Scripting.ScriptControl.Document;
+        //            AIMS.Libraries.Scripting.ScriptControl.Document d = scriptControl1.dockContainer1.ActiveDocument as AIMS.Libraries.Scripting.ScriptControl.Document;
 
-                    d.ShowQuickClassBrowserPanel();
+        //            d.ShowQuickClassBrowserPanel();
 
-                    s = "Script control DC Pane- " + d.Size.Width + " - " + d.Height + "\n";
-                    richTextBox1.AppendText(s);
+        //            s = "Script control DC Pane- " + d.Size.Width + " - " + d.Height + "\n";
+        //            richTextBox1.AppendText(s);
 
-                    d.Size = new Size(scriptControl1.Size.Width - 10, scriptControl1.Size.Height);
+        //            d.Size = new Size(scriptControl1.Size.Width - 10, scriptControl1.Size.Height);
 
-                    scriptControl1.dockContainer1.ActiveDocumentPane.Size = new Size(scriptControl1.Size.Width - 10, scriptControl1.Size.Height);
+        //            scriptControl1.dockContainer1.ActiveDocumentPane.Size = new Size(scriptControl1.Size.Width - 10, scriptControl1.Size.Height);
 
-                    // scriptControl1.dockContainer1.ActiveDocumentPane.master = scriptControl1;
-                }
-            }
-        }
+        //            // scriptControl1.dockContainer1.ActiveDocumentPane.master = scriptControl1;
+        //        }
+        //    }
+        //}
 
         private BackgroundWorker _bw = null;
 
@@ -2374,7 +2387,6 @@ namespace WinExplorer
 
             TreeView tv = _sv.load_recent_solution(recent);
 
-
             VSSolution vs = _sv._SolutionTreeView.Tag as VSSolution;
 
             if (CodeEditorControl.AutoListImages == null)
@@ -2409,9 +2421,19 @@ namespace WinExplorer
                         Visible = true;
                         Opacity = 100;
                         this.Show();
+                        Command.counter--;
+
                     }));
+                    
                 }
+
+                //Command.running = false;
+
             }));
+
+
+//            Command.counter--;
+
         }
 
         private void TestForm(string s)
@@ -2556,6 +2578,54 @@ namespace WinExplorer
             w.BeginInvoke(recent, null, null);
         }
 
+        public void Command_LoadSolution(string recent)
+        {
+           
+            scr.ClearHistory();
+
+            if (efs != null)
+                efs.Invoke(new Action(() => { efs.ClearOutput(); }));
+
+            
+            _sv._SolutionTreeView.Nodes.Clear();
+
+            _sv.save_recent_solution(recent);
+
+            workerFunctionDelegate w = workerFunction;
+            w.BeginInvoke(recent, null, null);
+        }
+
+        public void Command_CloseAllDocuments()
+        {
+
+            scr.ClearHistory();
+
+            scr.CloseAll();
+
+          
+        }
+
+        public void Command_TakeSnapshot(string process = "")
+        {
+            string b = AppDomain.CurrentDomain.BaseDirectory;
+
+            string d = b + "Extensions\\procdump.exe";
+
+            if(Directory.Exists("Snapshots") == false)
+            {
+
+                Directory.CreateDirectory("Snapshots");
+                
+            }
+
+            int c = Directory.GetFiles("Snapshots").Length;
+
+            string file = b + "Snapshots\\snapshot" + c + ".dmp";
+
+            cmds.RunExternalExes(d, " -ma " + process + " "  + file);
+
+
+        }
 
         public void CloseCurrentSolution()
         {
@@ -2638,6 +2708,12 @@ namespace WinExplorer
             _sv.hst.ReloadRecentSolutions();
         }
 
+        public void SetVSProject(string mainproject)
+        {
+            _sv.SetVSProject(mainproject);
+
+        }
+
         private void setAsMainProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _sv.set_main_project();
@@ -2675,11 +2751,13 @@ namespace WinExplorer
         public void rebuild_alls(string recent, msbuilder_alls.MSBuild msbuilds)
         {
             _sv.build_solution(recent, true, msbuilds);
+            
         }
 
         public void build_alls(string recent, msbuilder_alls.MSBuild msbuilds)
         {
             _sv.build_solution(recent, false, msbuilds);
+            
         }
 
         public void build_project(string recent, msbuilder_alls.MSBuild msbuilds)
@@ -2981,7 +3059,7 @@ namespace WinExplorer
             reload_solution(vs.solutionFileName);
         }
 
-        private NewProjectForm npf { get; set; }
+        public NewProjectForm npf { get; set; }
 
         private void newProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -2997,7 +3075,7 @@ namespace WinExplorer
 
             string c = _sv.GetConfiguration();
 
-            
+
 
             msbuilder_alls.MSBuild msbuilds = new msbuilder_alls.MSBuild();
 
@@ -3094,7 +3172,29 @@ namespace WinExplorer
                 CopyAll(diSourceSubDir, nextTargetSubDir);
             }
         }
+        public static void CopyAll(DirectoryInfo source, DirectoryInfo target, Dictionary<string, string> dict)
+        {
+            // Check if the target directory exists; if not, create it.
+            if (Directory.Exists(target.FullName) == false)
+            {
+                Directory.CreateDirectory(target.FullName);
+            }
 
+            // Copy each file into the new directory.
+            foreach (FileInfo fi in source.GetFiles())
+            {
+                Console.WriteLine(@"Copying {0}\{1}", target.FullName, fi.Name);
+                fi.CopyTo(Path.Combine(target.FullName, dict[fi.Name]), true);
+            }
+
+            // Copy each subdirectory using recursion.
+            foreach (DirectoryInfo diSourceSubDir in source.GetDirectories())
+            {
+                DirectoryInfo nextTargetSubDir =
+                    target.CreateSubdirectory(diSourceSubDir.Name);
+                CopyAll(diSourceSubDir, nextTargetSubDir);
+            }
+        }
         private void viewSolutionFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VSSolution vs = _sv._SolutionTreeView.Tag as VSSolution;
@@ -3673,6 +3773,19 @@ namespace WinExplorer
             }
         }
 
+        public void Command_OpenFile(string file, AutoResetEvent autoEvent = null  )
+        {
+            VSSolution vs = GetVSSolution();
+
+            VSProject pp = vs.GetVSProject(file);
+
+            _eo.LoadFile(file, pp, autoEvent);
+
+            
+
+            
+        }
+
         public void OpenFile(string file, string line)
         {
             VSSolution vs = GetVSSolution();
@@ -4090,6 +4203,8 @@ namespace WinExplorer
 
         }
 
+
+
         public VSSolution GetVSSolution()
         {
             return _sv._SolutionTreeView.Tag as VSSolution;
@@ -4132,7 +4247,7 @@ namespace WinExplorer
             if (vs == null)
                 return;
 
- 
+
             msbuilder_alls.MSBuild msbuilds = new msbuilder_alls.MSBuild();
             workerBuildDelegate b = build_alls;
             b.BeginInvoke(vs.solutionFileName, msbuilds, null, null);
@@ -4523,8 +4638,8 @@ namespace WinExplorer
 
             // Create menu item containing icon and a collection
             recentProjectsAndSolutionsToolStripMenuItem.DropDownItems.Clear();
-            if(_col != null)
-            recentProjectsAndSolutionsToolStripMenuItem.DropDownItems.AddRange(_col);
+            if (_col != null)
+                recentProjectsAndSolutionsToolStripMenuItem.DropDownItems.AddRange(_col);
         }
 
         private ToolStripMenuItem[] _wnds = null;
@@ -4672,9 +4787,22 @@ namespace WinExplorer
 
             string folds = Path.GetDirectoryName(pp.FileName);// Path.GetDirectoryName(pr);
 
-            if (SubType == "WindowsForm" || SubType == "Resource")
 
-                pp.AddFormItem(L, "");
+            string names = "";
+
+            string dg = "";
+
+            Dictionary<string, string> dict = null;
+
+            if (SubType == "WindowsForm" || SubType == "Resource")
+            {
+                dg = pp.GetFormName(L);
+                string[] cc = dg.Split(".".ToCharArray());
+
+                dg = cc[0];
+                dict = pp.AddFormItem(L, "");
+
+            }
             else
                 pp.SetCompileItems(L);
 
@@ -4682,8 +4810,99 @@ namespace WinExplorer
 
             DirectoryInfo folder = new DirectoryInfo(folds);
 
-            CopyAll(project, folder);
+            if (names == "")
+                CopyAll(project, folder);
+            else CopyAll(project, folder, dict);
 
+
+
+
+
+            //if (SubType == "WindowsForm" || SubType == "Resource")
+
+            //    pp.AddFormItem(L, "");
+            //else
+            //    pp.SetCompileItems(L);
+
+            //DirectoryInfo project = new DirectoryInfo(pf);
+
+            //DirectoryInfo folder = new DirectoryInfo(folds);
+
+            //CopyAll(project, folder);
+
+
+
+            reload_solution(file);
+        }
+        public void Command_AddNewProjectItem(string name, VSProject pp)
+        {
+            VSSolution vs = GetVSSolution();
+
+            string sln = vs.SolutionPath;
+
+            string file = vs.solutionFileName;
+
+
+            Dictionary<string, string> dict = NewProjectItem.Templates();
+
+            ArrayList L = NewProjectItem.ProjectFiles(name, dict);
+
+
+            string pf = NewProjectItem.ProjectFolder(name, dict);
+
+            if (pf == "")
+                return;
+
+            string SubType = NewProjectItem.GetSubType(name, dict);
+
+            string folds = Path.GetDirectoryName(pp.FileName);
+
+            string names = "";
+
+            string dg = "";
+
+            Dictionary<string, string> dd = new Dictionary<string, string>();
+
+            if (SubType == "WindowsForm" || SubType == "Resource")
+            {
+                dg = pp.GetFormName(L);
+                string[] cc = dg.Split(".".ToCharArray());
+
+                dg = cc[0];
+                dd = pp.AddFormItem(L, "");
+
+            }
+            else
+                pp.SetCompileItems(L);
+
+            DirectoryInfo project = new DirectoryInfo(pf);
+
+            DirectoryInfo folder = new DirectoryInfo(folds);
+
+            if (dict.Count <= 0)
+                CopyAll(project, folder);
+            CopyAll(project, folder, dd);
+ 
+            reload_solution(file);
+        }
+        public void Command_AddNewFileProjectItem(string name, VSProject pp)
+        {
+            VSSolution vs = GetVSSolution();
+
+            string sln = vs.SolutionPath;
+
+            string file = vs.solutionFileName;
+
+
+           // Dictionary<string, string> dict = NewProjectItem.Templates();
+
+            ArrayList L = new ArrayList();
+
+            L.Add(name);
+
+            pp.SetCompileItems(L);
+
+           
             reload_solution(file);
         }
 
@@ -4701,7 +4920,7 @@ namespace WinExplorer
 
             string bs = AppDomain.CurrentDomain.BaseDirectory + "TemplateProjects";
 
-            
+
 
             string file = npf.GetSolutionFile();
 
@@ -4734,7 +4953,7 @@ namespace WinExplorer
 
             string pr = npf.GetProjectFile();
 
-            string prf = pr.Replace(bs + "\\","");
+            string prf = pr.Replace(bs + "\\", "");
 
             string prc = pn.Replace(bs + "\\", "");
 
@@ -4786,14 +5005,117 @@ namespace WinExplorer
 
             string tempfile = sln + "\\" + pn + "\\" + Path.GetFileName(projs);
 
-            string projectfile = sln + "\\" + pn + "\\" +Path.GetFileName(proj);
+            string projectfile = sln + "\\" + pn + "\\" + Path.GetFileName(proj);
 
             File.Move(tempfile, projectfile);
 
             reload_solution(file);
         }
 
-        public CreateView_Solution.ProjectItemInfo GetProjectInfo()
+
+        public void Command_AddNewProject(bool addproject, NewProject nw)
+        {
+
+            Command.counter = 2;
+
+            string bs = AppDomain.CurrentDomain.BaseDirectory + "TemplateProjects";
+
+            nw.CreateNewProject();
+
+            string file = nw.SolutionFile;
+
+            string recent = file;
+
+            scr.ClearHistory();
+            ClearOutput();
+            SolutionClose();
+            _sv._SolutionTreeView.Nodes.Clear();
+            _sv.save_recent_solution(recent);
+            workerFunctionDelegate w = workerFunction;
+            w.Invoke(recent);
+
+
+            VSSolution vs = _sv._SolutionTreeView.Tag as VSSolution;
+
+            string sln = vs.SolutionPath;
+
+            string pn = nw.ProjectName;
+
+            
+            string pr = nw.GetProjectFile();
+
+            string prf = pr.Replace(bs + "\\", "");
+
+            string prc = pn.Replace(bs + "\\", "");
+
+            string prs = Path.GetFileName(pr);
+
+            string folds = Path.GetDirectoryName(pr);
+
+            string[] dd = folds.Split("\\".ToCharArray());
+
+            string fds = dd[dd.Length - 1];
+
+            string content = File.ReadAllText(file);
+
+            int p = content.IndexOf("Global");
+
+            string dir = fds;
+
+            dir = pn;
+
+            string proj = prs;
+
+            string projs = prs;
+
+            proj = pn + ".csproj";
+
+            string pb = Path.GetDirectoryName(dir) + "\\" + Path.GetFileName(proj);
+
+            Guid guid = Guid.NewGuid();
+
+            //string pp = "Project(\"{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}\") = \"" + dir + "\",\"" + pb + "\"," + "\"{" + guid.ToString() + "}\"\nEndProject\n\n\t";
+
+            string pp = "Project(\"{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}\") = \"" + prc + "\",\"" + prf + "\"," + "\"{" + guid.ToString() + "}\"\nEndProject\n\n\t";
+
+            content = content.Insert(p, pp);
+
+            File.WriteAllText(file, content);
+
+            DirectoryInfo project = new DirectoryInfo(folds);
+
+            DirectoryInfo folder = new DirectoryInfo(sln + "\\" + /*pn*/fds);
+
+            pn = fds;
+
+            CopyAll(project, folder);
+
+            string tempfile = sln + "\\" + pn + "\\" + Path.GetFileName(projs);
+
+            string projectfile = sln + "\\" + pn + "\\" + Path.GetFileName(proj);
+
+            File.Move(tempfile, projectfile);
+
+ //           while(Command.running == true);
+
+            
+
+            reload_solution(file);
+
+            
+
+   //         ThreadWorker worker = new ThreadWorker();
+
+   //         Thread thread1 = new Thread(worker.Run);
+   //         thread1.Start();
+
+            // this.Invoke(new Action(() => { while (Command.counter > 0) ; } ));
+   //         thread1.Join();
+
+        }
+
+
+         public CreateView_Solution.ProjectItemInfo GetProjectInfo()
         {
             TreeNode node = treeView1.SelectedNode;
 
@@ -4857,7 +5179,7 @@ namespace WinExplorer
                 return;
             ClipboardForm bb = new ClipboardForm();
             bb.DeleteClipboard(node);
-            bb.ShowDialog();
+            //bb.ShowDialog();
 
             ReloadVSProject();
         }
@@ -4982,7 +5304,7 @@ namespace WinExplorer
             AboutApplicationForm aaf = new AboutApplicationForm();
             aaf.ShowDialog();
         }
-        
+
         private void viewHelpFilesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ViewHelpFiles();
@@ -5007,7 +5329,7 @@ namespace WinExplorer
             {
 
                 this.Invoke(new Action(() => { wf.wb.Document.ExecCommand("fontSize", false, "4pt"); }));
-               
+
             }));
 
             //wf.wb.Navigate("file://" + s + "Documentation\\Documentation.chm");
@@ -5156,6 +5478,73 @@ namespace WinExplorer
             b.BeginInvoke(vs.solutionFileName, msbuilds, null, null);
 
         }
+
+        public void Command_Rebuild(string project = "")
+        {
+
+            
+
+
+            //while (Command.running == true) ;
+
+            //Command.running = true;
+
+            VSSolution vs = GetVSSolution();
+
+            if (vs == null)
+                return;
+
+            VSProject vp = vs.GetProjectbyName(project);
+
+            project = vp.FileName;
+
+            if (efs != null)
+                efs.ClearOutput();
+
+            string p = _sv.GetPlatform();
+
+            string c = _sv.GetConfiguration();
+
+            msbuilder_alls.MSBuild msbuilds = new msbuilder_alls.MSBuild();
+
+            msbuilds.build = msbuilder_alls.Build.rebuild;
+
+            msbuilds.Platform = p;
+
+            msbuilds.Configuration = c;
+
+            //string sf = vs.solutionFileName;// project.FileName;
+
+            msbuilds.MSBuildFile = project;
+
+            if(project == "")
+
+            msbuilds.MSBuildFile = vs.solutionFileName;
+
+            workerBuildDelegate b = build_alls;
+
+            b.BeginInvoke(vs.solutionFileName, msbuilds, null, null);
+
+
+            //Command.running = false;
+
+            
+
+        }
+
+        public void Command_Config(string plf, string cfg)
+        {
+
+            if (plf != "")
+                _sv.SetPlatform(plf);
+
+            if (cfg != "")
+                _sv.SetConfiguration(cfg);
+
+             this.BeginInvoke(new Action(() => { this.Refresh(); }));
+
+        }
+
 
         private void formToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -5779,7 +6168,7 @@ namespace WinExplorer
 
         private void outputWindowToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (ows == null) 
+            if (ows == null)
                 LoadORW("Outputs", false);
             if (ows.Visible == true)
             {
@@ -5793,7 +6182,7 @@ namespace WinExplorer
             }
 
 
-            
+
 
 
         }
@@ -5825,15 +6214,11 @@ namespace WinExplorer
 
         private void projectToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            //VSSolution vs = GetVSSolution();// sv._SolutionTreeView.Tag as VSSolution;
-
-            //sv._SolutionTreeView.BeginInvoke(new Action(() => { sv._ddButton.DropDownItems.Clear(); sv._SolutionTreeView.Nodes[0].Expand(); sv.LoadPlatforms(vs); if (vs != null) sv.LoadProjects(vs); }));
-
+           
             //  WinExplorer.UI.ProjectPropertyForm ppf = new WinExplorer.UI.ProjectPropertyForm();
             //  ppf.Show();
-
-            WinExplorer.UI.ListViewOwnerDraw od = new ListViewOwnerDraw();
-            od.Show();
+            //WinExplorer.UI.ListViewOwnerDraw od = new ListViewOwnerDraw();
+            //od.Show();
         }
 
         private MSBuildProject mbp { get; set; }
@@ -6005,7 +6390,7 @@ namespace WinExplorer
 
         private void outlineWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void projectSolutionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -6225,5 +6610,351 @@ namespace WinExplorer
 
             LoadPS(df, df.FileName);
         }
+
+
+        static void HeapInfo()
+        {
+            // Create the DataTarget.  This can be done through a crash dump, a live process pid, or
+            // via an IDebugClient pointer.
+            //int pid = Process.GetProcessesByName("HelloWorld")[0].Id;
+            int pid = Process.GetCurrentProcess().Id;
+
+            string name = Process.GetCurrentProcess().ProcessName;
+
+            DataTarget target = DataTarget.AttachToProcess(pid, 5000);
+
+            // DataTarget.ClrVersions lists the versions of CLR loaded in the process (this may be
+            // v2 and v4 in the Side-By-Side case.
+            ClrInfo version = target.ClrVersions[0];
+
+            // CLRVersionInfo contains information on the correct Dac dll to load.  This includes
+            // the long named dac, the version of clr, etc.  This is enough information to request
+            // the dac from the symbol server (though we do not provide an API to do this).  Also,
+            // if the version you are debugging is actually installed on your machine, DacLocation
+            // will contain the full path to the dac.
+            string dacLocation = version.TryGetDacLocation();
+
+            // If we don't have the dac installed, we will use the long-name dac in the same folder.
+            if (!string.IsNullOrEmpty(dacLocation))
+                dacLocation = version.DacInfo.FileName;
+
+            // Now create a CLRRuntime instance.  This is the "root" object of the API. It allows
+            // you to do things like Enumerate memory regions in CLR, enumerate managed threads,
+            // enumerate AppDomains, etc.
+            ClrRuntime runtime = target.CreateRuntime(dacLocation);
+
+            // Print out some basic information like:  Number of managed threads, number of AppDomains,
+            // number of objects on the heap, and so on.  Note you can walk the AppDomains in the process
+            // with:  foreach (CLRAppDomain domain in runtime.AppDomains)
+            // Same for runtime.Threads to walk the threads in the process.  You can walk callstacks
+            // (similar to !clrstack) with:
+            //    foreach (CLRStackFrame frame in runtime.Threads[i].StackTrace)
+            Console.WriteLine("AppDomains:        {0:n0}", runtime.AppDomains.Count);
+            Console.WriteLine("Managed Threads:   {0:n0}", runtime.Threads.Count);
+
+            // Now let's walk the heap and count objects, and total size of all objects.
+            ulong objSize = 0;
+            uint objCount = 0;
+
+            // To operate on the heap, you need a GCHeap object.
+            ClrHeap heap = runtime.GetHeap();
+
+            // Walk the heap.
+            foreach (ulong obj in heap.EnumerateObjects())
+            {
+                // The type of the object lets you do things like get the size of the object,
+                // walk the fields of the object, etc.
+                ClrType type = heap.GetObjectType(obj);
+
+                // Type would only be null if there is heap corruption.
+                if (type == null)
+                    continue;
+
+                // Note you can do a lot with obj right now.  Collect per-type statistics for example.
+                // GCHeapType.Name also holds the type name, and so on.  Note there is currently not
+                // a way to get the MethodTable (yet!) but hopefully you should be able to do everything
+                // you need with GCHeapType.
+                objCount++;
+                objSize += type.GetSize(obj);
+            }
+
+            Console.WriteLine("Object Count:      {0:n0}", objCount);
+            Console.WriteLine("Total Object Size: {0:n0}", objSize);
+        }
+
+        private void guiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //string b = AppDomain.CurrentDomain.BaseDirectory;
+            //npf = NewProjectForm.gcommands.GetCommand("OpenForm").Execute() as NewProjectForm;
+            //ArrayList T = NewProjectForm.gcommands.GetCommand("GetTemplates").Execute() as ArrayList;
+            ////MessageBox.Show(T.Count + " templates found");
+            //NewProjectForm.gcommands.GetCommand("AddTemplate").Execute(b + "Sources\\ConsoleApplication5");
+            //T = NewProjectForm.gcommands.GetCommand("GetTemplates").Execute() as ArrayList;
+            ////MessageBox.Show(T.Count + " templates found");
+            //NewProjectForm.gcommands.GetCommand("CloseForm").Execute();
+
+            //NewProject nw = new NewProject();
+            //nw.ProjectName = b + "TemplateProjects\\ConsoleApplication5";
+            //nw.Location = b + "Projects";
+            //nw.SolutionName = "MakeProject";
+
+            //this.Invoke(new Action(() => { NewProjectForm.gcommands.GetCommand("LoadProjectTemplate").Execute(nw); }));
+
+            //NewProjectForm.gcommands.GetCommand("Platform").Execute("Release");
+
+            //NewProjectForm.gcommands.GetCommand("Config").Execute("Any CPU");
+
+            //NewProjectForm.gcommands.GetCommand("MSBuild").Execute();
+
+
+
+        
+            //ThreadWorker worker = new ThreadWorker();
+            //worker.ef = ef;
+            //Thread thread = new Thread(worker.Runs);
+            //thread.Start();
+
+            // Thread thread_gui = new Thread(worker.Run);
+            //  thread_gui.Start();
+
+
+        }
+
+        private void existingItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            DialogResult r = ofd.ShowDialog();
+            if (r != DialogResult.OK)
+                return;
+
+
+
+            string file = ofd.FileName;
+
+            VSProject vp = GetVSProject();
+
+            Command_AddNewFileProjectItem(file, vp);
+
+        }
+
+        private void ExplorerForms_ResizeBegin(object sender, EventArgs e)
+        {
+            if (scr == null)
+                return;
+
+            scr.HideAndRedraw();
+
+            
+        }
+
+        private void ExplorerForms_ResizeEnd(object sender, EventArgs e)
+        {
+            if (scr == null)
+                return;
+
+            scr.ShowAndRedraw();
+        }
+
+
+        //protected override void WndProc(ref Message m)
+        //{
+
+        //    base.WndProc(ref m);
+        //    // WM_SYSCOMMAND
+        //    if (m.Msg == 0x0112)
+        //    {
+        //        if (m.WParam == new IntPtr(0xF030)) // Maximize event - SC_MAXIMIZE from Winuser.h
+        //            // || m.WParam == new IntPtr(0xF120)) // Restore event - SC_RESTORE from Winuser.h
+        //        {
+        //            if (scr == null)
+        //                return;
+
+        //            scr.HideAndRedraw();
+        //        }
+        //    }
+        //   // base.WndProc(ref m);
+        //}
+
+        //FormWindowState? LastWindowState = null;
+        //private void ExplorerForms_Resize(object sender, EventArgs e)
+        //{
+        //    if (WindowState != LastWindowState)
+        //    {
+        //        if (WindowState == FormWindowState.Maximized)
+        //        {
+        //            if (scr == null)
+        //                return;
+
+        //            scr.ShowAndRedraw();
+        //        }
+        //        if (WindowState == FormWindowState.Normal)
+        //        {
+        //        }
+        //        LastWindowState = WindowState;
+        //    }
+        //}
+
     }
+
+    class ThreadWorker
+    {
+
+        public ExplorerForms ef { get; set; }
+
+        public void Runs(object state)
+        {
+
+            string b = AppDomain.CurrentDomain.BaseDirectory;
+            NewProject nw = new NewProject();
+            nw.ProjectName = b + "TemplateProjects\\ConsoleApplication5";
+            nw.Location = b + "Projects";
+            nw.SolutionName = "MakeProject";
+
+
+            NewProjectForm.gcommands.GetCommand("LoadSolution").Execute(b + "Projects\\SharpDisasm\\SharpDisasm.sln");
+
+            NewProjectForm.gcommands.GetCommand("MainProject").Execute("SharpDisasm");
+
+            //VSProject vp = null;
+            //ArrayList F = null;
+            //ef.Invoke(new Action(() => { VSSolution vs = ef.GetVSSolution(); vp = vs.MainVSProject; F = vp.GetCompileItems(); }));
+
+            //foreach (string file in F)
+            //{
+            //    NewProjectForm.gcommands.GetCommand("OpenDocument").Execute(file);
+            //    break;
+            //}
+
+            //NewProjectForm.gcommands.GetCommand("AddProjectItem").Execute("WindowsForm");
+
+            
+
+            int i = 0;
+            while (true)
+            {
+
+                //string b = AppDomain.CurrentDomain.BaseDirectory;
+                //NewProject nw = new NewProject();
+                //nw.ProjectName = b + "TemplateProjects\\ConsoleApplication5";
+                //nw.Location = b + "Projects";
+                //nw.SolutionName = "MakeProject";
+
+
+                //NewProjectForm.gcommands.GetCommand("LoadSolution").Execute(b + "Projects\\SharpDisasm\\SharpDisasm.sln");
+
+                //NewProjectForm.gcommands.GetCommand("LoadProjectTemplate").Execute(nw);
+
+                //NewProjectForm.gcommands.GetCommand("MainProject").Execute("ConsoleApplication5");
+
+                NewProjectForm.gcommands.GetCommand("MainProject").Execute("SharpDisasm");
+
+                NewProjectForm.gcommands.GetCommand("Platform").Execute("Net45Release");
+
+                NewProjectForm.gcommands.GetCommand("Config").Execute("Any CPU");
+
+                //NewProjectForm.gcommands.GetCommand("MSBuild").Execute("ConsoleApplication5");
+
+                NewProjectForm.gcommands.GetCommand("MSBuild").Execute("SharpDisasm");
+
+                NewProjectForm.gcommands.GetCommand("Platform").Execute("Net45Debug");
+
+                //NewProjectForm.gcommands.GetCommand("MSBuild").Execute("ConsoleApplication5");
+
+                NewProjectForm.gcommands.GetCommand("MSBuild").Execute("SharpDisasm");
+
+                VSProject vpb = null;
+                ArrayList Fb = null;
+                ef.Invoke(new Action(() => { VSSolution vs = ef.GetVSSolution(); vpb = vs.MainVSProject; Fb = vpb.GetCompileItems(); }));
+                
+                foreach (string file in Fb)
+                    NewProjectForm.gcommands.GetCommand("OpenDocument").Execute(file);
+
+                //NewProjectForm.gcommands.GetCommand("AddProjectItem").Execute("WindowsForm");
+
+                NewProjectForm.gcommands.GetCommand("CloseAllDocuments").Execute("");
+
+                System.GC.Collect();
+
+                System.GC.Collect();
+
+                System.GC.Collect();
+
+                //NewProjectForm.gcommands.GetCommand("TakeSnapshot").Execute("WinExplorer.exe");
+
+                
+
+
+                
+
+            }
+
+
+        }
+
+        public void Run(object state)
+        {
+            Random r = new Random();
+
+            int x = 600;
+
+            int y = 400;
+
+            while (true)
+            {
+                Point p = ef.Location;
+
+                double d0 = r.NextDouble();
+
+                if (d0 > 0.5)
+                    d0 = 1;
+                else
+                    d0 = -1;
+
+                double dx = r.NextDouble() * (1900 - 500);
+
+                double dy = r.NextDouble() * (1000 - 300);
+
+                
+
+                ef.Invoke(new Action(() => { ef.Location = new Point((int)dx, (int)dy); }));
+
+                Thread.Sleep(1000);
+
+             
+
+
+                ef.Invoke(new Action(() => {
+
+
+                    x += 30;
+
+                    if (x > 1000)
+                        x = 600;
+
+                    if (x < 600)
+                        x = 600;
+
+                    y += 30;
+
+                    if (y > 700)
+                        y = 500;
+
+                    if (y < 500)
+                        y = 500;
+
+
+                    ef.Size = new Size(x, y); ef.Refresh();
+
+
+
+
+
+                }));
+
+                Thread.Sleep(1000);
+            }
+        }
+    }
+
+
 }

@@ -1,0 +1,6 @@
+pause
+
+procdump WinExplorer
+
+pause
+

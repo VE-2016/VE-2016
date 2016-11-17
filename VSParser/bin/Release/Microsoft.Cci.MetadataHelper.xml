@@ -172,7 +172,7 @@
         <member name="M:Microsoft.Cci.MetadataHostEnvironment.RegisterAsLatest(Microsoft.Cci.IUnit)">
             <summary>
             Registers the given unit as the latest one associated with the unit's location.
-            Such units can then be discovered by clients via GetUnit. 
+            Such units can then be discovered by clients via GetUnit.
             </summary>
             <param name="unit">The unit to register.</param>
         </member>
@@ -183,10 +183,10 @@
             </summary>
         </member>
         <member name="M:Microsoft.Cci.MetadataHostEnvironment.SynchronousReportErrors(System.Object)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="state"></param>
+             </summary>
+             <param name="state"></param>
         </member>
         <member name="M:Microsoft.Cci.MetadataHostEnvironment.ReportError(Microsoft.Cci.IErrorMessage)">
             <summary>
@@ -244,7 +244,7 @@
         </member>
         <member name="M:Microsoft.Cci.IMetadataReaderHost.OpenBinaryDocument(Microsoft.Cci.IBinaryDocument,System.String)">
             <summary>
-            Open the child binary document within the context of parent source document.as a memory block in host dependent fashion 
+            Open the child binary document within the context of parent source document.as a memory block in host dependent fashion
             For example: in multimodule assemblies the main module will be parentSourceDocument, where as other modules will be child
             docuements.
             </summary>
@@ -313,7 +313,7 @@
         </member>
         <member name="M:Microsoft.Cci.MetadataReaderHost.OpenBinaryDocument(Microsoft.Cci.IBinaryDocument,System.String)">
             <summary>
-            Open the child binary document within the context of parent source document.as a memory block in host dependent fashion 
+            Open the child binary document within the context of parent source document.as a memory block in host dependent fashion
             For example: in multimodule assemblies the main module will be parentSourceDocument, where as other modules will be child
             docuements.
             </summary>
@@ -410,7 +410,7 @@
         <member name="M:Microsoft.Cci.MemberHelper.GetFieldOffset(Microsoft.Cci.IFieldDefinition)">
             <summary>
             Get the field offset of a particular field, whose containing type may have its own policy
-            of assigning offset. For example, a struct and a union in C may be different. 
+            of assigning offset. For example, a struct and a union in C may be different.
             </summary>
             <param name="field">The field whose offset is to returned. The field must not be static.</param>
         </member>
@@ -606,21 +606,21 @@
         </member>
         <member name="T:Microsoft.Cci.SignatureFormatter">
             <summary>
-            A collection of methods that format type member signatures as strings. The methods are virtual and reference each other. 
+            A collection of methods that format type member signatures as strings. The methods are virtual and reference each other.
             By default, types are formatting according to C# conventions. However, by overriding one or more of the
             methods, the formatting can be customized for other languages.
             </summary>
         </member>
         <member name="M:Microsoft.Cci.SignatureFormatter.#ctor">
             <summary>
-            Allocates an object with a collection of methods that format type member signatures as strings. The methods are virtual and reference each other. 
+            Allocates an object with a collection of methods that format type member signatures as strings. The methods are virtual and reference each other.
             By default, types are formatting according to C# conventions. However, by overriding one or more of the
             methods, the formatting can be customized for other languages.
             </summary>
         </member>
         <member name="M:Microsoft.Cci.SignatureFormatter.#ctor(Microsoft.Cci.TypeNameFormatter)">
             <summary>
-            Allocates an object with a collection of methods that format type member signatures as strings. The methods are virtual and reference each other. 
+            Allocates an object with a collection of methods that format type member signatures as strings. The methods are virtual and reference each other.
             By default, types are formatting according to C# conventions. However, by overriding one or more of the
             methods, the formatting can be customized for other languages.
             </summary>
@@ -776,7 +776,7 @@
             Calls visitor.Visit(IAssemblyReference).
             </summary>
         </member>
-        <member name="F:Microsoft.Cci.AssemblyReference.host">
+        <member name="F:Microsoft.Cci.AssemblyReference._host">
             <summary>
             Provides a standard abstraction over the applications that host components that provide or consume objects from the metadata model.
             </summary>
@@ -883,7 +883,7 @@
         </member>
         <member name="P:Microsoft.Cci.BaseTypeReference.IsValueType">
             <summary>
-            True if the type is a value type. 
+            True if the type is a value type.
             Value types are sealed and extend System.ValueType or System.Enum.
             A type parameter for which MustBeValueType (the struct constraint in C#) is true also returns true for this property.
             </summary>
@@ -937,7 +937,7 @@
             Calls visitor.Visit(IModuleReference).
             </summary>
         </member>
-        <member name="F:Microsoft.Cci.ModuleReference.host">
+        <member name="F:Microsoft.Cci.ModuleReference._host">
             <summary>
             Provides a standard abstraction over the applications that host components that provide or consume objects from the metadata model.
             </summary>
@@ -1605,7 +1605,7 @@
         <member name="M:Microsoft.Cci.TypeDefinition.SpecializeIfConstructedFromApplicableTypeParameter(Microsoft.Cci.ITypeReference,Microsoft.Cci.IGenericMethodInstanceReference,Microsoft.Cci.IInternFactory)">
             <summary>
             If the given unspecialized type reference is a constructed type, such as an instance of IArrayTypeReference or IPointerTypeReference or IGenericTypeInstanceReference,
-            then return a new instance (if necessary) in which all refererences to the type parameters of containingMethodInstance.GenericType have been replaced 
+            then return a new instance (if necessary) in which all refererences to the type parameters of containingMethodInstance.GenericType have been replaced
             with the corresponding values from containingMethodInstance.GenericArguments. If the type is not a constructed type the method just returns the type.
             For the purpose of this method, an instance of IGenericParameter is regarded as a constructed type.
             </summary>
@@ -1638,7 +1638,7 @@
         <member name="M:Microsoft.Cci.BaseMetadataTraverser.DispatchAsReference(Microsoft.Cci.ITypeReference)">
             <summary>
             Use this routine, rather than ITypeReference.Dispatch, to call the appropriate derived overload of an ITypeReference.
-            The former routine will call Visit(INamespaceTypeDefinition) rather than Visit(INamespaceTypeReference), etc., 
+            The former routine will call Visit(INamespaceTypeDefinition) rather than Visit(INamespaceTypeReference), etc.,
             in the case where a definition is used as a reference to itself.
             </summary>
             <param name="typeReference">A reference to a type definition. Note that a type definition can serve as a reference to itself.</param>
@@ -2098,7 +2098,7 @@
         </member>
         <member name="M:Microsoft.Cci.TypeHelper.SizeOfType(Microsoft.Cci.ITypeReference,System.Boolean)">
             <summary>
-            Returns the computed size (number of bytes) of a type. 
+            Returns the computed size (number of bytes) of a type.
             </summary>
             <param name="type">The type whose size is wanted. If not a reference to a primitive type, this type must be resolvable.</param>
             <param name="mayUseSizeOfProperty">If true the SizeOf property of the given type may be evaluated and used
@@ -2109,7 +2109,7 @@
             <summary>
             Returns the byte alignment that values of the given type ought to have. The result is a power of two and greater than zero.
             May call the Alignment property of the type.
-            Use TypeAlignment(ITypeDefinition, bool) to suppress the use of the Alignment property.    
+            Use TypeAlignment(ITypeDefinition, bool) to suppress the use of the Alignment property.
             </summary>
             <param name="type">The type whose size is wanted. If not a reference to a primitive type, this type must be resolvable.</param>
         </member>
@@ -2201,7 +2201,7 @@
         </member>
         <member name="T:Microsoft.Cci.TypeNameFormatter">
             <summary>
-            A collection of methods that format types as strings. The methods are virtual and reference each other. 
+            A collection of methods that format types as strings. The methods are virtual and reference each other.
             By default, types are formatting according to C# conventions. However, by overriding one or more of the
             methods, the formatting can be customized for other languages.
             </summary>
@@ -2209,7 +2209,7 @@
         <member name="M:Microsoft.Cci.TypeNameFormatter.AddGenericParametersIfNeeded(Microsoft.Cci.ITypeReference,System.UInt16,Microsoft.Cci.NameFormattingOptions,System.String)">
             <summary>
             Returns the given type name unless genericParameterCount is greater than zero and NameFormattingOptions.TypeParameters has been specified and the
-            type can be resolved. In the latter case, return the type name augmented with the type parameters 
+            type can be resolved. In the latter case, return the type name augmented with the type parameters
             (or, if NameFormatting.UseGenericTypeNameSuffix has been specified, the type name is agumented with `n where n is the number of parameters).
             </summary>
             <param name="type">A reference to a named type.</param>
@@ -2392,32 +2392,32 @@
             </summary>
         </member>
         <member name="T:Microsoft.Cci.AggregatedNamespace`2">
-            <summary>
+             <summary>
             
-            </summary>
-            <typeparam name="ContainerType"></typeparam>
-            <typeparam name="ContainerMemberType"></typeparam>
+             </summary>
+             <typeparam name="ContainerType"></typeparam>
+             <typeparam name="ContainerMemberType"></typeparam>
         </member>
         <member name="M:Microsoft.Cci.AggregatedNamespace`2.#ctor(Microsoft.Cci.IName)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="name"></param>
+             </summary>
+             <param name="name"></param>
         </member>
         <member name="P:Microsoft.Cci.AggregatedNamespace`2.Name">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="P:Microsoft.Cci.AggregatedNamespace`2.RootOwner">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="P:Microsoft.Cci.AggregatedNamespace`2.Locations">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:Microsoft.Cci.AggregatedNamespace`2.Dispatch(Microsoft.Cci.IMetadataVisitor)">
             <summary>
@@ -2462,16 +2462,16 @@
             <returns></returns>
         </member>
         <member name="T:Microsoft.Cci.RootUnitSetNamespace">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:Microsoft.Cci.RootUnitSetNamespace.#ctor(Microsoft.Cci.IName,Microsoft.Cci.UnitSet)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="name"></param>
-            <param name="unitSet"></param>
+             </summary>
+             <param name="name"></param>
+             <param name="unitSet"></param>
         </member>
         <member name="M:Microsoft.Cci.RootUnitSetNamespace.Dispatch(Microsoft.Cci.IMetadataVisitor)">
             <summary>
@@ -2479,62 +2479,62 @@
             </summary>
         </member>
         <member name="M:Microsoft.Cci.RootUnitSetNamespace.ToString">
-            <summary>
+             <summary>
             
-            </summary>
-            <returns></returns>
+             </summary>
+             <returns></returns>
         </member>
         <member name="T:Microsoft.Cci.UnitSetNamespace">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:Microsoft.Cci.UnitSetNamespace.#ctor(Microsoft.Cci.IName,Microsoft.Cci.UnitSet)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="name"></param>
-            <param name="unitSet"></param>
+             </summary>
+             <param name="name"></param>
+             <param name="unitSet"></param>
         </member>
         <member name="M:Microsoft.Cci.UnitSetNamespace.#ctor(Microsoft.Cci.IName,Microsoft.Cci.IUnitSet,System.Collections.Generic.List{Microsoft.Cci.IUnitNamespace})">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="name"></param>
-            <param name="unitSet"></param>
-            <param name="nestedUnitNamespaces"></param>
+             </summary>
+             <param name="name"></param>
+             <param name="unitSet"></param>
+             <param name="nestedUnitNamespaces"></param>
         </member>
         <member name="P:Microsoft.Cci.UnitSetNamespace.Locations">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:Microsoft.Cci.UnitSetNamespace.GetAggregatedMember(Microsoft.Cci.INamespaceMember)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="member"></param>
-            <returns></returns>
+             </summary>
+             <param name="member"></param>
+             <returns></returns>
         </member>
         <member name="P:Microsoft.Cci.UnitSetNamespace.RootOwner">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="P:Microsoft.Cci.UnitSetNamespace.UnitNamespaces">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="P:Microsoft.Cci.UnitSetNamespace.UnitSet">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="T:Microsoft.Cci.NestedUnitSetNamespace">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:Microsoft.Cci.NestedUnitSetNamespace.Dispatch(Microsoft.Cci.IMetadataVisitor)">
             <summary>
@@ -2542,35 +2542,35 @@
             </summary>
         </member>
         <member name="M:Microsoft.Cci.NestedUnitSetNamespace.InitializeIfNecessary">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="P:Microsoft.Cci.NestedUnitSetNamespace.ContainingNamespace">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:Microsoft.Cci.NestedUnitSetNamespace.ToString">
-            <summary>
+             <summary>
             
-            </summary>
-            <returns></returns>
+             </summary>
+             <returns></returns>
         </member>
         <member name="P:Microsoft.Cci.NestedUnitSetNamespace.ContainingScope">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="P:Microsoft.Cci.NestedUnitSetNamespace.Container">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="P:Microsoft.Cci.NestedUnitSetNamespace.ContainingUnitSetNamespace">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="T:Microsoft.Cci.MemoryMappedFile">
             <summary>

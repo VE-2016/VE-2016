@@ -243,6 +243,7 @@ namespace WinExplorer
             this.findResults2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem65 = new System.Windows.Forms.ToolStripMenuItem();
             this.commandWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.powerShellWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recentProjectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileExplorerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.propertyGridToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -302,6 +303,7 @@ namespace WinExplorer
             this.viewInApplicationWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutApplicationStudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.projectToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.guiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip4 = new System.Windows.Forms.ToolStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -356,7 +358,6 @@ namespace WinExplorer
             this.toolStripMenuItem41 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem40 = new System.Windows.Forms.ToolStripMenuItem();
-            this.powerShellWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -906,6 +907,7 @@ namespace WinExplorer
             this.existingItemToolStripMenuItem.Name = "existingItemToolStripMenuItem";
             this.existingItemToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.existingItemToolStripMenuItem.Text = "Existing Item";
+            this.existingItemToolStripMenuItem.Click += new System.EventHandler(this.existingItemToolStripMenuItem_Click);
             // 
             // toolStripMenuItem20
             // 
@@ -1776,6 +1778,13 @@ namespace WinExplorer
             this.commandWindowToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.commandWindowToolStripMenuItem.Text = "Command Window";
             // 
+            // powerShellWindowToolStripMenuItem
+            // 
+            this.powerShellWindowToolStripMenuItem.Name = "powerShellWindowToolStripMenuItem";
+            this.powerShellWindowToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.powerShellWindowToolStripMenuItem.Text = "PowerShell Window";
+            this.powerShellWindowToolStripMenuItem.Click += new System.EventHandler(this.powerShellWindowToolStripMenuItem_Click);
+            // 
             // recentProjectsToolStripMenuItem
             // 
             this.recentProjectsToolStripMenuItem.Name = "recentProjectsToolStripMenuItem";
@@ -2146,7 +2155,8 @@ namespace WinExplorer
             this.viewHelpFilesToolStripMenuItem,
             this.toolStripMenuItem31,
             this.aboutApplicationStudioToolStripMenuItem,
-            this.projectToolStripMenuItem1});
+            this.projectToolStripMenuItem1,
+            this.guiToolStripMenuItem});
             this.hELPToolStripMenuItem.Name = "hELPToolStripMenuItem";
             this.hELPToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.hELPToolStripMenuItem.Text = "HELP";
@@ -2192,6 +2202,13 @@ namespace WinExplorer
             this.projectToolStripMenuItem1.Size = new System.Drawing.Size(208, 22);
             this.projectToolStripMenuItem1.Text = "project";
             this.projectToolStripMenuItem1.Click += new System.EventHandler(this.projectToolStripMenuItem1_Click);
+            // 
+            // guiToolStripMenuItem
+            // 
+            this.guiToolStripMenuItem.Name = "guiToolStripMenuItem";
+            this.guiToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.guiToolStripMenuItem.Text = "gui";
+            this.guiToolStripMenuItem.Click += new System.EventHandler(this.guiToolStripMenuItem_Click);
             // 
             // toolStrip4
             // 
@@ -2593,13 +2610,6 @@ namespace WinExplorer
             this.toolStripMenuItem40.Size = new System.Drawing.Size(218, 22);
             this.toolStripMenuItem40.Text = "Properties";
             // 
-            // powerShellWindowToolStripMenuItem
-            // 
-            this.powerShellWindowToolStripMenuItem.Name = "powerShellWindowToolStripMenuItem";
-            this.powerShellWindowToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.powerShellWindowToolStripMenuItem.Text = "PowerShell Window";
-            this.powerShellWindowToolStripMenuItem.Click += new System.EventHandler(this.powerShellWindowToolStripMenuItem_Click);
-            // 
             // ExplorerForms
             // 
             this.ClientSize = new System.Drawing.Size(1049, 584);
@@ -2615,6 +2625,8 @@ namespace WinExplorer
             this.Text = "Application Studio";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExplorerForm_FormClosing);
             this.Load += new System.EventHandler(this.ExplorerForms_Load);
+            this.ResizeBegin += new System.EventHandler(this.ExplorerForms_ResizeBegin);
+            this.ResizeEnd += new System.EventHandler(this.ExplorerForms_ResizeEnd);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -2945,5 +2957,6 @@ namespace WinExplorer
         private ToolStripMenuItem restoreNugetPackagesToolStripMenuItem;
         private ToolStripMenuItem powerShellToolStripMenuItem;
         private ToolStripMenuItem powerShellWindowToolStripMenuItem;
+        private ToolStripMenuItem guiToolStripMenuItem;
     }
 }

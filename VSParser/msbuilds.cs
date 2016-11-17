@@ -2188,7 +2188,7 @@ namespace VSProvider
                 //string error = p.StandardError.ReadToEnd();
                 await System.Threading.Tasks.Task.Factory.StartNew(() =>
                 {
-                    //process.WaitForExit();
+                    process.WaitForExit();
                 });
 
                 ProcessModuleCollection pmc = process.Modules;
@@ -2261,6 +2261,88 @@ namespace VSProvider
                 return;
             }
         }
+
+        static public async void RunExternalExes(string filename, string arguments = null)
+        {
+            var process = new Process();
+
+            process.StartInfo.FileName = filename;
+            process.StartInfo.WorkingDirectory = Path.GetDirectoryName(filename);
+            
+            {
+                process.StartInfo.Arguments =  arguments;
+            }
+
+            process.StartInfo.CreateNoWindow = false;
+            process.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
+            process.StartInfo.UseShellExecute = false;
+
+            //process.StartInfo.RedirectStandardError = true;
+            //process.StartInfo.RedirectStandardOutput = true;
+
+            //process.EnableRaisingEvents = true;
+            //process.Exited += p_Exited;
+
+            //var stdOutput = new StringBuilder();
+            //process.OutputDataReceived += (sender, args) =>
+            //{
+            //    //Console.WriteLine(e.Data);
+            //    stdOutput.Append(args.Data);
+            //    if (rb != null)
+            //        rb.AppendText(args.Data);
+            //};
+
+            string stdError = null;
+            try
+            {
+                process.Start();
+
+                //stdOutput .Append( await process.StandardOutput.ReadToEndAsync());
+                //if (rb != null)
+                //    rb.AppendText(stdOutput.ToString());
+                //stdError = await process.StandardError.ReadToEndAsync();
+                StreamReader reader = process.StandardOutput;
+
+                StreamReader error = process.StandardError;
+
+                //string output = await reader.ReadToEndAsync();
+                //if (rb != null)
+                //    rb.AppendText(output);
+
+                //string error = p.StandardError.ReadToEnd();
+            //    await System.Threading.Tasks.Task.Factory.StartNew(() =>
+             //   {
+                    process.WaitForExit();
+            //    });
+
+              
+
+                string output = reader.ReadToEnd();
+                if (rb != null)
+                    rb.AppendText(output);
+
+                if (rb != null)
+                    rb.AppendText("\n");
+
+                string errors = error.ReadToEnd();
+                if (rb != null)
+                    rb.AppendText(errors);
+
+                if (rb != null)
+                    rb.AppendText("\n");
+
+              
+            }
+            catch (Exception e)
+            {
+                //throw new Exception("OS error while executing " + Format(filename, arguments) + ": " + e.Message, e);
+
+                return;
+            }
+
+            
+        }
+
 
         static public string Format(string filename, string arguments)
         {

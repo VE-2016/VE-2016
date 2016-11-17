@@ -373,8 +373,10 @@ namespace WinExplorer
         {
             Es = null;
             Ws = null;
+            dg.Rows.Clear();
 
-            lv.Invoke(new Action(() => { lv.Items.Clear(); }));
+
+         //   lv.Invoke(new Action(() => { lv.Items.Clear(); }));
             //            W = null;
             _errorsButton.Text = "Errors";
             _warningsButton.Text = "Warnings";
@@ -873,84 +875,94 @@ namespace WinExplorer
 
             ResumeLayout();
         }
+
+        object obs = new object();
+
         public void AddCompileResults(ArrayList es, ArrayList ws, ArrayList me)
         {
-            //Es = es;
-            //Ws = ws;
-            //Me = me;
 
-            SuspendLayout();
-            if(W == null)
-            W = new ArrayList();
-
-            foreach (Microsoft.Build.Framework.BuildErrorEventArgs e in es)
+            lock (obs)
             {
-                int rowId = dg.Rows.Add();
-                DataGridViewRow row = dg.Rows[rowId];
 
-                row.Cells[0].Value = "";
-                row.Cells[1].Value = Resources.Errors;
-                row.Cells[2].Value = e.Code;
-                row.Cells[3].Value = e.Message;
-                row.Cells[4].Value = Path.GetFileNameWithoutExtension(e.ProjectFile);
-                row.Cells[5].Value = Path.GetFileName(e.File);
-                row.Cells[6].Value = e.LineNumber.ToString();
-                row.Cells[7].Value = "project";
 
-                //v.Checked = true;
+                //Es = es;
+                //Ws = ws;
+                //Me = me;
 
-                row.Tag = e;
+                SuspendLayout();
+                if (W == null)
+                    W = new ArrayList();
 
-                //lv.Items.Add(v);
+                foreach (Microsoft.Build.Framework.BuildErrorEventArgs e in es)
+                {
+                    int rowId = dg.Rows.Add();
+                    DataGridViewRow row = dg.Rows[rowId];
 
-                W.Add(row);
+                    row.Cells[0].Value = "";
+                    row.Cells[1].Value = Resources.Errors;
+                    row.Cells[2].Value = e.Code;
+                    row.Cells[3].Value = e.Message;
+                    row.Cells[4].Value = Path.GetFileNameWithoutExtension(e.ProjectFile);
+                    row.Cells[5].Value = Path.GetFileName(e.File);
+                    row.Cells[6].Value = e.LineNumber.ToString();
+                    row.Cells[7].Value = "project";
+
+                    //v.Checked = true;
+
+                    row.Tag = e;
+
+                    //lv.Items.Add(v);
+
+                    W.Add(row);
+                }
+
+                foreach (Microsoft.Build.Framework.BuildWarningEventArgs e in ws)
+                {
+                    int rowId = dg.Rows.Add();
+                    DataGridViewRow row = dg.Rows[rowId];
+
+                    //ListViewItem v = new ListViewItem();
+                    row.Cells[0].Value = "";
+                    row.Cells[1].Value = Resources.warnings;
+                    row.Cells[2].Value = e.Code;
+                    row.Cells[3].Value = e.Message;
+                    row.Cells[4].Value = Path.GetFileNameWithoutExtension(e.ProjectFile);
+                    row.Cells[5].Value = Path.GetFileName(e.File);
+                    row.Cells[6].Value = e.LineNumber.ToString();
+                    row.Cells[7].Value = "project";
+
+                    //v.Checked = false;
+
+                    row.Tag = e;
+
+                    //lv.Items.Add(v);
+
+                    W.Add(row);
+                }
+
+                //foreach (Microsoft.Build.Framework.BuildMessageEventArgs e in me)
+                //{
+                //    ListViewItem v = new ListViewItem();
+                //    v.Text = "";
+                //    v.SubItems.Add("");
+                //    v.SubItems.Add(e.Code);
+                //    v.SubItems.Add(e.Message);
+                //    v.SubItems.Add(Path.GetFileNameWithoutExtension(e.ProjectFile));
+                //    v.SubItems.Add(Path.GetFileName(e.File));
+                //    v.SubItems.Add(e.LineNumber.ToString());
+
+                //    v.Checked = false;
+
+                //    v.Tag = e;
+
+                //    lv.Items.Add(v);
+
+                //    W.Add(v);
+                //}
+
+                ResumeLayout();
+
             }
-
-            foreach (Microsoft.Build.Framework.BuildWarningEventArgs e in ws)
-            {
-                int rowId = dg.Rows.Add();
-                DataGridViewRow row = dg.Rows[rowId];
-
-                //ListViewItem v = new ListViewItem();
-                row.Cells[0].Value = "";
-                row.Cells[1].Value = Resources.warnings;
-                row.Cells[2].Value = e.Code;
-                row.Cells[3].Value = e.Message;
-                row.Cells[4].Value = Path.GetFileNameWithoutExtension(e.ProjectFile);
-                row.Cells[5].Value = Path.GetFileName(e.File);
-                row.Cells[6].Value = e.LineNumber.ToString();
-                row.Cells[7].Value = "project";
-
-                //v.Checked = false;
-
-                row.Tag = e;
-
-                //lv.Items.Add(v);
-
-                W.Add(row);
-            }
-
-            //foreach (Microsoft.Build.Framework.BuildMessageEventArgs e in me)
-            //{
-            //    ListViewItem v = new ListViewItem();
-            //    v.Text = "";
-            //    v.SubItems.Add("");
-            //    v.SubItems.Add(e.Code);
-            //    v.SubItems.Add(e.Message);
-            //    v.SubItems.Add(Path.GetFileNameWithoutExtension(e.ProjectFile));
-            //    v.SubItems.Add(Path.GetFileName(e.File));
-            //    v.SubItems.Add(e.LineNumber.ToString());
-
-            //    v.Checked = false;
-
-            //    v.Tag = e;
-
-            //    lv.Items.Add(v);
-
-            //    W.Add(v);
-            //}
-
-            ResumeLayout();
         }
 
         private bool _showErrors = true;

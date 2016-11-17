@@ -505,7 +505,7 @@
         <member name="T:Microsoft.Cci.IMetadataVisitor">
             <summary>
             Implemented by classes that visit nodes of object graphs via a double dispatch mechanism, usually performing some computation of a subset of the nodes in the graph.
-            Contains a specialized Visit routine for each standard type of object defined in this object model. 
+            Contains a specialized Visit routine for each standard type of object defined in this object model.
             </summary>
         </member>
         <member name="M:Microsoft.Cci.IMetadataVisitor.Visit(Microsoft.Cci.IArrayTypeReference)">
@@ -877,7 +877,7 @@
         </member>
         <member name="F:Microsoft.Cci.CallingConvention.C">
             <summary>
-            C/C++ style calling convention for unmanaged methods. The call stack is cleaned up by the caller, 
+            C/C++ style calling convention for unmanaged methods. The call stack is cleaned up by the caller,
             which makes this convention suitable for calling methods that accept extra arguments.
             </summary>
         </member>
@@ -1253,7 +1253,7 @@
         </member>
         <member name="P:Microsoft.Cci.IMethodDefinition.IsAccessCheckedOnOverride">
             <summary>
-            True if the method can only be overridden when it is also accessible. 
+            True if the method can only be overridden when it is also accessible.
             </summary>
         </member>
         <member name="P:Microsoft.Cci.IMethodDefinition.IsCil">
@@ -1278,7 +1278,7 @@
         </member>
         <member name="P:Microsoft.Cci.IMethodDefinition.IsHiddenBySignature">
             <summary>
-            True if this method is hidden if a derived type declares a method with the same name and signature. 
+            True if this method is hidden if a derived type declares a method with the same name and signature.
             If false, any method with the same name hides this method. This flag is ignored by the runtime and is only used by compilers.
             </summary>
         </member>
@@ -1289,7 +1289,7 @@
         </member>
         <member name="P:Microsoft.Cci.IMethodDefinition.IsNewSlot">
             <summary>
-            The method always gets a new slot in the virtual method table. 
+            The method always gets a new slot in the virtual method table.
             This means the method will hide (not override) a base type method with the same name and signature.
             </summary>
         </member>
@@ -1615,8 +1615,8 @@
         </member>
         <member name="P:Microsoft.Cci.ISpecializedFieldReference.UnspecializedVersion">
             <summary>
-            A reference to the field definition that has been specialized to obtain the field definition referred to by this field reference. 
-            When the containing type of the referenced specialized field definition is itself a specialized nested type of a generic type instance, 
+            A reference to the field definition that has been specialized to obtain the field definition referred to by this field reference.
+            When the containing type of the referenced specialized field definition is itself a specialized nested type of a generic type instance,
             then the unspecialized field reference refers to the corresponding field definition from the unspecialized containing type definition.
             (I.e. the unspecialized field reference always refers to a field definition that is not obtained via specialization.)
             </summary>
@@ -1640,8 +1640,8 @@
         </member>
         <member name="P:Microsoft.Cci.ISpecializedMethodReference.UnspecializedVersion">
             <summary>
-            A reference to the method definition that has been specialized to obtain the method definition referred to by this method reference. 
-            When the containing type of the referenced specialized method definition is itself a specialized nested type of a generic type instance, 
+            A reference to the method definition that has been specialized to obtain the method definition referred to by this method reference.
+            When the containing type of the referenced specialized method definition is itself a specialized nested type of a generic type instance,
             then the unspecialized method reference refers to the corresponding method definition from the unspecialized containing type definition.
             (I.e. the unspecialized method reference always refers to a method definition that is not obtained via specialization.)
             </summary>
@@ -2071,7 +2071,7 @@
         </member>
         <member name="T:Microsoft.Cci.IMarshallingInformation">
             <summary>
-            When managed code calls unmanaged methods or exposes managed fields to unmanaged code, it is sometimes necessary to provide specific information about how the 
+            When managed code calls unmanaged methods or exposes managed fields to unmanaged code, it is sometimes necessary to provide specific information about how the
             managed types should be marshalled to and from the unmanaged types.
             </summary>
         </member>
@@ -2814,1099 +2814,1099 @@
             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Nop">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Break">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldarg_0">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldarg_1">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldarg_2">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldarg_3">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldloc_0">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldloc_1">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldloc_2">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldloc_3">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stloc_0">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stloc_1">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stloc_2">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stloc_3">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldarg_S">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldarga_S">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Starg_S">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldloc_S">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldloca_S">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stloc_S">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldnull">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldc_I4_M1">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldc_I4_0">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldc_I4_1">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldc_I4_2">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldc_I4_3">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldc_I4_4">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldc_I4_5">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldc_I4_6">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldc_I4_7">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldc_I4_8">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldc_I4_S">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldc_I4">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldc_I8">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldc_R4">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldc_R8">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Dup">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Pop">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Jmp">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Call">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Calli">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ret">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Br_S">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Brfalse_S">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Brtrue_S">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Beq_S">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Bge_S">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Bgt_S">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ble_S">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Blt_S">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Bne_Un_S">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Bge_Un_S">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Bgt_Un_S">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ble_Un_S">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Blt_Un_S">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Br">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Brfalse">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Brtrue">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Beq">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Bge">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Bgt">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ble">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Blt">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Bne_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Bge_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Bgt_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ble_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Blt_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Switch">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldind_I1">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldind_U1">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldind_I2">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldind_U2">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldind_I4">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldind_U4">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldind_I8">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldind_I">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldind_R4">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldind_R8">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldind_Ref">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stind_Ref">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stind_I1">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stind_I2">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stind_I4">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stind_I8">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stind_R4">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stind_R8">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Add">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Sub">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Mul">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Div">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Div_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Rem">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Rem_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.And">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Or">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Xor">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Shl">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Shr">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Shr_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Neg">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Not">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_I1">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_I2">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_I4">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_I8">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_R4">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_R8">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_U4">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_U8">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Callvirt">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Cpobj">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldobj">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldstr">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Newobj">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Castclass">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Isinst">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_R_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Unbox">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Throw">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldfld">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldflda">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stfld">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldsfld">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldsflda">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stsfld">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stobj">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_Ovf_I1_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_Ovf_I2_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_Ovf_I4_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_Ovf_I8_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_Ovf_U1_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_Ovf_U2_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_Ovf_U4_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_Ovf_U8_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_Ovf_I_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_Ovf_U_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Box">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Newarr">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldlen">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldelema">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldelem_I1">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldelem_U1">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldelem_I2">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldelem_U2">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldelem_I4">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldelem_U4">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldelem_I8">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldelem_I">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldelem_R4">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldelem_R8">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldelem_Ref">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stelem_I">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stelem_I1">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stelem_I2">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stelem_I4">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stelem_I8">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stelem_R4">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stelem_R8">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stelem_Ref">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldelem">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stelem">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Unbox_Any">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_Ovf_I1">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_Ovf_U1">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_Ovf_I2">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_Ovf_U2">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_Ovf_I4">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_Ovf_U4">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_Ovf_I8">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_Ovf_U8">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Refanyval">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ckfinite">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Mkrefany">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldtoken">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_U2">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_U1">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_I">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_Ovf_I">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_Ovf_U">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Add_Ovf">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Add_Ovf_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Mul_Ovf">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Mul_Ovf_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Sub_Ovf">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Sub_Ovf_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Endfinally">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Leave">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Leave_S">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stind_I">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Conv_U">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Arglist">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ceq">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Cgt">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Cgt_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Clt">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Clt_Un">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldftn">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldvirtftn">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldarg">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldarga">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Starg">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldloc">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Ldloca">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Stloc">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Localloc">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Endfilter">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Unaligned_">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Volatile_">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Tail_">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Initobj">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Constrained_">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Cpblk">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Initblk">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.No_">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Rethrow">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Sizeof">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Refanytype">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Readonly_">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Microsoft.Cci.OperationCode.Array_Create">
             <summary>
@@ -4314,7 +4314,7 @@
         </member>
         <member name="T:Microsoft.Cci.ICustomModifier">
             <summary>
-            Modifies the set of allowed values for a type, or the semantics of operations allowed on those values. 
+            Modifies the set of allowed values for a type, or the semantics of operations allowed on those values.
             Custom modifiers are not associated directly with types, but rather with typed storage locations for values.
             </summary>
         </member>
@@ -5053,7 +5053,7 @@
         </member>
         <member name="P:Microsoft.Cci.ITypeDefinition.InstanceType">
             <summary>
-            An instance of this generic type that has been obtained by using the generic parameters as the arguments. 
+            An instance of this generic type that has been obtained by using the generic parameters as the arguments.
             Use this instance to look up members
             </summary>
         </member>
@@ -5208,7 +5208,7 @@
         </member>
         <member name="P:Microsoft.Cci.ITypeReference.IsValueType">
             <summary>
-            True if the type is a value type. 
+            True if the type is a value type.
             Value types are sealed and extend System.ValueType or System.Enum.
             A type parameter for which MustBeValueType (the struct constraint in C#) is true also returns true for this property.
             </summary>
@@ -5357,12 +5357,12 @@
         </member>
         <member name="F:Microsoft.Cci.TypeMemberVisibility.FamilyAndAssembly">
             <summary>
-            The member is visible only within the intersection of its family (its own type and any subtypes) and assembly. 
+            The member is visible only within the intersection of its family (its own type and any subtypes) and assembly.
             </summary>
         </member>
         <member name="F:Microsoft.Cci.TypeMemberVisibility.FamilyOrAssembly">
             <summary>
-            The member is visible only within the union of its family and assembly. 
+            The member is visible only within the union of its family and assembly.
             </summary>
         </member>
         <member name="F:Microsoft.Cci.TypeMemberVisibility.Other">
@@ -5609,7 +5609,7 @@
         </member>
         <member name="P:Microsoft.Cci.IModule.EntryPoint">
             <summary>
-            The method that will be called to start execution of this executable module. 
+            The method that will be called to start execution of this executable module.
             </summary>
         </member>
         <member name="P:Microsoft.Cci.IModule.FileAlignment">
@@ -5794,7 +5794,7 @@
         </member>
         <member name="P:Microsoft.Cci.IUnit.Location">
             <summary>
-            An indication of the location where the unit is or will be stored. This need not be a file system path and may be empty. 
+            An indication of the location where the unit is or will be stored. This need not be a file system path and may be empty.
             The interpretation depends on the ICompilationHostEnviroment instance used to resolve references to this unit.
             </summary>
         </member>
@@ -5805,7 +5805,7 @@
         </member>
         <member name="P:Microsoft.Cci.IUnit.UnitReferences">
             <summary>
-            A list of other units that are referenced by this unit. 
+            A list of other units that are referenced by this unit.
             </summary>
         </member>
         <member name="T:Microsoft.Cci.IUnitReference">
@@ -5868,7 +5868,7 @@
         </member>
         <member name="P:Microsoft.Cci.UnitIdentity.Location">
             <summary>
-            An indication of the location where the unit is or will be stored. Can be the empty string if the location is not known. This need not be a file system path. 
+            An indication of the location where the unit is or will be stored. Can be the empty string if the location is not known. This need not be a file system path.
             </summary>
         </member>
         <member name="P:Microsoft.Cci.UnitIdentity.Name">
@@ -5891,7 +5891,7 @@
             Allocates an object that identifies a .NET assembly, using its name, culture, version, public key token, and location.
             </summary>
             <param name="name">The name of the identified assembly.</param>
-            <param name="culture">Identifies the culture associated with the identified assembly. Typically used to identify sattelite assemblies with localized resources. 
+            <param name="culture">Identifies the culture associated with the identified assembly. Typically used to identify sattelite assemblies with localized resources.
             If the assembly is culture neutral, an empty string should be supplied as argument.</param>
             <param name="version">The version of the identified assembly.</param>
             <param name="publicKeyToken">The public part of the key used to sign the referenced assembly. May be empty if the identified assembly is not signed.</param>

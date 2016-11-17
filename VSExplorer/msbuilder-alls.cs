@@ -523,6 +523,11 @@ namespace WinExplorer
                     Console.WriteLine("Socket exception in thread {0}: {1}", Thread.CurrentThread.ManagedThreadId, e);
                 }
             }
+
+            public void Close()
+            {
+                listener.Stop();
+            }
         }
 
         public enum Build
@@ -655,6 +660,8 @@ namespace WinExplorer
 
 
             proc.WaitForExit();
+
+            Command.counter--;
 
             string stderr = proc.StandardError.ReadToEnd();
 

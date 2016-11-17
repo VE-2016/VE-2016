@@ -13,7 +13,7 @@ namespace WinExplorer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ExplorerForms("explorer"));
+            Application.Run(new ExplorerForms());
         }
     }
 }

@@ -16,6 +16,7 @@ using System.Windows.Forms;
 using System.Xml;
 using VSParsers;
 
+
 namespace VSProvider
 {
     [DebuggerDisplay("{ProjectName}, {RelativePath}, {ProjectGuid}")]
@@ -32,6 +33,7 @@ namespace VSProvider
         private static readonly PropertyInfo s_ProjectRootElement_Items;
         private static readonly PropertyInfo s_ProjectRootElement_OutputType;
         private static readonly PropertyInfo s_ProjectRootElement_OutDir;
+
         private static readonly PropertyInfo s_ProjectRootElement_AssemblyName;
 
         public VSSolution solution;
@@ -40,7 +42,6 @@ namespace VSProvider
         private List<VSProjectItem> _items;
 
         public Dictionary<string, ITypeDefinition> dicts { get; set; }
-
         public static Dictionary<string, string> dc { get; set; }
 
         public string Name { get; set; }
@@ -63,6 +64,7 @@ namespace VSProvider
         {
             get
             {
+                
                 return _projectFileName;
             }
             set
@@ -604,6 +606,10 @@ namespace VSProvider
 
         public string GetOutDir()
         {
+
+
+            ArrayList L = GetProperties("", "");
+
             Microsoft.Build.Evaluation.Project pc = null;
 
             try
@@ -615,6 +621,16 @@ namespace VSProvider
             if (pc == null)
                 return "";
 
+            string outs = "";
+
+            
+
+            foreach (ProjectProperty p in L)
+                if (p.Name == "OutDir")
+                    outs = p.EvaluatedValue;
+
+            pc.ReevaluateIfNecessary();
+
             Microsoft.Build.Evaluation.ProjectProperty outtype = pc.GetProperty("OutputType");
             Microsoft.Build.Evaluation.ProjectProperty outdir = pc.GetProperty("OutDir");
             Microsoft.Build.Evaluation.ProjectProperty assname = pc.GetProperty("AssemblyName");
@@ -624,10 +640,15 @@ namespace VSProvider
             if (outtype == null)
                 return "";
 
-            if (outtype.EvaluatedValue == "WinExe")
+            if (outtype.EvaluatedValue.ToLower() == "winexe" || outtype.EvaluatedValue.ToLower() == "exe")
                 ext = ".exe";
 
-            string s = outdir.EvaluatedValue + "\\" + assname.EvaluatedValue + ext;
+            // string s = outdir.EvaluatedValue + "\\" + assname.EvaluatedValue + ext;
+
+            string s = outs + "\\" + assname.EvaluatedValue + ext;
+
+
+
 
             pc.ProjectCollection.UnloadAllProjects();
 
@@ -692,6 +713,9 @@ namespace VSProvider
             string p = Path.GetFullPath(FileName).Replace(g, "");
 
             string s = GetOutDir();
+
+            if (Path.IsPathRooted(s))
+                return s;
 
             string r = p + "\\" + s;
 
@@ -1396,6 +1420,10 @@ namespace VSProvider
 
         public ArrayList GetProperties(string proj, string platform)
         {
+
+            if (File.Exists(FileName) == false)
+                return new ArrayList();
+
             Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(FileName);
 
             SetProperty("Configuration", proj, pc);
@@ -1872,12 +1900,112 @@ namespace VSProvider
 
             return name;
         }
-        public void AddFormItem(ArrayList L, string folders)
+
+        public string RenameTo(string name)
         {
+
+            
+
+            string[] cc = name.Split(".".ToCharArray());
+
+            string r = cc[0];
+
+            name = cc[0] + "1";
+
+            return name;
+
+        }
+
+        public ArrayList RenameForm(ArrayList L, ArrayList R, string name, Dictionary<string,string> dict)
+        {
+
+            ArrayList F = new ArrayList();
+
+            string[] cc = name.Split(".".ToCharArray());
+
+            string r = cc[0];
+
+            string start = name;
+
+            int i = 0;
+            while ((R.Contains(name)))
+            {
+                name = start;
+                string[] bb = name.Split(".".ToCharArray());
+                bb[0] = bb[0] + i++.ToString();
+                name = "";
+                int k = 0;
+                while (k < bb.Length - 1)
+                    name += bb[k++] + ".";
+                name += bb[bb.Length - 1];
+            }
+
+            string[] dd = name.Split(".".ToCharArray());
+
+            name = dd[0];
+
+            foreach(string s in L)
+            {
+
+
+                
+                string d = s.Replace(r, name);
+
+                F.Add(d);
+
+                dict[s] = d;
+
+            }
+
+            return F;
+
+        }
+
+        public Dictionary<string, string> RenameToName(Microsoft.Build.Evaluation.Project pc, ArrayList L)
+        {
+
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+
+           // Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(FileName);
+
+            if (pc == null)
+                return dict;
+
+            string s = Path.GetDirectoryName(FileName);
+           
+            ArrayList R = GetItems(pc, "Compile", false);
+
+            string name = GetFormName(L);
+
+            if (name == "")
+                name = GetResourceName(L);
+
+            if (name == "")
+                return dict;
+
+            string names = "";
+
+            if (R.Contains(name))
+            {
+
+                L = RenameForm(L, R, name, dict);
+                names = RenameTo(name);
+                //name = name.Replace(name, names);
+
+            }
+
+            return dict;
+        }
+
+        public Dictionary<string, string> AddFormItem(ArrayList L, string folders)
+        {
+
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+
             Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(FileName);
 
             if (pc == null)
-                return;
+                return dict;
 
             string s = Path.GetDirectoryName(FileName);
 
@@ -1892,7 +2020,24 @@ namespace VSProvider
                 name = GetResourceName(L);
 
             if (name == "")
-                return;
+                return dict;
+
+            string names = "";
+
+            
+            if (R.Contains(name))
+            {
+
+                L = RenameForm(L, R, name, dict);
+
+                names = RenameTo(name);
+                
+                //name = name.Replace(name, names);
+
+            }
+
+            if (dict.ContainsKey(name))
+                name = dict[name];
 
             foreach (string p in L)
             {
@@ -1909,28 +2054,22 @@ namespace VSProvider
                 {
                     List<KeyValuePair<string, string>> list = metadata.ToList();
 
-                    //Add new item to list.
                     list.Add(new KeyValuePair<string, string>("DependentUpon", name));
 
-                    //Cast list to IEnumerable
                     metadata = (IEnumerable<KeyValuePair<string, string>>)list;
 
                     if (i < 0)
-
                         pc.AddItem("EmbeddedResource", refs, metadata);
                 }
                 else if (p.ToLower().Contains("designer"))
                 {
                     List<KeyValuePair<string, string>> list = metadata.ToList();
 
-                    //Add new item to list.
                     list.Add(new KeyValuePair<string, string>("DependentUpon", name));
 
-                    //Cast list to IEnumerable
                     metadata = (IEnumerable<KeyValuePair<string, string>>)list;
 
                     if (i < 0)
-
                         pc.AddItem("Compile", refs, metadata);
                 }
                 else
@@ -1960,13 +2099,15 @@ namespace VSProvider
                 //  <DependentUpon>OptionsForms.cs</DependentUpon>
                 //  </EmbeddedResource>
 
-                //if (i < 0)
-                // pc.AddItem("Compile", refs);
+                
             }
 
             pc.Save(FileName);
 
             pc.ProjectCollection.UnloadAllProjects();
+
+            return dict;
+
         }
 
         public void LoadMetaData(ArrayList L)
@@ -2403,7 +2544,12 @@ namespace VSProvider
 
                 ICollection<Microsoft.Build.Evaluation.ProjectItem> c = pc.GetItemsByEvaluatedInclude(name);
 
+                ArrayList F = new ArrayList();
+
                 foreach (Microsoft.Build.Evaluation.ProjectItem pp in c)
+                    F.Add(pp);
+
+                foreach (Microsoft.Build.Evaluation.ProjectItem pp in F)
                 {
                     if (pp.UnevaluatedInclude == name)
                         pc.RemoveItem(pp);
@@ -2590,6 +2736,8 @@ namespace VSProvider
             string s = SetProperties(FileName);
 
             string r = p + "\\" + s;
+
+            r = GetProjectExec();
 
             if (File.Exists(r) == false)
                 return;
