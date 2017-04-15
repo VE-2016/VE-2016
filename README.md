@@ -11,4 +11,12 @@ Functionality
 - edit c# files
 - build project
 - run exec
+Technologies
+- Roslyn
+- DockPanel Suite
+- NRefactory
+- NUNIT
 
+- Windows Forms
+- C# .NET Framework
+- Reflection
