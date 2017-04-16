@@ -6,9 +6,9 @@ namespace WeifenLuo.WinFormsUI.Docking
 {
     public static class Win32Helper
     {
-        private static readonly bool s_isRunningOnMono = Type.GetType("Mono.Runtime") != null;
+        private static readonly bool _isRunningOnMono = Type.GetType("Mono.Runtime") != null;
 
-        public static bool IsRunningOnMono { get { return s_isRunningOnMono; } }
+        public static bool IsRunningOnMono { get { return _isRunningOnMono; } }
 
         internal static Control ControlAtPoint(Point pt)
         {

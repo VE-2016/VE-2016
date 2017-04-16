@@ -129,7 +129,7 @@ namespace WinExplorer
 
         private void DisplayLine(string file, string line, string c, int g)
         {
-            ef.BeginInvoke(new Action(() => { ef.OpenFileXY(file, line, c, g); }));
+            ef.BeginInvoke(new Action(() => { ef.OpenFileXY(file, c, line/*, c*/, g); }));
         }
 
 
@@ -171,7 +171,7 @@ namespace WinExplorer
             // if (FileOpened(Name) != null)
             //     return null;
 
-            string contents = "";// Parser.ProjectParser.GetFileContents(Name);
+            //string contents = "";// Parser.ProjectParser.GetFileContents(Name);
 
             try
             {
@@ -188,7 +188,7 @@ namespace WinExplorer
             doc.HideOnClose = false;
             doc.FormBorderStyle = FormBorderStyle.None;
             doc.Dock = DockStyle.Fill;
-            doc.BackColor = SystemColors.InactiveBorder;
+           // doc.BackColor = SystemColors.InactiveBorder;
             doc.Contents = text;
             //doc.ScriptLanguage = _scriptLanguage;
             //doc.vp = pp;

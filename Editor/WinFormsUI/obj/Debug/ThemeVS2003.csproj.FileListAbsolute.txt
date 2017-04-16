@@ -1,0 +1,10 @@
+C:\Users\me\Downloads\dockpanelsuite-master\dockpanelsuite-master\WinFormsUI\bin\Debug\license.txt
+C:\Users\me\Downloads\dockpanelsuite-master\dockpanelsuite-master\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2003.dll
+C:\Users\me\Downloads\dockpanelsuite-master\dockpanelsuite-master\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2003.pdb
+C:\Users\me\Downloads\dockpanelsuite-master\dockpanelsuite-master\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
+C:\Users\me\Downloads\dockpanelsuite-master\dockpanelsuite-master\WinFormsUI\obj\Debug\ThemeVS2003.csprojResolveAssemblyReference.cache
+C:\Users\me\Downloads\dockpanelsuite-master\dockpanelsuite-master\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2003.Resources.resources
+C:\Users\me\Downloads\dockpanelsuite-master\dockpanelsuite-master\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2003.Strings.resources
+C:\Users\me\Downloads\dockpanelsuite-master\dockpanelsuite-master\WinFormsUI\obj\Debug\ThemeVS2003.csproj.GenerateResource.Cache
+C:\Users\me\Downloads\dockpanelsuite-master\dockpanelsuite-master\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2003.dll
+C:\Users\me\Downloads\dockpanelsuite-master\dockpanelsuite-master\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2003.pdb

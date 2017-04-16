@@ -75,6 +75,25 @@ namespace GACManagerApi
             return L;
         }
 
+        public static ArrayList GetInstalledSDKs()
+        {
+            ArrayList L = new ArrayList();
+
+            string programFilesX86 = Environment.ExpandEnvironmentVariables("%ProgramFiles(x86)%");
+
+            string s = "Reference Assemblies\\Microsoft\\Framework\\.NETFramework";
+
+            DirectoryInfo d = new DirectoryInfo(programFilesX86 + "\\" + s);
+
+            DirectoryInfo[] dd = d.GetDirectories();
+
+            foreach (DirectoryInfo c in dd)
+                L.Add(c);
+
+
+            return L;
+        }
+
         public static ArrayList GetFrameworks()
         {
             ArrayList L = new ArrayList();
@@ -107,11 +126,13 @@ namespace GACManagerApi
             return L;
         }
 
-        public static ArrayList GetExtensionFiles(DirectoryInfo d)
+        public static ArrayList GetExtensionFiles(DirectoryInfo d, bool subfolders = true)
         {
             ArrayList L = new ArrayList();
 
-            DirectoryInfo[] dd = d.GetDirectories();
+            DirectoryInfo[] dd = new DirectoryInfo[] { d };
+            if(subfolders)
+             d.GetDirectories();
 
             foreach (DirectoryInfo s in dd)
             {
@@ -137,7 +158,38 @@ namespace GACManagerApi
 
             return L;
         }
+        public static ArrayList GetWPFFiles(DirectoryInfo d, bool subfolders = true)
+        {
+            ArrayList L = new ArrayList();
 
+            DirectoryInfo[] dd = new DirectoryInfo[] { d };
+            if (subfolders)
+                d.GetDirectories();
+
+            foreach (DirectoryInfo s in dd)
+            {
+                //DirectoryInfo[] c = s.GetDirectories();
+
+                //if (c.Length <= 0)
+                //    continue;
+
+                DirectoryInfo cc = s;
+
+                FileInfo[] f = cc.GetFiles();
+
+                foreach (FileInfo g in f)
+                {
+                    if (g.FullName.EndsWith(".dll") == false)
+                        continue;
+
+                    AssemblyDescription desc = new AssemblyDescription(g.FullName, "");
+
+                    L.Add(desc);
+                }
+            }
+
+            return L;
+        }
         public static async Task<ArrayList> GetExtensions(string s)
         {
             // F = GetFrameworks();
@@ -159,6 +211,24 @@ namespace GACManagerApi
             L.AddRange(EM);
 
             return L;
+        }
+        public static ArrayList GetWPF()
+        {
+            string system = Directory.GetParent(Environment.GetFolderPath(Environment.SpecialFolder.System)).FullName;
+
+            DirectoryInfo d = new DirectoryInfo(system + "\\" + "Microsoft.NET\\Framework64");
+
+            DirectoryInfo[] folders = d.GetDirectories();
+
+            DirectoryInfo wpf = folders[folders.Length - 1];
+
+            string s = wpf.FullName + "\\WPF";
+
+            d = new DirectoryInfo(s);
+
+            ArrayList WPF = GetWPFFiles(d, false);
+
+            return WPF;
         }
 
         //public string GetDocumentation(string assemblyName, string data)

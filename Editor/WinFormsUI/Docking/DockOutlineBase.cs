@@ -17,28 +17,28 @@ namespace WeifenLuo.WinFormsUI.Docking
             SaveOldValues();
         }
 
-        private Rectangle _oldFloatWindowBounds;
+        private Rectangle m_oldFloatWindowBounds;
         protected Rectangle OldFloatWindowBounds
         {
-            get { return _oldFloatWindowBounds; }
+            get { return m_oldFloatWindowBounds; }
         }
 
-        private Control _oldDockTo;
+        private Control m_oldDockTo;
         protected Control OldDockTo
         {
-            get { return _oldDockTo; }
+            get { return m_oldDockTo; }
         }
 
-        private DockStyle _oldDock;
+        private DockStyle m_oldDock;
         protected DockStyle OldDock
         {
-            get { return _oldDock; }
+            get { return m_oldDock; }
         }
 
-        private int _oldContentIndex;
+        private int m_oldContentIndex;
         protected int OldContentIndex
         {
-            get { return _oldContentIndex; }
+            get { return m_oldContentIndex; }
         }
 
         protected bool SameAsOldValue
@@ -52,48 +52,48 @@ namespace WeifenLuo.WinFormsUI.Docking
             }
         }
 
-        private Rectangle _floatWindowBounds;
+        private Rectangle m_floatWindowBounds;
         public Rectangle FloatWindowBounds
         {
-            get { return _floatWindowBounds; }
+            get { return m_floatWindowBounds; }
         }
 
-        private Control _dockTo;
+        private Control m_dockTo;
         public Control DockTo
         {
-            get { return _dockTo; }
+            get { return m_dockTo; }
         }
 
-        private DockStyle _dock;
+        private DockStyle m_dock;
         public DockStyle Dock
         {
-            get { return _dock; }
+            get { return m_dock; }
         }
 
-        private int _contentIndex;
+        private int m_contentIndex;
         public int ContentIndex
         {
-            get { return _contentIndex; }
+            get { return m_contentIndex; }
         }
 
         public bool FlagFullEdge
         {
-            get { return _contentIndex != 0; }
+            get { return m_contentIndex != 0; }
         }
 
-        private bool _flagTestDrop = false;
+        private bool m_flagTestDrop = false;
         public bool FlagTestDrop
         {
-            get { return _flagTestDrop; }
-            set { _flagTestDrop = value; }
+            get { return m_flagTestDrop; }
+            set { m_flagTestDrop = value; }
         }
 
         private void SaveOldValues()
         {
-            _oldDockTo = _dockTo;
-            _oldDock = _dock;
-            _oldContentIndex = _contentIndex;
-            _oldFloatWindowBounds = _floatWindowBounds;
+            m_oldDockTo = m_dockTo;
+            m_oldDock = m_dock;
+            m_oldContentIndex = m_contentIndex;
+            m_oldFloatWindowBounds = m_floatWindowBounds;
         }
 
         protected abstract void OnShow();
@@ -102,19 +102,19 @@ namespace WeifenLuo.WinFormsUI.Docking
 
         private void SetValues(Rectangle floatWindowBounds, Control dockTo, DockStyle dock, int contentIndex)
         {
-            _floatWindowBounds = floatWindowBounds;
-            _dockTo = dockTo;
-            _dock = dock;
-            _contentIndex = contentIndex;
+            m_floatWindowBounds = floatWindowBounds;
+            m_dockTo = dockTo;
+            m_dock = dock;
+            m_contentIndex = contentIndex;
             FlagTestDrop = true;
         }
 
         private void TestChange()
         {
-            if (_floatWindowBounds != _oldFloatWindowBounds ||
-                _dockTo != _oldDockTo ||
-                _dock != _oldDock ||
-                _contentIndex != _oldContentIndex)
+            if (m_floatWindowBounds != m_oldFloatWindowBounds ||
+                m_dockTo != m_oldDockTo ||
+                m_dock != m_oldDock ||
+                m_contentIndex != m_oldContentIndex)
                 OnShow();
         }
 

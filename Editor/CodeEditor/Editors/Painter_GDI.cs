@@ -1518,25 +1518,31 @@ namespace AIMS.Libraries.CodeEditor.WinForms.Painter
                 {
                     Row r = _control.Document[RowIndex];
 
-                    if (_control.View.RowHeight >=
-                        _control._CodeEditor.GutterIcons.ImageSize.Height)
-                    {
-                        if (r.Bookmarked)
-                            _control._CodeEditor.GutterIcons.Draw(Graphics.FromHdc(bbuff.hDC),
-                                                                0, 0, 1);
-                        if (r.Breakpoint)
-                            _control._CodeEditor.GutterIcons.Draw(Graphics.FromHdc(bbuff.hDC),
-                                                                0, 0, 0);
-                    }
-                    else
+                    //if (_control.View.RowHeight >=
+                    //    _control._CodeEditor.GutterIcons.ImageSize.Height)
+                    //{
+                    //    if (r.Bookmarked)
+                    //        _control._CodeEditor.GutterIcons.Draw(Graphics.FromHdc(bbuff.hDC),
+                    //                                            0, 0, 1);
+                    //    if (r.Breakpoint)
+                    //        _control._CodeEditor.GutterIcons.Draw(Graphics.FromHdc(bbuff.hDC),
+                    //                                            0, 0, 0);
+                    //}
+                    //else
                     {
                         int w = _control.View.RowHeight;
                         if (r.Bookmarked)
                             _control._CodeEditor.GutterIcons.Draw(Graphics.FromHdc(bbuff.hDC),
                                                                 0, 0, w, w, 1);
                         if (r.Breakpoint)
+                        {
+                            if(r.BreakpointEnabled == true)
                             _control._CodeEditor.GutterIcons.Draw(Graphics.FromHdc(bbuff.hDC),
                                                                 0, 0, w, w, 0);
+                            else _control._CodeEditor.GutterIcons.Draw(Graphics.FromHdc(bbuff.hDC),
+                                                                0, 0, w, w, 2);
+
+                        }
                     }
 
                     if (r.Images != null)

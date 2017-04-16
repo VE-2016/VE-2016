@@ -16,3 +16,12 @@ C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\Metada
 C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataHelper\obj\Release\MetadataHelper.csprojResolveAssemblyReference.cache
 C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataHelper\obj\Release\Microsoft.Cci.MetadataHelper.dll
 C:\MSBuildProjects-beta\GACManager\Reflector .NET\ccimetadata-2.0.8.17659\MetadataHelper\obj\Release\Microsoft.Cci.MetadataHelper.pdb
+C:\MSBuildProjects-beta\NET\MetadataHelper\bin\Release\Microsoft.Cci.MetadataHelper.xml
+C:\MSBuildProjects-beta\NET\MetadataHelper\bin\Release\Microsoft.Cci.MetadataHelper.dll
+C:\MSBuildProjects-beta\NET\MetadataHelper\bin\Release\Microsoft.Cci.MetadataHelper.pdb
+C:\MSBuildProjects-beta\NET\MetadataHelper\bin\Release\Microsoft.Cci.MetadataModel.dll
+C:\MSBuildProjects-beta\NET\MetadataHelper\bin\Release\Microsoft.Cci.MetadataModel.pdb
+C:\MSBuildProjects-beta\NET\MetadataHelper\bin\Release\Microsoft.Cci.MetadataModel.xml
+C:\MSBuildProjects-beta\NET\MetadataHelper\obj\Release\MetadataHelper.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\NET\MetadataHelper\obj\Release\Microsoft.Cci.MetadataHelper.dll
+C:\MSBuildProjects-beta\NET\MetadataHelper\obj\Release\Microsoft.Cci.MetadataHelper.pdb

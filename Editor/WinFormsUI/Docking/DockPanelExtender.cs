@@ -26,10 +26,10 @@ namespace WeifenLuo.WinFormsUI.Docking
         {
             DockPane.SplitterControlBase CreateSplitterControl(DockPane pane);
         }
-
-        public interface IDockWindowSplitterControlFactory
+        
+        public interface IWindowSplitterControlFactory
         {
-            SplitterBase CreateSplitterControl();
+            SplitterBase CreateSplitterControl(ISplitterHost host);
         }
 
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
@@ -69,17 +69,30 @@ namespace WeifenLuo.WinFormsUI.Docking
 
         public interface IPaneIndicatorFactory
         {
-            DockPanel.IPaneIndicator CreatePaneIndicator();
+            DockPanel.IPaneIndicator CreatePaneIndicator(ThemeBase theme);
         }
 
         public interface IPanelIndicatorFactory
         {
-            DockPanel.IPanelIndicator CreatePanelIndicator(DockStyle style);
+            DockPanel.IPanelIndicator CreatePanelIndicator(DockStyle style, ThemeBase theme);
         }
 
         public interface IDockOutlineFactory
         {
             DockOutlineBase CreateDockOutline();
+        }
+
+        public interface IDockIndicatorFactory
+        {
+            DockPanel.DockDragHandler.DockIndicator CreateDockIndicator(DockPanel.DockDragHandler dockDragHandler);
+        }
+
+        public class DefaultDockIndicatorFactory : IDockIndicatorFactory
+        {
+            public DockPanel.DockDragHandler.DockIndicator CreateDockIndicator(DockPanel.DockDragHandler dockDragHandler)
+            {
+                return new DockPanel.DockDragHandler.DockIndicator(dockDragHandler);
+            }
         }
 
         #region DefaultDockPaneFactory
@@ -121,14 +134,14 @@ namespace WeifenLuo.WinFormsUI.Docking
         }
 
         #endregion
+        
+        #region DefaultWindowSplitterControlFactory
 
-        #region DefaultDockWindowSplitterControlFactory
-
-        private class DefaultDockWindowSplitterControlFactory : IDockWindowSplitterControlFactory
+        private class DefaultWindowSplitterControlFactory : IWindowSplitterControlFactory
         {
-            public SplitterBase CreateSplitterControl()
+            public SplitterBase CreateSplitterControl(ISplitterHost host)
             {
-                return new DockWindow.DefaultSplitterControl();
+                return new DockWindow.DefaultSplitterControl(host);
             }
         }
 
@@ -213,7 +226,7 @@ namespace WeifenLuo.WinFormsUI.Docking
 
         public class DefaultPaneIndicatorFactory : IPaneIndicatorFactory
         {
-            public DockPanel.IPaneIndicator CreatePaneIndicator()
+            public DockPanel.IPaneIndicator CreatePaneIndicator(ThemeBase theme)
             {
                 return new DockPanel.DefaultPaneIndicator();
             }
@@ -221,7 +234,7 @@ namespace WeifenLuo.WinFormsUI.Docking
 
         public class DefaultPanelIndicatorFactory : IPanelIndicatorFactory
         {
-            public DockPanel.IPanelIndicator CreatePanelIndicator(DockStyle style)
+            public DockPanel.IPanelIndicator CreatePanelIndicator(DockStyle style, ThemeBase theme)
             {
                 return new DockPanel.DefaultPanelIndicator(style);
             }
@@ -235,216 +248,187 @@ namespace WeifenLuo.WinFormsUI.Docking
             }
         }
 
-        internal DockPanelExtender(DockPanel dockPanel)
-        {
-            _dockPanel = dockPanel;
-        }
-
-        private DockPanel _dockPanel;
-
-        private DockPanel DockPanel
-        {
-            get { return _dockPanel; }
-        }
-
-        private IDockPaneFactory _dockPaneFactory = null;
+        private IDockPaneFactory m_dockPaneFactory = null;
 
         public IDockPaneFactory DockPaneFactory
         {
             get
             {
-                if (_dockPaneFactory == null)
-                    _dockPaneFactory = new DefaultDockPaneFactory();
+                if (m_dockPaneFactory == null)
+                    m_dockPaneFactory = new DefaultDockPaneFactory();
 
-                return _dockPaneFactory;
+                return m_dockPaneFactory;
             }
             set
             {
-                if (DockPanel.Panes.Count > 0)
-                    throw new InvalidOperationException();
-
-                _dockPaneFactory = value;
+                m_dockPaneFactory = value;
             }
         }
 
-        private IDockPaneSplitterControlFactory _dockPaneSplitterControlFactory;
+        private IDockPaneSplitterControlFactory m_dockPaneSplitterControlFactory;
 
         public IDockPaneSplitterControlFactory DockPaneSplitterControlFactory
         {
             get
             {
-                return _dockPaneSplitterControlFactory ??
-                       (_dockPaneSplitterControlFactory = new DefaultDockPaneSplitterControlFactory());
+                return m_dockPaneSplitterControlFactory ??
+                       (m_dockPaneSplitterControlFactory = new DefaultDockPaneSplitterControlFactory());
             }
 
             set
             {
-                if (DockPanel.Panes.Count > 0)
-                {
-                    throw new InvalidOperationException();
-                }
-
-                _dockPaneSplitterControlFactory = value;
+                m_dockPaneSplitterControlFactory = value;
             }
         }
+        
+        private IWindowSplitterControlFactory m_dockWindowSplitterControlFactory;
 
-        private IDockWindowSplitterControlFactory _dockWindowSplitterControlFactory;
-
-        public IDockWindowSplitterControlFactory DockWindowSplitterControlFactory
+        public IWindowSplitterControlFactory WindowSplitterControlFactory
         {
             get
             {
-                return _dockWindowSplitterControlFactory ??
-                       (_dockWindowSplitterControlFactory = new DefaultDockWindowSplitterControlFactory());
+                return m_dockWindowSplitterControlFactory ??
+                       (m_dockWindowSplitterControlFactory = new DefaultWindowSplitterControlFactory());
             }
 
             set
             {
-                _dockWindowSplitterControlFactory = value;
-                DockPanel.ReloadDockWindows();
+                m_dockWindowSplitterControlFactory = value;
             }
         }
 
-        private IFloatWindowFactory _floatWindowFactory = null;
+        private IFloatWindowFactory m_floatWindowFactory = null;
 
         public IFloatWindowFactory FloatWindowFactory
         {
             get
             {
-                if (_floatWindowFactory == null)
-                    _floatWindowFactory = new DefaultFloatWindowFactory();
+                if (m_floatWindowFactory == null)
+                    m_floatWindowFactory = new DefaultFloatWindowFactory();
 
-                return _floatWindowFactory;
+                return m_floatWindowFactory;
             }
             set
             {
-                if (DockPanel.FloatWindows.Count > 0)
-                    throw new InvalidOperationException();
-
-                _floatWindowFactory = value;
+                m_floatWindowFactory = value;
             }
         }
 
-        private IDockWindowFactory _dockWindowFactory;
+        private IDockWindowFactory m_dockWindowFactory;
 
         public IDockWindowFactory DockWindowFactory
         {
-            get { return _dockWindowFactory ?? (_dockWindowFactory = new DefaultDockWindowFactory()); }
+            get { return m_dockWindowFactory ?? (m_dockWindowFactory = new DefaultDockWindowFactory()); }
             set
             {
-                _dockWindowFactory = value;
-                DockPanel.ReloadDockWindows();
+                m_dockWindowFactory = value;
             }
         }
 
-        private IDockPaneCaptionFactory _dockPaneCaptionFactory = null;
+        private IDockPaneCaptionFactory m_dockPaneCaptionFactory = null;
 
         public IDockPaneCaptionFactory DockPaneCaptionFactory
         {
             get
             {
-                if (_dockPaneCaptionFactory == null)
-                    _dockPaneCaptionFactory = new DefaultDockPaneCaptionFactory();
+                if (m_dockPaneCaptionFactory == null)
+                    m_dockPaneCaptionFactory = new DefaultDockPaneCaptionFactory();
 
-                return _dockPaneCaptionFactory;
+                return m_dockPaneCaptionFactory;
             }
             set
             {
-                if (DockPanel.Panes.Count > 0)
-                    throw new InvalidOperationException();
-
-                _dockPaneCaptionFactory = value;
+                m_dockPaneCaptionFactory = value;
             }
         }
 
-        private IDockPaneStripFactory _dockPaneStripFactory = null;
+        private IDockPaneStripFactory m_dockPaneStripFactory = null;
 
         public IDockPaneStripFactory DockPaneStripFactory
         {
             get
             {
-                if (_dockPaneStripFactory == null)
-                    _dockPaneStripFactory = new DefaultDockPaneStripFactory();
+                if (m_dockPaneStripFactory == null)
+                    m_dockPaneStripFactory = new DefaultDockPaneStripFactory();
 
-                return _dockPaneStripFactory;
+                return m_dockPaneStripFactory;
             }
             set
             {
-                if (DockPanel.Contents.Count > 0)
-                    throw new InvalidOperationException();
-
-                _dockPaneStripFactory = value;
+                m_dockPaneStripFactory = value;
             }
         }
 
-        private IAutoHideStripFactory _autoHideStripFactory = null;
+        private IAutoHideStripFactory m_autoHideStripFactory = null;
 
         public IAutoHideStripFactory AutoHideStripFactory
         {
             get
             {
-                if (_autoHideStripFactory == null)
-                    _autoHideStripFactory = new DefaultAutoHideStripFactory();
+                if (m_autoHideStripFactory == null)
+                    m_autoHideStripFactory = new DefaultAutoHideStripFactory();
 
-                return _autoHideStripFactory;
+                return m_autoHideStripFactory;
             }
             set
             {
-                if (DockPanel.Contents.Count > 0)
-                    throw new InvalidOperationException();
-
-                if (_autoHideStripFactory == value)
+                if (m_autoHideStripFactory == value)
                     return;
 
-                _autoHideStripFactory = value;
-                DockPanel.ResetAutoHideStripControl();
+                m_autoHideStripFactory = value;
             }
         }
 
-        private IAutoHideWindowFactory _autoHideWindowFactory;
-
+        private IAutoHideWindowFactory m_autoHideWindowFactory;
+        
         public IAutoHideWindowFactory AutoHideWindowFactory
         {
-            get { return _autoHideWindowFactory ?? (_autoHideWindowFactory = new DefaultAutoHideWindowFactory()); }
+            get { return m_autoHideWindowFactory ?? (m_autoHideWindowFactory = new DefaultAutoHideWindowFactory()); }
             set
             {
-                if (DockPanel.Contents.Count > 0)
-                {
-                    throw new InvalidOperationException();
-                }
-
-                if (_autoHideWindowFactory == value)
+                if (m_autoHideWindowFactory == value)
                 {
                     return;
                 }
 
-                _autoHideWindowFactory = value;
-                DockPanel.ResetAutoHideStripWindow();
+                m_autoHideWindowFactory = value;
             }
         }
 
-        private IPaneIndicatorFactory _paneIndicatorFactory;
+        private IPaneIndicatorFactory m_PaneIndicatorFactory;
 
         public IPaneIndicatorFactory PaneIndicatorFactory
         {
-            get { return _paneIndicatorFactory ?? (_paneIndicatorFactory = new DefaultPaneIndicatorFactory()); }
-            set { _paneIndicatorFactory = value; }
+            get { return m_PaneIndicatorFactory ?? (m_PaneIndicatorFactory = new DefaultPaneIndicatorFactory()); }
+            set { m_PaneIndicatorFactory = value; }
         }
 
-        private IPanelIndicatorFactory _panelIndicatorFactory;
+        private IPanelIndicatorFactory m_PanelIndicatorFactory;
 
         public IPanelIndicatorFactory PanelIndicatorFactory
         {
-            get { return _panelIndicatorFactory ?? (_panelIndicatorFactory = new DefaultPanelIndicatorFactory()); }
-            set { _panelIndicatorFactory = value; }
+            get { return m_PanelIndicatorFactory ?? (m_PanelIndicatorFactory = new DefaultPanelIndicatorFactory()); }
+            set { m_PanelIndicatorFactory = value; }
         }
 
-        private IDockOutlineFactory _dockOutlineFactory;
+        private IDockOutlineFactory m_DockOutlineFactory;
 
         public IDockOutlineFactory DockOutlineFactory
         {
-            get { return _dockOutlineFactory ?? (_dockOutlineFactory = new DefaultDockOutlineFactory()); }
-            set { _dockOutlineFactory = value; }
+            get { return m_DockOutlineFactory ?? (m_DockOutlineFactory = new DefaultDockOutlineFactory()); }
+            set { m_DockOutlineFactory = value; }
+        }
+
+        private IDockIndicatorFactory m_DockIndicatorFactory;
+
+        public IDockIndicatorFactory DockIndicatorFactory
+        {
+            get { return m_DockIndicatorFactory ?? (m_DockIndicatorFactory = new DefaultDockIndicatorFactory()); }
+            set { m_DockIndicatorFactory = value; }
+        }
+
+        public interface IDockWindowSplitterControlFactory
+        {
         }
     }
 }

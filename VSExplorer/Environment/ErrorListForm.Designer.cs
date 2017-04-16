@@ -117,6 +117,7 @@ namespace WinExplorer
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(78, 22);
             this.toolStripButton4.Text = "Messages";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // toolStripSeparator3
             // 

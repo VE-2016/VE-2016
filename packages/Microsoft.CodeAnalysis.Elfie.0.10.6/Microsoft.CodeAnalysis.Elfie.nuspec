@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.CodeAnalysis.Elfie</id>
+    <version>0.10.6</version>
+    <title>Extensible Lightweight Fast Indexed Entities (ELFIE)</title>
+    <authors>Scott Louvau,Michael C. Fanning,Ryley Taketa,Jinu Joseph</authors>
+    <owners>Michael C. Fanning,Ryley Taketa</owners>
+    <licenseUrl>https://github.com/microsoft/elfie/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/microsoft/elfie</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>An extensible library for fast indexing of code artifacts.</description>
+    <releaseNotes>Version 0.10.6 of Elfie (Extensible Lightweight Fast Indexed Entities)</releaseNotes>
+    <copyright>Copyright Microsoft</copyright>
+    <tags>semantic search elfy</tags>
+  </metadata>
+</package>

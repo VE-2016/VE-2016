@@ -4,16 +4,16 @@ namespace WeifenLuo.WinFormsUI.Docking
 {
     public class DockContentEventArgs : EventArgs
     {
-        private IDockContent _content;
+        private IDockContent m_content;
 
         public DockContentEventArgs(IDockContent content)
         {
-            _content = content;
+            m_content = content;
         }
 
         public IDockContent Content
         {
-            get { return _content; }
+            get { return m_content; }
         }
     }
 }

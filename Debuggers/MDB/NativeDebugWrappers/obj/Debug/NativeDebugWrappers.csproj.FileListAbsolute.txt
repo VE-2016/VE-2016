@@ -1,0 +1,41 @@
+D:\sample\src\debugger\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.dll
+D:\sample\src\debugger\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.pdb
+D:\sample\src\debugger\NativeDebugWrappers\obj\Debug\ResolveAssemblyReference.cache
+D:\sample\src\debugger\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.dll
+D:\sample\src\debugger\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.pdb
+D:\UpdatedSample2\src\debugger\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.dll
+D:\UpdatedSample2\src\debugger\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.pdb
+D:\UpdatedSample2\src\debugger\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.dll.CodeAnalysisLog.xml
+D:\UpdatedSample2\src\debugger\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.dll.lastcodeanalysissucceeded
+D:\UpdatedSample2\src\debugger\NativeDebugWrappers\obj\Debug\ResolveAssemblyReference.cache
+D:\UpdatedSample2\src\debugger\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.dll
+D:\UpdatedSample2\src\debugger\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.pdb
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\NativeDebugWrappers.dll
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\NativeDebugWrappers.pdb
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\NativeDebugWrappers.XML
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\NativeDebugWrappers.dll.CodeAnalysisLog.xml
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\NativeDebugWrappers.dll.lastcodeanalysissucceeded
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\debugger\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.dll
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\debugger\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.pdb
+C:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\debugger\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\bin\Debug\NativeDebugWrappers.dll
+C:\MSBuildProjects-beta\bin\Debug\NativeDebugWrappers.pdb
+C:\MSBuildProjects-beta\bin\Debug\NativeDebugWrappers.XML
+C:\MSBuildProjects-beta\bin\Debug\NativeDebugWrappers.dll.CodeAnalysisLog.xml
+C:\MSBuildProjects-beta\bin\Debug\NativeDebugWrappers.dll.lastcodeanalysissucceeded
+C:\MSBuildProjects-beta\Debuggers\MDB\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.XML
+C:\MSBuildProjects-beta\Debuggers\MDB\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.dll.CodeAnalysisLog.xml
+C:\MSBuildProjects-beta\Debuggers\MDB\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.dll.lastcodeanalysissucceeded
+C:\MSBuildProjects-beta\Debuggers\MDB\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\Debuggers\MDB\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.pdb
+f:\VE-2017\Debuggers\MDB\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.XML
+f:\VE-2017\Debuggers\MDB\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.dll
+f:\VE-2017\Debuggers\MDB\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.pdb
+f:\VE-2017\Debuggers\MDB\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.dll.CodeAnalysisLog.xml
+f:\VE-2017\Debuggers\MDB\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.dll.lastcodeanalysissucceeded
+f:\VE-2017\Debuggers\MDB\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.csprojResolveAssemblyReference.cache
+f:\VE-2017\Debuggers\MDB\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.dll
+f:\VE-2017\Debuggers\MDB\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.pdb

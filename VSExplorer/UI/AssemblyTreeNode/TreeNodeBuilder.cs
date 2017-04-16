@@ -85,14 +85,18 @@ namespace AndersLiu.Reflector.Program.UI.AssemblyTreeNode
                 if (File.Exists(b) == true)
                     File.Delete(b);
             }
-            catch (Exception e) { }
+            catch (Exception e) {
+                Console.WriteLine(e.Message);
+            }
 
             try
             {
                 if (File.Exists(file))
                     File.Copy(file, b);
             }
-            catch (Exception e) { }
+            catch (Exception e) {
+                Console.WriteLine(e.Message);
+            }
 
             WorkspaceUnit w = new WorkspaceUnit(b);
 

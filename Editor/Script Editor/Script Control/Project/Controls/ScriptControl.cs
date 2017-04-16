@@ -31,17 +31,16 @@ using AIMS.Libraries.Scripting.ScriptControl;
 using WeifenLuo.WinFormsUI;
 
 using VSProvider;
-
+using System.Xml.Serialization;
+using VSParsers;
+using System.Threading.Tasks;
 
 namespace AIMS.Libraries.Scripting.ScriptControl
 {
     public partial class ScriptControl : UserControl
     {
         private ScriptLanguage _scriptLanguage;
-        private ErrorList _winErrorList = null;
-        private Output _winOutput = null;
-        private ProjectExplorer _winProjExplorer = null;
-        private WeakReference _selectRefDialog = null;
+       
         private IDictionary<string, object> _RemoteVariables = null;
         public event EventHandler Execute;
 
@@ -51,9 +50,12 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         public DockPanel dockContainer1;
 
+        public static Breakpointer br { get; set; }
+
         protected override void OnResize(EventArgs e)
         {
-           
+            if (this.Parent != null)
+                this.Parent.Dock = DockStyle.Fill;
             base.OnResize(e);
         }
 
@@ -70,6 +72,8 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             }
         }
 
+        
+
         public void SelectAll()
         {
             Document doc = this.dockContainer1.ActiveDocument as Document;
@@ -82,16 +86,16 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         public void SetStatusStrip(StatusStrip p)
         {
-            ScriptStatus = p;
+           // ScriptStatus = p;
         }
 
         public void DisplayStatusStrip(bool visible)
         {
-            ScriptStatus.Visible = false;
+           // ScriptStatus.Visible = false;
         }
         public void DisplayTopStrip(bool visible)
         {
-            toolStrip1.Visible = visible;
+           // toolStrip1.Visible = visible;
         }
 
         public ScriptLanguage ScriptLanguage
@@ -101,13 +105,13 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             {
                 if (value == ScriptLanguage.CSharp)
                 {
-                    tsbSelectLanguage.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.VSProject_CSCodefile;
-                    tsbSelectLanguage.ImageTransparentColor = System.Drawing.Color.Magenta;
+                   // tsbSelectLanguage.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.VSProject_CSCodefile;
+                   // tsbSelectLanguage.ImageTransparentColor = System.Drawing.Color.Magenta;
                 }
                 else
                 {
-                    tsbSelectLanguage.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.VSProject_VBCodefile;
-                    tsbSelectLanguage.ImageTransparentColor = System.Drawing.Color.Magenta;
+                  //  tsbSelectLanguage.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.VSProject_VBCodefile;
+                  //  tsbSelectLanguage.ImageTransparentColor = System.Drawing.Color.Magenta;
                 }
                 ConvertToLanguage(_scriptLanguage, value);
                 _scriptLanguage = value;
@@ -143,16 +147,13 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                     DocumentEvents(doc, true);
                 }
             }
-            //Enable On Change Event
-            if (_winErrorList != null)
-                _winErrorList.ConvertToLanguage(OldLang, NewLanguage);
-            //_winProjExplorer.Language = NewLanguage;
+           
         }
 
- 
-   
 
-      
+
+
+
         private string GetAddObjectSrcCode()
         {
             //Add AddObject & ReturnCode stuff;
@@ -249,9 +250,9 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             return text;
         }
 
-     
 
-   
+
+
         public void ShowFind()
         {
             Document doc = this.dockContainer1.ActiveDocument as Document;
@@ -271,16 +272,26 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
             doc.Editor.ShowReplace();
         }
-
-        public ScriptControl()
+        Form form { get; set; }
+        public ScriptControl(Form form, DockPanel dockPanel = null)
         {
+
+            this.CreateControl();
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             SetStyle(ControlStyles.ResizeRedraw, false);
-            InitializeComponent();
+            //InitializeComponent();
+            this.form = form;
+            if (dockPanel == null)
             dockContainer1 = dockPanel1;
-            toolStripContainer1.ContentPanel.Controls.Add(this.dockContainer1);
-            this.dockContainer1.DocumentStyle = WeifenLuo.WinFormsUI.Docking.DocumentStyle.DockingWindow;
-            this.dockContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            else
+            {
+                dockContainer1 = dockPanel;
+                dockPanel1 = dockPanel;
+            }
+            //if (dockPanel == null)
+            //    toolStripContainer1.ContentPanel.Controls.Add(this.dockContainer1);
+            //this.dockContainer1.DocumentStyle = WeifenLuo.WinFormsUI.Docking.DocumentStyle.DockingWindow;
+            //this.dockContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
 
 
             string Theme = GetTheme();
@@ -300,26 +311,30 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
             Parser.ProjectParser.Initilize(SupportedLanguage.CSharp);
             UpdateCutCopyToolbar();
-            
+
             _RemoteVariables = new Dictionary<string, object>();
+
+            br = new Breakpointer();
+
+            br.sc = this;
 
             hst = new History();
 
-            toolStripContainer1.RightToolStripPanelVisible = false;
+           // toolStripContainer1.RightToolStripPanelVisible = false;
 
             CodeEditorControl.IntErrors = new Intellisense();
 
             this.BackColor = Color.White;
 
-        
 
-            MouseMoveTimer = new System.Threading.Timer(new TimerCallback(TimerProc), null, 600, 600);
 
-                      
-            
+            //MouseMoveTimer = new System.Threading.Timer(new TimerCallback(TimerProc), null, 1000, 1000);
+
+
+
         }
 
-       
+
 
         System.Threading.Timer MouseMoveTimer { get; set; }
         public void Proxy_OpenFile(object sender, Proxy.OpenFileEventArgs e)
@@ -356,82 +371,13 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         private void InitilizeDocks()
         {
-   
+
             dockContainer1.ActiveDocumentChanged += new EventHandler(dockContainer1_ActiveDocumentChanged);
-  
+
         }
-        
 
-        private void _winProjExplorer_FileItemDeleted(object sender, EventArgs e)
-        {
-            TreeNode node = (TreeNode)sender;
-            Document doc = GetExistingFile(node.Text);
-
-            if (doc != null)
-            {
-                doc.Close();
-            }
-            node.Remove();
-
-            Parser.ProjectParser.RemoveContentFile(node.Text);
-        }
 
      
-
-        private void _winProjExplorer_FileNameChanged(object sender, ExplorerLabelEditEventArgs e)
-        {
-            if (ValidateFileName(e.NewName))
-            {
-                string contents = Parser.ProjectParser.GetFileContents(e.OldName);
-                Parser.ProjectParser.ProjectFiles.Remove(e.OldName);
-                Parser.ProjectParser.ParseProjectContents(e.NewName, contents);
-                Document doc = GetExistingFile(e.OldName);
-                if (doc != null)
-                {
-                    doc.Text = Path.GetFileNameWithoutExtension(e.NewName);
-                    doc.FileName = e.NewName;
-                }
-            }
-            else
-            {
-                MessageBox.Show("File Name '" + e.NewName + "' already exists in the project.Please try other name.");
-                e.Cancel = true;
-            }
-        }
-
-        private bool ValidateFileName(string fileName)
-        {
-            string[] keys = new string[Parser.ProjectParser.ProjectFiles.Keys.Count];
-            Parser.ProjectParser.ProjectFiles.Keys.CopyTo(keys, 0);
-
-            for (int count = 0; count <= keys.Length - 1; count++)
-            {
-                if (keys[count].ToLower() == fileName.ToLower())
-                    return false;
-            }
-            return true;
-        }
-
-        private void _winErrorList_ItemDoubleClick(object sender, ListViewItemEventArgs e)
-        {
-            System.Windows.Forms.Timer tmr = new System.Windows.Forms.Timer();
-            tmr.Tick += new EventHandler(ShowIntoView);
-            tmr.Interval = 500;
-            Document doc = ShowFile(e.FileName);
-            tmr.Tag = e;
-            tmr.Start();
-        }
-
-        private void ShowIntoView(object sender, EventArgs e)
-        {
-            System.Windows.Forms.Timer tmr = (System.Windows.Forms.Timer)sender;
-            tmr.Stop();
-            ListViewItemEventArgs et = (ListViewItemEventArgs)tmr.Tag;
-            Document doc = ShowFile(et.FileName);
-            TextPoint t = new TextPoint(et.ColumnNo, et.LineNo);
-            doc.Editor.ScrollIntoView(t);
-            doc.Editor.Caret.SetPos(t);
-        }
 
         private Document GetExistingFile(string FileName)
         {
@@ -514,20 +460,23 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             }
             return null;
         }
-        private void _winProjExplorer_FileClick(object sender, ExplorerClickEventArgs e)
-        {
-            Document doc = ShowFile(e.FileName);
-            if (doc != null) doc.ParseContentsNow();
-        }
+    
 
 
-        public Document GetActiveDocument()
+        public Document GetActiveDocument(bool focused = false)
         {
             if (dockContainer1.ActiveDocument == null)
                 return null;
             return dockContainer1.ActiveDocument as Document;
         }
-
+        public void FocusActiveDocument()
+        {
+            EditViewControl ev = GetCurrentView();
+            if (ev != null)
+            {
+                ev.Focus();
+            }
+        }
         object obs = new object();
 
         public void TimerProc(object state)
@@ -538,50 +487,81 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                 EditViewControl ev = GetCurrentView();
                 if (ev != null)
                 {
-                    Document doc = GetActiveDocument();
+                    //Document doc = GetActiveDocument();
 
-                    if (doc == null) return;
-                    {
-
-                        doc.DockHandler.count++;
+                    //ev.CodeEditor.StartSyntax();
 
 
-                        doc.DockHandler.timer = true;
+                    //if (doc == null) return;
+                    //{
 
-                        if (doc.DockHandler.hasBeenDestroyed == true)
-                        {
-                            doc.DockHandler.timer = false;
-                            return;
-                        }
+                    //    doc.DockHandler.count++;
 
-                    }
-                   
 
-                    if (doc.DockHandler.hasBeenDestroyed == true)
-                    {
-                        doc.DockHandler.timer = false;
-                        return;
-                    }
-                    doc.DockHandler.timer = true;
-                    ev.BeginInvoke(new Action(() => { doc.DockHandler.timer = true; ev.TimerProc(null); doc.DockHandler.timer = false; }));
-                    doc.DockHandler.timer = false;
+                    //    doc.DockHandler.timer = true;
 
+                    //    if (doc.DockHandler.hasBeenDestroyed == true)
+                    //    {
+                    //        doc.DockHandler.timer = false;
+                    //        return;
+                    //    }
 
                 }
+
+
+                //if (doc.DockHandler.hasBeenDestroyed == true)
+                //{
+                //    doc.DockHandler.timer = false;
+                //    return;
+                //}
+                //try
+                //{
+                //    doc.DockHandler.timer = true;
+                //    ev.BeginInvoke(new Action(() => { doc.DockHandler.timer = true; ev.TimerProc(null); doc.DockHandler.timer = false; }));
+                //    doc.DockHandler.timer = false;
+                //}
+                //catch (Exception e)
+                //{
+                //    Console.WriteLine(e.Message);
+                //}
+
+
+                //}
             }
         }
 
+        public void Cut()
+        {
+            EditViewControl ev = GetCurrentView();
+            if (ev != null)
+                ev.Cut();
+
+        }
+        public void Copy()
+        {
+            EditViewControl ev = GetCurrentView();
+            if (ev != null)
+                ev.CopyText();
+
+        }
+        public void Paste()
+        {
+            EditViewControl ev = GetCurrentView();
+            if (ev != null)
+                ev.Paste();
+
+        }
         public void HideAndRedraw()
         {
             EditViewControl ev = GetCurrentView();
-            if(ev != null)
-            ev.HideAndRedraw();
+            if (ev != null)
+                ev.HideAndRedraw();
         }
         public void ShowAndRedraw()
         {
             EditViewControl ev = GetCurrentView();
             if (ev != null)
-            ev.ShowAndRedraw();
+                ev.ShowAndRedraw();
         }
 
         public event EventHandler activeDocument;
@@ -625,23 +605,29 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         public Document AddDocument(string Name, bool IsWebReference)
         {
-            Document doc = new Document(this);
+            Document doc = new Document(form);
             doc.FileName = Name;
             doc.Text = Path.GetFileNameWithoutExtension(Name);
             doc.Tag = "USERDOCUMENT";
             doc.HideOnClose = false;
             doc.ScriptLanguage = _scriptLanguage;
             DocumentEvents(doc, true);
-            doc.Show(dockContainer1, DockState.Document);
-            if (IsWebReference)
-                _winProjExplorer.AddWebReference(Name);
-            else
-                _winProjExplorer.AddFile(Name);
+            doc.Show(dockContainer1, DockState.DockTop);
             Parser.ProjectParser.ParseProjectContents(Name, "");
             return doc;
         }
 
-
+        public Document AddGenericDocument(string Name)
+        {
+            Document doc = new Document(form);
+            doc.FileName = Name;
+            doc.Text = Path.GetFileNameWithoutExtension(Name);
+            doc.Tag = "USERDOCUMENT";
+            doc.HideOnClose = false;
+            doc.ScriptLanguage = ScriptLanguage.XML;
+            //DocumentEvents(doc, true);
+            return doc;
+        }
 
 
         public void SetActiveDocument()
@@ -651,11 +637,11 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             if (dockContainer1.ActiveDocumentPane == null)
                 return;
 
-           // this.dockContainer1.ActiveDocumentPane.Size = new Size(this.Size.Width, this.Size.Height);
+            // this.dockContainer1.ActiveDocumentPane.Size = new Size(this.Size.Width, this.Size.Height);
 
-           // this.dockContainer1.ActiveDocumentPane.master = this;
+            // this.dockContainer1.ActiveDocumentPane.master = this;
 
-           // this.dockContainer1.ActiveDocumentPane.DoResize();
+            // this.dockContainer1.ActiveDocumentPane.DoResize();
         }
 
         public DocumentForm OpenDocumentForm()
@@ -695,13 +681,13 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         public ParseInformation parse { get; set; }
 
 
-        public Document OpenDocuments(string Name, VSProvider.VSProject pp, AutoResetEvent autoEvent = null  )
+        public Document OpenDocuments(string Name, VSProvider.VSProject pp, AutoResetEvent autoEvent = null)
         {
             if (FileOpened(Name) != null)
                 return null;
 
-            if(pp != null)
-            vs = pp.vs;
+            if (pp != null)
+                vs = pp.vs;
 
             this.SuspendLayout();
 
@@ -715,8 +701,8 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
             if (contents == string.Empty)
                 return null;
-            Document doc = new Document(this);
-            
+            Document doc = new Document(form);
+
             doc.FileName = Name;
             doc.Text = Path.GetFileNameWithoutExtension(Name);
             doc.Tag = "USERDOCUMENT";
@@ -726,7 +712,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             doc.LoadVSProject(pp, Name);
 
 
-    
+
             doc.TabPageContextMenu = new ContextMenu();
             doc.TabPageContextMenu.MenuItems.Add(new MenuItem("test for context menu"));
 
@@ -742,7 +728,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
                 doc.autoEvent = autoEvent;
 
-                
+
 
                 LoadKeywordsAsync(doc);
             }
@@ -776,7 +762,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
             this.ResumeLayout();
 
-            
+
 
             return doc;
         }
@@ -789,6 +775,14 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             d.ContextMenu.Show(this.GetCurrentView(), e.Location);
         }
 
+        public void BreakPointAdded(object sender, RowEventArgs e)
+        {
+            EditViewControl d = sender as EditViewControl;
+            VSProject vp = d.CodeEditor.vp;
+            VSSolution vs = vp.vs;
+            br.AddBreakpoint(d.FileName, new Point(0, e.Row.Index), vs.solutionFileName, vp.FileName);
+        }
+
         public Document OpenDocuments(string contents, string name, VSProject vp)
         {
             if (FileOpened(name) != null)
@@ -796,7 +790,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
             if (contents == string.Empty)
                 return null;
-            Document doc = new Document(this);
+            Document doc = new Document(form);
             doc.FileName = name;
             doc.Text = Path.GetFileNameWithoutExtension(name);
             doc.Tag = "USERDOCUMENT";
@@ -810,7 +804,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             doc.Show(dockContainer1, DockState.Document);
             doc.Contents = contents;
 
-            
+
 
             doc.ParseContentsNow();
 
@@ -832,7 +826,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
             if (contents == string.Empty)
                 return null;
-            Document doc = new Document(this);
+            Document doc = new Document(form);
             doc.FileName = Name;
             doc.Text = Path.GetFileNameWithoutExtension(Name);
             doc.Tag = "USERDOCUMENT";
@@ -872,7 +866,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
                 if (contents == string.Empty)
                     return null;
-                doc = new Document(this);
+                doc = new Document(form);
                 doc.FileName = Name;
                 doc.Text = Path.GetFileNameWithoutExtension(Name);
                 doc.Tag = "USERDOCUMENT";
@@ -919,7 +913,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
                 if (contents == string.Empty)
                     return null;
-                doc = new Document(this);
+                doc = new Document(form);
                 doc.FileName = Name;
                 doc.Text = Path.GetFileNameWithoutExtension(Name);
                 doc.Tag = "USERDOCUMENT";
@@ -996,7 +990,6 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                 _block = true;
             }
 
-
             lock (_ob)
             {
                 int dd = DQ.IndexOf(d);
@@ -1007,6 +1000,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                 }
                 d.state = Document.State.working;
                 d.LoadKeywords(d);
+                d.ParseContentsNow();
 
                 DQ.Remove(dd);
                 d.state = Document.State.none;
@@ -1030,7 +1024,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
                 if (contents == string.Empty)
                     return null;
-                doc = new Document(this);
+                doc = new Document(form);
                 doc.FileName = Name;
                 doc.Text = Path.GetFileNameWithoutExtension(Name);
                 doc.Tag = "USERDOCUMENT";
@@ -1066,7 +1060,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         {
             if (contents == string.Empty)
                 return null;
-            Document doc = new Document(this);
+            Document doc = new Document(form);
             doc.FileName = Name;
             doc.Text = Path.GetFileNameWithoutExtension(Name);
             doc.Tag = "USERDOCUMENT";
@@ -1075,7 +1069,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             doc.vp = pp;
             doc.LoadVSProject(pp, Name);
             DocumentEvents(doc, true);
-            doc.Show(dockContainer1, DockState.Document);
+            doc.Show(dockContainer1, DockState.DockTop);
             doc.Contents = contents;
 
             doc.ParseContentsNow();
@@ -1214,9 +1208,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         private void UploadParserError(Document doc, NRefactory.Parser.Errors e)
         {
-            if (e != null)
-                if (_winErrorList != null)
-                    _winErrorList.ProjectErrors(doc, e);
+            
         }
 
         private void doc_FormClosing(object sender, FormClosingEventArgs e)
@@ -1243,28 +1235,12 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         #region ClickHandlers
         private void cNetToolStripMenuItemCSharp_Click(object sender, EventArgs e)
         {
-            if (_winErrorList.ParserErrorCount == 0)
-            {
-                if (_scriptLanguage != ScriptLanguage.CSharp)
-                    this.ScriptLanguage = ScriptLanguage.CSharp;
-            }
-            else
-            {
-                MessageBox.Show("Remove Parsing errors before converting");
-            }
+          
         }
 
         private void vBNetToolStripMenuItemVbNet_Click(object sender, EventArgs e)
         {
-            if (_winErrorList.ParserErrorCount == 0)
-            {
-                if (_scriptLanguage != ScriptLanguage.VBNET)
-                    this.ScriptLanguage = ScriptLanguage.VBNET;
-            }
-            else
-            {
-                MessageBox.Show("Remove Parsing errors before converting");
-            }
+           
         }
 
         private void tsbCut_Click(object sender, EventArgs e)
@@ -1413,7 +1389,34 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
                 view.ScrollIntoView(p);
 
-                length = view.Document[Y].Text.Length - X;
+                if (view.Document.Count <= Y)
+                    Task.Delay(1000);
+
+                if (view.Document.Count <= Y)
+                    return;
+
+                    length = view.Document[Y].Text.Length - X;
+
+                int offset = view.Caret.GetOffset(X, Y);
+                //int s = view.GetLineIndex(start);
+                view.Selection.SelStart = offset;
+                view.Selection.SelLength = length;
+            }
+        }
+        public void SelectTextXYL(int X, int Y, int length)
+        {
+            CodeEditor.WinForms.EditViewControl view = GetCurrentView();
+            if (view != null)
+            {
+                int p = Y - 10;
+                if (p < 0)
+                    p = 0;
+
+                view.ExpandAll();
+
+                view.Refresh();
+
+                view.ScrollIntoView(p);
 
                 int offset = view.Caret.GetOffset(X, Y);
                 //int s = view.GetLineIndex(start);
@@ -1422,6 +1425,17 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             }
         }
 
+        public void LoadSelectedWords(ArrayList L)
+        {
+            CodeEditor.WinForms.EditViewControl ev = GetCurrentView();
+            if (ev != null)
+            {
+                ev.L = L;
+
+                ev.Refresh();
+            }
+
+        }
 
         public void SelectText(int start, int length)
         {
@@ -1498,10 +1512,10 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         private void tsbBuild_Click(object sender, EventArgs e)
         {
-           
+
         }
 
-      
+
         private void tsbRun_Click(object sender, EventArgs e)
         {
             OnExecute();
@@ -1516,50 +1530,47 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         {
         }
 
-   
+
         #endregion
 
         #region Private Members
 
-   
+
 
         private void UpdateCutCopyToolbar()
         {
-            EditViewControl ev = GetCurrentView();
-            if (ev != null)
-            {
-                tsbComment.Enabled = true;
-                tsbFind.Enabled = true;
-                tsbReplace.Enabled = true;
-                tsbToggleBookmark.Enabled = true;
-                tsbUnComment.Enabled = true;
+            //EditViewControl ev = GetCurrentView();
+            //if (ev != null)
+            //{
+            //    tsbComment.Enabled = true;
+            //    tsbFind.Enabled = true;
+            //    tsbReplace.Enabled = true;
+            //    tsbToggleBookmark.Enabled = true;
+            //    tsbUnComment.Enabled = true;
 
-                tsbCut.Enabled = (ev.Selection.IsValid ? true : false);
-                tsbCopy.Enabled = (ev.Selection.IsValid ? true : false);
-                tsbPaste.Enabled = ev.CanPaste;
-                tsbRedo.Enabled = ev.CanRedo;
-                tsbUndo.Enabled = ev.CanUndo;
-            }
-            else
-            {
-                tsbCut.Enabled = false;
-                tsbCopy.Enabled = false;
-                tsbPaste.Enabled = false;
-                tsbRedo.Enabled = false;
-                tsbUndo.Enabled = false;
+            //    tsbCut.Enabled = (ev.Selection.IsValid ? true : false);
+            //    tsbCopy.Enabled = (ev.Selection.IsValid ? true : false);
+            //    tsbPaste.Enabled = ev.CanPaste;
+            //    tsbRedo.Enabled = ev.CanRedo;
+            //    tsbUndo.Enabled = ev.CanUndo;
+            //}
+            //else
+            //{
+            //    tsbCut.Enabled = false;
+            //    tsbCopy.Enabled = false;
+            //    tsbPaste.Enabled = false;
+            //    tsbRedo.Enabled = false;
+            //    tsbUndo.Enabled = false;
 
-                tsbComment.Enabled = false;
-                tsbFind.Enabled = false;
-                tsbReplace.Enabled = false;
-                tsbToggleBookmark.Enabled = false;
-                tsbUnComment.Enabled = false;
-            }
+            //    tsbComment.Enabled = false;
+            //    tsbFind.Enabled = false;
+            //    tsbReplace.Enabled = false;
+            //    tsbToggleBookmark.Enabled = false;
+            //    tsbUnComment.Enabled = false;
+            //}
         }
 
-        public void LoadComileErrors(System.CodeDom.Compiler.CompilerErrorCollection Errors)
-        {
-            _winErrorList.ComilerErrors(null, Errors);
-        }
+     
         public static AutoListIcons GetIcon(IClass c)
         {
             AutoListIcons imageIndex = AutoListIcons.iClass;
@@ -1899,6 +1910,8 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
             hst.settings = CodeEditorControl.settings;
 
+            hst.breakpointer = br.Serialize();
+
             hst.acts = new ArrayList();
 
             foreach (DockContent doc in dockContainer1.Documents)
@@ -1974,6 +1987,11 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             if (hst.acts == null)
                 return L;
 
+            Breakpointer b = Breakpointer.Deserialize(hst.breakpointer);
+
+            br.Load(b);
+
+            br.sc = this;
 
             this.SuspendLayout();
 
@@ -2015,6 +2033,8 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
                 this.vs = vs;
             }
+
+            br.LoadBreakpoints();
 
             hst.acts.Clear();
 
@@ -2058,7 +2078,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                 {
                     doc.CloseActiveContent();
 
-                    dockContainer1.RemovePane(doc);
+                    //dockContainer1.RemovePane(doc);
                 }
 
                 dockContainer1.Refresh();
@@ -2074,7 +2094,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             ArrayList L = new ArrayList();
 
 
-            dockContainer1.RemovePanes();
+           // dockContainer1.RemovePanes();
 
             foreach (DockContent doc in dockContainer1.Documents)
             {
@@ -2096,9 +2116,9 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             {
                 doc.CloseActiveContent();
 
-                dockContainer1.RemovePane(doc);
+               // dockContainer1.RemovePane(doc);
 
-                
+
 
                 doc.Dispose();
             }
@@ -2110,13 +2130,13 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             if (vs == null)
                 return;
 
-            foreach(VSProject p in vs.Projects)
+            foreach (VSProject p in vs.Projects)
             {
-                if(VSParsers.CSParsers.df != null)
-                VSParsers.CSParsers.df.Clear();
+                if (VSParsers.CSParsers.df != null)
+                    VSParsers.CSParsers.df.Clear();
                 if (VSParsers.CSParsers.dd != null)
                     VSParsers.CSParsers.dd.Clear();
-            
+
 
             }
             if (VSProject.dc != null)
@@ -2124,7 +2144,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             if (VSProject.dcc != null)
                 VSProject.dcc.Clear();
 
-            
+
         }
 
         public ArrayList GetOpenFiles()
@@ -2160,7 +2180,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                     foreach (Word w in r)
                         w.HasError = false;
 
-            foreach (IntError e in DD)
+            foreach (IntErrors e in DD)
             {
                 string message = e.e.Message;
 
@@ -2168,7 +2188,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                 {
                     string[] cc = e.e.Message.Split(" ".ToCharArray());
 
-                    Document d = GetFileOpened(e.c.FileName);
+                    Document d = GetFileOpened(e.file);
 
                     if (d != null)
                     {
@@ -2232,11 +2252,17 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         public Settings settings { get; set; }
 
+        public string breakpointer { get; set; }
+
+        public string Modules { get; set; }
+
+        public DataSourceItems dataSources { get; set; }
 
         public History()
         {
             hst = new ArrayList();
             acts = new ArrayList();
+            dataSources = new DataSourceItems();
             Theme = "";
         }
 
@@ -2298,6 +2324,8 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         public void Serialize(string file)
         {
+            dataSources.ToDictionary();
+
             // Persist to file
             string files = AppDomain.CurrentDomain.BaseDirectory + file;
             FileStream stream = File.Create(files);
@@ -2331,6 +2359,73 @@ namespace AIMS.Libraries.Scripting.ScriptControl
     }
 
     [Serializable]
+    public class DataSourceItem
+    {
+        public string name { get; set; }
+
+        public string FileName { get; set; }
+
+        public string TypeName { get; set; }
+
+        public string Namespace { get; set; }
+
+        public string AssemblyQualifiedName { get; set; }
+
+        public string FullName { get; set; }
+
+        [NonSerialized]
+        public VSProject vp;
+
+        [NonSerialized]
+        public VSSolution vs;
+
+        public string Dataset { get; set; }
+
+
+
+    }
+    [Serializable]
+    public class DataSourceItems
+    {
+        [NonSerialized]
+        public Dictionary<VSProject, ArrayList> dict;
+
+        public Dictionary<string, ArrayList> dicts { get; set; }
+
+        public DataSourceItems()
+        {
+            dict = new Dictionary<VSProject, ArrayList>();
+
+            dicts = new Dictionary<string, ArrayList>();
+        }
+
+        public Dictionary<string, ArrayList> ToDictionary()
+        {
+            Dictionary<string, ArrayList> d = new Dictionary<string, ArrayList>();
+            if (dict == null)
+                return d;
+            foreach(VSProject p in dict.Keys)
+            {
+                d.Add(p.Name, dict[p]);
+            }
+            dicts = d;
+            return d;
+        }
+
+        public void FromDictionary(VSSolution vs)
+        {
+            dict = new Dictionary<VSProject, ArrayList>();
+            Dictionary<string, ArrayList> d = dicts;
+            if (vs == null)
+                return;
+            foreach (string s in d.Keys)
+                if(d[s] != null)
+                dict.Add(vs.GetProjectbyName(s), d[s]);
+        }
+    }
+
+
+    [Serializable]
     public class history
     {
         public int type = 0;
@@ -2340,5 +2435,239 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         public int line = 0;
 
         public string text = "";
+    }
+
+    public class Condition
+    {
+        public string name { get; set; }
+
+        public object condition { get; set; }
+    }
+
+    public class Breakpoint : object
+    {
+
+        public string label { get; set; }
+
+        public Point location { get; set; }
+
+        public string file { get; set; }
+
+        public string project { get; set; }
+
+        public string solution { get; set; }
+
+        public int HitCount { get; set; }
+
+        public bool enabled = true;
+
+        public ArrayList conditions { get; set; }
+
+        public Breakpoint()
+        {
+            enabled = true;
+
+        }
+
+        public Breakpoint(string file, Point c, string solution, string project, string label = "")
+        {
+            this.enabled = true;
+            this.file = file;
+            this.location = c;
+            this.solution = solution;
+            this.project = project;
+            this.label = label;
+        }
+
+    }
+
+    public class Breakpoints
+    {
+
+        public string solution { get; set; }
+
+        public string project { get; set; }
+
+        public ArrayList breakpoints { get; set; }
+
+        public Breakpoints()
+        {
+            breakpoints = new ArrayList();
+        }
+
+        public Breakpoint AddBreakpoint(string file, Point c, string solution, string project, string label = "")
+        {
+            Breakpoint b = new Breakpoint(file, c, solution, project, label);
+
+            breakpoints.Add(b);
+
+            return b;
+        }
+
+    }
+
+    public class Breakpointer
+    {
+
+        public delegate void BreakPointEventHandler(object sender, Breakpoint e);
+
+        public event BreakPointEventHandler breakPointEvent;
+
+        public delegate void BreakPointStateEventHandler(object sender, Breakpoint e);
+
+        public event BreakPointStateEventHandler breakPointStateEvent;
+
+        [XmlIgnore]
+        public ScriptControl sc { get; set; }
+
+        public Breakpoints breakpoints { get; set; }
+
+        public Breakpointer()
+        {
+            breakpoints = new Breakpoints();
+
+
+        }
+        public void AddBreakpoint(string file, Point c, string solution, string project, string label = "")
+        {
+
+
+
+            Breakpoint b = FindBreakpoint(c, file);
+
+            if (b == null)
+            {
+
+                //b = new Breakpoint(file, c, solution, project, label);
+                b = breakpoints.AddBreakpoint(file, c, solution, project, label);
+            }
+            else
+            {
+                RemoveBreakpoint(b);
+
+            }
+
+
+            if (breakPointEvent != null)
+                breakPointEvent(this, b);
+        }
+
+        public Breakpoint FindBreakpoint(Point TextPosition, string file)
+        {
+            foreach (Breakpoint b in breakpoints.breakpoints)
+            {
+                if (b.location.Y == TextPosition.Y)
+                    if (b.file == file)
+                        return b;
+            }
+            return null;
+        }
+
+        public void RemoveBreakpoint(Breakpoint b)
+        {
+            breakpoints.breakpoints.Remove(b);
+        }
+
+        public void Load(Breakpointer b)
+        {
+
+            this.breakpoints = b.breakpoints;
+
+        }
+
+
+        public void LoadBreakpoint(Breakpoint b, int state, bool notify = true)
+        {
+
+            if (sc == null)
+            {
+
+                return;
+
+            }
+
+            Document d = sc.GetFileOpened(b.file);
+            if (d == null)
+            {
+                return;
+
+            }
+
+            d.Focus();
+
+            d.SetBreakpoint(b.location, state);
+
+            if (notify)
+                if (breakPointStateEvent != null)
+                    breakPointStateEvent(this, null);
+        }
+
+
+        public void LoadBreakpoints(int state = 1, bool notify = true)
+        {
+
+            if (sc == null)
+            {
+                //MessageBox.Show("no file sc");
+                return;
+
+            }
+
+            foreach (Breakpoint b in breakpoints.breakpoints)
+            {
+
+                Document d = sc.GetFileOpened(b.file);
+                if (d == null)
+                {
+                    //MessageBox.Show("no file d");
+
+                    continue;
+
+                }
+
+                if (state == 4)
+                    b.enabled = true;
+                else if (state == 3)
+                    b.enabled = false;
+
+                d.Focus();
+
+                d.SetBreakpoint(b.location, state);
+
+            }
+            if(notify)
+            if (breakPointStateEvent != null)
+                breakPointStateEvent(this, null);
+        }
+
+        public string Serialize()
+        {
+
+            Type[] types = { typeof(Breakpoint), typeof(Breakpoints) };
+
+            XmlSerializer s = new XmlSerializer(typeof(Breakpointer), types);
+
+            using (StringWriter textWriter = new StringWriter())
+            {
+                s.Serialize(textWriter, this);
+                return textWriter.ToString();
+            }
+
+
+        }
+
+        public static Breakpointer Deserialize(string xml)
+        {
+
+            if (xml == null)
+                return new Breakpointer();
+
+            Type[] types = { typeof(Breakpoint), typeof(Breakpoints) };
+
+            XmlSerializer s = new XmlSerializer(typeof(Breakpointer), types);
+
+            StringReader textReader = new StringReader(xml);
+            return (Breakpointer)s.Deserialize(textReader);
+        }
     }
 }

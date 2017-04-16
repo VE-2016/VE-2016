@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace WeifenLuo.WinFormsUI.Docking
 {
-    public partial class DockPane
+    partial class DockPane
     {
         internal class DefaultSplitterControl : SplitterControlBase
         {
@@ -29,29 +29,29 @@ namespace WeifenLuo.WinFormsUI.Docking
 
         public class SplitterControlBase : Control, ISplitterDragSource
         {
-            private DockPane _pane;
+            DockPane m_pane;
 
             public SplitterControlBase(DockPane pane)
             {
                 SetStyle(ControlStyles.Selectable, false);
-                _pane = pane;
+                m_pane = pane;
             }
 
             public DockPane DockPane
             {
-                get { return _pane; }
+                get { return m_pane; }
             }
 
-            private DockAlignment _alignment;
+            private DockAlignment m_alignment;
             public DockAlignment Alignment
             {
-                get { return _alignment; }
+                get { return m_alignment; }
                 set
                 {
-                    _alignment = value;
-                    if (_alignment == DockAlignment.Left || _alignment == DockAlignment.Right)
+                    m_alignment = value;
+                    if (m_alignment == DockAlignment.Left || m_alignment == DockAlignment.Right)
                         Cursor = Cursors.VSplit;
-                    else if (_alignment == DockAlignment.Top || _alignment == DockAlignment.Bottom)
+                    else if (m_alignment == DockAlignment.Top || m_alignment == DockAlignment.Bottom)
                         Cursor = Cursors.HSplit;
                     else
                         Cursor = Cursors.Default;
@@ -141,11 +141,11 @@ namespace WeifenLuo.WinFormsUI.Docking
 
             #endregion
         }
-
-        private SplitterControlBase _splitter;
+        
+        private SplitterControlBase m_splitter;
         private SplitterControlBase Splitter
         {
-            get { return _splitter; }
+            get { return m_splitter; }
         }
 
         internal Rectangle SplitterBounds

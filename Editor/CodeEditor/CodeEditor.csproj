@@ -16,7 +16,7 @@
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -25,12 +25,13 @@
     <TargetFrameworkProfile />
     <Configuration />
     <Platform />
+    <RestorePackages>false</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>Bin\</OutputPath>
+    <OutputPath>Bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -65,28 +66,37 @@
     </Reference>
     <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="Microsoft.Build.Utilities.v4.0" />
-    <Reference Include="Microsoft.CodeAnalysis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.CodeAnalysis, Version=1.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Microsoft.CodeAnalysis.Common.1.0.0\lib\net45\Microsoft.CodeAnalysis.dll</HintPath>
+      <HintPath>..\..\packages\Roslyn-all-in-one\Microsoft.CodeAnalysis.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces">
-      <HintPath>..\..\packages\Microsoft.CodeAnalysis.CSharp.Workspaces.1.0.0\lib\net45\Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.Workspaces">
-      <HintPath>..\..\packages\Microsoft.CodeAnalysis.Workspaces.Common.1.0.0\lib\net45\Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.Workspaces.Desktop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=1.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Microsoft.CodeAnalysis.Workspaces.Common.1.0.0\lib\net45\Microsoft.CodeAnalysis.Workspaces.Desktop.dll</HintPath>
+      <HintPath>..\..\packages\Roslyn-all-in-one\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Roslyn-all-in-one\Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces, Version=1.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Roslyn-all-in-one\Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces.Desktop, Version=1.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Roslyn-all-in-one\Microsoft.CodeAnalysis.Workspaces.Desktop.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Collections.Immutable, Version=1.1.37.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\System.Collections.Immutable.1.1.36\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <HintPath>..\..\packages\Roslyn-all-in-one\System.Collections.Immutable.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Reflection">
+      <HintPath>..\..\packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -118,6 +128,12 @@
     </Compile>
     <Compile Include="Editors\CompletionWindow\ICompletionData.cs" />
     <Compile Include="Editors\CompletionWindow\ICompletionDataProvider.cs" />
+    <Compile Include="Editors\DefinitionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\DefinitionForm.Designer.cs">
+      <DependentUpon>DefinitionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editors\EditView\CSDemo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -228,6 +244,9 @@
       <DependentUpon>TabListBox.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Editors\DefinitionForm.resx">
+      <DependentUpon>DefinitionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editors\EditView\CSDemo.resx">
       <DependentUpon>CSDemo.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,22 +315,6 @@
       <Project>{3f43bab0-22b4-4fd6-9655-8ba214a093a5}</Project>
       <Name>CodeEditor.SyntaxDocument</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Themes\ThemeVS2012Light.csproj">
-      <Project>{4ed4fdb5-9fd0-49e6-876d-1635f727c755}</Project>
-      <Name>ThemeVS2012Light</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Themes\ThemeVS2013Blue.csproj">
-      <Project>{245e07f6-10d5-4cfa-b003-0deb06b223da}</Project>
-      <Name>ThemeVS2013Blue</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WinFormsUI\WinFormsUI.csproj">
-      <Project>{c75532c4-765b-418e-b09b-46d36b2abdb1}</Project>
-      <Name>WinFormsUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WinForms\Docking\Project\Forms.Docking.csproj">
-      <Project>{d3c782ba-178e-4235-a3ba-8c11debb6bee}</Project>
-      <Name>Forms.Docking</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BuildSolution_64x.png" />
@@ -375,6 +378,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\keywords.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bookmark_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\F12_BreakpointEnable_28x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\F12_BreakpointEnable_28xs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\F12_BreakpointEnable_28xp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointDisable_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointDisable_16xp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Triangle_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Namespace_16x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

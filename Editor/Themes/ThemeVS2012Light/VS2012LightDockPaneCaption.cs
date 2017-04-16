@@ -38,7 +38,14 @@ namespace WeifenLuo.WinFormsUI.Docking
             {
                 get { return IsAutoHide ? m_imageAutoHide : m_image; }
             }
-
+            public override Bitmap HoverImage
+            {
+                get { return IsAutoHide ? m_imageAutoHide : m_image; }
+            }
+            public override Bitmap PressImage
+            {
+                get { return IsAutoHide ? m_imageAutoHide : m_image; }
+            }
             protected override void OnRefreshChanges()
             {
                 if (DockPaneCaption.DockPane.DockPanel != null)

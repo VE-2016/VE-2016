@@ -63,30 +63,29 @@ namespace NUnit.Framework.Tests
         public void LoadSolutionTests()
         {
 
-            string folder = "..\\..\\..\\..";
+            string folder = "NUnit-folder";
 
-            string folders = AppDomain.CurrentDomain.BaseDirectory + folder;
-            
-              if(File.Exists("cs-syntax.conf") == true)
+            if(File.Exists("cs-syntax.conf") == true)
             {
 
                 string c = File.ReadAllText("cs-syntax.conf");
 
                 if (Path.IsPathRooted(c) == true)
-                    folders = c;
+                    folder = c;
                 else
                 {
 
                     string s = AppDomain.CurrentDomain.BaseDirectory + c;
 
                     if (Directory.Exists(s) == true)
-                        folders = s;
+                        folder = s;
 
 
                 }
 
             }
-            
+
+            string folders = AppDomain.CurrentDomain.BaseDirectory + folder;
 
             FolderSearch(folders, ".sln");
 
@@ -151,9 +150,6 @@ namespace NUnit.Framework.Tests
                 if (File.Exists(p.FileName) == false)
                     continue;
 
-                if(p == null)
-                    continue;
-                
                 pc = p.LoadProjectToMemory();
 
                 p.Shuffle(pc);
@@ -175,9 +171,9 @@ namespace NUnit.Framework.Tests
         {
             Microsoft.Build.Evaluation.Project pc = null;
 
-             if (vs == null)
+            if (vs == null)
                 return;
-            
+
             foreach (VSProject p in vs.projects)
             {
                 pc = p.LoadProjectToMemory();

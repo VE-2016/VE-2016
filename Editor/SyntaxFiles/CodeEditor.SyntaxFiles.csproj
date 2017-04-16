@@ -14,7 +14,7 @@
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -23,6 +23,7 @@
     <TargetFrameworkProfile />
     <Platform />
     <Configuration />
+    <RestorePackages>false</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -105,14 +106,6 @@
     <ProjectReference Include="..\SyntaxDocument\CodeEditor.SyntaxDocument.csproj">
       <Project>{3f43bab0-22b4-4fd6-9655-8ba214a093a5}</Project>
       <Name>CodeEditor.SyntaxDocument</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Themes\ThemeVS2012Light.csproj">
-      <Project>{4ed4fdb5-9fd0-49e6-876d-1635f727c755}</Project>
-      <Name>ThemeVS2012Light</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Themes\ThemeVS2013Blue.csproj">
-      <Project>{245e07f6-10d5-4cfa-b003-0deb06b223da}</Project>
-      <Name>ThemeVS2013Blue</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

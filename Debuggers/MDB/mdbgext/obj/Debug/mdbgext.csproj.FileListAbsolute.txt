@@ -1,0 +1,62 @@
+D:\sample\src\debugger\mdbgext\obj\Debug\ResolveAssemblyReference.cache
+D:\UpdatedSample2\src\debugger\mdbgext\bin\Debug\mdbgext.dll
+D:\UpdatedSample2\src\debugger\mdbgext\bin\Debug\mdbgext.pdb
+D:\UpdatedSample2\src\debugger\mdbgext\bin\Debug\mdbgext.dll.CodeAnalysisLog.xml
+D:\UpdatedSample2\src\debugger\mdbgext\bin\Debug\mdbgext.dll.lastcodeanalysissucceeded
+D:\UpdatedSample2\src\debugger\mdbgext\bin\Debug\corapi.dll
+D:\UpdatedSample2\src\debugger\mdbgext\bin\Debug\mdbgeng.dll
+D:\UpdatedSample2\src\debugger\mdbgext\bin\Debug\raw.dll
+D:\UpdatedSample2\src\debugger\mdbgext\bin\Debug\NativeDebugWrappers.dll
+D:\UpdatedSample2\src\debugger\mdbgext\bin\Debug\corapi.pdb
+D:\UpdatedSample2\src\debugger\mdbgext\bin\Debug\mdbgeng.pdb
+D:\UpdatedSample2\src\debugger\mdbgext\bin\Debug\mdbgeng.xml
+D:\UpdatedSample2\src\debugger\mdbgext\bin\Debug\raw.pdb
+D:\UpdatedSample2\src\debugger\mdbgext\bin\Debug\NativeDebugWrappers.pdb
+D:\UpdatedSample2\src\debugger\mdbgext\bin\Debug\NativeDebugWrappers.xml
+D:\UpdatedSample2\src\debugger\mdbgext\obj\Debug\ResolveAssemblyReference.cache
+D:\UpdatedSample2\src\debugger\mdbgext\obj\Debug\mdbgext.dll
+D:\UpdatedSample2\src\debugger\mdbgext\obj\Debug\mdbgext.pdb
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\mdbgext.xml
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\mdbgext.dll
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\mdbgext.pdb
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\mdbgext.dll.CodeAnalysisLog.xml
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\mdbgext.dll.lastcodeanalysissucceeded
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\debugger\mdbgext\obj\Debug\mdbgext.csprojResolveAssemblyReference.cache
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\debugger\mdbgext\obj\Debug\mdbgext.dll
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\debugger\mdbgext\obj\Debug\mdbgext.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\mdbgext\bin\Debug\mdbgext.xml
+C:\MSBuildProjects-beta\Debuggers\MDB\mdbgext\bin\Debug\mdbgext.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\mdbgext\bin\Debug\mdbgext.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\mdbgext\bin\Debug\mdbgext.dll.CodeAnalysisLog.xml
+C:\MSBuildProjects-beta\Debuggers\MDB\mdbgext\bin\Debug\mdbgext.dll.lastcodeanalysissucceeded
+C:\MSBuildProjects-beta\Debuggers\MDB\mdbgext\bin\Debug\corapi.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\mdbgext\bin\Debug\mdbgeng.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\mdbgext\bin\Debug\raw.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\mdbgext\bin\Debug\NativeDebugWrappers.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\mdbgext\bin\Debug\corapi.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\mdbgext\bin\Debug\mdbgeng.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\mdbgext\bin\Debug\mdbgeng.xml
+C:\MSBuildProjects-beta\Debuggers\MDB\mdbgext\bin\Debug\raw.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\mdbgext\bin\Debug\NativeDebugWrappers.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\mdbgext\bin\Debug\NativeDebugWrappers.xml
+C:\MSBuildProjects-beta\Debuggers\MDB\mdbgext\obj\Debug\mdbgext.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\Debuggers\MDB\mdbgext\obj\Debug\mdbgext.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\mdbgext\obj\Debug\mdbgext.pdb
+f:\VE-2017\Debuggers\MDB\mdbgext\bin\Debug\mdbgext.xml
+f:\VE-2017\Debuggers\MDB\mdbgext\bin\Debug\mdbgext.dll
+f:\VE-2017\Debuggers\MDB\mdbgext\bin\Debug\mdbgext.pdb
+f:\VE-2017\Debuggers\MDB\mdbgext\bin\Debug\mdbgext.dll.CodeAnalysisLog.xml
+f:\VE-2017\Debuggers\MDB\mdbgext\bin\Debug\mdbgext.dll.lastcodeanalysissucceeded
+f:\VE-2017\Debuggers\MDB\mdbgext\bin\Debug\corapi.dll
+f:\VE-2017\Debuggers\MDB\mdbgext\bin\Debug\mdbgeng.dll
+f:\VE-2017\Debuggers\MDB\mdbgext\bin\Debug\raw.dll
+f:\VE-2017\Debuggers\MDB\mdbgext\bin\Debug\NativeDebugWrappers.dll
+f:\VE-2017\Debuggers\MDB\mdbgext\bin\Debug\corapi.pdb
+f:\VE-2017\Debuggers\MDB\mdbgext\bin\Debug\mdbgeng.pdb
+f:\VE-2017\Debuggers\MDB\mdbgext\bin\Debug\mdbgeng.xml
+f:\VE-2017\Debuggers\MDB\mdbgext\bin\Debug\raw.pdb
+f:\VE-2017\Debuggers\MDB\mdbgext\bin\Debug\NativeDebugWrappers.pdb
+f:\VE-2017\Debuggers\MDB\mdbgext\bin\Debug\NativeDebugWrappers.xml
+f:\VE-2017\Debuggers\MDB\mdbgext\obj\Debug\mdbgext.csprojResolveAssemblyReference.cache
+f:\VE-2017\Debuggers\MDB\mdbgext\obj\Debug\mdbgext.dll
+f:\VE-2017\Debuggers\MDB\mdbgext\obj\Debug\mdbgext.pdb

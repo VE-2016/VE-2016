@@ -1,0 +1,9 @@
+D:\UpdatedSample2\bin\Release\ildasm.dll
+D:\UpdatedSample2\src\extensions\ildasm\obj\Release\ResolveAssemblyReference.cache
+D:\UpdatedSample2\src\extensions\ildasm\obj\Release\ildasm.dll
+\\clrdst\share\wescline\noah\UpdatedSample2\bin\Release\ildasm.dll
+\\clrdst\share\wescline\noah\UpdatedSample2\src\extensions\ildasm\obj\Release\ResolveAssemblyReference.cache
+\\clrdst\share\wescline\noah\UpdatedSample2\src\extensions\ildasm\obj\Release\ildasm.dll
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Release\ildasm.dll
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\extensions\ildasm\obj\Release\ildasm.csprojResolveAssemblyReference.cache
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\extensions\ildasm\obj\Release\ildasm.dll

@@ -7,34 +7,34 @@ namespace WeifenLuo.WinFormsUI.Docking
 {
     public sealed class NestedPaneCollection : ReadOnlyCollection<DockPane>
     {
-        private INestedPanesContainer _container;
-        private VisibleNestedPaneCollection _visibleNestedPanes;
+        private INestedPanesContainer m_container;
+        private VisibleNestedPaneCollection m_visibleNestedPanes;
 
         internal NestedPaneCollection(INestedPanesContainer container)
             : base(new List<DockPane>())
         {
-            _container = container;
-            _visibleNestedPanes = new VisibleNestedPaneCollection(this);
+            m_container = container;
+            m_visibleNestedPanes = new VisibleNestedPaneCollection(this);
         }
 
         public INestedPanesContainer Container
         {
-            get { return _container; }
+            get	{	return m_container;	}
         }
-
+        
         public VisibleNestedPaneCollection VisibleNestedPanes
         {
-            get { return _visibleNestedPanes; }
+            get	{	return m_visibleNestedPanes;	}
         }
 
         public DockState DockState
         {
-            get { return Container.DockState; }
+            get	{	return Container.DockState;	}
         }
 
         public bool IsFloat
         {
-            get { return DockState == DockState.Float; }
+            get	{	return DockState == DockState.Float;	}
         }
 
         internal void Add(DockPane pane)
@@ -52,14 +52,14 @@ namespace WeifenLuo.WinFormsUI.Docking
 
         private void CheckFloatWindowDispose()
         {
-            if (Count != 0 || Container.DockState != DockState.Float)
+            if (Count != 0 || Container.DockState != DockState.Float) 
                 return;
 
             FloatWindow floatWindow = (FloatWindow)Container;
-            if (floatWindow.Disposing || floatWindow.IsDisposed)
+            if (floatWindow.Disposing || floatWindow.IsDisposed) 
                 return;
 
-            if (Win32Helper.IsRunningOnMono)
+            if (Win32Helper.IsRunningOnMono) 
                 return;
 
             NativeMethods.PostMessage(((FloatWindow)Container).Handle, FloatWindow.WM_CHECKDISPOSE, 0, 0);
@@ -128,7 +128,7 @@ namespace WeifenLuo.WinFormsUI.Docking
 
             NestedDockingStatus statusPane = pane.NestedDockingStatus;
             DockPane lastNestedPane = null;
-            for (int i = Count - 1; i > IndexOf(pane); i--)
+            for (int i=Count - 1; i> IndexOf(pane); i--)
             {
                 if (this[i].NestedDockingStatus.PreviousPane == pane)
                 {
@@ -144,7 +144,7 @@ namespace WeifenLuo.WinFormsUI.Docking
                 Items[IndexOf(pane)] = lastNestedPane;
                 NestedDockingStatus lastNestedDock = lastNestedPane.NestedDockingStatus;
                 lastNestedDock.SetStatus(this, statusPane.PreviousPane, statusPane.Alignment, statusPane.Proportion);
-                for (int i = indexLastNestedPane - 1; i > IndexOf(lastNestedPane); i--)
+                for (int i=indexLastNestedPane - 1; i>IndexOf(lastNestedPane); i--)
                 {
                     NestedDockingStatus status = this[i].NestedDockingStatus;
                     if (status.PreviousPane == pane)
@@ -161,7 +161,7 @@ namespace WeifenLuo.WinFormsUI.Docking
 
         public DockPane GetDefaultPreviousPane(DockPane pane)
         {
-            for (int i = Count - 1; i >= 0; i--)
+            for (int i=Count-1; i>=0; i--)
                 if (this[i] != pane)
                     return this[i];
 

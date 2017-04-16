@@ -6,6 +6,7 @@ using AIMS.Libraries.CodeEditor.Syntax;
 using System.ComponentModel;
 
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace AIMS.Libraries.CodeEditor.WinForms
 {
@@ -261,6 +262,8 @@ namespace AIMS.Libraries.CodeEditor.WinForms
             return w;
         }
 
+        
+
         public string GetCaretWord()
         {
             Row row = _control.Document[_control.Caret.Position.Y];
@@ -290,8 +293,53 @@ namespace AIMS.Libraries.CodeEditor.WinForms
 
             return s;
         }
+        public List<string> GetCaretWords()
+        {
+            Row row = _control.Document[_control.Caret.Position.Y];
 
+            Word w = row.GetCaretWord(_control.Caret.Position.X);
 
+            return row.GetWords(w);
+
+        }
+        public string GetCaretString()
+        {
+            Row row = _control.Document[_control.Caret.Position.Y];
+
+            return row.Text;
+
+        }
+        public void AppendToCaretString(string text)
+        {
+            Row row = _control.Document[_control.Caret.Position.Y];
+
+            row.Text += text;
+
+        }
+        public Word CaretWord()
+        {
+            Row row = _control.Document[_control.Caret.Position.Y];
+
+            Word w = row.GetCaretWord(_control.Caret.Position.X);
+            
+            return w;
+        }
+
+        public bool IsCaretInWord()
+        {
+            int X = _control.Caret.Position.X;
+
+            Word w = CaretWord();
+
+            int s = w.Text.IndexOf("(");
+            int e = w.Text.IndexOf(")");
+
+            if (w.Column + s <= X)
+                if (w.Column + e >= X)
+                    return true;
+
+            return false;
+        }
         public string[] GetWord(int X, int Y)
         {
             Row row = _control.Document[Y];

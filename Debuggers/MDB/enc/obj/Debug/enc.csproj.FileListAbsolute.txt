@@ -1,0 +1,57 @@
+D:\sample\src\extensions\enc\obj\Debug\ResolveAssemblyReference.cache
+D:\UpdatedSample2\bin\Debug\enc.dll
+D:\UpdatedSample2\bin\Debug\enc.pdb
+D:\UpdatedSample2\bin\Debug\enc.dll.CodeAnalysisLog.xml
+D:\UpdatedSample2\bin\Debug\enc.dll.lastcodeanalysissucceeded
+D:\UpdatedSample2\src\extensions\enc\obj\Debug\ResolveAssemblyReference.cache
+D:\UpdatedSample2\src\extensions\enc\obj\Debug\enc.dll
+D:\UpdatedSample2\src\extensions\enc\obj\Debug\enc.pdb
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\enc.dll
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\enc.pdb
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\enc.dll.CodeAnalysisLog.xml
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\enc.dll.lastcodeanalysissucceeded
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\extensions\enc\obj\Debug\enc.csprojResolveAssemblyReference.cache
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\extensions\enc\obj\Debug\enc.dll
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\extensions\enc\obj\Debug\enc.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\enc\bin\Debug\enc.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\enc\bin\Debug\enc.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\enc\bin\Debug\enc.dll.CodeAnalysisLog.xml
+C:\MSBuildProjects-beta\Debuggers\MDB\enc\bin\Debug\enc.dll.lastcodeanalysissucceeded
+C:\MSBuildProjects-beta\Debuggers\MDB\enc\bin\Debug\corapi.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\enc\bin\Debug\mdbgeng.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\enc\bin\Debug\mdbgext.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\enc\bin\Debug\raw.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\enc\bin\Debug\System.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\enc\bin\Debug\NativeDebugWrappers.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\enc\bin\Debug\corapi.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\enc\bin\Debug\mdbgeng.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\enc\bin\Debug\mdbgeng.xml
+C:\MSBuildProjects-beta\Debuggers\MDB\enc\bin\Debug\mdbgext.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\enc\bin\Debug\mdbgext.xml
+C:\MSBuildProjects-beta\Debuggers\MDB\enc\bin\Debug\raw.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\enc\bin\Debug\NativeDebugWrappers.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\enc\bin\Debug\NativeDebugWrappers.xml
+C:\MSBuildProjects-beta\Debuggers\MDB\enc\bin\Debug\pl\System.resources.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\enc\obj\Debug\enc.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\Debuggers\MDB\enc\obj\Debug\enc.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\enc\obj\Debug\enc.pdb
+f:\VE-2017\Debuggers\MDB\enc\bin\Debug\enc.dll
+f:\VE-2017\Debuggers\MDB\enc\bin\Debug\enc.pdb
+f:\VE-2017\Debuggers\MDB\enc\bin\Debug\enc.dll.CodeAnalysisLog.xml
+f:\VE-2017\Debuggers\MDB\enc\bin\Debug\enc.dll.lastcodeanalysissucceeded
+f:\VE-2017\Debuggers\MDB\enc\bin\Debug\corapi.dll
+f:\VE-2017\Debuggers\MDB\enc\bin\Debug\mdbgeng.dll
+f:\VE-2017\Debuggers\MDB\enc\bin\Debug\mdbgext.dll
+f:\VE-2017\Debuggers\MDB\enc\bin\Debug\raw.dll
+f:\VE-2017\Debuggers\MDB\enc\bin\Debug\NativeDebugWrappers.dll
+f:\VE-2017\Debuggers\MDB\enc\bin\Debug\corapi.pdb
+f:\VE-2017\Debuggers\MDB\enc\bin\Debug\mdbgeng.pdb
+f:\VE-2017\Debuggers\MDB\enc\bin\Debug\mdbgeng.xml
+f:\VE-2017\Debuggers\MDB\enc\bin\Debug\mdbgext.pdb
+f:\VE-2017\Debuggers\MDB\enc\bin\Debug\mdbgext.xml
+f:\VE-2017\Debuggers\MDB\enc\bin\Debug\raw.pdb
+f:\VE-2017\Debuggers\MDB\enc\bin\Debug\NativeDebugWrappers.pdb
+f:\VE-2017\Debuggers\MDB\enc\bin\Debug\NativeDebugWrappers.xml
+f:\VE-2017\Debuggers\MDB\enc\obj\Debug\enc.csprojResolveAssemblyReference.cache
+f:\VE-2017\Debuggers\MDB\enc\obj\Debug\enc.dll
+f:\VE-2017\Debuggers\MDB\enc\obj\Debug\enc.pdb

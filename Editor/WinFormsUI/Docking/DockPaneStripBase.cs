@@ -11,14 +11,14 @@ namespace WeifenLuo.WinFormsUI.Docking
 {
     public abstract class DockPaneStripBase : Control
     {
-        [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
+        [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]        
         protected internal class Tab : IDisposable
         {
-            private IDockContent _content;
+            private IDockContent m_content;
 
             public Tab(IDockContent content)
             {
-                _content = content;
+                m_content = content;
             }
 
             ~Tab()
@@ -28,12 +28,12 @@ namespace WeifenLuo.WinFormsUI.Docking
 
             public IDockContent Content
             {
-                get { return _content; }
+                get { return m_content; }
             }
 
             public Form ContentForm
             {
-                get { return _content as Form; }
+                get { return m_content as Form; }
             }
 
             public void Dispose()
@@ -47,7 +47,7 @@ namespace WeifenLuo.WinFormsUI.Docking
             }
         }
 
-        [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
+        [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]        
         protected sealed class TabCollection : IEnumerable<Tab>
         {
             #region IEnumerable Members
@@ -66,13 +66,13 @@ namespace WeifenLuo.WinFormsUI.Docking
 
             internal TabCollection(DockPane pane)
             {
-                _dockPane = pane;
+                m_dockPane = pane;
             }
 
-            private DockPane _dockPane;
+            private DockPane m_dockPane;
             public DockPane DockPane
             {
-                get { return _dockPane; }
+                get { return m_dockPane; }
             }
 
             public int Count
@@ -117,17 +117,17 @@ namespace WeifenLuo.WinFormsUI.Docking
 
         protected DockPaneStripBase(DockPane pane)
         {
-            _dockPane = pane;
+            m_dockPane = pane;
 
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             SetStyle(ControlStyles.Selectable, false);
             AllowDrop = true;
         }
 
-        private DockPane _dockPane;
+        private DockPane m_dockPane;
         protected DockPane DockPane
         {
-            get { return _dockPane; }
+            get { return m_dockPane; }
         }
 
         protected DockPane.AppearanceStyle Appearance
@@ -135,15 +135,13 @@ namespace WeifenLuo.WinFormsUI.Docking
             get { return DockPane.Appearance; }
         }
 
-        private TabCollection _tabs = null;
+        private TabCollection m_tabs;
+
         protected TabCollection Tabs
         {
             get
             {
-                if (_tabs == null)
-                    _tabs = new TabCollection(DockPane);
-
-                return _tabs;
+                return m_tabs ?? (m_tabs = new TabCollection(DockPane));
             }
         }
 
@@ -203,6 +201,7 @@ namespace WeifenLuo.WinFormsUI.Docking
                         if (MouseDownActivateTest(e))
                             DockPane.ActiveContent = content;
                     }
+
                 }
             }
 
@@ -218,7 +217,7 @@ namespace WeifenLuo.WinFormsUI.Docking
         {
             base.OnMouseMove(e);
 
-            if (e.Button != MouseButtons.Left || _dragBox.Contains(e.Location))
+            if (e.Button != MouseButtons.Left || _dragBox.Contains(e.Location)) 
                 return;
 
             if (DockPane.ActiveContent == null)
@@ -270,7 +269,7 @@ namespace WeifenLuo.WinFormsUI.Docking
                 {
                     IDockContent content = Tabs[index].Content;
                     if (content.DockHandler.CheckDockState(!content.DockHandler.IsFloat) != DockState.Unknown)
-                        content.DockHandler.IsFloat = !content.DockHandler.IsFloat;
+                        content.DockHandler.IsFloat = !content.DockHandler.IsFloat;	
                 }
 
                 return;
@@ -290,6 +289,14 @@ namespace WeifenLuo.WinFormsUI.Docking
                 IDockContent content = Tabs[index].Content;
                 if (DockPane.ActiveContent != content)
                     DockPane.ActiveContent = content;
+            }
+        }
+
+        protected void ContentClosed()
+        {
+            if (m_tabs.Count == 0)
+            {
+                DockPane.ClearLastActiveContent();
             }
         }
 
@@ -402,5 +409,6 @@ namespace WeifenLuo.WinFormsUI.Docking
                 }
             }
         }
+ 
     }
 }

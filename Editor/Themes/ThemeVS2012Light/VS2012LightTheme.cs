@@ -22,7 +22,7 @@ namespace WeifenLuo.WinFormsUI.Docking
         /// Applies the specified theme to the dock panel.
         /// </summary>
         /// <param name="dockPanel">The dock panel.</param>
-        public override void Apply(DockPanel dockPanel)
+        public  void Apply(DockPanel dockPanel)
         {
             if (dockPanel == null)
             {
@@ -214,6 +214,11 @@ namespace WeifenLuo.WinFormsUI.Docking
                 return new VS2012LightPanelIndicator(style);
             }
 
+            public DockPanel.IPanelIndicator CreatePanelIndicator(DockStyle style, ThemeBase theme)
+            {
+                throw new NotImplementedException();
+            }
+
             private class VS2012LightPanelIndicator : PictureBox, DockPanel.IPanelIndicator
             {
                 private static Image _imagePanelLeft = Resources.DockIndicator_PanelLeft;
@@ -321,6 +326,11 @@ namespace WeifenLuo.WinFormsUI.Docking
             public DockPanel.IPaneIndicator CreatePaneIndicator()
             {
                 return new VS2012LightPaneIndicator();
+            }
+
+            public DockPanel.IPaneIndicator CreatePaneIndicator(ThemeBase theme)
+            {
+                throw new NotImplementedException();
             }
 
             private class VS2012LightPaneIndicator : PictureBox, DockPanel.IPaneIndicator

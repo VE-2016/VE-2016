@@ -1,11 +1,10 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Drawing.Design;
-using System.Windows.Forms.Design;
-using System.ComponentModel;
+using System.Linq;
+using System.IO;
+using System.Xml.Linq;
 
 namespace WeifenLuo.WinFormsUI.Docking
 {
@@ -18,16 +17,16 @@ namespace WeifenLuo.WinFormsUI.Docking
     [TypeConverter(typeof(DockPanelSkinConverter))]
     public class DockPanelSkin
     {
-        private AutoHideStripSkin _autoHideStripSkin = new AutoHideStripSkin();
-        private DockPaneStripSkin _dockPaneStripSkin = new DockPaneStripSkin();
+        private AutoHideStripSkin m_autoHideStripSkin = new AutoHideStripSkin();
+        private DockPaneStripSkin m_dockPaneStripSkin = new DockPaneStripSkin();
 
         /// <summary>
         /// The skin used to display the auto hide strips and tabs.
         /// </summary>
         public AutoHideStripSkin AutoHideStripSkin
         {
-            get { return _autoHideStripSkin; }
-            set { _autoHideStripSkin = value; }
+            get { return m_autoHideStripSkin; }
+            set { m_autoHideStripSkin = value; }
         }
 
         /// <summary>
@@ -35,8 +34,8 @@ namespace WeifenLuo.WinFormsUI.Docking
         /// </summary>
         public DockPaneStripSkin DockPaneStripSkin
         {
-            get { return _dockPaneStripSkin; }
-            set { _dockPaneStripSkin = value; }
+            get { return m_dockPaneStripSkin; }
+            set { m_dockPaneStripSkin = value; }
         }
     }
 
@@ -46,19 +45,19 @@ namespace WeifenLuo.WinFormsUI.Docking
     [TypeConverter(typeof(AutoHideStripConverter))]
     public class AutoHideStripSkin
     {
-        private DockPanelGradient _dockStripGradient = new DockPanelGradient();
-        private TabGradient _tabGradient = new TabGradient();
-        private DockStripBackground _dockStripBackground = new DockStripBackground();
-
-        private Font _textFont = SystemFonts.MenuFont;
+        private DockPanelGradient m_dockStripGradient = new DockPanelGradient();
+        private TabGradient m_TabGradient = new TabGradient();
+        private DockStripBackground m_DockStripBackground = new DockStripBackground();
+        
+        private Font m_textFont = SystemFonts.MenuFont;
 
         /// <summary>
         /// The gradient color skin for the DockStrips.
         /// </summary>
         public DockPanelGradient DockStripGradient
         {
-            get { return _dockStripGradient; }
-            set { _dockStripGradient = value; }
+            get { return m_dockStripGradient; }
+            set { m_dockStripGradient = value; }
         }
 
         /// <summary>
@@ -66,8 +65,8 @@ namespace WeifenLuo.WinFormsUI.Docking
         /// </summary>
         public TabGradient TabGradient
         {
-            get { return _tabGradient; }
-            set { _tabGradient = value; }
+            get { return m_TabGradient; }
+            set { m_TabGradient = value; }
         }
 
         /// <summary>
@@ -75,10 +74,9 @@ namespace WeifenLuo.WinFormsUI.Docking
         /// </summary>
         public DockStripBackground DockStripBackground
         {
-            get { return _dockStripBackground; }
-            set { _dockStripBackground = value; }
+            get { return m_DockStripBackground; }
+            set { m_DockStripBackground = value; }
         }
-
 
         /// <summary>
         /// Font used in AutoHideStrip elements.
@@ -86,8 +84,8 @@ namespace WeifenLuo.WinFormsUI.Docking
         [DefaultValue(typeof(SystemFonts), "MenuFont")]
         public Font TextFont
         {
-            get { return _textFont; }
-            set { _textFont = value; }
+            get { return m_textFont; }
+            set { m_textFont = value; }
         }
     }
 
@@ -97,17 +95,17 @@ namespace WeifenLuo.WinFormsUI.Docking
     [TypeConverter(typeof(DockPaneStripConverter))]
     public class DockPaneStripSkin
     {
-        private DockPaneStripGradient _documentGradient = new DockPaneStripGradient();
-        private DockPaneStripToolWindowGradient _toolWindowGradient = new DockPaneStripToolWindowGradient();
-        private Font _textFont = SystemFonts.MenuFont;
+        private DockPaneStripGradient m_DocumentGradient = new DockPaneStripGradient();
+        private DockPaneStripToolWindowGradient m_ToolWindowGradient = new DockPaneStripToolWindowGradient();
+        private Font m_textFont = SystemFonts.MenuFont;
 
         /// <summary>
         /// The skin used to display the Document style DockPane strip and tab.
         /// </summary>
         public DockPaneStripGradient DocumentGradient
         {
-            get { return _documentGradient; }
-            set { _documentGradient = value; }
+            get { return m_DocumentGradient; }
+            set { m_DocumentGradient = value; }
         }
 
         /// <summary>
@@ -115,8 +113,8 @@ namespace WeifenLuo.WinFormsUI.Docking
         /// </summary>
         public DockPaneStripToolWindowGradient ToolWindowGradient
         {
-            get { return _toolWindowGradient; }
-            set { _toolWindowGradient = value; }
+            get { return m_ToolWindowGradient; }
+            set { m_ToolWindowGradient = value; }
         }
 
         /// <summary>
@@ -125,8 +123,8 @@ namespace WeifenLuo.WinFormsUI.Docking
         [DefaultValue(typeof(SystemFonts), "MenuFont")]
         public Font TextFont
         {
-            get { return _textFont; }
-            set { _textFont = value; }
+            get { return m_textFont; }
+            set { m_textFont = value; }
         }
     }
 
@@ -136,16 +134,16 @@ namespace WeifenLuo.WinFormsUI.Docking
     [TypeConverter(typeof(DockPaneStripGradientConverter))]
     public class DockPaneStripToolWindowGradient : DockPaneStripGradient
     {
-        private TabGradient _activeCaptionGradient = new TabGradient();
-        private TabGradient _inactiveCaptionGradient = new TabGradient();
+        private TabGradient m_activeCaptionGradient = new TabGradient();
+        private TabGradient m_inactiveCaptionGradient = new TabGradient();
 
         /// <summary>
         /// The skin used to display the active ToolWindow caption.
         /// </summary>
         public TabGradient ActiveCaptionGradient
         {
-            get { return _activeCaptionGradient; }
-            set { _activeCaptionGradient = value; }
+            get { return m_activeCaptionGradient; }
+            set { m_activeCaptionGradient = value; }
         }
 
         /// <summary>
@@ -153,8 +151,8 @@ namespace WeifenLuo.WinFormsUI.Docking
         /// </summary>
         public TabGradient InactiveCaptionGradient
         {
-            get { return _inactiveCaptionGradient; }
-            set { _inactiveCaptionGradient = value; }
+            get { return m_inactiveCaptionGradient; }
+            set { m_inactiveCaptionGradient = value; }
         }
     }
 
@@ -164,19 +162,19 @@ namespace WeifenLuo.WinFormsUI.Docking
     [TypeConverter(typeof(DockPaneStripGradientConverter))]
     public class DockPaneStripGradient
     {
-        private DockPanelGradient _dockStripGradient = new DockPanelGradient();
-        private TabGradient _activeTabGradient = new TabGradient();
-        private TabGradient _inactiveTabGradient = new TabGradient();
-        private TabGradient _hoverTabGradient = new TabGradient();
-
+        private DockPanelGradient m_dockStripGradient = new DockPanelGradient();
+        private TabGradient m_activeTabGradient = new TabGradient();
+        private TabGradient m_inactiveTabGradient = new TabGradient();
+        private TabGradient m_hoverTabGradient = new TabGradient();
+        
 
         /// <summary>
         /// The gradient color skin for the DockStrip.
         /// </summary>
         public DockPanelGradient DockStripGradient
         {
-            get { return _dockStripGradient; }
-            set { _dockStripGradient = value; }
+            get { return m_dockStripGradient; }
+            set { m_dockStripGradient = value; }
         }
 
         /// <summary>
@@ -184,14 +182,14 @@ namespace WeifenLuo.WinFormsUI.Docking
         /// </summary>
         public TabGradient ActiveTabGradient
         {
-            get { return _activeTabGradient; }
-            set { _activeTabGradient = value; }
+            get { return m_activeTabGradient; }
+            set { m_activeTabGradient = value; }
         }
 
         public TabGradient HoverTabGradient
         {
-            get { return _hoverTabGradient; }
-            set { _hoverTabGradient = value; }
+            get { return m_hoverTabGradient; }
+            set { m_hoverTabGradient = value; }
         }
 
         /// <summary>
@@ -199,8 +197,8 @@ namespace WeifenLuo.WinFormsUI.Docking
         /// </summary>
         public TabGradient InactiveTabGradient
         {
-            get { return _inactiveTabGradient; }
-            set { _inactiveTabGradient = value; }
+            get { return m_inactiveTabGradient; }
+            set { m_inactiveTabGradient = value; }
         }
     }
 
@@ -210,7 +208,7 @@ namespace WeifenLuo.WinFormsUI.Docking
     [TypeConverter(typeof(DockPaneTabGradientConverter))]
     public class TabGradient : DockPanelGradient
     {
-        private Color _textColor = SystemColors.ControlText;
+        private Color m_textColor = SystemColors.ControlText;
 
         /// <summary>
         /// The text color.
@@ -218,19 +216,19 @@ namespace WeifenLuo.WinFormsUI.Docking
         [DefaultValue(typeof(SystemColors), "ControlText")]
         public Color TextColor
         {
-            get { return _textColor; }
-            set { _textColor = value; }
+            get { return m_textColor; }
+            set { m_textColor = value; }
         }
     }
 
-    /// <summary>
+        /// <summary>
     /// The skin used to display the dock pane tab
     /// </summary>
     [TypeConverter(typeof(DockPaneTabGradientConverter))]
     public class DockStripBackground
     {
-        private Color _startColor = SystemColors.Control;
-        private Color _endColor = SystemColors.Control;
+        private Color m_startColor = SystemColors.Control;
+        private Color m_endColor = SystemColors.Control;
         //private LinearGradientMode m_linearGradientMode = LinearGradientMode.Horizontal;
 
         /// <summary>
@@ -239,8 +237,8 @@ namespace WeifenLuo.WinFormsUI.Docking
         [DefaultValue(typeof(SystemColors), "Control")]
         public Color StartColor
         {
-            get { return _startColor; }
-            set { _startColor = value; }
+            get { return m_startColor; }
+            set { m_startColor = value; }
         }
 
         /// <summary>
@@ -249,11 +247,11 @@ namespace WeifenLuo.WinFormsUI.Docking
         [DefaultValue(typeof(SystemColors), "Control")]
         public Color EndColor
         {
-            get { return _endColor; }
-            set { _endColor = value; }
+            get { return m_endColor; }
+            set { m_endColor = value; }
         }
     }
-
+    
 
     /// <summary>
     /// The gradient color skin.
@@ -261,9 +259,9 @@ namespace WeifenLuo.WinFormsUI.Docking
     [TypeConverter(typeof(DockPanelGradientConverter))]
     public class DockPanelGradient
     {
-        private Color _startColor = SystemColors.Control;
-        private Color _endColor = SystemColors.Control;
-        private LinearGradientMode _linearGradientMode = LinearGradientMode.Horizontal;
+        private Color m_startColor = SystemColors.Control;
+        private Color m_endColor = SystemColors.Control;
+        private LinearGradientMode m_linearGradientMode = LinearGradientMode.Horizontal;
 
         /// <summary>
         /// The beginning gradient color.
@@ -271,8 +269,8 @@ namespace WeifenLuo.WinFormsUI.Docking
         [DefaultValue(typeof(SystemColors), "Control")]
         public Color StartColor
         {
-            get { return _startColor; }
-            set { _startColor = value; }
+            get { return m_startColor; }
+            set { m_startColor = value; }
         }
 
         /// <summary>
@@ -281,8 +279,8 @@ namespace WeifenLuo.WinFormsUI.Docking
         [DefaultValue(typeof(SystemColors), "Control")]
         public Color EndColor
         {
-            get { return _endColor; }
-            set { _endColor = value; }
+            get { return m_endColor; }
+            set { m_endColor = value; }
         }
 
         /// <summary>
@@ -291,8 +289,8 @@ namespace WeifenLuo.WinFormsUI.Docking
         [DefaultValue(LinearGradientMode.Horizontal)]
         public LinearGradientMode LinearGradientMode
         {
-            get { return _linearGradientMode; }
-            set { _linearGradientMode = value; }
+            get { return m_linearGradientMode; }
+            set { m_linearGradientMode = value; }
         }
     }
 

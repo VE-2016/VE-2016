@@ -1,0 +1,17 @@
+D:\sample\src\tools\pdb2xml\obj\Debug\ResolveAssemblyReference.cache
+D:\UpdatedSample2\bin\Debug\pdb2xml.exe.config
+D:\UpdatedSample2\bin\Debug\pdb2xml.exe
+D:\UpdatedSample2\bin\Debug\pdb2xml.pdb
+D:\UpdatedSample2\bin\Debug\pdb2xml.exe.CodeAnalysisLog.xml
+D:\UpdatedSample2\bin\Debug\pdb2xml.exe.lastcodeanalysissucceeded
+D:\UpdatedSample2\src\tools\pdb2xml\obj\Debug\ResolveAssemblyReference.cache
+D:\UpdatedSample2\src\tools\pdb2xml\obj\Debug\pdb2xml.exe
+D:\UpdatedSample2\src\tools\pdb2xml\obj\Debug\pdb2xml.pdb
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\pdb2xml.exe.config
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\pdb2xml.exe
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\pdb2xml.pdb
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\pdb2xml.exe.CodeAnalysisLog.xml
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\pdb2xml.exe.lastcodeanalysissucceeded
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\tools\pdb2xml\obj\Debug\pdb2xml.csprojResolveAssemblyReference.cache
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\tools\pdb2xml\obj\Debug\pdb2xml.exe
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\tools\pdb2xml\obj\Debug\pdb2xml.pdb

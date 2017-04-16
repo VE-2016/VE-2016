@@ -507,7 +507,7 @@ namespace WinExplorer
 
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
-            string drive = "C:\\";
+            //string drive = "C:\\";
 
             string folder = "C:\\Program Files\\Git\\bin";
 

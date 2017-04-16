@@ -27,6 +27,8 @@ using ICSharpCode.NRefactory.Editor;
 using ICSharpCode.NRefactory.Semantics;
 using ICSharpCode.NRefactory.TypeSystem;
 using ICSharpCode.NRefactory.TypeSystem.Implementation;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -56,19 +58,15 @@ namespace VSParsers
 
         }
 
-        private static SyntaxTree s_syntaxTree;
-
-        public static void Parse(string sourceCode)
-        {
-            //syntaxTree = new CSharpParser().Parse(sourceCode, "demo.cs");
-
-        }
+       // private static SyntaxTree s_syntaxTree;
 
         public IProjectContent pctx { get; set; }
 
         public ICompilation cmp { get; set; }
 
         public Dictionary<string, ITypeDefinition> dict { get; set; }
+
+        public Dictionary<string, Microsoft.CodeAnalysis.INamedTypeSymbol> Dict { get; set; }
 
         public static Dictionary<string, IUnresolvedFile> df = new Dictionary<string, IUnresolvedFile>();
 
@@ -122,7 +120,75 @@ namespace VSParsers
                     dict.Add(d.FullName, d);
             }
         }
+        public Syntaxer snx { get; set; }
 
+        public ArrayList refs = new ArrayList();
+
+        public ArrayList syns = new ArrayList();
+
+        public void addProjectFiles(ArrayList F, ArrayList A = null)
+        {
+            if (snx == null)
+                snx = new Syntaxer();
+
+
+            List<PortableExecutableReference> pl = new List<PortableExecutableReference>();
+
+            if (A != null)
+            {
+                string[] r = getAssembliesFiles(A);
+
+                
+                foreach (string c in r)
+                {
+                    if (refs.IndexOf(c) < 0)
+                    {
+                        if (!File.Exists(c))
+                            MessageBox.Show("File not found " + c);
+                        pl.Add(MetadataReference.CreateFromFile(c));
+                        refs.Add(c);
+                    }
+                }
+                //snx.cc.AddReferences(MetadataReference.CreateFromFile(c));
+            }
+            List<Microsoft.CodeAnalysis.SyntaxTree> sl = new List<Microsoft.CodeAnalysis.SyntaxTree>();
+            foreach (string filename in F)
+            {
+                try
+                {
+                    if (syns.IndexOf(filename) < 0)
+                    {
+
+                        string content = File.ReadAllText(filename);
+                        Microsoft.CodeAnalysis.SyntaxTree syntaxTree = CSharpSyntaxTree.ParseText(content, null, filename);
+                        sl.Add(syntaxTree);
+                        syns.Add(filename);
+
+                    }
+                    //snx.cc.AddSyntaxTrees(syntaxTree);
+                   
+                   
+                }
+                catch (Exception e)
+                {
+                }
+                
+                    
+                
+            }
+
+            snx.cc = snx.cc.AddReferences(pl).AddSyntaxTrees(sl);
+
+            List<INamedTypeSymbol> T = snx.GetAllTypes();
+            
+            Dict = new Dictionary<string, Microsoft.CodeAnalysis.INamedTypeSymbol>();
+
+            foreach (Microsoft.CodeAnalysis.INamedTypeSymbol d in T)
+            {
+                if (Dict.ContainsKey(d.Name) == false)
+                    Dict.Add(d.Name, d);
+            }
+        }
         public IEnumerable<ITypeDefinition> T { get; set; }
 
         public IEnumerable<ICompletionData> GetCodeComplete(string filename, string editorText, int offset, int X, int Y) // not the best way to put in the whole string every time
@@ -133,7 +199,7 @@ namespace VSParsers
 
             string parsedText = editorText; // TODO: Why there are different values in test cases?
 
-            SyntaxTree syntaxTree = null;
+            ICSharpCode.NRefactory.CSharp.SyntaxTree syntaxTree = null;
             try
             {
                 syntaxTree = new CSharpParser().Parse(parsedText, filename);
@@ -558,6 +624,25 @@ namespace VSParsers
 
         public static Dictionary<string, IUnresolvedAssembly> dd = new Dictionary<string, IUnresolvedAssembly>();
 
+        public static Dictionary<string, Assembly> DD = new Dictionary<string, Assembly>();
+
+        public static Type GetTypeForName(string name)
+        {
+
+            foreach(IUnresolvedAssembly s in dd.Values)
+            {
+
+                var d = s.GetAllTypeDefinitions();
+                foreach(IUnresolvedTypeDefinition b in d)
+                {
+                    if (b.FullName.EndsWith(name))
+                        return b.GetType();
+                }
+
+            }
+            return null;
+        }
+
         private IUnresolvedAssembly[] GetAssemblies(ArrayList A)
         {
             ArrayList R = new ArrayList();
@@ -572,6 +657,7 @@ namespace VSParsers
                 else
                 {
                     p = loader.LoadAssemblyFile(asm.Location);
+                    if(!dd.ContainsKey(asm.FullName))
                     dd.Add(asm.FullName, p);
                 }
                 R.Add(p);
@@ -589,11 +675,60 @@ namespace VSParsers
 
             return r;
         }
+        private Assembly[] getAssemblies(ArrayList A)
+        {
+            ArrayList R = new ArrayList();
+
+            foreach (Assembly asm in A)
+            {
+                Assembly p = null;
+                if (DD.ContainsKey(asm.FullName) == true)
+                    p = DD[asm.FullName];
+                else
+                {
+                    p = Assembly.LoadFrom(asm.Location);
+                    DD.Add(asm.FullName, p);
+                }
+                R.Add(p);
+            }
+
+            Assembly[] r = new Assembly[R.Count];
+
+            int i = 0;
+            foreach (Assembly s in R)
+            {
+                r[i] = s;
+                i++;
+            }
 
 
+            return r;
+        }
+        private string[] getAssembliesFiles(ArrayList A)
+        {
+            ArrayList R = new ArrayList();
+
+            foreach (Assembly asm in A)
+            {
+                
+                R.Add(asm.Location);
+            }
+
+            string[] r = new string[R.Count];
+
+            int i = 0;
+            foreach (string s in R)
+            {
+                r[i] = s;
+                i++;
+            }
+
+
+            return r;
+        }
         public ResolveResult Resolve(TextLocation location, string content, string filename)
         {
-            SyntaxTree syntaxTree = null;
+            ICSharpCode.NRefactory.CSharp.SyntaxTree syntaxTree = null;
 
             try
             {
@@ -623,12 +758,17 @@ namespace VSParsers
 
         public bool shouldstop = false;
 
+        public Syntaxer syntaxer { get; set; }
+
+      
         public ArrayList ResolveAt(TextLocation location, string content, string filename, VSProject vp)
         {
             shouldstop = false;
 
+
+
             // IProjectContent project = new CSharpProjectContent();
-            SyntaxTree syntaxTree = null;
+            ICSharpCode.NRefactory.CSharp.SyntaxTree syntaxTree = null;
 
             try
             {
@@ -726,7 +866,7 @@ namespace VSParsers
             shouldstop = false;
 
 
-            SyntaxTree syntaxTree = null;
+            ICSharpCode.NRefactory.CSharp.SyntaxTree syntaxTree = null;
 
             try
             {
@@ -794,7 +934,7 @@ namespace VSParsers
             public ArrayList Properties { get; set; }
         }
 
-        static public IEnumerable<EntityDeclaration> getentity(SyntaxTree syntax, string ents)
+        static public IEnumerable<EntityDeclaration> getentity(ICSharpCode.NRefactory.CSharp.SyntaxTree syntax, string ents)
         {
             string classname = ents;
 
@@ -823,7 +963,7 @@ namespace VSParsers
 
             mappers maps = new mappers();
 
-            SyntaxTree syntax = null;
+            ICSharpCode.NRefactory.CSharp.SyntaxTree syntax = null;
 
             string filename = path;
 
@@ -831,7 +971,7 @@ namespace VSParsers
             string sourceText = content;
 
             CSharpParser parser = new CSharpParser();
-            SyntaxTree syntaxTree2 = parser.Parse(sourceText, Path.GetFileNameWithoutExtension(filename));
+            ICSharpCode.NRefactory.CSharp.SyntaxTree syntaxTree2 = parser.Parse(sourceText, Path.GetFileNameWithoutExtension(filename));
             var pc = new CSharpProjectContent();
             pc = (CSharpProjectContent)pc.AddOrUpdateFiles(syntaxTree2.ToTypeSystem());
             ICSharpCode.NRefactory.TypeSystem.ICompilation compilation = pc.CreateCompilation();
@@ -1657,7 +1797,7 @@ namespace VSParsers
             if (!this.Entity.IsAbstract)
             {
                 // modify body to call the base method
-                if (this.Entity.SymbolKind == SymbolKind.Method)
+                if (this.Entity.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Method)
                 {
                     var baseCall = new BaseReferenceExpression().Invoke(this.Entity.Name, ParametersToExpressions(this.Entity));
                     var body = entityDeclaration.GetChildByRole(Roles.Body);
@@ -1667,10 +1807,10 @@ namespace VSParsers
                     else
                         body.Statements.Add(new ReturnStatement(baseCall));
                 }
-                else if (this.Entity.SymbolKind == SymbolKind.Indexer || this.Entity.SymbolKind == SymbolKind.Property)
+                else if (this.Entity.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Indexer || this.Entity.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Property)
                 {
                     Expression baseCall;
-                    if (this.Entity.SymbolKind == SymbolKind.Indexer)
+                    if (this.Entity.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Indexer)
                         baseCall = new BaseReferenceExpression().Indexer(ParametersToExpressions(this.Entity));
                     else
                         baseCall = new BaseReferenceExpression().Member(this.Entity.Name);

@@ -14753,29 +14753,6 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="T:WinExplorer.CSDemo">
-            <summary>
-            Description of CSDemo.
-            </summary>
-        </member>
-        <member name="F:WinExplorer.CSDemo.components">
-            <summary>
-            Designer variable used to keep track of non-visual components.
-            </summary>
-        </member>
-        <member name="M:WinExplorer.CSDemo.Dispose(System.Boolean)">
-            <summary>
-            Disposes resources used by the control.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:WinExplorer.CSDemo.InitializeComponent">
-            <summary>
-            This method is required for Windows Forms designer support.
-            Do not change the method contents inside the source code editor. The Forms designer might
-            not be able to load this method if it was changed manually.
-            </summary>
-        </member>
         <member name="F:WinExplorer.LauncherForm.components">
             <summary>
             Required designer variable.
@@ -14791,29 +14768,6 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="T:WinExplorer.ParserForm">
-            <summary>
-            Description of MainForm.
-            </summary>
-        </member>
-        <member name="F:WinExplorer.ParserForm.components">
-            <summary>
-            Designer variable used to keep track of non-visual components.
-            </summary>
-        </member>
-        <member name="M:WinExplorer.ParserForm.Dispose(System.Boolean)">
-            <summary>
-            Disposes resources used by the form.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:WinExplorer.ParserForm.InitializeComponent">
-            <summary>
-            This method is required for Windows Forms designer support.
-            Do not change the method contents inside the source code editor. The Forms designer might
-            not be able to load this method if it was changed manually.
             </summary>
         </member>
         <member name="F:WinExplorer.PSForm.components">

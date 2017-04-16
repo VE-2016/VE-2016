@@ -39,6 +39,28 @@ namespace WinExplorer
             fntc = comboBox6;
 
             fntb.DrawItem += Fntb_DrawItem;
+
+            LoadNuget();
+        }
+
+        void LoadNuget()
+        {
+            listView2.Resize += ListView2_Resize;
+            listView2.CheckBoxes = true;
+            listView2.View = View.Details;
+            listView2.Columns.Add("");
+            listView2.HeaderStyle = ColumnHeaderStyle.None;
+            ListViewItem v = new ListViewItem("http:\\nuget.org");
+            v.Checked = true;
+            listView2.Items.Add(v);
+            ListView2_Resize(null, null);
+
+
+        }
+
+        private void ListView2_Resize(object sender, EventArgs e)
+        {
+            listView2.Columns[0].Width = listView2.Width - 3;
         }
 
         private ArrayList C { get; set; }
@@ -136,6 +158,14 @@ namespace WinExplorer
             else if (text == "General - projects and solutions")
             {
                 Load_Page(panel10);
+            }
+            else if (text == "General ")
+            {
+                Load_Page(panel11);
+            }
+            else if (text == "Package sources")
+            {
+                Load_Page(panel12);
             }
         }
 
@@ -259,6 +289,23 @@ namespace WinExplorer
             node = new TreeNode();
             node.Text = "Database tools";
             tr.Nodes.Add(node);
+
+            node = new TreeNode();
+            node.Text = "GitHub for Visual Explorer";
+            tr.Nodes.Add(node);
+
+            node = new TreeNode();
+            node.Text = "NuGet Package Manager";
+            tr.Nodes.Add(node);
+
+            nodes = new TreeNode();
+            nodes.Text = "General ";
+            node.Nodes.Add(nodes);
+
+            nodes = new TreeNode();
+            nodes.Text = "Package sources";
+            node.Nodes.Add(nodes);
+
 
             //node = new TreeNode();
             //node.Text = "Project and Solutions";

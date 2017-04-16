@@ -6,7 +6,7 @@ namespace WeifenLuo.WinFormsUI.Docking
     [AttributeUsage(AttributeTargets.All)]
     internal sealed class LocalizedDescriptionAttribute : DescriptionAttribute
     {
-        private bool _initialized = false;
+        private bool m_initialized = false;
 
         public LocalizedDescriptionAttribute(string key) : base(key)
         {
@@ -15,15 +15,15 @@ namespace WeifenLuo.WinFormsUI.Docking
         public override string Description
         {
             get
-            {
-                if (!_initialized)
+            {    
+                if (!m_initialized)
                 {
                     string key = base.Description;
                     DescriptionValue = ResourceHelper.GetString(key);
                     if (DescriptionValue == null)
                         DescriptionValue = String.Empty;
 
-                    _initialized = true;
+                    m_initialized = true;
                 }
 
                 return DescriptionValue;

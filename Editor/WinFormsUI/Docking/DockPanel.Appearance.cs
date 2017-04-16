@@ -1,7 +1,6 @@
-﻿using System;
-
-namespace WeifenLuo.WinFormsUI.Docking
+﻿namespace WeifenLuo.WinFormsUI.Docking
 {
+    using System;
     using System.ComponentModel;
 
     public partial class DockPanel
@@ -10,17 +9,19 @@ namespace WeifenLuo.WinFormsUI.Docking
         [LocalizedDescription("DockPanel_DockPanelSkin")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         [Browsable(false)]
+        [Obsolete("Use Theme.Skin instead.")]
         public DockPanelSkin Skin
         {
-            get { return _dockPanelTheme.Skin; }
+            get { return null;  }
         }
 
-        private ThemeBase _dockPanelTheme = new VS2005Theme();
+        private ThemeBase m_dockPanelTheme = new VS2005Theme();
+
         [LocalizedCategory("Category_Docking")]
         [LocalizedDescription("DockPanel_DockPanelTheme")]
         public ThemeBase Theme
         {
-            get { return _dockPanelTheme; }
+            get { return m_dockPanelTheme; }
             set
             {
                 if (value == null)
@@ -28,13 +29,15 @@ namespace WeifenLuo.WinFormsUI.Docking
                     return;
                 }
 
-                if (_dockPanelTheme.GetType() == value.GetType())
+                if (m_dockPanelTheme.GetType() == value.GetType())
                 {
                     return;
                 }
 
-                _dockPanelTheme = value;
-                _dockPanelTheme.Apply(this);
+                m_dockPanelTheme?.CleanUp(this);
+                m_dockPanelTheme = value;
+                m_dockPanelTheme.ApplyTo(this);
+                m_dockPanelTheme.PostApply(this);
             }
         }
     }

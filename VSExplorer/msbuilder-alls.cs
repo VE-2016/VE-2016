@@ -46,39 +46,43 @@ namespace WinExplorer
 
         public BasicFileLogger()
         {
-            Verbosity = LoggerVerbosity.Diagnostic;
+            // Verbosity = LoggerVerbosity.Diagnostic;
+        }
+
+        public override void Initialize(IEventSource eventSource)
+        {
         }
 
         /// <summary>
         /// Initialize is guaranteed to be called by MSBuild at the start of the build
         /// before any events are raised.
         /// </summary>
-        public override void Initialize(IEventSource eventSource)
-        { 
-            
-                eventSource.ProjectStarted += new ProjectStartedEventHandler(eventSource_ProjectStarted);
-                eventSource.TaskStarted += new TaskStartedEventHandler(eventSource_TaskStarted);
-                // eventSource.MessageRaised += new BuildMessageEventHandler(eventSource_MessageRaised);
-                eventSource.MessageRaised += new BuildMessageEventHandler(eventSource_MessageRaised);
-                eventSource.WarningRaised += new BuildWarningEventHandler(eventSource_WarningRaised);
-                eventSource.ErrorRaised += new BuildErrorEventHandler(eventSource_ErrorRaised);
-                eventSource.ProjectFinished += new ProjectFinishedEventHandler(eventSource_ProjectFinished);
-                //eventSource.AnyEventRaised += EventSource_AnyEventRaised;
-                _running = true;
-            
+        //public override void Initialize(IEventSource eventSource)
+        //{ 
 
-            rb = VSProvider.cmds.rb;
+        //        eventSource.ProjectStarted += new ProjectStartedEventHandler(eventSource_ProjectStarted);
+        //        eventSource.TaskStarted += new TaskStartedEventHandler(eventSource_TaskStarted);
+        //        // eventSource.MessageRaised += new BuildMessageEventHandler(eventSource_MessageRaised);
+        //        eventSource.MessageRaised += new BuildMessageEventHandler(eventSource_MessageRaised);
+        //        eventSource.WarningRaised += new BuildWarningEventHandler(eventSource_WarningRaised);
+        //        eventSource.ErrorRaised += new BuildErrorEventHandler(eventSource_ErrorRaised);
+        //        eventSource.ProjectFinished += new ProjectFinishedEventHandler(eventSource_ProjectFinished);
+        //        //eventSource.AnyEventRaised += EventSource_AnyEventRaised;
+        //        _running = true;
 
-            Verbosity = LoggerVerbosity.Detailed;
-        }
 
-        /// <summary>
-        /// Shutdown() is guaranteed to be called by MSBuild at the end of the build, after all
-        /// events have been raised.
-        /// </summary>
-        public override void Shutdown()
-        {
-        }
+        //    rb = VSProvider.cmds.rb;
+
+        //    Verbosity = LoggerVerbosity.Detailed;
+        //}
+
+        ///// <summary>
+        ///// Shutdown() is guaranteed to be called by MSBuild at the end of the build, after all
+        ///// events have been raised.
+        ///// </summary>
+        //public override void Shutdown()
+        //{
+        //}
 
         public void Append(string s)
         {
@@ -224,7 +228,7 @@ namespace WinExplorer
 
             BasicFileLogger logger = new BasicFileLogger();
 
-            logger.Parameters = b + "\\" + "logger.txt";
+           // logger.Parameters = b + "\\" + "logger.txt";
 
             VSProvider.VSSolution vs = null;
 
@@ -232,7 +236,9 @@ namespace WinExplorer
             {
                 vs = new VSSolution(Path.GetFullPath(path));
             }
-            catch (Exception e) { }
+            catch (Exception e) {
+                Console.WriteLine(e.Message);
+            }
 
             if (vs == null)
             {
@@ -264,7 +270,7 @@ namespace WinExplorer
                         File.SetLastWriteTime(bc[0] as string, DateTime.Now);
                     }
 
-                    pc.Build(logger);
+                    //pc.Build(logger);
 
                     if (rebuild)
                         File.SetLastWriteTime(bc[0] as string, d);
@@ -288,7 +294,7 @@ namespace WinExplorer
 
             BasicFileLogger logger = new BasicFileLogger();
 
-            logger.Parameters = b + "\\" + "logger.txt";
+           // logger.Parameters = b + "\\" + "logger.txt";
 
             //VSProvider.VSSolution vs = new VSSolution(Path.GetFullPath(path));
             //foreach (VSProject ps in vs.Projects)
@@ -301,7 +307,7 @@ namespace WinExplorer
 
                     pc.MarkDirty();
 
-                    pc.Build(logger);
+                    //pc.Build(logger);
 
                     pc.ProjectCollection.UnloadAllProjects();
                 }
@@ -929,11 +935,15 @@ namespace WinExplorer
                     //pgs.Invoke(new Action(() => { pgs.Maximum = 100 * vs.Projects.Count(); pgs.Maximum = 100 * vs.Projects.Count(); pgs.Value = 0; }));
                 }
             }
-            catch (Exception e) { };
-
+            catch (Exception e) {
+                Console.WriteLine(e.Message);
+            };
+            Dictionary<string, TreeNode> DSN;
             foreach (VSProject ps in vs.Projects)
             {
                 ArrayList NL = new ArrayList();
+
+                DSN = new Dictionary<string, TreeNode>();
 
 
                 if (thisproject != "")
@@ -947,6 +957,8 @@ namespace WinExplorer
                 ArrayList EMB = new ArrayList();
 
                 ArrayList CDD = new ArrayList();
+
+                ArrayList DDD = new ArrayList();
 
                 REF = null;
 
@@ -1178,7 +1190,75 @@ namespace WinExplorer
 
                     string g = pi.fileName;
 
-                    pi.GetSubType();
+                    string dependentupon = "";
+
+                    pi.GetSubType(out dependentupon);
+
+                    string[] bc = pi.Include.Split("\\".ToCharArray());
+
+                    string dependsupon = bc[bc.Length - 1];
+
+                    if (DSN.ContainsKey(dependsupon))
+                    {
+                        TreeNode b = DSN[dependsupon];
+                        b.Tag = pr3;
+                        continue;
+                    }
+                 
+                    else 
+                    if (dependentupon != "" )
+                    {
+
+                        if (!DSN.ContainsKey(dependentupon))
+                        {
+                            TreeNode ns = new TreeNode();
+                            ns.Text = dependentupon;
+                            ns.Tag = pr3;
+
+                            DSN.Add(dependentupon, ns);
+
+                            if(dependentupon != dependsupon)
+                            {
+                                TreeNode ng = new TreeNode();
+                                ng.Text = pi.Include;
+                                ng.Tag = pr3;
+                                ns.Nodes.Add(ng);
+                            }
+                        }
+                        else
+                        {
+                            TreeNode ng = new TreeNode();
+                            ng.Text = pi.Include;
+                            TreeNode b = DSN[dependentupon];
+                            ng.Tag = pr3;
+                            b.Nodes.Add(ng);
+                        }
+                        pi.SubType = "resx";
+                        continue;
+                    }
+                    else
+                    if (pi.SubTypes != "")
+                    {
+
+                        if (!DSN.ContainsKey(dependsupon))
+                        {
+                            TreeNode ns = new TreeNode();
+                            ns.Text = pi.Include;
+                            ns.Tag = pr3;
+
+
+                            DSN.Add(dependsupon, ns);
+
+                            continue;
+                        }
+                        else
+                        {
+                            TreeNode b = DSN[dependsupon];
+                            b.Tag = pr3;
+                            continue;
+                        }
+
+                    }
 
                     if (pi.Info != null)
                     {
@@ -1216,6 +1296,9 @@ namespace WinExplorer
                             CDD.Add(pi);
                         if (Path.GetExtension(pi.Include) == ".vsixmanifest")
                             CDD.Add(pi);
+                        if (Path.GetExtension(pi.Include) == ".datasource")
+                            DDD.Add(pi);
+
                     }
                     else
                     if (pi.ItemType == "file")
@@ -1245,12 +1328,13 @@ namespace WinExplorer
                     {
                         TreeNode res = t;
 
-                        pi.GetSubType();
+                        pi.GetSubType(out dependentupon);
 
                         //res.Tag = pr3;
 
                         string gs = Path.GetFileName(g);
 
+                    
                         string filapath = "";
 
                         if (Path.IsPathRooted(pi.Include) == true)
@@ -1505,7 +1589,9 @@ namespace WinExplorer
                             {
                                 dd = Path.GetFileName(g);
                             }
-                            catch (Exception e) { }
+                            catch (Exception e) {
+                                Console.WriteLine(e.Message);
+                            }
 
                             string b = pi.Include;
 
@@ -1525,18 +1611,23 @@ namespace WinExplorer
                             }
 
                             t3.Nodes.Add(t4);
-
-                            try
+                            if (g != null)
                             {
-                                string pc = Path.GetFullPath(Path.GetFileName(g));
+                                try
+                                {
+                                    string pc = Path.GetFullPath(Path.GetFileName(g));
 
 
 
-                                pc = pc.Replace("\\", "\\\\");
+                                    pc = pc.Replace("\\", "\\\\");
 
-                                d[pc] = t4;
+                                    d[pc] = t4;
+                                }
+                                catch (Exception e)
+                                {
+                                    Console.WriteLine(e.Message);
+                                };
                             }
-                            catch (Exception e) { };
                             continue;
                         }
                         else
@@ -1574,7 +1665,9 @@ namespace WinExplorer
                             {
                                 da = Path.GetFileName(g);
                             }
-                            catch (Exception e) { }
+                            catch (Exception e) {
+                                Console.WriteLine(e.Message);
+                            }
 
                             if (da == null || da == "")
 
@@ -1599,20 +1692,22 @@ namespace WinExplorer
 
                             try
                             {
-                                string pc = Path.GetFullPath(Path.GetFileName(g));
-                                pc = pc.Replace("\\\\", "\\");
-                                d[pc] = tp;
+                                if (g != null)
+                                {
+                                    string pc = Path.GetFullPath(Path.GetFileName(g));
+                                    pc = pc.Replace("\\\\", "\\");
+                                    d[pc] = tp;
+                                }
                             }
-                            catch (Exception e) { };
+                            catch (Exception e) {
+                                Console.WriteLine(e.Message);
+                            };
                         }
                     }
                 }
 
 
                 tv.BeginUpdate();
-
-                //if (ps.Name == "WinFormsUI")
-                //    MessageBox.Show("");
 
                 ProjectOrder(t, FD, REF, nds);
 
@@ -1635,9 +1730,15 @@ namespace WinExplorer
 
                 MoveContent(t, CDD);
 
+                MoveContent(t, DDD);
+
+               
+
+                MoveContent(t, DSN);
+
                 ProjectCleanUp(t);
 
-                //MoveContent(t, "Resources");
+                MoveContent(t, "Resources");
 
                 RemoveDuplicates(t);
 
@@ -1801,9 +1902,9 @@ namespace WinExplorer
             if (g == null)
                 return 0;
 
-            bool found = false;
+            //bool found = false;
 
-            int change = 0;
+            //int change = 0;
 
             int i = 0;
             foreach (string entry in g.Entries.Keys)
@@ -2149,6 +2250,110 @@ namespace WinExplorer
                     nodes = ns;
                     i++;
                 }
+            }
+        }
+
+        public void MoveContent(TreeNode master, Dictionary<string, TreeNode> D)
+        {
+            //foreach (string cs in D.Keys)
+            {
+            //    master.Nodes.Add(D[cs]);
+            }
+
+                foreach (string cs in D.Keys)
+            {
+                //master.Nodes.Add(D[cs]);
+                TreeNode ng = D[cs];
+                CreateView_Solution.ProjectItemInfo pc = ng.Tag as CreateView_Solution.ProjectItemInfo;
+                VSProjectItem pi = pc.psi;
+                
+                    string Include = pi.Include;
+
+                    string c = Include;
+
+                    if (Include == null)
+                        continue;
+
+                    string guid = "";
+
+                    TreeNode nodes = FindNodesIncludeExact(master, Include);
+
+                    CreateView_Solution.ProjectItemInfo p = null;
+
+                    if (nodes != null)
+                    {
+                        p = nodes.Tag as CreateView_Solution.ProjectItemInfo;
+
+                        if (p != null)
+                        {
+                            guid = p.Guid;
+                            p.psi.fileName = pi.fileName;
+                        }
+                    }
+
+                    nodes = master;
+
+                    string[] cc = c.Split("\\".ToCharArray());
+
+                    string d = "";
+
+                    //if (Include.Contains("ApplicationIcon"))
+                    //    MessageBox.Show("");
+
+
+                    int i = 0;
+                    foreach (string s in cc)
+                    {
+                    if (s.Contains("."))
+                        continue;
+
+                        if (i == 0)
+                            d = s;
+                        else
+                            d += "\\" + s;
+
+                        //TreeNode ns = FindNodesIncludeExact(nodes, d);
+
+                        TreeNode ns = FindNodesIncludeExact(nodes, s);
+
+                        if (ns == null)
+                        {
+                            ns = new TreeNode();
+                            ns.Text = s;
+                            CreateView_Solution.ProjectItemInfo pp = new CreateView_Solution.ProjectItemInfo();
+                            pp.ps = new VSProject();
+                            pp.psi = new VSProjectItem();
+                            pp.psi.Include = d;
+                            ns.Tag = pp;
+                            pp.psi.fileName = pi.fileName;
+
+                            //ns.SelectedImageKey = "Folder";
+                            //ns.ImageKey = "Folder";
+
+                            //nodes.ImageKey = "Folder";
+                            //nodes.SelectedImageKey = "FolderOpen";
+
+                            //master.Nodes.Remove(node);
+
+
+                            string[] bb = s.Split(".".ToCharArray());
+
+                            if (bb.Length <= 1)
+                                pp.psi.ItemType = "Folder";
+                            if (i < cc.Length - 1)
+                            {
+                                ns.SelectedImageKey = "Folder";
+                                ns.ImageKey = "Folder";
+                            }
+                            nodes.Nodes.Add(ns);
+                        }
+
+                        nodes = ns;
+                        i++;
+                    }
+
+                
+                nodes.Nodes.Add(ng);
             }
         }
         public void MoveContent(TreeNode master, string name)
@@ -2756,6 +2961,7 @@ namespace WinExplorer
 
             foreach (TreeNode node in L)
             {
+                master.Nodes.Remove(node);
                 master.Nodes.Add(node);
             }
 
@@ -3247,6 +3453,8 @@ namespace WinExplorer
 
                     exts = exts.ToLower();
 
+                    CreateView_Solution.ProjectItemInfo p = node.Tag as CreateView_Solution.ProjectItemInfo;
+
                     if (exts != ".resx")
 
                     {
@@ -3255,7 +3463,7 @@ namespace WinExplorer
                             string dd = (string)dc[exts];
                             if (dd != "")
                             {
-                                CreateView_Solution.ProjectItemInfo p = node.Tag as CreateView_Solution.ProjectItemInfo;
+                        
 
                                 if (p != null)
                                     if (p.psi.ItemType == "Reference")
@@ -3279,7 +3487,7 @@ namespace WinExplorer
                                                     node.ImageKey = "usercontrol";
                                                     node.SelectedImageKey = "usercontrol";
                                                 }
-                                                else if (p.psi.SubType == "Form" || p.psi.SubType == "Forms")
+                                                else if (p.psi.SubTypes == "Form" || p.psi.SubTypes == "Forms")
                                             {
                                                 node.ImageKey = "forms";
                                                 node.SelectedImageKey = "forms";
@@ -3307,8 +3515,17 @@ namespace WinExplorer
                     }
                     else
                     {
-                        node.ImageKey = "resourcefile";
-                        node.SelectedImageKey = "resourcefile";
+                        if (p.psi.SubType == "resx")
+                        {
+                            node.ImageKey = "filesource";
+                            node.SelectedImageKey = "filesource";
+
+                        }
+                        else
+                        {
+                            node.ImageKey = "resourcefile";
+                            node.SelectedImageKey = "resourcefile";
+                        }
                     }
                 }
                 //else

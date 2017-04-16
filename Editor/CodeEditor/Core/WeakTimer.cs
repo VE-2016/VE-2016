@@ -118,6 +118,8 @@ namespace AIMS.Libraries.CodeEditor.Core.Timers
 
         public static void Attach(WeakTimer t)
         {
+            return;
+
             WeakReference wr = new WeakReference(t);
 
             s_listeners.Add(wr);
@@ -150,6 +152,7 @@ namespace AIMS.Libraries.CodeEditor.Core.Timers
 
         private static void DoTick(object s, EventArgs e)
         {
+            return;
             foreach (WeakReference wr in s_listeners)
             {
                 if (wr.IsAlive)

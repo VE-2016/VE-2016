@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DBA_TAB_MODIFICATIONS" msprop:BaseTable.0="DBA_TAB_MODIFICATIONS">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TABLE_OWNER" msprop:OraDbType="126" msprop:BaseColumn="TABLE_OWNER" type="xs:string" minOccurs="0" />
+              <xs:element name="TABLE_NAME" msprop:OraDbType="126" msprop:BaseColumn="TABLE_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="PARTITION_NAME" msprop:OraDbType="126" msprop:BaseColumn="PARTITION_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="SUBPARTITION_NAME" msprop:OraDbType="126" msprop:BaseColumn="SUBPARTITION_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="INSERTS" msprop:OraDbType="107" msprop:BaseColumn="INSERTS" type="xs:decimal" minOccurs="0" />
+              <xs:element name="UPDATES" msprop:OraDbType="107" msprop:BaseColumn="UPDATES" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DELETES" msprop:OraDbType="107" msprop:BaseColumn="DELETES" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TIMESTAMP" msprop:OraDbType="106" msprop:BaseColumn="TIMESTAMP" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TRUNCATED" msprop:OraDbType="126" msprop:BaseColumn="TRUNCATED" type="xs:string" minOccurs="0" />
+              <xs:element name="DROP_SEGMENTS" msprop:OraDbType="107" msprop:BaseColumn="DROP_SEGMENTS" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

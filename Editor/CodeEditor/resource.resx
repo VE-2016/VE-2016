@@ -178,4 +178,22 @@
   <data name="snipet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Snippet_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Bookmark_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Bookmark_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F12_BreakpointEnable_28x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\F12_BreakpointEnable_28x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F12_BreakpointEnable_28xs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\F12_BreakpointEnable_28xs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F12_BreakpointEnable_28xp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\F12_BreakpointEnable_28xp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BreakpointDisable_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\BreakpointDisable_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BreakpointDisable_16xp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\BreakpointDisable_16xp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -58,28 +58,40 @@ namespace VSProvider
 
         public string Info { get; set; }
 
-        public string GetSubType()
+        public string GetSubType(out string dependentupon)
         {
             Microsoft.Build.Construction.ProjectItemElement c = _internalProjectItem as Microsoft.Build.Construction.ProjectItemElement;
+
+            dependentupon = "";
+
+            string subtype = "";
+
+            SubTypes = "";
 
             if (c != null)
                 if (c.HasMetadata == true)
                 {
                     foreach (Microsoft.Build.Construction.ProjectMetadataElement e in c.Metadata)
+                    {
                         if (e.Name == "SubType")
                         {
                             SubTypes = e.Value;
-                            return e.Value;
+                            subtype = e.Value;
                         }
-                        else
+
                         if (e.Name == "Link")
                         {
                             Info = e.Value;
-                            return e.Value;
+                            subtype = e.Value;
                         }
+                        else if (e.Name.ToLower() == "dependentupon")
+                        {
+                            dependentupon = e.Value;
+                        }
+                    }
                 }
 
-            return "";
+            return subtype;
         }
 
         public byte[] FileContents

@@ -8,6 +8,8 @@
 using System.Collections;
 using System.Drawing;
 using AIMS.Libraries.CodeEditor.Syntax;
+using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace AIMS.Libraries.CodeEditor.Syntax
 {
@@ -295,7 +297,7 @@ namespace AIMS.Libraries.CodeEditor.Syntax
                 Document.InvokeChange();
             }
         }
-
+        public bool BreakpointEnabled = true;
         /// <summary>
         /// Gets or Sets if this row has a breakpoint or not.
         /// </summary>
@@ -305,12 +307,7 @@ namespace AIMS.Libraries.CodeEditor.Syntax
             set
             {
                 _mBreakpoint = value;
-                if (value)
-                    Document.InvokeBreakPointAdded(this);
-                else
-                    Document.InvokeBreakPointRemoved(this);
-
-                Document.InvokeChange();
+             
             }
         }
 
@@ -960,6 +957,43 @@ namespace AIMS.Libraries.CodeEditor.Syntax
             }
 
             return false;
+        }
+
+        public List<string> GetWords(Word word)
+        {
+            List<string> b = new List<string>();
+            
+         
+                {
+                    
+                    int i = IndexOf(word);
+
+                while (i >= 1 && mWords[i].Type != WordType.xtWord && mWords[i].Text != "")
+                {
+
+                    i--;
+
+                }
+
+                b.Add(mWords[i--].Text);
+
+                while (i >= 1 && mWords[i].Type != WordType.xtWord && mWords[i].Text != "")
+                {
+
+                    i--;
+
+                }
+
+                while (i >= 0 && mWords[i].Type == WordType.xtWord)
+                    {
+                        
+                            b.Add(mWords[i--].Text);
+                       
+                    }
+
+                }
+            
+            return b;
         }
 
         public string[] Words(string word)

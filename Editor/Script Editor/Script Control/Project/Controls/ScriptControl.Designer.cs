@@ -41,7 +41,6 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.dockPanel1 = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbSelectLanguage = new System.Windows.Forms.ToolStripDropDownButton();
             this.cNetToolStripMenuItemCSharp = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,7 +76,6 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             this.tsbSolutionExplorer = new System.Windows.Forms.ToolStripButton();
             this.syntaxDocument1 = new AIMS.Libraries.CodeEditor.Syntax.SyntaxDocument(this.components);
             this.ScriptStatus.SuspendLayout();
-            this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -162,7 +160,6 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // 
             // toolStripContainer1.ContentPanel
             // 
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.dockPanel1);
             this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(633, 388);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
@@ -174,13 +171,6 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // toolStripContainer1.TopToolStripPanel
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip1);
-            // 
-            // dockPanel1
-            // 
-            this.dockPanel1.Location = new System.Drawing.Point(3, 3);
-            this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.Size = new System.Drawing.Size(627, 382);
-            this.dockPanel1.TabIndex = 2;
             // 
             // toolStrip1
             // 
@@ -525,7 +515,6 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             this.Size = new System.Drawing.Size(633, 435);
             this.ScriptStatus.ResumeLayout(false);
             this.ScriptStatus.PerformLayout();
-            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);

@@ -263,7 +263,10 @@ namespace WinExplorer.UI
                     comboBox4.Items.Add(s);
                 }
             }
-            catch (Exception e) { };
+            catch (Exception e) {
+
+                Console.WriteLine(e.Message);
+            };
 
             Microsoft.Build.Evaluation.ProjectProperty outtype = pc.GetProperty("OutputType");
             Microsoft.Build.Evaluation.ProjectProperty outdir = pc.GetProperty("OutDir");
@@ -402,7 +405,10 @@ namespace WinExplorer.UI
                     comboBox4.Items.Add(s);
                 }
             }
-            catch (Exception e) { };
+            catch (Exception e) {
+
+                Console.WriteLine(e.Message);
+            };
 
             Microsoft.Build.Evaluation.ProjectProperty outtype = pc.GetProperty("OutputType");
             Microsoft.Build.Evaluation.ProjectProperty outdir = pc.GetProperty("OutDir");

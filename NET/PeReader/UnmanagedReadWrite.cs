@@ -4,6 +4,8 @@
 //
 //-----------------------------------------------------------------------------
 
+#define LITTLEENDIAN
+
 using System;
 using System.Text;
 
@@ -11,6 +13,8 @@ using System.Text;
 
 //  Left over work items:
 //  1) Try to optimize String reading and writing methods
+
+
 
 #if !BIGENDIAN && !LITTLEENDIAN
 #error Either BIGENDIAN or LITTLEENDIAN must be defined.

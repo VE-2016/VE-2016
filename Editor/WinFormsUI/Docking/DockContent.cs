@@ -2,7 +2,6 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 using System.Diagnostics.CodeAnalysis;
 
 namespace WeifenLuo.WinFormsUI.Docking
@@ -11,10 +10,13 @@ namespace WeifenLuo.WinFormsUI.Docking
     {
         public DockContent()
         {
-            _dockHandler = new DockContentHandler(this, new GetPersistStringCallback(GetPersistString));
-            _dockHandler.DockStateChanged += new EventHandler(DockHandler_DockStateChanged);
-            //Suggested as a fix by bensty regarding form resize
-            this.ParentChanged += new EventHandler(DockContent_ParentChanged);
+            m_dockHandler = new DockContentHandler(this, new GetPersistStringCallback(GetPersistString));
+            m_dockHandler.DockStateChanged += new EventHandler(DockHandler_DockStateChanged);
+            if (PatchController.EnableFontInheritanceFix != true)
+            {
+                //Suggested as a fix by bensty regarding form resize
+                this.ParentChanged += new EventHandler(DockContent_ParentChanged);
+            }
         }
 
         //Suggested as a fix by bensty regarding form resize
@@ -24,11 +26,11 @@ namespace WeifenLuo.WinFormsUI.Docking
                 this.Font = this.Parent.Font;
         }
 
-        private DockContentHandler _dockHandler = null;
+        private DockContentHandler m_dockHandler = null;
         [Browsable(false)]
         public DockContentHandler DockHandler
         {
-            get { return _dockHandler; }
+            get { return m_dockHandler; }
         }
 
         [LocalizedCategory("Category_Docking")]
@@ -58,20 +60,20 @@ namespace WeifenLuo.WinFormsUI.Docking
             set { DockHandler.AutoHidePortion = value; }
         }
 
-        private string _tabText = null;
+        private string m_tabText = null;
         [Localizable(true)]
         [LocalizedCategory("Category_Docking")]
         [LocalizedDescription("DockContent_TabText_Description")]
         [DefaultValue(null)]
         public string TabText
         {
-            get { return _tabText; }
-            set { DockHandler.TabText = _tabText = value; }
+            get { return m_tabText; }
+            set { DockHandler.TabText = m_tabText = value; }
         }
 
         private bool ShouldSerializeTabText()
         {
-            return (_tabText != null);
+            return (m_tabText != null);
         }
 
         [LocalizedCategory("Category_Docking")]
@@ -191,6 +193,12 @@ namespace WeifenLuo.WinFormsUI.Docking
             return DockHandler.IsDockStateValid(dockState);
         }
 
+        /// <summary>
+        /// Context menu.
+        /// </summary>
+        /// <remarks>
+        /// This property should be obsolete as it does not support theming. Please use <see cref="TabPageContextMenuStrip"/> instead.
+        /// </remarks>
         [LocalizedCategory("Category_Docking")]
         [LocalizedDescription("DockContent_TabPageContextMenu_Description")]
         [DefaultValue(null)]
@@ -200,6 +208,9 @@ namespace WeifenLuo.WinFormsUI.Docking
             set { DockHandler.TabPageContextMenu = value; }
         }
 
+        /// <summary>
+        /// Context menu strip.
+        /// </summary>
         [LocalizedCategory("Category_Docking")]
         [LocalizedDescription("DockContent_TabPageContextMenuStrip_Description")]
         [DefaultValue(null)]
@@ -207,6 +218,19 @@ namespace WeifenLuo.WinFormsUI.Docking
         {
             get { return DockHandler.TabPageContextMenuStrip; }
             set { DockHandler.TabPageContextMenuStrip = value; }
+        }
+
+        public void ApplyTheme()
+        {
+            DockHandler.ApplyTheme();
+
+            if (DockPanel != null)
+            {
+                if (MainMenuStrip != null)
+                    DockPanel.Theme.ApplyTo(MainMenuStrip);
+                if (ContextMenuStrip != null)
+                    DockPanel.Theme.ApplyTo(ContextMenuStrip);
+            }
         }
 
         [Localizable(true)]
@@ -294,17 +318,17 @@ namespace WeifenLuo.WinFormsUI.Docking
             OnDockStateChanged(e);
         }
 
-        private static readonly object s_dockStateChangedEvent = new object();
+        private static readonly object DockStateChangedEvent = new object();
         [LocalizedCategory("Category_PropertyChanged")]
         [LocalizedDescription("Pane_DockStateChanged_Description")]
         public event EventHandler DockStateChanged
         {
-            add { Events.AddHandler(s_dockStateChangedEvent, value); }
-            remove { Events.RemoveHandler(s_dockStateChangedEvent, value); }
+            add { Events.AddHandler(DockStateChangedEvent, value); }
+            remove { Events.RemoveHandler(DockStateChangedEvent, value); }
         }
         protected virtual void OnDockStateChanged(EventArgs e)
         {
-            EventHandler handler = (EventHandler)Events[s_dockStateChangedEvent];
+            EventHandler handler = (EventHandler)Events[DockStateChangedEvent];
             if (handler != null)
                 handler(this, e);
         }

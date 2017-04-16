@@ -1,0 +1,44 @@
+D:\sample\src\debugger\raw\bin\Debug\raw.dll
+D:\sample\src\debugger\raw\bin\Debug\raw.pdb
+D:\sample\src\debugger\raw\obj\Debug\ResolveAssemblyReference.cache
+D:\sample\src\debugger\raw\obj\Debug\raw.dll
+D:\sample\src\debugger\raw\obj\Debug\raw.pdb
+D:\UpdatedSample2\src\debugger\raw\bin\Debug\raw.dll
+D:\UpdatedSample2\src\debugger\raw\bin\Debug\raw.pdb
+D:\UpdatedSample2\src\debugger\raw\bin\Debug\raw.dll.CodeAnalysisLog.xml
+D:\UpdatedSample2\src\debugger\raw\bin\Debug\raw.dll.lastcodeanalysissucceeded
+D:\UpdatedSample2\src\debugger\raw\bin\Debug\NativeDebugWrappers.dll
+D:\UpdatedSample2\src\debugger\raw\bin\Debug\NativeDebugWrappers.pdb
+D:\UpdatedSample2\src\debugger\raw\bin\Debug\NativeDebugWrappers.xml
+D:\UpdatedSample2\src\debugger\raw\obj\Debug\ResolveAssemblyReference.cache
+D:\UpdatedSample2\src\debugger\raw\obj\Debug\raw.dll
+D:\UpdatedSample2\src\debugger\raw\obj\Debug\raw.pdb
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\raw.dll
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\raw.pdb
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\raw.dll.CodeAnalysisLog.xml
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\raw.dll.lastcodeanalysissucceeded
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\debugger\raw\obj\Debug\raw.csprojResolveAssemblyReference.cache
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\debugger\raw\obj\Debug\raw.dll
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\debugger\raw\obj\Debug\raw.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\raw\bin\Debug\raw.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\raw\bin\Debug\raw.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\raw\bin\Debug\raw.dll.CodeAnalysisLog.xml
+C:\MSBuildProjects-beta\Debuggers\MDB\raw\bin\Debug\raw.dll.lastcodeanalysissucceeded
+C:\MSBuildProjects-beta\Debuggers\MDB\raw\bin\Debug\NativeDebugWrappers.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\raw\bin\Debug\System.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\raw\bin\Debug\NativeDebugWrappers.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\raw\bin\Debug\NativeDebugWrappers.xml
+C:\MSBuildProjects-beta\Debuggers\MDB\raw\bin\Debug\pl\System.resources.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\raw\obj\Debug\raw.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\Debuggers\MDB\raw\obj\Debug\raw.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\raw\obj\Debug\raw.pdb
+f:\VE-2017\Debuggers\MDB\raw\bin\Debug\raw.dll
+f:\VE-2017\Debuggers\MDB\raw\bin\Debug\raw.pdb
+f:\VE-2017\Debuggers\MDB\raw\bin\Debug\raw.dll.CodeAnalysisLog.xml
+f:\VE-2017\Debuggers\MDB\raw\bin\Debug\raw.dll.lastcodeanalysissucceeded
+f:\VE-2017\Debuggers\MDB\raw\bin\Debug\NativeDebugWrappers.dll
+f:\VE-2017\Debuggers\MDB\raw\bin\Debug\NativeDebugWrappers.pdb
+f:\VE-2017\Debuggers\MDB\raw\bin\Debug\NativeDebugWrappers.xml
+f:\VE-2017\Debuggers\MDB\raw\obj\Debug\raw.csprojResolveAssemblyReference.cache
+f:\VE-2017\Debuggers\MDB\raw\obj\Debug\raw.dll
+f:\VE-2017\Debuggers\MDB\raw\obj\Debug\raw.pdb

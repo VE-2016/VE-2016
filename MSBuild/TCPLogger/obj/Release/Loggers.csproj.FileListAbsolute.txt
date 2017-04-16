@@ -3,3 +3,8 @@ C:\MSBuildProjects-beta\Loggers\bin\Release\Loggers.pdb
 C:\MSBuildProjects-beta\Loggers\obj\Release\Loggers.csprojResolveAssemblyReference.cache
 C:\MSBuildProjects-beta\Loggers\obj\Release\Loggers.dll
 C:\MSBuildProjects-beta\Loggers\obj\Release\Loggers.pdb
+C:\MSBuildProjects-beta\MSBuild\TCPLogger\bin\Release\Loggers.dll
+C:\MSBuildProjects-beta\MSBuild\TCPLogger\bin\Release\Loggers.pdb
+C:\MSBuildProjects-beta\MSBuild\TCPLogger\obj\Release\Loggers.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\MSBuild\TCPLogger\obj\Release\Loggers.dll
+C:\MSBuildProjects-beta\MSBuild\TCPLogger\obj\Release\Loggers.pdb

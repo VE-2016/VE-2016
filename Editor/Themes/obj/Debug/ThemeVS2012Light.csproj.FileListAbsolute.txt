@@ -2,9 +2,9 @@ C:\MSBuildProjects-beta\Editor\Themes\bin\Debug\WeifenLuo.WinFormsUI.Docking.The
 C:\MSBuildProjects-beta\Editor\Themes\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2012Light.pdb
 C:\MSBuildProjects-beta\Editor\Themes\bin\Debug\WeifenLuo.WinFormsUI.Docking.dll
 C:\MSBuildProjects-beta\Editor\Themes\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
-C:\MSBuildProjects-beta\Editor\Themes\obj\Debug\ThemeVS2012Light.csprojResolveAssemblyReference.cache
 C:\MSBuildProjects-beta\Editor\Themes\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2012Light.Resources.resources
 C:\MSBuildProjects-beta\Editor\Themes\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2012Light.Strings.resources
 C:\MSBuildProjects-beta\Editor\Themes\obj\Debug\ThemeVS2012Light.csproj.GenerateResource.Cache
 C:\MSBuildProjects-beta\Editor\Themes\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2012Light.dll
 C:\MSBuildProjects-beta\Editor\Themes\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2012Light.pdb
+C:\MSBuildProjects-beta\Editor\Themes\obj\Debug\ThemeVS2012Light.csprojResolveAssemblyReference.cache

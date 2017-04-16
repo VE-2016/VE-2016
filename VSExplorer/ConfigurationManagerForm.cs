@@ -155,6 +155,8 @@ namespace WinExplorer
 
             sp.Panel2.Controls.Add(panel9);
 
+            if(mbp != null)
+
             mbp.Show();
 
             ResumeLayout();
@@ -392,6 +394,8 @@ namespace WinExplorer
                     if (P.IndexOf(cc[1]) < 0)
                         P.Add(cc[1]);
             }
+
+            P.Add("Configuration Manager");
 
             return P;
         }

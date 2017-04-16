@@ -46,3 +46,8 @@ C:\MSBuildProjects-beta\NET\GACManagerApi\bin\Debug\GACManagerApi.pdb
 C:\MSBuildProjects-beta\NET\GACManagerApi\obj\Debug\GACManagerApi.dll
 C:\MSBuildProjects-beta\NET\GACManagerApi\obj\Debug\GACManagerApi.pdb
 C:\MSBuildProjects-beta\NET\GACManagerApi\obj\Debug\GACManagerApi.csprojResolveAssemblyReference.cache
+f:\VE-2017\NET\GACManagerApi\bin\Debug\GACManagerApi.dll
+f:\VE-2017\NET\GACManagerApi\bin\Debug\GACManagerApi.pdb
+f:\VE-2017\NET\GACManagerApi\obj\Debug\GACManagerApi.csprojResolveAssemblyReference.cache
+f:\VE-2017\NET\GACManagerApi\obj\Debug\GACManagerApi.dll
+f:\VE-2017\NET\GACManagerApi\obj\Debug\GACManagerApi.pdb

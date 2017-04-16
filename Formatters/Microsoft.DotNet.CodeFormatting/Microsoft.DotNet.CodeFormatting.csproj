@@ -7,6 +7,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Microsoft.DotNet.CodeFormatting</RootNamespace>
     <AssemblyName>Microsoft.DotNet.CodeFormatting</AssemblyName>
+    <Configuration />
+    <Platform />
+    <RestorePackages>false</RestorePackages>
   </PropertyGroup>
   <!-- Default configurations to help VS understand -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

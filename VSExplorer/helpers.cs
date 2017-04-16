@@ -1319,7 +1319,9 @@ namespace utils
                     i++;
                 }
             }
-            catch (Exception E) { };
+            catch (Exception e) {
+                Console.WriteLine(e.Message);
+            };
         }
 
         static public TabPage add_new_tab(TabControl tc)
@@ -2621,7 +2623,9 @@ namespace SolutionFormProject
                     //    items.Add(new VSProjectItem(this, item));
                     //}
                 }
-                catch (Exception e) { }
+                catch (Exception e) {
+                    Console.WriteLine(e.Message);
+                }
             }
 
             public IEnumerable<VSProjectItem> EDMXModels

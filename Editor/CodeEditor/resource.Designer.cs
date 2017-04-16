@@ -133,6 +133,36 @@ namespace AIMS.Libraries.CodeEditor {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Bookmark_16x {
+            get {
+                object obj = ResourceManager.GetObject("Bookmark_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap BreakpointDisable_16x {
+            get {
+                object obj = ResourceManager.GetObject("BreakpointDisable_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap BreakpointDisable_16xp {
+            get {
+                object obj = ResourceManager.GetObject("BreakpointDisable_16xp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap BuildSolution_64x {
             get {
                 object obj = ResourceManager.GetObject("BuildSolution_64x", resourceCulture);
@@ -146,6 +176,36 @@ namespace AIMS.Libraries.CodeEditor {
         public static System.Drawing.Bitmap Component_32xSM {
             get {
                 object obj = ResourceManager.GetObject("Component_32xSM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap F12_BreakpointEnable_28x {
+            get {
+                object obj = ResourceManager.GetObject("F12_BreakpointEnable_28x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap F12_BreakpointEnable_28xp {
+            get {
+                object obj = ResourceManager.GetObject("F12_BreakpointEnable_28xp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap F12_BreakpointEnable_28xs {
+            get {
+                object obj = ResourceManager.GetObject("F12_BreakpointEnable_28xs", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

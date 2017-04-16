@@ -63,9 +63,29 @@ namespace AIMS.Libraries.CodeEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Namespace_16x {
+            get {
+                object obj = ResourceManager.GetObject("Namespace_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Structure_256x {
             get {
                 object obj = ResourceManager.GetObject("Structure_256x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Triangle_16x {
+            get {
+                object obj = ResourceManager.GetObject("Triangle_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

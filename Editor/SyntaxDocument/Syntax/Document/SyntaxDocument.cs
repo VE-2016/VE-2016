@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Text;
 using AIMS.Libraries.CodeEditor.Syntax.SyntaxDocumentParsers;
-
+using System.Windows.Forms;
 
 namespace AIMS.Libraries.CodeEditor.Syntax
 {
@@ -1205,7 +1205,7 @@ namespace AIMS.Libraries.CodeEditor.Syntax
             //	ResetVisibleRows();
             //	this.OnChange ();
         }
-
+        
         /// <summary>
         /// Gets or Sets the text of the entire document
         /// </summary>		
@@ -1235,6 +1235,7 @@ namespace AIMS.Libraries.CodeEditor.Syntax
 
             set
             {
+                
                 this.clear();
                 this.Add("");
                 InsertText(value, 0, 0);
@@ -1770,6 +1771,18 @@ namespace AIMS.Libraries.CodeEditor.Syntax
                 y++;
             }
             return new TextPoint(-1, -1);
+        }
+
+        public void SetBreakpoint(Point p, int state = 1)
+        {
+            if (this.Count <= p.Y)
+                return;
+            if (state == 1)
+                this[p.Y].Breakpoint = true;
+            else if (state == 0)
+                this[p.Y].Breakpoint = false;
+            else if (state == 3)  this[p.Y].BreakpointEnabled = false;
+            else this[p.Y].BreakpointEnabled = true;
         }
 
         /// <summary>

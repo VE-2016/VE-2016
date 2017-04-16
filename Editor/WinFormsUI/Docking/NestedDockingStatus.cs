@@ -7,102 +7,102 @@ namespace WeifenLuo.WinFormsUI.Docking
     {
         internal NestedDockingStatus(DockPane pane)
         {
-            _dockPane = pane;
+            m_dockPane = pane;
         }
 
-        private DockPane _dockPane = null;
+        private DockPane m_dockPane = null;
         public DockPane DockPane
         {
-            get { return _dockPane; }
+            get    {    return m_dockPane;    }
         }
-
-        private NestedPaneCollection _nestedPanes = null;
+        
+        private NestedPaneCollection m_nestedPanes = null;
         public NestedPaneCollection NestedPanes
         {
-            get { return _nestedPanes; }
+            get    {    return m_nestedPanes;    }
         }
-
-        private DockPane _previousPane = null;
+        
+        private DockPane m_previousPane = null;
         public DockPane PreviousPane
         {
-            get { return _previousPane; }
+            get    {    return m_previousPane;    }
         }
 
-        private DockAlignment _alignment = DockAlignment.Left;
+        private DockAlignment m_alignment = DockAlignment.Left;
         public DockAlignment Alignment
         {
-            get { return _alignment; }
+            get    {    return m_alignment;    }
         }
 
-        private double _proportion = 0.5;
+        private double m_proportion = 0.5;
         public double Proportion
         {
-            get { return _proportion; }
+            get    {    return m_proportion;    }
         }
 
-        private bool _isDisplaying = false;
+        private bool m_isDisplaying = false;
         public bool IsDisplaying
         {
-            get { return _isDisplaying; }
+            get    {    return m_isDisplaying;    }
         }
 
-        private DockPane _displayingPreviousPane = null;
+        private DockPane m_displayingPreviousPane = null;
         public DockPane DisplayingPreviousPane
         {
-            get { return _displayingPreviousPane; }
+            get    {    return m_displayingPreviousPane;    }
         }
 
-        private DockAlignment _displayingAlignment = DockAlignment.Left;
+        private DockAlignment m_displayingAlignment = DockAlignment.Left;
         public DockAlignment DisplayingAlignment
         {
-            get { return _displayingAlignment; }
+            get    {    return m_displayingAlignment;    }
         }
 
-        private double _displayingProportion = 0.5;
+        private double m_displayingProportion = 0.5;
         public double DisplayingProportion
         {
-            get { return _displayingProportion; }
+            get    {    return m_displayingProportion;    }
         }
 
-        private Rectangle _logicalBounds = Rectangle.Empty;
+        private Rectangle m_logicalBounds = Rectangle.Empty; 
         public Rectangle LogicalBounds
         {
-            get { return _logicalBounds; }
+            get    {    return m_logicalBounds;    }
         }
 
-        private Rectangle _paneBounds = Rectangle.Empty;
+        private Rectangle m_paneBounds = Rectangle.Empty;
         public Rectangle PaneBounds
         {
-            get { return _paneBounds; }
+            get    {    return m_paneBounds;    }
         }
 
-        private Rectangle _splitterBounds = Rectangle.Empty;
+        private Rectangle m_splitterBounds = Rectangle.Empty;
         public Rectangle SplitterBounds
         {
-            get { return _splitterBounds; }
+            get    {    return m_splitterBounds;    }
         }
 
         internal void SetStatus(NestedPaneCollection nestedPanes, DockPane previousPane, DockAlignment alignment, double proportion)
         {
-            _nestedPanes = nestedPanes;
-            _previousPane = previousPane;
-            _alignment = alignment;
-            _proportion = proportion;
+            m_nestedPanes = nestedPanes;
+            m_previousPane = previousPane;
+            m_alignment = alignment;
+            m_proportion = proportion;
         }
 
         internal void SetDisplayingStatus(bool isDisplaying, DockPane displayingPreviousPane, DockAlignment displayingAlignment, double displayingProportion)
         {
-            _isDisplaying = isDisplaying;
-            _displayingPreviousPane = displayingPreviousPane;
-            _displayingAlignment = displayingAlignment;
-            _displayingProportion = displayingProportion;
+            m_isDisplaying = isDisplaying;
+            m_displayingPreviousPane = displayingPreviousPane;
+            m_displayingAlignment = displayingAlignment;
+            m_displayingProportion = displayingProportion;
         }
 
         internal void SetDisplayingBounds(Rectangle logicalBounds, Rectangle paneBounds, Rectangle splitterBounds)
         {
-            _logicalBounds = logicalBounds;
-            _paneBounds = paneBounds;
-            _splitterBounds = splitterBounds;
+            m_logicalBounds = logicalBounds;
+            m_paneBounds = paneBounds;
+            m_splitterBounds = splitterBounds;
         }
     }
 }

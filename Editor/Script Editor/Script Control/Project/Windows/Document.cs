@@ -7,7 +7,6 @@ using System.Drawing;
 using System.Text;
 using System.IO;
 using System.Windows.Forms;
-using AIMS.Libraries.Forms.Docking;
 using AIMS.Libraries.CodeEditor.SyntaxFiles;
 using AIMS.Libraries.Scripting.NRefactory;
 using AIMS.Libraries.CodeEditor.Syntax;
@@ -29,7 +28,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         private string _FileName = "";
         private string _contents = "";
         private ScriptLanguage _scriptLanguage;
-        private ScriptControl _Parent = null;
+        private Form _Parent = null;
         public QuickClassBrowserPanel quickClassBrowserPanel = null;
         private Word _lastErrorWord = null;
 
@@ -84,14 +83,16 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                 DockHandler.Icon = Icon.FromHandle(resource._class.GetHicon());
         }
 
-        public ScriptControl ParentScriptControl
+        public Form ParentScriptControl
         {
             get { return _Parent; }
         }
 
-        public Document(ScriptControl Parent) : this()
+        public Document(Form Parent) : this()
         {
             _Parent = Parent;
+            
+            //this.CodeEditorCtrl.ActiveViewControl.BreakPointAdded += Parent.BreakPointAdded;
         }
 
         public CodeEditor.CodeEditorControl Editor
@@ -104,7 +105,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             InitializeComponent();
 
 
-            CodeEditorCtrl.Document = this.syntaxDocument1;
+            //CodeEditorCtrl.Document = this.syntaxDocument1;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             CodeEditorCtrl.Indent = AIMS.Libraries.CodeEditor.WinForms.IndentStyle.LastRow;
@@ -119,9 +120,10 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             SetDocument();
 
             CodeEditorCtrl.ShowLineNumbers = CodeEditorControl.settings.ShowLineNumbers;
+            
         }
 
-
+       
         void SetDocument()
         {
             quickClassBrowserPanel.doc = this;
@@ -156,8 +158,8 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             d.Invoke(new Action(() =>
             {
                 
-                string s = CodeEditorCtrl.Document.Text;
-                CodeEditorCtrl.Document.Text = s;
+                //string s = CodeEditorCtrl.Document.Text;
+                //CodeEditorCtrl.Document.Text = s;
                 if (autoEvent != null)
                     autoEvent.Set();
                 

@@ -483,7 +483,7 @@ namespace WinExplorer
                 rf.ClearLog();
             }
 
-            string bb = "";
+            //string bb = "";
 
             rf.AddOrUpdateOutputs(s);
 
@@ -1280,6 +1280,113 @@ namespace WinExplorer
             return results;
         }
 
+        public static ArrayList FindInActiveDocument(string s)
+        {
+            //                      else if (bb == 2)
+            //{
+                //MessageBox.Show("Find for Current Document");
+
+                ArrayList Results = new ArrayList();
+
+                ExplorerForms ef = ExplorerForms.ef;
+
+
+                Document doc = ef.scr.GetActiveDocument();
+
+                string filename = doc.FileName;
+
+                string text = doc.syntaxDocument1.Text;
+
+
+
+                string filenamedoc = filename;
+
+
+
+                string patterns = s;
+
+                //if (Results == null)
+                {
+                    {
+                        {
+                            Finder finders = new Finder();
+
+                            Results = new ArrayList();
+
+                            //text = File.ReadAllText(f);
+
+                            //if (mc == false)
+                            {
+                                //    text = text.ToLower();
+
+                                //    s = s.ToLower();
+                            }
+
+                            char[] texts = text.ToCharArray();
+
+                            char[] pattern = s.ToCharArray();
+
+                            ArrayList found = null;
+
+                            //if (checkBox4.Checked == true)
+                            //{
+                            //    found = RegexMatch(text, s, true);
+                            //}
+                            //else
+                            {
+                                found = finders.TW(pattern, pattern.Length, texts, texts.Length);
+                            }
+
+                            if (found.Count > 0)
+                            {
+                                string[] lines = text.Split("\n".ToCharArray());
+
+                                int fp = 0;
+
+                                int pos = (int)found[fp];
+
+                                int r = 0;
+
+                                int n = 0;
+
+                                int i = 0;
+                                while (i < lines.Length)
+                                {
+                                    string line = lines[i];
+
+                                    n = r + line.Length + 1;
+
+                                    if (pos >= r && pos <= n)
+                                    {
+                                        do
+                                        {
+                                            Results.Add(filename + "\t" + (pos - r) + " \t" + i);
+
+                                            fp++;
+
+                                            if (fp < found.Count)
+                                                pos = (int)found[fp];
+                                            else break;
+                                        }
+                                        while (pos <= n);
+                                    }
+
+                                    r = n;
+
+                                    i++;
+                                }
+                            }
+                        }
+                        int act = 0;
+
+                        return Results;
+                    }
+                }
+
+            //}
+
+            return Results;
+        }
         public ArrayList RegexMatch(string s, string p, bool IgnoreCase)
         {
             ArrayList R = new ArrayList();
@@ -1418,4 +1525,120 @@ namespace WinExplorer
             }
         }
     }
+
+    public class FindResults
+    {
+
+        public string filename { get; set; }
+
+        public int act = -1;
+
+        public ArrayList Results { get; set; }
+
+        public string pattern { get; set; }
+
+        ExplorerForms ef { get; set; }
+
+        public void HighLightWords()
+        {
+            ef = ExplorerForms.ef;
+
+            if (Results == null)
+                return;
+
+            ArrayList R = ToArray();
+
+            ef.scr.LoadSelectedWords(R);
+
+            act = 0;
+        }
+
+        public void HighLightNext()
+        {
+
+            if (Results.Count <= 0)
+                return;
+
+            if (act < Results.Count - 1)
+                act++;
+            
+
+            ArrayList R = ToArray();
+
+            int[] d = R[act] as int[];
+
+            ef.scr.SelectTextXYL(d[0], d[1], d[2]);
+        }
+
+        public ArrayList ToArray()
+        {
+            ArrayList R = new ArrayList();
+
+            if (Results == null)
+
+                return R;
+
+            foreach(string s in Results)
+            {
+
+                string[] d = s.Split("\t".ToCharArray());
+
+                int[] r = new int[3];
+
+                r[0] = Convert.ToInt32(d[1]);
+                r[1] = Convert.ToInt32(d[2]);
+                r[2] = pattern.Length;
+
+                R.Add(r);
+            }
+
+
+            return R;
+        }
+
+
+
+        public void HighLightWord(int index, Color color)
+        {
+          
+
+            
+
+            if (ef == null)
+                return;
+            
+
+            string texts = Results[index] as string;
+
+            string[] d = texts.Split("\t".ToCharArray());
+
+            if (d.Length < 3)
+                return;
+
+            // ef.OpenFileXY(d[0], d[1], d[2], text.Length);
+
+            AsyncCallback callBack = new AsyncCallback(ProcessInformation);
+            workerDisplayLine wde = DisplayLine;
+            wde.BeginInvoke(d[0], d[1], d[2], pattern.Length, callBack, "null");
+        }
+
+        public delegate void workerDisplayLine(string file, string line, string c, int g);
+
+
+        private void DisplayLine(string file, string line, string c, int g)
+        {
+            //ef.BeginInvoke(new Action(() => { ef.OpenFileXY(file, line, c, g); }));
+
+
+            //ef.scr.LoadSelectedWords();
+        }
+
+
+        private static void ProcessInformation(IAsyncResult result)
+        {
+        }
+
+    }
+
+
 }

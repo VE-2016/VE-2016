@@ -15,19 +15,20 @@ namespace WeifenLuo.WinFormsUI.Docking
             {
             }
 
-            private int _tabX = 0;
+            private int m_tabX = 0;
             public int TabX
             {
-                get { return _tabX; }
-                set { _tabX = value; }
+                get { return m_tabX; }
+                set { m_tabX = value; }
             }
 
-            private int _tabWidth = 0;
+            private int m_tabWidth = 0;
             public int TabWidth
             {
-                get { return _tabWidth; }
-                set { _tabWidth = value; }
+                get { return m_tabWidth; }
+                set { m_tabWidth = value; }
             }
+
         }
 
         private const int _ImageHeight = 16;
@@ -45,51 +46,51 @@ namespace WeifenLuo.WinFormsUI.Docking
         #region Customizable Properties
         public Font TextFont
         {
-            get { return DockPanel.Skin.AutoHideStripSkin.TextFont; }
+            get { return DockPanel.Theme.Skin.AutoHideStripSkin.TextFont; }
         }
 
-        private static StringFormat s_stringFormatTabHorizontal;
+        private static StringFormat _stringFormatTabHorizontal;
         private StringFormat StringFormatTabHorizontal
         {
             get
             {
-                if (s_stringFormatTabHorizontal == null)
+                if (_stringFormatTabHorizontal == null)
                 {
-                    s_stringFormatTabHorizontal = new StringFormat();
-                    s_stringFormatTabHorizontal.Alignment = StringAlignment.Near;
-                    s_stringFormatTabHorizontal.LineAlignment = StringAlignment.Center;
-                    s_stringFormatTabHorizontal.FormatFlags = StringFormatFlags.NoWrap;
-                    s_stringFormatTabHorizontal.Trimming = StringTrimming.None;
+                    _stringFormatTabHorizontal = new StringFormat();
+                    _stringFormatTabHorizontal.Alignment = StringAlignment.Near;
+                    _stringFormatTabHorizontal.LineAlignment = StringAlignment.Center;
+                    _stringFormatTabHorizontal.FormatFlags = StringFormatFlags.NoWrap;
+                    _stringFormatTabHorizontal.Trimming = StringTrimming.None;
                 }
 
                 if (RightToLeft == RightToLeft.Yes)
-                    s_stringFormatTabHorizontal.FormatFlags |= StringFormatFlags.DirectionRightToLeft;
+                    _stringFormatTabHorizontal.FormatFlags |= StringFormatFlags.DirectionRightToLeft;
                 else
-                    s_stringFormatTabHorizontal.FormatFlags &= ~StringFormatFlags.DirectionRightToLeft;
+                    _stringFormatTabHorizontal.FormatFlags &= ~StringFormatFlags.DirectionRightToLeft;
 
-                return s_stringFormatTabHorizontal;
+                return _stringFormatTabHorizontal;
             }
         }
 
-        private static StringFormat s_stringFormatTabVertical;
+        private static StringFormat _stringFormatTabVertical;
         private StringFormat StringFormatTabVertical
         {
             get
             {
-                if (s_stringFormatTabVertical == null)
+                if (_stringFormatTabVertical == null)
                 {
-                    s_stringFormatTabVertical = new StringFormat();
-                    s_stringFormatTabVertical.Alignment = StringAlignment.Near;
-                    s_stringFormatTabVertical.LineAlignment = StringAlignment.Center;
-                    s_stringFormatTabVertical.FormatFlags = StringFormatFlags.NoWrap | StringFormatFlags.DirectionVertical;
-                    s_stringFormatTabVertical.Trimming = StringTrimming.None;
+                    _stringFormatTabVertical = new StringFormat();
+                    _stringFormatTabVertical.Alignment = StringAlignment.Near;
+                    _stringFormatTabVertical.LineAlignment = StringAlignment.Center;
+                    _stringFormatTabVertical.FormatFlags = StringFormatFlags.NoWrap | StringFormatFlags.DirectionVertical;
+                    _stringFormatTabVertical.Trimming = StringTrimming.None;
                 }
                 if (RightToLeft == RightToLeft.Yes)
-                    s_stringFormatTabVertical.FormatFlags |= StringFormatFlags.DirectionRightToLeft;
+                    _stringFormatTabVertical.FormatFlags |= StringFormatFlags.DirectionRightToLeft;
                 else
-                    s_stringFormatTabVertical.FormatFlags &= ~StringFormatFlags.DirectionRightToLeft;
+                    _stringFormatTabVertical.FormatFlags &= ~StringFormatFlags.DirectionRightToLeft;
 
-                return s_stringFormatTabVertical;
+                return _stringFormatTabVertical;
             }
         }
 
@@ -154,38 +155,38 @@ namespace WeifenLuo.WinFormsUI.Docking
         }
         #endregion
 
-        private static Matrix s_matrixIdentity = new Matrix();
+        private static Matrix _matrixIdentity = new Matrix();
         private static Matrix MatrixIdentity
         {
-            get { return s_matrixIdentity; }
+            get { return _matrixIdentity; }
         }
 
-        private static DockState[] s_dockStates;
+        private static DockState[] _dockStates;
         private static DockState[] DockStates
         {
             get
             {
-                if (s_dockStates == null)
+                if (_dockStates == null)
                 {
-                    s_dockStates = new DockState[4];
-                    s_dockStates[0] = DockState.DockLeftAutoHide;
-                    s_dockStates[1] = DockState.DockRightAutoHide;
-                    s_dockStates[2] = DockState.DockTopAutoHide;
-                    s_dockStates[3] = DockState.DockBottomAutoHide;
+                    _dockStates = new DockState[4];
+                    _dockStates[0] = DockState.DockLeftAutoHide;
+                    _dockStates[1] = DockState.DockRightAutoHide;
+                    _dockStates[2] = DockState.DockTopAutoHide;
+                    _dockStates[3] = DockState.DockBottomAutoHide;
                 }
-                return s_dockStates;
+                return _dockStates;
             }
         }
 
-        private static GraphicsPath s_graphicsPath;
+        private static GraphicsPath _graphicsPath;
         internal static GraphicsPath GraphicsPath
         {
             get
             {
-                if (s_graphicsPath == null)
-                    s_graphicsPath = new GraphicsPath();
+                if (_graphicsPath == null)
+                    _graphicsPath = new GraphicsPath();
 
-                return s_graphicsPath;
+                return _graphicsPath;
             }
         }
 
@@ -201,11 +202,12 @@ namespace WeifenLuo.WinFormsUI.Docking
 
         protected override void OnPaint(PaintEventArgs e)
         {
+            base.OnPaint(e);
             Graphics g = e.Graphics;
 
-            Color startColor = DockPanel.Skin.AutoHideStripSkin.DockStripGradient.StartColor;
-            Color endColor = DockPanel.Skin.AutoHideStripSkin.DockStripGradient.EndColor;
-            LinearGradientMode gradientMode = DockPanel.Skin.AutoHideStripSkin.DockStripGradient.LinearGradientMode;
+            Color startColor = DockPanel.Theme.Skin.AutoHideStripSkin.DockStripGradient.StartColor;
+            Color endColor = DockPanel.Theme.Skin.AutoHideStripSkin.DockStripGradient.EndColor;
+            LinearGradientMode gradientMode = DockPanel.Theme.Skin.AutoHideStripSkin.DockStripGradient.LinearGradientMode;
             using (LinearGradientBrush brush = new LinearGradientBrush(ClientRectangle, startColor, endColor, gradientMode))
             {
                 g.FillRectangle(brush, ClientRectangle);
@@ -319,9 +321,9 @@ namespace WeifenLuo.WinFormsUI.Docking
             IDockContent content = tab.Content;
 
             GraphicsPath path = GetTabOutline(tab, false, true);
-            Color startColor = DockPanel.Skin.AutoHideStripSkin.TabGradient.StartColor;
-            Color endColor = DockPanel.Skin.AutoHideStripSkin.TabGradient.EndColor;
-            LinearGradientMode gradientMode = DockPanel.Skin.AutoHideStripSkin.TabGradient.LinearGradientMode;
+            Color startColor = DockPanel.Theme.Skin.AutoHideStripSkin.TabGradient.StartColor;
+            Color endColor = DockPanel.Theme.Skin.AutoHideStripSkin.TabGradient.EndColor;
+            LinearGradientMode gradientMode = DockPanel.Theme.Skin.AutoHideStripSkin.TabGradient.LinearGradientMode;
             g.FillPath(new LinearGradientBrush(rectTabOrigin, startColor, endColor, gradientMode), path);
             g.DrawPath(PenTabBorder, path);
 
@@ -347,9 +349,9 @@ namespace WeifenLuo.WinFormsUI.Docking
                     // The DockState is DockLeftAutoHide or DockRightAutoHide, so rotate the image 90 degrees to the right. 
                     Rectangle rectTransform = RtlTransform(rectImage, dockState);
                     Point[] rotationPoints =
-                        {
-                            new Point(rectTransform.X + rectTransform.Width, rectTransform.Y),
-                            new Point(rectTransform.X + rectTransform.Width, rectTransform.Y + rectTransform.Height),
+                        { 
+                            new Point(rectTransform.X + rectTransform.Width, rectTransform.Y), 
+                            new Point(rectTransform.X + rectTransform.Width, rectTransform.Y + rectTransform.Height), 
                             new Point(rectTransform.X, rectTransform.Y)
                         };
 
@@ -370,7 +372,7 @@ namespace WeifenLuo.WinFormsUI.Docking
                 rectText.Width -= ImageGapLeft + imageWidth + ImageGapRight + TextGapLeft;
                 rectText = RtlTransform(GetTransformedRectangle(dockState, rectText), dockState);
 
-                Color textColor = DockPanel.Skin.AutoHideStripSkin.TabGradient.TextColor;
+                Color textColor = DockPanel.Theme.Skin.AutoHideStripSkin.TabGradient.TextColor;
 
                 if (dockState == DockState.DockLeftAutoHide || dockState == DockState.DockRightAutoHide)
                     g.DrawString(content.DockHandler.TabText, TextFont, new SolidBrush(textColor), rectText, StringFormatTabVertical);

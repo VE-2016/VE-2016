@@ -82,6 +82,7 @@ namespace WinExplorer
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.checkBox17 = new System.Windows.Forms.CheckBox();
             this.checkBox14 = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -136,7 +137,24 @@ namespace WinExplorer
             this.label28 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.checkBox17 = new System.Windows.Forms.CheckBox();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.checkBox21 = new System.Windows.Forms.CheckBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.checkBox18 = new System.Windows.Forms.CheckBox();
+            this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.label25 = new System.Windows.Forms.Label();
+            this.listView3 = new System.Windows.Forms.ListView();
+            this.label29 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -167,6 +185,10 @@ namespace WinExplorer
             this.groupBox3.SuspendLayout();
             this.tabPage9.SuspendLayout();
             this.panel10.SuspendLayout();
+            this.tabPage10.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.tabPage11.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // treeView1
@@ -211,6 +233,8 @@ namespace WinExplorer
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage9);
+            this.tabControl1.Controls.Add(this.tabPage10);
+            this.tabControl1.Controls.Add(this.tabPage11);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -758,6 +782,16 @@ namespace WinExplorer
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(516, 476);
             this.panel6.TabIndex = 1;
+            // 
+            // checkBox17
+            // 
+            this.checkBox17.AutoSize = true;
+            this.checkBox17.Location = new System.Drawing.Point(4, 163);
+            this.checkBox17.Name = "checkBox17";
+            this.checkBox17.Size = new System.Drawing.Size(210, 17);
+            this.checkBox17.TabIndex = 6;
+            this.checkBox17.Text = "Project References in Solution Explorer";
+            this.checkBox17.UseVisualStyleBackColor = true;
             // 
             // checkBox14
             // 
@@ -1312,15 +1346,180 @@ namespace WinExplorer
             this.button4.Text = "Cancel";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // checkBox17
+            // tabPage10
             // 
-            this.checkBox17.AutoSize = true;
-            this.checkBox17.Location = new System.Drawing.Point(4, 163);
-            this.checkBox17.Name = "checkBox17";
-            this.checkBox17.Size = new System.Drawing.Size(210, 17);
-            this.checkBox17.TabIndex = 6;
-            this.checkBox17.Text = "Project References in Solution Explorer";
-            this.checkBox17.UseVisualStyleBackColor = true;
+            this.tabPage10.Controls.Add(this.panel11);
+            this.tabPage10.Location = new System.Drawing.Point(4, 22);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage10.Size = new System.Drawing.Size(522, 482);
+            this.tabPage10.TabIndex = 9;
+            this.tabPage10.Text = "Nuget";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.checkBox18);
+            this.panel11.Controls.Add(this.label23);
+            this.panel11.Controls.Add(this.checkBox21);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel11.Location = new System.Drawing.Point(3, 3);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(516, 476);
+            this.panel11.TabIndex = 0;
+            // 
+            // checkBox21
+            // 
+            this.checkBox21.AutoSize = true;
+            this.checkBox21.Location = new System.Drawing.Point(57, 63);
+            this.checkBox21.Name = "checkBox21";
+            this.checkBox21.Size = new System.Drawing.Size(219, 17);
+            this.checkBox21.TabIndex = 1;
+            this.checkBox21.Text = "Allow NuGet to restore missing packages";
+            this.checkBox21.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(30, 40);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(105, 13);
+            this.label23.TabIndex = 2;
+            this.label23.Text = "Package Restore";
+            // 
+            // checkBox18
+            // 
+            this.checkBox18.AutoSize = true;
+            this.checkBox18.Location = new System.Drawing.Point(57, 87);
+            this.checkBox18.Name = "checkBox18";
+            this.checkBox18.Size = new System.Drawing.Size(350, 17);
+            this.checkBox18.TabIndex = 3;
+            this.checkBox18.Text = "Automatically check for missng packages during Visual Explorer build";
+            this.checkBox18.UseVisualStyleBackColor = true;
+            // 
+            // tabPage11
+            // 
+            this.tabPage11.Controls.Add(this.panel12);
+            this.tabPage11.Location = new System.Drawing.Point(4, 22);
+            this.tabPage11.Name = "tabPage11";
+            this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage11.Size = new System.Drawing.Size(522, 482);
+            this.tabPage11.TabIndex = 10;
+            this.tabPage11.Text = "Package sources";
+            this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.button11);
+            this.panel12.Controls.Add(this.button10);
+            this.panel12.Controls.Add(this.textBox10);
+            this.panel12.Controls.Add(this.label30);
+            this.panel12.Controls.Add(this.textBox9);
+            this.panel12.Controls.Add(this.label29);
+            this.panel12.Controls.Add(this.listView3);
+            this.panel12.Controls.Add(this.label25);
+            this.panel12.Controls.Add(this.listView2);
+            this.panel12.Controls.Add(this.button9);
+            this.panel12.Controls.Add(this.label24);
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel12.Location = new System.Drawing.Point(3, 3);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(516, 476);
+            this.panel12.TabIndex = 0;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(13, 17);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(134, 13);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Availible package sources:";
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(290, 9);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(38, 23);
+            this.button9.TabIndex = 1;
+            this.button9.Text = "button9";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // listView2
+            // 
+            this.listView2.Location = new System.Drawing.Point(11, 48);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(493, 234);
+            this.listView2.TabIndex = 2;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(16, 294);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(115, 13);
+            this.label25.TabIndex = 3;
+            this.label25.Text = "Machine-wide Sources";
+            // 
+            // listView3
+            // 
+            this.listView3.Location = new System.Drawing.Point(11, 314);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(493, 87);
+            this.listView3.TabIndex = 4;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(19, 420);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(38, 13);
+            this.label29.TabIndex = 5;
+            this.label29.Text = "Name:";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(72, 416);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(303, 20);
+            this.textBox9.TabIndex = 6;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(72, 446);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(303, 20);
+            this.textBox10.TabIndex = 8;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(19, 450);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(49, 13);
+            this.label30.TabIndex = 7;
+            this.label30.Text = "Sources:";
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(383, 444);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(38, 23);
+            this.button10.TabIndex = 9;
+            this.button10.Text = "...";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(432, 444);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(72, 23);
+            this.button11.TabIndex = 10;
+            this.button11.Text = "Update";
+            this.button11.UseVisualStyleBackColor = true;
             // 
             // OptionsForms
             // 
@@ -1377,6 +1576,12 @@ namespace WinExplorer
             this.tabPage9.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            this.tabPage10.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.tabPage11.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1491,5 +1696,23 @@ namespace WinExplorer
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.CheckBox checkBox17;
+        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.CheckBox checkBox18;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.CheckBox checkBox21;
+        private System.Windows.Forms.TabPage tabPage11;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label29;
     }
 }

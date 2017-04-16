@@ -4,14 +4,12 @@ using System.Drawing;
 
 namespace WeifenLuo.WinFormsUI.Docking
 {
-    public partial class DockPanel
+    partial class DockPanel
     {
         internal class DefaultAutoHideWindowControl : AutoHideWindowControl
         {
             public DefaultAutoHideWindowControl(DockPanel dockPanel) : base(dockPanel)
             {
-                m_splitter = new SplitterControl(this);
-                Controls.Add(m_splitter);
             }
 
             protected override void OnLayout(LayoutEventArgs levent)
@@ -80,24 +78,24 @@ namespace WeifenLuo.WinFormsUI.Docking
             }
         }
 
-        public class AutoHideWindowControl : Panel, ISplitterDragSource
+        public class AutoHideWindowControl : Panel, ISplitterHost
         {
             protected class SplitterControl : SplitterBase
             {
                 public SplitterControl(AutoHideWindowControl autoHideWindow)
                 {
-                    _autoHideWindow = autoHideWindow;
+                    m_autoHideWindow = autoHideWindow;
                 }
 
-                private AutoHideWindowControl _autoHideWindow;
+                private AutoHideWindowControl m_autoHideWindow;
                 private AutoHideWindowControl AutoHideWindow
                 {
-                    get { return _autoHideWindow; }
+                    get { return m_autoHideWindow; }
                 }
 
                 protected override int SplitterSize
                 {
-                    get { return Measures.SplitterSize; }
+                    get { return AutoHideWindow.DockPanel.Theme.Measures.AutoHideSplitterSize; }
                 }
 
                 protected override void StartDrag()
@@ -110,70 +108,78 @@ namespace WeifenLuo.WinFormsUI.Docking
             private const int ANIMATE_TIME = 100;    // in mini-seconds
             #endregion
 
-            private Timer _timerMouseTrack;
-            protected SplitterBase m_splitter;
+            private Timer m_timerMouseTrack;
+            protected SplitterBase m_splitter { get; private set; }
 
             public AutoHideWindowControl(DockPanel dockPanel)
             {
-                _dockPanel = dockPanel;
+                m_dockPanel = dockPanel;
 
-                _timerMouseTrack = new Timer();
-                _timerMouseTrack.Tick += new EventHandler(TimerMouseTrack_Tick);
+                m_timerMouseTrack = new Timer();
+                m_timerMouseTrack.Tick += new EventHandler(TimerMouseTrack_Tick);
 
                 Visible = false;
+                m_splitter = DockPanel.Theme.Extender.WindowSplitterControlFactory.CreateSplitterControl(this);
+                Controls.Add(m_splitter);
             }
 
             protected override void Dispose(bool disposing)
             {
                 if (disposing)
                 {
-                    _timerMouseTrack.Dispose();
+                    m_timerMouseTrack.Dispose();
                 }
                 base.Dispose(disposing);
             }
 
-            private DockPanel _dockPanel = null;
-            public DockPanel DockPanel
+            public bool IsDockWindow
             {
-                get { return _dockPanel; }
+                get { return false; }
             }
 
-            private DockPane _activePane = null;
+            private DockPanel m_dockPanel = null;
+            public DockPanel DockPanel
+            {
+                get { return m_dockPanel; }
+            }
+
+            private DockPane m_activePane = null;
             public DockPane ActivePane
             {
-                get { return _activePane; }
+                get { return m_activePane; }
             }
+
             private void SetActivePane()
             {
                 DockPane value = (ActiveContent == null ? null : ActiveContent.DockHandler.Pane);
 
-                if (value == _activePane)
+                if (value == m_activePane)
                     return;
 
-                _activePane = value;
+                m_activePane = value;
             }
 
-            private static readonly object s_activeContentChangedEvent = new object();
+            private static readonly object AutoHideActiveContentChangedEvent = new object();
             public event EventHandler ActiveContentChanged
             {
-                add { Events.AddHandler(s_activeContentChangedEvent, value); }
-                remove { Events.RemoveHandler(s_activeContentChangedEvent, value); }
+                add { Events.AddHandler(AutoHideActiveContentChangedEvent, value); }
+                remove { Events.RemoveHandler(AutoHideActiveContentChangedEvent, value); }
             }
 
             protected virtual void OnActiveContentChanged(EventArgs e)
             {
-                EventHandler handler = (EventHandler)Events[s_activeContentChangedEvent];
+                EventHandler handler = (EventHandler)Events[ActiveContentChangedEvent];
                 if (handler != null)
                     handler(this, e);
             }
 
-            private IDockContent _activeContent = null;
+            private IDockContent m_activeContent = null;
             public IDockContent ActiveContent
             {
-                get { return _activeContent; }
+                get { return m_activeContent; }
                 set
                 {
-                    if (value == _activeContent)
+                    if (value == m_activeContent)
                         return;
 
                     if (value != null)
@@ -184,25 +190,25 @@ namespace WeifenLuo.WinFormsUI.Docking
 
                     DockPanel.SuspendLayout();
 
-                    if (_activeContent != null)
+                    if (m_activeContent != null)
                     {
-                        if (_activeContent.DockHandler.Form.ContainsFocus)
+                        if (m_activeContent.DockHandler.Form.ContainsFocus)
                         {
                             if (!Win32Helper.IsRunningOnMono)
                             {
-                                DockPanel.ContentFocusManager.GiveUpFocus(_activeContent);
+                                DockPanel.ContentFocusManager.GiveUpFocus(m_activeContent);
                             }
                         }
 
                         AnimateWindow(false);
                     }
 
-                    _activeContent = value;
+                    m_activeContent = value;
                     SetActivePane();
                     if (ActivePane != null)
-                        ActivePane.ActiveContent = _activeContent;
+                        ActivePane.ActiveContent = m_activeContent;
 
-                    if (_activeContent != null)
+                    if (m_activeContent != null)
                         AnimateWindow(true);
 
                     DockPanel.ResumeLayout();
@@ -219,23 +225,23 @@ namespace WeifenLuo.WinFormsUI.Docking
                 get { return ActiveContent == null ? DockState.Unknown : ActiveContent.DockHandler.DockState; }
             }
 
-            private bool _flagAnimate = true;
+            private bool m_flagAnimate = true;
             private bool FlagAnimate
             {
-                get { return _flagAnimate; }
-                set { _flagAnimate = value; }
+                get { return m_flagAnimate; }
+                set { m_flagAnimate = value; }
             }
 
-            private bool _flagDragging = false;
+            private bool m_flagDragging = false;
             internal bool FlagDragging
             {
-                get { return _flagDragging; }
+                get { return m_flagDragging; }
                 set
                 {
-                    if (_flagDragging == value)
+                    if (m_flagDragging == value)
                         return;
 
-                    _flagDragging = value;
+                    m_flagDragging = value;
                     SetTimerMouseTrack();
                 }
             }
@@ -340,9 +346,9 @@ namespace WeifenLuo.WinFormsUI.Docking
                 Rectangle rectClient = ClientRectangle;
 
                 if (DockState == DockState.DockLeftAutoHide)
-                    ActivePane.Location = new Point(rectClient.Right - 2 - Measures.SplitterSize - ActivePane.Width, ActivePane.Location.Y);
+                    ActivePane.Location = new Point(rectClient.Right - 2 - DockPanel.Theme.Measures.AutoHideSplitterSize - ActivePane.Width, ActivePane.Location.Y);
                 else if (DockState == DockState.DockTopAutoHide)
-                    ActivePane.Location = new Point(ActivePane.Location.X, rectClient.Bottom - 2 - Measures.SplitterSize - ActivePane.Height);
+                    ActivePane.Location = new Point(ActivePane.Location.X, rectClient.Bottom - 2 - DockPanel.Theme.Measures.AutoHideSplitterSize - ActivePane.Height);
             }
 
             private Rectangle GetRectangle(bool show)
@@ -377,19 +383,19 @@ namespace WeifenLuo.WinFormsUI.Docking
             {
                 if (ActivePane == null || ActivePane.IsActivated || FlagDragging)
                 {
-                    _timerMouseTrack.Enabled = false;
+                    m_timerMouseTrack.Enabled = false;
                     return;
                 }
 
                 // start the timer
-                int hovertime = SystemInformation.MouseHoverTime;
+                int hovertime = SystemInformation.MouseHoverTime ;
 
                 // assign a default value 400 in case of setting Timer.Interval invalid value exception
                 if (hovertime <= 0)
                     hovertime = 400;
 
-                _timerMouseTrack.Interval = 2 * (int)hovertime;
-                _timerMouseTrack.Enabled = true;
+                m_timerMouseTrack.Interval = 2 * (int)hovertime;
+                m_timerMouseTrack.Enabled = true;
             }
 
             protected virtual Rectangle DisplayingRectangle
@@ -401,18 +407,18 @@ namespace WeifenLuo.WinFormsUI.Docking
                     // exclude the border and the splitter
                     if (DockState == DockState.DockBottomAutoHide)
                     {
-                        rect.Y += 2 + Measures.SplitterSize;
-                        rect.Height -= 2 + Measures.SplitterSize;
+                        rect.Y += 2 + DockPanel.Theme.Measures.AutoHideSplitterSize;
+                        rect.Height -= 2 + DockPanel.Theme.Measures.AutoHideSplitterSize;
                     }
                     else if (DockState == DockState.DockRightAutoHide)
                     {
-                        rect.X += 2 + Measures.SplitterSize;
-                        rect.Width -= 2 + Measures.SplitterSize;
+                        rect.X += 2 + DockPanel.Theme.Measures.AutoHideSplitterSize;
+                        rect.Width -= 2 + DockPanel.Theme.Measures.AutoHideSplitterSize;
                     }
                     else if (DockState == DockState.DockTopAutoHide)
-                        rect.Height -= 2 + Measures.SplitterSize;
+                        rect.Height -= 2 + DockPanel.Theme.Measures.AutoHideSplitterSize;
                     else if (DockState == DockState.DockLeftAutoHide)
-                        rect.Width -= 2 + Measures.SplitterSize;
+                        rect.Width -= 2 + DockPanel.Theme.Measures.AutoHideSplitterSize;
 
                     return rect;
                 }
@@ -443,7 +449,7 @@ namespace WeifenLuo.WinFormsUI.Docking
 
                 if (ActivePane == null || ActivePane.IsActivated)
                 {
-                    _timerMouseTrack.Enabled = false;
+                    m_timerMouseTrack.Enabled = false;
                     return;
                 }
 
@@ -456,7 +462,7 @@ namespace WeifenLuo.WinFormsUI.Docking
                 if (!ClientRectangle.Contains(ptMouseInAutoHideWindow) && !rectTabStrip.Contains(ptMouseInDockPanel))
                 {
                     ActiveContent = null;
-                    _timerMouseTrack.Enabled = false;
+                    m_timerMouseTrack.Enabled = false;
                 }
             }
 
@@ -546,12 +552,12 @@ namespace WeifenLuo.WinFormsUI.Docking
 
         private AutoHideWindowControl AutoHideWindow
         {
-            get { return _autoHideWindow; }
+            get { return m_autoHideWindow; }
         }
 
         internal Control AutoHideControl
         {
-            get { return _autoHideWindow; }
+            get { return m_autoHideWindow; }
         }
 
         internal void RefreshActiveAutoHideContent()
@@ -579,7 +585,7 @@ namespace WeifenLuo.WinFormsUI.Docking
                         autoHideSize = rectDockArea.Width * autoHideSize;
                     if (autoHideSize > rectDockArea.Width - MeasurePane.MinSize)
                         autoHideSize = rectDockArea.Width - MeasurePane.MinSize;
-                    rect.X = rectDockArea.X;
+                    rect.X = rectDockArea.X - Theme.Measures.DockPadding;
                     rect.Y = rectDockArea.Y;
                     rect.Width = (int)autoHideSize;
                     rect.Height = rectDockArea.Height;
@@ -590,7 +596,7 @@ namespace WeifenLuo.WinFormsUI.Docking
                         autoHideSize = rectDockArea.Width * autoHideSize;
                     if (autoHideSize > rectDockArea.Width - MeasurePane.MinSize)
                         autoHideSize = rectDockArea.Width - MeasurePane.MinSize;
-                    rect.X = rectDockArea.X + rectDockArea.Width - (int)autoHideSize;
+                    rect.X = rectDockArea.X + rectDockArea.Width - (int)autoHideSize + Theme.Measures.DockPadding;
                     rect.Y = rectDockArea.Y;
                     rect.Width = (int)autoHideSize;
                     rect.Height = rectDockArea.Height;
@@ -602,7 +608,7 @@ namespace WeifenLuo.WinFormsUI.Docking
                     if (autoHideSize > rectDockArea.Height - MeasurePane.MinSize)
                         autoHideSize = rectDockArea.Height - MeasurePane.MinSize;
                     rect.X = rectDockArea.X;
-                    rect.Y = rectDockArea.Y;
+                    rect.Y = rectDockArea.Y - Theme.Measures.DockPadding;
                     rect.Width = rectDockArea.Width;
                     rect.Height = (int)autoHideSize;
                 }
@@ -613,7 +619,7 @@ namespace WeifenLuo.WinFormsUI.Docking
                     if (autoHideSize > rectDockArea.Height - MeasurePane.MinSize)
                         autoHideSize = rectDockArea.Height - MeasurePane.MinSize;
                     rect.X = rectDockArea.X;
-                    rect.Y = rectDockArea.Y + rectDockArea.Height - (int)autoHideSize;
+                    rect.Y = rectDockArea.Y + rectDockArea.Height - (int)autoHideSize + Theme.Measures.DockPadding;
                     rect.Width = rectDockArea.Width;
                     rect.Height = (int)autoHideSize;
                 }

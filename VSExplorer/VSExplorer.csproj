@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WinExplorer</RootNamespace>
     <AssemblyName>WinExplorer</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -24,7 +24,19 @@
     <TargetFrameworkProfile />
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
+    <RestorePackages>false</RestorePackages>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Configuration>
+    </Configuration>
+    <Platform>
+    </Platform>
+    <DefineConstants />
+    <Prefer32bit>true</Prefer32bit>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Optimize>false</Optimize>
+    <WarningLevel />
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -38,21 +50,9 @@
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-    <Configuration>
-    </Configuration>
-    <Platform>
-    </Platform>
-    <DefineConstants />
-    <Prefer32bit>true</Prefer32bit>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-    <Optimize>false</Optimize>
-    <WarningLevel />
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputType>WinExe</OutputType>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -64,8 +64,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
-    <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -77,6 +76,7 @@
     <DocumentationFile>bin\Release\WinExplorer.xml</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
     <PlatformTarget>x86</PlatformTarget>
+    <OutputType>WinExe</OutputType>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -94,6 +94,64 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Esent.Interop">
+      <HintPath>..\packages\Roslyn-all-in-one\Esent.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build">
+      <HintPath>..\packages\Roslyn-all-in-one\Microsoft.Build.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Conversion.Core, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Roslyn-all-in-one\Microsoft.Build.Conversion.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Engine">
+      <HintPath>..\packages\Roslyn-all-in-one\Microsoft.Build.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Framework">
+      <HintPath>..\packages\Roslyn-all-in-one\Microsoft.Build.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Tasks.Core, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Roslyn-all-in-one\Microsoft.Build.Tasks.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Utilities.Core, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Roslyn-all-in-one\Microsoft.Build.Utilities.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis, Version=1.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Roslyn-all-in-one\Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Diagnostics.Runtime, Version=0.8.31.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Diagnostoc.Runtime-recompiled\Microsoft.Diagnostics.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=13.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\SQLServerSDK-130\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=13.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\SQLServerSDK-130\Microsoft.SqlServer.Management.Sdk.Sfc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=13.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\SQLServerSDK-130\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SqlEnum, Version=13.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\SQLServerSDK-130\Microsoft.SqlServer.SqlEnum.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SqlWmiManagement, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\SQLServerSDK-130\Microsoft.SqlServer.SqlWmiManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.TransactSql.ScriptDom, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.SqlServer.Sdk\Microsoft.SqlServer.TransactSql.ScriptDom.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management.Automation" />
     <Reference Include="ICSharpCode.NRefactory, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d4bfe873e7598c49, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\ICSharpCode.NRefactory.5.5.1\libs\ICSharpCode.NRefactory.dll</HintPath>
@@ -104,15 +162,6 @@
     <Reference Include="ICSharpCode.NRefactory.CSharp, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d4bfe873e7598c49, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\ICSharpCode.NRefactory.5.5.1\libs\ICSharpCode.NRefactory.CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Build" />
-    <Reference Include="Microsoft.Build.Engine" />
-    <Reference Include="Microsoft.Build.Framework" />
-    <Reference Include="Microsoft.Build.Tasks.v4.0" />
-    <Reference Include="Microsoft.Build.Utilities.v4.0" />
-    <Reference Include="Microsoft.Diagnostics.Runtime, Version=0.8.31.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Diagnostics.Runtime.0.8.31-beta\lib\net40\Microsoft.Diagnostics.Runtime.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Mono.Cecil, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <HintPath>..\packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.dll</HintPath>
@@ -134,6 +183,10 @@
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NuGet.Core, Version=2.14.0.832, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Core.2.14.0\lib\net40-Client\NuGet.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="nunit-agent-x86, Version=3.0.5813.39036, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NUnit.Engine.3.0.1\lib\nunit-agent-x86.exe</HintPath>
@@ -150,16 +203,47 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NUnit.Engine.3.0.1\lib\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="System.Management.Automation" />
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL" />
     <Reference Include="StyleCop">
       <HintPath>..\packages\Extensions\StyleCop.dll</HintPath>
     </Reference>
+    <Reference Include="StyleCop.CSharp">
+      <HintPath>..\packages\Extensions\StyleCop.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="StyleCop.CSharp.Rules">
+      <HintPath>..\packages\Extensions\StyleCop.CSharp.Rules.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions">
+      <HintPath>..\packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices">
+      <HintPath>..\packages\System.Runtime.InteropServices.4.3.0\lib\net462\System.Runtime.InteropServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.ValueTuple">
+      <HintPath>..\packages\Roslyn-all-in-one\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.ReaderWriter">
+      <HintPath>..\packages\Roslyn-all-in-one\System.Xml.ReaderWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Roslyn-all-in-one\System.Xml.XmlDocument.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutApplicationForm.cs">
@@ -193,7 +277,19 @@
     <Compile Include="CustomizeForm.Designer.cs">
       <DependentUpon>CustomizeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Debuggers\CDB\OutputCallbacks.cs" />
+    <Compile Include="Debuggers\CDB\Program.cs" />
+    <Compile Include="Debuggers\Debugger.cs" />
+    <Compile Include="Debuggers\MDB\Bootstrap.cs" />
+    <Compile Include="Debuggers\MDB\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Debuggers\MDB\MainForm.Designer.cs" />
+    <Compile Include="Debuggers\MDB\Mdbg.cs" />
+    <Compile Include="Debuggers\MDB\mdbgCommands.cs" />
+    <Compile Include="Debuggers\MDB\SourceFile.cs" />
     <Compile Include="Environment\Environment.cs" />
+    <Compile Include="Environment\Modules\Module.cs" />
     <Compile Include="Environment\OutputForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,6 +404,10 @@
     <Compile Include="OptionsForms.Designer.cs">
       <DependentUpon>OptionsForms.cs</DependentUpon>
     </Compile>
+    <Compile Include="orcl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Project-Explorer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -353,6 +453,29 @@
       <DependentUpon>resource_alls.resx</DependentUpon>
     </Compile>
     <Compile Include="SearchEngine.cs" />
+    <Compile Include="Services\NuGet.cs" />
+    <Compile Include="Services\NuGet\FlowPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\NuGet\NuGetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\NuGet\NuGetForm.Designer.cs">
+      <DependentUpon>NuGetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\NuGet\NuGetPacketInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Services\NuGet\NuGetPacketInfo.Designer.cs">
+      <DependentUpon>NuGetPacketInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\NuGet\NuGetPacketShort.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Services\NuGet\NuGetPacketShort.Designer.cs">
+      <DependentUpon>NuGetPacketShort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\ServiceBitmaps.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SplashForm.cs">
       <SubType>Form</SubType>
@@ -360,6 +483,175 @@
     <Compile Include="SplashForm.Designer.cs">
       <DependentUpon>SplashForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Data Sources\UniqueConstraintSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Data Sources\UniqueConstraintSelectionForm.Designer.cs">
+      <DependentUpon>UniqueConstraintSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Data Sources\AddConnectionForm_Oracle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Data Sources\AddConnectionForm_Oracle.Designer.cs">
+      <DependentUpon>AddConnectionForm_Oracle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Data Sources\AddConnectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Data Sources\AddConnectionForm.Designer.cs">
+      <DependentUpon>AddConnectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Data Sources\ChooseDataSourceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Data Sources\ChooseDataSourceForm.Designer.cs">
+      <DependentUpon>ChooseDataSourceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Data Sources\DataPreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Data Sources\DataPreviewForm.Designer.cs">
+      <DependentUpon>DataPreviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Data Sources\DataSourceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Data Sources\DataSourceForm.Designer.cs">
+      <DependentUpon>DataSourceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Data Sources\DataSourceWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Data Sources\DataSourceWizard.Designer.cs">
+      <DependentUpon>DataSourceWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Data Sources\QueryAdvancedSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Data Sources\QueryAdvancedSelectionForm.Designer.cs">
+      <DependentUpon>QueryAdvancedSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Data Sources\QueryBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Data Sources\QueryBuilderForm.Designer.cs">
+      <DependentUpon>QueryBuilderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Data Sources\QueryMethodsConfigSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Data Sources\QueryMethodsConfigSelectionForm.Designer.cs">
+      <DependentUpon>QueryMethodsConfigSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Data Sources\QueryResultSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Data Sources\QueryResultSelectionForm.Designer.cs">
+      <DependentUpon>QueryResultSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Data Sources\QueryMethodsSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Data Sources\QueryMethodsSelectionForm.Designer.cs">
+      <DependentUpon>QueryMethodsSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Data Sources\QuerySQLConfigSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Data Sources\QuerySQLConfigSelectionForm.Designer.cs">
+      <DependentUpon>QuerySQLConfigSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Data Sources\QueryBindProcedureSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Data Sources\QueryBindProcedureSelectionForm.Designer.cs">
+      <DependentUpon>QueryBindProcedureSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Data Sources\QuerySQLSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Data Sources\QuerySQLSelectionForm.Designer.cs">
+      <DependentUpon>QuerySQLSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Data Sources\QueryTypeSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Data Sources\QueryTypeSelectionForm.Designer.cs">
+      <DependentUpon>QueryTypeSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Data Sources\QuerySelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Data Sources\QuerySelectionForm.Designer.cs">
+      <DependentUpon>QuerySelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Data Sources\DataViewers\DataViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Data Sources\DataViewers\DataViewerForm.Designer.cs">
+      <DependentUpon>DataViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Data Sources\DataViewers\ViewCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Data Sources\DataViewers\ViewCodeForm.Designer.cs">
+      <DependentUpon>ViewCodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Data Sources\DataViewers\ViewDesignerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Data Sources\DataViewers\ViewDesignerForm.Designer.cs">
+      <DependentUpon>ViewDesignerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Data Sources\RelationSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Data Sources\RelationSelectionForm.Designer.cs">
+      <DependentUpon>RelationSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Explorer Views\ServerExplorerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Explorer Views\ServerExplorerForm.Designer.cs">
+      <DependentUpon>ServerExplorerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Extensions\ProjectData.cs" />
+    <Compile Include="UI\SQLServerExplorer\AdvancedProperiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SQLServerExplorer\AdvancedProperiesForm.Designer.cs">
+      <DependentUpon>AdvancedProperiesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SQLServerExplorer\DatabaseInspectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SQLServerExplorer\DatabaseInspectorForm.designer.cs">
+      <DependentUpon>DatabaseInspectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SQLServerExplorer\DbModel\DbModelColumn.cs" />
+    <Compile Include="UI\SQLServerExplorer\DbModel\DbModelColumnCollection.cs" />
+    <Compile Include="UI\SQLServerExplorer\DbModel\DbModelConstraint.cs" />
+    <Compile Include="UI\SQLServerExplorer\DbModel\DbModelDependencyWalker.cs" />
+    <Compile Include="UI\SQLServerExplorer\DbModel\DbModelForeignKeyReference.cs" />
+    <Compile Include="UI\SQLServerExplorer\DbModel\DbModelInstance.cs" />
+    <Compile Include="UI\SQLServerExplorer\DbModel\DbModelObjectBase.cs" />
+    <Compile Include="UI\SQLServerExplorer\DbModel\DbModelTable.cs" />
+    <Compile Include="UI\SQLServerExplorer\DbModel\DbModelType.cs" />
+    <Compile Include="UI\SQLServerExplorer\DbModel\DbModelView.cs" />
+    <Compile Include="UI\SQLServerExplorer\DbModel\GenericSchemaService.cs" />
+    <Compile Include="UI\SQLServerExplorer\DbModel\ISqlWriter.cs" />
+    <Compile Include="UI\SQLServerExplorer\DbModel\OleDbSchemaService.cs" />
+    <Compile Include="UI\SQLServerExplorer\DbModel\OracleSchemaService.cs" />
+    <Compile Include="UI\SQLServerExplorer\DbModel\SqlCeSchemaService.cs" />
+    <Compile Include="UI\SQLServerExplorer\DbModel\SqlClientSchemaService.cs" />
+    <Compile Include="UI\SQLServerExplorer\DbModel\SqlWriter.cs" />
+    <Compile Include="UI\SQLServerExplorer\SQLServerSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SQLServerExplorer\SQLServerSelectForm.Designer.cs">
+      <DependentUpon>SQLServerSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SQLServerExplorer\TSQLPersers\TSQLParser.cs" />
     <Compile Include="UI\TemplatePanels\ProjectItemTemplate.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -503,20 +795,46 @@
     <Compile Include="UI\AssemblyTreeNode\PropertyNodeTag.cs" />
     <Compile Include="UI\AssemblyTreeNode\TreeNodeBuilder.cs" />
     <Compile Include="UI\AssemblyTreeNode\TypeNodeTag.cs" />
-    <Compile Include="UI\AssemblyTreeNode\UIUIUIUI567890\test23456UIUI\UI\Class1.cs" />
     <Compile Include="UI\AssemblyTreeNode\ReflectorHostEnvironment.cs" />
     <Compile Include="UI\utils.cs" />
+    <Compile Include="UI\Views\ChooseToolboxItemsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Views\ChooseToolboxItemsForm.Designer.cs">
+      <DependentUpon>ChooseToolboxItemsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\DesignerUtils.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Views\DesignerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Views\DesignerForm.designer.cs">
+      <DependentUpon>DesignerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\Toolbox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Views\Toolbox.Designer.cs">
+      <DependentUpon>Toolbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\XmlDocumentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Views\XmlDocumentForm.Designer.cs">
+      <DependentUpon>XmlDocumentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\VM.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\VM.Designer.cs">
       <DependentUpon>VM.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\WatchForm.cs">
+    <Compile Include="UI\BreakpointForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\WatchForm.Designer.cs">
-      <DependentUpon>WatchForm.cs</DependentUpon>
+    <Compile Include="UI\BreakpointForm.Designer.cs">
+      <DependentUpon>BreakpointForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\WatchForms.cs">
       <SubType>Form</SubType>
@@ -545,6 +863,7 @@
     <EmbeddedResource Include="CustomizeForm.resx">
       <DependentUpon>CustomizeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Debuggers\MDB\MainForm.resx" />
     <EmbeddedResource Include="Environment\OutputForm.resx">
       <DependentUpon>OutputForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -636,8 +955,92 @@
       <LastGenOutput>resource_alls.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Services\NuGet\NuGetForm.resx">
+      <DependentUpon>NuGetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\NuGet\NuGetPacketInfo.resx">
+      <DependentUpon>NuGetPacketInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\NuGet\NuGetPacketShort.resx">
+      <DependentUpon>NuGetPacketShort.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SplashForm.resx">
       <DependentUpon>SplashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Data Sources\AddConnectionForm_Oracle.resx">
+      <DependentUpon>AddConnectionForm_Oracle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Data Sources\AddConnectionForm.resx">
+      <DependentUpon>AddConnectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Data Sources\ChooseDataSourceForm.resx">
+      <DependentUpon>ChooseDataSourceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Data Sources\DataPreviewForm.resx">
+      <DependentUpon>DataPreviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Data Sources\DataSourceForm.resx">
+      <DependentUpon>DataSourceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Data Sources\DataSourceWizard.resx">
+      <DependentUpon>DataSourceWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Data Sources\QueryAdvancedSelectionForm.resx">
+      <DependentUpon>QueryAdvancedSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Data Sources\QueryBuilderForm.resx">
+      <DependentUpon>QueryBuilderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Data Sources\QueryMethodsConfigSelectionForm.resx">
+      <DependentUpon>QueryMethodsConfigSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Data Sources\QueryResultSelectionForm.resx">
+      <DependentUpon>QueryResultSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Data Sources\QueryMethodsSelectionForm.resx">
+      <DependentUpon>QueryMethodsSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Data Sources\QuerySQLConfigSelectionForm.resx">
+      <DependentUpon>QuerySQLConfigSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Data Sources\QueryBindProcedureSelectionForm.resx">
+      <DependentUpon>QueryBindProcedureSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Data Sources\QuerySQLSelectionForm.resx">
+      <DependentUpon>QuerySQLSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Data Sources\QueryTypeSelectionForm.resx">
+      <DependentUpon>QueryTypeSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Data Sources\QuerySelectionForm.resx">
+      <DependentUpon>QuerySelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Data Sources\DataViewers\DataViewerForm.resx">
+      <DependentUpon>DataViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Data Sources\DataViewers\ViewCodeForm.resx">
+      <DependentUpon>ViewCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Data Sources\DataViewers\ViewDesignerForm.resx">
+      <DependentUpon>ViewDesignerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Data Sources\RelationSelectionForm.resx">
+      <DependentUpon>RelationSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Data Sources\UniqueConstraintSelectionForm.resx">
+      <DependentUpon>UniqueConstraintSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Explorer Views\ServerExplorerForm.resx">
+      <DependentUpon>ServerExplorerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SQLServerExplorer\AdvancedProperiesForm.resx">
+      <DependentUpon>AdvancedProperiesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SQLServerExplorer\DatabaseInspectorForm.resx">
+      <DependentUpon>DatabaseInspectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SQLServerExplorer\SQLServerSelectForm.resx">
+      <DependentUpon>SQLServerSelectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TemplatePanels\ProjectItemTemplate.resx">
       <DependentUpon>ProjectItemTemplate.cs</DependentUpon>
@@ -698,11 +1101,26 @@
     <EmbeddedResource Include="UI\ProjectPropertyForm.resx">
       <DependentUpon>ProjectPropertyForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\ChooseToolboxItemsForm.resx">
+      <DependentUpon>ChooseToolboxItemsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\DesignerForm.resx">
+      <DependentUpon>DesignerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\Toolbox.resx">
+      <DependentUpon>Toolbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\XmlDocumentForm.resx">
+      <DependentUpon>XmlDocumentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\VM.resx">
       <DependentUpon>VM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\WatchForm.resx">
-      <DependentUpon>WatchForm.cs</DependentUpon>
+    <EmbeddedResource Include="UI\BreakpointForm.resx">
+      <DependentUpon>BreakpointForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\WatchForms.resx">
+      <DependentUpon>WatchForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VSExplorerForm.resx">
       <DependentUpon>VSExplorerForm.cs</DependentUpon>
@@ -710,8 +1128,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="ClassDiagram1.cd" />
+    <None Include="orcl.xsc">
+      <DependentUpon>orcl.xsd</DependentUpon>
+    </None>
+    <None Include="orcl.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>orcl.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="orcl.xss">
+      <DependentUpon>orcl.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\AIMS.Libraries.CodeEditor.CodeEditorControl.datasource" />
+    <None Include="Properties\DataSources\AndersLiu.Reflector.Core.ReflectorHostEnvironment.datasource" />
+    <None Include="Properties\DataSources\AndersLiu.Reflector.Core.WorkspaceUnit.datasource" />
+    <None Include="Properties\DataSources\ExplorerForms.ApplicationLoaded.datasource" />
+    <None Include="Properties\DataSources\ExplorerForms.clsColor.datasource" />
+    <None Include="Properties\DataSources\ExplorerForms.CodeAnalysisThread.datasource" />
+    <None Include="Properties\DataSources\ExplorerForms.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -1869,6 +2304,34 @@
     <None Include="Resources\Resources_refs\ViewByNamespace.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Debuggers\MDB\corapi\corapi.csproj">
+      <Project>{04ef9865-e1b1-403d-802b-e4faea50a634}</Project>
+      <Name>corapi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Debuggers\MDB\enc\enc.csproj">
+      <Project>{a910dcde-4794-4796-819a-b79e0e6ffd50}</Project>
+      <Name>enc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Debuggers\MDB\ildasm\ildasm.csproj">
+      <Project>{a05817cb-7957-4ea4-aa05-2ff911a388ab}</Project>
+      <Name>ildasm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Debuggers\MDB\mdbgeng\mdbgeng.csproj">
+      <Project>{634b90a2-0344-44c5-83f0-06180b2fda05}</Project>
+      <Name>mdbgeng</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Debuggers\MDB\mdbgext\mdbgext.csproj">
+      <Project>{1511f9e6-6ac4-4f3f-863d-3430469a7335}</Project>
+      <Name>mdbgext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Debuggers\MDB\NativeDebugWrappers\NativeDebugWrappers.csproj">
+      <Project>{3991ab6c-468b-4c28-95fc-3188cfb34180}</Project>
+      <Name>NativeDebugWrappers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Debuggers\MDB\raw\raw.csproj">
+      <Project>{c18d303b-2c55-43eb-a3df-39cf3fb1d447}</Project>
+      <Name>raw</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DockProjects\DockProjects.csproj">
       <Project>{103edc9b-ffa0-4752-a905-fcc7a0724213}</Project>
       <Name>DockProjects</Name>
@@ -1889,21 +2352,25 @@
       <Project>{3814f627-858a-42a3-9aaf-cd649413f2a8}</Project>
       <Name>CodeEditor.SyntaxFiles</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Editor\Themes\ThemeVS2012Light.csproj">
-      <Project>{4ed4fdb5-9fd0-49e6-876d-1635f727c755}</Project>
-      <Name>ThemeVS2012Light</Name>
+    <ProjectReference Include="..\Editor\WinFormsUI\ThemeVS2010.csproj">
+      <Project>{e9efe270-83bc-4d18-a1bf-7902ba8b83d6}</Project>
+      <Name>ThemeVS2010</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Editor\Themes\ThemeVS2013Blue.csproj">
+    <ProjectReference Include="..\Editor\WinFormsUI\ThemeVS2012.csproj">
+      <Project>{4ed4fdb5-9fd0-49e6-876d-1635f727c755}</Project>
+      <Name>ThemeVS2012</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Editor\WinFormsUI\ThemeVS2013.csproj">
       <Project>{245e07f6-10d5-4cfa-b003-0deb06b223da}</Project>
-      <Name>ThemeVS2013Blue</Name>
+      <Name>ThemeVS2013</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Editor\WinFormsUI\ThemeVS2015.csproj">
+      <Project>{007d4ac8-948f-4816-86ad-b9d1343672c1}</Project>
+      <Name>ThemeVS2015</Name>
     </ProjectReference>
     <ProjectReference Include="..\Editor\WinFormsUI\WinFormsUI.csproj">
       <Project>{c75532c4-765b-418e-b09b-46d36b2abdb1}</Project>
       <Name>WinFormsUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Formatters\Microsoft.DotNet.CodeFormatting\Microsoft.DotNet.CodeFormatting.csproj">
-      <Project>{d535641f-a2d7-481c-930d-96c02f052b95}</Project>
-      <Name>Microsoft.DotNet.CodeFormatting</Name>
     </ProjectReference>
     <ProjectReference Include="..\MSBuild\TCPLogger\Loggers.csproj">
       <Project>{0da0a71d-59a3-446e-a28b-63ef0ae70ebe}</Project>
@@ -1940,6 +2407,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+    <Folder Include="Services\Syntax\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\reference_16xLG.png" />
@@ -2369,9 +2837,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\UnComment_11701_32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Undo_16x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\UniformGridElement_10696_24.png" />
@@ -4576,10 +5041,136 @@
     <None Include="Resources\abstr1_32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\WarningRule_16x.png" />
-    <None Include="Resources\StartWithoutDebug_16x.png" />
-    <None Include="Resources\Redo_16x.png" />
+    <None Include="Resources\Triangle_16x.png" />
+    <None Include="Resources\StatusWarning_16x.png" />
+    <None Include="Resources\NugetPackage.bmp" />
     <None Include="Resources\VSO_NugetLogo_52x.png" />
+    <None Include="Resources\Upload_16x.png" />
+    <None Include="Resources\NugetLogo_16x.png" />
+    <None Include="Resources\Loading_Blue_16x.png" />
+    <None Include="Resources\Expander_24x.png" />
+    <None Include="Resources\Download_16x.png" />
+    <None Include="Resources\TableAdapter_16x.png" />
+    <None Include="Resources\DataTable_256x.png" />
+    <None Include="Resources\designer.png" />
+    <None Include="Resources\Stop_16x.png" />
+    <None Include="Resources\SQLCEDest_16x.png" />
+    <None Include="Resources\SortDescendingFilter_16x.png" />
+    <None Include="Resources\SortAscendingFilter_16x.png" />
+    <None Include="Resources\Script_16x.png" />
+    <None Include="Resources\ResultToDataGrid_16x.png" />
+    <None Include="Resources\NewRow_16x.png" />
+    <None Include="Resources\NewQuery_16x.png" />
+    <None Include="Resources\ExecutionPlan_16x.png" />
+    <None Include="Resources\Disconnect_16x.png" />
+    <None Include="Resources\ConnectEnvironment_16x.png" />
+    <None Include="Resources\CheckAdd_16x.png" />
+    <None Include="Resources\ForeignKey_32x.png" />
+    <None Include="Resources\Table_16x.png" />
+    <None Include="Resources\Database_16x.png" />
+    <None Include="Resources\Search_16x.png" />
+    <None Include="Resources\Cancel_16x.png" />
+    <None Include="Resources\AddDatabase_16x.png" />
+    <None Include="Resources\VSO_FolderOpen_16x.png" />
+    <None Include="Resources\VSO_Folder_16x.png" />
+    <None Include="Resources\View_16x.png" />
+    <None Include="Resources\TriggerAction_16x.png" />
+    <None Include="Resources\Key_32x.png" />
+    <None Include="Resources\FolderOpen_16x.png" />
+    <None Include="Resources\Column_16x.png" />
+    <None Include="Resources\SQLServerObjectExplorer_16x.png" />
+    <None Include="Resources\Stop_grey_16x.png" />
+    <None Include="Resources\WindowsForm_256x.png" />
+    <None Include="Resources\WebService_256x.png" />
+    <None Include="Resources\Services_16x.png" />
+    <None Include="Resources\ServerSettings_16x.png" />
+    <None Include="Resources\Schema_32xLG.png" />
+    <None Include="Resources\PerformanceReport_16x.png" />
+    <None Include="Resources\Office_Sharepoint_Application_16xLG.png" />
+    <None Include="Resources\MessageQueue_256x.png" />
+    <None Include="Resources\MessageQueue_32x.png" />
+    <None Include="Resources\EventLog_32x.png" />
+    <None Include="Resources\TextContentControl_16x.png" />
+    <None Include="Resources\String_16x.png" />
+    <None Include="Resources\Namespace_16xSM.png" />
+    <None Include="Resources\Namespace_16x.png" />
+    <None Include="Resources\Class_yellow_16x.png" />
+    <None Include="Resources\CheckBox_16x.png" />
+    <None Include="Resources\Database_256x.png" />
+    <None Include="Resources\ConnectWeb_16x.png" />
+    <None Include="Resources\DataSourceView_16x.png" />
+    <None Include="Resources\DatasetReference_16x.png" />
+    <None Include="Resources\AddDataSource_16x.png" />
+    <None Include="Resources\DisassemblyWindow_16x.png" />
+    <None Include="Resources\Import_16x.png" />
+    <None Include="Resources\i_delete-all-breakpointsGrey_F12.png" />
+    <None Include="Resources\GoToSourceCode_16x.png" />
+    <None Include="Resources\F12_BreakpointEnable_28x.png" />
+    <None Include="Resources\Export_16x.png" />
+    <None Include="Resources\EnableAllBreakpoints_16x.png" />
+    <None Include="Resources\DisableAllBreakpoints_16x.png" />
+    <None Include="Resources\BreakpointEnable_16x.png" />
+    <None Include="Resources\BreakpointDisable_16x.png" />
+    <None Include="Resources\Property_16x.png" />
+    <None Include="Resources\OverlayStatic_16x.png" />
+    <None Include="Resources\PropertySealed_16x.png" />
+    <None Include="Resources\PropertyProtect_16x.png" />
+    <None Include="Resources\PropertyPrivate_16x.png" />
+    <None Include="Resources\PropertyFriend_16x.png" />
+    <None Include="Resources\Property_256x.png" />
+    <None Include="Resources\FieldSealed_16x.png" />
+    <None Include="Resources\FieldProtect_16x.png" />
+    <None Include="Resources\FieldPrivate_16x.png" />
+    <None Include="Resources\FieldFriend_16x.png" />
+    <None Include="Resources\ClassSealed_16x.png" />
+    <None Include="Resources\ClassProtected_16x.png" />
+    <None Include="Resources\ClassPrivate_16x.png" />
+    <None Include="Resources\ClassFriend_16x.png" />
+    <None Include="Resources\Class_yellow_256x.png" />
+    <None Include="Resources\Field_blue_16x.png" />
+    <None Include="Resources\Output_256x.png" />
+    <None Include="Resources\ImmediateWindow_16x.png" />
+    <None Include="Resources\ExceptionSettings_16x.png" />
+    <None Include="Resources\BreakpointWindow_16x.png" />
+    <None Include="Resources\f12_SortDownArrowGrey.png" />
+    <None Include="Resources\f12_SortDownArrowBlue.png" />
+    <None Include="Resources\VisualStudioSolution_256x.png" />
+    <None Include="Resources\StartupProject_32x.png" />
+    <None Include="Resources\NewItem_16x.png" />
+    <None Include="Resources\Run_256x.png" />
+    <None Include="Resources\CancelBuild_16x.png" />
+    <None Include="Resources\BuildSolution_256x.png" />
+    <None Include="Resources\AddForm_16x.png" />
+    <None Include="Resources\AddComponent_16x.png" />
+    <None Include="Resources\StatusHelp_256x.png" />
+    <None Include="Resources\StartWithoutDebug_16x.png" />
+    <None Include="Resources\CloseDocumentGroup_16x.png" />
+    <None Include="Resources\Cancel_256x.png" />
+    <None Include="Resources\OpenWeb_16x.png" />
+    <None Include="Resources\FindinFiles_16x.png" />
+    <None Include="Resources\Undo_16x.png" />
+    <None Include="Resources\Redo_16x.png" />
+    <None Include="Resources\Cut_24x.png" />
+    <None Include="Resources\Paste_16x.png" />
+    <None Include="Resources\Copy_32x.png" />
+    <None Include="Resources\SaveAll_256x.png" />
+    <None Include="Resources\Save_256x.png" />
+    <None Include="Resources\Forward_256x.png" />
+    <None Include="Resources\Backward_256x.png" />
+    <None Include="Resources\CheckBox_256x.png" />
+    <None Include="Resources\Thread_256x.png" />
+    <None Include="Resources\Breakall_6323.png" />
+    <None Include="Resources\Restart_16x.png" />
+    <None Include="Resources\Refresh_16x.png" />
+    <None Include="Resources\StepOver_16x.png" />
+    <None Include="Resources\StepOut_16x.png" />
+    <None Include="Resources\StepIn_16x.png" />
+    <None Include="Resources\Stop_256x.png" />
+    <None Include="Resources\StepOver_16x_32.bmp" />
+    <None Include="Resources\StepOut_16x_32.bmp" />
+    <None Include="Resources\StepIn_16x_32.bmp" />
+    <None Include="Resources\Stop_16x_32.bmp" />
+    <None Include="Resources\WarningRule_16x.png" />
     <None Include="Resources\VBSourceFile_256x.png" />
     <None Include="Resources\Script_256x.png" />
     <None Include="Resources\ListView_26x.png" />
@@ -4590,9 +5181,7 @@
     <None Include="Resources\OpenFolder_256x.png" />
     <None Include="Resources\certificate_32xLG.png" />
     <None Include="Resources\FileCollection_16x.png" />
-    <None Include="Resources\String_16x.png" />
     <None Include="Resources\IconFile_256x.png" />
-    <None Include="Resources\VisualStudioSolution_256x.png" />
     <None Include="Resources\LocalResources_16x.png" />
     <None Include="Resources\OpenFileFromProject_16x.png" />
     <None Include="Resources\HardDrive_256x.png" />
@@ -4663,17 +5252,13 @@
     <None Include="Resources\UserControl_256x.png" />
     <None Include="Resources\Control_256x.png" />
     <None Include="Resources\Delegate_purple_16x.png" />
-    <None Include="Resources\Class_yellow_256x.png" />
-    <None Include="Resources\Field_blue_16x.png" />
     <None Include="Resources\FileSource_48x.png" />
-    <None Include="Resources\Property_256x.png" />
     <None Include="Resources\Method_purple_256x.png" />
     <None Include="Resources\CommentCode_16x.png" />
     <None Include="Resources\UncommentCode_16x.png" />
     <None Include="Resources\CloseSolution_256x.png" />
     <None Include="Resources\VSO_NewFile_40x.png" />
     <None Include="Resources\ProjectFilterFile_16x.png" />
-    <None Include="Resources\WindowsForm_256x.png" />
     <None Include="Resources\FilteredObject13400_128x128.png" />
     <None Include="Resources\arrowup.png" />
     <None Include="Resources\arrowdw.png" />
@@ -5494,6 +6079,15 @@
     <None Include="Resources\Namespace.png" />
     <None Include="Resources\Form_Win32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EventLog_256x.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -5515,7 +6109,5 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.1.0\build\net40\Baseclass.Contrib.Nuget.Output.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Baseclass.Contrib.Nuget.Output.2.1.0\build\net40\Baseclass.Contrib.Nuget.Output.targets'))" />
   </Target>
-  <Import Project="..\packages\Baseclass.Contrib.Nuget.Output.2.1.0\build\net40\Baseclass.Contrib.Nuget.Output.targets" Condition="Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.1.0\build\net40\Baseclass.Contrib.Nuget.Output.targets')" />
 </Project>

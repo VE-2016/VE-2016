@@ -171,7 +171,7 @@ namespace WinExplorer
             // if (FileOpened(Name) != null)
             //     return null;
 
-            string contents = "";// Parser.ProjectParser.GetFileContents(Name);
+            //string contents = "";// Parser.ProjectParser.GetFileContents(Name);
 
             try
             {
@@ -188,7 +188,7 @@ namespace WinExplorer
             doc.HideOnClose = false;
             doc.FormBorderStyle = FormBorderStyle.None;
             doc.Dock = DockStyle.Fill;
-            doc.BackColor = SystemColors.InactiveBorder;
+            //doc.BackColor = SystemColors.InactiveBorder;
             doc.Contents = text;
             //doc.ScriptLanguage = _scriptLanguage;
             //doc.vp = pp;

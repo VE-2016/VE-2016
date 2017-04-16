@@ -28,12 +28,14 @@ using ICSharpCode.NRefactory.TypeSystem;
 using ICSharpCode.NRefactory.Semantics;
 using ICSharpCode.NRefactory.TypeSystem.Implementation;
 using System.Threading.Tasks;
-using Microsoft.CodeAnalysis.MSBuild;
+//using Microsoft.CodeAnalysis.MSBuild;
 using Microsoft.DotNet.CodeFormatting;
 using System.Threading;
 using System.Linq;
 using Microsoft.CodeAnalysis.Text;
 using System.Collections.Immutable;
+using Microsoft.CodeAnalysis;
+using AIMS.Libraries.CodeEditor.Editors;
 
 #endregion
 
@@ -89,7 +91,7 @@ namespace AIMS.Libraries.CodeEditor
         private Color _SelectionForeColor = Color.Black;// SystemColors.HighlightText;
         private Color _InactiveSelectionBackColor = SystemColors.ControlDark;
         private Color _InactiveSelectionForeColor = SystemColors.ControlLight;
-        private Color _BreakPointBackColor = Color.Maroon;// Color.DarkRed;
+        private Color _BreakPointBackColor = Color.DarkRed;
         private Color _BreakPointForeColor = Color.White;
         private Color _BackColor = Color.White;
         private Color _HighLightedLineColor = Color.LightBlue;
@@ -1431,6 +1433,7 @@ namespace AIMS.Libraries.CodeEditor
         #region public property ScrollBars
 
         private ScrollBars _ScrollBars;
+        private IContainer components;
 
         [Category("Appearance"),
             Description("Determines what Scrollbars should be visible")]
@@ -1772,6 +1775,12 @@ namespace AIMS.Libraries.CodeEditor
             _ActiveView.ShowGotoLine();
         }
 
+
+        public void RedrawControl()
+        {
+            this.Redraw();
+        }
+
         /// <summary>
         /// Not yet implemented
         /// </summary>
@@ -1846,9 +1855,9 @@ namespace AIMS.Libraries.CodeEditor
 
         #endregion //END Public Methods
 
-        //protected virtual void OnCreate()
-        //{
-        //}
+        public static DataGridView dg { get; set; }
+
+      
 
         private bool _Saved = false;
 
@@ -2265,74 +2274,74 @@ namespace AIMS.Libraries.CodeEditor
             engine.AllowTables = true;
             engine.Verbose = true;
             
-            
-            {
+           
+            //{
                 
 
 
-                using (var workspace = MSBuildWorkspace.Create())
-                {
+                //using (var workspace = CSharpWorkspace.Create())
+                //{
 
-                    string folder = AppDomain.CurrentDomain.BaseDirectory;
+                //    string folder = AppDomain.CurrentDomain.BaseDirectory;
 
-                    workspace.LoadMetadataForReferencedProjects = true;
+                //    workspace.LoadMetadataForReferencedProjects = true;
                     
 
-                    var s = await workspace.OpenProjectAsync(folder + "TemplateSolution\\Empty\\Empty\\Empty.csproj");
+                //    var s = await workspace.OpenProjectAsync(folder + "TemplateSolution\\Empty\\Empty\\Empty.csproj");
 
-                    Microsoft.CodeAnalysis.Document c = s.AddDocument("documents2.cs", Document.Text, null,"document2.cs");
+                //    Microsoft.CodeAnalysis.Document c = s.AddDocument("documents2.cs", Document.Text, null,"document2.cs");
                    
 
-                    Microsoft.CodeAnalysis.Document d = null;
+                //    Microsoft.CodeAnalysis.Document d = null;
                     
 
-                    Microsoft.CodeAnalysis.Solution g = await engine.FormatCoreAsync(c.Project.Solution, c.Project.DocumentIds, ct);
+                //    Microsoft.CodeAnalysis.Solution g = await engine.FormatCoreAsync(c.Project.Solution, c.Project.DocumentIds, ct);
 
-                    Microsoft.CodeAnalysis.Project p = g.Projects.First();
+                //    Microsoft.CodeAnalysis.Project p = g.Projects.First();
 
-                    foreach (Microsoft.CodeAnalysis.Document dd in p.Documents)
-                    {
-                        if (dd.Name == "documents2.cs")
-                            d = dd;
-                    }
-
-
-                    //SourceText text;
-
-                    //st = d.GetSyntaxTreeAsync(new CancellationToken()).Result as Microsoft.CodeAnalysis.SyntaxTree;
-
-                    //text = st.GetTextAsync(new CancellationToken()).Result as SourceText;
+                //    foreach (Microsoft.CodeAnalysis.Document dd in p.Documents)
+                //    {
+                //        if (dd.Name == "documents2.cs")
+                //            d = dd;
+                //    }
 
 
-                    Microsoft.CodeAnalysis.SyntaxNode n = await d.GetSyntaxRootAsync(new CancellationToken()) as Microsoft.CodeAnalysis.SyntaxNode;
+                //    //SourceText text;
 
-                    //n.ToString();
+                //    //st = d.GetSyntaxTreeAsync(new CancellationToken()).Result as Microsoft.CodeAnalysis.SyntaxTree;
 
-                    Document.Text = n.ToString();
+                //    //text = st.GetTextAsync(new CancellationToken()).Result as SourceText;
+
+
+                //    Microsoft.CodeAnalysis.SyntaxNode n = await d.GetSyntaxRootAsync(new CancellationToken()) as Microsoft.CodeAnalysis.SyntaxNode;
+
+                //    //n.ToString();
+
+                //    Document.Text = n.ToString();
 
                     
 
-                    //foreach (Microsoft.CodeAnalysis.Project pp in s.Projects)
-                    //    if (pp.FilePath == vp.FileName)
-                    //        p = pp;
-                    //if (p == null)
-                    //    return;
+                //    //foreach (Microsoft.CodeAnalysis.Project pp in s.Projects)
+                //    //    if (pp.FilePath == vp.FileName)
+                //    //        p = pp;
+                //    //if (p == null)
+                //    //    return;
 
-                    //foreach (Microsoft.CodeAnalysis.Document dd in p.Documents)
-                    //    {
+                //    //foreach (Microsoft.CodeAnalysis.Document dd in p.Documents)
+                //    //    {
 
-                    //    Microsoft.CodeAnalysis.SyntaxTree b = await dd.GetSyntaxTreeAsync(new CancellationToken());
+                //    //    Microsoft.CodeAnalysis.SyntaxTree b = await dd.GetSyntaxTreeAsync(new CancellationToken());
 
-                    //    string sc = b.ToString();
+                //    //    string sc = b.ToString();
 
-                    //    File.WriteAllText(dd.FilePath, sc);
+                //    //    File.WriteAllText(dd.FilePath, sc);
 
-                    //}
+                //    //}
 
 
-                }
+                //}
 
-            }
+            //}
 
             
 
@@ -2465,6 +2474,7 @@ namespace AIMS.Libraries.CodeEditor
             {
                 csd = vp.CSParsers();
                 vp.dicts = vp.csd.dict;
+                
             }
         
             Document.csd = csd;
@@ -2494,6 +2504,8 @@ namespace AIMS.Libraries.CodeEditor
 
                             pp.Name = "Keywords Types";
 
+                            if(dict != null)
+
                             foreach (string key in dict.Keys)
                             {
                                 string[] b = key.Split(".".ToCharArray());
@@ -2517,6 +2529,11 @@ namespace AIMS.Libraries.CodeEditor
         public Dictionary<string, ClassMapper> dict { get; set; }
 
         static public event EventHandler ParserDataChanged;
+
+        public void ParserDataChangedEvent()
+        {
+            ParserDataChanged(this, new EventArgs());
+        }
 
         public void BuildMaps()
         {
@@ -2636,41 +2653,41 @@ namespace AIMS.Libraries.CodeEditor
             }
         }
 
-        public void BuildMapsNode(VSProject pp, TreeNode node)
-        {
-            //VSSolution vs = vp.solution;
+        //public void BuildMapsNode(VSProject pp, TreeNode node)
+        //{
+        //    //VSSolution vs = vp.solution;
 
-            //foreach (VSProject pp in vs.Projects)
+        //    //foreach (VSProject pp in vs.Projects)
 
 
-            ArrayList L = pp.GetCompileItems();
+        //    ArrayList L = pp.GetCompileItems();
 
-            foreach (string s in L)
-            {
-                if (File.Exists(s) == false)
-                    continue;
+        //    foreach (string s in L)
+        //    {
+        //        if (File.Exists(s) == false)
+        //            continue;
 
-                string contents = File.ReadAllText(s);
+        //        string contents = File.ReadAllText(s);
 
-                ClassMapper c = MainTest.analysecode(contents, "file.cs");
+        //        ClassMapper c = MainTest.analysecode(contents, "file.cs");
 
-                MainTest.AnalyzeSyntaxTree(c.syntax, c);
+        //        MainTest.AnalyzeSyntaxTree(c.syntax, c);
 
-                if (c.mappers == null)
-                    continue;
+        //        if (c.mappers == null)
+        //            continue;
 
-                c.project = pp.FileName;
+        //        c.project = pp.FileName;
 
-                foreach (ClassMapper p in c.mappers)
-                {
-                    p.project = pp.FileName;
-                    if (dict.ContainsKey(p.classname) == false)
-                        dict.Add(p.classname, p);
-                }
-            }
+        //        foreach (ClassMapper p in c.mappers)
+        //        {
+        //            p.project = pp.FileName;
+        //            if (dict.ContainsKey(p.classname) == false)
+        //                dict.Add(p.classname, p);
+        //        }
+        //    }
 
-            CreateProjects(node);
-        }
+        //    CreateProjects(node);
+        //}
 
         public string prev { get; set; }
 
@@ -2684,13 +2701,10 @@ namespace AIMS.Libraries.CodeEditor
             while (i < Y)
             {
                 Row r = Document[i];
-                //offset += r.Expansion_EndChar + 2;
                 offset += r.Text.Length + 1;
                 i++;
             }
-
             offset += X;
-
             return offset;
         }
 
@@ -2710,6 +2724,9 @@ namespace AIMS.Libraries.CodeEditor
                 ins.Hide();
                 return;
             }
+
+            if (Selection == null)
+                return;
 
             Point pp = Selection.GetCursor();
 
@@ -2751,7 +2768,26 @@ namespace AIMS.Libraries.CodeEditor
 
             return true;
         }
+        public static DefinitionForm dfs { get; set; }
+        public bool ArrowHandled(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Left)
+            {
+                TypesWithDelay((char)e.KeyCode);
+                return true;
+            }
+            if (dfs == null)
+                return false;
+            if (dfs.Visible == false)
+                return false;
+         
+            bool r = dfs.Dfs_KeyDown(this, e);
+            if (r == false)
+                dfs.Close();
+            return r;
 
+            
+        }
         public void ExpandAll()
         {
             int i = 0;
@@ -2771,15 +2807,15 @@ namespace AIMS.Libraries.CodeEditor
 
         public void GetCurrentMember()
         {
-            //ExpandAll();
+           
 
             if (csd == null)
             {
                 //csd = new CSDemo();
                 //ArrayList L = vp.GetCompileItems();
                 //csd.AddProjectFiles(L);
-
-                csd = vp.CSParsers();
+                if(vp != null)
+                    csd = vp.CSParsers();
             }
 
 
@@ -2909,21 +2945,34 @@ namespace AIMS.Libraries.CodeEditor
 
         public async Task SendWithDelay()
         {
+            if (vp == null)
+                return;
+
             _running = true;
 
-            this.BeginInvoke(new Action(async () =>
+            
+            this.BeginInvoke(new Action( async () =>
             {
+
                 while (_shouldwait > 0)
                 {
-                    await Task.Delay(1000);
+                    await Task.Delay(50);
                     _shouldwait--;
                 }
 
                 Intellisense ie = CodeEditorControl.IntErrors;
 
-                ArrayList ESC = csd.ResolveAt(txt, Document.Text, FileName, vp);
+                //ArrayList ESC = csd.ResolveAt(txt, Document.Text, FileName, vp);
 
-                ie.LoadErrors(ESC, vp);
+            if (csd.snx == null)
+                csd.snx = new VSParsers.Syntaxer();
+                if (csd.snx.dg == null)
+                    csd.snx.dg = CodeEditorControl.dg;
+                ie.hc = csd.snx.ResolveAt(txt, Document.Text, FileName, vp);
+
+
+
+                ie.Content();// LoadErrors(ESC, vp);
 
                 CodeEditorControl.ParserDataChanged(this, new EventArgs());
 
@@ -2931,7 +2980,109 @@ namespace AIMS.Libraries.CodeEditor
             }));
         }
         public bool _runnings = false;
-        public async Task TypesWithDelay()
+
+        Stack<int> stack { get; set; }
+
+        void Parse(string c, int offset)
+        {
+            stack = new Stack<int>();
+            List<int> sc = new List<int>();
+            List<int> ec = new List<int>();
+            List<string> nc = new List<string>();
+            List<string> ns = new List<string>();
+
+            int p = 0;
+            do
+            {
+                p = c.IndexOf("(", p);
+                if (p >= 0)
+                {
+                    sc.Add(p);
+                    int i = p - 1;
+                    string name = "";
+                    while (i >= 0 && i < c.Length && c[i] != ')' && c[i] != '(' && !Char.IsWhiteSpace(c[i]))
+                    {
+                        name = name + c[i];
+                        i--;
+                    }
+                    nc.Add(string.Concat(Enumerable.Reverse(name)));
+                }
+                if (p < 0)
+                    break;
+                p++;
+            }
+            while (p >= 0 && p <= offset);
+            p = 0;
+            do
+            {
+
+                p = c.IndexOf(")", p);
+                if (p >= 0)
+                {
+                    ec.Add(p);
+                }
+                if (p < 0)
+                    break;
+                p++;
+            }
+            while (p >= 0 && p <= offset);
+            p = 0;
+            int r = 0;
+            int level = 0;
+            int current = 0;    
+            while ((p >= 0 || r >= 0 ) && p <= offset) 
+            {
+        //        p = c.IndexOf("(", p);
+        //        r = c.IndexOf(")", r);
+        //        if (p >= 0 || r>= 0)
+                {
+          //          p++;
+                    r = p;
+        //            level++;
+                    //while(p < offset && p < c.Length - 1)
+                    {
+                        p = c.IndexOf("(", p);
+                        r = c.IndexOf(")", r);
+                        if (p > 0)
+                        {
+                            //                if (p < r)
+                            
+                            if (p > r && r > 0)
+                            {
+                                stack.Pop();
+                              //  level = stack.Peek();
+                                p = r;
+                            } else
+                            {
+                                //level++;
+                                current++;
+                                stack.Push(current);
+                            }
+                            p++;
+                            r = p;
+                        }
+                        else if (r > 0)
+                        {
+                            r++;
+                            p = r;
+                            stack.Pop();
+
+                            //level = stack.Peek();
+                        }
+                        else break;
+                    }
+                }
+              
+                    
+               
+            }
+  
+        }
+
+
+        public List<Microsoft.CodeAnalysis.ISymbol> methods { get; set; }
+
+        public async Task TypesWithDelay(int KeyChar)
         {
             _runnings = true;
 
@@ -2946,234 +3097,144 @@ namespace AIMS.Libraries.CodeEditor
                 //
                 string w = Selection.GetCaretWord();
 
-                bool dotdeleted = false;
-
-                if (w == ".")
-                    _afterdot = true;
-                else
-                {   //
-                    string[] pw = Selection.GetPrevCaretWord();
-                    if (pw == null || pw[0] != ".")
+                {
+                    if (ins != null)
                     {
-                        if (_afterdot == true)
-                            dotdeleted = true;
-                        _afterdot = false;
+                        ins.Show();
+                        form.Show();
                     }
-                }
 
-                ins.afterdot = _afterdot;
-                
-                if (w == " ")
-                    ins.offset = 0;
-
-                double db;
-
-                bool isnumber = double.TryParse(w, out db);
-
-                if (dotdeleted == true)
-                {
-
-                }
-                //
-                Word ww = Selection.getCaretWord();
-                //
-                var ws = r.FormattedWords;
-                //
-                int cc = ws.IndexOf(ww);
-                //
-                string bb = r.PrevNonWs(ww);
-                //
-                bool hasdots = r.HasDots(ww);
-
-                //if (bb != "")
-                //{
-                //    //MessageBox.Show("Pattern detected - " + bb);
-
-                //    ArrayList T = csd.GetAllTypes();
-
-                //    foreach (IMember d in ins.LL)
-                //    {
-
-                //        if (d != null)
-
-                //            if (d.Name == bb)
-                //            {
-                //                //MessageBox.Show("Pattern has been found - " + d.Name);
-
-                //                IType rb = d.ReturnType;
-
-                //                foreach (ITypeDefinition dd in T)
-                //                {
-                //                    if (dd != null)
-                //                        if (dd.Name == rb.Name)
-                //                        {
-                //                            //MessageBox.Show("Pattern has been found of type " + rb.Name);
-
-                //                            ins.Find(dd.Name, offset, false);
-
-                //                            ins.resize(300, 400);
-
-                //                            return;
-                //                        }
-                //                }
-                //            }
-                //    }
-                //}
-
-                ins.v.SuspendLayout();
-
-                if ((w.Length < 2 && _afterdot == false && hasdots == false) || w == "." || w == "(" || dotdeleted)
-                {
-                    ins.ClearLocalItems();
-                    ins.cc.Clear();
-                    ins.CC.Clear();
-                    //
-                    var data = csd.GetCodeComplete(FileName, this.Document.Text, offset, p.X, p.Y);
-
-                    if (data != null)
-                        foreach (var d in data)
+                    var c = Selection.GetCaretWords();
+                    
+                    string cc = "";
+                    foreach(string s in c)
+                    {
+                        cc += s;
+                    }
+                    cc = cc.Trim();
+                    if (cc.EndsWith("="))
+                    {
+                        
+                        string[] nc = Selection.GetCaretString().Trim().Split("=".ToCharArray());
+                        if (nc.Length > 1)
                         {
-                            VSParsers.EntityCompletionData dd = d as VSParsers.EntityCompletionData;
-
-                            if (dd != null)
+                            List<Microsoft.CodeAnalysis.ISymbol> symbols = new List<Microsoft.CodeAnalysis.ISymbol>();
+                            string data = nc[nc.Length - 2].Trim();
+                            Microsoft.CodeAnalysis.ISymbol symbol = ins.GetSymbol(data);
+                            if (symbol is IParameterSymbol )
                             {
-                                int kind = 0;
-                                if (dd.Entity.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Method)
-                                    kind = 1;
-                                else if (dd.Entity.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Property)
-                                    kind = 3;
-                                else if (dd.Entity.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Field)
-                                    kind = 2;
-                                else if (dd.Entity.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Event)
-                                    kind = 4;
-                                else
-                                    kind = 5;
-
-                                ListViewItem v = new ListViewItem(dd.Entity.Name.ToString(), kind);
-                                v.ImageIndex = kind;
-                                ins.cc.Add(v);
-                                ins.CC.Add(v);
-                            }
-                            else
+                                IParameterSymbol ps = symbol as IParameterSymbol;
+                                MessageBox.Show("template = detected for " + symbol.Name + " of type " + ps.Type.Name);
+                                Selection.AppendToCaretString(" " + ps.Type.Name);
+                                symbols.Add(symbol);
+                            } else if (symbol is IPropertySymbol)
                             {
-                                VariableCompletionData dv = d as VariableCompletionData;
-
-                                if (dv != null)
-                                {
-                                    if (dv.Variable.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Variable || dv.Variable.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Parameter)
-                                    {
-                                        ListViewItem v = new ListViewItem(dv.Text.ToString(), 3);
-                                        v.ImageIndex = 3;
-                                        ins.cc.Add(v);
-                                        ins.CC.Add(v);
-                                    }
-                                }
-                                else
-                                {
-                                    ListViewItem v = new ListViewItem(d.DisplayText.ToString(), 0);
-                                    v.ImageIndex = 5;
-                                    ins.cc.Add(v);
-                                    ins.CC.Add(v);
-                                }
+                                IPropertySymbol ps = symbol as IPropertySymbol;
+                                MessageBox.Show("template = detected for " + symbol.Name + " of type " + ps.Type.Name);
+                                Selection.AppendToCaretString(" " + ps.Type.Name);
+                                symbols.Add(symbol);
                             }
+                            else if (symbol is IFieldSymbol)
+                            {
+                                IFieldSymbol ps = symbol as IFieldSymbol;
+                                MessageBox.Show("template = detected for " + symbol.Name + " of type " + ps.Type.Name);
+                                Selection.AppendToCaretString(" " + ps.Type.Name);
+                                symbols.Add(symbol);
+                            }
+                            else if(symbol != null)
+                                MessageBox.Show("template = detected for " + symbol.Name);
+
+                            ins.LoadFast(symbols);
+
+                            ins.SetVirtualMode();
+
+                            
+                            ins.AutoSize();
+
+                            ins.Refresh();
+
+                            return;
                         }
-
-                    if (dotdeleted)
-                    {
-                        ins.LoadTypes(csd);
-                        ins.ReloadTypes();
                     }
-                }
-                else
-                if ((w.Length < 2 && _afterdot == false && hasdots == false) || w == ".")
-                
-                {
-                    ins.cc.Clear();
-                    ins.CC.Clear();
+                    string[] words = cc.Trim().Split(".".ToCharArray()).Select(s => s).Where(t => t != "").ToArray();
 
-                    var datas = csd.GetCurrentMembers(FileName, this.Document.Text, offset, p.X, p.Y);
+                    string name = "";
 
-                    ins.v.Items.Clear();
+                    Parse(Selection.GetCaretString(),offset);
 
-                    if (datas.GetEnumerator().MoveNext() == false)
+                    if (cc.StartsWith(".this"))
+                        name = "this";
+                    else
+                    if (KeyChar == 8 && words.Length > 1)
                     {
-                        form.Hide();
                         ins.Hide();
-
-                        Intellisense rr = CodeEditorControl.IntErrors;
-
-                        ArrayList EE = csd.GetErrors();
-
-                        vp.ImportProjectTypes();
-
-                        ArrayList ES = csd.ResolveAt(new TextLocation(p.Y + 1, p.X), Document.Text, FileName, vp);
-
-                        EE.AddRange(ES);
-
-                        rr.LoadErrors(EE, vp);
-
-                        ins.v.ResumeLayout();
-
+                        form.Hide();
+                        if (dfs != null)
+                            dfs.Close();
                         return;
                     }
-
-                    foreach (var d in datas)
+                    else if (cc.StartsWith("."))
                     {
-                        ISymbol dd = d as ISymbol;
+                        name = words[0];
+                        if (/*name.Contains(")") && */name.Contains("("))
+                        {   string[] dd = name.Split("(".ToCharArray());
 
-                        if (dd != null)
-                        {
-                            int kind = 0;
-                            if (dd.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Method)
-                                kind = 1;
-                            else if (dd.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Property)
-                                kind = 3;
-                            else if (dd.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Field)
-                                kind = 2;
-                            else if (dd.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Event)
-                                kind = 4;
-                            else
-                                kind = 5;
-
-                            ListViewItem v = new ListViewItem(dd.Name.ToString(), kind);
-
-                            v.ImageIndex = kind;
-                            ins.cc.Add(v);
-                            ins.CC.Add(v);
+                            //name = "." + dd[0];
+                            name = dd[dd.Length - 1];//dd[0]
                         }
                     }
-
-                    ins.LL = datas;
-
-
-
-                    if (w != ".")
-                        ins.ReloadTypes();
-
-                    ins.Y = ins.cc.Count;
-                }
-
-                ins.v.ResumeLayout();
-
-                ins.SetVirtualMode();
-
-
-
-                //if (w.Length > 2)
-                ins.Find(w, offset, hasdots);
-
-                ins.resize(400, 207);
-
-                if (w.Length <= 1)
-                {
+                    else if (cc.StartsWith("("))
+                    {
+                        name = words[0];
+                        if (name.Contains("("))
+                            if (name.Contains(")"))
+                            {
+                                string[] dd = name.Split(",".ToCharArray());
+                                if (Selection.IsCaretInWord())
+                                    name = "";
+                            }
+                    }
+                    else if (cc.StartsWith(")"))
+                    {
+                        name = words[0];
+                        if (name.Contains("("))
+                            if (name.Contains(")"))
+                            {
+                                if (Selection.IsCaretInWord())
+                                    name = "";
+                            }
+                    }
                     Point pp = Selection.GetCursor();
-
                     pp.X = pp.X * ActiveViewControl.View.CharWidth;
-
                     pp.Y = (ActiveViewControl.Document[p.Y].VisibleIndex - ActiveViewControl.View.FirstVisibleRow + 1) * ActiveViewControl.View.RowHeight + 3;
-
                     form.Location = this.PointToScreen(pp);
+                    List<Microsoft.CodeAnalysis.ISymbol> sn = ins.LoadProjectTypes(vp, FileName, Document.Text, offset, name, cc);
+                    if (name.StartsWith("("))
+                    {
+                        ins.Hide();
+                        form.Hide();
+                        LoadDefinition(sn, this.PointToScreen(pp));
+                        methods = sn;
+                        return;
+                    }
+                    else if ( name.StartsWith(")"))
+                    {
+                        ins.Hide();
+                        form.Hide();
+                        if(dfs != null)
+                        dfs.Hide();
+                        return;
+                    }
+                    ins.SetVirtualMode();
+
+                    ins.FindSimilarWords(w);
+
+                    ins.AutoSize();
+
+                    ins.Refresh();
+
                 }
+
 
 
                 if (form.Visible == true)
@@ -3183,6 +3244,27 @@ namespace AIMS.Libraries.CodeEditor
 
                 _runnings = false;
             }));
+        }
+
+        private void CodeEditorControl_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        DefinitionForm df { get; set; }
+        void LoadDefinition(List<Microsoft.CodeAnalysis.ISymbol> sn, Point pp)
+        {
+            if (dfs != null)
+                dfs.Close();
+            df = new DefinitionForm();
+            df.control = this;
+            df.SetTopMost();
+            df.LoadSymbols(sn);
+            dfs = df;
+            df.Show();
+            this.Focus();
+            df.Location = pp;
+            df.Refresh();
         }
 
         public static TopForm form { get; set; }
@@ -3198,59 +3280,43 @@ namespace AIMS.Libraries.CodeEditor
                 ActiveViewControl.InfoTip.Hide();
         }
 
-        public async Task<int> FindWord()
+        public async Task<int> FindWord(int KeyChar)
         {
             if (csd == null)
             {
                 csd = vp.CSParsers();
             }
-
             _shouldwait++;
-
-            if (ins == null)
+            if (ins == null || ins.cec != this)
             {
-                ins = new PanelIns();
+                ins = new PanelIns(vp);
+                ins.Hide();
                 ins.cec = this;
 
-                ins.LoadTypes(csd);
+                //ins.FastLoader(vp);
 
-                if (form == null)
+                //if (form == null)
                 {
                     form = new TopForm();
+                    form.Hide();
                     form.Load(ins);
                     ins.form = form;
-  
                 }
-
                 ins.Hide();
                 form.Hide();
   
-                this._ActiveView.Refresh();
             }
-
-
+            
             Point p = Selection.GetCursor();
-
-  
+            
             if (txt != null)
                 if (p.Y + 1 != txt.Line)
                     _runnings = false;
 
             txt = new TextLocation(p.Y + 1, p.X);
-
-
-            if (_runnings == false)
-            {
-                TypesWithDelay();
-            }
-
-
-            if (_running == false)
-            {
-                SendWithDelay();
-            }
-
-  
+         
+           TypesWithDelay(KeyChar);
+         
             return 1;
         }
 
@@ -3647,192 +3713,193 @@ namespace AIMS.Libraries.CodeEditor
 
         private void InitializeComponent()
         {
-            _components = new System.ComponentModel.Container();
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CodeEditorControl));
-            _GutterIcons = new System.Windows.Forms.ImageList(_components);
-            _AutoListIcons = new System.Windows.Forms.ImageList(_components);
-            _parseTimer = new AIMS.Libraries.CodeEditor.Core.Timers.WeakTimer(_components);
+            this._GutterIcons = new System.Windows.Forms.ImageList(this.components);
+            this._AutoListIcons = new System.Windows.Forms.ImageList(this.components);
+            this._parseTimer = new AIMS.Libraries.CodeEditor.Core.Timers.WeakTimer(this.components);
             this.SuspendLayout();
             // 
             // _GutterIcons
             // 
-            _GutterIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("_GutterIcons.ImageStream")));
-            _GutterIcons.TransparentColor = System.Drawing.Color.Fuchsia;
-            _GutterIcons.Images.SetKeyName(0, "break_point.png");
-            _GutterIcons.Images.SetKeyName(1, "BookMarkForGuttor.bmp");
-            _GutterIcons.Images.SetKeyName(2, "");
-            _GutterIcons.Images.SetKeyName(3, "");
-            _GutterIcons.Images.SetKeyName(4, "");
-            _GutterIcons.Images.SetKeyName(5, "");
-            _GutterIcons.Images.SetKeyName(6, "");
-            _GutterIcons.Images.SetKeyName(7, "");
-            _GutterIcons.Images.SetKeyName(8, "");
-            _GutterIcons.Images.SetKeyName(9, "");
-            _GutterIcons.Images.SetKeyName(10, "");
-            _GutterIcons.Images.SetKeyName(11, "");
-            _GutterIcons.Images.SetKeyName(12, "");
+            this._GutterIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("_GutterIcons.ImageStream")));
+            this._GutterIcons.TransparentColor = System.Drawing.Color.Fuchsia;
+            this._GutterIcons.Images.SetKeyName(0, "break_point.png");
+            this._GutterIcons.Images.SetKeyName(1, "BookMarkForGuttor.bmp");
+            this._GutterIcons.Images.SetKeyName(2, "");
+            this._GutterIcons.Images.SetKeyName(3, "");
+            this._GutterIcons.Images.SetKeyName(4, "");
+            this._GutterIcons.Images.SetKeyName(5, "");
+            this._GutterIcons.Images.SetKeyName(6, "");
+            this._GutterIcons.Images.SetKeyName(7, "");
+            this._GutterIcons.Images.SetKeyName(8, "");
+            this._GutterIcons.Images.SetKeyName(9, "");
+            this._GutterIcons.Images.SetKeyName(10, "");
+            this._GutterIcons.Images.SetKeyName(11, "");
+            this._GutterIcons.Images.SetKeyName(12, "");
             // 
             // _AutoListIcons
             // 
-            _AutoListIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("_AutoListIcons.ImageStream")));
-            _AutoListIcons.TransparentColor = System.Drawing.Color.Magenta;
-            _AutoListIcons.Images.SetKeyName(0, "VSObject_Class.bmp");
-            _AutoListIcons.Images.SetKeyName(1, "VSObject_Class_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(2, "VSObject_Class_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(3, "VSObject_Class_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(4, "VSObject_Class_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(5, "VSObject_Class_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(6, "VSObject_Constant.bmp");
-            _AutoListIcons.Images.SetKeyName(7, "VSObject_Constant_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(8, "VSObject_Constant_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(9, "VSObject_Constant_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(10, "VSObject_Constant_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(11, "VSObject_Constant_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(12, "VSObject_Delegate.bmp");
-            _AutoListIcons.Images.SetKeyName(13, "VSObject_Delegate_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(14, "VSObject_Delegate_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(15, "VSObject_Delegate_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(16, "VSObject_Delegate_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(17, "VSObject_Delegate_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(18, "VSObject_Enum.bmp");
-            _AutoListIcons.Images.SetKeyName(19, "VSObject_Enum_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(20, "VSObject_Enum_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(21, "VSObject_Enum_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(22, "VSObject_Enum_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(23, "VSObject_Enum_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(24, "VSObject_EnumItem.bmp");
-            _AutoListIcons.Images.SetKeyName(25, "VSObject_EnumItem_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(26, "VSObject_EnumItem_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(27, "VSObject_EnumItem_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(28, "VSObject_EnumItem_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(29, "VSObject_EnumItem_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(30, "VSObject_Event.bmp");
-            _AutoListIcons.Images.SetKeyName(31, "VSObject_Event_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(32, "VSObject_Event_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(33, "VSObject_Event_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(34, "VSObject_Event_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(35, "VSObject_Event_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(36, "VSObject_Exception.bmp");
-            _AutoListIcons.Images.SetKeyName(37, "VSObject_Exception_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(38, "VSObject_Exception_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(39, "VSObject_Exception_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(40, "VSObject_Exception_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(41, "VSObject_Exception_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(42, "VSObject_Field.bmp");
-            _AutoListIcons.Images.SetKeyName(43, "VSObject_Field_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(44, "VSObject_Field_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(45, "VSObject_Field_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(46, "VSObject_Field_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(47, "VSObject_Field_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(48, "VSObject_Interface.bmp");
-            _AutoListIcons.Images.SetKeyName(49, "VSObject_Interface_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(50, "VSObject_Interface_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(51, "VSObject_Interface_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(52, "VSObject_Interface_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(53, "VSObject_Interface_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(54, "VSObject_Macro.bmp");
-            _AutoListIcons.Images.SetKeyName(55, "VSObject_Macro_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(56, "VSObject_Macro_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(57, "VSObject_Macro_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(58, "VSObject_Macro_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(59, "VSObject_Macro_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(60, "VSObject_Map.bmp");
-            _AutoListIcons.Images.SetKeyName(61, "VSObject_Map_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(62, "VSObject_Map_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(63, "VSObject_Map_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(64, "VSObject_Map_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(65, "VSObject_Map_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(66, "VSObject_MapItem.bmp");
-            _AutoListIcons.Images.SetKeyName(67, "VSObject_MapItem_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(68, "VSObject_MapItem_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(69, "VSObject_MapItem_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(70, "VSObject_MapItem_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(71, "VSObject_MapItem_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(72, "VSObject_Method.bmp");
-            _AutoListIcons.Images.SetKeyName(73, "VSObject_Method_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(74, "VSObject_Method_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(75, "VSObject_Method_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(76, "VSObject_Method_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(77, "VSObject_Method_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(78, "VSObject_MethodOverload.bmp");
-            _AutoListIcons.Images.SetKeyName(79, "VSObject_MethodOverload_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(80, "VSObject_MethodOverload_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(81, "VSObject_MethodOverload_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(82, "VSObject_MethodOverload_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(83, "VSObject_MethodOverload_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(84, "VSObject_Module.bmp");
-            _AutoListIcons.Images.SetKeyName(85, "VSObject_Module_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(86, "VSObject_Module_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(87, "VSObject_Module_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(88, "VSObject_Module_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(89, "VSObject_Module_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(90, "VSObject_Namespace.bmp");
-            _AutoListIcons.Images.SetKeyName(91, "VSObject_Namespace_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(92, "VSObject_Namespace_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(93, "VSObject_Namespace_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(94, "VSObject_Namespace_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(95, "VSObject_Namespace_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(96, "VSObject_Object.bmp");
-            _AutoListIcons.Images.SetKeyName(97, "VSObject_Object_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(98, "VSObject_Object_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(99, "VSObject_Object_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(100, "VSObject_Object_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(101, "VSObject_Object_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(102, "VSObject_Operator.bmp");
-            _AutoListIcons.Images.SetKeyName(103, "VSObject_Operator_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(104, "VSObject_Operator_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(105, "VSObject_Operator_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(106, "VSObject_Operator_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(107, "VSObject_Operator_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(108, "VSObject_Properties.bmp");
-            _AutoListIcons.Images.SetKeyName(109, "VSObject_Properties_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(110, "VSObject_Properties_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(111, "VSObject_Properties_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(112, "VSObject_Properties_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(113, "VSObject_Properties_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(114, "VSObject_Structure.bmp");
-            _AutoListIcons.Images.SetKeyName(115, "VSObject_Structure_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(116, "VSObject_Structure_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(117, "VSObject_Structure_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(118, "VSObject_Structure_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(119, "VSObject_Structure_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(120, "VSObject_Template.bmp");
-            _AutoListIcons.Images.SetKeyName(121, "VSObject_Template_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(122, "VSObject_Template_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(123, "VSObject_Template_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(124, "VSObject_Template_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(125, "VSObject_Template_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(126, "VSObject_Type.bmp");
-            _AutoListIcons.Images.SetKeyName(127, "VSObject_Type_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(128, "VSObject_Type_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(129, "VSObject_Type_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(130, "VSObject_Type_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(131, "VSObject_Type_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(132, "VSObject_TypeDef.bmp");
-            _AutoListIcons.Images.SetKeyName(133, "VSObject_TypeDef_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(134, "VSObject_TypeDef_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(135, "VSObject_TypeDef_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(136, "VSObject_TypeDef_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(137, "VSObject_TypeDef_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(138, "VSObject_Union.bmp");
-            _AutoListIcons.Images.SetKeyName(139, "VSObject_Union_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(140, "VSObject_Union_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(141, "VSObject_Union_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(142, "VSObject_Union_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(143, "VSObject_Union_Shortcut.bmp");
-            _AutoListIcons.Images.SetKeyName(144, "VSObject_ValueType.bmp");
-            _AutoListIcons.Images.SetKeyName(145, "VSObject_ValueType_Friend.bmp");
-            _AutoListIcons.Images.SetKeyName(146, "VSObject_ValueType_Private.bmp");
-            _AutoListIcons.Images.SetKeyName(147, "VSObject_ValueType_Protected.bmp");
-            _AutoListIcons.Images.SetKeyName(148, "VSObject_ValueType_Sealed.bmp");
-            _AutoListIcons.Images.SetKeyName(149, "VSObject_ValueType_Shortcut.bmp");
+            this._AutoListIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("_AutoListIcons.ImageStream")));
+            this._AutoListIcons.TransparentColor = System.Drawing.Color.Magenta;
+            this._AutoListIcons.Images.SetKeyName(0, "VSObject_Class.bmp");
+            this._AutoListIcons.Images.SetKeyName(1, "VSObject_Class_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(2, "VSObject_Class_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(3, "VSObject_Class_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(4, "VSObject_Class_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(5, "VSObject_Class_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(6, "VSObject_Constant.bmp");
+            this._AutoListIcons.Images.SetKeyName(7, "VSObject_Constant_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(8, "VSObject_Constant_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(9, "VSObject_Constant_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(10, "VSObject_Constant_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(11, "VSObject_Constant_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(12, "VSObject_Delegate.bmp");
+            this._AutoListIcons.Images.SetKeyName(13, "VSObject_Delegate_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(14, "VSObject_Delegate_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(15, "VSObject_Delegate_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(16, "VSObject_Delegate_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(17, "VSObject_Delegate_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(18, "VSObject_Enum.bmp");
+            this._AutoListIcons.Images.SetKeyName(19, "VSObject_Enum_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(20, "VSObject_Enum_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(21, "VSObject_Enum_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(22, "VSObject_Enum_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(23, "VSObject_Enum_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(24, "VSObject_EnumItem.bmp");
+            this._AutoListIcons.Images.SetKeyName(25, "VSObject_EnumItem_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(26, "VSObject_EnumItem_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(27, "VSObject_EnumItem_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(28, "VSObject_EnumItem_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(29, "VSObject_EnumItem_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(30, "VSObject_Event.bmp");
+            this._AutoListIcons.Images.SetKeyName(31, "VSObject_Event_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(32, "VSObject_Event_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(33, "VSObject_Event_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(34, "VSObject_Event_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(35, "VSObject_Event_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(36, "VSObject_Exception.bmp");
+            this._AutoListIcons.Images.SetKeyName(37, "VSObject_Exception_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(38, "VSObject_Exception_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(39, "VSObject_Exception_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(40, "VSObject_Exception_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(41, "VSObject_Exception_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(42, "VSObject_Field.bmp");
+            this._AutoListIcons.Images.SetKeyName(43, "VSObject_Field_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(44, "VSObject_Field_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(45, "VSObject_Field_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(46, "VSObject_Field_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(47, "VSObject_Field_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(48, "VSObject_Interface.bmp");
+            this._AutoListIcons.Images.SetKeyName(49, "VSObject_Interface_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(50, "VSObject_Interface_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(51, "VSObject_Interface_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(52, "VSObject_Interface_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(53, "VSObject_Interface_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(54, "VSObject_Macro.bmp");
+            this._AutoListIcons.Images.SetKeyName(55, "VSObject_Macro_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(56, "VSObject_Macro_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(57, "VSObject_Macro_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(58, "VSObject_Macro_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(59, "VSObject_Macro_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(60, "VSObject_Map.bmp");
+            this._AutoListIcons.Images.SetKeyName(61, "VSObject_Map_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(62, "VSObject_Map_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(63, "VSObject_Map_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(64, "VSObject_Map_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(65, "VSObject_Map_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(66, "VSObject_MapItem.bmp");
+            this._AutoListIcons.Images.SetKeyName(67, "VSObject_MapItem_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(68, "VSObject_MapItem_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(69, "VSObject_MapItem_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(70, "VSObject_MapItem_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(71, "VSObject_MapItem_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(72, "VSObject_Method.bmp");
+            this._AutoListIcons.Images.SetKeyName(73, "VSObject_Method_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(74, "VSObject_Method_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(75, "VSObject_Method_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(76, "VSObject_Method_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(77, "VSObject_Method_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(78, "VSObject_MethodOverload.bmp");
+            this._AutoListIcons.Images.SetKeyName(79, "VSObject_MethodOverload_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(80, "VSObject_MethodOverload_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(81, "VSObject_MethodOverload_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(82, "VSObject_MethodOverload_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(83, "VSObject_MethodOverload_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(84, "VSObject_Module.bmp");
+            this._AutoListIcons.Images.SetKeyName(85, "VSObject_Module_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(86, "VSObject_Module_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(87, "VSObject_Module_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(88, "VSObject_Module_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(89, "VSObject_Module_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(90, "VSObject_Namespace.bmp");
+            this._AutoListIcons.Images.SetKeyName(91, "VSObject_Namespace_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(92, "VSObject_Namespace_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(93, "VSObject_Namespace_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(94, "VSObject_Namespace_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(95, "VSObject_Namespace_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(96, "VSObject_Object.bmp");
+            this._AutoListIcons.Images.SetKeyName(97, "VSObject_Object_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(98, "VSObject_Object_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(99, "VSObject_Object_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(100, "VSObject_Object_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(101, "VSObject_Object_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(102, "VSObject_Operator.bmp");
+            this._AutoListIcons.Images.SetKeyName(103, "VSObject_Operator_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(104, "VSObject_Operator_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(105, "VSObject_Operator_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(106, "VSObject_Operator_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(107, "VSObject_Operator_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(108, "VSObject_Properties.bmp");
+            this._AutoListIcons.Images.SetKeyName(109, "VSObject_Properties_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(110, "VSObject_Properties_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(111, "VSObject_Properties_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(112, "VSObject_Properties_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(113, "VSObject_Properties_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(114, "VSObject_Structure.bmp");
+            this._AutoListIcons.Images.SetKeyName(115, "VSObject_Structure_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(116, "VSObject_Structure_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(117, "VSObject_Structure_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(118, "VSObject_Structure_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(119, "VSObject_Structure_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(120, "VSObject_Template.bmp");
+            this._AutoListIcons.Images.SetKeyName(121, "VSObject_Template_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(122, "VSObject_Template_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(123, "VSObject_Template_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(124, "VSObject_Template_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(125, "VSObject_Template_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(126, "VSObject_Type.bmp");
+            this._AutoListIcons.Images.SetKeyName(127, "VSObject_Type_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(128, "VSObject_Type_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(129, "VSObject_Type_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(130, "VSObject_Type_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(131, "VSObject_Type_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(132, "VSObject_TypeDef.bmp");
+            this._AutoListIcons.Images.SetKeyName(133, "VSObject_TypeDef_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(134, "VSObject_TypeDef_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(135, "VSObject_TypeDef_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(136, "VSObject_TypeDef_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(137, "VSObject_TypeDef_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(138, "VSObject_Union.bmp");
+            this._AutoListIcons.Images.SetKeyName(139, "VSObject_Union_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(140, "VSObject_Union_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(141, "VSObject_Union_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(142, "VSObject_Union_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(143, "VSObject_Union_Shortcut.bmp");
+            this._AutoListIcons.Images.SetKeyName(144, "VSObject_ValueType.bmp");
+            this._AutoListIcons.Images.SetKeyName(145, "VSObject_ValueType_Friend.bmp");
+            this._AutoListIcons.Images.SetKeyName(146, "VSObject_ValueType_Private.bmp");
+            this._AutoListIcons.Images.SetKeyName(147, "VSObject_ValueType_Protected.bmp");
+            this._AutoListIcons.Images.SetKeyName(148, "VSObject_ValueType_Sealed.bmp");
+            this._AutoListIcons.Images.SetKeyName(149, "VSObject_ValueType_Shortcut.bmp");
             // 
-            // ParseTimer
+            // _parseTimer
             // 
-            _parseTimer.Enabled = true;
-            _parseTimer.Interval = 1;
-            _parseTimer.Tick += new System.EventHandler(this.ParseTimer_Tick);
+            this._parseTimer.Enabled = true;
+            this._parseTimer.Interval = 1;
+            this._parseTimer.Tick += new System.EventHandler(this.ParseTimer_Tick);
             this.ResumeLayout(false);
+
         }
 
 
@@ -3942,7 +4009,11 @@ namespace AIMS.Libraries.CodeEditor
 
         public void AttachDocument(SyntaxDocument document)
         {
-            //_Document=document;
+
+            if (_Document != null)
+                MessageBox.Show("New document is being loaded..");
+
+            _Document=document;
 
             if (_Document != null)
             {
@@ -4069,15 +4140,15 @@ namespace AIMS.Libraries.CodeEditor
                 if (_ActiveView != null)
                     _ActiveView.Focus();
             }
-            //// WM_SYSCOMMAND
-            //if (m.Msg == 0x0112)
-            //{
-            //    if (m.WParam == new IntPtr(0xF030) // Maximize event - SC_MAXIMIZE from Winuser.h
-            //        || m.WParam == new IntPtr(0xF120)) // Restore event - SC_RESTORE from Winuser.h
-            //    {
-            //        MessageBox.Show("maximized intercepted");
-            //    }
-            //}
+            // WM_SYSCOMMAND
+            if (m.Msg == 0x0112)
+            {
+                if (m.WParam == new IntPtr(0xF030) // Maximize event - SC_MAXIMIZE from Winuser.h
+                    || m.WParam == new IntPtr(0xF120)) // Restore event - SC_RESTORE from Winuser.h
+                {
+                    ActiveViewControl.HideAndRedraw(); //; MessageBox.Show("maximized intercepted");
+                }
+            }
         }
 
         static public Settings settings { get; set; }
@@ -4140,22 +4211,22 @@ namespace AIMS.Libraries.CodeEditor
 
             Caret.Position.X += text.Length;
 
-            //int c = Selection.GetCursorLine();
+            int c = Selection.GetCursorLine();
 
-            //string w = Selection.GetCaretWord();
+            string w = Selection.GetCaretWord();
 
-            //if (w != "")
-            //{
+            if (w != "")
+            {
 
-            //    Row r = Document[c];
+                Row r = Document[c];
 
-            //    string s = r.Text;
+                string s = r.Text;
+                
+                s = s.Replace(w, text);
 
-            //    s = s.Replace(w, "." + text);
+                r.SetText(s);
 
-            //    r.SetText(s);
-
-            //}
+            }
         }
     }
 
@@ -4551,6 +4622,38 @@ namespace AIMS.Libraries.CodeEditor
         }
     }
 
+    public class SortComparer : IComparer<ListViewItem>
+    {
+
+        // Calls CaseInsensitiveComparer.Compare with the parameters reversed.
+        int IComparer<ListViewItem>.Compare(ListViewItem x, ListViewItem y)
+        {
+            ListViewItem v0 = x as ListViewItem;
+            ListViewItem v1 = y as ListViewItem;
+            string s0 = v0.Text;
+            string s1 = v1.Text;
+            return ((new CaseInsensitiveComparer()).Compare(s0, s1));
+        }
+
+    }
+    public class EqualityComparers : IEqualityComparer<Object>
+    {
+        new public bool Equals(Object x, Object y)
+        {
+            ListViewItem v0 = x as ListViewItem;
+            ListViewItem v1 = y as ListViewItem;
+            string s0 = v0.Text;
+            string s1 = v1.Text;
+            return s0.Equals(s1); 
+        }
+
+        public int GetHashCode(Object obj)
+        {
+            return obj.GetHashCode();
+        }
+    
+
+    }
     public class PanelIns : Panel
     {
         [DllImport("user32.dll")]
@@ -4578,7 +4681,7 @@ namespace AIMS.Libraries.CodeEditor
         public Label label { get; set; }
 
 
-        public ArrayList cc { get; set; }
+        public List<ListViewItem> cc { get; set; }
 
         public ImageList img { get; set; }
 
@@ -4588,7 +4691,7 @@ namespace AIMS.Libraries.CodeEditor
 
         public ArrayList LL { get; set; }
 
-        public PanelIns() : base()
+        public PanelIns(VSProject vp) : base()
         {
             SuspendLayout();
 
@@ -4598,7 +4701,7 @@ namespace AIMS.Libraries.CodeEditor
 
             v = new ListView();
 
-            v.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
+            v.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right/* | AnchorStyles.Bottom*/;
 
             v.BackColor = SystemColors.Control;
 
@@ -4609,9 +4712,7 @@ namespace AIMS.Libraries.CodeEditor
             v.Location = new Point(0, 0);
 
             v.FullRowSelect = true;
-
-
-
+            
             this.Controls.Add(v);
 
             this.BorderStyle = BorderStyle.None;
@@ -4667,50 +4768,98 @@ namespace AIMS.Libraries.CodeEditor
             v.RetrieveVirtualItem += V_RetrieveVirtualItem;
 
             ResumeLayout();
-
-
-            //v.KeyDown += V_KeyDown;
-
+            
             Init();
 
-            ClearLocalItems();
-
-
-
+//            ClearLocalItems();
+            
             HideHorizontalScrollBar();
 
-            SetTopMost();
+//            SetTopMost();
+
+            if (vp == null)
+                return;
+
+            symbols = vp.vs.GetProjectTypes(vp.FileName);
+
+            LoadSymbols(ToList(symbols));
+
+            S = null;
+        }
+        List<INamespaceOrTypeSymbol> symbols { get; set; }
+        new public void AutoSize()
+        {
+            int h = form.Height;
+
+            if (T == null || T.Count <= 0)
+                return;
+
+            ListViewItem b = T[0] as ListViewItem;
+
+            int hh = 17;
+
+            int itemHeight = hh;
+
+            int number = 11;
+            
+           
+
+            if (number > cc.Count)
+                number = cc.Count;
+
+            if (number > 11)
+                number = 11;
+
+            if (cc.Count > number)
+                HandleScrollbarVisibility(true);
+            else
+                HandleScrollbarVisibility(false);
+
+            int Height = number * itemHeight;
+
+            v.Height = Height;
+
+            this.Height = Height;
+
+            form.Height = Height;
+
+            
+
+            
         }
 
         private void V_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
         {
             int i = e.ItemIndex;
-
+            
             if (i < 0)
                 return;
-
+            if (cc.Count <= 0)
+                return;
             if (i + _topitem >= cc.Count)
                 e.Item = cc[cc.Count - 1] as ListViewItem;
             else
                 e.Item = cc[i + _topitem] as ListViewItem;
         }
 
-        public ArrayList LI { get; set; }
+        //public ArrayList LI { get; set; }
 
-        public void ClearLocalItems()
-        {
-            if (cc == null)
-                cc = new ArrayList();
+        //public void ClearLocalItems()
+        //{
+        //    if (cc == null)
+        //        cc = new List<ListViewItem>();
 
-            CC = new ArrayList();
+        //    CC = new ArrayList();
 
-            cc.Clear();
-        }
+        //    cc.Clear();
 
-        public void SetTopMost()
-        {
-            //       SetWindowPos(this.Handle, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW);
-        }
+           
+        //}
+
+        //public void SetTopMost()
+        //{
+        //    //       SetWindowPos(this.Handle, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW);
+        //}
 
         private ArrayList T { get; set; }
 
@@ -4721,44 +4870,138 @@ namespace AIMS.Libraries.CodeEditor
 
             T = new ArrayList();
 
-            ArrayList S = cs.GetAllTypes();
+//            ArrayList S = cs.GetAllTypes();
 
-            foreach (ITypeDefinition d in S)
+
+        }
+
+        public List<Microsoft.CodeAnalysis.ISymbol> GetCodeCompletion(VSProject vp, string filename, string content, int offset, string name, string names)
+        {
+            return vp.vs.GetCodeCompletion(vp, filename, content,offset, name, names);
+        }
+
+        Dictionary<string, Microsoft.CodeAnalysis.INamedTypeSymbol> Dict { get; set; }
+
+        List<Microsoft.CodeAnalysis.ISymbol> sns { get; set; }
+
+        List<Microsoft.CodeAnalysis.ISymbol> ToList(List<INamespaceOrTypeSymbol> s)
+        {
+            List<Microsoft.CodeAnalysis.ISymbol> c = new List<Microsoft.CodeAnalysis.ISymbol>();
+            foreach (INamespaceOrTypeSymbol d in s)
+                c.Add(d);
+            return c;
+
+        }
+
+        public List<Microsoft.CodeAnalysis.ISymbol> LoadProjectTypes(VSProject vp, string filename, string content, int offset, string name, string names)
+        {
+            List<Microsoft.CodeAnalysis.ISymbol> sn = GetCodeCompletion(vp, filename, content, offset, name, names);
+            sn.Remove(sn.Find(x => x.Name == ".ctor"));
+           
+            if (name.StartsWith("("))
+                return sn;
+            v.Items.Clear();
+           
+                        
+            LoadSymbols(sn);
+
+            if (names.Contains("."))
+                ReloadTypes(false);
+            else ReloadTypes(true);
+
+            sns = sn;
+
+            return sn;
+        }
+        public List<Microsoft.CodeAnalysis.ISymbol> LoadFast(List<Microsoft.CodeAnalysis.ISymbol> sn)
+        {
+            v.Items.Clear();
+            
+            LoadSymbols(sn);
+
+            ReloadTypes(false);
+
+            sns = sn;
+
+            return sn;
+        }
+        public Microsoft.CodeAnalysis.ISymbol GetSymbol(string data)
+        {
+            Microsoft.CodeAnalysis.ISymbol symbol = sns.Select(s => s).Where(t => t.Name == data).FirstOrDefault();
+
+            return symbol;
+        }
+
+        public void FastLoader(VSProject vp)
+        {
+            List<Microsoft.CodeAnalysis.INamespaceOrTypeSymbol> sn = vp.vs.GetAllTypes(vp.FileName);
+            sn.Remove(sn.Find(x => x.Name == ".ctor"));
+
+          
+            v.Items.Clear();
+
+            LoadSymbols(ToList(sn));
+
+            ReloadTypes(true);
+            
+            
+        }
+        ArrayList S { get; set; }
+
+        ArrayList E { get; set; }
+
+     void LoadSymbols(List<Microsoft.CodeAnalysis.ISymbol> sn, bool alls = false)
+        {
+
+            if (S != null)
+                foreach (ListViewItem s in S)
+                    T.Remove(s);
+            
+            S = new ArrayList();
+
+            if (T == null)
+                T = new ArrayList();
+
+            if(E == null)
             {
-                ISymbol dd = d as ISymbol;
+                E = new ArrayList();
+                E.Add(new ListViewItem("this"));
+            }
+
+            foreach (Microsoft.CodeAnalysis.ISymbol dd in sn)
+            {
 
                 if (dd != null)
                 {
                     ListViewItem v;
-
-
                     int kind = 0;
 
-                    if (dd.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Method)
-                        kind = 0;
-                    else if (dd.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Property)
+                    if (dd.Kind == Microsoft.CodeAnalysis.SymbolKind.Method)
+                        kind = 1;
+                    else if (dd.Kind == Microsoft.CodeAnalysis.SymbolKind.Property)
                         kind = 3;
-                    else if (dd.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Field)
+                    else if (dd.Kind == Microsoft.CodeAnalysis.SymbolKind.Field)
                         kind = 2;
-                    else if (dd.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Event)
+                    else if (dd.Kind == Microsoft.CodeAnalysis.SymbolKind.Event)
                         kind = 4;
-                    else if (dd.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Variable)
+                    else if (dd.Kind == Microsoft.CodeAnalysis.SymbolKind.Local)
                         kind = 2;
-                    else if (dd.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.TypeDefinition)
+                    else if (dd.Kind == Microsoft.CodeAnalysis.SymbolKind.NamedType)
                         kind = 0;
-                    else if (dd.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Parameter)
+                    else if (dd.Kind == Microsoft.CodeAnalysis.SymbolKind.Parameter)
                         kind = 2;
+                    else if (dd.Kind == Microsoft.CodeAnalysis.SymbolKind.Namespace)
+                        kind = 7;
                     else
                         kind = 5;
-
                     v = new ListViewItem(dd.Name);
-
                     v.ImageIndex = kind;
-
                     T.Add(v);
+                    S.Add(v);
+                    
                 }
-            }
-            //ReloadTypes();
+          }
+  
         }
 
         public void SetVirtualMode()
@@ -4774,26 +5017,89 @@ namespace AIMS.Libraries.CodeEditor
         }
 
 
-        public void ReloadTypes()
+        public void ReloadTypes(bool alls = true)
         {
-            if (T == null)
-                return;
+ 
             SuspendLayout();
-
-            foreach (ListViewItem b in T)
+            cc = new List<ListViewItem>();
+            //T.Sort(new SortComparer());
+            if (alls == true)
             {
-                CC.Add(b);
-                cc.Add(b);
-                //v.Items.Add(b);
-                //ListViewItem bb = v.Items[v.Items.Count - 1];
-                //bb.ImageKey = b.ImageKey;
 
+                foreach (ListViewItem b in T)
+                    cc.Add(b);
+                int i = 0;
+                
+                
+                foreach (ListViewItem c in E)
+                  if (!cc.Contains(c))
+                        cc.Add(c);
+                cc.Sort(new SortComparer());
+                while(i < cc.Count - 1)
+                {
+                    ListViewItem v0 = cc[i] as ListViewItem;
+                    ListViewItem v1 = cc[i+1] as ListViewItem;
+                    if (v0.Text == v1.Text)
+                        cc.Remove(v0);
+                    else i++;
+                }
+
+                i = 0;
+                foreach (ListViewItem c in cc)
+                    c.Tag = i++;
+
+                //foreach (ListViewItem b in T)
+                //{
+                //    b.Tag = i++;
+                //    cc.Add(b);
+
+                //}
+                //foreach (ListViewItem c in E)
+                //{
+                //    if (!cc.Contains(c))
+                //        cc.Add(c);
+                //    c.Tag = i++;
+                //}
             }
+            else
+            {
+                int i = 0;
+                //cc.AddRange(S.ToArray());
+                foreach (ListViewItem b in S)
+                    cc.Add(b);
+                foreach (ListViewItem c in E)
+                    if (!cc.Contains(c))
+                        cc.Add(c);
+                cc.Sort(new SortComparer());
+                foreach (ListViewItem c in cc)
+                    c.Tag = i++;
+                //int i = 0;
+                //foreach (ListViewItem b in S)
+                //{
+                //    b.Tag = i++;
+                //    cc.Add(b);
+                //}
+                //foreach (ListViewItem c in E)
+                //{
+                //    if (!cc.Contains(c))
+                //        cc.Add(c);
+                //    c.Tag = i++;
+                //}
+            }
+            //foreach (ListViewItem c in E)
+            //{
+            //    if (!cc.Contains(c))
+            //        cc.Add(c);
+            //    c.Tag = cc.Count - 1;
+            //}
+            
             ResumeLayout();
         }
 
         public void SendKeys(int c)
         {
+            
+
             if (this.Visible == false)
                 return;
 
@@ -4809,14 +5115,23 @@ namespace AIMS.Libraries.CodeEditor
 
                 i = v.SelectedIndices[0];
 
-
-
+           
             bool up = false;
 
             if (c == (int)Keys.Down)
+            {
+                //if (i >= v.Items.Count - 1)
+                if (i >= cc.Count - 1)
+                    return;
+
                 i++;
+            }
             else
             {
+                if(i == 0)
+                if(cc.Count > 0)
+                if( v.Items[0] == cc[0])
+                    return;
                 i--;
                 up = true;
             }
@@ -4916,11 +5231,82 @@ namespace AIMS.Libraries.CodeEditor
             }
         }
 
+        public void HandleScrollbarVisibility(bool visible)
+        {
+            du.Visible = visible;
+            su.Visible = visible;
+            s.Visible = visible;
+
+        }
+
         public int offset = 0;
 
         public bool afterdot = false;
 
         public ArrayList CC { get; set; }
+
+        public void FindSimilarWords(string word)
+        {
+            if (word == "")
+                return;
+
+            word = word.ToLower();
+
+            ListViewItem b = null;
+            if (word.Length <= 1)
+                b = cc.ToArray().FirstOrDefault(x => ((ListViewItem)x).Text.StartsWith(word, StringComparison.InvariantCultureIgnoreCase)) as ListViewItem;
+            else
+            {
+                List<ListViewItem> cs = cc.ToArray().Select(s => s).Where(x => ((ListViewItem)x).Text.ToLower().Contains(word) == true).ToList();
+                if (cs.Count <= 0)
+                    return;
+                cc = cs;
+                //cc = cc.ToArray().Select(s => s).Where(x => ((ListViewItem)x).Text.ToLower().Contains(word) == true).ToList();
+                int g = 0;
+                foreach (ListViewItem c in cc)
+                    c.Tag = g++;
+                
+            }
+            Y = cc.Count;
+            int last = 13;
+            
+            int i = 0;
+
+            if (b != null)
+                i = (int)b.Tag;
+            if (b == null)
+                if(cc.Count > 0)
+                b = cc[0] as ListViewItem;
+ 
+            if (cc.Count - 1 < last)
+                last = cc.Count - 1;
+            if (last < 0)
+                return;
+
+            _topitem = i;
+            if(b != null)
+            v.TopItem = b;
+            v.RedrawItems(0, last, false);
+            return;
+
+            //int i = 0;
+            //while(i < cc.Count)
+            //{
+            //    ListViewItem c = cc[i] as ListViewItem;
+            //    if (c.Text.ToLower().StartsWith(word))
+            //    {
+            //        _topitem = i;
+            //        v.TopItem = c;
+            //        v.RedrawItems(0, 17, false);
+            //        return;
+            //    }
+            //    i++;
+            //}
+
+           
+            
+            
+        }
 
         public void Find(string w, int offsets, bool hasdots)
         {
@@ -4941,7 +5327,7 @@ namespace AIMS.Libraries.CodeEditor
 
             //if (w.Length > 2)
             {
-                cc = new ArrayList();
+                cc = new List<ListViewItem>();
 
                 _topitem = 0;
 
@@ -4980,16 +5366,13 @@ namespace AIMS.Libraries.CodeEditor
         {
             if (_state == 0)
                 return;
-
-
-
             int y = s.Location.Y;
 
             int h = b.Height;
 
             int r = s.Location.Y + e.Y;///*s.Location*/ = new Point(s.Location.X, s.Location.Y + e.Y);
 
-            if (s.Location.Y <= 15 || s.Location.Y >= h - 14 - 15)
+            if (s.Location.Y <= 15 || s.Location.Y >= h - 14 - 15 + 5)
             {
                 {
                     if (s.Location.Y <= 15)
@@ -5011,12 +5394,12 @@ namespace AIMS.Libraries.CodeEditor
                 }
                 //else s.Location = new Point(s.Location.X, r);
 
-                if (s.Location.Y >= h - 14 - 15)
+                if (s.Location.Y >= h - 14 - 15 + 5)
                 {
-                    s.Location = new Point(s.Location.X, h - 14 - 15);
-                    if (r >= h - 14 - 15)
+                    s.Location = new Point(s.Location.X, h - 14 - 15 + 5);
+                    if (r >= h - 14 - 15 + 5)
                     {
-                        s.Location = new Point(s.Location.X, h - 14 - 15);
+                        s.Location = new Point(s.Location.X, h - 14 - 15 + 5);
                         s.Refresh();
                         du.Refresh();
                         return;
@@ -5028,9 +5411,8 @@ namespace AIMS.Libraries.CodeEditor
                 }
             }
             else s.Location = new Point(s.Location.X, r);
-            //else s.Refresh();
-
-            int p = (int)((double)Y * ((double)s.Location.Y - 15) / (double)(b.Height - s.Height - 15 - 15));
+            
+            int p = (int)((double)Y * ((double)s.Location.Y - 15) / (double)(b.Height - s.Height - 15 - 15 + 1));
 
             if (p >= Y)
                 p = Y - 1;
@@ -5040,25 +5422,24 @@ namespace AIMS.Libraries.CodeEditor
 
             v.SuspendLayout();
 
+            //if (v.Items.Count <= 0)
+            //    return;
+            if (cc.Count <= 0)
+                return;
             int itemHeight = v.GetItemRect(0).Height;
 
             int listHeight = v.Height;
 
             int nmb = (int)((double)listHeight / (double)itemHeight);
-
+            //if (p >= v.Items.Count - nmb)
+            //    p = v.Items.Count - nmb;
+            if (p >= cc.Count - nmb)
+                p = cc.Count - nmb;
             _topitem = p;
 
-            if (p >= v.Items.Count - nmb)
-                return;
-
-
-            v.TopItem = v.Items[0];
-
-            // HideHorizontalScrollBar();
+            v.TopItem = cc[p];// cc[0];// v.Items[0];
 
             v.RedrawItems(0, nmb, false);
-
-            //v.Refresh();
 
             v.ResumeLayout();
         }
@@ -5073,19 +5454,26 @@ namespace AIMS.Libraries.CodeEditor
 
             int nmb = (int)((double)listHeight / (double)itemHeight);
 
-
-
             if (select >= nmb || select <= 0)
             {
                 if (up == true)
                     _topitem--;
                 else if (select > -1)
+                {
+                    //if (_topitem >= v.Items.Count - nmb)
+                    //{
+                    //    _topitem = v.Items.Count - nmb;
+                    //    return;
+                    //}
+                    if (_topitem >= cc.Count - nmb)
+                    {
+                        _topitem = cc.Count - nmb;
+                        return;
+                    }
                     _topitem++;
 
-                if (_topitem >= v.Items.Count - nmb)
-                    _topitem = v.Items.Count - nmb;
-
-
+                }
+            
                 if (_topitem < 0)
                     _topitem = 0;
             }
@@ -5110,16 +5498,31 @@ namespace AIMS.Libraries.CodeEditor
                 {
                     int s = v.SelectedIndices[0];
 
+                    //if (nmb == s)
+                    //    if (nmb != v.Items.Count - 1)
+                    //    {
+                    //        if (s > 0)
+                    //        {
+                    //            v.Items[s - 1].Selected = true;
+                    //            v.Items[s].Selected = false;
+                    //        }
+                    //    }
                     if (nmb == s)
-                        if (nmb != v.Items.Count - 1)
+                    if (nmb != cc.Count - 1)
+                    {
+                        if (s > 0)
                         {
                             v.Items[s - 1].Selected = true;
                             v.Items[s].Selected = false;
                         }
+                    }
                     if (nmb < s)
                     {
-                        v.Items[s - 1].Selected = true;
-                        v.Items[s].Selected = false;
+                        if (s > 0)
+                        {
+                            v.Items[s - 1].Selected = true;
+                            v.Items[s].Selected = false;
+                        }
                     }
                 }
 
@@ -5133,6 +5536,7 @@ namespace AIMS.Libraries.CodeEditor
         private void S_MouseUp(object sender, MouseEventArgs e)
         {
             _state = 0;
+            cec.Focus();
         }
 
         private void S_MouseDown(object sender, MouseEventArgs e)
@@ -5159,6 +5563,7 @@ namespace AIMS.Libraries.CodeEditor
             img.Images.Add("event", resource._event);
             img.Images.Add("list", resource.keywords);
             img.Images.Add("enum", resource._event);
+            img.Images.Add("namespace", resource._namespace);
 
 
             v.SmallImageList = img;
@@ -5191,6 +5596,8 @@ namespace AIMS.Libraries.CodeEditor
             int i = v.SelectedIndices[0];
 
             ScrollTo(i);
+            if(_state == 0)
+            cec.Focus();
         }
 
         public void ScrollTo(int i)
@@ -5203,9 +5610,9 @@ namespace AIMS.Libraries.CodeEditor
 
             int c = h - 14 - 14 - 10;
 
-            int cc = v.Items.Count;
+            int ccc = cc.Count;// v.Items.Count;
 
-            int p = (int)(14 + (((double)i + _topitem) / (double)cc) * (double)c);
+            int p = (int)(14 + (((double)i + _topitem) / (double)ccc) * (double)c);
 
             s.Location = new Point(s.Location.X, p);
         }
@@ -5290,42 +5697,26 @@ namespace AIMS.Libraries.CodeEditor
 
             HideHorizontalScrollBar();
 
-            //v.Height = y - 1;
-
-            //SetWindowPos(this.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS);
-
+        
             v.Refresh();
 
-            //state = 1;
-            //MouseEventArgs me = new MouseEventArgs(MouseButtons.Left, 5, 50,50,5);
-            //S_MouseMove(null, me);
+        
         }
 
         private void Cb_DrawItem(object sender, DrawListViewItemEventArgs e)
         {
-            // Rectangle rowBounds = e.Bounds;
-            //            Rectangle bounds = new Rectangle(leftMargin, rowBounds.Top, rowBounds.Width - leftMargin, rowBounds.Height);
-            // e.Graphics.FillRectangle(SystemBrushes.Control, rowBounds);
+        
         }
 
         private void Cb_Resize(object sender, EventArgs e)
         {
             Size s = v.Size;
-            v.Columns[0].Width = v.Width - 30;
+            v.Columns[0].Width = v.Width - 5;
             HideHorizontalScrollBar();
-            //v.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.None);
-            //v.Columns[0].Width = s.Width;// 'Your own size';
-            //v.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+          
         }
 
-        //protected override void OnPaint(PaintEventArgs e)
-        //{
-        //    base.OnPaint(e);
-        //    e.Graphics.DrawRectangle(
-        //        new Pen(
-        //            new SolidBrush(BorderColor), 2),
-        //            e.ClipRectangle);
-        //}
+        
         public Color BorderColor { get; set; }
     }
 
@@ -5353,6 +5744,7 @@ namespace AIMS.Libraries.CodeEditor
             args.vp = vp;
             args.dr = dr;
             OpenNewFile(args);
+            
         }
 
         public bool IsBbound()
@@ -5384,4 +5776,7 @@ namespace AIMS.Libraries.CodeEditor
             public DomRegion dr { get; set; }
         }
     }
+
+   
+
 }

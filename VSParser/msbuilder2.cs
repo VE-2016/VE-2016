@@ -12,6 +12,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using VSParsers;
@@ -75,100 +76,100 @@ namespace VSProvider
 
         public static Dictionary<string, Assembly> dcc = new Dictionary<string, Assembly>();
 
+        public bool typeLoadingStarted = false;
+
         public CSParsers CSParsers()
         {
+
+
             if (csd == null)
             {
-                csd = new VSParsers.CSParsers();
-                ArrayList L = GetCompileItems();
-
-                ArrayList R = GetReferences();
-
-                Dictionary<string, AssemblyDescription> dc = GACProject.GACForm.asmd;
-
-
-                ArrayList A = new ArrayList();
-
-
-
-                foreach (string s in R)
+                if (typeLoadingStarted == false)
                 {
-                    string[] cc = s.Split(",".ToCharArray());
+                    typeLoadingStarted = true;
 
-                    string c = cc[0];// cc[cc.Length - 1];
-
-                    if (dcc.ContainsKey(c) == true)
+                    csd = new VSParsers.CSParsers();
+                    ArrayList L = GetCompileItems();
+                    ArrayList R = GetReferences();
+                    Dictionary<string, AssemblyDescription> dc = GACProject.GACForm.asmd;
+                    ArrayList A = new ArrayList();
+                    foreach (string s in R)
                     {
-                        
-                        Assembly asm = dcc[c];
+                        string[] cc = s.Split(",".ToCharArray());
 
-                        A.Add(asm);
+                        string c = cc[0];// cc[cc.Length - 1];
+
+                        if (dcc.ContainsKey(c) == true)
+                        {
+
+                            Assembly asm = dcc[c];
+
+                            A.Add(asm);
+                        }
+
+                        else
+                        if (dc.ContainsKey(c) == true)
+                        {
+                            AssemblyDescription d = dc[c];
+
+                            Assembly asm = Assembly.Load(d.DisplayName);
+
+                            A.Add(asm);
+
+                            dcc.Add(c, asm);
+                        }
+                        else
+                        {
+                            //string b = AppDomain.CurrentDomain.BaseDirectory + Path.GetFileName(s);
+                            //if (!File.Exists(b))
+                            //    continue;
+                            //Assembly asm = Assembly.LoadFile(b);
+
+                            //A.Add(asm);
+
+                            //dcc.Add(c, asm);
+                        }
                     }
-
-                    else
-                    if (dc.ContainsKey(c) == true)
+                    if (dc.ContainsKey("mscorlib") == true)
                     {
-                        AssemblyDescription d = dc[c];
+                        AssemblyDescription d = dc["mscorlib"];
 
                         Assembly asm = Assembly.Load(d.DisplayName);
 
                         A.Add(asm);
 
-                        dcc.Add(c, asm);
+                        //dcc.Add("mscorlib", asm);
                     }
-                }
-                if (dc.ContainsKey("mscorlib") == true)
-                {
-                    AssemblyDescription d = dc["mscorlib"];
+                    
+                    csd.AddProjectFiles(L, A);
+                    csd.addProjectFiles(L, A);
+                    ImportProjectTypes();
 
-                    Assembly asm = Assembly.Load(d.DisplayName);
+                    ArrayList P = this.GetProjectReferencesFiles("ProjectReference");
 
-                    A.Add(asm);
-
-                    //dcc.Add("mscorlib", asm);
-                }
-
-
-
-                //if (dc.ContainsKey("mscorlib"))
-                //{
-
-                //    AssemblyDescription d = dc["mscorlib"];
-
-                //    Assembly asm = Assembly.Load(d.DisplayName);
-
-                //    A.Add(asm);
-
-                //    dcc.Add("mscorlib", asm);
-
-                //}
-
-                csd.AddProjectFiles(L, A);
-
-                ImportProjectTypes();
-
-                ArrayList P = this.GetProjectReferencesFiles("ProjectReference");
-
-                foreach (string name in P)
-                {
-                    if (vs == null)
-                        continue;
-
-                    VSProject vp = vs.GetProjectbyFileName(name);
-
-                    if (vp == null)
-                        continue;
-
-                    if (vp.csd == null)
-                        vp.CSParsers();
-
-                    var d = vp.csd.cmp.GetAllTypeDefinitions();
-
-                    foreach (ITypeDefinition dd in d)
+                    foreach (string name in P)
                     {
-                        csd.cmp.Import(dd);
+                        if (vs == null)
+                            continue;
+
+                        VSProject vp = vs.GetProjectbyFileName(name);
+
+                        if (vp == null)
+                            continue;
+
+                        if (vp.csd == null)
+                            vp.CSParsers();
+
+                        var d = vp.csd.cmp.GetAllTypeDefinitions();
+
+                        foreach (ITypeDefinition dd in d)
+                        {
+                            csd.cmp.Import(dd);
+                        }
                     }
                 }
+                else while (csd == null)
+                        Task.Delay(2000);
             }
             return csd;
         }
@@ -191,13 +192,15 @@ namespace VSProvider
                     vp.CSParsers();
 
                 ArrayList L = vp.GetCompileItems();
-
+                
                 csd.AddProjectFiles(L);
 
+                csd.addProjectFiles(L);
                 
-            }
+                csd.snx.cc = csd.snx.cc.AddReferences(vp.csd.snx.cc.References);
 
-     
+            }
+            
         }
 
         public Dictionary<string, string> GetTypeNames()
@@ -229,6 +232,9 @@ namespace VSProvider
         public string GetProjectFolder()
         {
             string s = Path.GetDirectoryName(FileName);
+
+            if (string.IsNullOrEmpty(s))
+                return "";
 
             s = Path.GetFullPath(s);
 
@@ -281,6 +287,41 @@ namespace VSProvider
             _items = new List<VSProjectItem>();
         }
 
+        public void GetDataSources(Dictionary<VSProject, ArrayList> dict)
+        {
+            Microsoft.Build.Evaluation.Project pc = null;
+
+            if (!File.Exists(FileName))
+                return;
+
+            try
+            {
+                pc = new Microsoft.Build.Evaluation.Project(FileName);
+            }
+            catch(Exception e)
+            {
+
+            }
+            if (pc == null)
+                return;
+
+            ArrayList D = new ArrayList();
+
+            var c = pc.GetItems("None");
+            foreach(ProjectItem p in c)
+            {
+                if (p.EvaluatedInclude.EndsWith(".datasource"))
+                    D.Add(p.EvaluatedInclude);
+
+                if (p.EvaluatedInclude.EndsWith(".xsd"))
+                    D.Add(p.EvaluatedInclude);
+
+            }
+
+            dict.Add(this, D);
+
+            pc.ProjectCollection.UnloadAllProjects();
+        }
 
         private ICollection<ProjectPropertyElement> properties { get; set; }
 
@@ -369,6 +410,9 @@ namespace VSProvider
         public bool IsExecutable()
         {
             bool exe = false;
+
+            if (!File.Exists(FileName))
+                return false;
 
             Microsoft.Build.Evaluation.Project pc = null;
 
@@ -518,6 +562,9 @@ namespace VSProvider
         {
             Microsoft.Build.Evaluation.Project pc = null;
 
+            if (!File.Exists(FileName))
+                return "";
+
             try
             {
                 pc = new Microsoft.Build.Evaluation.Project(FileName);
@@ -606,7 +653,8 @@ namespace VSProvider
 
         public string GetOutDir()
         {
-
+            if (!File.Exists(FileName))
+                return "";
 
             ArrayList L = GetProperties("", "");
 
@@ -767,6 +815,47 @@ namespace VSProvider
             return "";
         }
 
+        public string GetPathHint(string refs)
+        {
+            ArrayList L = new ArrayList();
+
+            Microsoft.Build.Evaluation.Project pc = null;
+
+            try
+            {
+                pc = new Microsoft.Build.Evaluation.Project(FileName);
+            }
+            catch (Exception e) { }
+            if (pc == null)
+                return "";
+
+            string folder = Path.GetDirectoryName(FileName);
+
+            ICollection<Microsoft.Build.Evaluation.ProjectItem> s = pc.GetItems("Reference");
+
+            foreach (Microsoft.Build.Evaluation.ProjectItem p in s)
+            {
+                if (p.EvaluatedInclude == refs)
+                {
+                  
+                    foreach (Microsoft.Build.Evaluation.ProjectMetadata m in p.Metadata)
+                    {
+                        if (m.Name == "HintPath")
+                        {
+                            pc.ProjectCollection.UnloadAllProjects();
+                            return m.UnevaluatedValue;
+                        }
+                    }
+
+               }
+            }
+
+            pc.ProjectCollection.UnloadAllProjects();
+            return "";
+      
+        }
+
+
         public string GetReferenceHint(string refs)
         {
             Microsoft.Build.Evaluation.ProjectItem p = GetReference("Reference", refs);
@@ -775,6 +864,8 @@ namespace VSProvider
                 return "";
 
             string hint = GetReferenceHint(p);
+
+            
 
             return hint;
         }
@@ -832,14 +923,21 @@ namespace VSProvider
 
             foreach (Microsoft.Build.Evaluation.ProjectItem p in s)
             {
-                string file = Path.GetFullPath(folder + "\\" + p.EvaluatedInclude);
+                string file = "";
 
-                string project = Path.GetFileNameWithoutExtension(file);
-
-                file = p.EvaluatedInclude;
+                if (p.HasMetadata("HintPath"))
+                {
+                    
+                    file = Path.GetFullPath(folder + "\\" + p.GetMetadata("HintPath").UnevaluatedValue);
+                }
+                else 
+                if(!p.HasMetadata("HintPath"))
+                    file = p.EvaluatedInclude;
 
                 L.Add(file);
             }
+
+            pc.ProjectCollection.UnloadAllProjects();
 
             pc.ProjectCollection.UnloadAllProjects();
 
@@ -1272,6 +1370,9 @@ namespace VSProvider
         {
             ArrayList L = new ArrayList();
 
+            if (!File.Exists(FileName))
+                return L;
+
             Microsoft.Build.Evaluation.Project pc = null;
             try
             {
@@ -1424,29 +1525,33 @@ namespace VSProvider
             if (File.Exists(FileName) == false)
                 return new ArrayList();
 
-            Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(FileName);
-
-            SetProperty("Configuration", proj, pc);
-
-            SetProperty("Platform", platform, pc);
-
             ArrayList L = new ArrayList();
 
-            pc.ReevaluateIfNecessary();
-
-            if (pc == null)
-                return L;
-
-            ICollection<Microsoft.Build.Evaluation.ProjectProperty> s = pc.AllEvaluatedProperties;// Properties;
-
-            foreach (Microsoft.Build.Evaluation.ProjectProperty p in s)
+            try
             {
-                L.Add(p);
+                Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(FileName);
+
+                SetProperty("Configuration", proj, pc);
+
+                SetProperty("Platform", platform, pc);
+
+                pc.ReevaluateIfNecessary();
+
+                if (pc == null)
+                    return L;
+
+                ICollection<Microsoft.Build.Evaluation.ProjectProperty> s = pc.AllEvaluatedProperties;// Properties;
+
+                foreach (Microsoft.Build.Evaluation.ProjectProperty p in s)
+                {
+                    L.Add(p);
+                }
+
+                //Microsoft.Build.Evaluation.ProjectProperty pp = pc.GetProperty("WarningLevel");
+
+                pc.ProjectCollection.UnloadAllProjects();
             }
-
-            //Microsoft.Build.Evaluation.ProjectProperty pp = pc.GetProperty("WarningLevel");
-
-            pc.ProjectCollection.UnloadAllProjects();
+            catch(Exception ex) { }
 
             return L;
         }
@@ -1855,7 +1960,7 @@ namespace VSProvider
 
             ArrayList R = GetItems(pc, "Compile", fs);
 
-            //pc.ProjectCollection.UnloadAllProjects();
+            pc.ProjectCollection.UnloadAllProjects(); // uncommented
 
             return R;
         }
@@ -1996,7 +2101,12 @@ namespace VSProvider
 
             return dict;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="L"></param>
+        /// <param name="folders"></param>
+        /// <returns></returns>
         public Dictionary<string, string> AddFormItem(ArrayList L, string folders)
         {
 
@@ -2110,6 +2220,71 @@ namespace VSProvider
 
         }
 
+        public void AddDataSource(string name)
+        {
+            Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(FileName);
+
+            if (pc == null)
+                return;
+
+            pc.AddItem("None", "Properties\\DataSources\\" + name);
+
+            pc.Save(FileName);
+
+            pc.ProjectCollection.UnloadAllProjects();
+
+        }
+
+        public void AddXSDItem(string name)
+        {
+
+            Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(FileName);
+
+            if (pc == null)
+                return;
+
+            string s = Path.GetDirectoryName(FileName);
+
+            string cs = name + ".Designer.cs";
+
+            string xsd = name + ".xsd";
+
+            string xsc = name + ".xsc";
+
+            string xss = name + ".xss";
+
+            IEnumerable <KeyValuePair<string, string>> metadata = Enumerable.Empty<KeyValuePair<string, string>>();
+            List<KeyValuePair<string, string>> list = metadata.ToList();
+            list.Add(new KeyValuePair<string, string>("AutoGen", "True"));
+            list.Add(new KeyValuePair<string, string>("DesignTime", "True"));
+            list.Add(new KeyValuePair<string, string>("DependentUpon", xsd));
+            pc.AddItem("Compile", cs, list);
+            pc.Save(FileName);
+
+            metadata = Enumerable.Empty<KeyValuePair<string, string>>();
+            list = metadata.ToList();
+            list.Add(new KeyValuePair<string, string>("DependentUpon", xsd));
+            pc.AddItem("None", xsc, list);
+            pc.Save(FileName);
+
+            metadata = Enumerable.Empty<KeyValuePair<string, string>>();
+            list = metadata.ToList();
+            list.Add(new KeyValuePair<string, string>("DependentUpon", xsd));
+            pc.AddItem("None", xss, list);
+            pc.Save(FileName);
+
+            metadata = Enumerable.Empty<KeyValuePair<string, string>>();
+            list = metadata.ToList();
+            list.Add(new KeyValuePair<string, string>("Generator", "MSDataSetGenerator"));
+            list.Add(new KeyValuePair<string, string>("LastGenOutput", cs));
+            list.Add(new KeyValuePair<string, string>("SubType", "Designer"));
+            pc.AddItem("None", xsd, list);
+            pc.Save(FileName);
+
+            pc.ProjectCollection.UnloadAllProjects();
+
+           
+        }
         public void LoadMetaData(ArrayList L)
         {
             Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(FileName);
@@ -2421,6 +2596,9 @@ namespace VSProvider
 
         public Microsoft.Build.Evaluation.Project LoadProject(Microsoft.Build.Evaluation.Project pc)
         {
+            if (!File.Exists(FileName))
+                return null;
+
             if (pc == null)
             {
                 pc = new Microsoft.Build.Evaluation.Project(FileName);
@@ -2583,7 +2761,32 @@ namespace VSProvider
 
             pc.ProjectCollection.UnloadAllProjects();
         }
+        public void RemoveReference(string file)
+        {
 
+            Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(FileName);
+
+            if (pc == null)
+                return;
+
+            string libName = Path.GetFileName(file).Replace(".dll", "");
+
+            string s = Path.GetDirectoryName(FileName);
+
+            string r = GetRelativePath(s, file);
+
+            ICollection<Microsoft.Build.Evaluation.ProjectItem> c = pc.GetItemsByEvaluatedInclude(libName);
+
+            foreach (Microsoft.Build.Evaluation.ProjectItem pp in c)
+            {
+                if (pp.ItemType == "Reference")
+                    pc.RemoveItem(pp);
+            }
+
+            pc.Save(FileName);
+
+            pc.ProjectCollection.UnloadAllProjects();
+        }
         public void CleanProject()
         {
             string s = GetOutDirs();

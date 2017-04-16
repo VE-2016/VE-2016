@@ -26,3 +26,16 @@ C:\MSBuildProjects-beta\NET\ProfilerNET\obj\Debug\ProfilerNET.Properties.Resourc
 C:\MSBuildProjects-beta\NET\ProfilerNET\obj\Debug\ProfilerNET.csproj.GenerateResource.Cache
 C:\MSBuildProjects-beta\NET\ProfilerNET\obj\Debug\ProfilerNET.exe
 C:\MSBuildProjects-beta\NET\ProfilerNET\obj\Debug\ProfilerNET.pdb
+f:\VE-2017\NET\ProfilerNET\bin\Debug\ProfilerNET.exe.config
+f:\VE-2017\NET\ProfilerNET\bin\Debug\ProfilerNET.exe
+f:\VE-2017\NET\ProfilerNET\bin\Debug\ProfilerNET.pdb
+f:\VE-2017\NET\ProfilerNET\bin\Debug\System.Web.DataVisualization.Design.dll
+f:\VE-2017\NET\ProfilerNET\bin\Debug\System.Web.DataVisualization.dll
+f:\VE-2017\NET\ProfilerNET\bin\Debug\System.Windows.Forms.DataVisualization.Design.dll
+f:\VE-2017\NET\ProfilerNET\bin\Debug\System.Windows.Forms.DataVisualization.dll
+f:\VE-2017\NET\ProfilerNET\obj\Debug\ProfilerNET.csprojResolveAssemblyReference.cache
+f:\VE-2017\NET\ProfilerNET\obj\Debug\ProfilerNET.Form1.resources
+f:\VE-2017\NET\ProfilerNET\obj\Debug\ProfilerNET.Properties.Resources.resources
+f:\VE-2017\NET\ProfilerNET\obj\Debug\ProfilerNET.csproj.GenerateResource.Cache
+f:\VE-2017\NET\ProfilerNET\obj\Debug\ProfilerNET.exe
+f:\VE-2017\NET\ProfilerNET\obj\Debug\ProfilerNET.pdb

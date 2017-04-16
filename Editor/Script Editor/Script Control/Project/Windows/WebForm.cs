@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.IO;
 using System.Windows.Forms;
-using AIMS.Libraries.Forms.Docking;
+
 using AIMS.Libraries.CodeEditor.SyntaxFiles;
 using AIMS.Libraries.Scripting.NRefactory;
 using AIMS.Libraries.CodeEditor.Syntax;

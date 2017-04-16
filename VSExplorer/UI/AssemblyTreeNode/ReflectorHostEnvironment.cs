@@ -16,7 +16,9 @@ namespace AndersLiu.Reflector.Core
 
                 return unit;
             }
-            catch (Exception e) { }
+            catch (Exception e) {
+                Console.WriteLine(e.Message);
+            }
 
             return null;
         }

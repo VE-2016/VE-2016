@@ -1,0 +1,9 @@
+D:\UpdatedSample2\bin\Release\enc.dll
+D:\UpdatedSample2\src\extensions\enc\obj\Release\ResolveAssemblyReference.cache
+D:\UpdatedSample2\src\extensions\enc\obj\Release\enc.dll
+\\clrdst\share\wescline\noah\UpdatedSample2\bin\Release\enc.dll
+\\clrdst\share\wescline\noah\UpdatedSample2\src\extensions\enc\obj\Release\ResolveAssemblyReference.cache
+\\clrdst\share\wescline\noah\UpdatedSample2\src\extensions\enc\obj\Release\enc.dll
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Release\enc.dll
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\extensions\enc\obj\Release\enc.csprojResolveAssemblyReference.cache
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\extensions\enc\obj\Release\enc.dll

@@ -80,6 +80,14 @@ namespace WeifenLuo.WinFormsUI.Docking
             {
                 get { return ImageCategory == 0 ? m_image0 : m_image1; }
             }
+            public override Bitmap HoverImage
+            {
+                get { return ImageCategory == 0 ? m_image0 : m_image1; }
+            }
+            public override Bitmap PressImage
+            {
+                get { return ImageCategory == 0 ? m_image0 : m_image1; }
+            }
         }
 
         #region Constants

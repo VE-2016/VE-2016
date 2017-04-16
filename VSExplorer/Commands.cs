@@ -1,4 +1,6 @@
 using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace WinExplorer
 {
@@ -23,29 +25,72 @@ namespace WinExplorer
         }
     }
 
-    /// <summary>
-    /// The 'Command' abstract class
-    /// </summary>
-    public abstract class Command
-    {
+    ///// <summary>
+    ///// The 'Command' abstract class
+    ///// </summary>
+    //public abstract class Command
+    //{
 
-        public static bool running = false;
+    //    public static bool running = false;
 
-        public static int counter = 0;
+    //    public static int counter = 0;
 
-        protected Receiver receiver;
+    //    protected Receiver receiver;
 
-        public ExplorerForms ef { get; set; }
+    //    public string Name { get; set; }
 
-        // Constructor
-        public Command(ExplorerForms ef)
-        {
-            this.ef = ef;
-            //this.receiver = receiver;
-        }
+    //    public Image image { get; set; }
 
-        public abstract object Execute(object obs = null);
-    }
+    //    public Keys[] keyboard { get; set; }
+
+    //    public string Module { get; set; }
+
+    //    public ExplorerForms ef { get; set; }
+
+    //    static public Command FromName(string name)
+    //    {
+    //        ExplorerForms ef = ExplorerForms.ef;
+
+    //        if(name == "OpenForm")
+    //            return new Command_OpenForm(ef);
+    //        if (name == "OpenForm")
+    //            return new Command_OpenForm(ef);
+    //        guis.Add("GetTemplates", new Command_GetTemplates(ef));
+    //        guis.Add("AddTemplate", new Command_AddTemplate(ef));
+    //        guis.Add("GetProject", new Command_GetProject(ef));
+    //        guis.Add("SetProject", new Command_SetProject(ef));
+    //        guis.Add("CloseForm", new Command_CloseForm(ef));
+    //        guis.Add("LoadProjectTemplate", new Command_LoadProjectTemplate(ef));
+    //        guis.Add("MSBuild", new Command_MSBuild(ef));
+    //        guis.Add("Config", new Command_Config(ef));
+    //        guis.Add("Platform", new Command_Platform(ef));
+    //        guis.Add("MainProject", new Command_SetMainProject(ef));
+    //        guis.Add("OpenDocument", new Command_OpenDocument(ef));
+    //        guis.Add("LoadSolution", new Command_LoadSolution(ef));
+    //        guis.Add("AddProjectItem", new Command_AddProjectItem(ef));
+    //        guis.Add("CloseAllDocuments", new Command_CloseAllDocuments(ef));
+    //        guis.Add("TakeSnapshot", new Command_TakeSnapshot(ef));
+    //        guis.Add("Customize", new Command_Customize(ef));
+    //        guis.Add("Solution Platforms", new Command_Customize(ef));
+    //        guis.Add("Solution Configurations", new Command_Customize(ef));
+    //        guis.Add("Find", new Command_Find(ef));
+    //    }
+       
+
+    //    // Constructor
+    //    public Command(ExplorerForms ef)
+    //    {
+    //        this.ef = ef;
+    //        //this.receiver = receiver;
+    //    }
+
+    //    public abstract object Execute(object obs = null);
+
+    //    public virtual object Configure(object obs)
+    //    {
+    //        return obs;
+    //    }
+    //}
 
     /// <summary>
     /// The 'ConcreteCommand' class

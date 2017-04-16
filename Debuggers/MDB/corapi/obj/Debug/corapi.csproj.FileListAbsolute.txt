@@ -1,0 +1,46 @@
+D:\sample\src\debugger\corapi\obj\Debug\ResolveAssemblyReference.cache
+D:\UpdatedSample2\src\debugger\corapi\bin\Debug\corapi.dll
+D:\UpdatedSample2\src\debugger\corapi\bin\Debug\corapi.pdb
+D:\UpdatedSample2\src\debugger\corapi\bin\Debug\corapi.dll.CodeAnalysisLog.xml
+D:\UpdatedSample2\src\debugger\corapi\bin\Debug\corapi.dll.lastcodeanalysissucceeded
+D:\UpdatedSample2\src\debugger\corapi\bin\Debug\NativeDebugWrappers.dll
+D:\UpdatedSample2\src\debugger\corapi\bin\Debug\raw.dll
+D:\UpdatedSample2\src\debugger\corapi\bin\Debug\NativeDebugWrappers.pdb
+D:\UpdatedSample2\src\debugger\corapi\bin\Debug\NativeDebugWrappers.xml
+D:\UpdatedSample2\src\debugger\corapi\bin\Debug\raw.pdb
+D:\UpdatedSample2\src\debugger\corapi\obj\Debug\ResolveAssemblyReference.cache
+D:\UpdatedSample2\src\debugger\corapi\obj\Debug\corapi.dll
+D:\UpdatedSample2\src\debugger\corapi\obj\Debug\corapi.pdb
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\corapi.dll
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\corapi.pdb
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\corapi.dll.CodeAnalysisLog.xml
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\corapi.dll.lastcodeanalysissucceeded
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\debugger\corapi\obj\Debug\corapi.csprojResolveAssemblyReference.cache
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\debugger\corapi\obj\Debug\corapi.dll
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\debugger\corapi\obj\Debug\corapi.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\corapi\bin\Debug\corapi.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\corapi\bin\Debug\corapi.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\corapi\bin\Debug\corapi.dll.CodeAnalysisLog.xml
+C:\MSBuildProjects-beta\Debuggers\MDB\corapi\bin\Debug\corapi.dll.lastcodeanalysissucceeded
+C:\MSBuildProjects-beta\Debuggers\MDB\corapi\bin\Debug\NativeDebugWrappers.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\corapi\bin\Debug\raw.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\corapi\bin\Debug\System.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\corapi\bin\Debug\NativeDebugWrappers.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\corapi\bin\Debug\NativeDebugWrappers.xml
+C:\MSBuildProjects-beta\Debuggers\MDB\corapi\bin\Debug\raw.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\corapi\bin\Debug\pl\System.resources.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\corapi\obj\Debug\corapi.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\Debuggers\MDB\corapi\obj\Debug\corapi.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\corapi\obj\Debug\corapi.pdb
+f:\VE-2017\Debuggers\MDB\corapi\bin\Debug\corapi.dll
+f:\VE-2017\Debuggers\MDB\corapi\bin\Debug\corapi.pdb
+f:\VE-2017\Debuggers\MDB\corapi\bin\Debug\corapi.dll.CodeAnalysisLog.xml
+f:\VE-2017\Debuggers\MDB\corapi\bin\Debug\corapi.dll.lastcodeanalysissucceeded
+f:\VE-2017\Debuggers\MDB\corapi\bin\Debug\NativeDebugWrappers.dll
+f:\VE-2017\Debuggers\MDB\corapi\bin\Debug\raw.dll
+f:\VE-2017\Debuggers\MDB\corapi\bin\Debug\NativeDebugWrappers.pdb
+f:\VE-2017\Debuggers\MDB\corapi\bin\Debug\NativeDebugWrappers.xml
+f:\VE-2017\Debuggers\MDB\corapi\bin\Debug\raw.pdb
+f:\VE-2017\Debuggers\MDB\corapi\obj\Debug\corapi.csprojResolveAssemblyReference.cache
+f:\VE-2017\Debuggers\MDB\corapi\obj\Debug\corapi.dll
+f:\VE-2017\Debuggers\MDB\corapi\obj\Debug\corapi.pdb

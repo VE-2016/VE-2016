@@ -28,23 +28,24 @@ namespace WinExplorer
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button12 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button11 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -54,9 +55,26 @@ namespace WinExplorer
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.nameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.defaultStyleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textOnlyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textOnlyinMenusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageAndTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.beginGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.dockTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dockBottomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dockLeftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dockRightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -74,7 +92,7 @@ namespace WinExplorer
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.button12);
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.checkedListBox1);
@@ -86,22 +104,18 @@ namespace WinExplorer
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Toolbars";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // comboBox1
+            // button12
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Modify Selection",
-            "Dock : Top",
-            "Dock : Bottom",
-            "Dock : Left",
-            "Dock : Right"});
-            this.comboBox1.Location = new System.Drawing.Point(312, 93);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(130, 21);
-            this.comboBox1.TabIndex = 4;
+            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button12.Location = new System.Drawing.Point(312, 93);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(130, 23);
+            this.button12.TabIndex = 4;
+            this.button12.Text = "Modify Selection";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button4
             // 
@@ -145,15 +159,15 @@ namespace WinExplorer
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button11);
+            this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Controls.Add(this.button10);
-            this.tabPage2.Controls.Add(this.comboBox5);
             this.tabPage2.Controls.Add(this.button9);
             this.tabPage2.Controls.Add(this.button8);
             this.tabPage2.Controls.Add(this.button7);
             this.tabPage2.Controls.Add(this.button6);
             this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.listView1);
             this.tabPage2.Controls.Add(this.comboBox4);
             this.tabPage2.Controls.Add(this.radioButton3);
             this.tabPage2.Controls.Add(this.comboBox3);
@@ -169,6 +183,29 @@ namespace WinExplorer
             this.tabPage2.Text = "Commands";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button11
+            // 
+            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button11.Image = global::WinExplorer.Resources.f12_SortDownArrowGrey;
+            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button11.Location = new System.Drawing.Point(310, 279);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(136, 23);
+            this.button11.TabIndex = 17;
+            this.button11.Text = "Modify Selection";
+            this.button11.UseVisualStyleBackColor = true;
+            
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Location = new System.Drawing.Point(8, 138);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(295, 286);
+            this.panel1.TabIndex = 16;
+            // 
             // button10
             // 
             this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -179,18 +216,6 @@ namespace WinExplorer
             this.button10.Text = "Reset All";
             this.button10.UseVisualStyleBackColor = true;
             // 
-            // comboBox5
-            // 
-            this.comboBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "Modify Selection"});
-            this.comboBox5.Location = new System.Drawing.Point(310, 280);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(136, 21);
-            this.comboBox5.TabIndex = 14;
-            // 
             // button9
             // 
             this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -200,6 +225,7 @@ namespace WinExplorer
             this.button9.TabIndex = 13;
             this.button9.Text = "Move Down";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -210,6 +236,7 @@ namespace WinExplorer
             this.button8.TabIndex = 12;
             this.button8.Text = "Move Up";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
@@ -220,6 +247,7 @@ namespace WinExplorer
             this.button7.TabIndex = 11;
             this.button7.Text = "Delete";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -230,6 +258,7 @@ namespace WinExplorer
             this.button6.TabIndex = 10;
             this.button6.Text = "Add new menu";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -247,20 +276,9 @@ namespace WinExplorer
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 118);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.Size = new System.Drawing.Size(62, 13);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Labels:";
-            // 
-            // listView1
-            // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView1.Location = new System.Drawing.Point(7, 138);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(296, 285);
-            this.listView1.TabIndex = 7;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.label3.Text = "Commands:";
             // 
             // comboBox4
             // 
@@ -293,6 +311,7 @@ namespace WinExplorer
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(324, 21);
             this.comboBox3.TabIndex = 4;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // radioButton2
             // 
@@ -312,7 +331,12 @@ namespace WinExplorer
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "File",
-            "File | New File"});
+            "File | New ",
+            "File | New | Import",
+            "File | Open",
+            "File | Add",
+            "File | Source Control",
+            "File | Find Recentry Closed Documents"});
             this.comboBox2.Location = new System.Drawing.Point(122, 26);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(324, 21);
@@ -329,6 +353,7 @@ namespace WinExplorer
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Menu Bar:";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // label2
             // 
@@ -348,6 +373,7 @@ namespace WinExplorer
             this.button1.TabIndex = 1;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -358,6 +384,115 @@ namespace WinExplorer
             this.button2.TabIndex = 2;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nameToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.defaultStyleToolStripMenuItem,
+            this.textOnlyToolStripMenuItem,
+            this.textOnlyinMenusToolStripMenuItem,
+            this.imageAndTextToolStripMenuItem,
+            this.toolStripMenuItem3,
+            this.beginGroupToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(184, 170);
+            // 
+            // nameToolStripMenuItem
+            // 
+            this.nameToolStripMenuItem.Name = "nameToolStripMenuItem";
+            this.nameToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.nameToolStripMenuItem.Text = "Reset";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(183, 22);
+            this.toolStripMenuItem1.Text = "Name:";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 6);
+            // 
+            // defaultStyleToolStripMenuItem
+            // 
+            this.defaultStyleToolStripMenuItem.Name = "defaultStyleToolStripMenuItem";
+            this.defaultStyleToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.defaultStyleToolStripMenuItem.Text = "Default Style";
+            this.defaultStyleToolStripMenuItem.Click += new System.EventHandler(this.defaultStyleToolStripMenuItem_Click);
+            // 
+            // textOnlyToolStripMenuItem
+            // 
+            this.textOnlyToolStripMenuItem.Name = "textOnlyToolStripMenuItem";
+            this.textOnlyToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.textOnlyToolStripMenuItem.Text = "Text only";
+            this.textOnlyToolStripMenuItem.Click += new System.EventHandler(this.textOnlyToolStripMenuItem_Click);
+            // 
+            // textOnlyinMenusToolStripMenuItem
+            // 
+            this.textOnlyinMenusToolStripMenuItem.Name = "textOnlyinMenusToolStripMenuItem";
+            this.textOnlyinMenusToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.textOnlyinMenusToolStripMenuItem.Text = "Text Only (in Menus)";
+            // 
+            // imageAndTextToolStripMenuItem
+            // 
+            this.imageAndTextToolStripMenuItem.Name = "imageAndTextToolStripMenuItem";
+            this.imageAndTextToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.imageAndTextToolStripMenuItem.Text = "Image and Text";
+            this.imageAndTextToolStripMenuItem.Click += new System.EventHandler(this.imageAndTextToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 6);
+            // 
+            // beginGroupToolStripMenuItem
+            // 
+            this.beginGroupToolStripMenuItem.Name = "beginGroupToolStripMenuItem";
+            this.beginGroupToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.beginGroupToolStripMenuItem.Text = "Begin Group";
+            this.beginGroupToolStripMenuItem.Click += new System.EventHandler(this.beginGroupToolStripMenuItem_Click);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dockTopToolStripMenuItem,
+            this.dockBottomToolStripMenuItem,
+            this.dockLeftToolStripMenuItem,
+            this.dockRightToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(148, 92);
+            // 
+            // dockTopToolStripMenuItem
+            // 
+            this.dockTopToolStripMenuItem.Name = "dockTopToolStripMenuItem";
+            this.dockTopToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.dockTopToolStripMenuItem.Text = "Dock: Top";
+            this.dockTopToolStripMenuItem.Click += new System.EventHandler(this.dockTopToolStripMenuItem_Click);
+            // 
+            // dockBottomToolStripMenuItem
+            // 
+            this.dockBottomToolStripMenuItem.Name = "dockBottomToolStripMenuItem";
+            this.dockBottomToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.dockBottomToolStripMenuItem.Text = "Dock: Bottom";
+            this.dockBottomToolStripMenuItem.Click += new System.EventHandler(this.dockBottomToolStripMenuItem_Click);
+            // 
+            // dockLeftToolStripMenuItem
+            // 
+            this.dockLeftToolStripMenuItem.Name = "dockLeftToolStripMenuItem";
+            this.dockLeftToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.dockLeftToolStripMenuItem.Text = "Dock: Left";
+            this.dockLeftToolStripMenuItem.Click += new System.EventHandler(this.dockLeftToolStripMenuItem_Click);
+            // 
+            // dockRightToolStripMenuItem
+            // 
+            this.dockRightToolStripMenuItem.Name = "dockRightToolStripMenuItem";
+            this.dockRightToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.dockRightToolStripMenuItem.Text = "Dock: Right";
+            this.dockRightToolStripMenuItem.Click += new System.EventHandler(this.dockRightToolStripMenuItem_Click);
             // 
             // CustomizeForm
             // 
@@ -370,12 +505,15 @@ namespace WinExplorer
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CustomizeForm";
-            this.Text = "CustomizeForm";
+            this.Text = "Customize";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomizeForm_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -389,7 +527,6 @@ namespace WinExplorer
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label2;
@@ -399,14 +536,30 @@ namespace WinExplorer
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem nameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem defaultStyleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem textOnlyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem textOnlyinMenusToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem imageAndTextToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem beginGroupToolStripMenuItem;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem dockTopToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dockBottomToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dockLeftToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dockRightToolStripMenuItem;
     }
 }

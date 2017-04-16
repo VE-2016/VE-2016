@@ -20,3 +20,14 @@ C:\MSBuildProjects-beta\GACManager\GACManager\GACProject\obj\Release\GACProject.
 C:\MSBuildProjects-beta\GACManager\GACManager\GACProject\obj\Release\GACProject.csproj.GenerateResource.Cache
 C:\MSBuildProjects-beta\GACManager\GACManager\GACProject\obj\Release\GACProject.exe
 C:\MSBuildProjects-beta\GACManager\GACManager\GACProject\obj\Release\GACProject.pdb
+C:\MSBuildProjects-beta\NET\GACProject\bin\Release\GACProject.exe.config
+C:\MSBuildProjects-beta\NET\GACProject\bin\Release\GACProject.exe
+C:\MSBuildProjects-beta\NET\GACProject\bin\Release\GACProject.pdb
+C:\MSBuildProjects-beta\NET\GACProject\bin\Release\GACManagerApi.dll
+C:\MSBuildProjects-beta\NET\GACProject\bin\Release\GACManagerApi.pdb
+C:\MSBuildProjects-beta\NET\GACProject\obj\Release\GACProject.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\NET\GACProject\obj\Release\GACProject.GACForm.resources
+C:\MSBuildProjects-beta\NET\GACProject\obj\Release\GACProject.Properties.Resources.resources
+C:\MSBuildProjects-beta\NET\GACProject\obj\Release\GACProject.csproj.GenerateResource.Cache
+C:\MSBuildProjects-beta\NET\GACProject\obj\Release\GACProject.exe
+C:\MSBuildProjects-beta\NET\GACProject\obj\Release\GACProject.pdb

@@ -193,6 +193,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap AddComponent_16x {
+            get {
+                object obj = ResourceManager.GetObject("AddComponent_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap AddComponent_367_32 {
             get {
                 object obj = ResourceManager.GetObject("AddComponent_367_32", resourceCulture);
@@ -223,6 +233,26 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap AddDatabase_16x {
+            get {
+                object obj = ResourceManager.GetObject("AddDatabase_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap AddDataSource_16x {
+            get {
+                object obj = ResourceManager.GetObject("AddDataSource_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap AddEvent_5539_32 {
             get {
                 object obj = ResourceManager.GetObject("AddEvent_5539_32", resourceCulture);
@@ -236,6 +266,16 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap AddExistingItem_6269_32 {
             get {
                 object obj = ResourceManager.GetObject("AddExistingItem_6269_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap AddForm_16x {
+            get {
+                object obj = ResourceManager.GetObject("AddForm_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -858,6 +898,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Backward_256x {
+            get {
+                object obj = ResourceManager.GetObject("Backward_256x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap BarSeries_12624_24 {
             get {
                 object obj = ResourceManager.GetObject("BarSeries_12624_24", resourceCulture);
@@ -968,9 +1018,49 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Breakall {
+            get {
+                object obj = ResourceManager.GetObject("Breakall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap BreakpointDisable_16x {
+            get {
+                object obj = ResourceManager.GetObject("BreakpointDisable_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap BreakpointEnable_16x {
+            get {
+                object obj = ResourceManager.GetObject("BreakpointEnable_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap BreakpointsWindow_6557_32 {
             get {
                 object obj = ResourceManager.GetObject("BreakpointsWindow_6557_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap BreakpointWindow_16x {
+            get {
+                object obj = ResourceManager.GetObject("BreakpointWindow_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1090,6 +1180,16 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap BuildSolution_104_32 {
             get {
                 object obj = ResourceManager.GetObject("BuildSolution_104_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap BuildSolution_256x {
+            get {
+                object obj = ResourceManager.GetObject("BuildSolution_256x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1217,9 +1317,39 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Cancel_16x {
+            get {
+                object obj = ResourceManager.GetObject("Cancel_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Cancel_256x {
+            get {
+                object obj = ResourceManager.GetObject("Cancel_256x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Cancel_build__194_32 {
             get {
                 object obj = ResourceManager.GetObject("Cancel_build__194_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap CancelBuild_16x {
+            get {
+                object obj = ResourceManager.GetObject("CancelBuild_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1367,6 +1497,36 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap CheckAdd_16x {
+            get {
+                object obj = ResourceManager.GetObject("CheckAdd_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap CheckBox_16x {
+            get {
+                object obj = ResourceManager.GetObject("CheckBox_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap CheckBox_256x {
+            get {
+                object obj = ResourceManager.GetObject("CheckBox_256x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap CheckBox_669_24 {
             get {
                 object obj = ResourceManager.GetObject("CheckBox_669_24", resourceCulture);
@@ -1477,6 +1637,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Class_yellow_16x {
+            get {
+                object obj = ResourceManager.GetObject("Class_yellow_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Class_yellow_256x {
             get {
                 object obj = ResourceManager.GetObject("Class_yellow_256x", resourceCulture);
@@ -1510,6 +1680,46 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap ClassDetailsToolWindow_6805_32 {
             get {
                 object obj = ResourceManager.GetObject("ClassDetailsToolWindow_6805_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ClassFriend_16x {
+            get {
+                object obj = ResourceManager.GetObject("ClassFriend_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ClassPrivate_16x {
+            get {
+                object obj = ResourceManager.GetObject("ClassPrivate_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ClassProtected_16x {
+            get {
+                object obj = ResourceManager.GetObject("ClassProtected_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ClassSealed_16x {
+            get {
+                object obj = ResourceManager.GetObject("ClassSealed_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1624,6 +1834,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap CloseDocumentGroup_16x {
+            get {
+                object obj = ResourceManager.GetObject("CloseDocumentGroup_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap CloseResults_8579_32 {
             get {
                 object obj = ResourceManager.GetObject("CloseResults_8579_32", resourceCulture);
@@ -1657,6 +1877,16 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap ColorSelectionTool_202_32 {
             get {
                 object obj = ResourceManager.GetObject("ColorSelectionTool_202_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Column_16x {
+            get {
+                object obj = ResourceManager.GetObject("Column_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1814,9 +2044,29 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap ConnectEnvironment_16x {
+            get {
+                object obj = ResourceManager.GetObject("ConnectEnvironment_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap ConnectionsZone_6776_24 {
             get {
                 object obj = ResourceManager.GetObject("ConnectionsZone_6776_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ConnectWeb_16x {
+            get {
+                object obj = ResourceManager.GetObject("ConnectWeb_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1957,6 +2207,16 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap ConverttoHyperlink_341_32 {
             get {
                 object obj = ResourceManager.GetObject("ConverttoHyperlink_341_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Copy_32x {
+            get {
+                object obj = ResourceManager.GetObject("Copy_32x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2121,6 +2381,36 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Cut_24x {
+            get {
+                object obj = ResourceManager.GetObject("Cut_24x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Database_16x {
+            get {
+                object obj = ResourceManager.GetObject("Database_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Database_256x {
+            get {
+                object obj = ResourceManager.GetObject("Database_256x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap DatabaseOptions_12882_24 {
             get {
                 object obj = ResourceManager.GetObject("DatabaseOptions_12882_24", resourceCulture);
@@ -2204,6 +2494,36 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap DataGrid_674_24 {
             get {
                 object obj = ResourceManager.GetObject("DataGrid_674_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap DatasetReference_16x {
+            get {
+                object obj = ResourceManager.GetObject("DatasetReference_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap DataSourceView_16x {
+            get {
+                object obj = ResourceManager.GetObject("DataSourceView_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap DataTable_256x {
+            get {
+                object obj = ResourceManager.GetObject("DataTable_256x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2438,6 +2758,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap designer {
+            get {
+                object obj = ResourceManager.GetObject("designer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap detachprocess_6535_32 {
             get {
                 object obj = ResourceManager.GetObject("detachprocess_6535_32", resourceCulture);
@@ -2458,9 +2788,39 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap DisableAllBreakpoints_16x {
+            get {
+                object obj = ResourceManager.GetObject("DisableAllBreakpoints_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap DisassemblyWindow_16x {
+            get {
+                object obj = ResourceManager.GetObject("DisassemblyWindow_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap DisassemblyWindow_6536_32 {
             get {
                 object obj = ResourceManager.GetObject("DisassemblyWindow_6536_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Disconnect_16x {
+            get {
+                object obj = ResourceManager.GetObject("Disconnect_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2571,6 +2931,16 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap DomainUpOrDown_676_24 {
             get {
                 object obj = ResourceManager.GetObject("DomainUpOrDown_676_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Download_16x {
+            get {
+                object obj = ResourceManager.GetObject("Download_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2711,6 +3081,16 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap EmbeddedFont_182_24 {
             get {
                 object obj = ResourceManager.GetObject("EmbeddedFont_182_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap EnableAllBreakpoints_16x {
+            get {
+                object obj = ResourceManager.GetObject("EnableAllBreakpoints_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2985,6 +3365,35 @@ namespace WinExplorer {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!-- This file was generated by the AiToXaml tool.--&gt;
+        ///&lt;!-- Tool Version: 14.0.22307.0 --&gt;
+        ///&lt;Viewbox Width=&quot;256&quot; Height=&quot;256&quot; xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;&gt;
+        ///  &lt;Rectangle Width=&quot;256&quot; Height=&quot;256&quot;&gt;
+        ///    &lt;Rectangle.Fill&gt;
+        ///      &lt;DrawingBrush&gt;
+        ///        &lt;DrawingBrush.Drawing&gt;
+        ///          &lt;DrawingGroup&gt;
+        ///            &lt;DrawingGroup.Children&gt;
+        ///              &lt;GeometryDrawing Brush=&quot;#FFF6F6F6&quot; Geometry=&quot;F1M16,248L240,248 240,8 16,8z&quot; /&gt;
+        ///              &lt;GeometryDrawing Brush=&quot;#FF4141 [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string EventLog_256x {
+            get {
+                return ResourceManager.GetString("EventLog_256x", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap EventLog_32x {
+            get {
+                object obj = ResourceManager.GetObject("EventLog_32x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         public static System.Drawing.Icon eventlogFailureAudit {
@@ -3067,6 +3476,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap ExceptionSettings_16x {
+            get {
+                object obj = ResourceManager.GetObject("ExceptionSettings_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Exe {
             get {
                 object obj = ResourceManager.GetObject("Exe", resourceCulture);
@@ -3097,9 +3516,29 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap ExecutionPlan_16x {
+            get {
+                object obj = ResourceManager.GetObject("ExecutionPlan_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Expand {
             get {
                 object obj = ResourceManager.GetObject("Expand", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Expander_24x {
+            get {
+                object obj = ResourceManager.GetObject("Expander_24x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -3130,6 +3569,16 @@ namespace WinExplorer {
         public static string ExplorerWindowTitle {
             get {
                 return ResourceManager.GetString("ExplorerWindowTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Export_16x {
+            get {
+                object obj = ResourceManager.GetObject("Export_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -3226,9 +3675,49 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap F12_BreakpointEnable_28x {
+            get {
+                object obj = ResourceManager.GetObject("F12_BreakpointEnable_28x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap f12_SortDownArrowBlue {
+            get {
+                object obj = ResourceManager.GetObject("f12_SortDownArrowBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap f12_SortDownArrowGrey {
+            get {
+                object obj = ResourceManager.GetObject("f12_SortDownArrowGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Field {
             get {
                 object obj = ResourceManager.GetObject("Field", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Field_blue_16x {
+            get {
+                object obj = ResourceManager.GetObject("Field_blue_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -3259,6 +3748,46 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap Field_Shortcut_546_24 {
             get {
                 object obj = ResourceManager.GetObject("Field_Shortcut_546_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap FieldFriend_16x {
+            get {
+                object obj = ResourceManager.GetObject("FieldFriend_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap FieldPrivate_16x {
+            get {
+                object obj = ResourceManager.GetObject("FieldPrivate_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap FieldProtect_16x {
+            get {
+                object obj = ResourceManager.GetObject("FieldProtect_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap FieldSealed_16x {
+            get {
+                object obj = ResourceManager.GetObject("FieldSealed_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -3493,6 +4022,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap FindinFiles_16x {
+            get {
+                object obj = ResourceManager.GetObject("FindinFiles_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap FindinFiles_6299 {
             get {
                 object obj = ResourceManager.GetObject("FindinFiles_6299", resourceCulture);
@@ -3623,6 +4162,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap FolderOpen_16x {
+            get {
+                object obj = ResourceManager.GetObject("FolderOpen_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap FolderOpen_7140_24 {
             get {
                 object obj = ResourceManager.GetObject("FolderOpen_7140_24", resourceCulture);
@@ -3683,6 +4232,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap ForeignKey_32x {
+            get {
+                object obj = ResourceManager.GetObject("ForeignKey_32x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap FormatDocument_382_32 {
             get {
                 object obj = ResourceManager.GetObject("FormatDocument_382_32", resourceCulture);
@@ -3706,6 +4265,16 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap Formtag_5766_24 {
             get {
                 object obj = ResourceManager.GetObject("Formtag_5766_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Forward_256x {
+            get {
+                object obj = ResourceManager.GetObject("Forward_256x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -3983,6 +4552,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap GoToSourceCode_16x {
+            get {
+                object obj = ResourceManager.GetObject("GoToSourceCode_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap GoToSourceCode_6546_32 {
             get {
                 object obj = ResourceManager.GetObject("GoToSourceCode_6546_32", resourceCulture);
@@ -4243,6 +4822,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap i_delete_all_breakpointsGrey_F12 {
+            get {
+                object obj = ResourceManager.GetObject("i_delete_all_breakpointsGrey_F12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Icons_7951_32 {
             get {
                 object obj = ResourceManager.GetObject("Icons_7951_32", resourceCulture);
@@ -4323,6 +4912,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap ImmediateWindow_16x {
+            get {
+                object obj = ResourceManager.GetObject("ImmediateWindow_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap ImmediateWindow_2644_32 {
             get {
                 object obj = ResourceManager.GetObject("ImmediateWindow_2644_32", resourceCulture);
@@ -4336,6 +4935,16 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap ImplementInterface_5540_32 {
             get {
                 object obj = ResourceManager.GetObject("ImplementInterface_5540_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Import_16x {
+            get {
+                object obj = ResourceManager.GetObject("Import_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -4553,6 +5162,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Key_32x {
+            get {
+                object obj = ResourceManager.GetObject("Key_32x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap KeyDown_8461_24 {
             get {
                 object obj = ResourceManager.GetObject("KeyDown_8461_24", resourceCulture);
@@ -4741,6 +5360,16 @@ namespace WinExplorer {
         public static string ListViewNameColumn {
             get {
                 return ResourceManager.GetString("ListViewNameColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Loading_Blue_16x {
+            get {
+                object obj = ResourceManager.GetObject("Loading_Blue_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -5056,6 +5685,26 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap MessageQueue_256x {
+            get {
+                object obj = ResourceManager.GetObject("MessageQueue_256x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap MessageQueue_32x {
+            get {
+                object obj = ResourceManager.GetObject("MessageQueue_32x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap method {
             get {
                 object obj = ResourceManager.GetObject("method", resourceCulture);
@@ -5265,6 +5914,26 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap MyApplication_8249_24 {
             get {
                 object obj = ResourceManager.GetObject("MyApplication_8249_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Namespace_16x {
+            get {
+                object obj = ResourceManager.GetObject("Namespace_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Namespace_16xSM {
+            get {
+                object obj = ResourceManager.GetObject("Namespace_16xSM", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -5599,6 +6268,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap NewItem_16x {
+            get {
+                object obj = ResourceManager.GetObject("NewItem_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Newkey_307_32 {
             get {
                 object obj = ResourceManager.GetObject("Newkey_307_32", resourceCulture);
@@ -5699,6 +6378,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap NewQuery_16x {
+            get {
+                object obj = ResourceManager.GetObject("NewQuery_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap NewQueryStringParameter_8799_32 {
             get {
                 object obj = ResourceManager.GetObject("NewQueryStringParameter_8799_32", resourceCulture);
@@ -5752,6 +6441,16 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap NewRightFrame_376_32 {
             get {
                 object obj = ResourceManager.GetObject("NewRightFrame_376_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap NewRow_16x {
+            get {
+                object obj = ResourceManager.GetObject("NewRow_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -5979,6 +6678,26 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap NugetLogo_16x {
+            get {
+                object obj = ResourceManager.GetObject("NugetLogo_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap NugetPackage {
+            get {
+                object obj = ResourceManager.GetObject("NugetPackage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap NumberedBullets_11696_32 {
             get {
                 object obj = ResourceManager.GetObject("NumberedBullets_11696_32", resourceCulture);
@@ -6079,6 +6798,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Office_Sharepoint_Application_16xLG {
+            get {
+                object obj = ResourceManager.GetObject("Office_Sharepoint_Application_16xLG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap OpaqueBackground_245_32 {
             get {
                 object obj = ResourceManager.GetObject("OpaqueBackground_245_32", resourceCulture);
@@ -6152,6 +6881,16 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap OpenTopic_355_32 {
             get {
                 object obj = ResourceManager.GetObject("OpenTopic_355_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap OpenWeb_16x {
+            get {
+                object obj = ResourceManager.GetObject("OpenWeb_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -6299,12 +7038,32 @@ namespace WinExplorer {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Output_256x {
+            get {
+                object obj = ResourceManager.GetObject("Output_256x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         public static System.Drawing.Icon OutputParameter {
             get {
                 object obj = ResourceManager.GetObject("OutputParameter", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap OverlayStatic_16x {
+            get {
+                object obj = ResourceManager.GetObject("OverlayStatic_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -6461,6 +7220,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Paste_16x {
+            get {
+                object obj = ResourceManager.GetObject("Paste_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Paste_6520_32 {
             get {
                 object obj = ResourceManager.GetObject("Paste_6520_32", resourceCulture);
@@ -6474,6 +7243,16 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap Pdb {
             get {
                 object obj = ResourceManager.GetObject("Pdb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap PerformanceReport_16x {
+            get {
+                object obj = ResourceManager.GetObject("PerformanceReport_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -6691,6 +7470,26 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Property_16x {
+            get {
+                object obj = ResourceManager.GetObject("Property_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Property_256x {
+            get {
+                object obj = ResourceManager.GetObject("Property_256x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Property_Friend_503_24 {
             get {
                 object obj = ResourceManager.GetObject("Property_Friend_503_24", resourceCulture);
@@ -6741,9 +7540,49 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap PropertyFriend_16x {
+            get {
+                object obj = ResourceManager.GetObject("PropertyFriend_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap PropertyGridEditorPart_6041_24 {
             get {
                 object obj = ResourceManager.GetObject("PropertyGridEditorPart_6041_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap PropertyPrivate_16x {
+            get {
+                object obj = ResourceManager.GetObject("PropertyPrivate_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap PropertyProtect_16x {
+            get {
+                object obj = ResourceManager.GetObject("PropertyProtect_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap PropertySealed_16x {
+            get {
+                object obj = ResourceManager.GetObject("PropertySealed_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -6871,6 +7710,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Redo_16x {
+            get {
+                object obj = ResourceManager.GetObject("Redo_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap ReferencedElements_12777_24 {
             get {
                 object obj = ResourceManager.GetObject("ReferencedElements_12777_24", resourceCulture);
@@ -6904,6 +7753,16 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap Refresh {
             get {
                 object obj = ResourceManager.GetObject("Refresh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Refresh_16x {
+            get {
+                object obj = ResourceManager.GetObject("Refresh_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -7095,6 +7954,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Restart_16x {
+            get {
+                object obj = ResourceManager.GetObject("Restart_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap RestoreDefaultView_9695_32 {
             get {
                 object obj = ResourceManager.GetObject("RestoreDefaultView_9695_32", resourceCulture);
@@ -7128,6 +7997,16 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap ResultstoText_9948_32 {
             get {
                 object obj = ResourceManager.GetObject("ResultstoText_9948_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ResultToDataGrid_16x {
+            get {
+                object obj = ResourceManager.GetObject("ResultToDataGrid_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -7168,6 +8047,16 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap RPCThread_10388_24 {
             get {
                 object obj = ResourceManager.GetObject("RPCThread_10388_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Run_256x {
+            get {
+                object obj = ResourceManager.GetObject("Run_256x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -7225,6 +8114,26 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Save_256x {
+            get {
+                object obj = ResourceManager.GetObject("Save_256x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap SaveAll_256x {
+            get {
+                object obj = ResourceManager.GetObject("SaveAll_256x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Saveall_6518_24 {
             get {
                 object obj = ResourceManager.GetObject("Saveall_6518_24", resourceCulture);
@@ -7255,6 +8164,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Schema_32xLG {
+            get {
+                object obj = ResourceManager.GetObject("Schema_32xLG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap SchemaObjectProperties_12783_24 {
             get {
                 object obj = ResourceManager.GetObject("SchemaObjectProperties_12783_24", resourceCulture);
@@ -7275,9 +8194,29 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Script_16x {
+            get {
+                object obj = ResourceManager.GetObject("Script_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap ScrollViewerElement_10726_24 {
             get {
                 object obj = ResourceManager.GetObject("ScrollViewerElement_10726_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Search_16x {
+            get {
+                object obj = ResourceManager.GetObject("Search_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -7365,9 +8304,29 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap ServerSettings_16x {
+            get {
+                object obj = ResourceManager.GetObject("ServerSettings_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Services {
             get {
                 object obj = ResourceManager.GetObject("Services", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Services_16x {
+            get {
+                object obj = ResourceManager.GetObject("Services_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -7665,6 +8624,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap SortAscendingFilter_16x {
+            get {
+                object obj = ResourceManager.GetObject("SortAscendingFilter_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap SortByType_5543_32 {
             get {
                 object obj = ResourceManager.GetObject("SortByType_5543_32", resourceCulture);
@@ -7678,6 +8647,16 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap SortDescending_276_32 {
             get {
                 object obj = ResourceManager.GetObject("SortDescending_276_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap SortDescendingFilter_16x {
+            get {
+                object obj = ResourceManager.GetObject("SortDescendingFilter_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -7765,6 +8744,26 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap SQLCEDest_16x {
+            get {
+                object obj = ResourceManager.GetObject("SQLCEDest_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap SQLServerObjectExplorer_16x {
+            get {
+                object obj = ResourceManager.GetObject("SQLServerObjectExplorer_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap StackedBarSeries_12694_24 {
             get {
                 object obj = ResourceManager.GetObject("StackedBarSeries_12694_24", resourceCulture);
@@ -7795,9 +8794,39 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap StartupProject_32x {
+            get {
+                object obj = ResourceManager.GetObject("StartupProject_32x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap StartWithoutDebug_16x {
+            get {
+                object obj = ResourceManager.GetObject("StartWithoutDebug_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap StartwithProfilingPaused_10577_32 {
             get {
                 object obj = ResourceManager.GetObject("StartwithProfilingPaused_10577_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap StatusHelp_256x {
+            get {
+                object obj = ResourceManager.GetObject("StatusHelp_256x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -7815,9 +8844,29 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap StatusWarning_16x {
+            get {
+                object obj = ResourceManager.GetObject("StatusWarning_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Step_RunTest_8814_32 {
             get {
                 object obj = ResourceManager.GetObject("Step_RunTest_8814_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap StepIn_16x {
+            get {
+                object obj = ResourceManager.GetObject("StepIn_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -7835,6 +8884,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap StepOut_16x {
+            get {
+                object obj = ResourceManager.GetObject("StepOut_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Stepout_6327_32 {
             get {
                 object obj = ResourceManager.GetObject("Stepout_6327_32", resourceCulture);
@@ -7845,9 +8904,49 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap StepOver_16x {
+            get {
+                object obj = ResourceManager.GetObject("StepOver_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap StepOver_6328_32 {
             get {
                 object obj = ResourceManager.GetObject("StepOver_6328_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Stop {
+            get {
+                object obj = ResourceManager.GetObject("Stop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Stop_16x {
+            get {
+                object obj = ResourceManager.GetObject("Stop_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Stop_grey_16x {
+            get {
+                object obj = ResourceManager.GetObject("Stop_grey_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -7868,6 +8967,16 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap StopQuery_10561_32 {
             get {
                 object obj = ResourceManager.GetObject("StopQuery_10561_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap String_16x {
+            get {
+                object obj = ResourceManager.GetObject("String_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -7948,6 +9057,26 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap SyncContents_5706_32 {
             get {
                 object obj = ResourceManager.GetObject("SyncContents_5706_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Table_16x {
+            get {
+                object obj = ResourceManager.GetObject("Table_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap TableAdapter_16x {
+            get {
+                object obj = ResourceManager.GetObject("TableAdapter_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -8165,6 +9294,26 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap TextContentControl_16x {
+            get {
+                object obj = ResourceManager.GetObject("TextContentControl_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Thread_256x {
+            get {
+                object obj = ResourceManager.GetObject("Thread_256x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap ThresholdRulenode_8715_24 {
             get {
                 object obj = ResourceManager.GetObject("ThresholdRulenode_8715_24", resourceCulture);
@@ -8372,6 +9521,26 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Triangle_16x {
+            get {
+                object obj = ResourceManager.GetObject("Triangle_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap TriggerAction_16x {
+            get {
+                object obj = ResourceManager.GetObject("TriggerAction_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Type_527_24 {
             get {
                 object obj = ResourceManager.GetObject("Type_527_24", resourceCulture);
@@ -8542,6 +9711,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Undo_16x {
+            get {
+                object obj = ResourceManager.GetObject("Undo_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap UngroupClause_10556_32 {
             get {
                 object obj = ResourceManager.GetObject("UngroupClause_10556_32", resourceCulture);
@@ -8672,6 +9851,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Upload_16x {
+            get {
+                object obj = ResourceManager.GetObject("Upload_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap UseCase_13484_32 {
             get {
                 object obj = ResourceManager.GetObject("UseCase_13484_32", resourceCulture);
@@ -8792,6 +9981,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap View_16x {
+            get {
+                object obj = ResourceManager.GetObject("View_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap ViewBox_10697_24 {
             get {
                 object obj = ResourceManager.GetObject("ViewBox_10697_24", resourceCulture);
@@ -8892,6 +10091,36 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap VSO_Folder_16x {
+            get {
+                object obj = ResourceManager.GetObject("VSO_Folder_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap VSO_FolderOpen_16x {
+            get {
+                object obj = ResourceManager.GetObject("VSO_FolderOpen_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap VSO_NugetLogo_52x {
+            get {
+                object obj = ResourceManager.GetObject("VSO_NugetLogo_52x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap VSObject_Field_Friend {
             get {
                 object obj = ResourceManager.GetObject("VSObject_Field_Friend", resourceCulture);
@@ -8972,9 +10201,29 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap WebService_256x {
+            get {
+                object obj = ResourceManager.GetObject("WebService_256x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap WebTestMonitor_32Bit_02_ {
             get {
                 object obj = ResourceManager.GetObject("WebTestMonitor_32Bit_02_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap WindowsForm_256x {
+            get {
+                object obj = ResourceManager.GetObject("WindowsForm_256x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

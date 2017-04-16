@@ -433,7 +433,17 @@ namespace AIMS.Libraries.CodeEditor.WinForms
             int tl = _control.Document.Text.Length;
             return Math.Min(tl, l);
         }
-
+        public int GetOffset()
+        {
+            int X = Position.X;
+            int Y = Position.Y;
+            if (Y >= _control.Document.Lines.Length)
+                return 0;
+            TextRange tr = new TextRange(0, 0, X, Y);
+            int l = _control.Document.GetRange(tr).Length;
+            int tl = _control.Document.Text.Length;
+            return Math.Min(tl, l);
+        }
 
         /// <summary>
         /// Gets Offset of the caret.

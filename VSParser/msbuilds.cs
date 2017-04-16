@@ -2277,8 +2277,8 @@ namespace VSProvider
             process.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
             process.StartInfo.UseShellExecute = false;
 
-            //process.StartInfo.RedirectStandardError = true;
-            //process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.RedirectStandardError = true;
+            process.StartInfo.RedirectStandardOutput = true;
 
             //process.EnableRaisingEvents = true;
             //process.Exited += p_Exited;

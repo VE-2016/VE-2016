@@ -1,0 +1,55 @@
+D:\sample\src\extensions\ildasm\obj\Debug\ResolveAssemblyReference.cache
+D:\UpdatedSample2\bin\Debug\ildasm.dll
+D:\UpdatedSample2\bin\Debug\ildasm.pdb
+D:\UpdatedSample2\bin\Debug\ildasm.dll.CodeAnalysisLog.xml
+D:\UpdatedSample2\bin\Debug\ildasm.dll.lastcodeanalysissucceeded
+D:\UpdatedSample2\src\extensions\ildasm\obj\Debug\ResolveAssemblyReference.cache
+D:\UpdatedSample2\src\extensions\ildasm\obj\Debug\ildasm.dll
+D:\UpdatedSample2\src\extensions\ildasm\obj\Debug\ildasm.pdb
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\ildasm.dll
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\ildasm.pdb
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\ildasm.dll.CodeAnalysisLog.xml
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\bin\Debug\ildasm.dll.lastcodeanalysissucceeded
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\extensions\ildasm\obj\Debug\ildasm.csprojResolveAssemblyReference.cache
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\extensions\ildasm\obj\Debug\ildasm.dll
+c:\Users\user\AppData\Local\Tableau\MDbg Sample\MDbg Sample\src\extensions\ildasm\obj\Debug\ildasm.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\ildasm\bin\Debug\ildasm.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\ildasm\bin\Debug\ildasm.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\ildasm\bin\Debug\ildasm.dll.CodeAnalysisLog.xml
+C:\MSBuildProjects-beta\Debuggers\MDB\ildasm\bin\Debug\ildasm.dll.lastcodeanalysissucceeded
+C:\MSBuildProjects-beta\Debuggers\MDB\ildasm\bin\Debug\corapi.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\ildasm\bin\Debug\mdbgeng.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\ildasm\bin\Debug\mdbgext.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\ildasm\bin\Debug\raw.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\ildasm\bin\Debug\NativeDebugWrappers.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\ildasm\bin\Debug\corapi.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\ildasm\bin\Debug\mdbgeng.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\ildasm\bin\Debug\mdbgeng.xml
+C:\MSBuildProjects-beta\Debuggers\MDB\ildasm\bin\Debug\mdbgext.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\ildasm\bin\Debug\mdbgext.xml
+C:\MSBuildProjects-beta\Debuggers\MDB\ildasm\bin\Debug\raw.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\ildasm\bin\Debug\NativeDebugWrappers.pdb
+C:\MSBuildProjects-beta\Debuggers\MDB\ildasm\bin\Debug\NativeDebugWrappers.xml
+C:\MSBuildProjects-beta\Debuggers\MDB\ildasm\obj\Debug\ildasm.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\Debuggers\MDB\ildasm\obj\Debug\ildasm.dll
+C:\MSBuildProjects-beta\Debuggers\MDB\ildasm\obj\Debug\ildasm.pdb
+f:\VE-2017\Debuggers\MDB\ildasm\bin\Debug\ildasm.dll
+f:\VE-2017\Debuggers\MDB\ildasm\bin\Debug\ildasm.pdb
+f:\VE-2017\Debuggers\MDB\ildasm\bin\Debug\ildasm.dll.CodeAnalysisLog.xml
+f:\VE-2017\Debuggers\MDB\ildasm\bin\Debug\ildasm.dll.lastcodeanalysissucceeded
+f:\VE-2017\Debuggers\MDB\ildasm\bin\Debug\corapi.dll
+f:\VE-2017\Debuggers\MDB\ildasm\bin\Debug\mdbgeng.dll
+f:\VE-2017\Debuggers\MDB\ildasm\bin\Debug\mdbgext.dll
+f:\VE-2017\Debuggers\MDB\ildasm\bin\Debug\raw.dll
+f:\VE-2017\Debuggers\MDB\ildasm\bin\Debug\NativeDebugWrappers.dll
+f:\VE-2017\Debuggers\MDB\ildasm\bin\Debug\corapi.pdb
+f:\VE-2017\Debuggers\MDB\ildasm\bin\Debug\mdbgeng.pdb
+f:\VE-2017\Debuggers\MDB\ildasm\bin\Debug\mdbgeng.xml
+f:\VE-2017\Debuggers\MDB\ildasm\bin\Debug\mdbgext.pdb
+f:\VE-2017\Debuggers\MDB\ildasm\bin\Debug\mdbgext.xml
+f:\VE-2017\Debuggers\MDB\ildasm\bin\Debug\raw.pdb
+f:\VE-2017\Debuggers\MDB\ildasm\bin\Debug\NativeDebugWrappers.pdb
+f:\VE-2017\Debuggers\MDB\ildasm\bin\Debug\NativeDebugWrappers.xml
+f:\VE-2017\Debuggers\MDB\ildasm\obj\Debug\ildasm.csprojResolveAssemblyReference.cache
+f:\VE-2017\Debuggers\MDB\ildasm\obj\Debug\ildasm.dll
+f:\VE-2017\Debuggers\MDB\ildasm\obj\Debug\ildasm.pdb

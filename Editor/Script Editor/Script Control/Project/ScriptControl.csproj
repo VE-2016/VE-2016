@@ -11,7 +11,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AIMS.Libraries.Scripting.ScriptControl</RootNamespace>
     <AssemblyName>ScriptControl</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -20,12 +20,13 @@
     <TargetFrameworkProfile />
     <Platform />
     <Configuration />
+    <RestorePackages>false</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>Bin\</OutputPath>
+    <OutputPath>Bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -241,6 +242,18 @@
     <Compile Include="NRefactory\Visitors\ToVBNetConvertVisitor.cs" />
     <Compile Include="NRefactory\Visitors\VBNetConstructsConvertVisitor.cs" />
     <Compile Include="NRefactory\Visitors\VBNetToCSharpConvertVisitor.cs" />
+    <None Include="Properties\DataSources\AIMS.Libraries.CodeEditor.CodeEditorControl.datasource" />
+    <None Include="Properties\DataSources\AIMS.Libraries.CodeEditor.Intellisense.datasource" />
+    <None Include="Properties\DataSources\AIMS.Libraries.CodeEditor.IntError.datasource" />
+    <None Include="Properties\DataSources\AIMS.Libraries.CodeEditor.ListViewExt.datasource" />
+    <None Include="Properties\DataSources\AIMS.Libraries.CodeEditor.PanelIns.datasource" />
+    <None Include="Properties\DataSources\AIMS.Libraries.CodeEditor.Proxy+OpenFileEventArgs.datasource" />
+    <None Include="Properties\DataSources\AIMS.Libraries.CodeEditor.Proxy.datasource" />
+    <None Include="Properties\DataSources\AIMS.Libraries.CodeEditor.resource.datasource" />
+    <None Include="Properties\DataSources\AIMS.Libraries.CodeEditor.Settings.datasource" />
+    <None Include="Properties\DataSources\AIMS.Libraries.CodeEditor.TopForm.datasource" />
+    <None Include="Properties\DataSources\AIMS.Libraries.CodeEditor.TypeExplorer.datasource" />
+    <None Include="Properties\DataSources\AIMS.Libraries.CodeEditor.TypeForm.datasource" />
     <None Include="Resources\Default_Program.cs" />
     <Compile Include="Windows\FileForm.cs">
       <SubType>Form</SubType>
@@ -281,19 +294,7 @@
     <Compile Include="Windows\Document.Designer.cs">
       <DependentUpon>Document.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\ErrorList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\ErrorList.Designer.cs">
-      <DependentUpon>ErrorList.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utilities\GenericConverter.cs" />
-    <Compile Include="Windows\Output.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\Output.Designer.cs">
-      <DependentUpon>Output.cs</DependentUpon>
-    </Compile>
     <Compile Include="Project\ComReferenceProjectItem.cs" />
     <Compile Include="Project\DefaultProject.cs" />
     <Compile Include="Project\FileProjectItem.cs" />
@@ -359,12 +360,6 @@
     <Compile Include="ReferenceDialog\WebServicesView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Windows\ProjectExplorer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\ProjectExplorer.Designer.cs">
-      <DependentUpon>ProjectExplorer.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\ScriptControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -421,18 +416,6 @@
     <EmbeddedResource Include="Windows\Document.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Document.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\ErrorList.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>ErrorList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Output.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Output.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\ProjectExplorer.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>ProjectExplorer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -574,21 +557,25 @@
       <Project>{3814f627-858a-42a3-9aaf-cd649413f2a8}</Project>
       <Name>CodeEditor.SyntaxFiles</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Themes\ThemeVS2012Light.csproj">
-      <Project>{4ed4fdb5-9fd0-49e6-876d-1635f727c755}</Project>
-      <Name>ThemeVS2012Light</Name>
+    <ProjectReference Include="..\..\..\WinFormsUI\ThemeVS2010.csproj">
+      <Project>{e9efe270-83bc-4d18-a1bf-7902ba8b83d6}</Project>
+      <Name>ThemeVS2010</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Themes\ThemeVS2013Blue.csproj">
+    <ProjectReference Include="..\..\..\WinFormsUI\ThemeVS2012.csproj">
+      <Project>{4ed4fdb5-9fd0-49e6-876d-1635f727c755}</Project>
+      <Name>ThemeVS2012</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\WinFormsUI\ThemeVS2013.csproj">
       <Project>{245e07f6-10d5-4cfa-b003-0deb06b223da}</Project>
-      <Name>ThemeVS2013Blue</Name>
+      <Name>ThemeVS2013</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\WinFormsUI\ThemeVS2015.csproj">
+      <Project>{007d4ac8-948f-4816-86ad-b9d1343672c1}</Project>
+      <Name>ThemeVS2015</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\WinFormsUI\WinFormsUI.csproj">
       <Project>{c75532c4-765b-418e-b09b-46d36b2abdb1}</Project>
       <Name>WinFormsUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\WinForms\Docking\Project\Forms.Docking.csproj">
-      <Project>{d3c782ba-178e-4235-a3ba-8c11debb6bee}</Project>
-      <Name>Forms.Docking</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

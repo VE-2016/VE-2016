@@ -290,16 +290,21 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                     //currentCompilationUnit = (ICompilationUnit)parseInfo.MostRecentCompilationUnit;
                     //if (currentCompilationUnit != null)
                     {
-                        FillClassComboBox(true, maps);
-                        FillMembersComboBox();
+                        this.Invoke(new Action(() =>
+                        {
+                            FillClassComboBox(true, maps);
+                            FillMembersComboBox();
+                            UpdateMembersComboBox();
+                        }));
                     }
                 }
                 // else
                 {
                     // UpdateClassComboBox();
-                    UpdateMembersComboBox();
+                    //UpdateMembersComboBox();
                 }
                 //}
+               
 
                 running = false;
             }
@@ -598,6 +603,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             //foreach (IClass c in classes)
             {
                 if (doc != null)
+                    if(doc.vp != null)
                 {
                     string project = Path.GetExtension(doc.vp.FileName);
 
@@ -661,6 +667,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             }
             // UpdateClassComboBox();
 
+            if(namespaceComboBox.Items.Count > 0)
             namespaceComboBox.SelectedIndex = 0;
         }
 

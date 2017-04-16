@@ -1,0 +1,695 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2017\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="15.0">
+ <Targets>
+  <Target Name="f:\VE-2017\Debuggers\MDB\corapi\bin\Debug\corapi.dll">
+   <Modules>
+    <Module Name="corapi.dll">
+     <Messages>
+      <Message TypeName="MarkAssembliesWithAssemblyVersion" Category="Microsoft.Design" CheckId="CA1016" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Error">Add an AssemblyVersion attribute to 'corapi.dll'.</Issue>
+      </Message>
+     </Messages>
+     <Namespaces>
+      <Namespace Name="Microsoft.Samples.Debugging.CorDebug">
+       <Types>
+        <Type Name="CorFrame" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Address" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_Address()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Thread.cs" Line="576">'CorFrame.Address.get()' creates an exception of type 'CorException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#InternalFrameType" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_InternalFrameType()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Thread.cs" Line="561">'CorFrame.InternalFrameType.get()' creates an exception of type 'CorException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="CorThread" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#HasUnhandledException" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_HasUnhandledException()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Thread.cs" Line="212">'CorThread.HasUnhandledException.get()' creates an exception of type 'Exception', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ManagedCallbackBase" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.Break(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugThread)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2659">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.Break(ICorDebugAppDomain, ICorDebugThread)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.Breakpoint(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugThread,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugBreakpoint)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2634">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.Breakpoint(ICorDebugAppDomain, ICorDebugThread, ICorDebugBreakpoint)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.BreakpointSetError(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugThread,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugBreakpoint,System.UInt32)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2905">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.BreakpointSetError(ICorDebugAppDomain, ICorDebugThread, ICorDebugBreakpoint, uint)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.ControlCTrap(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugProcess)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2861">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.ControlCTrap(ICorDebugProcess)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.CreateAppDomain(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugProcess,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2823">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.CreateAppDomain(ICorDebugProcess, ICorDebugAppDomain)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.CreateProcess(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugProcess)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2705">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.CreateProcess(ICorDebugProcess)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.CreateThread(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugThread)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2722">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.CreateThread(ICorDebugAppDomain, ICorDebugThread)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.DebuggerError(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugProcess,System.Int32,System.UInt32)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2783">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.DebuggerError(ICorDebugProcess, int, uint)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.EditAndContinueRemap(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugThread,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugFunction,System.Int32)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2895">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.EditAndContinueRemap(ICorDebugAppDomain, ICorDebugThread, ICorDebugFunction, int)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.EvalComplete(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugThread,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugEval)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2683">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.EvalComplete(ICorDebugAppDomain, ICorDebugThread, ICorDebugEval)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.EvalException(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugThread,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugEval)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2695">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.EvalException(ICorDebugAppDomain, ICorDebugThread, ICorDebugEval)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.Exception(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugThread,System.Int32)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2670">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.Exception(ICorDebugAppDomain, ICorDebugThread, int)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.ExitAppDomain(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugProcess,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2833">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.ExitAppDomain(ICorDebugProcess, ICorDebugAppDomain)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.ExitProcess(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugProcess)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2713">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.ExitProcess(ICorDebugProcess)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.ExitThread(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugThread)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2732">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.ExitThread(ICorDebugAppDomain, ICorDebugThread)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.LoadAssembly(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAssembly)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2843">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.LoadAssembly(ICorDebugAppDomain, ICorDebugAssembly)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.LoadClass(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugClass)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2762">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.LoadClass(ICorDebugAppDomain, ICorDebugClass)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.LoadModule(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugModule)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2742">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.LoadModule(ICorDebugAppDomain, ICorDebugModule)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.LogMessage(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugThread,System.Int32,System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2797">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.LogMessage(ICorDebugAppDomain, ICorDebugThread, int, string, string)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.LogSwitch(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugThread,System.Int32,System.UInt32,System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2812">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.LogSwitch(ICorDebugAppDomain, ICorDebugThread, int, uint, string, string)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.NameChange(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugThread)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2870">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.NameChange(ICorDebugAppDomain, ICorDebugThread)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.StepComplete(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugThread,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugStepper,Microsoft.Samples.Debugging.CorDebug.NativeApi.CorDebugStepReason)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2647">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.StepComplete(ICorDebugAppDomain, ICorDebugThread, ICorDebugStepper, CorDebugStepReason)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.UnloadAssembly(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAssembly)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2853">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.UnloadAssembly(ICorDebugAppDomain, ICorDebugAssembly)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.UnloadClass(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugClass)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2772">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.UnloadClass(ICorDebugAppDomain, ICorDebugClass)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.UnloadModule(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugModule)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2752">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.UnloadModule(ICorDebugAppDomain, ICorDebugModule)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback.UpdateModuleSymbols(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugModule,System.Runtime.InteropServices.ComTypes.IStream)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2882">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback.UpdateModuleSymbols(ICorDebugAppDomain, ICorDebugModule, IStream)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback2.ChangeConnection(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugProcess,System.UInt32)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2946">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback2.ChangeConnection(ICorDebugProcess, uint)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback2.CreateConnection(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugProcess,System.UInt32,System.UInt16&amp;)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2941">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback2.CreateConnection(ICorDebugProcess, uint, ref ushort)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback2.DestroyConnection(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugProcess,System.UInt32)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2951">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback2.DestroyConnection(ICorDebugProcess, uint)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback2.Exception(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugThread,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugFrame,System.UInt32,Microsoft.Samples.Debugging.CorDebug.NativeApi.CorDebugExceptionCallbackType,System.UInt32)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2958">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback2.Exception(ICorDebugAppDomain, ICorDebugThread, ICorDebugFrame, uint, CorDebugExceptionCallbackType, uint)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback2.ExceptionUnwind(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugThread,Microsoft.Samples.Debugging.CorDebug.NativeApi.CorDebugExceptionUnwindCallbackType,System.UInt32)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2971">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback2.ExceptionUnwind(ICorDebugAppDomain, ICorDebugThread, CorDebugExceptionUnwindCallbackType, uint)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback2.FunctionRemapComplete(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugThread,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugFunction)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2932">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback2.FunctionRemapComplete(ICorDebugAppDomain, ICorDebugThread, ICorDebugFunction)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback2.FunctionRemapOpportunity(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugThread,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugFunction,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugFunction,System.UInt32)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2919">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback2.FunctionRemapOpportunity(ICorDebugAppDomain, ICorDebugThread, ICorDebugFunction, ICorDebugFunction, uint)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback2.MDANotification(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugController,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugThread,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugMDA)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="3009">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback2.MDANotification(ICorDebugController, ICorDebugThread, ICorDebugMDA)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugManagedCallback3.CustomNotification(Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugThread,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebugAppDomain)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="Debugger.cs" Line="2982">Make 'ManagedCallbackBase' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ICorDebugManagedCallback3.CustomNotification(ICorDebugThread, ICorDebugAppDomain)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ModuleRVAReader" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Microsoft.Samples.Debugging.CorSymbolStore.IDiaReadExeAtRVACallback.ReadExecutableAtRVA(System.UInt32,System.UInt32,System.UInt32&amp;,System.Byte[])" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="f:\VE-2017\Debuggers\MDB\corapi" File="ModuleRVAReader.cs" Line="48">Make 'ModuleRVAReader' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'IDiaReadExeAtRVACallback.ReadExecutableAtRVA(uint, uint, ref uint, byte[])' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="NativeMethods" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#CloseHandle(System.IntPtr)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.CloseHandle(IntPtr)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#CLRCreateInstance(System.Guid&amp;,System.Guid&amp;,System.Object&amp;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.CLRCreateInstance(ref Guid, ref Guid, out object)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#CoCreateInstance(System.Guid&amp;,System.IntPtr,System.Int32,System.Guid&amp;,Microsoft.Samples.Debugging.CorDebug.NativeApi.ICorDebug&amp;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.CoCreateInstance(ref Guid, IntPtr, int, ref Guid, out ICorDebug)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#CreateDebuggingInterfaceFromVersion(System.Int32,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.CreateDebuggingInterfaceFromVersion(int, string)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetRequestedRuntimeVersion(System.String,System.Text.StringBuilder,System.Int32,System.Int32&amp;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.GetRequestedRuntimeVersion(string, StringBuilder, int, out int)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetVersionFromProcess(Microsoft.Samples.Debugging.CorDebug.ProcessSafeHandle,System.Text.StringBuilder,System.Int32,System.Int32&amp;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.GetVersionFromProcess(ProcessSafeHandle, StringBuilder, int, out int)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OpenProcess(System.Int32,System.Boolean,System.Int32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.OpenProcess(int, bool, int)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#QueryFullProcessImageName(Microsoft.Samples.Debugging.CorDebug.ProcessSafeHandle,System.Int32,System.Text.StringBuilder,System.Int32&amp;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.QueryFullProcessImageName(ProcessSafeHandle, int, StringBuilder, ref int)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SHCreateStreamOnFile(System.String,Microsoft.Samples.Debugging.CorDebug.NativeMethods+Stgm,System.Runtime.InteropServices.ComTypes.IStream&amp;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.SHCreateStreamOnFile(string, NativeMethods.Stgm, out IStream)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+            <Message Id="0" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Name="ParameterImplicitAnsi" Certainty="75" Level="Error">To reduce security risk, marshal parameter 'file' as Unicode, by setting DllImport.CharSet to CharSet.Unicode, or by explicitly marshaling the parameter as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, specify MarshalAs explicitly, and set BestFitMapping=false; for added security, also set ThrowOnUnmappableChar=true.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SHCreateStreamOnFileEx(System.String,Microsoft.Samples.Debugging.CorDebug.NativeMethods+Stgm,System.Int32,System.Boolean,System.IntPtr,System.Runtime.InteropServices.ComTypes.IStream&amp;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.SHCreateStreamOnFileEx(string, NativeMethods.Stgm, int, bool, IntPtr, out IStream)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="Microsoft.Samples.Debugging.CorDebug.Utility">
+       <Types>
+        <Type Name="UnmanagedLibraryLeak+NativeMethods" Kind="Class" Accessibility="Private" ExternallyVisible="False">
+         <Members>
+          <Member Name="#GetProcAddress(Microsoft.Samples.Debugging.CorDebug.Utility.UnmanagedLibraryLeak+SafeLibraryHandle,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message Id="1" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="NonBreaking">
+             <Issue Name="ParameterImplicitAnsi" Certainty="75" Level="Error">To reduce security risk, marshal parameter 'procname' as Unicode, by setting DllImport.CharSet to CharSet.Unicode, or by explicitly marshaling the parameter as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, specify MarshalAs explicitly, and set BestFitMapping=false; for added security, also set ThrowOnUnmappableChar=true.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="Microsoft.Samples.Debugging.CorMetadata">
+       <Types>
+        <Type Name="MetadataFieldInfo" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#DeclaringType" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_DeclaringType()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="f:\VE-2017\Debuggers\MDB\corapi" File="MetadataFieldInfo.cs" Line="208">'MetadataFieldInfo.DeclaringType.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#FieldHandle" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_FieldHandle()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="f:\VE-2017\Debuggers\MDB\corapi" File="MetadataFieldInfo.cs" Line="176">'MetadataFieldInfo.FieldHandle.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#FieldType" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_FieldType()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="f:\VE-2017\Debuggers\MDB\corapi" File="MetadataFieldInfo.cs" Line="168">'MetadataFieldInfo.FieldType.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#MemberType" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_MemberType()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="f:\VE-2017\Debuggers\MDB\corapi" File="MetadataFieldInfo.cs" Line="192">'MetadataFieldInfo.MemberType.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#ReflectedType" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_ReflectedType()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="f:\VE-2017\Debuggers\MDB\corapi" File="MetadataFieldInfo.cs" Line="216">'MetadataFieldInfo.ReflectedType.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="MetadataMethodInfo" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#MethodHandle" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_MethodHandle()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="f:\VE-2017\Debuggers\MDB\corapi" File="CorMetadata.cs" Line="437">'MetadataMethodInfo.MethodHandle.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#ReflectedType" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_ReflectedType()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="f:\VE-2017\Debuggers\MDB\corapi" File="CorMetadata.cs" Line="396">'MetadataMethodInfo.ReflectedType.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#ReturnType" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_ReturnType()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="f:\VE-2017\Debuggers\MDB\corapi" File="CorMetadata.cs" Line="380">'MetadataMethodInfo.ReturnType.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#ReturnTypeCustomAttributes" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_ReturnTypeCustomAttributes()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="f:\VE-2017\Debuggers\MDB\corapi" File="CorMetadata.cs" Line="388">'MetadataMethodInfo.ReturnTypeCustomAttributes.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="MetadataType" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Assembly" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_Assembly()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="f:\VE-2017\Debuggers\MDB\corapi" File="MetadataType.cs" Line="251">'MetadataType.Assembly.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#AssemblyQualifiedName" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_AssemblyQualifiedName()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="f:\VE-2017\Debuggers\MDB\corapi" File="MetadataType.cs" Line="219">'MetadataType.AssemblyQualifiedName.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#BaseType" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_BaseType()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="f:\VE-2017\Debuggers\MDB\corapi" File="MetadataType.cs" Line="211">'MetadataType.BaseType.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#GUID" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_GUID()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="f:\VE-2017\Debuggers\MDB\corapi" File="MetadataType.cs" Line="268">'MetadataType.GUID.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#Module" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_Module()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="f:\VE-2017\Debuggers\MDB\corapi" File="MetadataType.cs" Line="259">'MetadataType.Module.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#Namespace" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_Namespace()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="f:\VE-2017\Debuggers\MDB\corapi" File="MetadataType.cs" Line="227">'MetadataType.Namespace.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#TypeHandle" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_TypeHandle()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="f:\VE-2017\Debuggers\MDB\corapi" File="MetadataType.cs" Line="243">'MetadataType.TypeHandle.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#UnderlyingSystemType" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_UnderlyingSystemType()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-04-16 16:09:46Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="f:\VE-2017\Debuggers\MDB\corapi" File="MetadataType.cs" Line="198">'MetadataType.UnderlyingSystemType.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065">
+   <Name>Do not raise exceptions in unexpected locations</Name>
+   <Description>Do not explicitly raise exceptions from unexpected locations. There are some methods, such as Equals and GetHashCode, which users do not expect to raise exceptions. Therefore calls to these methods are not commonly wrapped in try catch blocks.</Description>
+   <Resolution Name="PropertyGetter">{0} creates an exception of type {1}, an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb386039.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error, Warning</MessageLevel>
+   <File Name="designrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033">
+   <Name>Interface methods should be callable by child types</Name>
+   <Description>Explicit method implementations are defined with private accessibility. Classes that derive from classes with explicit method implementations and choose to re-declare them on the class will not be able to call into the base class implementation unless the base class has provided an alternate method with appropriate accessibility. When overriding a base class method that has been hidden by explicit interface implementation, in order to call into the base class implementation, a derived class must cast the base pointer to the relevant interface. When calling through this reference, however, the derived class implementation will actually be invoked, resulting in recursion and an eventual stack overflow.</Description>
+   <Resolution Name="Default">Make {0} sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of {1} and is visible to derived classes.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182153.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithAssemblyVersion" Category="Microsoft.Design" CheckId="CA1016">
+   <Name>Mark assemblies with AssemblyVersionAttribute</Name>
+   <Description>Assemblies should use version numbers. The version number is considered part of an assembly's identity. Versioning is applied by means of the AssemblyVersion attribute.</Description>
+   <Resolution Name="Default">Add an AssemblyVersion attribute to {0}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182155.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401">
+   <Name>P/Invokes should not be visible</Name>
+   <Description>Interop layer should not be public. The DllImport attribute should not be applied to publicly accessible members (public or protected).</Description>
+   <Resolution Name="Default">Change the accessibility of P/Invoke {0} so that it is no longer visible from outside its assembly.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182209.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="50">CriticalError</MessageLevel>
+   <File Name="interoperabilityrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101">
+   <Name>Specify marshaling for P/Invoke string arguments</Name>
+   <Description>When marshaling strings as ANSI (or as Auto on Win9x), some characters may be changed. If best-fit mapping is on, strings that appear different in Unicode will be marshaled to identical ANSI strings, which may lead to incorrect security decisions. Turning best-fit mapping off reduces this risk, as all characters without equivalents are mapped to '?'. Also, note that CharSet.Ansi is the default setting for all string marshaling; Unicode marshaling must be specified explicitly, either as a CharSet setting of DllImport or StructLayout, or as a MarshalAs attribute with a Unicode (or system-dependent) UnmanagedType.</Description>
+   <Resolution Name="ParameterImplicitAnsi">To reduce security risk, marshal parameter {0} as Unicode, by setting DllImport.CharSet to CharSet.Unicode, or by explicitly marshaling the parameter as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, specify MarshalAs explicitly, and set BestFitMapping=false; for added security, also set ThrowOnUnmappableChar=true.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182319.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="15.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

@@ -23,7 +23,7 @@ namespace WeifenLuo.WinFormsUI.Docking
         {
             if (index < 0 || index > Items.Count - 1)
                 return;
-
+            
             if (Contains(pane))
                 return;
 
@@ -32,17 +32,25 @@ namespace WeifenLuo.WinFormsUI.Docking
 
         internal void Dispose()
         {
-            for (int i = Count - 1; i >= 0; i--)
+            if (PatchController.EnableNestedDisposalFix == true)
+            {
+                List<DockPane> collection = new List<DockPane>(Items);
+                foreach (var dockPane in collection)
+                {
+                    dockPane.Close();
+                }
+
+                collection.Clear();
+                return;
+            }
+
+            for (int i=Count - 1; i>=0; i--)
                 this[i].Close();
         }
 
         internal void Remove(DockPane pane)
         {
             Items.Remove(pane);
-        }
-        internal void Clear()
-        {
-            Items.Clear();
         }
     }
 }

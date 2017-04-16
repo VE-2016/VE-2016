@@ -19,18 +19,30 @@ namespace AIMS.Libraries.CodeEditor.Core
         protected IntPtr _OldBmp = IntPtr.Zero;
 
 
-        private WeakReference _Control = null;
+        //private WeakReference _Control = null;
+
+        //private Control Control
+        //{
+        //    get
+        //    {
+        //        if (_Control != null)
+        //            return (Control)_Control.Target;
+        //        else
+        //            return null;
+        //    }
+        //    set { _Control = new WeakReference(value); }
+        //}
+
+        private Control _Control = null;
 
         private Control Control
         {
             get
             {
-                if (_Control != null)
-                    return (Control)_Control.Target;
-                else
-                    return null;
+                return _Control;
+                
             }
-            set { _Control = new WeakReference(value); }
+            set { _Control = value; }
         }
 
         public GDISurface(IntPtr hDC)

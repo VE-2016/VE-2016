@@ -8,12 +8,12 @@ using System.Globalization;
 
 namespace WeifenLuo.WinFormsUI.Docking
 {
-    public partial class DockPanel
+    partial class DockPanel
     {
         private static class Persistor
         {
             private const string ConfigFileVersion = "1.0";
-            private static string[] s_compatibleConfigFileVersions = new string[] { };
+            private static string[] CompatibleConfigFileVersions = { };
 
             private class DummyContent : DockContent
             {
@@ -21,187 +21,187 @@ namespace WeifenLuo.WinFormsUI.Docking
 
             private struct DockPanelStruct
             {
-                private double _dockLeftPortion;
+                private double m_dockLeftPortion;
                 public double DockLeftPortion
                 {
-                    get { return _dockLeftPortion; }
-                    set { _dockLeftPortion = value; }
+                    get { return m_dockLeftPortion; }
+                    set { m_dockLeftPortion = value; }
                 }
 
-                private double _dockRightPortion;
+                private double m_dockRightPortion;
                 public double DockRightPortion
                 {
-                    get { return _dockRightPortion; }
-                    set { _dockRightPortion = value; }
+                    get { return m_dockRightPortion; }
+                    set { m_dockRightPortion = value; }
                 }
 
-                private double _dockTopPortion;
+                private double m_dockTopPortion;
                 public double DockTopPortion
                 {
-                    get { return _dockTopPortion; }
-                    set { _dockTopPortion = value; }
+                    get { return m_dockTopPortion; }
+                    set { m_dockTopPortion = value; }
                 }
 
-                private double _dockBottomPortion;
+                private double m_dockBottomPortion;
                 public double DockBottomPortion
                 {
-                    get { return _dockBottomPortion; }
-                    set { _dockBottomPortion = value; }
+                    get { return m_dockBottomPortion; }
+                    set { m_dockBottomPortion = value; }
                 }
 
-                private int _indexActiveDocumentPane;
+                private int m_indexActiveDocumentPane;
                 public int IndexActiveDocumentPane
                 {
-                    get { return _indexActiveDocumentPane; }
-                    set { _indexActiveDocumentPane = value; }
+                    get { return m_indexActiveDocumentPane; }
+                    set { m_indexActiveDocumentPane = value; }
                 }
 
-                private int _indexActivePane;
+                private int m_indexActivePane;
                 public int IndexActivePane
                 {
-                    get { return _indexActivePane; }
-                    set { _indexActivePane = value; }
+                    get { return m_indexActivePane; }
+                    set { m_indexActivePane = value; }
                 }
             }
 
             private struct ContentStruct
             {
-                private string _persistString;
+                private string m_persistString;
                 public string PersistString
                 {
-                    get { return _persistString; }
-                    set { _persistString = value; }
+                    get { return m_persistString; }
+                    set { m_persistString = value; }
                 }
 
-                private double _autoHidePortion;
+                private double m_autoHidePortion;
                 public double AutoHidePortion
                 {
-                    get { return _autoHidePortion; }
-                    set { _autoHidePortion = value; }
+                    get { return m_autoHidePortion; }
+                    set { m_autoHidePortion = value; }
                 }
 
-                private bool _isHidden;
+                private bool m_isHidden;
                 public bool IsHidden
                 {
-                    get { return _isHidden; }
-                    set { _isHidden = value; }
+                    get { return m_isHidden; }
+                    set { m_isHidden = value; }
                 }
 
-                private bool _isFloat;
+                private bool m_isFloat;
                 public bool IsFloat
                 {
-                    get { return _isFloat; }
-                    set { _isFloat = value; }
+                    get { return m_isFloat; }
+                    set { m_isFloat = value; }
                 }
             }
 
             private struct PaneStruct
             {
-                private DockState _dockState;
+                private DockState m_dockState;
                 public DockState DockState
                 {
-                    get { return _dockState; }
-                    set { _dockState = value; }
+                    get { return m_dockState; }
+                    set { m_dockState = value; }
                 }
 
-                private int _indexActiveContent;
+                private int m_indexActiveContent;
                 public int IndexActiveContent
                 {
-                    get { return _indexActiveContent; }
-                    set { _indexActiveContent = value; }
+                    get { return m_indexActiveContent; }
+                    set { m_indexActiveContent = value; }
                 }
 
-                private int[] _indexContents;
+                private int[] m_indexContents;
                 public int[] IndexContents
                 {
-                    get { return _indexContents; }
-                    set { _indexContents = value; }
+                    get { return m_indexContents; }
+                    set { m_indexContents = value; }
                 }
 
-                private int _zOrderIndex;
+                private int m_zOrderIndex;
                 public int ZOrderIndex
                 {
-                    get { return _zOrderIndex; }
-                    set { _zOrderIndex = value; }
+                    get { return m_zOrderIndex; }
+                    set { m_zOrderIndex = value; }
                 }
             }
 
             private struct NestedPane
             {
-                private int _indexPane;
+                private int m_indexPane;
                 public int IndexPane
                 {
-                    get { return _indexPane; }
-                    set { _indexPane = value; }
+                    get { return m_indexPane; }
+                    set { m_indexPane = value; }
                 }
 
-                private int _indexPrevPane;
+                private int m_indexPrevPane;
                 public int IndexPrevPane
                 {
-                    get { return _indexPrevPane; }
-                    set { _indexPrevPane = value; }
+                    get { return m_indexPrevPane; }
+                    set { m_indexPrevPane = value; }
                 }
 
-                private DockAlignment _alignment;
+                private DockAlignment m_alignment;
                 public DockAlignment Alignment
                 {
-                    get { return _alignment; }
-                    set { _alignment = value; }
+                    get { return m_alignment; }
+                    set { m_alignment = value; }
                 }
 
-                private double _proportion;
+                private double m_proportion;
                 public double Proportion
                 {
-                    get { return _proportion; }
-                    set { _proportion = value; }
+                    get { return m_proportion; }
+                    set { m_proportion = value; }
                 }
             }
 
             private struct DockWindowStruct
             {
-                private DockState _dockState;
+                private DockState m_dockState;
                 public DockState DockState
                 {
-                    get { return _dockState; }
-                    set { _dockState = value; }
+                    get { return m_dockState; }
+                    set { m_dockState = value; }
                 }
 
-                private int _zOrderIndex;
+                private int m_zOrderIndex;
                 public int ZOrderIndex
                 {
-                    get { return _zOrderIndex; }
-                    set { _zOrderIndex = value; }
+                    get { return m_zOrderIndex; }
+                    set { m_zOrderIndex = value; }
                 }
 
-                private NestedPane[] _nestedPanes;
+                private NestedPane[] m_nestedPanes;
                 public NestedPane[] NestedPanes
                 {
-                    get { return _nestedPanes; }
-                    set { _nestedPanes = value; }
+                    get { return m_nestedPanes; }
+                    set { m_nestedPanes = value; }
                 }
             }
 
             private struct FloatWindowStruct
             {
-                private Rectangle _bounds;
+                private Rectangle m_bounds;
                 public Rectangle Bounds
                 {
-                    get { return _bounds; }
-                    set { _bounds = value; }
+                    get { return m_bounds; }
+                    set { m_bounds = value; }
                 }
 
-                private int _zOrderIndex;
+                private int m_zOrderIndex;
                 public int ZOrderIndex
                 {
-                    get { return _zOrderIndex; }
-                    set { _zOrderIndex = value; }
+                    get { return m_zOrderIndex; }
+                    set { m_zOrderIndex = value; }
                 }
 
-                private NestedPane[] _nestedPanes;
+                private NestedPane[] m_nestedPanes;
                 public NestedPane[] NestedPanes
                 {
-                    get { return _nestedPanes; }
-                    set { _nestedPanes = value; }
+                    get { return m_nestedPanes; }
+                    set { m_nestedPanes = value; }
                 }
             }
 
@@ -367,18 +367,13 @@ namespace WeifenLuo.WinFormsUI.Docking
                 {
                     try
                     {
-                        LoadFromXml(dockPanel, fs, deserializeContent);
+                        LoadFromXml(dockPanel, fs, deserializeContent, true);
                     }
                     finally
                     {
                         fs.Close();
                     }
                 }
-            }
-
-            public static void LoadFromXml(DockPanel dockPanel, Stream stream, DeserializeDockContent deserializeContent)
-            {
-                LoadFromXml(dockPanel, stream, deserializeContent, true);
             }
 
             private static ContentStruct[] LoadContents(XmlTextReader xmlIn)
@@ -615,7 +610,7 @@ namespace WeifenLuo.WinFormsUI.Docking
                     {
                         IDockContent content = dockPanel.Contents[panes[i].IndexContents[j]];
                         if (j == 0)
-                            pane = dockPanel.DockPaneFactory.CreateDockPane(content, panes[i].DockState, false);
+                            pane = dockPanel.Theme.Extender.DockPaneFactory.CreateDockPane(content, panes[i].DockState, false);
                         else if (panes[i].DockState == DockState.Float)
                             content.DockHandler.FloatPane = pane;
                         else
@@ -650,7 +645,7 @@ namespace WeifenLuo.WinFormsUI.Docking
                         int indexPane = floatWindows[i].NestedPanes[j].IndexPane;
                         DockPane pane = dockPanel.Panes[indexPane];
                         if (j == 0)
-                            fw = dockPanel.FloatWindowFactory.CreateFloatWindow(dockPanel, pane, floatWindows[i].Bounds);
+                            fw = dockPanel.Theme.Extender.FloatWindowFactory.CreateFloatWindow(dockPanel, pane, floatWindows[i].Bounds);
                         else
                         {
                             int indexPrevPane = floatWindows[i].NestedPanes[j].IndexPrevPane;
@@ -697,7 +692,11 @@ namespace WeifenLuo.WinFormsUI.Docking
                 {
                     IDockContent content = dockPanel.Contents[sortedContents[i]];
                     if (content.DockHandler.Pane != null && content.DockHandler.Pane.DockState != DockState.Document)
+                    {
+                        content.DockHandler.SuspendAutoHidePortionUpdates = true;
                         content.DockHandler.IsHidden = contents[sortedContents[i]].IsHidden;
+                        content.DockHandler.SuspendAutoHidePortionUpdates = false;
+                    }
                 }
 
                 // after all non-document IDockContent, show document IDockContent
@@ -705,16 +704,20 @@ namespace WeifenLuo.WinFormsUI.Docking
                 {
                     IDockContent content = dockPanel.Contents[sortedContents[i]];
                     if (content.DockHandler.Pane != null && content.DockHandler.Pane.DockState == DockState.Document)
+                    {
+                        content.DockHandler.SuspendAutoHidePortionUpdates = true;
                         content.DockHandler.IsHidden = contents[sortedContents[i]].IsHidden;
+                        content.DockHandler.SuspendAutoHidePortionUpdates = false;
+                    }
                 }
 
                 for (int i = 0; i < panes.Length; i++)
                     dockPanel.Panes[i].ActiveContent = panes[i].IndexActiveContent == -1 ? null : dockPanel.Contents[panes[i].IndexActiveContent];
 
-                if (dockPanelStruct.IndexActiveDocumentPane != -1)
+                if (dockPanelStruct.IndexActiveDocumentPane >= 0 && dockPanel.Panes.Count > dockPanelStruct.IndexActiveDocumentPane)
                     dockPanel.Panes[dockPanelStruct.IndexActiveDocumentPane].Activate();
 
-                if (dockPanelStruct.IndexActivePane != -1)
+                if (dockPanelStruct.IndexActivePane >= 0 && dockPanel.Panes.Count > dockPanelStruct.IndexActivePane)
                     dockPanel.Panes[dockPanelStruct.IndexActivePane].Activate();
 
                 for (int i = dockPanel.Contents.Count - 1; i >= 0; i--)
@@ -743,7 +746,7 @@ namespace WeifenLuo.WinFormsUI.Docking
                 if (formatVersion == ConfigFileVersion)
                     return true;
 
-                foreach (string s in s_compatibleConfigFileVersions)
+                foreach (string s in CompatibleConfigFileVersions)
                     if (s == formatVersion)
                         return true;
 
@@ -771,16 +774,38 @@ namespace WeifenLuo.WinFormsUI.Docking
             Persistor.SaveAsXml(this, stream, encoding, upstream);
         }
 
+        /// <summary>
+        /// Loads layout from XML file.
+        /// </summary>
+        /// <param name="fileName">The file name.</param>
+        /// <param name="deserializeContent">Deserialization handler.</param>
+        /// <exception cref="Exception">Deserialization might throw exceptions.</exception>
         public void LoadFromXml(string fileName, DeserializeDockContent deserializeContent)
         {
             Persistor.LoadFromXml(this, fileName, deserializeContent);
         }
 
+        /// <summary>
+        /// Loads layout from a stream.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <param name="deserializeContent">Deserialization handler.</param>
+        /// <exception cref="Exception">Deserialization might throw exceptions.</exception>
+        /// <remarks>
+        /// The stream is closed after deserialization.
+        /// </remarks>
         public void LoadFromXml(Stream stream, DeserializeDockContent deserializeContent)
         {
-            Persistor.LoadFromXml(this, stream, deserializeContent);
+            Persistor.LoadFromXml(this, stream, deserializeContent, true);
         }
 
+        /// <summary>
+        /// Loads layout from a stream.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <param name="deserializeContent">Deserialization handler.</param>
+        /// <param name="closeStream">The flag to close the stream after deserialization.</param>
+        /// <exception cref="Exception">Deserialization might throw exceptions.</exception>
         public void LoadFromXml(Stream stream, DeserializeDockContent deserializeContent, bool closeStream)
         {
             Persistor.LoadFromXml(this, stream, deserializeContent, closeStream);

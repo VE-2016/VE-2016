@@ -88,7 +88,14 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             this.DoubleBuffered = true;
             this.Name = "Document";
             this.ResumeLayout(false);
+            
+        }
 
+        public void SetBreakpoint(System.Drawing.Point p, int state = 1)
+        {
+            this.CodeEditorCtrl.AllowBreakPoints = true;
+            CodeEditorCtrl.ActiveViewControl.Document.SetBreakpoint(p, state);
+            CodeEditorCtrl.RedrawControl();
         }
 
         #endregion

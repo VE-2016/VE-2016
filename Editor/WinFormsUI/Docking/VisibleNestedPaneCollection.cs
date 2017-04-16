@@ -8,38 +8,38 @@ namespace WeifenLuo.WinFormsUI.Docking
 {
     public sealed class VisibleNestedPaneCollection : ReadOnlyCollection<DockPane>
     {
-        private NestedPaneCollection _nestedPanes;
+        private NestedPaneCollection m_nestedPanes;
 
         internal VisibleNestedPaneCollection(NestedPaneCollection nestedPanes)
             : base(new List<DockPane>())
         {
-            _nestedPanes = nestedPanes;
+            m_nestedPanes = nestedPanes;
         }
 
         public NestedPaneCollection NestedPanes
         {
-            get { return _nestedPanes; }
+            get	{	return m_nestedPanes;	}
         }
 
         public INestedPanesContainer Container
         {
-            get { return NestedPanes.Container; }
+            get	{	return NestedPanes.Container;	}
         }
 
         public DockState DockState
         {
-            get { return NestedPanes.DockState; }
+            get	{	return NestedPanes.DockState;	}
         }
 
         public bool IsFloat
         {
-            get { return NestedPanes.IsFloat; }
+            get	{	return NestedPanes.IsFloat;	}
         }
 
         internal void Refresh()
         {
             Items.Clear();
-            for (int i = 0; i < NestedPanes.Count; i++)
+            for (int i=0; i<NestedPanes.Count; i++)
             {
                 DockPane pane = NestedPanes[i];
                 NestedDockingStatus status = pane.NestedDockingStatus;
@@ -73,7 +73,7 @@ namespace WeifenLuo.WinFormsUI.Docking
 
             NestedDockingStatus statusPane = pane.NestedDockingStatus;
             DockPane lastNestedPane = null;
-            for (int i = Count - 1; i > IndexOf(pane); i--)
+            for (int i=Count - 1; i> IndexOf(pane); i--)
             {
                 if (this[i].NestedDockingStatus.PreviousPane == pane)
                 {
@@ -89,7 +89,7 @@ namespace WeifenLuo.WinFormsUI.Docking
                 Items[IndexOf(pane)] = lastNestedPane;
                 NestedDockingStatus lastNestedDock = lastNestedPane.NestedDockingStatus;
                 lastNestedDock.SetDisplayingStatus(true, statusPane.DisplayingPreviousPane, statusPane.DisplayingAlignment, statusPane.DisplayingProportion);
-                for (int i = indexLastNestedPane - 1; i > IndexOf(lastNestedPane); i--)
+                for (int i=indexLastNestedPane - 1; i>IndexOf(lastNestedPane); i--)
                 {
                     NestedDockingStatus status = this[i].NestedDockingStatus;
                     if (status.PreviousPane == pane)
@@ -109,7 +109,7 @@ namespace WeifenLuo.WinFormsUI.Docking
 
             this[0].NestedDockingStatus.SetDisplayingBounds(Container.DisplayingRectangle, Container.DisplayingRectangle, Rectangle.Empty);
 
-            for (int i = 1; i < Count; i++)
+            for (int i=1; i<Count; i++)
             {
                 DockPane pane = this[i];
                 NestedDockingStatus status = pane.NestedDockingStatus;
@@ -124,33 +124,33 @@ namespace WeifenLuo.WinFormsUI.Docking
                 Rectangle rectSplitter = rect;
                 if (status.DisplayingAlignment == DockAlignment.Left)
                 {
-                    rectThis.Width = (int)((double)rect.Width * status.DisplayingProportion) - (Measures.SplitterSize / 2);
+                    rectThis.Width = (int)((double)rect.Width * status.DisplayingProportion) - (pane.DockPanel.Theme.Measures.SplitterSize / 2);
                     rectSplitter.X = rectThis.X + rectThis.Width;
-                    rectSplitter.Width = Measures.SplitterSize;
+                    rectSplitter.Width = pane.DockPanel.Theme.Measures.SplitterSize;
                     rectPrev.X = rectSplitter.X + rectSplitter.Width;
                     rectPrev.Width = rect.Width - rectThis.Width - rectSplitter.Width;
                 }
                 else if (status.DisplayingAlignment == DockAlignment.Right)
                 {
-                    rectPrev.Width = (rect.Width - (int)((double)rect.Width * status.DisplayingProportion)) - (Measures.SplitterSize / 2);
+                    rectPrev.Width = (rect.Width - (int)((double)rect.Width * status.DisplayingProportion)) - (pane.DockPanel.Theme.Measures.SplitterSize / 2);
                     rectSplitter.X = rectPrev.X + rectPrev.Width;
-                    rectSplitter.Width = Measures.SplitterSize;
+                    rectSplitter.Width = pane.DockPanel.Theme.Measures.SplitterSize;
                     rectThis.X = rectSplitter.X + rectSplitter.Width;
                     rectThis.Width = rect.Width - rectPrev.Width - rectSplitter.Width;
                 }
                 else if (status.DisplayingAlignment == DockAlignment.Top)
                 {
-                    rectThis.Height = (int)((double)rect.Height * status.DisplayingProportion) - (Measures.SplitterSize / 2);
+                    rectThis.Height = (int)((double)rect.Height * status.DisplayingProportion) - (pane.DockPanel.Theme.Measures.SplitterSize / 2);
                     rectSplitter.Y = rectThis.Y + rectThis.Height;
-                    rectSplitter.Height = Measures.SplitterSize;
+                    rectSplitter.Height = pane.DockPanel.Theme.Measures.SplitterSize;
                     rectPrev.Y = rectSplitter.Y + rectSplitter.Height;
                     rectPrev.Height = rect.Height - rectThis.Height - rectSplitter.Height;
                 }
                 else if (status.DisplayingAlignment == DockAlignment.Bottom)
                 {
-                    rectPrev.Height = (rect.Height - (int)((double)rect.Height * status.DisplayingProportion)) - (Measures.SplitterSize / 2);
+                    rectPrev.Height = (rect.Height - (int)((double)rect.Height * status.DisplayingProportion)) - (pane.DockPanel.Theme.Measures.SplitterSize / 2);
                     rectSplitter.Y = rectPrev.Y + rectPrev.Height;
-                    rectSplitter.Height = Measures.SplitterSize;
+                    rectSplitter.Height = pane.DockPanel.Theme.Measures.SplitterSize;
                     rectThis.Y = rectSplitter.Y + rectSplitter.Height;
                     rectThis.Height = rect.Height - rectPrev.Height - rectSplitter.Height;
                 }

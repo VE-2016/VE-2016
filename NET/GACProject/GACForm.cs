@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using GACManagerApi;
+using System.Xml;
 
 namespace GACProject
 {
@@ -461,6 +462,27 @@ namespace GACProject
             return asms;
         }
 
+        public static Type FindTypeFromAssemblies(string name)
+        {
+
+            Type T = null;
+            
+
+            foreach(string s in asmd.Keys)
+            {
+                AssemblyDescription d = asmd[s];
+
+                T = d.GetTypeForName(name);
+
+                if (T != null)
+                    return T;
+
+            }
+
+            return T;
+
+        }
+
         public static string GetFrameworkDoc(string assembly, string data, string prefix = "")
         {
             if (asmd == null)
@@ -471,11 +493,27 @@ namespace GACProject
 
             AssemblyDescription d = asmd[assembly];
 
-            string doc = d.GetDocument(data, prefix);
+            XmlElement xml = d.GetDocument(data, prefix);
 
-            return doc;
+            if (xml == null)
+                return "";
+
+            return xml.InnerText;
         }
+        public static XmlElement GetFrameworkXmlDoc(string assembly, string data, string prefix = "")
+        {
+            if (asmd == null)
+                return null;
 
+            if (asmd.ContainsKey(assembly) == false)
+                return null;
+
+            AssemblyDescription d = asmd[assembly];
+
+            XmlElement xml = d.GetDocument(data, prefix);
+
+            return xml;
+        }
         public static Dictionary<string, AssemblyDescription> tlb { get; set; }
 
         async static public Task<ArrayList> GetTLBList()
@@ -622,6 +660,7 @@ namespace GACProject
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
+            
             LoadAssemblies(asm);
         }
 

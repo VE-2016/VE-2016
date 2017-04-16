@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Xml;
 using System.IO;
 using System.Reflection.Emit;
+using System.Collections;
 
 namespace GACManagerApi
 {
@@ -40,34 +41,72 @@ namespace GACManagerApi
             Path = filename;
         }
 
+        public Type[] GetAllTypes()
+        {
+
+            Type[] TT = null;
+
+            try
+            {
+
+                Assembly asm = Assembly.LoadFrom(Path);
+
+                TT = asm.GetTypes();
+
+            }
+            catch(Exception ex) { };
+
+            return TT;
+        }
+
+        public Type GetTypeForName(string name)
+        {
+            Type[] TT = GetAllTypes();
+            if(TT != null)
+            foreach(Type T in TT)
+            {
+                if (T.FullName.EndsWith(name))
+                    return T;
+            }
+            return null;
+        }
+
         public AssemblyDescription(string filename, string file)
         {
             try
             {
-                Assembly asm = Assembly.LoadFrom(filename);
+                if (!File.Exists(filename))
+                    return;
+                try
+                {
+                    Assembly asm = Assembly.LoadFrom(filename);
 
-                RuntimeVersion = asm.ImageRuntimeVersion;
+                    RuntimeVersion = asm.ImageRuntimeVersion;
 
-                Module[] d = asm.GetModules();
+                    Module[] d = asm.GetModules();
 
-                if (d != null)
-                    if (d.Length >= 1)
-                    {
-                        PortableExecutableKinds p;
+                    if (d != null)
+                        if (d.Length >= 1)
+                        {
+                            PortableExecutableKinds p;
 
-                        ImageFileMachine b;
+                            ImageFileMachine b;
 
 
-                        asm.GetModules()[0].GetPEKind(out p, out b);
+                            asm.GetModules()[0].GetPEKind(out p, out b);
 
-                        ProcessorArchitecture = p.ToString();
-                    }
+                            ProcessorArchitecture = p.ToString();
+                        }
 
-                DisplayName = asm.FullName;
+                    DisplayName = asm.FullName;
 
-                Path = filename;
+                    Path = filename;
 
-                LoadPropertiesFromDisplayName(DisplayName);
+                    LoadPropertiesFromDisplayName(DisplayName);
+                } catch(BadImageFormatException ex)
+                {
+
+                }
             }
             catch (Exception e)
             {
@@ -161,23 +200,22 @@ namespace GACManagerApi
         public XmlDocument xml { get; set; }
 
 
-        public string GetDocument(string data, string prefix)
+        public XmlElement GetDocument(string data, string prefix)
         {
             if (xml == null)
-                return "";
+                return null;
 
-            string doc = "";
-
+            
             foreach (XmlElement xmlElement in xml["doc"]["members"])
             {
                 if (xmlElement.Attributes.Count > 0)
-                    if (xmlElement.Attributes["name"].Value.Equals(prefix + data))
+                    if (xmlElement.Attributes["name"].Value.StartsWith(prefix + data))
                     {
-                        doc = xmlElement.InnerText;
+                        return xmlElement;// doc = xmlElement.InnerText;
                     }
             }
 
-            return doc;
+            return null;
         }
 
 
@@ -338,7 +376,7 @@ namespace GACManagerApi
             }
 
             //  Finally, get the path.
-            Path = AssemblyCache.QueryAssemblyInfo(DisplayName);
+            //Path = AssemblyCache.QueryAssemblyInfo(DisplayName);
         }
 
         private static byte[] HexToData(string hexString)

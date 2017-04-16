@@ -167,26 +167,28 @@ namespace AIMS.Libraries.CodeEditor.WinForms
         }
 
 
-        private WeakReference _Control = null;
+        //private WeakReference _Control = null;
 
-        public CodeEditorControl _CodeEditor
-        {
-            get
-            {
-                //try
-                //{
-                if (_Control != null && _Control.IsAlive)
-                    return (CodeEditorControl)_Control.Target;
-                else
-                    return null;
-                //}
-                //catch
-                //{
-                //    return null;
-                //}
-            }
-            set { _Control = new WeakReference(value); }
-        }
+        public CodeEditorControl _CodeEditor = null;
+
+        //public CodeEditorControl _CodeEditor
+        //{
+        //    get
+        //    {
+        //        //try
+        //        //{
+        //        if (_Control != null && _Control.IsAlive)
+        //            return (CodeEditorControl)_Control.Target;
+        //        else
+        //            return null;
+        //        //}
+        //        //catch
+        //        //{
+        //        //    return null;
+        //        //}
+        //    }
+        //    set { _Control = new WeakReference(value); }
+        //}
 
         #endregion
 
@@ -253,25 +255,43 @@ namespace AIMS.Libraries.CodeEditor.WinForms
         private ToolStripMenuItem _toolStripMenuItem7;
         private IContainer components;
 
+        //public CodeEditorControl CodeEditor
+        //{
+        //    get
+        //    {
+        //        //try
+        //        //{
+        //        if (_Control != null && _Control.IsAlive)
+        //            return (CodeEditorControl)_Control.Target;
+        //        else
+        //            return null;
+        //        //}
+        //        //catch
+        //        //{
+        //        //    return null;
+        //        //}
+        //    }
+        //    set { _Control = new WeakReference(value); }
+        //}
         public CodeEditorControl CodeEditor
         {
             get
             {
+                return _CodeEditor;
                 //try
                 //{
-                if (_Control != null && _Control.IsAlive)
-                    return (CodeEditorControl)_Control.Target;
-                else
-                    return null;
+                //if (_Control != null && _Control.IsAlive)
+                //    return (CodeEditorControl)_Control.Target;
+                //else
+                //    return null;
                 //}
                 //catch
                 //{
                 //    return null;
                 //}
             }
-            set { _Control = new WeakReference(value); }
+            set { _CodeEditor = value; }
         }
-
         #region PUBLIC PROPERTY IMEWINDOW
 
         private IMEWindow _IMEWindow;
@@ -294,28 +314,28 @@ namespace AIMS.Libraries.CodeEditor.WinForms
 
         private void CreateAutoList()
         {
-            if (this._CodeEditor != null && !this._CodeEditor.DisableAutoList && _AutoList == null)
-            {
-                //Debug.WriteLine("Creating Autolist");
+            //if (this._CodeEditor != null && !this._CodeEditor.DisableAutoList && _AutoList == null)
+            //{
+            //    //Debug.WriteLine("Creating Autolist");
 
-                this.AutoList = new AutoListForm(this);
-                this.AutoList.TopLevel = false;
-                NativeUser32Api.SetWindowLong(this.AutoList.Handle,
-                                            NativeUser32Api.GWL_STYLE,
-                                            (int)NativeUser32Api.WS_CHILD);
-                this.AutoList.SendToBack();
-                this.AutoList.Visible = false;
-                _AutoListVisible = false;
-                this.Controls.Add(this.AutoList);
-                this.AutoList.VisibleChanged += new EventHandler(AutoList_VisibleChanged);
-                this.AutoList.DoubleClick += new EventHandler(this.AutoListDoubleClick);
-                this.AutoList.Images = this._CodeEditor.AutoListIcons;
-            }
+            //    this.AutoList = new AutoListForm(this);
+            //    this.AutoList.TopLevel = false;
+            //    NativeUser32Api.SetWindowLong(this.AutoList.Handle,
+            //                                NativeUser32Api.GWL_STYLE,
+            //                                (int)NativeUser32Api.WS_CHILD);
+            //    this.AutoList.SendToBack();
+            //    this.AutoList.Visible = false;
+            //    _AutoListVisible = false;
+            //    this.Controls.Add(this.AutoList);
+            //    this.AutoList.VisibleChanged += new EventHandler(AutoList_VisibleChanged);
+            //    this.AutoList.DoubleClick += new EventHandler(this.AutoListDoubleClick);
+            //    this.AutoList.Images = this._CodeEditor.AutoListIcons;
+            //}
         }
 
         private void AutoList_VisibleChanged(object sender, EventArgs e)
         {
-            _AutoListVisible = this.AutoList.Visible;
+            //_AutoListVisible = this.AutoList.Visible;
         }
         private string _currentFileName = null;
         /// <value>
@@ -455,8 +475,7 @@ namespace AIMS.Libraries.CodeEditor.WinForms
         {
             if (!this._CodeEditor.DisableFindForm && _FindReplaceDialog == null)
             {
-                Debug.WriteLine("Creating Findform");
-                FindReplaceDialog = new FindReplaceForm(this);
+               FindReplaceDialog = new FindReplaceForm(this);
             }
         }
 
@@ -464,8 +483,7 @@ namespace AIMS.Libraries.CodeEditor.WinForms
         {
             if (this._CodeEditor != null && !this._CodeEditor.DisableInfoTip && _InfoTip == null)
             {
-                Debug.WriteLine("Creating Infotip");
-
+               
                 this.Controls.Add(InfoTip);
                 this.InfoTip.SendToBack();
                 this.InfoTip.Visible = false;
@@ -542,6 +560,8 @@ namespace AIMS.Libraries.CodeEditor.WinForms
             MouseMoveTimer.Dispose();
         }
 
+     
+
         private void _toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             CodeEditor.FormatCode();
@@ -564,6 +584,7 @@ namespace AIMS.Libraries.CodeEditor.WinForms
             else if (item.Text == "Cut")
             {
                 MessageBox.Show("Cut data requested");
+                Cut();
             }
         }
 
@@ -1078,7 +1099,7 @@ namespace AIMS.Libraries.CodeEditor.WinForms
 
 
 
-        private void PasteText()
+        public void PasteText()
         {
             //try
             //{
@@ -1288,7 +1309,7 @@ namespace AIMS.Libraries.CodeEditor.WinForms
 
         }
 
-        private void CopyText()
+        public void CopyText()
         {
             //no freaking vs.net copy empty selection 
             if (!Selection.IsValid)
@@ -3280,7 +3301,7 @@ namespace AIMS.Libraries.CodeEditor.WinForms
                     }
                 }
 
-
+                
                 //------------------------------------------------------------------------------------------------------------
 
                 if (e.Control || e.Alt)
@@ -3294,6 +3315,7 @@ namespace AIMS.Libraries.CodeEditor.WinForms
                         return;
 
                     case Keys.Down:
+                        if(!CodeEditor.ArrowHandled(e))
                         if (e.Control)
                             ScrollScreen(1);
                         else
@@ -3305,6 +3327,7 @@ namespace AIMS.Libraries.CodeEditor.WinForms
                         }
                         break;
                     case Keys.Up:
+                        if(!CodeEditor.ArrowHandled(e))
                         if (e.Control)
                             ScrollScreen(-1);
                         else
@@ -3331,7 +3354,7 @@ namespace AIMS.Libraries.CodeEditor.WinForms
 
 
                         //Painter.RenderCaret(this.CreateGraphics());
-
+                        CodeEditor.ArrowHandled(e);
                         this.Redraw(false);
                         break;
                     case Keys.Right:
@@ -3348,8 +3371,8 @@ namespace AIMS.Libraries.CodeEditor.WinForms
                                 Caret.MoveRight(e.Shift);
                             }
                         }
-                        //Painter.RenderCaret(this.CreateGraphics());
-                        this.Redraw(false);
+                        CodeEditor.ArrowHandled(e);
+                            this.Redraw(false);
                         break;
                     case Keys.End:
                         if (e.Control)
@@ -3488,7 +3511,7 @@ namespace AIMS.Libraries.CodeEditor.WinForms
 
         public void ShadowsUpdate(object state)
         {
-            //if (shadowed == Selection.GetCaretWord())
+            
             ShadowedWords();
             if (_haswords)
                 this.Invoke(new Action(() => { Refresh(); }));
@@ -3515,7 +3538,6 @@ namespace AIMS.Libraries.CodeEditor.WinForms
         protected override async void OnKeyPress(KeyPressEventArgs e)
         {
             base.OnKeyPress(e);
-
 
             if (!e.Handled && !_KeyDownHandled && e.KeyChar != (char)127 && (int)e.KeyChar != 8)
             {
@@ -3544,24 +3566,23 @@ namespace AIMS.Libraries.CodeEditor.WinForms
                     }
                 }
             }
+            
             //else 
             //if (AutoListVisible && !e.Handled && _CodeEditor.AutoListAutoSelect)
             {
                 // CodeEditor.FindWord();
 
-                // await this.CodeEditor.FindWord();
+                 await this.CodeEditor.FindWord(e.KeyChar);
 
-                FindWords w = new FindWords();
-                w.dd = this.CodeEditor;
-                w.Runs();
-
-
+             
             }
         }
 
         public class FindWords
         {
             public CodeEditorControl dd { get; set; }
+
+
 
             public void Runs()
             {
@@ -3580,443 +3601,111 @@ namespace AIMS.Libraries.CodeEditor.WinForms
             public void FindWord()
             {
 
-                dd.BeginInvoke(new Action(() => {  
 
-
-                if (dd.csd == null)
+                dd.BeginInvoke(new Action(() =>
                 {
-                        if(dd.vp != null)
-                            
-                    dd.csd = dd.vp.CSParsers();
-                }
 
-                dd._shouldwait++;
 
-                if (CodeEditorControl.ins == null)
-                {
-                    CodeEditorControl.ins = new PanelIns();
-                    CodeEditorControl.ins.cec = dd;
-
-                    CodeEditorControl.ins.LoadTypes(dd.csd);
-
-                    if (CodeEditorControl.form == null)
+                    if (dd.csd == null)
                     {
-                        CodeEditorControl.form = new TopForm();
-                        CodeEditorControl.form.Load(CodeEditorControl.ins);
-                        CodeEditorControl.ins.form = CodeEditorControl.form;
+                        if (dd.vp != null)
 
+                            dd.csd = dd.vp.CSParsers();
                     }
 
-                    CodeEditorControl.ins.Hide();
-                    CodeEditorControl.form.Hide();
+                    dd._shouldwait++;
 
-                    dd._ActiveView.Refresh();
-                }
+                    if (CodeEditorControl.ins == null)
+                    {
+                        CodeEditorControl.ins = new PanelIns(vp);
+                        CodeEditorControl.ins.cec = dd;
+
+                        CodeEditorControl.ins.LoadTypes(dd.csd);
+
+                        if (CodeEditorControl.form == null)
+                        {
+                            CodeEditorControl.form = new TopForm();
+                            CodeEditorControl.form.Load(CodeEditorControl.ins);
+                            CodeEditorControl.ins.form = CodeEditorControl.form;
+
+                        }
+
+                        CodeEditorControl.ins.Hide();
+                        CodeEditorControl.form.Hide();
+
+                        dd._ActiveView.Refresh();
+                    }
 
 
-                Point p = dd.Selection.GetCursor();
+                    Point p = dd.Selection.GetCursor();
 
 
-                if (dd.txt != null)
-                    if (p.Y + 1 != dd.txt.Line)
-                        dd._runnings = false;
+                    if (dd.txt != null)
+                        if (p.Y + 1 != dd.txt.Line)
+                            dd._runnings = false;
 
-                dd.txt = new TextLocation(p.Y + 1, p.X);
+                    //dd.txt = new TextLocation(p.Y + 1, p.X);
+
+                    txt = new TextLocation(p.Y + 1, p.X);
 
                 }));
 
-                if (dd._runnings == false)
-                {
-                   // dd.BeginInvoke(new Action(() => { dd.TypesWithDelay(); }));
-                    //TypesWithDelay();
-                }
 
-
-                if( dd._running == false)
+                if (_running == false)
                 {
-                    dd.BeginInvoke(new Action(() => { dd.SendWithDelay(); }));
-                    //dd.SendWithDelay();
+                    //dd.BeginInvoke(new Action(() => { SendWithDelay(); }));
+                    if (vp == null)
+                        return;
+
+                    _running = true;
+                    SendWithDelay();
                 }
 
 
                 return;
             }
 
-            //public bool _runnings = false;
+            bool _shouldwait = false;
 
-            public async void TypesWithDelay()
+            public VSProject vp { get; set; }
+
+            public VSParsers.CSParsers csd { get; set; }
+
+            public TextLocation txt { get; set; }
+
+            public string content { get; set; }
+
+            public string FileName { get; set; }
+
+
+            public void SendWithDelay()
             {
+                if (vp == null)
+                    return;
 
-                PanelIns ins = null;
+                _running = true;
 
-                    double db;
+                Intellisense ie = CodeEditorControl.IntErrors;
 
-                string bb = "";
 
-                int offset = 0;
+                if (csd.snx == null)
+                    csd.snx = new VSParsers.Syntaxer();
+                if (csd.snx.dg == null)
+                    csd.snx.dg = CodeEditorControl.dg;
+                ie.hc = csd.snx.ResolveAt(txt, content, FileName, vp);
 
-                VSParsers.CSParsers csd = null;
 
-                //bool afterdot = false;
+                dd.Invoke(new Action(() => { ie.Content(); }));
 
-                bool dotdeleted = false;
+                _running = false;
 
-                string w = "";
 
-                string FileName = "";
-
-                string Text = "";
-
-                bool _afterdot = false;
-
-                bool hasdots = false;
-
-                VSProject vp = null;
-
-                Point p = new Point(0,0);
-
-                TopForm form = CodeEditorControl.form;
-
-
-                dd.Invoke(new Action(() =>
-                {
-
-                    dd._runnings = true;
-
-                                        //
-                    p = dd.Selection.GetCursor();
-                //
-                offset = dd.Caret.Offset;
-                //
-                Row r = dd.Document[p.Y];
-                //
-                w = dd.Selection.GetCaretWord();
-
-                dotdeleted = false;
-
-                    FileName = "";
-
-                    
-
-                    
-
-                    if (w == ".")
-                    dd._afterdot = true;
-                else
-                {   //
-                    string[] pw = dd.Selection.GetPrevCaretWord();
-                    if (pw == null || pw[0] != ".")
-                    {
-                        if (dd._afterdot == true)
-                            dotdeleted = true;
-                        dd._afterdot = false;
-                    }
-                }
-
-                CodeEditorControl.ins.afterdot = dd._afterdot;
-
-                if (w == " ")
-                    CodeEditorControl.ins.offset = 0;
-
-
-                 
-
-                    Word ww = dd.Selection.getCaretWord();
-
-                    bool isnumber = double.TryParse(w, out db);
-
-                    if (dotdeleted == true)
-                    {
-
-                    }
-                    //
-
-                    //
-                    var ws = r.FormattedWords;
-                    //
-                    int cc = ws.IndexOf(ww);
-                    //
-                    bb = r.PrevNonWs(ww);
-                    //
-                    hasdots = r.HasDots(ww);
-
-                    csd = dd.csd;
-
-                ins = CodeEditorControl.ins;
-
-                Point pp = dd.Selection.GetCursor();
-
-                pp.X = pp.X * dd.ActiveViewControl.View.CharWidth;
-
-                pp.Y = (dd.ActiveViewControl.Document[p.Y].VisibleIndex - dd.ActiveViewControl.View.FirstVisibleRow + 1) * dd.ActiveViewControl.View.RowHeight + 3;
-
-                FileName = dd.FileName;
-
-                _afterdot = dd._afterdot;
-
-                Text = dd.Document.Text;
-
-                vp = dd.vp;
-
-                if (w.Length <= 1)
-                {
-
-
-                    CodeEditorControl.form.Location = dd.PointToScreen(pp);
-                }
-
-                if (CodeEditorControl.form.Visible == true)
-                    CodeEditorControl.form.SetTopMost();
-
-                dd.Focus();
-
-                dd._runnings = false;
-
-
-                    if (w.Length > 2)
-                        ins.Find(w, offset, hasdots);
-
-                    ins.resize(400, 207);
-
-                    //ins.v.ResumeLayout();
-
-                    ins.SetVirtualMode();
-
-                }));
-
-
-
-                                  
-
-                    if (bb != "")
-                    {
-                        //MessageBox.Show("Pattern detected - " + bb);
-
-                        ArrayList T = csd.GetAllTypes();
-
-                        foreach (IMember d in CodeEditorControl.ins.LL)
-                        {
-
-                            if (d != null)
-
-                                if (d.Name == bb)
-                                {
-                                    //MessageBox.Show("Pattern has been found - " + d.Name);
-
-                                    IType rb = d.ReturnType;
-
-                                    foreach (ICSharpCode.NRefactory.TypeSystem.ITypeDefinition dd in T)
-                                    {
-                                        if (dd != null)
-                                            if (dd.Name == rb.Name)
-                                            {
-                                                //MessageBox.Show("Pattern has been found of type " + rb.Name);
-
-                                                CodeEditorControl.ins.Find(dd.Name, offset, false);
-
-                                                ins.resize(300, 400);
-
-                                                return;
-                                            }
-                                    }
-                                }
-                        }
-                    }
-
-                    //ins.v.SuspendLayout();
-
-                    if ((w.Length < 2 && _afterdot == false && hasdots == false) || w == "." || w == "(" || dotdeleted)
-                    {
-                        ins.ClearLocalItems();
-                        ins.cc.Clear();
-                        ins.CC.Clear();
-                        //
-                        var data = csd.GetCodeComplete(FileName, Text, offset, p.X, p.Y);
-
-                        if (data != null)
-                            foreach (var d in data)
-                            {
-                                VSParsers.EntityCompletionData dd = d as VSParsers.EntityCompletionData;
-
-                                if (dd != null)
-                                {
-                                    int kind = 0;
-                                    if (dd.Entity.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Method)
-                                        kind = 1;
-                                    else if (dd.Entity.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Property)
-                                        kind = 3;
-                                    else if (dd.Entity.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Field)
-                                        kind = 2;
-                                    else if (dd.Entity.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Event)
-                                        kind = 4;
-                                    else
-                                        kind = 5;
-
-                                    ListViewItem v = new ListViewItem(dd.Entity.Name.ToString(), kind);
-                                    v.ImageIndex = kind;
-                                    ins.cc.Add(v);
-                                    ins.CC.Add(v);
-                                }
-                                else
-                                {
-                                    VariableCompletionData dv = d as VariableCompletionData;
-
-                                    if (dv != null)
-                                    {
-                                        if (dv.Variable.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Variable || dv.Variable.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Parameter)
-                                        {
-                                            ListViewItem v = new ListViewItem(dv.Text.ToString(), 3);
-                                            v.ImageIndex = 3;
-                                            ins.cc.Add(v);
-                                            ins.CC.Add(v);
-                                        }
-                                    }
-                                    else
-                                    {
-                                        ListViewItem v = new ListViewItem(d.DisplayText.ToString(), 0);
-                                        v.ImageIndex = 5;
-                                        ins.cc.Add(v);
-                                        ins.CC.Add(v);
-                                    }
-                                }
-                            }
-
-                        if (dotdeleted)
-                        {
-                            ins.LoadTypes(csd);
-                            ins.ReloadTypes();
-                        }
-                    }
-                    else
-                    if ((w.Length < 2 && _afterdot == false && hasdots == false) || w == ".")
-
-                    {
-                        ins.cc.Clear();
-                        ins.CC.Clear();
-
-                        var datas = csd.GetCurrentMembers(FileName, Text, offset, p.X, p.Y);
-
-                        ins.v.Items.Clear();
-
-                        if (datas.GetEnumerator().MoveNext() == false)
-                        {
-                            form.Hide();
-                            ins.Hide();
-
-                            Intellisense rr = CodeEditorControl.IntErrors;
-
-                            ArrayList EE = csd.GetErrors();
-
-                            vp.ImportProjectTypes();
-
-                            ArrayList ES = csd.ResolveAt(new TextLocation(p.Y + 1, p.X), Text, FileName, vp);
-
-                            EE.AddRange(ES);
-
-                            rr.LoadErrors(EE, vp);
-
-                            //ins.v.ResumeLayout();
-
-                            return;
-                        }
-
-                        foreach (var d in datas)
-                        {
-                            ISymbol dd = d as ISymbol;
-
-                            if (dd != null)
-                            {
-                                int kind = 0;
-                                if (dd.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Method)
-                                    kind = 1;
-                                else if (dd.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Property)
-                                    kind = 3;
-                                else if (dd.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Field)
-                                    kind = 2;
-                                else if (dd.SymbolKind == ICSharpCode.NRefactory.TypeSystem.SymbolKind.Event)
-                                    kind = 4;
-                                else
-                                    kind = 5;
-
-                                ListViewItem v = new ListViewItem(dd.Name.ToString(), kind);
-
-                                v.ImageIndex = kind;
-                                ins.cc.Add(v);
-                                ins.CC.Add(v);
-                            }
-                        }
-
-                        ins.LL = datas;
-
-
-
-                        if (w != ".")
-                            ins.ReloadTypes();
-
-                        ins.Y = ins.cc.Count;
-                    }
-
-                 
-
-
-
-                //if (w.Length > 2)
-                //    ins.Find(w, offset, hasdots);
-
-                //ins.resize(400, 207);
-
-                //if (w.Length <= 1)
-                //{
-                //    Point pp = Selection.GetCursor();
-
-                //    pp.X = pp.X * ActiveViewControl.View.CharWidth;
-
-                //    pp.Y = (ActiveViewControl.Document[p.Y].VisibleIndex - ActiveViewControl.View.FirstVisibleRow + 1) * ActiveViewControl.View.RowHeight + 3;
-
-                //    form.Location = this.PointToScreen(pp);
-                //}
-
-
-                //if (form.Visible == true)
-                //    form.SetTopMost();
-
-                //this.Focus();
-
-                //_runnings = false;
-                //}));
-
-                return;
             }
-
+        }
+            static public bool _running = false;
             
+        
 
-        }
-
-        private void SelectAutolistWord()
-        {
-            string s = Caret.CurrentRow.Text;
-            //try
-            //{
-            if (_AutoListStartPos == null)
-            {
-                Word w = Caret.CurrentWord;
-
-                if (w.Text == ".")
-                    _AutoListStartPos = new TextPoint(w.Column + 1, Caret.Position.Y);
-                else
-                    _AutoListStartPos = new TextPoint(w.Column, Caret.Position.Y);
-            }
-            _CodeEditor.AutoListPosition = new TextPoint(Caret.Position.X + 2, Caret.Position.Y);
-            if (Caret.Position.X - _AutoListStartPos.X >= 0 && _AutoListStartPos.X > 0)
-            {
-                s = s.Substring(_AutoListStartPos.X - 1, Caret.Position.X - _AutoListStartPos.X + 1);
-                if (Caret.CurrentWord.Text.Length > 0)
-                    s = Caret.CurrentWord.Text;
-                s = s.Replace('.', ' ').Trim();
-
-                AutoList.SelectItem(s);
-            }
-        }
         /// <summary>
         /// Overrides the default OnKeyUp
         /// </summary>
@@ -4053,6 +3742,14 @@ namespace AIMS.Libraries.CodeEditor.WinForms
 
                 //}
             }
+        }
+        public event RowEventHandler BreakPointAdded;
+        public void ToggleBreakpoint(Row r)
+        {
+
+            if (BreakPointAdded != null)
+                BreakPointAdded(this, new RowEventArgs(r));
+
         }
 
         /// <summary>
@@ -4215,6 +3912,7 @@ namespace AIMS.Libraries.CodeEditor.WinForms
                     {
                         Row r = Document[Painter.CharFromPixel(e.X, e.Y).Y];
                         r.Breakpoint = !r.Breakpoint;
+                        ToggleBreakpoint(r);
                         this.Redraw();
                     }
                     else
@@ -4364,22 +4062,7 @@ namespace AIMS.Libraries.CodeEditor.WinForms
                         }
                     }
 
-                    //i = Document.Text.IndexOf(word, i);
-
-                    //if (i < 0)
-                    //    break;
-
-                    //int g = GetRowndex(i);
-
-                    //int s = GetRowIndex(i);
-
-                    //int b = i - s + 2;
-
-                    //int be = (g - View.FirstVisibleRow) * View.RowHeight;
-                    //Rectangle rec = new Rectangle(10 + 17 + b * View.CharWidth, be, word.Length * View.CharWidth, View.RowHeight);
-                    //gg.FillRectangle(bb, rec);
-                    //if (g - View.FirstVisibleRow > View.VisibleRowCount)
-                    //    break;
+            
                 }
                 i++;
             }
@@ -4387,6 +4070,81 @@ namespace AIMS.Libraries.CodeEditor.WinForms
             _haswords = true;
         }
 
+        public ArrayList L { get; set; }
+
+        public void SelectedWords2()
+        {
+
+            if (L == null)
+                return;
+
+            string word = Selection.GetCaretWord();
+
+            int taborig = -View.FirstVisibleColumn * View.CharWidth;
+
+
+            Graphics gg = this.CreateGraphics();
+            Color cc = Color.FromKnownColor(KnownColor.Green);
+            cc = Color.FromArgb(60, cc);
+            SolidBrush bb = new SolidBrush(cc);
+
+            //int i = View.FirstVisibleRow;
+
+            //int cc = View.FirstVisibleRow + View.VisibleRowCount;
+
+
+            foreach (int[] c in L) {
+
+                int line = c[1];
+
+
+                //while (i < cc)
+                {
+                    if (line < Document.VisibleRows.Count)
+                    {
+                        Row row = Document.VisibleRows[line];
+
+                        int wdh = 0;
+
+
+                        int nt = 0;
+
+                        foreach (Word w in row)
+                        {
+                            if (w.Type == WordType.xtTab)
+                            {
+                                wdh += PixelTabSize;
+                                nt++;
+                            }
+
+                            if (w.Column < c[0])
+                                continue;
+
+                            if (w.Column == c[0])
+                            {
+                                int b = w.Column - nt;
+
+                                int be = (line - View.FirstVisibleRow) * View.RowHeight;
+                                //int be = i * View.RowHeight;
+
+                                int tt = View.TotalMarginWidth + 3 * View.CharWidth;// + View.TextMargin;
+
+                                Rectangle rec = new Rectangle(taborig + wdh + tt + b * View.CharWidth, be, c[2] * View.CharWidth, View.RowHeight);
+                                gg.FillRectangle(bb, rec);
+                                //Brush zigzagBrush = new System.Drawing.Drawing2D.HatchBrush(System.Drawing.Drawing2D.HatchStyle.ZigZag, Color.Red);
+                                //gg.FillRectangle(zigzagBrush, taborig + wdh + tt + b * View.CharWidth, be + View.RowHeight + 1, word.Length * View.CharWidth, (int)(View.RowHeight * 0.2));
+                                break;
+                            }
+                        }
+
+
+                    }
+                   // i++;
+                }
+
+                //haswords = true;
+        }
+        }
 
         public void FirstLine(int line)
         {
@@ -4507,8 +4265,8 @@ namespace AIMS.Libraries.CodeEditor.WinForms
 
                         Row se = null;
                         Row ee = null;
-
-                        if (e.X - this.View.TotalMarginWidth - 17 <= 1)
+                        
+                        if (e.X > 14 && e.X - this.View.TotalMarginWidth -1 <= 1)
                         {
                             //   MessageBox.Show("left mouse hover...");
                             Row t = rr;//row;
@@ -4557,7 +4315,7 @@ namespace AIMS.Libraries.CodeEditor.WinForms
                                 Color c = Color.FromKnownColor(KnownColor.Control);
                                 c = Color.FromArgb(100, c);
                                 SolidBrush b = new SolidBrush(c);
-                                Rectangle rec = new Rectangle(5, be, View.ClientAreaWidth + 20, ce - be + View.RowHeight);
+                                Rectangle rec = new Rectangle(13, be, View.ClientAreaWidth + 20, ce - be + View.RowHeight);
                                 g.FillRectangle(b, rec);
                                 int cc = this.Selection.GetCursorLine();
                                 if (be <= cc && ce >= cc)
@@ -4617,84 +4375,84 @@ namespace AIMS.Libraries.CodeEditor.WinForms
                         }
                         //else
                         {
-                            ////if (refresher == false)
-                            ////{
-                            ////TextPoint ppp = Painter.CharFromPixel(e.X, e.Y);
-                            //Word w = this.Document.GetWordFromPos(pos);
-                            ////Word w = this.Document.GetFormatWordFromPos(pos);
-                            ////if(Painter.IsMouseOverWord(pos.Y, e.X))
-                            //if (w != null)
+                            //if (refresher == false)
                             //{
-                            //    // MessageBox.Show("Entered word - " + w.Text);
+                            //TextPoint ppp = Painter.CharFromPixel(e.X, e.Y);
+                            Word w = this.Document.GetWordFromPos(pos);
+                            //Word w = this.Document.GetFormatWordFromPos(pos);
+                            //if(Painter.IsMouseOverWord(pos.Y, e.X))
+                            if (w != null)
+                            {
+                                // MessageBox.Show("Entered word - " + w.Text);
 
-                            //    if (mousemoveword != w.Text || mousemoveword == "")
-                            //    {
-                            //        mousemoveword = w.Text;
+                                if (mousemoveword != w.Text || mousemoveword == "")
+                                {
+                                    mousemoveword = w.Text;
 
-                            //        if (CodeEditor.csd != null)
-                            //        {
-                            //            //if (CodeEditor.vp != null)
-                            //            //{
-                            //            //    ArrayList L = CodeEditor.vp.GetCompileItems();
-                            //            //    CodeEditor.csd = CodeEditor.vp.CSParsers(); 
-                            //            //    CodeEditor.csd .AddProjectFiles(L);
-                            //            //    InfoTip.vp = CodeEditor.vp;
-                            //            //    InfoTip.keywords = ExtractKeywords();
-                            //            //}
+                                    if (CodeEditor.csd != null)
+                                    {
+                                        //if (CodeEditor.vp != null)
+                                        //{
+                                        //    ArrayList L = CodeEditor.vp.GetCompileItems();
+                                        //    CodeEditor.csd = CodeEditor.vp.CSParsers(); 
+                                        //    CodeEditor.csd .AddProjectFiles(L);
+                                        //    InfoTip.vp = CodeEditor.vp;
+                                        //    InfoTip.keywords = ExtractKeywords();
+                                        //}
 
 
-                            //            if (InfoTip.vp == null)
-                            //            {
-                            //                InfoTip.vp = CodeEditor.vp;
-                            //                InfoTip.keywords = ExtractKeywords();
-                            //            }
+                                        if (InfoTip.vp == null)
+                                        {
+                                            InfoTip.vp = CodeEditor.vp;
+                                            InfoTip.keywords = ExtractKeywords();
+                                        }
 
-                            //            //if (w.InfoTip != null)
-                            //            {
-                            //                string s = "";
+                                        //if (w.InfoTip != null)
+                                        {
+                                            string s = "";
 
-                            //                if (w.Text != "")
-                            //                {
-                            //                    TextLocation pp = new TextLocation(pos.Y + 1, pos.X + 1);
+                                            if (w.Text != "")
+                                            {
+                                                TextLocation pp = new TextLocation(pos.Y + 1, pos.X + 1);
 
-                            //                    //InfoTip.SetText(CodeEditor.csd.Resolve(pp, Document.Text, FileName), w.Text);
+                                                //InfoTip.SetText(CodeEditor.csd.Resolve(pp, Document.Text, FileName), w.Text);
 
-                            //                    int a = e.X + 1;// View.CharWidth * w.Column  + View.GutterMarginWidth + 100;
-                            //                    int b = (Document[p.Y].VisibleIndex - View.FirstVisibleRow) * View.RowHeight;
-                            //                    int c = row.Expansion_EndChar * View.CharWidth + View.GutterMarginWidth + 100;
-                            //                    if (_mouseX <= c)
-                            //                    {
-                            //                        InfoTip.Location = new Point(a, b + 20);
-                            //                        if (CodeEditor.csd != null)
-                            //                        {
-                            //                            ResolveResult res = CodeEditor.csd.Resolve(pp, Document.Text, FileName);
+                                                int a = e.X + 1;// View.CharWidth * w.Column  + View.GutterMarginWidth + 100;
+                                                int b = (Document[p.Y].VisibleIndex - View.FirstVisibleRow) * View.RowHeight;
+                                                int c = row.Expansion_EndChar * View.CharWidth + View.GutterMarginWidth + 100;
+                                                if (_mouseX <= c)
+                                                {
+                                                    InfoTip.Location = new Point(a, b + 20);
+                                                    if (CodeEditor.csd != null)
+                                                    {
+                                                        ResolveResult res = CodeEditor.csd.Resolve(pp, Document.Text, FileName);
 
-                            //                            s = InfoTip.SetText(res, w.Text);
-                            //                        }
-                            //                        if (s != "")
-                            //                            InfoTip.Show();
-                            //                        else InfoTip.Hide();
-                            //                    }
-                            //                    else
-                            //                    {
-                            //                        mousemoveword = "";
-                            //                        if (s == "") InfoTip.Hide();
-                            //                    }
-                            //                }
-                            //                else InfoTip.Hide();
-                            //            }
-                            //        }
-                            //         else InfoTip.Hide();
-                            //    }
-                            //     //else InfoTip.Hide();
-                            //}
-                            //else
-                            //{
-                            //    mousemoveword = "";
-                            //    InfoTip.Hide();
-                            //}
+                                                        s = InfoTip.SetText(res, w.Text);
+                                                    }
+                                                    if (s != "")
+                                                        InfoTip.Show();
+                                                    else InfoTip.Hide();
+                                                }
+                                                else
+                                                {
+                                                    mousemoveword = "";
+                                                    if (s == "") InfoTip.Hide();
+                                                }
+                                            }
+                                            else InfoTip.Hide();
+                                        }
+                                    }
+                                    else InfoTip.Hide();
+                                }
+                                //else InfoTip.Hide();
+                            }
+                            else
+                            {
+                                mousemoveword = "";
+                                InfoTip.Hide();
+                            }
 
-                            ////refresher = true;
+                            //refresher = true;
                         }
                     }
                 }
@@ -4964,6 +4722,8 @@ namespace AIMS.Libraries.CodeEditor.WinForms
                 Painter.RenderAll(e.Graphics);
 
                 ShadowedWords2();
+
+                SelectedWords2();
             }
         }
 
@@ -5803,7 +5563,7 @@ namespace AIMS.Libraries.CodeEditor.WinForms
                     w.start = i;
                     L.Add(w);
                 }
-
+            
             return L;
         }
 
@@ -6074,6 +5834,8 @@ namespace AIMS.Libraries.CodeEditor.WinForms
                     text += ")";
 
                     string doc = "";
+
+                    
 
                     if (m.Documentation != null)
                     {

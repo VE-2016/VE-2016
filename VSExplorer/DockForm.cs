@@ -33,7 +33,7 @@ namespace WinExplorer
 
             this.Controls.Add(dock);
 
-            scr = new ScriptControl();
+            scr = new ScriptControl(this);
 
             scr.Dock = DockStyle.Fill;
 
