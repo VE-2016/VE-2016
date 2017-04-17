@@ -21,3 +21,12 @@ f:\VE-2017\MSBuild\TCPLogger\bin\Debug\GACManagerApi.pdb
 f:\VE-2017\MSBuild\TCPLogger\obj\Debug\Loggers.csprojResolveAssemblyReference.cache
 f:\VE-2017\MSBuild\TCPLogger\obj\Debug\Loggers.dll
 f:\VE-2017\MSBuild\TCPLogger\obj\Debug\Loggers.pdb
+C:\Users\me\VE-2016\MSBuild\TCPLogger\bin\Debug\Loggers.dll
+C:\Users\me\VE-2016\MSBuild\TCPLogger\bin\Debug\Loggers.pdb
+C:\Users\me\VE-2016\MSBuild\TCPLogger\bin\Debug\GACProject.exe
+C:\Users\me\VE-2016\MSBuild\TCPLogger\bin\Debug\GACManagerApi.dll
+C:\Users\me\VE-2016\MSBuild\TCPLogger\bin\Debug\GACProject.pdb
+C:\Users\me\VE-2016\MSBuild\TCPLogger\bin\Debug\GACManagerApi.pdb
+C:\Users\me\VE-2016\MSBuild\TCPLogger\obj\Debug\Loggers.csprojResolveAssemblyReference.cache
+C:\Users\me\VE-2016\MSBuild\TCPLogger\obj\Debug\Loggers.dll
+C:\Users\me\VE-2016\MSBuild\TCPLogger\obj\Debug\Loggers.pdb

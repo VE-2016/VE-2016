@@ -124,3 +124,17 @@ f:\VE-2017\NET\PeReader\obj\Debug\Microsoft.Cci.PeReaderErrorMessages.resources
 f:\VE-2017\NET\PeReader\obj\Debug\PeReader.csproj.GenerateResource.Cache
 f:\VE-2017\NET\PeReader\obj\Debug\Microsoft.Cci.PeReader.dll
 f:\VE-2017\NET\PeReader\obj\Debug\Microsoft.Cci.PeReader.pdb
+C:\Users\me\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.PeReader.xml
+C:\Users\me\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.PeReader.dll
+C:\Users\me\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.PeReader.pdb
+C:\Users\me\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.dll
+C:\Users\me\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.dll
+C:\Users\me\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
+C:\Users\me\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.xml
+C:\Users\me\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\Users\me\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.xml
+C:\Users\me\VE-2016\NET\PeReader\obj\Debug\PeReader.csprojResolveAssemblyReference.cache
+C:\Users\me\VE-2016\NET\PeReader\obj\Debug\Microsoft.Cci.PeReaderErrorMessages.resources
+C:\Users\me\VE-2016\NET\PeReader\obj\Debug\PeReader.csproj.GenerateResource.Cache
+C:\Users\me\VE-2016\NET\PeReader\obj\Debug\Microsoft.Cci.PeReader.dll
+C:\Users\me\VE-2016\NET\PeReader\obj\Debug\Microsoft.Cci.PeReader.pdb

@@ -51,3 +51,8 @@ f:\VE-2017\NET\GACManagerApi\bin\Debug\GACManagerApi.pdb
 f:\VE-2017\NET\GACManagerApi\obj\Debug\GACManagerApi.csprojResolveAssemblyReference.cache
 f:\VE-2017\NET\GACManagerApi\obj\Debug\GACManagerApi.dll
 f:\VE-2017\NET\GACManagerApi\obj\Debug\GACManagerApi.pdb
+C:\Users\me\VE-2016\NET\GACManagerApi\bin\Debug\GACManagerApi.dll
+C:\Users\me\VE-2016\NET\GACManagerApi\bin\Debug\GACManagerApi.pdb
+C:\Users\me\VE-2016\NET\GACManagerApi\obj\Debug\GACManagerApi.csprojResolveAssemblyReference.cache
+C:\Users\me\VE-2016\NET\GACManagerApi\obj\Debug\GACManagerApi.dll
+C:\Users\me\VE-2016\NET\GACManagerApi\obj\Debug\GACManagerApi.pdb

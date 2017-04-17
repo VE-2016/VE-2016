@@ -154,3 +154,14 @@ f:\VE-2017\NET\GACProject\obj\Debug\GACProject.Properties.Resources.resources
 f:\VE-2017\NET\GACProject\obj\Debug\GACProject.csproj.GenerateResource.Cache
 f:\VE-2017\NET\GACProject\obj\Debug\GACProject.exe
 f:\VE-2017\NET\GACProject\obj\Debug\GACProject.pdb
+C:\Users\me\VE-2016\NET\GACProject\bin\Debug\GACProject.exe.config
+C:\Users\me\VE-2016\NET\GACProject\bin\Debug\GACProject.exe
+C:\Users\me\VE-2016\NET\GACProject\bin\Debug\GACProject.pdb
+C:\Users\me\VE-2016\NET\GACProject\bin\Debug\GACManagerApi.dll
+C:\Users\me\VE-2016\NET\GACProject\bin\Debug\GACManagerApi.pdb
+C:\Users\me\VE-2016\NET\GACProject\obj\Debug\GACProject.csprojResolveAssemblyReference.cache
+C:\Users\me\VE-2016\NET\GACProject\obj\Debug\GACProject.GACForm.resources
+C:\Users\me\VE-2016\NET\GACProject\obj\Debug\GACProject.Properties.Resources.resources
+C:\Users\me\VE-2016\NET\GACProject\obj\Debug\GACProject.csproj.GenerateResource.Cache
+C:\Users\me\VE-2016\NET\GACProject\obj\Debug\GACProject.exe
+C:\Users\me\VE-2016\NET\GACProject\obj\Debug\GACProject.pdb

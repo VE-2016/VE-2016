@@ -42,3 +42,15 @@ f:\VE-2017\Debuggers\MDB\raw\bin\Debug\NativeDebugWrappers.xml
 f:\VE-2017\Debuggers\MDB\raw\obj\Debug\raw.csprojResolveAssemblyReference.cache
 f:\VE-2017\Debuggers\MDB\raw\obj\Debug\raw.dll
 f:\VE-2017\Debuggers\MDB\raw\obj\Debug\raw.pdb
+C:\Users\me\VE-2016\Debuggers\MDB\raw\bin\Debug\raw.dll
+C:\Users\me\VE-2016\Debuggers\MDB\raw\bin\Debug\raw.pdb
+C:\Users\me\VE-2016\Debuggers\MDB\raw\bin\Debug\raw.dll.CodeAnalysisLog.xml
+C:\Users\me\VE-2016\Debuggers\MDB\raw\bin\Debug\raw.dll.lastcodeanalysissucceeded
+C:\Users\me\VE-2016\Debuggers\MDB\raw\bin\Debug\NativeDebugWrappers.dll
+C:\Users\me\VE-2016\Debuggers\MDB\raw\bin\Debug\System.dll
+C:\Users\me\VE-2016\Debuggers\MDB\raw\bin\Debug\NativeDebugWrappers.pdb
+C:\Users\me\VE-2016\Debuggers\MDB\raw\bin\Debug\NativeDebugWrappers.xml
+C:\Users\me\VE-2016\Debuggers\MDB\raw\bin\Debug\pl\System.resources.dll
+C:\Users\me\VE-2016\Debuggers\MDB\raw\obj\Debug\raw.csprojResolveAssemblyReference.cache
+C:\Users\me\VE-2016\Debuggers\MDB\raw\obj\Debug\raw.dll
+C:\Users\me\VE-2016\Debuggers\MDB\raw\obj\Debug\raw.pdb

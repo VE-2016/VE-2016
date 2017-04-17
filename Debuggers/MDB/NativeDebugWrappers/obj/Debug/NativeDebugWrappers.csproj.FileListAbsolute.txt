@@ -39,3 +39,11 @@ f:\VE-2017\Debuggers\MDB\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.dll.l
 f:\VE-2017\Debuggers\MDB\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.csprojResolveAssemblyReference.cache
 f:\VE-2017\Debuggers\MDB\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.dll
 f:\VE-2017\Debuggers\MDB\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.pdb
+C:\Users\me\VE-2016\Debuggers\MDB\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.XML
+C:\Users\me\VE-2016\Debuggers\MDB\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.dll
+C:\Users\me\VE-2016\Debuggers\MDB\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.pdb
+C:\Users\me\VE-2016\Debuggers\MDB\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.dll.CodeAnalysisLog.xml
+C:\Users\me\VE-2016\Debuggers\MDB\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.dll.lastcodeanalysissucceeded
+C:\Users\me\VE-2016\Debuggers\MDB\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.csprojResolveAssemblyReference.cache
+C:\Users\me\VE-2016\Debuggers\MDB\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.dll
+C:\Users\me\VE-2016\Debuggers\MDB\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.pdb

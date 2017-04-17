@@ -79,3 +79,12 @@ f:\VE-2017\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataModel.xml
 f:\VE-2017\NET\MetadataHelper\obj\Debug\MetadataHelper.csprojResolveAssemblyReference.cache
 f:\VE-2017\NET\MetadataHelper\obj\Debug\Microsoft.Cci.MetadataHelper.dll
 f:\VE-2017\NET\MetadataHelper\obj\Debug\Microsoft.Cci.MetadataHelper.pdb
+C:\Users\me\VE-2016\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.XML
+C:\Users\me\VE-2016\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.dll
+C:\Users\me\VE-2016\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
+C:\Users\me\VE-2016\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataModel.dll
+C:\Users\me\VE-2016\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\Users\me\VE-2016\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataModel.xml
+C:\Users\me\VE-2016\NET\MetadataHelper\obj\Debug\MetadataHelper.csprojResolveAssemblyReference.cache
+C:\Users\me\VE-2016\NET\MetadataHelper\obj\Debug\Microsoft.Cci.MetadataHelper.dll
+C:\Users\me\VE-2016\NET\MetadataHelper\obj\Debug\Microsoft.Cci.MetadataHelper.pdb

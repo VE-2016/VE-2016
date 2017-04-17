@@ -29,3 +29,13 @@ f:\VE-2017\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2013.Resource
 f:\VE-2017\Editor\WinFormsUI\obj\Debug\ThemeVS2013.csproj.GenerateResource.Cache
 f:\VE-2017\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2013.dll
 f:\VE-2017\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2013.pdb
+C:\Users\me\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2013.dll
+C:\Users\me\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2013.pdb
+C:\Users\me\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
+C:\Users\me\VE-2016\Editor\WinFormsUI\obj\Debug\ThemeVS2013.csprojResolveAssemblyReference.cache
+C:\Users\me\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2012.Resources.resources
+C:\Users\me\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2012.Strings.resources
+C:\Users\me\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2013.Resources.resources
+C:\Users\me\VE-2016\Editor\WinFormsUI\obj\Debug\ThemeVS2013.csproj.GenerateResource.Cache
+C:\Users\me\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2013.dll
+C:\Users\me\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2013.pdb

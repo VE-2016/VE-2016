@@ -130,7 +130,7 @@ namespace VSParsers
         {
             if (snx == null)
                 snx = new Syntaxer();
-
+            return;
 
             List<PortableExecutableReference> pl = new List<PortableExecutableReference>();
 

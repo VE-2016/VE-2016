@@ -25,7 +25,7 @@ namespace VSParsers
           OutputKind.WindowsApplication,
           optimizationLevel: OptimizationLevel.Debug,
           allowUnsafe: true);
-            cc = CSharpCompilation.Create("form", options : options).AddReferences(MetadataReference.CreateFromFile(typeof(object).Assembly.Location)).AddSyntaxTrees(CSharpSyntaxTree.ParseText("", null, "void"));
+            //cc = CSharpCompilation.Create("form", options : options).AddReferences(MetadataReference.CreateFromFile(typeof(object).Assembly.Location)).AddSyntaxTrees(CSharpSyntaxTree.ParseText("", null, "void"));
         }
 
         

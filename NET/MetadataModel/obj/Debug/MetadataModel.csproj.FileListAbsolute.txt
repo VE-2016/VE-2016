@@ -48,3 +48,9 @@ f:\VE-2017\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.pdb
 f:\VE-2017\NET\MetadataModel\obj\Debug\MetadataModel.csprojResolveAssemblyReference.cache
 f:\VE-2017\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.dll
 f:\VE-2017\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\Users\me\VE-2016\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.xml
+C:\Users\me\VE-2016\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.dll
+C:\Users\me\VE-2016\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\Users\me\VE-2016\NET\MetadataModel\obj\Debug\MetadataModel.csprojResolveAssemblyReference.cache
+C:\Users\me\VE-2016\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.dll
+C:\Users\me\VE-2016\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.pdb

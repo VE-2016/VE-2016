@@ -44,3 +44,17 @@ f:\VE-2017\Debuggers\MDB\corapi\bin\Debug\raw.pdb
 f:\VE-2017\Debuggers\MDB\corapi\obj\Debug\corapi.csprojResolveAssemblyReference.cache
 f:\VE-2017\Debuggers\MDB\corapi\obj\Debug\corapi.dll
 f:\VE-2017\Debuggers\MDB\corapi\obj\Debug\corapi.pdb
+C:\Users\me\VE-2016\Debuggers\MDB\corapi\bin\Debug\corapi.dll
+C:\Users\me\VE-2016\Debuggers\MDB\corapi\bin\Debug\corapi.pdb
+C:\Users\me\VE-2016\Debuggers\MDB\corapi\bin\Debug\corapi.dll.CodeAnalysisLog.xml
+C:\Users\me\VE-2016\Debuggers\MDB\corapi\bin\Debug\corapi.dll.lastcodeanalysissucceeded
+C:\Users\me\VE-2016\Debuggers\MDB\corapi\bin\Debug\NativeDebugWrappers.dll
+C:\Users\me\VE-2016\Debuggers\MDB\corapi\bin\Debug\raw.dll
+C:\Users\me\VE-2016\Debuggers\MDB\corapi\bin\Debug\System.dll
+C:\Users\me\VE-2016\Debuggers\MDB\corapi\bin\Debug\NativeDebugWrappers.pdb
+C:\Users\me\VE-2016\Debuggers\MDB\corapi\bin\Debug\NativeDebugWrappers.xml
+C:\Users\me\VE-2016\Debuggers\MDB\corapi\bin\Debug\raw.pdb
+C:\Users\me\VE-2016\Debuggers\MDB\corapi\bin\Debug\pl\System.resources.dll
+C:\Users\me\VE-2016\Debuggers\MDB\corapi\obj\Debug\corapi.csprojResolveAssemblyReference.cache
+C:\Users\me\VE-2016\Debuggers\MDB\corapi\obj\Debug\corapi.dll
+C:\Users\me\VE-2016\Debuggers\MDB\corapi\obj\Debug\corapi.pdb

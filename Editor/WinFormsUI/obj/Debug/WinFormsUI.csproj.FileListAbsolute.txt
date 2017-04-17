@@ -22,3 +22,11 @@ f:\VE-2017\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.Strings.reso
 f:\VE-2017\Editor\WinFormsUI\obj\Debug\WinFormsUI.csproj.GenerateResource.Cache
 f:\VE-2017\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.dll
 f:\VE-2017\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.pdb
+C:\Users\me\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.dll
+C:\Users\me\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
+C:\Users\me\VE-2016\Editor\WinFormsUI\obj\Debug\WinFormsUI.csprojResolveAssemblyReference.cache
+C:\Users\me\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.Resources.resources
+C:\Users\me\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.Strings.resources
+C:\Users\me\VE-2016\Editor\WinFormsUI\obj\Debug\WinFormsUI.csproj.GenerateResource.Cache
+C:\Users\me\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.dll
+C:\Users\me\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.pdb

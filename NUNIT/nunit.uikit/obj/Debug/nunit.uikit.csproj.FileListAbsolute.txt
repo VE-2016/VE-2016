@@ -31,3 +31,9 @@ f:\VE-2017\NUNIT\nunit.uikit\obj\Debug\NUnit.UiKit.Controls.TipWindow.resources
 f:\VE-2017\NUNIT\nunit.uikit\obj\Debug\nunit.uikit.csproj.GenerateResource.Cache
 f:\VE-2017\NUNIT\nunit.uikit\obj\Debug\nunit.uikit.dll
 f:\VE-2017\NUNIT\nunit.uikit\obj\Debug\nunit.uikit.pdb
+C:\Users\me\VE-2016\NUNIT\nunit.uikit\bin\Debug\nunit.uikit.dll
+C:\Users\me\VE-2016\NUNIT\nunit.uikit\bin\Debug\nunit.uikit.pdb
+C:\Users\me\VE-2016\NUNIT\nunit.uikit\obj\Debug\NUnit.UiKit.Controls.TipWindow.resources
+C:\Users\me\VE-2016\NUNIT\nunit.uikit\obj\Debug\nunit.uikit.csproj.GenerateResource.Cache
+C:\Users\me\VE-2016\NUNIT\nunit.uikit\obj\Debug\nunit.uikit.dll
+C:\Users\me\VE-2016\NUNIT\nunit.uikit\obj\Debug\nunit.uikit.pdb
