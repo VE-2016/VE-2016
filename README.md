@@ -24,4 +24,4 @@ Technologies
 
 Binary installer availible at Visual Studio Marketplace
 
-https://marketplace.visualstudio.com/items?itemName=gkjyi.VisualStudioExplorer
+[Visual Studio Marketplace Installer](https://marketplace.visualstudio.com/items?itemName=gkjyi.VisualStudioExplorer)
