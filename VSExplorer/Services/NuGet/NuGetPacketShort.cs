@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using NuGet;
+using System;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using NuGet;
 
 namespace WinExplorer.Services.NuGet
 {
@@ -23,10 +17,8 @@ namespace WinExplorer.Services.NuGet
             rb = richTextBox1;
             button = pictureBox1;
 
-           // this.Controls.Remove(panel);
+            // this.Controls.Remove(panel);
             //this.Controls.Remove(button);
-
-            
 
             rb.Resize += Rb_Resize;
 
@@ -44,8 +36,6 @@ namespace WinExplorer.Services.NuGet
             vLabel = label1;
 
             uLabel = label2;
-
-            
 
             pbInstall = pictureBox3;
 
@@ -80,16 +70,16 @@ namespace WinExplorer.Services.NuGet
             Rb_Resize(null, null);
         }
 
-        void LoadNoUpdate()
+        private void LoadNoUpdate()
         {
             this.Controls.Remove(checkBox1);
             button.Location = new Point(0, 0);
             rb.SelectionIndent += 110;
         }
 
-        NuGetForm.task tasks { get; set; }
+        private NuGetForm.task tasks { get; set; }
 
-        void GetDescription(int c)
+        private void GetDescription(int c)
         {
             if (c > MainText.Length - 1)
                 c = MainText.Length - 1;
@@ -98,6 +88,7 @@ namespace WinExplorer.Services.NuGet
             rb.Text = texts;
             SetAsBold(package.GetFullName());
         }
+
         private void Rb_Resize(object sender, EventArgs e)
         {
             if (package == null)
@@ -109,12 +100,14 @@ namespace WinExplorer.Services.NuGet
             //    return;
             GetDescription(i);
         }
+
         private void PbUpdate_MouseHover(object sender, EventArgs e)
         {
             pbUpdate.Visible = true;
             pbUpdate.BackColor = Color.FromKnownColor(KnownColor.AliceBlue);
             pbUpdate.Refresh();
         }
+
         private void PbInstall_MouseHover(object sender, EventArgs e)
         {
             pbInstall.Visible = true;
@@ -122,11 +115,12 @@ namespace WinExplorer.Services.NuGet
             pbInstall.Refresh();
         }
 
-        void SetHandlers(Control c)
+        private void SetHandlers(Control c)
         {
             c.MouseHover += NuGetPacketShort_MouseHover;
             c.MouseEnter += NuGetPacketShort_MouseHover;
         }
+
         private void NuGetPacketShort_Resize(object sender, EventArgs e)
         {
             //if(this.Parent == null)
@@ -145,47 +139,45 @@ namespace WinExplorer.Services.NuGet
                 nugetShortSelectedEvent(this);
         }
 
-       
-        Label vLabel { get; set; }
+        private Label vLabel { get; set; }
 
-        Label uLabel { get; set; }
+        private Label uLabel { get; set; }
 
         public IPackage package { get; set; }
 
-        PictureBox pbInstall { get; set; }
+        private PictureBox pbInstall { get; set; }
 
-        PictureBox pbUpdate { get; set; }
+        private PictureBox pbUpdate { get; set; }
 
         public void SetPackage(IPackage package)
         {
             this.package = package;
         }
 
-        PictureBox button { get; set; }
+        private PictureBox button { get; set; }
 
-        RichTextBox rb { get; set; }
+        private RichTextBox rb { get; set; }
 
-        Panel panel { get; set; }
+        private Panel panel { get; set; }
 
-
-        string MainText { get; set; }
+        private string MainText { get; set; }
 
         public void SetMainText(string text)
         {
             rb.Text = text;
             MainText = text;
-            
         }
+
         public void SetVersion(string text)
         {
             vLabel.Text = text;
-
         }
+
         public void SetUpdateVersion(string text)
         {
             uLabel.Text = text;
-
         }
+
         public void SetAsBold(string s)
         {
             rb.Find(s, RichTextBoxFinds.MatchCase);
@@ -193,11 +185,12 @@ namespace WinExplorer.Services.NuGet
             rb.SelectionFont = new Font("Verdana", 10, FontStyle.Bold);
             rb.SelectionColor = Color.Black;
         }
-     
+
         public void SetIcon(Bitmap icon)
         {
-            button.Image = new Bitmap(icon, 64,64);
+            button.Image = new Bitmap(icon, 64, 64);
         }
+
         private void HookChildrenEvents(Control control, int level = 0)
         {
             level++;
@@ -205,21 +198,19 @@ namespace WinExplorer.Services.NuGet
             {
                 if (child.Controls.Count > 0)
                 {
-                  
                     HookChildrenEvents(child, level);
                 }
-                
+
                 child.MouseEnter += NuGetPacketShort_MouseHover;
                 child.MouseHover += NuGetPacketShort_MouseHover;
-                if(level < 3)
-                child.MouseLeave += NuGetPacketShort_MouseLeave;
+                if (level < 3)
+                    child.MouseLeave += NuGetPacketShort_MouseLeave;
                 child.MouseClick += NuGetPacketShort_MouseClick;
             }
         }
 
         private void NuGetPacketShort_MouseLeave(object sender, EventArgs e)
         {
-
             if (sender.Equals(vLabel))
                 return;
             if (sender.Equals(uLabel))
@@ -243,26 +234,20 @@ namespace WinExplorer.Services.NuGet
             panel.BackColor = Color.FromKnownColor(KnownColor.Control);
             rb.BackColor = Color.FromKnownColor(KnownColor.Control);
             this.Invalidate();
-                this.Refresh();
-            
+            this.Refresh();
         }
 
         private void NuGetPacketShort_MouseHover(object sender, EventArgs e)
         {
-            
             Control c = sender as Control;
-           
-                c.BackColor = Color.FromKnownColor(KnownColor.AliceBlue);
+
+            c.BackColor = Color.FromKnownColor(KnownColor.AliceBlue);
             foreach (Control cc in c.Controls)
                 cc.BackColor = Color.FromKnownColor(KnownColor.AliceBlue);
 
             button.BackColor = Color.FromKnownColor(KnownColor.AliceBlue);
             panel.BackColor = Color.FromKnownColor(KnownColor.AliceBlue);
             rb.BackColor = Color.FromKnownColor(KnownColor.AliceBlue);
-
         }
-      
     }
-  
 }
-

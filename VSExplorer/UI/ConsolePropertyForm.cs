@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinExplorer
@@ -22,7 +16,6 @@ namespace WinExplorer
 
         private void button2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -31,11 +24,11 @@ namespace WinExplorer
             this.Close();
         }
 
-        RichTextBox rb { get; set; }
+        private RichTextBox rb { get; set; }
 
-        Color bg = Color.Black;
+        private Color bg = Color.Black;
 
-        Font font;
+        private Font font;
 
         public ArrayList R { get; set; }
 
@@ -50,26 +43,23 @@ namespace WinExplorer
             {
                 s = Convert.ToInt32(cb.Items[i]);
             }
-            catch(Exception ex) { };
-
+            catch (Exception ex) { };
 
             font = new Font("Consolas", s, FontStyle.Bold);
 
             rb.Font = font;
 
-            if(R != null)
+            if (R != null)
             {
                 R.Clear();
                 R.Add(font);
             }
 
             PreviewText();
-
         }
 
-        void PreviewText()
+        private void PreviewText()
         {
-
             rb.BackColor = bg;
 
             rb.Enabled = false;
@@ -79,7 +69,6 @@ namespace WinExplorer
             rb.AppendText("Console text preview\n");
             rb.AppendText("Console text preview\n");
             rb.AppendText("Console text preview\n");
-
         }
 
         private void button3_Click(object sender, EventArgs e)

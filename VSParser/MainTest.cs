@@ -1452,7 +1452,6 @@ namespace VSProvider
 
             var parser = new CSharpParser();
 
-
             SyntaxTree syntaxTree = null;
 
             try
@@ -1461,7 +1460,7 @@ namespace VSProvider
             }
             catch (Exception e) { };
 
-            if(syntaxTree == null)
+            if (syntaxTree == null)
             {
                 return mapper;
             }
@@ -1553,8 +1552,6 @@ namespace VSProvider
 
                 i++;
             }
-
-           
         }
 
         static public IEnumerable<EntityDeclaration> getentity(SyntaxTree syntax, string ents)
@@ -2842,7 +2839,6 @@ namespace VSProvider
 
                     if (parser == false)
                     {
-
                         TreeNode cc = new TreeNode();
                         cc.Text = "Base Types";
                         cc.ImageKey = "Folder_6222";
@@ -2852,7 +2848,6 @@ namespace VSProvider
                         b.Nodes.Add(cc);
 
                         nodes.Nodes.Add(b);
-
                     }
                 }
                 else

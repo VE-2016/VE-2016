@@ -1,9 +1,7 @@
-﻿using System;
+﻿using GACManagerApi.Fusion;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using GACManagerApi.Fusion;
 
 namespace GACManagerApi
 {
@@ -44,6 +42,7 @@ namespace GACManagerApi
             //ReservedHashValue = GetByteArrayProperty(assemblyName, ASM_NAME.ASM_NAME_HASH_VALUE);
             //ReservedHashAlgorithmId = GetDwordProperty(assemblyName, ASM_NAME.ASM_NAME_HASH_ALGID);
         }
+
         internal UInt16 GetShortProperty(IAssemblyName name, ASM_NAME propertyName)
         {
             uint bufferSize = 512;

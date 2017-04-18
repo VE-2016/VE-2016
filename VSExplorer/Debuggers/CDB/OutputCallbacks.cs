@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Diagnostics.Runtime.Interop;
+﻿using Microsoft.Diagnostics.Runtime.Interop;
+using System;
 
 namespace DumpFileAnalyzer
 {
-    class OutputCallbacks : IDebugOutputCallbacks2 // IDebugOutputCallbacksWide
+    internal class OutputCallbacks : IDebugOutputCallbacks2 // IDebugOutputCallbacksWide
     {
         public int Output(DEBUG_OUTPUT Mask, string Text)
         {
@@ -43,12 +38,13 @@ namespace DumpFileAnalyzer
             Console.Write(Text);
             return 0;
         }
+
         public int GetInterestMask(out DEBUG_OUTCBI Mask)
         {
             Mask = DEBUG_OUTCBI.TEXT;
             return 0;
         }
-       
+
         public int Output2(DEBUG_OUTCB Which, DEBUG_OUTCBF Flags, ulong Arg, string Text)
         {
             Console.ForegroundColor = ConsoleColor.White;
@@ -56,9 +52,10 @@ namespace DumpFileAnalyzer
             return 0;
         }
     }
-    class EventCallbacks : IDebugEventCallbacksWide
+
+    internal class EventCallbacks : IDebugEventCallbacksWide
     {
-        readonly IDebugControl6 _control;
+        private readonly IDebugControl6 _control;
         public bool BreakpointHit;
         public bool StateChanged;
         //private readonly ModuleEventHandler ModuleLoadEvent;
@@ -71,7 +68,7 @@ namespace DumpFileAnalyzer
         public int GetInterestMask(out DEBUG_EVENT Mask)
         {
             Mask = DEBUG_EVENT.BREAKPOINT | DEBUG_EVENT.CHANGE_DEBUGGEE_STATE
-|           DEBUG_EVENT.CHANGE_ENGINE_STATE | DEBUG_EVENT.CHANGE_SYMBOL_STATE |
+| DEBUG_EVENT.CHANGE_ENGINE_STATE | DEBUG_EVENT.CHANGE_SYMBOL_STATE |
             DEBUG_EVENT.CREATE_PROCESS | DEBUG_EVENT.CREATE_THREAD | DEBUG_EVENT.EXCEPTION | DEBUG_EVENT.EXIT_PROCESS |
             DEBUG_EVENT.EXIT_THREAD | DEBUG_EVENT.LOAD_MODULE |
                   DEBUG_EVENT.SESSION_STATUS | DEBUG_EVENT.SYSTEM_ERROR |
@@ -79,6 +76,7 @@ namespace DumpFileAnalyzer
 
             return 0;
         }
+
         public int Breakpoint(IDebugBreakpoint2 Bp)
         {
             BreakpointHit = true;
@@ -91,7 +89,8 @@ namespace DumpFileAnalyzer
             BreakpointHit = true;
             return (int)DEBUG_STATUS.BREAK;
         }
-        public int CreateProcess(ulong ImageFileHandle, ulong Handle,ulong BaseOffset, uint ModuleSize, string ModuleName, string ImageName,     uint CheckSum, uint TimeDateStamp, ulong InitialThreadHandle,ulong ThreadDataOffset, ulong StartOffset)
+
+        public int CreateProcess(ulong ImageFileHandle, ulong Handle, ulong BaseOffset, uint ModuleSize, string ModuleName, string ImageName, uint CheckSum, uint TimeDateStamp, ulong InitialThreadHandle, ulong ThreadDataOffset, ulong StartOffset)
         {
             return 1;
 
@@ -103,46 +102,52 @@ namespace DumpFileAnalyzer
 
             return (int)DEBUG_STATUS.GO;// NO_CHANGE;
         }
+
         public int CreateThread(ulong Handle, ulong DataOffset, ulong StartOffset)
         {
             return 0;
         }
-        
+
         public int ExitProcess(uint ExitCode)
         {
             return 0;
         }
+
         public int ExitThread(uint ExitCode)
         {
             return 0;
         }
-        
+
         public int LoadModule(ulong ImageFileHandle, ulong BaseOffset, uint ModuleSize, string ModuleName, string ImageName, uint CheckSum, uint TimeDateStamp)
         {
-           
-
             return 0;
         }
+
         public int SessionStatus(DEBUG_SESSION Status)
         {
             return 0;
         }
+
         public int SystemError(uint Error, uint Level)
         {
             return 0;
         }
+
         public int UnloadModule(string ImageBaseName, ulong BaseOffset)
         {
             return 0;
         }
+
         public int ChangeDebuggeeState(DEBUG_CDS Flags, ulong Argument)
         {
             return 0;
         }
+
         public int ChangeEngineState(DEBUG_CES Flags, ulong Argument)
         {
             return 0;
         }
+
         public int ChangeSymbolState(DEBUG_CSS Flags, ulong Argument)
         {
             return 0;

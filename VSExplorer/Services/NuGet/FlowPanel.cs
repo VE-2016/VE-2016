@@ -1,28 +1,24 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 using System.Windows.Forms;
 
 namespace WinExplorer.Services.NuGet
 {
     public class FlowPanel : Panel
     {
-        public FlowPanel(): base()
+        public FlowPanel() : base()
         {
             C = new ArrayList();
             this.HScroll = false;
             this.HorizontalScroll.Enabled = false;
-
         }
+
         public ArrayList C { get; set; }
+
         public void AddControl(Control c)
         {
             int w = this.ClientRectangle.Width - 10;
             int h = 0;
-            if(C.Count > 0)
+            if (C.Count > 0)
             {
                 Control cc = C[C.Count - 1] as Control;
 
@@ -34,12 +30,11 @@ namespace WinExplorer.Services.NuGet
             C.Add(c);
             this.HorizontalScroll.Visible = false;
         }
+
         public void ClearControls()
         {
             C = new ArrayList();
             this.Controls.Clear();
-
         }
     }
-
 }

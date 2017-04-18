@@ -1,5 +1,4 @@
-﻿
-namespace VSProvider
+﻿namespace VSProvider
 {
     public interface ISolutionItem
     {

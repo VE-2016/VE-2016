@@ -2,14 +2,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using VSProvider;
@@ -36,28 +32,26 @@ namespace WinExplorer.UI
             g.MouseClick += G_MouseClick;
 
             this.Resize += DataSourceForm_Resize;
-
         }
 
         private void DataSourceForm_Resize(object sender, EventArgs e)
         {
-           
         }
 
         private void G_MouseClick(object sender, MouseEventArgs e)
         {
-
             TreeNode node = g.SelectedNode;
 
             tbContext.Tag = node;
 
             //if(Control.MouseButtons == MouseButtons.Right)
-                tbContext.Show(g, e.Location);
+            tbContext.Show(g, e.Location);
         }
 
-        ContextMenuStrip tbContext { get; set; }
+        private ContextMenuStrip tbContext { get; set; }
 
-        ImageList img { get; set; }
+        private ImageList img { get; set; }
+
         public void Init()
         {
             img = new ImageList();
@@ -71,20 +65,20 @@ namespace WinExplorer.UI
             g.ImageList = img;
         }
 
-        Dictionary<VSProject, ArrayList> dataSource { get; set; }
+        private Dictionary<VSProject, ArrayList> dataSource { get; set; }
 
-        VSProject vp { get; set; }
+        private VSProject vp { get; set; }
 
         public VSProject GetVSProject()
         {
             VSProject p = ExplorerForms.ef.GetVSProject();
 
-            if(p != null)
+            if (p != null)
             {
                 vp = p;
                 return vp;
             }
-            if(p == null)
+            if (p == null)
                 p = ExplorerForms.ef.GetVSSolution().MainVSProject;
             vp = p;
             return vp;
@@ -109,17 +103,17 @@ namespace WinExplorer.UI
 
             this.BeginInvoke((new Action(() => { LoadDataObjects(P); })));
         }
-        
-        DataSourceWizard dw { get; set; }
 
-        TreeView g { get; set; }
+        private DataSourceWizard dw { get; set; }
+
+        private TreeView g { get; set; }
 
         public ArrayList P { get; set; }
 
-        void ImportDataObjects(ArrayList L, bool append = false )
+        private void ImportDataObjects(ArrayList L, bool append = false)
         {
             if (append == false)
-               P = L;
+                P = L;
 
             //ShowInfoPanel(true);
 
@@ -127,12 +121,12 @@ namespace WinExplorer.UI
 
             g.Nodes.Clear();
 
-            foreach(TreeNode ns in L)
+            foreach (TreeNode ns in L)
             {
                 TreeNode ng = new TreeNode(ns.Text);
                 g.Nodes.Add(ng);
                 DataSourceItem d = ns.Tag as DataSourceItem;
-                if(d != null)
+                if (d != null)
                 {
                     ng.Text = d.Namespace + " - " + d.TypeName;
 
@@ -141,14 +135,10 @@ namespace WinExplorer.UI
                     P.Add(d);
                 }
             }
-
-            
-
         }
 
-        void UpdateObjects(DataSourceItem d)
+        private void UpdateObjects(DataSourceItem d)
         {
-
             string folder = vp.GetProjectFolder() + "\\" + "Properties\\DataSources";
 
             if (!Directory.Exists(folder))
@@ -175,11 +165,10 @@ namespace WinExplorer.UI
             File.WriteAllText(folder + "\\" + file, cc);
 
             vp.AddDataSource(file);
-                
         }
-        void LoadDataset(DataSet data, TreeNode ns, string file)
+
+        private void LoadDataset(DataSet data, TreeNode ns, string file)
         {
-            
             foreach (DataTable row in data.Tables)
             {
                 TreeNode ng = new TreeNode(row.TableName);
@@ -192,15 +181,14 @@ namespace WinExplorer.UI
                 info.name = c;
                 info.tableName = row.TableName;
                 ns.Tag = info;
-                
+
                 {
                     DataTable b = row;
 
                     foreach (DataColumn r in b.Columns)
                     {
-
                         string cs = r.ColumnName;
-                        
+
                         TreeNode nodes = new TreeNode(cs.ToString());
                         nodes.ImageKey = "data";
                         ng.Nodes.Add(nodes);
@@ -211,7 +199,8 @@ namespace WinExplorer.UI
                 }
             }
         }
-        void ImportDatabaseObjects(dataset data)
+
+        private void ImportDatabaseObjects(dataset data)
         {
             //if (append == false)
             //    P = L;
@@ -232,21 +221,17 @@ namespace WinExplorer.UI
                 {
                     DataTable b = row;// DataSourceWizard.GetTableSchema(data.connection, row[2].ToString());
 
-                    
-
                     datasets.Tables.Add(b);
 
                     foreach (DataColumn r in b.Columns)
                     {
-
                         string cs = r.ColumnName;
                         TreeNode nodes = new TreeNode(cs.ToString());
                         ng.Nodes.Add(nodes);
                     }
                 }
-
             }
-            string bb = AppDomain.CurrentDomain.BaseDirectory ;
+            string bb = AppDomain.CurrentDomain.BaseDirectory;
 
             string s = vp.GetProjectFolder();
 
@@ -256,37 +241,35 @@ namespace WinExplorer.UI
 
             ExplorerForms.ef.Command_TakeTypedDataset(d);
 
-            vp.AddXSDItem(data.name); 
+            vp.AddXSDItem(data.name);
         }
 
-        DataSet datasets { get; set; }
+        private DataSet datasets { get; set; }
 
-        void LoadDataSet(string file, TreeView g)
+        private void LoadDataSet(string file, TreeView g)
         {
             string folder = vp.GetProjectFolder();
             TreeNode ng = new TreeNode(file);
             g.Nodes.Add(ng);
             datasets = new DataSet();
             datasets.ReadXmlSchema(folder + "\\" + file);
-             LoadDataset(datasets, ng, file);
-
+            LoadDataset(datasets, ng, file);
         }
 
         public TreeView GetXSDTreeNodes()
         {
             TreeView v = new TreeView();
-            foreach(string s in P)
+            foreach (string s in P)
             {
                 if (s.EndsWith(".xsd"))
                 {
-                  
                     LoadDataSet(s, v);
                 }
             }
             return v;
         }
 
-        void LoadDataObjects(ArrayList L, bool append = false)
+        private void LoadDataObjects(ArrayList L, bool append = false)
         {
             if (append == false)
                 P = L;
@@ -318,7 +301,7 @@ namespace WinExplorer.UI
                 {
                     try
                     {
-                       fullname = node.InnerText;
+                        fullname = node.InnerText;
 
                         Type T = Type.GetType(fullname);
                         TreeNode ng = new TreeNode(name);
@@ -326,23 +309,21 @@ namespace WinExplorer.UI
                         g.Nodes.Add(ng);
 
                         var bb = T.GetMembers();
-                        foreach(MemberInfo m in bb)
+                        foreach (MemberInfo m in bb)
                         {
                             TreeNode ns = new TreeNode();
                             ns.Text = m.Name;
                             ng.Nodes.Add(ns);
                         }
-
                     }
                     catch (Exception ex)
                     {
                         //MessageBox.Show("Error in reading XML", "xmlError", MessageBoxButtons.OK);
                     }
                 }
-               
             }
-
         }
+
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             GetVSProject();
@@ -352,7 +333,7 @@ namespace WinExplorer.UI
             DialogResult r = dw.ShowDialog();
             if (r != DialogResult.OK)
                 return;
-            if(dw.wz == DataSourceWizard.wizard.dataobjectsready)
+            if (dw.wz == DataSourceWizard.wizard.dataobjectsready)
             {
                 ImportDataObjects(dw.dataSourceObjects, true);
             }
@@ -361,9 +342,9 @@ namespace WinExplorer.UI
                 ImportDatabaseObjects(dw.data);
             }
         }
+
         public void SaveConnection(string c)
         {
-
             if (File.Exists("Extensions//Databases//Connections//datasource.settings") == false)
             {
                 FileStream fs = File.Create("Extensions//Databases//Connections//datasource.settings");
@@ -371,6 +352,7 @@ namespace WinExplorer.UI
             }
             File.AppendAllText("Extensions//Databases//Connections//datasource.settings", "\n" + c);
         }
+
         public void LoadConnections()
         {
             if (File.Exists("Extensions//Databases//Connections//datasource.settings") == false)
@@ -388,9 +370,9 @@ namespace WinExplorer.UI
             //    cbcs.SelectedIndex = 0;
         }
 
-        Label label { get; set; }
+        private Label label { get; set; }
 
-        Button button { get; set; }
+        private Button button { get; set; }
 
         public void ShowInfoPanel(bool hide = false)
         {
@@ -453,7 +435,6 @@ namespace WinExplorer.UI
             dvf.LoadModel(datasets);
             dvf.Show();
             df.Controls.Add(dvf);
-
         }
     }
 }

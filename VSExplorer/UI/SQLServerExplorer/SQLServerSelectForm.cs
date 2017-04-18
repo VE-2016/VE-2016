@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinExplorer.UI
@@ -31,21 +25,17 @@ namespace WinExplorer.UI
             tc = tabControl1;
             this.BackColor = Color.White;
             tc.DrawMode = TabDrawMode.OwnerDrawFixed;
-            
+
             tc.DrawItem += Tc_DrawItem;
-
-    
         }
-
-    
 
         // The size of the X in each tab's upper right corner.
         private int Xwid = 5;
+
         private const int tab_margin = 0;
 
         private void Tc_DrawItem(object sender, DrawItemEventArgs e)
         {
-
             Rectangle r = tabControl1.GetTabRect(tabControl1.TabPages.Count - 1);
             Rectangle rs = new Rectangle(0, r.Y - 5, tabControl1.Width - 3, 6);
             Rectangle rf = new Rectangle(r.X + r.Width, r.Y - 5, tabControl1.Width - (r.X + r.Width) - 3, r.Height + 5 + 5);
@@ -59,7 +49,6 @@ namespace WinExplorer.UI
             // We draw in the TabRect rather than on e.Bounds
             // so we can use TabRect later in MouseDown.
             Rectangle tab_rect = e.Bounds;// tc.GetTabRect(e.Index);
-            
 
             // Draw the background.
             // Pick appropriate pens and brushes.
@@ -91,9 +80,9 @@ namespace WinExplorer.UI
             {
                 Font small_font = this.Font;
                 // Draw the tab # in the upper left corner.
-               // using (Font small_font = new Font(this.Font.FontFamily,
-               //     6, FontStyle.Bold))
-               // {
+                // using (Font small_font = new Font(this.Font.FontFamily,
+                //     6, FontStyle.Bold))
+                // {
                 //    string_format.Alignment = StringAlignment.Near;
                 //    string_format.LineAlignment = StringAlignment.Near;
                 //    e.Graphics.DrawString(
@@ -119,11 +108,11 @@ namespace WinExplorer.UI
 
                 // Draw a line in the bottom.
                 Rectangle rect = tab_rect;// tc.GetTabRect(e.Index);
-          
+
                 e.Graphics.DrawLine(box_pen,
                     layout_rect.Left + Xwid,
                     layout_rect.Bottom + Xwid,
-                    layout_rect.Right - 2*Xwid,
+                    layout_rect.Right - 2 * Xwid,
                     layout_rect.Bottom + Xwid);
             }
         }
@@ -137,17 +126,17 @@ namespace WinExplorer.UI
             apf.ShowDialog();
         }
 
-        TreeView v { get; set; }
+        private TreeView v { get; set; }
 
-        LabelEx adv { get; set; }
+        private LabelEx adv { get; set; }
 
-        LabelLine lb { get; set; }
+        private LabelLine lb { get; set; }
 
-        LabelLine lbb { get; set; }
+        private LabelLine lbb { get; set; }
 
-        LabelLine lbc { get; set; }
+        private LabelLine lbc { get; set; }
 
-        TabControl tc { get; set; }
+        private TabControl tc { get; set; }
 
         public DataConnection dc { get; set; }
 
@@ -191,7 +180,6 @@ namespace WinExplorer.UI
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
-          
         }
     }
 
@@ -204,59 +192,59 @@ namespace WinExplorer.UI
             this.Height = 2;
             this.Anchor = AnchorStyles.Left | AnchorStyles.Right;
         }
+
         public void SetParent(Control c)
         {
             this.Width = c.Width - 20;
             this.Height = 2;
-
         }
     }
 
-        public class LabelEx : Label
+    public class LabelEx : Label
     {
-        public LabelEx() : base(){
-
+        public LabelEx() : base()
+        {
             font = this.Font;
             this.Font = font;
             fonts = new Font(this.Font, FontStyle.Underline);
             this.ForeColor = Color.Blue;
             this.MouseHover += LabelEx_MouseHover;
             this.MouseLeave += LabelEx_MouseLeave;
-            }
+        }
 
         public void SetMouseOverFont(Font fnt)
         {
             fonts = fnt;
-            
+
             this.Font = font;
             this.Refresh();
         }
+
         public void SetMouseLeaveFont(Font fnt)
         {
             font = fnt;
-
         }
+
         private void LabelEx_MouseLeave(object sender, EventArgs e)
         {
             //if (!this.Font.Equals(font))
-                this.Font = font;
+            this.Font = font;
             this.Refresh();
         }
 
         private void LabelEx_MouseHover(object sender, EventArgs e)
         {
             //if (this.Font.Equals(font))
-                this.Font = fonts;
+            this.Font = fonts;
             this.Refresh();
         }
 
-        Font font { get; set; }
-        Font fonts { get; set; }
+        private Font font { get; set; }
+        private Font fonts { get; set; }
     }
 
     public class SearchTextBox : TextBox
     {
-
         public SearchTextBox()
         {
             SuspendLayout();
@@ -278,7 +266,8 @@ namespace WinExplorer.UI
 
             ResumeLayout();
         }
-        PictureBox pb { get; set; }
+
+        private PictureBox pb { get; set; }
 
         public TextBox tb { get; set; }
 
@@ -287,5 +276,4 @@ namespace WinExplorer.UI
             return tb.Text;
         }
     }
-
 }

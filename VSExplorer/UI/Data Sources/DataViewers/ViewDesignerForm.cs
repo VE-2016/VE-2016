@@ -1,12 +1,4 @@
 ﻿using AIMS.Libraries.Scripting.ScriptControl;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinExplorer.UI
@@ -22,6 +14,7 @@ namespace WinExplorer.UI
             doc.Show();
             this.Controls.Add(doc);
         }
+
         public Document doc { get; set; }
     }
 }

@@ -43,7 +43,7 @@ namespace WinExplorer
             LoadNuget();
         }
 
-        void LoadNuget()
+        private void LoadNuget()
         {
             listView2.Resize += ListView2_Resize;
             listView2.CheckBoxes = true;
@@ -54,8 +54,6 @@ namespace WinExplorer
             v.Checked = true;
             listView2.Items.Add(v);
             ListView2_Resize(null, null);
-
-
         }
 
         private void ListView2_Resize(object sender, EventArgs e)
@@ -306,7 +304,6 @@ namespace WinExplorer
             nodes.Text = "Package sources";
             node.Nodes.Add(nodes);
 
-
             //node = new TreeNode();
             //node.Text = "Project and Solutions";
             //tr.Nodes.Add(node);
@@ -314,7 +311,6 @@ namespace WinExplorer
             //nodes = new TreeNode();
             //nodes.Text = "General - projects and solutions";
             //node.Nodes.Add(nodes);
-
 
             node = new TreeNode();
             node.Text = "Direct Editor tools";
@@ -429,8 +425,6 @@ namespace WinExplorer
             else
                 CodeEditorControl.settings.Theme = "VS2013Blue";
 
-
-
             Close();
         }
 
@@ -443,7 +437,6 @@ namespace WinExplorer
             {
                 CodeEditorControl.settings.ResumeAtStartup = "yes";
             }
-
             else
 
                 CodeEditorControl.settings.ResumeAtStartup = "no";

@@ -70,19 +70,16 @@ namespace WinExplorer
                 return;
             string s = v.SelectedNode.Text;
 
-
             string[] g = s.Split("=".ToCharArray());
 
             if (g.Length > 1)
                 s = g[1];
-
 
             if (Directory.Exists(s) == false)
                 if (File.Exists(s) == false)
                     return;
 
             fd.LoadFolder(s);
-
         }
 
         public FolderLister fd { get; set; }
@@ -294,13 +291,9 @@ namespace WinExplorer
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(LoadByClick == true)
+            if (LoadByClick == true)
             {
-
                 listView1_DoubleClick(this, null);
-
-
-
             }
 
             if (lb.SelectedIndices == null)
@@ -492,7 +485,7 @@ namespace WinExplorer
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            if(v.Visible == true)
+            if (v.Visible == true)
             {
                 lb.Visible = true;
                 v.Visible = false;
@@ -515,29 +508,21 @@ namespace WinExplorer
 
             v.Nodes.Clear();
 
-            foreach(string c in cc)
+            foreach (string c in cc)
             {
                 string[] dd = c.Split(";".ToCharArray());
 
                 if (dd.Length == 1)
                 {
-                    
-
                     TreeNode node = new TreeNode();
 
-
-                    
-                        node.Text = c.Replace("\r","");
-                    
+                    node.Text = c.Replace("\r", "");
 
                     v.Nodes.Add(node);
                 }
                 else
                 {
-
                     string[] g = dd[0].Split("=".ToCharArray());
-
-
 
                     if (g.Length == 1)
                         dd[0] = dd[0];
@@ -558,9 +543,7 @@ namespace WinExplorer
                         nodes.Nodes.Add(node);
                     }
                 }
-
             }
-
         }
     }
 }

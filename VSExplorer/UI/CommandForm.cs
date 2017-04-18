@@ -1,12 +1,7 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -36,17 +31,13 @@ namespace WinExplorer
             nav = new Navigators();
             string args = GetStartArgs(c);
 
-
             sp = splitContainer1;
 
             spd = splitContainer2;
 
-
-
             ViewDefined();
 
             ViewFolders();
-
 
             fd = folderLister1;
 
@@ -67,9 +58,8 @@ namespace WinExplorer
 
         private void Open_Click(object sender, EventArgs e)
         {
-
             string file = fd.tb.Text;
-           
+
             string folder = file;
 
             if (file == "")
@@ -80,16 +70,15 @@ namespace WinExplorer
                 folder = Path.GetDirectoryName(file);
 
             _cmd.SendCommand("cd /d " + folder + "\n");
-
         }
 
-        SplitContainer sp { get; set; }
+        private SplitContainer sp { get; set; }
 
-        SplitContainer spd { get; set; }
+        private SplitContainer spd { get; set; }
 
-        FolderLister fd { get; set; }
+        private FolderLister fd { get; set; }
 
-        FolderBrowser bs { get; set; }
+        private FolderBrowser bs { get; set; }
 
         public void ViewDefined()
         {
@@ -97,15 +86,16 @@ namespace WinExplorer
                 sp.Panel1Collapsed = false;
             else sp.Panel1Collapsed = true;
         }
+
         public void ViewFolders()
         {
             if (spd.Panel2Collapsed == true)
                 spd.Panel2Collapsed = false;
             else spd.Panel2Collapsed = true;
         }
+
         public void ViewCmds()
         {
-
         }
 
         private void Rb_KeyPress(object sender, KeyPressEventArgs e)
@@ -136,9 +126,7 @@ namespace WinExplorer
 
                 //AddText(c);
 
-
                 CharChanged = true;
-
 
                 int p = rb.SelectionStart;
 
@@ -150,7 +138,6 @@ namespace WinExplorer
             if (e.KeyCode == Keys.Down)
             {
                 string c = nav.Next();
-
 
                 AddText(c);
 
@@ -169,7 +156,6 @@ namespace WinExplorer
                 }
                 else
                     s = GetNext();
-
 
                 if (s != "")
                     AddText(s);
@@ -195,7 +181,7 @@ namespace WinExplorer
 
                 _input = cc[cc.Length - 1];
 
-                if(_input == "")
+                if (_input == "")
                     _input = cc[cc.Length - 2];
 
                 cc = _input.Split(">".ToCharArray());
@@ -286,7 +272,6 @@ namespace WinExplorer
 
             string b = cc[1];
 
-
             return b;
         }
 
@@ -360,6 +345,7 @@ namespace WinExplorer
         private bool _enterPressed = false;
         private RichTextBox rb { get; set; }
         private CMD _cmd = new CMD();
+
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             string[] cc = rb.Text.Split("\n".ToCharArray());
@@ -392,15 +378,13 @@ namespace WinExplorer
                     {
                         string[] pp = b[0].FullName.Split("\\".ToCharArray());
 
-                        foreach(string s in pp)
+                        foreach (string s in pp)
                         {
                             if (s.StartsWith("Microsoft"))
                             {
                                 string[] rr = s.Split(" ".ToCharArray());
 
-                                
                                 AddToolButton(b[0].FullName, rr[rr.Length - 1]);
-
                             }
                         }
 
@@ -415,8 +399,6 @@ namespace WinExplorer
             FindVSCmds();
         }
 
-
-
         public void AddToolButton(string s, string v)
         {
             ToolStripButton b = new ToolStripButton();
@@ -427,9 +409,9 @@ namespace WinExplorer
 
             toolStrip1.Items.Add(b);
         }
+
         public void AddToolLauncherButton(string s, string v)
         {
-
             s = s.Replace("$", "");
             ToolStripButton b = new ToolStripButton();
             b.Text = v;// Path.GetFileName(s);
@@ -464,6 +446,7 @@ namespace WinExplorer
 
             SendSet();
         }
+
         private void C_Click(object sender, EventArgs e)
         {
             ToolStripButton b = sender as ToolStripButton;
@@ -479,16 +462,14 @@ namespace WinExplorer
             _cmd.SendCommand(c);
 
             Task.Delay(2000);
-           
 
             c = s;
 
             c = c.Replace("$", "");
 
             _cmd.SendCommand(c);
-
-           
         }
+
         private string folder { get; set; }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -549,8 +530,6 @@ namespace WinExplorer
 
             //cmd.runCommands("C:\\WinPython\\python-3.4.3.amd64\\python.exe");
 
-
-
             _cmd.runCommands("C:\\WinPython\\python-3.4.3.amd64\\python.exe");
         }
 
@@ -559,15 +538,14 @@ namespace WinExplorer
             _cmd.EndProcess();
         }
 
-        Font font;
+        private Font font;
 
-        Color bg = Color.Black;
+        private Color bg = Color.Black;
 
-        ArrayList R = new ArrayList();
+        private ArrayList R = new ArrayList();
 
         private void toolStripButton9_Click(object sender, EventArgs e)
         {
-
             R = new ArrayList();
 
             ConsolePropertyForm pf = new ConsolePropertyForm();
@@ -585,14 +563,11 @@ namespace WinExplorer
             {
                 font = R[0] as Font;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-
             }
 
             rb.Font = font;
-
-
         }
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
@@ -612,10 +587,9 @@ namespace WinExplorer
             DialogResult r = lf.DialogResult;
             if (r != DialogResult.OK)
                 return;
-           
         }
 
-        ArrayList P { get; set; }
+        private ArrayList P { get; set; }
 
         public void LoadLaunchers()
         {
@@ -631,11 +605,9 @@ namespace WinExplorer
 
             foreach (string c in cc)
             {
-
                 string s = c.Replace("$", "");
 
                 AddToolLauncherButton(s, Path.GetFileName(s));
-
             }
         }
     }

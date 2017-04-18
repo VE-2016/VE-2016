@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using static WinExplorer.NewProjectForm;
 
 namespace WinExplorer
 {
@@ -20,7 +19,6 @@ namespace WinExplorer
             int w = v.Width;
 
             v.Columns[0].Width = w;
-
         }
 
         private void V_Resize(object sender, System.EventArgs e)
@@ -30,19 +28,19 @@ namespace WinExplorer
             v.Columns[0].Width = w;
         }
 
-        ArrayList C { get; set; }
+        private ArrayList C { get; set; }
 
-        ArrayList CS { get; set; }
+        private ArrayList CS { get; set; }
 
-        ListBox lb { get; set; }
+        private ListBox lb { get; set; }
 
-        ListView v { get; set; }
+        private ListView v { get; set; }
 
         public void CommandList()
         {
             Dictionary<string, Command> d = gui.Init();
 
-            foreach(string s in d.Keys)
+            foreach (string s in d.Keys)
             {
                 ListViewItem b = new ListViewItem();
                 b.Text = s;
@@ -53,12 +51,11 @@ namespace WinExplorer
 
             foreach (string s in CS)
             {
-                
                 lb.Items.Add(s);
             }
         }
 
-        ImageList img { get; set; }
+        private ImageList img { get; set; }
 
         public void InitializeListView()
         {
@@ -71,14 +68,12 @@ namespace WinExplorer
             v.View = View.Details;
 
             v.LargeImageList = img;
-            
 
             v.FullRowSelect = true;
 
             v.Columns.Add("");
 
             v.HeaderStyle = ColumnHeaderStyle.None;
-
 
             ResumeLayout();
         }
@@ -87,7 +82,6 @@ namespace WinExplorer
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-
             DialogResult = DialogResult.Cancel;
 
             if (listView1.SelectedIndices == null || v.SelectedIndices.Count <= 0)

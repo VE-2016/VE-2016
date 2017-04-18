@@ -1,13 +1,6 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinExplorer
@@ -49,32 +42,28 @@ namespace WinExplorer
 
             string[] dd = c.Split("$".ToCharArray());
 
-            if(dd.Length > 0)
-                exe.Text  = dd[0];
+            if (dd.Length > 0)
+                exe.Text = dd[0];
             if (dd.Length > 1)
                 args.Text = dd[1];
-
-
         }
 
         public ArrayList P { get; set; }
 
-        ListBox lb { get; set; }
+        private ListBox lb { get; set; }
 
-        TextBox exe { get; set; }
+        private TextBox exe { get; set; }
 
-        TextBox args { get; set; }
+        private TextBox args { get; set; }
 
-        FolderLister fd { get; set; }
+        private FolderLister fd { get; set; }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             if (File.Exists("Launchers.config") == false)
             {
                 FileStream fs = File.Create("Launchers.config");
@@ -129,7 +118,7 @@ namespace WinExplorer
 
             ArrayList L = new ArrayList();
 
-            foreach(string d in cc)
+            foreach (string d in cc)
             {
                 if (d != c)
                     L.Add(d);

@@ -11,15 +11,12 @@ namespace WinExplorer.UI
         public BreakpointForm()
         {
             InitializeComponent();
-        
 
             Init();
 
             ScriptControl.br.breakPointEvent += Br_breakPointEvent;
 
             ScriptControl.br.breakPointStateEvent += Br_breakPointStateEvent;
-
-            
         }
 
         private void Br_breakPointStateEvent(object sender, Breakpoint e)
@@ -48,8 +45,7 @@ namespace WinExplorer.UI
 
         public bool FindBreakpointNode(Breakpoint b)
         {
-
-            foreach(TreeNode node in editbox.Nodes)
+            foreach (TreeNode node in editbox.Nodes)
             {
                 ListViewItem c = node.Tag as ListViewItem;
 
@@ -57,12 +53,9 @@ namespace WinExplorer.UI
 
                 if (bc.Equals(b))
                 {
-
                     v.Items.Remove(c);
                     editbox.Nodes.Remove(node);
                     return true;
-
-
                 }
             }
             return false;
@@ -71,7 +64,6 @@ namespace WinExplorer.UI
 
         public void InsertBreakpoint(Breakpoint b)
         {
-
             int i = editbox.Nodes.Count;
 
             TreeNode node = new TreeNode("breakpoint node " + i.ToString());
@@ -91,9 +83,9 @@ namespace WinExplorer.UI
             node.Tag = c;
             node.Checked = b.enabled;
 
-            foreach(ColumnHeader cc in v.Columns)
+            foreach (ColumnHeader cc in v.Columns)
             {
-                if(cc.Name == "Labels")
+                if (cc.Name == "Labels")
                 {
                     c.SubItems.Add(b.label);
                 }
@@ -111,11 +103,11 @@ namespace WinExplorer.UI
                 }
                 else if (cc.Name == "File")
                 {
-                     if (b.file != "")
+                    if (b.file != "")
                         c.SubItems.Add(Path.GetFileName(b.file) + ", line " + b.location.Y + " character " + b.location.X);
                     else c.SubItems.Add("no data");
                 }
-                else if( cc.Name == "Address")
+                else if (cc.Name == "Address")
                 {
                     c.SubItems.Add("");
                 }
@@ -143,7 +135,6 @@ namespace WinExplorer.UI
                 {
                     c.SubItems.Add("");
                 }
-                
             }
             v.Items.Add(c);
         }
@@ -154,7 +145,7 @@ namespace WinExplorer.UI
             c.SubItems.Clear();
             Breakpoint b = c.Tag as Breakpoint;
             c.Tag = b;
-            
+
             foreach (ColumnHeader cc in v.Columns)
             {
                 if (cc.Name == "Labels")
@@ -212,17 +203,12 @@ namespace WinExplorer.UI
             v.EndUpdate();
         }
 
-    
-        
+        private DoubleClickTreeView editbox { get; set; }
 
-        
+        private ListView v { get; set; }
 
-        DoubleClickTreeView editbox { get; set; }
+        private ContextMenuStrip context { get; set; }
 
-
-        ListView v { get; set; }
-
-        ContextMenuStrip context { get; set; }
         public void Init()
         {
             context = contextMenuStrip1;
@@ -243,10 +229,10 @@ namespace WinExplorer.UI
             // Add columns to the ListView control.
             //listView.Columns.Add("", 15, HorizontalAlignment.Center);
             listView.Columns.Add("Name", "Name", 400);
-            listView.Columns.Add("Labels", "Labels",100);
-            listView.Columns.Add("Condition", "Condition",100);
+            listView.Columns.Add("Labels", "Labels", 100);
+            listView.Columns.Add("Condition", "Condition", 100);
             listView.Columns.Add("Hit Count", "Hit Count", 100);
-            
+
             CheckMenuItem("Name", true, false);
             CheckMenuItem("Labels", true);
             CheckMenuItem("Condition", true);
@@ -256,7 +242,7 @@ namespace WinExplorer.UI
 
             editbox = new DoubleClickTreeView();
             editbox.Parent = listView;
-            editbox.Bounds = new Rectangle(0,0, 300, 300);
+            editbox.Bounds = new Rectangle(0, 0, 300, 300);
             editbox.Focus();
             editbox.Show();
 
@@ -283,10 +269,6 @@ namespace WinExplorer.UI
                 return;
             int index = v.SelectedIndices[0];
 
-
-
-            
-
             editbox.Focus();
             editbox.SelectedNode = editbox.Nodes[index];
         }
@@ -296,7 +278,6 @@ namespace WinExplorer.UI
             TreeNode node = e.Node;
             ListViewItem c = node.Tag as ListViewItem;
             Breakpoint b = c.Tag as Breakpoint;
-
 
             ExplorerForms.ef.Command_OpenFileAndGotoLine(b.file, b.location.Y.ToString());
         }
@@ -320,13 +301,11 @@ namespace WinExplorer.UI
 
         public Breakpoint GetBreakpoint(TreeNode node)
         {
-
             ListViewItem c = node.Tag as ListViewItem;
             if (c == null)
                 return null;
             Breakpoint b = c.Tag as Breakpoint;
             return b;
-
         }
 
         private void Editbox_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -335,7 +314,6 @@ namespace WinExplorer.UI
 
             if (e.Button != MouseButtons.Right)
             {
-
                 //node.Checked = !node.Checked;
 
                 //TreeViewEventArgs ev = new TreeViewEventArgs(node);
@@ -359,32 +337,27 @@ namespace WinExplorer.UI
 
             if (node.Checked == true)
             {
-
                 node.ImageKey = "breakpoint";
                 foreach (TreeNode nodes in node.Nodes)
                 {
                     nodes.ImageKey = "breakpoint";
                     nodes.Checked = true;
-                   
                 }
                 b.enabled = true;
             }
             else
             {
                 node.ImageKey = "notbreakpoint";
-                    foreach (TreeNode nodes in node.Nodes)
-                    {
-                        nodes.ImageKey = "notbreakpoint";
-                        nodes.Checked = false;
-                    
-                    
+                foreach (TreeNode nodes in node.Nodes)
+                {
+                    nodes.ImageKey = "notbreakpoint";
+                    nodes.Checked = false;
                 }
                 state = 3;
                 b.enabled = false;
             }
 
             ScriptControl.br.LoadBreakpoint(b, state, false);
-
         }
 
         private void ListView_Resize(object sender, System.EventArgs e)
@@ -399,7 +372,6 @@ namespace WinExplorer.UI
         {
             editbox.CheckBoxes = true;
             editbox.Scrollable = false;
-            
 
             ImageList g = new ImageList();
             g.Images.Add("breakpoint", Resources.BreakpointEnable_16x);
@@ -415,14 +387,13 @@ namespace WinExplorer.UI
             //    {
             //        TreeNode nodes = new TreeNode("breakpoint line node " + j.ToString());
             //        nodes.Checked = true;
-            //        nodes.ImageKey = "breakpoint";        
+            //        nodes.ImageKey = "breakpoint";
             //        node.Nodes.Add(nodes);
             //        j++;
             //    }
             //    editbox.Nodes.Add(node);
             //    i++;
             //}
-
         }
 
         private void toolStripSplitButton2_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -434,10 +405,9 @@ namespace WinExplorer.UI
             else b.Checked = true;
 
             LoadColumn(b.Text, b.Checked);
-
-
         }
-        string[] names =
+
+        private string[] names =
         {
             "All visible",
             "Name",
@@ -452,27 +422,23 @@ namespace WinExplorer.UI
             "Address",
             "Data",
             "Process"
-
         };
 
         public void LoadColumn(string name, bool Checked)
         {
             ListView v = listView1;
 
-            if(name == "All visible")
+            if (name == "All visible")
             {
-
-
             }
 
-
-            if(Checked == true)
+            if (Checked == true)
             {
                 foreach (ColumnHeader c in v.Columns)
                     if (c.Name == name)
                         return;
 
-                v.Columns.Add(name, name).Name = name; 
+                v.Columns.Add(name, name).Name = name;
                 EnsureColumnOrder();
             }
             else
@@ -500,29 +466,26 @@ namespace WinExplorer.UI
 
             ArrayList L = new ArrayList();
 
-            foreach(string s in names)
+            foreach (string s in names)
             {
                 int index = listView.Columns.IndexOfKey(s);
                 if (index >= 0)
                     L.Add(listView.Columns[index]);
-
             }
 
             listView.Columns.Clear();
 
-            
-            foreach(ColumnHeader c in L)
-            listView.Columns.Add(c);
-           
+            foreach (ColumnHeader c in L)
+                listView.Columns.Add(c);
         }
 
         public void CheckMenuItem(string name, bool c, bool enabled = true)
         {
             ToolStripSplitButton b = toolStripSplitButton2;
 
-            foreach(ToolStripMenuItem d in b.DropDownItems)
+            foreach (ToolStripMenuItem d in b.DropDownItems)
             {
-                if(d.Text == name)
+                if (d.Text == name)
                 {
                     d.Checked = c;
                     if (enabled == false)
@@ -537,7 +500,7 @@ namespace WinExplorer.UI
             TreeNode node = editbox.SelectedNode;
             if (node == null)
                 return;
-            Editbox_NodeMouseDoubleClick(this, new TreeNodeMouseClickEventArgs(node, MouseButtons.Left, 0,0,0));   
+            Editbox_NodeMouseDoubleClick(this, new TreeNodeMouseClickEventArgs(node, MouseButtons.Left, 0, 0, 0));
         }
 
         private void toolStripButton3_Click(object sender, System.EventArgs e)
@@ -599,5 +562,4 @@ namespace WinExplorer.UI
                 ControlStyles.StandardDoubleClick, true);
         }
     }
-
 }

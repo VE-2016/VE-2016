@@ -1,20 +1,11 @@
+using GACManagerApi;
+using Microsoft.Win32;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using Microsoft.Win32;
-using System.Reflection;
-using System.Runtime;
-using System.Runtime.InteropServices;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using GACManagerApi;
 using System.Xml;
 
 namespace GACProject
@@ -27,21 +18,16 @@ namespace GACProject
 
             //GetAssembliesList("");
 
-
             //var parent = Registry.ClassesRoot.OpenSubKey("CLSID");
 
             //var parent = Registry.ClassesRoot.OpenSubKey("TypeLib");
 
-
             //var subKeys = parent.GetSubKeyNames();
             //foreach (var subKey in subKeys)
             //{
-
             //    var sub = parent.OpenSubKey(subKey);
             //    if (sub != null)
             //    {
-
-
             //        GetSubKeys(sub, "win32");
 
             //        //var inProc = sub.GetSubKeyNames();
@@ -59,7 +45,6 @@ namespace GACProject
             //        //}
             //    }
             //}
-
 
             GetAssembliesList("");
 
@@ -157,7 +142,6 @@ namespace GACProject
 
             tv.Nodes.Add(node);
 
-
             node = new TreeNode();
             node.Text = "Browse";
 
@@ -174,7 +158,6 @@ namespace GACProject
 
             FilterAssemblies();
         }
-
 
         public void FilterTypeLibraries()
         {
@@ -195,7 +178,6 @@ namespace GACProject
             C = new ArrayList();
 
             var parent = Registry.ClassesRoot.OpenSubKey("TypeLib");
-
 
             var subKeys = parent.GetSubKeyNames();
             foreach (var subKey in subKeys)
@@ -227,19 +209,13 @@ namespace GACProject
             return C;
         }
 
-
         public SplitContainer sp { get; set; }
 
         private ListView lv { get; set; }
 
         // public LinkerForms.PanelControl pc { get; set; }
 
-
         private GACManagerApi.AssemblyDescription _d;
-
-
-
-
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
@@ -263,13 +239,10 @@ namespace GACProject
                 if (obs == null)
                     continue;
 
-
-
                 GACManagerApi.AssemblyDescription ase = obs as GACManagerApi.AssemblyDescription;
 
                 if (ase.Name == null)
                     continue;
-
 
                 if (A.IndexOf(ase.Name) >= 0)
                     continue;
@@ -283,15 +256,9 @@ namespace GACProject
 
                 v.SubItems.Add(ase.Name.ToString());
 
-
-
-
                 v.SubItems.Add(ase.Path);
 
                 v.SubItems.Add(ase.ProcessorArchitecture);
-
-
-
 
                 // v.SubItems.Add(ase.ReflectionProperties.ToString());
 
@@ -302,8 +269,6 @@ namespace GACProject
                 lv.Items.Add(v);
             }
         }
-
-
 
         public void LoadTypeLibraries(ArrayList asm)
         {
@@ -347,18 +312,15 @@ namespace GACProject
             }
         }
 
-
         public void InitializeListView(ListView lv)
         {
             lv.Clear();
 
             lv.View = View.Details;
 
-
             lv.CheckBoxes = true;
 
             lv.FullRowSelect = true;
-
 
             lv.Columns.Add("");
             lv.Columns.Add("Name");
@@ -369,24 +331,20 @@ namespace GACProject
             lv.Columns.Add("Display");
         }
 
-
         public void InitializeListView(ListView lv, string project)
         {
             lv.Clear();
 
             lv.View = View.Details;
 
-
             lv.CheckBoxes = true;
 
             lv.FullRowSelect = true;
-
 
             lv.Columns.Add("");
             lv.Columns.Add("Name");
             lv.Columns.Add("Path");
         }
-
 
         public void SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -402,7 +360,6 @@ namespace GACProject
             int i = lv.SelectedIndices[0];
 
             string s = "";
-
 
             ListViewItem v = lv.Items[i];
 
@@ -464,11 +421,9 @@ namespace GACProject
 
         public static Type FindTypeFromAssemblies(string name)
         {
-
             Type T = null;
-            
 
-            foreach(string s in asmd.Keys)
+            foreach (string s in asmd.Keys)
             {
                 AssemblyDescription d = asmd[s];
 
@@ -476,11 +431,9 @@ namespace GACProject
 
                 if (T != null)
                     return T;
-
             }
 
             return T;
-
         }
 
         public static string GetFrameworkDoc(string assembly, string data, string prefix = "")
@@ -500,6 +453,7 @@ namespace GACProject
 
             return xml.InnerText;
         }
+
         public static XmlElement GetFrameworkXmlDoc(string assembly, string data, string prefix = "")
         {
             if (asmd == null)
@@ -514,6 +468,7 @@ namespace GACProject
 
             return xml;
         }
+
         public static Dictionary<string, AssemblyDescription> tlb { get; set; }
 
         async static public Task<ArrayList> GetTLBList()
@@ -535,7 +490,6 @@ namespace GACProject
 
         //async static public Task<ArrayList> GetExtensionsList()
         //{
-
         //    ArrayList asms = GetExtension();
 
         //    tlb = new Dictionary<string, AssemblyDescription>();
@@ -564,7 +518,6 @@ namespace GACProject
                 if (ase.Name == null)
                     continue;
 
-
                 if (dict.ContainsKey(ase.Name))
                     continue;
                 try
@@ -581,6 +534,7 @@ namespace GACProject
 
             return dict;
         }
+
         static public Dictionary<string, string> GetTLBDict(ArrayList L)
         {
             Dictionary<string, string> dict = new Dictionary<string, string>();
@@ -592,7 +546,6 @@ namespace GACProject
 
                 if (ase.Name == null)
                     continue;
-
 
                 if (dict.ContainsKey(ase.Name))
                     continue;
@@ -621,23 +574,23 @@ namespace GACProject
 
             LoadAssemblies(asm);
         }
+
         async public void GetExtensions()
         {
             if (GACForm.E != null)
             {
                 // asm = asms;
-
             }
             else E = await GacUtil.GetExtensions("");
 
             LoadAssemblies(E);
         }
+
         async public void GetTLBs()
         {
             if (GACForm.C != null)
             {
                 //asm = asms;
-
             }
             else C = GetTLB();
 
@@ -646,11 +599,8 @@ namespace GACProject
 
         //async public  void GetExtension()
         //{
-
         //    if (GACForm.E != null)
         //    {
-
-
         //    }
         //    else E = GetExtensions();
 
@@ -660,7 +610,6 @@ namespace GACProject
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            
             LoadAssemblies(asm);
         }
 
@@ -753,7 +702,6 @@ namespace GACProject
                     i++;
                 }
             }
-
             else
             {
                 L = new ArrayList();
@@ -775,20 +723,16 @@ namespace GACProject
                 c.SelectedIndex = c.Items.Count - 1;
         }
 
-
         private ArrayList F { get; set; }
 
         public void FilterAssemblies()
         {
             F = new ArrayList();
 
-
             int p = toolStripComboBox1.SelectedIndex;
 
             if (p < 0)
                 return;
-
-
 
             string filtered = toolStripComboBox1.Items[p].ToString();
 
@@ -801,7 +745,6 @@ namespace GACProject
 
                     F.Add(d);
             }
-
 
             LoadAssemblies(F);
         }
@@ -839,14 +782,14 @@ namespace GACProject
         {
             N = new ArrayList();
 
-            // Opens the registry key for the .NET Framework entry. 
+            // Opens the registry key for the .NET Framework entry.
             using (RegistryKey ndpKey =
                 RegistryKey.OpenRemoteBaseKey(RegistryHive.LocalMachine, "").
                 OpenSubKey(@"SOFTWARE\Microsoft\NET Framework Setup\NDP\"))
             {
-                // As an alternative, if you know the computers you will query are running .NET Framework 4.5  
-                // or later, you can use: 
-                // using (RegistryKey ndpKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine,  
+                // As an alternative, if you know the computers you will query are running .NET Framework 4.5
+                // or later, you can use:
+                // using (RegistryKey ndpKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine,
                 // RegistryView.Registry32).OpenSubKey(@"SOFTWARE\Microsoft\NET Framework Setup\NDP\"))
                 foreach (string versionKeyName in ndpKey.GetSubKeyNames())
                 {
@@ -921,7 +864,6 @@ namespace GACProject
                 lv.ListViewItemSorter = new ListViewItemComparer(e.Column, SortOrder.Ascending);
                 // Call the sort method to manually sort.
                 ///lv.Sort();
-
             }
 
             // Determine whether the column is the same as the last column clicked.
@@ -941,13 +883,11 @@ namespace GACProject
                     lv.Sorting = SortOrder.Ascending;
             }
 
-
             this.lv.ListViewItemSorter = new ListViewItemComparer(e.Column, lv.Sorting);
             // Call the sort method to manually sort.
             lv.Sort();
             // Set the ListViewItemSorter property to a new ListViewItemComparer
             // object.
-
         }
 
         public void ShortVersion()
@@ -996,15 +936,10 @@ namespace GACProject
         private Dictionary<string, string> ps { get; set; }
 
         //public void LoadProjects(Dictionary<string, string> d){
-
-
         //    ps = d;
-
-
 
         //    foreach (string s in L)
         //    {
-
         //        ListViewItem v = FindItem(s);
 
         //        if (v == null)
@@ -1015,7 +950,6 @@ namespace GACProject
         //    }
 
         //}
-
 
         public enum Sel { framework, extensions, recent, projects, COM, browse };
 
@@ -1038,12 +972,9 @@ namespace GACProject
             if (L == null)
                 return;
 
-
             foreach (ListViewItem v in lv.Items)
             {
                 string text = v.SubItems[2].Text;
-
-
 
                 int i = L.IndexOf(text);
 
@@ -1053,7 +984,6 @@ namespace GACProject
                     v.Checked = true;
             }
         }
-
 
         public void LoadProjects(Dictionary<string, string> d)
         {
@@ -1072,12 +1002,7 @@ namespace GACProject
 
                 v.SubItems.Add(s);
 
-
-
-
                 v.SubItems.Add(d[s]);
-
-
 
                 lv.Items.Add(v);
             }

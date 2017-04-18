@@ -1,17 +1,8 @@
-﻿using AIMS.Libraries.Scripting.ScriptControl;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-using MiniSqlQuery.Core.DbModel;
+﻿using MiniSqlQuery.Core.DbModel;
 using System.Collections;
+using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace WinExplorer.UI
 {
@@ -26,21 +17,19 @@ namespace WinExplorer.UI
             dg = dataGridView1;
         }
 
-        ArrayList C { get; set; }
+        private ArrayList C { get; set; }
 
-        DataGridView dg { get; set; }
+        private DataGridView dg { get; set; }
 
         public void Load(DbModelObjectBase model)
         {
-
-            if(model.GetType() == typeof(DbModelTable))
+            if (model.GetType() == typeof(DbModelTable))
             {
                 DbModelTable db = model as DbModelTable;
                 string tableName = db.Name;
 
                 DataTable datatable = new DataTable();
 
-                
                 string connectionString = C[1] as string;
 
                 DataConnection dc = new DataConnection();
@@ -54,10 +43,7 @@ namespace WinExplorer.UI
                 da.Fill(datatable);
 
                 dg.DataSource = datatable;
-
             }
-
         }
-        
     }
 }

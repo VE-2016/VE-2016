@@ -57,6 +57,7 @@ namespace utils
 
             node.EnsureVisible();
         }
+
         public void Next()
         {
             if (v == null)
@@ -76,13 +77,11 @@ namespace utils
 
             if (N.Count > 0)
             {
-
                 TreeNode node = N[act] as TreeNode;
 
                 v.SelectedNode = node;
 
                 node.EnsureVisible();
-
             }
         }
     }
@@ -1319,7 +1318,8 @@ namespace utils
                     i++;
                 }
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
                 Console.WriteLine(e.Message);
             };
         }
@@ -1652,8 +1652,6 @@ namespace utils
             }
         }
 
-
-
         static public string[] get_lb_items(ListBox lb)
         {
             int N = lb.Items.Count;
@@ -1669,7 +1667,6 @@ namespace utils
 
             return p;
         }
-
 
         static public void do_logger_select(ListBox lb, string logs)
         {
@@ -2255,6 +2252,7 @@ namespace utils
         }
     }
 }
+
 namespace SolutionFormProject
 {
     public class GroupBoxEx : GroupBox
@@ -2623,7 +2621,8 @@ namespace SolutionFormProject
                     //    items.Add(new VSProjectItem(this, item));
                     //}
                 }
-                catch (Exception e) {
+                catch (Exception e)
+                {
                     Console.WriteLine(e.Message);
                 }
             }

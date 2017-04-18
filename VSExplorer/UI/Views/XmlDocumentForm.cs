@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -20,13 +13,15 @@ namespace WinExplorer.UI.Views
             v = treeView1;
             ExplorerForms.ef.event_SelectedProjectItemChanged += Ef_event_SelectedProjectItemChanged;
         }
-        TreeView v { get; set; }
+
+        private TreeView v { get; set; }
+
         private void Ef_event_SelectedProjectItemChanged(object sender, VSProvider.VSProject vp, string file)
         {
             if (String.IsNullOrEmpty(file))
                 return;
             string ext = Path.GetExtension(file);
-            if(ext != ".xml" && ext != ".xsd")
+            if (ext != ".xml" && ext != ".xsd")
             {
                 return;
             }
@@ -34,7 +29,6 @@ namespace WinExplorer.UI.Views
                 return;
 
             this.BeginInvoke(new Action(() => { LoadXmlDocument(file); }));
-
         }
 
         public void LoadXmlDocument(string file)
@@ -52,9 +46,9 @@ namespace WinExplorer.UI.Views
             }
         }
 
-        void LoadChildNodes(TreeNode node, XmlNode xml)
+        private void LoadChildNodes(TreeNode node, XmlNode xml)
         {
-            foreach(XmlNode ng in xml.ChildNodes)
+            foreach (XmlNode ng in xml.ChildNodes)
             {
                 TreeNode ns = new TreeNode();
                 ns.Text = ng.Name;
@@ -62,6 +56,5 @@ namespace WinExplorer.UI.Views
                 LoadChildNodes(ns, ng);
             }
         }
-        
     }
 }

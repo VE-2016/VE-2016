@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WinExplorer.UI
 {
@@ -27,13 +24,12 @@ namespace WinExplorer.UI
             if (errors.Count > 0)
             {
                 var retMessage = string.Empty;
-                
+
                 return retMessage;
             }
 
             try
             {
-               
             }
             catch (Exception ex)
             {
@@ -42,7 +38,5 @@ namespace WinExplorer.UI
 
             return string.Empty;
         }
-       
-      
     }
 }

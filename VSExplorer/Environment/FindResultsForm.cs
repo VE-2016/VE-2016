@@ -48,7 +48,6 @@ namespace WinExplorer
                 c.SelectedItem = output;
                 return outputs[output];
             }
-
         }
 
         public void AddOrUpdateOutputs(string output)
@@ -56,7 +55,7 @@ namespace WinExplorer
             this.BeginInvoke(new Action(() => { C = AddOrUpdateOutput(output); }));
         }
 
-        ArrayList C { get; set; }
+        private ArrayList C { get; set; }
 
         public void SetOutput(string output)
         {
@@ -72,7 +71,6 @@ namespace WinExplorer
 
             rb.AppendText(s);
         }
-
 
         private void Rb_MouseClick(object sender, MouseEventArgs e)
         {
@@ -126,12 +124,10 @@ namespace WinExplorer
 
         public delegate void workerDisplayLine(string file, string line, string c, int g);
 
-
         private void DisplayLine(string file, string line, string c, int g)
         {
             ef.BeginInvoke(new Action(() => { ef.OpenFileXY(file, c, line/*, c*/, g); }));
         }
-
 
         private static void ProcessInformation(IAsyncResult result)
         {
@@ -154,7 +150,6 @@ namespace WinExplorer
 
         public void LogLine(string s)
         {
-
             AddOutput(s + "\n");
 
             //rb.AppendText(s + "\n");
@@ -188,7 +183,7 @@ namespace WinExplorer
             doc.HideOnClose = false;
             doc.FormBorderStyle = FormBorderStyle.None;
             doc.Dock = DockStyle.Fill;
-           // doc.BackColor = SystemColors.InactiveBorder;
+            // doc.BackColor = SystemColors.InactiveBorder;
             doc.Contents = text;
             //doc.ScriptLanguage = _scriptLanguage;
             //doc.vp = pp;

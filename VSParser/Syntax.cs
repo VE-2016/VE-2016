@@ -5,11 +5,8 @@ using Microsoft.CodeAnalysis.CSharp;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using VSProvider;
 
@@ -17,10 +14,8 @@ namespace VSParsers
 {
     public class Syntaxer
     {
-
         public Syntaxer()
         {
-           
             var options = new CSharpCompilationOptions(
           OutputKind.WindowsApplication,
           optimizationLevel: OptimizationLevel.Debug,
@@ -28,24 +23,19 @@ namespace VSParsers
             //cc = CSharpCompilation.Create("form", options : options).AddReferences(MetadataReference.CreateFromFile(typeof(object).Assembly.Location)).AddSyntaxTrees(CSharpSyntaxTree.ParseText("", null, "void"));
         }
 
-        
-
         public CSharpCompilation cc { get; set; }
-
-
 
         public Dictionary<int, Diagnostic> hc = new Dictionary<int, Diagnostic>();
 
         public DataGridView dg { get; set; }
-       
-        public Dictionary<int,Diagnostic> ResolveAt(TextLocation location, string content, string filename, VSProject vp)
-        {
 
+        public Dictionary<int, Diagnostic> ResolveAt(TextLocation location, string content, string filename, VSProject vp)
+        {
             ArrayList E = new ArrayList();
 
             if (dg == null)
                 return null;
-            
+
             SyntaxTree syntaxTree = CSharpSyntaxTree.ParseText(content, null, filename);
 
             //CSharpCompilation cc = CSharpCompilation.Create("form").AddReferences(
@@ -53,8 +43,8 @@ namespace VSParsers
             //                                            typeof(object).Assembly.Location))
             //                                   .AddSyntaxTrees(syntaxTree);
 
-           // foreach (MetadataReference r in cc.References)
-           //     MessageBox.Show(r.Display);
+            // foreach (MetadataReference r in cc.References)
+            //     MessageBox.Show(r.Display);
 
             List<SyntaxTree> syntax = cc.SyntaxTrees.Select(x => x).Where(x => x.FilePath == filename).ToList();
             if (syntax.Count > 0)
@@ -64,34 +54,26 @@ namespace VSParsers
             else
             {
                 cc = cc.AddSyntaxTrees(syntaxTree);
-
             }
             SemanticModel semanticModel = null;
             try
             {
                 semanticModel = cc.GetSemanticModel(syntaxTree);
-                
-
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-
             }
             string s = "";
             int i = 0;
 
-        
-
             foreach (Diagnostic d in syntaxTree.GetDiagnostics())
             {
-
                 int hcc = d.GetHashCode();
 
                 E.Add(hcc);
 
                 if (hc.ContainsKey(hcc))
                     continue;
-                
 
                 //s += (d.Descriptor.Category + " - " + d.Descriptor.Id + " - " + d.GetMessage() + " ");
 
@@ -112,7 +94,6 @@ namespace VSParsers
                         FileLinePositionSpan c = d.Location.GetLineSpan();
                         line = c.StartLinePosition.Line.ToString();
                     }
-                    
                 }
 
                 ////else
@@ -128,7 +109,7 @@ namespace VSParsers
                 //ie.Message = d.GetMessage();
                 //ie.vp = vp;
                 //E.Add(ie);
-                
+
                 //int rowId = dg.Rows.Add();
                 //DataGridViewRow row = dg.Rows[rowId];
                 //row.InheritedStyle.BackColor = Color.FromKnownColor(KnownColor.Control);
@@ -143,22 +124,17 @@ namespace VSParsers
                 //row.Cells[7].Value = "project";
 
                 hc.Add(hcc, d);
-
             }
             ArrayList F = new ArrayList();
             foreach (int hcc in hc.Keys)
                 if (E.IndexOf(hcc) < 0)
                     F.Add(hcc);
             foreach (int hcc in F)
-                if(hc.ContainsKey(hcc))
-                hc.Remove(hcc);
-
-            
+                if (hc.ContainsKey(hcc))
+                    hc.Remove(hcc);
 
             return hc;
         }
-
-       
 
         public List<INamedTypeSymbol> GetAllTypes()
         {
@@ -170,17 +146,16 @@ namespace VSParsers
                     foreach (INamedTypeSymbol s in ns.GetTypeMembers())
                     {
                         b.Add(s);
-                       
                     }
                     GetAllTypes(ns, b);
                 }
-            } 
-            catch(Exception ex)
+            }
+            catch (Exception ex)
             {
-
             }
             return b;
         }
+
         public void GetAllTypes(INamespaceSymbol c, List<INamedTypeSymbol> b)
         {
             foreach (INamespaceSymbol ns in c.GetNamespaceMembers())
@@ -191,8 +166,8 @@ namespace VSParsers
                 }
                 GetAllTypes(ns, b);
             }
-            
         }
+
         public void GetDeclaredTypes()
         {
             //List<ISymbol> ls = new List<ISymbol>();
@@ -250,22 +225,18 @@ namespace VSParsers
             //    new MetadataFileReference(typeof(object).Assembly.Location),
             //};
 
-
             CSharpCompilation cc = CSharpCompilation.Create("form").AddReferences(
                                                     MetadataReference.CreateFromFile(
                                                         typeof(object).Assembly.Location))
                                                .AddSyntaxTrees(syntaxTree);
-           
 
-            SyntaxTree syntax = cc.SyntaxTrees.Select(x => x).Where(x =>x.FilePath == "file").ToList()[0];
+            SyntaxTree syntax = cc.SyntaxTrees.Select(x => x).Where(x => x.FilePath == "file").ToList()[0];
 
             var semanticModel = cc.GetSemanticModel(syntaxTree);
-
 
             //int i = 0;
             //while(i < c.Length)
             //{
-
             //    string cs = c[i].ToString();
             //        rb.AppendText(i.ToString() + " : " + cs.ToString() + " - " + "\n");
             //    i++;
@@ -282,7 +253,6 @@ namespace VSParsers
             }
             foreach (Diagnostic d in semanticModel.GetDiagnostics())
             {
-
                 rb.AppendText(d.Descriptor.Category + " - " + d.Descriptor.Id + " - " + d.GetMessage() + "\n");
 
                 foreach (var p in d.Properties)
@@ -294,12 +264,12 @@ namespace VSParsers
             //CompilationUnitSyntax root = (CompilationUnitSyntax)syntaxTree.GetRoot();
             //root = root.AddUsings(usings.Select(u => SyntaxFactory.UsingDirective(SyntaxFactory.IdentifierName(u))).ToArray());
             //syntaxTree = CSharpSyntaxTree.Create(root);
-
         }
     }
+
     public class IntErrors
     {
-       public string file { get; set; }
+        public string file { get; set; }
 
         public Error e { get; set; }
 

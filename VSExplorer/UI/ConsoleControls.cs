@@ -1,15 +1,9 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-
 
 namespace WinExplorer
 {
@@ -85,7 +79,6 @@ namespace WinExplorer
         private void Rb_KeyDown(object sender, KeyEventArgs e)
         {
             if ((rb.SelectionStart <= inputStart) && e.KeyCode == Keys.Back) e.SuppressKeyPress = true;
-
 
             if (rb.SelectionStart < inputStart)
             {
@@ -185,7 +178,6 @@ namespace WinExplorer
             }));
         }
 
-
         /// Writes the output to the console control.
         /// </summary>
         /// <param name="output">The output.</param>
@@ -203,6 +195,7 @@ namespace WinExplorer
                 inputStart = rb.SelectionStart;
             }));
         }
+
         /// Writes the output to the console control.
         /// </summary>
         /// <param name="output">The output.</param>
@@ -218,6 +211,7 @@ namespace WinExplorer
                 inputStart = rb.SelectionStart;
             }));
         }
+
         public string ReadLine()
         {
             starter s = start;
@@ -226,6 +220,7 @@ namespace WinExplorer
             nav.Add(c);
             return c;
         }
+
         public delegate void starter();
 
         public void start()
@@ -240,6 +235,7 @@ namespace WinExplorer
                 Task.Delay(400);
             }
         }
+
         public void Process(IAsyncResult ar)
         {
             EnterPressed = false;

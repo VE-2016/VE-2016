@@ -1,31 +1,21 @@
-﻿
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinExplorer.UI.Views
 {
     public class ViewList : ListView
     {
-
-
-
         public ViewList()
         {
             this.OwnerDraw = true;
             this.DoubleBuffered = true;
 
             this.HideSelection = true;
-
 
             this.DrawColumnHeader += new DrawListViewColumnHeaderEventHandler(MyListView_DrawColumnHeader);
             this.DrawItem += new DrawListViewItemEventHandler(MyListView_DrawItem);
@@ -35,9 +25,6 @@ namespace WinExplorer.UI.Views
             this.MouseDown += ViewList_MouseDowns;
             this.MouseClick += ViewList_MouseClick;
             this.Leave += ViewList_LostFocus;
-
-
-
         }
 
         public ContextMenuStrip context { get; set; }
@@ -56,14 +43,11 @@ namespace WinExplorer.UI.Views
 
         private void ViewList_MouseDowns(object sender, MouseEventArgs e)
         {
-
-           
-
             if (editbox != null)
                 this.Controls.Remove(editbox);
             editbox = null;
-
         }
+
         private void ViewList_MouseClick(object sender, MouseEventArgs e)
         {
             ListViewItem b = GetItemAt(e.X, e.Y);
@@ -81,32 +65,22 @@ namespace WinExplorer.UI.Views
             editbox.SelectionLength = editbox.Text.Length;
 
             this.Refresh();
-
-
-
         }
 
         public TextBox editbox { get; set; }
 
-
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-
             if (this.editbox != null && this.editbox.Focused == true)
             {
-
                 if (keyData == Keys.Up)
                 {
-
                     if (SelectedIndices[0] != 0)
                         modelPanel.HandleHighlight(this, keyData);
-
-
                 }
                 else if (keyData == Keys.Down)
                 {
                     modelPanel.HandleHighlight(this, keyData);
-
                 }
                 else if (keyData == Keys.Enter)
                 {
@@ -128,7 +102,6 @@ namespace WinExplorer.UI.Views
 
             if (keyData == Keys.Up)
             {
-
                 if ((SelectedIndices.Count > 0 && SelectedIndices[0] == 0) || SelectedIndices.Count == 0)
                     modelPanel.HandleArrows(this, keyData);
 
@@ -136,7 +109,6 @@ namespace WinExplorer.UI.Views
             }
             else if (keyData == Keys.Down)
             {
-
                 if ((SelectedIndices.Count > 0 && SelectedIndices[0] == Items.Count - 1) || SelectedIndices.Count == 0)
                     modelPanel.HandleArrows(this, keyData);
 
@@ -149,7 +121,6 @@ namespace WinExplorer.UI.Views
         private void ViewList_MouseDown(object sender, MouseEventArgs e)
         {
             Point cc = this.PointToClient(MousePosition);
-
 
             if ((e.Button == MouseButtons.Right))
             {
@@ -181,8 +152,6 @@ namespace WinExplorer.UI.Views
 
                 panel.Capture = true;
 
-
-
                 //modelPanel.BringToFront();
 
                 //this.Refresh();
@@ -191,7 +160,7 @@ namespace WinExplorer.UI.Views
             }
         }
 
-        ImageBox panel { get; set; }
+        private ImageBox panel { get; set; }
 
         public void SetModelPanel(ModelPanel p)
         {
@@ -230,9 +199,6 @@ namespace WinExplorer.UI.Views
 
         private void ViewList_MouseMove(object sender, MouseEventArgs e)
         {
-
-
-
             if (moving == false)
                 return;
 
@@ -250,7 +216,6 @@ namespace WinExplorer.UI.Views
             if (mouse == null)
                 mouse = cc;
 
-
             Point delta = new Point(cc.X - dd.X, cc.Y - dd.Y);
 
             // if (delta.X < 0)
@@ -262,14 +227,10 @@ namespace WinExplorer.UI.Views
 
             panel.Refresh();
 
-
-
-
             panel.Focus();
-
         }
 
-        Point mouse { get; set; }
+        private Point mouse { get; set; }
 
         public ModelPanel modelPanel { get; set; }
 
@@ -277,10 +238,6 @@ namespace WinExplorer.UI.Views
 
         private void ViewList_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-
- 
-
-
             if (panel != null)
                 this.panel.BackColor = Color.FromKnownColor(KnownColor.ActiveCaption);
 
@@ -313,12 +270,13 @@ namespace WinExplorer.UI.Views
             e.Cancel = true;
         }
 
-        bool active = false;
+        private bool active = false;
 
         public void SetActive(bool c = true)
         {
             active = c;
         }
+
         public bool IsActive()
         {
             return active;
@@ -336,13 +294,11 @@ namespace WinExplorer.UI.Views
                 e.Graphics.DrawImage(new Bitmap(e.Header.ListView.LargeImageList.Images[e.Header.ImageKey], new Size(17, 17)), 0, 0);
 
             //e.Graphics.DrawImage(new Bitmap(Properties.Resources.ExpandArrow_16x, new Size(15, 15)), e.Bounds.X + e.Bounds.Width - 20, 0);
-
         }
 
         private void MyListView_DrawItem(object sender, DrawListViewItemEventArgs e)
         {
             e.DrawBackground();
-
 
             e.Graphics.FillRectangle(new SolidBrush(Color.LightGray), 0, e.Bounds.Y, 20, e.Bounds.Height + 3);
             if (e.Item.Selected)
@@ -375,23 +331,21 @@ namespace WinExplorer.UI.Views
 
         //    e.DrawText();
         //}
-
     }
-    class ImageBox : Panel
+
+    internal class ImageBox : Panel
     {
         [DllImport("user32.dll")]
-        static extern IntPtr GetWindowDC(IntPtr hWnd);
-
+        private static extern IntPtr GetWindowDC(IntPtr hWnd);
 
         public ImageBox(Size sz)
         {
             this.AutoScroll = true;
-            this.AutoScrollMinSize = new Size(1000,1000);
+            this.AutoScrollMinSize = new Size(1000, 1000);
             this.DoubleBuffered = true;
             this.MouseDown += ImageBox_MouseClick;
             this.MouseMove += ImageBox_MouseMove;
             this.MouseUp += ImageBox_MouseUp;
-
         }
 
         private void ImageBox_MouseUp(object sender, MouseEventArgs e)
@@ -399,7 +353,7 @@ namespace WinExplorer.UI.Views
             tracking = false;
         }
 
-        Point delta { get; set; }
+        private Point delta { get; set; }
 
         private void ImageBox_MouseMove(object sender, MouseEventArgs e)
         {
@@ -410,10 +364,7 @@ namespace WinExplorer.UI.Views
 
             Point dd = Point.Subtract(d, new Size(delta));
 
-
             cons.MoveSegment(dd);
-
-
 
             SetBitmap(Image);
 
@@ -423,14 +374,11 @@ namespace WinExplorer.UI.Views
 
             this.Refresh();
 
-
             delta = new Point(e.X + this.HorizontalScroll.Value, e.Y + this.VerticalScroll.Value);
-
         }
 
         public void SetBitmap(Image bmp)
         {
-
             using (Graphics gfx = Graphics.FromImage(bmp))
             using (SolidBrush brush = new SolidBrush(Color.FromKnownColor(KnownColor.Control)))
             {
@@ -440,7 +388,6 @@ namespace WinExplorer.UI.Views
 
         public static byte[] BitmapToByteArray(Bitmap bitmap)
         {
-
             BitmapData bmpdata = null;
 
             try
@@ -459,10 +406,9 @@ namespace WinExplorer.UI.Views
                 if (bmpdata != null)
                     bitmap.UnlockBits(bmpdata);
             }
-
         }
 
-        Connector cons { get; set; }
+        private Connector cons { get; set; }
 
         private void ImageBox_MouseClick(object sender, MouseEventArgs e)
         {
@@ -497,12 +443,12 @@ namespace WinExplorer.UI.Views
             delta = new Point(d.X, d.Y);
 
             tracking = true;
-
         }
 
-        bool tracking = false;
+        private bool tracking = false;
 
         private Image mImage;
+
         public Image Image
         {
             get { return mImage; }
@@ -528,7 +474,6 @@ namespace WinExplorer.UI.Views
 
         //public void MakeShadow()
         //{
-
         //    shadow = new Bitmap(Image.Width, Image.Height);
         //}
 
@@ -543,7 +488,7 @@ namespace WinExplorer.UI.Views
             base.OnPaint(e);
         }
 
-        Bitmap bmp { get; set; }
+        private Bitmap bmp { get; set; }
 
         public void ToBitmap()
         {
@@ -555,20 +500,21 @@ namespace WinExplorer.UI.Views
             // Image = SaveBitmap(Width, Height);
             //Image = Print(Width, Height);
         }
+
         public void UnloadControls(bool load = false)
         {
             foreach (Control c in this.Controls)
                 c.Visible = load;
         }
-        Bitmap DrawToBitmap(Bitmap bmp)
-        {
 
+        private Bitmap DrawToBitmap(Bitmap bmp)
+        {
             int Width = this.AutoScrollMinSize.Width;
             int Height = this.AutoScrollMinSize.Height;
 
             Cursor = Cursors.WaitCursor;         // yes it takes a while
             //Panel p = new Panel();               // the containing panel
-            //Point oldLocation = ctl.Location;    // 
+            //Point oldLocation = ctl.Location;    //
             //p.Location = Point.Empty;            //
             //this.Controls.Add(p);                //
 
@@ -582,7 +528,7 @@ namespace WinExplorer.UI.Views
 
             //ctl.Location = new Point(0, 0);     // starting point
             //ctl.Parent = p;                     // inside the container
-            //p.Show();                           // 
+            //p.Show();                           //
             //p.BringToFront();                   //
 
             // we'll draw onto the large bitmap with G
@@ -606,7 +552,7 @@ namespace WinExplorer.UI.Views
 
             return bmp;
         }
-   
+
         public void DrawControl(Control control, Bitmap bitmap)
         {
             control.DrawToBitmap(bitmap, control.Bounds);
@@ -628,7 +574,6 @@ namespace WinExplorer.UI.Views
 
             return bmp;
         }
-     
 
         public void Draw()
         {
@@ -636,23 +581,18 @@ namespace WinExplorer.UI.Views
 
             foreach (Control c in Controls)
             {
-
                 ModelPanel p = c as ModelPanel;
 
                 if (p == null)
                     continue;
 
                 p.conrs.Draw(g);
-
             }
         }
-
     }
 
     public class ModelPanel : Panel
     {
-
-
         public ModelPanel(Size sz) : base()
         {
             panels = new ArrayList();
@@ -692,11 +632,8 @@ namespace WinExplorer.UI.Views
 
         public void Unhighlight()
         {
-
-
             foreach (ViewList b in Controls)
             {
-
                 if (b.editbox != null)
                 {
                     b.Controls.Remove(b.editbox);
@@ -705,8 +642,6 @@ namespace WinExplorer.UI.Views
                 }
                 b.SelectedIndices.Clear();
             }
-
-
         }
 
         public void HandleHighlight(object sender, Keys e)
@@ -715,12 +650,10 @@ namespace WinExplorer.UI.Views
 
             ListViewItem b = v.SelectedItems[0];
 
-
             SetActive(v);
 
             if (e == Keys.Up)
             {
-
                 int index = b.Index;
 
                 if (index == 0)
@@ -737,11 +670,9 @@ namespace WinExplorer.UI.Views
                 v.Refresh();
 
                 return;
-
             }
             else if (e == Keys.Down)
             {
-
                 int index = b.Index;
 
                 if (index >= v.Items.Count - 1)
@@ -758,26 +689,22 @@ namespace WinExplorer.UI.Views
                 v.Refresh();
 
                 return;
-
             }
         }
+
         public void HandleArrows(object sender, Keys e)
         {
-
             ViewList v = sender as ViewList;
 
             int index = Controls.IndexOf(v);
 
             if (e == Keys.Up)
             {
-
                 if (index <= 0)
                     return;
 
                 if (v.editbox != null && v.editbox.Focused)
                 {
-
-
                     v.Items[index - 1].Selected = true;
 
                     v.Controls.Remove(v.editbox);
@@ -785,9 +712,6 @@ namespace WinExplorer.UI.Views
                     v.editbox = null;
 
                     v.Refresh();
-
-
-
                 }
 
                 v.Items[0].Selected = false;
@@ -795,8 +719,6 @@ namespace WinExplorer.UI.Views
                 v.SelectedItems.Clear();
 
                 v = Controls[index - 1] as ViewList;
-
-
 
                 if (v == null)
                     return;
@@ -813,11 +735,9 @@ namespace WinExplorer.UI.Views
                     v.Items[v.Items.Count - 1].Selected = true;
                     v.Focus();
                 }
-
             }
             else if (e == Keys.Down)
             {
-
                 if (index < 0)
                     return;
                 if (index >= Controls.Count - 1)
@@ -827,8 +747,6 @@ namespace WinExplorer.UI.Views
 
                 if (v.editbox != null && v.editbox.Focused)
                 {
-
-
                     //v.Items[index - 1].Selected = true;
 
                     v.Controls.Remove(v.editbox);
@@ -836,9 +754,6 @@ namespace WinExplorer.UI.Views
                     v.editbox = null;
 
                     v.Refresh();
-
-
-
                 }
 
                 v.Items[v.Items.Count - 1].Selected = false;
@@ -861,8 +776,6 @@ namespace WinExplorer.UI.Views
                 {
                     v.Items[0].Selected = true;
 
-
-
                     v.Focus();
                 }
             }
@@ -870,7 +783,6 @@ namespace WinExplorer.UI.Views
 
         public void SetActive(ViewList b)
         {
-
             foreach (ViewList v in Controls)
             {
                 if (v.Equals(b))
@@ -878,7 +790,6 @@ namespace WinExplorer.UI.Views
                 else v.SetActive(false);
                 v.Refresh();
             }
-
         }
 
         public void RemoveControl(Control c)
@@ -890,7 +801,6 @@ namespace WinExplorer.UI.Views
 
         public void Measure()
         {
-
             int w = this.Width - 1;
             int h = 0;
 
@@ -901,7 +811,6 @@ namespace WinExplorer.UI.Views
                 c.Bounds = new Rectangle(0, h, w, s.Height);
 
                 h += s.Height + 1;
-
             }
 
             this.Height = h;
@@ -909,7 +818,6 @@ namespace WinExplorer.UI.Views
 
         public static Connector Connect(ModelPanel p0, ModelPanel p1, int guid)
         {
-
             Size s0 = p0.Size;
             Point b0 = p0.Location;
 
@@ -920,7 +828,6 @@ namespace WinExplorer.UI.Views
 
             Point b = new Point(b1.X, b1.Y + s1.Height / 2);
 
-
             Connector c = Connector.Create(a, b, guid);
 
             return c;
@@ -929,7 +836,6 @@ namespace WinExplorer.UI.Views
 
     public class Connector
     {
-
         public static Pen pen = new Pen(Color.Blue, 3);
 
         public static Pen apen = new Pen(Color.Green, 3);
@@ -946,7 +852,6 @@ namespace WinExplorer.UI.Views
             guid = g;
             guids = new Point(guid / 256, guid % 256);
             Connectors.dict.Add(guid, this);
-
         }
 
         public void Draw(Graphics g, bool active = false)
@@ -958,7 +863,6 @@ namespace WinExplorer.UI.Views
 
             if (!active)
             {
-
                 Pen p = new Pen(Color.FromArgb(255, 0, guids.X, guids.Y), 3);
 
                 Connectors.gr.DrawLines(p, pts.ToArray() as Point[]);
@@ -967,16 +871,13 @@ namespace WinExplorer.UI.Views
 
         public void FindSegment(Point p)
         {
-
         }
 
         public void MoveSegment(Point delta)
         {
-
             pts[0] = Point.Add(pts[0], new Size(delta));
             pts[1] = Point.Add(pts[1], new Size(delta));
         }
-
 
         public void AddPoint(Point a)
         {
@@ -985,7 +886,6 @@ namespace WinExplorer.UI.Views
 
         public static Connector Create(Point a, Point b, int guid)
         {
-
             Connector c = new Connector(guid);
 
             c.AddPoint(a);
@@ -997,7 +897,6 @@ namespace WinExplorer.UI.Views
 
     public class Connectors
     {
-
         static public Bitmap bmp { get; set; }
 
         static public Graphics gr { get; set; }
@@ -1024,11 +923,8 @@ namespace WinExplorer.UI.Views
 
         public void Draw(Graphics g)
         {
-
             foreach (Connector c in cts)
                 c.Draw(g);
-
         }
-
     }
 }

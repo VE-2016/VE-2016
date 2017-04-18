@@ -1,13 +1,6 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinExplorer
@@ -86,6 +79,7 @@ namespace WinExplorer
             }
             LoadList(C, controls.lb);
         }
+
         public void LoadList(ArrayList C, ListBox lb)
         {
             lb.Items.Clear();

@@ -1,18 +1,14 @@
 //---------------------------------------------------------------------
 //  This file is part of the CLR Managed Debugger (mdbg) Sample.
-// 
+//
 //  Copyright (C) Microsoft Corporation.  All rights reserved.
 //---------------------------------------------------------------------
-using System;
-using System.Reflection;
-using System.Security.Permissions;
-
-using Microsoft.Samples.Tools.Mdbgs;
-
 using Microsoft.Samples.Tools.Mdbg;
-
-using System.Windows.Forms;
+using Microsoft.Samples.Tools.Mdbgs;
+using System;
+using System.Security.Permissions;
 using System.Threading;
+using System.Windows.Forms;
 
 // This is declared in the assemblyrefs file
 //[assembly:System.Runtime.InteropServices.ComVisible(false)]
@@ -31,7 +27,7 @@ public class Bootstap
             switch (args[0])
             {
                 case "/?":
-               case "-?":
+                case "-?":
                     Console.WriteLine(usageString);
                     return 0;
             }
@@ -53,7 +49,6 @@ public class Bootstap
         Application.Run(new MainForm(args));
     }
 
-
     private const string usageString =
 @"
 Usage: mdbg [program [ arguments... ] ]
@@ -62,7 +57,7 @@ Usage: mdbg [program [ arguments... ] ]
   When program name is entered on the command line, the debugger
   automatically starts debugging such program.
 
-  Arguments starting with ! are interpreted as debugger commands. 
+  Arguments starting with ! are interpreted as debugger commands.
 
 Examples:
   mdbg myProgram.exe

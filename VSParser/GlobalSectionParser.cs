@@ -32,8 +32,8 @@ namespace VSProvider
             {
                 var key = entryMatch.Groups["key"].Value.Trim();
                 var value = entryMatch.Groups["value"].Value.Trim();
-                if(section.Entries.ContainsKey(key) == false)
-                section.Entries.Add(key, value);
+                if (section.Entries.ContainsKey(key) == false)
+                    section.Entries.Add(key, value);
                 entryMatch = entryMatch.NextMatch();
             }
         }

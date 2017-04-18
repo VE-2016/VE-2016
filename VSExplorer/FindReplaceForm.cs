@@ -1284,109 +1284,105 @@ namespace WinExplorer
         {
             //                      else if (bb == 2)
             //{
-                //MessageBox.Show("Find for Current Document");
+            //MessageBox.Show("Find for Current Document");
 
-                ArrayList Results = new ArrayList();
+            ArrayList Results = new ArrayList();
 
-                ExplorerForms ef = ExplorerForms.ef;
+            ExplorerForms ef = ExplorerForms.ef;
 
+            Document doc = ef.scr.GetActiveDocument();
 
-                Document doc = ef.scr.GetActiveDocument();
+            string filename = doc.FileName;
 
-                string filename = doc.FileName;
+            string text = doc.syntaxDocument1.Text;
 
-                string text = doc.syntaxDocument1.Text;
+            string filenamedoc = filename;
 
+            string patterns = s;
 
-
-                string filenamedoc = filename;
-
-
-
-                string patterns = s;
-
-                //if (Results == null)
+            //if (Results == null)
+            {
                 {
                     {
+                        Finder finders = new Finder();
+
+                        Results = new ArrayList();
+
+                        //text = File.ReadAllText(f);
+
+                        //if (mc == false)
                         {
-                            Finder finders = new Finder();
+                            //    text = text.ToLower();
 
-                            Results = new ArrayList();
+                            //    s = s.ToLower();
+                        }
 
-                            //text = File.ReadAllText(f);
+                        char[] texts = text.ToCharArray();
 
-                            //if (mc == false)
+                        char[] pattern = s.ToCharArray();
+
+                        ArrayList found = null;
+
+                        //if (checkBox4.Checked == true)
+                        //{
+                        //    found = RegexMatch(text, s, true);
+                        //}
+                        //else
+                        {
+                            found = finders.TW(pattern, pattern.Length, texts, texts.Length);
+                        }
+
+                        if (found.Count > 0)
+                        {
+                            string[] lines = text.Split("\n".ToCharArray());
+
+                            int fp = 0;
+
+                            int pos = (int)found[fp];
+
+                            int r = 0;
+
+                            int n = 0;
+
+                            int i = 0;
+                            while (i < lines.Length)
                             {
-                                //    text = text.ToLower();
+                                string line = lines[i];
 
-                                //    s = s.ToLower();
-                            }
+                                n = r + line.Length + 1;
 
-                            char[] texts = text.ToCharArray();
-
-                            char[] pattern = s.ToCharArray();
-
-                            ArrayList found = null;
-
-                            //if (checkBox4.Checked == true)
-                            //{
-                            //    found = RegexMatch(text, s, true);
-                            //}
-                            //else
-                            {
-                                found = finders.TW(pattern, pattern.Length, texts, texts.Length);
-                            }
-
-                            if (found.Count > 0)
-                            {
-                                string[] lines = text.Split("\n".ToCharArray());
-
-                                int fp = 0;
-
-                                int pos = (int)found[fp];
-
-                                int r = 0;
-
-                                int n = 0;
-
-                                int i = 0;
-                                while (i < lines.Length)
+                                if (pos >= r && pos <= n)
                                 {
-                                    string line = lines[i];
-
-                                    n = r + line.Length + 1;
-
-                                    if (pos >= r && pos <= n)
+                                    do
                                     {
-                                        do
-                                        {
-                                            Results.Add(filename + "\t" + (pos - r) + " \t" + i);
+                                        Results.Add(filename + "\t" + (pos - r) + " \t" + i);
 
-                                            fp++;
+                                        fp++;
 
-                                            if (fp < found.Count)
-                                                pos = (int)found[fp];
-                                            else break;
-                                        }
-                                        while (pos <= n);
+                                        if (fp < found.Count)
+                                            pos = (int)found[fp];
+                                        else break;
                                     }
-
-                                    r = n;
-
-                                    i++;
+                                    while (pos <= n);
                                 }
+
+                                r = n;
+
+                                i++;
                             }
                         }
-                        int act = 0;
-
-                        return Results;
                     }
+                    int act = 0;
+
+                    return Results;
                 }
+            }
 
             //}
 
             return Results;
         }
+
         public ArrayList RegexMatch(string s, string p, bool IgnoreCase)
         {
             ArrayList R = new ArrayList();
@@ -1528,7 +1524,6 @@ namespace WinExplorer
 
     public class FindResults
     {
-
         public string filename { get; set; }
 
         public int act = -1;
@@ -1537,7 +1532,7 @@ namespace WinExplorer
 
         public string pattern { get; set; }
 
-        ExplorerForms ef { get; set; }
+        private ExplorerForms ef { get; set; }
 
         public void HighLightWords()
         {
@@ -1555,13 +1550,11 @@ namespace WinExplorer
 
         public void HighLightNext()
         {
-
             if (Results.Count <= 0)
                 return;
 
             if (act < Results.Count - 1)
                 act++;
-            
 
             ArrayList R = ToArray();
 
@@ -1578,9 +1571,8 @@ namespace WinExplorer
 
                 return R;
 
-            foreach(string s in Results)
+            foreach (string s in Results)
             {
-
                 string[] d = s.Split("\t".ToCharArray());
 
                 int[] r = new int[3];
@@ -1592,21 +1584,13 @@ namespace WinExplorer
                 R.Add(r);
             }
 
-
             return R;
         }
 
-
-
         public void HighLightWord(int index, Color color)
         {
-          
-
-            
-
             if (ef == null)
                 return;
-            
 
             string texts = Results[index] as string;
 
@@ -1624,21 +1608,15 @@ namespace WinExplorer
 
         public delegate void workerDisplayLine(string file, string line, string c, int g);
 
-
         private void DisplayLine(string file, string line, string c, int g)
         {
             //ef.BeginInvoke(new Action(() => { ef.OpenFileXY(file, line, c, g); }));
 
-
             //ef.scr.LoadSelectedWords();
         }
-
 
         private static void ProcessInformation(IAsyncResult result)
         {
         }
-
     }
-
-
 }

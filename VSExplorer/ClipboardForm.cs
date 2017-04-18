@@ -58,7 +58,6 @@ namespace WinExplorer
             //    return;
             //tv.Nodes.Add(nc);
 
-
             List<TreeNode> n = new List<TreeNode>();
             n.Add(nodes);
 
@@ -122,15 +121,11 @@ namespace WinExplorer
 
                 ArrayList L = GetItems(nc);
 
-
-
                 VSProjectItem ps = GetVSProjectItem(target);
 
                 VSProject pp = GetVSProject(nodes);
 
                 ArrayList T = GetTargetItems(L, prefix, ps.Include);
-
-
 
                 pp.LoadMetaData(L);
 
@@ -287,6 +282,7 @@ namespace WinExplorer
                 i++;
             }
         }
+
         public void CopyItems(ArrayList L, ArrayList T, VSProject vp)
         {
             VSProject p = GetVSProject(nc);
@@ -326,6 +322,7 @@ namespace WinExplorer
                 i++;
             }
         }
+
         public ArrayList GetTargetItems(ArrayList L, opers ops)
         {
             ArrayList T = new ArrayList();
@@ -367,7 +364,6 @@ namespace WinExplorer
                 if (pp.Include != "")
                     if (prefix != "")
                         p.Include = target + pp.Include.Replace(prefix, "");
-
                     else p.Include = target + "\\" + pp.Include;
 
                 if (p.Include != null)
@@ -500,7 +496,6 @@ namespace WinExplorer
                     nodes.SelectedImageKey = node.SelectedImageKey;
                     ng.Nodes.Add(nodes);
 
-
                     //L.Add(nodes);
 
                     LoadFromTreeNode(node, nodes);
@@ -614,6 +609,7 @@ namespace WinExplorer
 
             tv.Nodes.Remove(nc);
         }
+
         public string GetName(string c)
         {
             string name = "";
@@ -628,6 +624,7 @@ namespace WinExplorer
 
             return name;
         }
+
         public string GetString(string[] cc)
         {
             string name = "";
@@ -712,12 +709,9 @@ namespace WinExplorer
         {
             string name = textBox1.Text;
 
-
             tv.BeginUpdate();
 
             ncc = new TreeNode();
-
-
 
             ncc.Text = name;
 
@@ -725,8 +719,6 @@ namespace WinExplorer
             ncc.ImageKey = nc.ImageKey;
 
             CreateView_Solution.ProjectItemInfo p = nc.Tag as CreateView_Solution.ProjectItemInfo;
-
-
 
             string folder = p.psi.Include;
 
@@ -818,13 +810,10 @@ namespace WinExplorer
 
             //LoadFromTreeNode(node, nodes, master, newname);
 
-
-
             LoadTreeNodes(ncc);
 
             tv.EndUpdate();
         }
-
 
         public void RenameVSProjectItems()
         {
@@ -887,15 +876,9 @@ namespace WinExplorer
             {
                 master = GetName(psp.psi.Name);
 
-
                 newname = name;
 
-
-
                 pcp.Include = incc;
-
-
-
 
                 incc = incc.Replace(master, newname);
 
@@ -1004,8 +987,6 @@ namespace WinExplorer
         public opers GetSourceType(TreeNode node)
         {
             VSProjectItem p = GetVSProjectItem(node);
-
-
 
             if (p == null)
                 return opers.unknown;

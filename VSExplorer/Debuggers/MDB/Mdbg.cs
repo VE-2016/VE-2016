@@ -1,22 +1,20 @@
 //---------------------------------------------------------------------
 //  This file is part of the CLR Managed Debugger (mdbg) Sample.
-// 
+//
 //  Copyright (C) Microsoft Corporation.  All rights reserved.
 //---------------------------------------------------------------------
+using Microsoft.Samples.Debugging.CorDebug;
+using Microsoft.Samples.Debugging.CorDebug.NativeApi;
+using Microsoft.Samples.Debugging.MdbgEngine;
 using System;
-using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Threading;
+using System.Globalization;
+using System.IO;
 using System.Reflection;
 using System.Text;
-using System.Security.Permissions;
-using System.Globalization;
-
-using Microsoft.Samples.Debugging.MdbgEngine;
-using Microsoft.Samples.Debugging.CorDebug;
-using Microsoft.Samples.Debugging.CorDebug.NativeApi;
+using System.Threading;
 
 // UNDONE: Fix the underlying cause of this warning
 
@@ -33,13 +31,11 @@ using Microsoft.Samples.Debugging.CorDebug.NativeApi;
 
 namespace Microsoft.Samples.Tools.Mdbg
 {
-
     /// <summary>
     /// Summary description for Class1.
     /// </summary>
     public class MDbgShell : IMDbgShell
     {
-
         public IMDbgIO IO
         {
             get
@@ -84,7 +80,6 @@ namespace Microsoft.Samples.Tools.Mdbg
             }
         }
 
-
         // Quit w/ an exit code.
         public void QuitWithExitCode(int exitCode)
         {
@@ -116,16 +111,16 @@ namespace Microsoft.Samples.Tools.Mdbg
             }
         }
 
-        IBreakpointParser m_BreakpointParser;
+        private IBreakpointParser m_BreakpointParser;
 
         /// <summary>
         /// Get the default Breakpoint parser for this collection.
         /// </summary>
-        /// <remarks> The breakpoint collection maintains a default breakpoint parser. 
-        /// Extensions can get the parser so that they can use the share the parsing implementation to get the 
+        /// <remarks> The breakpoint collection maintains a default breakpoint parser.
+        /// Extensions can get the parser so that they can use the share the parsing implementation to get the
         /// same breakpoint syntax as the rest of the shell. This encourages a uniform breakpoint syntax.
         /// Extensions can also set the parser so that they can override and even extend the breakpoint syntax.
-        /// This may be null (and is in fact null by default), though it is reasonable for extensions to 
+        /// This may be null (and is in fact null by default), though it is reasonable for extensions to
         /// expect that the shell supplies a parser.
         /// </remarks>
         public IBreakpointParser BreakpointParser
@@ -140,7 +135,7 @@ namespace Microsoft.Samples.Tools.Mdbg
             }
         }
 
-        IExpressionParser m_ExpressionParser;
+        private IExpressionParser m_ExpressionParser;
 
         public IExpressionParser ExpressionParser
         {
@@ -158,7 +153,6 @@ namespace Microsoft.Samples.Tools.Mdbg
 
         public int Start(string[] commandLineArguments)
         {
-            
             this.Init(commandLineArguments);
 
             PrintStartupLogo();
@@ -255,7 +249,6 @@ namespace Microsoft.Samples.Tools.Mdbg
             {
                 IO.WriteOutput(MDbgOutputConstants.StdOutput, "WARNING: " + e.Message + "\n\n");
             }
-
         }
 
         public virtual void DisplayCurrentLocation()
@@ -290,7 +283,6 @@ namespace Microsoft.Samples.Tools.Mdbg
                         CommandBase.WriteOutput(String.Format(CultureInfo.InvariantCulture, "STOP: Breakpoint {0} Hit", new Object[] { b.Number }));
                     }
                 }
-
                 else if (stopReasonType == typeof(ExceptionThrownStopReason))
                 {
                     ExceptionThrownStopReason ex = (ExceptionThrownStopReason)stopReason;
@@ -305,7 +297,6 @@ namespace Microsoft.Samples.Tools.Mdbg
                         CommandBase.WriteOutput("\tIntercept: " + (ex.Flags != 0));
                     }
                 }
-
                 else if (stopReasonType == typeof(UnhandledExceptionThrownStopReason))
                 {
                     CommandBase.WriteOutput("STOP: Unhandled Exception thrown");
@@ -313,13 +304,11 @@ namespace Microsoft.Samples.Tools.Mdbg
                     CommandBase.WriteOutput("");
                     CommandBase.WriteOutput("This is unhandled exception, continuing will end the process");
                 }
-
                 else if (stopReasonType == typeof(ExceptionUnwindStopReason))
                 {
                     CommandBase.WriteOutput("STOP: Exception unwind");
                     CommandBase.WriteOutput("EventType: " + (stopReason as ExceptionUnwindStopReason).EventType);
                 }
-
                 else if (stopReasonType == typeof(ModuleLoadedStopReason))
                 {
                     CommandBase.WriteOutput("STOP: Module loaded: " + (stopReason as ModuleLoadedStopReason).Module.CorModule.Name);
@@ -486,7 +475,6 @@ namespace Microsoft.Samples.Tools.Mdbg
                     IO.WriteOutput(MDbgOutputConstants.StdError, e.GetBaseException().ToString() + "\n");
                     Environment.Exit(-1);
                 }
-
             }
         }
 
@@ -612,7 +600,6 @@ namespace Microsoft.Samples.Tools.Mdbg
             }
         }
 
-
         private void ProcessAutoExec()
         {
             const string autoLoadListFileName = "mdbgAutoExec.txt";
@@ -657,7 +644,6 @@ namespace Microsoft.Samples.Tools.Mdbg
                 if (sr != null)
                     sr.Close(); // free resources in advance
             }
-
         }
 
         //////////////////////////////////////////////////////////////////////////////////
@@ -678,7 +664,6 @@ namespace Microsoft.Samples.Tools.Mdbg
         private Hashtable m_properties = new Hashtable();
     }
 
-
     //////////////////////////////////////////////////////////////////////////////////
     //
     // MDbgOutputImpl
@@ -687,7 +672,6 @@ namespace Microsoft.Samples.Tools.Mdbg
 
     public class MDbgIO : IMDbgIO, IMDbgIO2, IMDbgIO3
     {
-
         public MDbgIO(MDbgShell shell, string[] startupCommands)
         {
             Debug.Assert(shell != null);
@@ -730,16 +714,15 @@ namespace Microsoft.Samples.Tools.Mdbg
                 Display(text, HighlighType.StatementLocation, hilightStart, hilightLen);
             }
         }
+
         public class ReaderWriter
         {
             public List<string> lines = new List<string>();
             public object obs = new object();
             private readonly AutoResetEvent waitHandle = new AutoResetEvent(false);
-            int current = 0;
+            private int current = 0;
 
             public int Timeout { get; set; }
-
-
 
             public ReaderWriter()
             {
@@ -751,25 +734,20 @@ namespace Microsoft.Samples.Tools.Mdbg
                 lines.Add(line);
                 current = lines.Count;
                 waitHandle.Set();
-
             }
 
             public string Read()
             {
                 waitHandle.Reset();
-                while(waitHandle.WaitOne(Timeout) == false)
+                while (waitHandle.WaitOne(Timeout) == false)
                 {
-                    
                 }
                 return lines[current - 1];
-
             }
-
-
         }
 
-        ReaderWriter wr = new ReaderWriter();
-    
+        private ReaderWriter wr = new ReaderWriter();
+
         public void Write(string cmd)
         {
             wr.Write(cmd);
@@ -777,7 +755,6 @@ namespace Microsoft.Samples.Tools.Mdbg
 
         public virtual bool ReadCommand(out string cmd)
         {
-            
             if (m_startupCommands != null)
             {
                 string c = (string)m_startupCommands.Dequeue();
@@ -790,7 +767,7 @@ namespace Microsoft.Samples.Tools.Mdbg
                 return true;
             }
 
-        retry:
+            retry:
             m_isConsoleBreakHandlerExecuted = false;
             WriteMdbgPrompt(true);
             //cmd = Console.ReadLine();
@@ -847,9 +824,11 @@ namespace Microsoft.Samples.Tools.Mdbg
                     case HighlighType.StatementLocation:
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         break;
+
                     case HighlighType.Error:
                         Console.ForegroundColor = ConsoleColor.Red;
                         break;
+
                     default:
                         Debug.Assert(false);
                         throw new InvalidOperationException();
@@ -890,8 +869,9 @@ namespace Microsoft.Samples.Tools.Mdbg
                     WriteOutput(MDbgOutputConstants.StdError, "To break into debugger use Ctrl+C instead.");
                     //
                     // When ControlBreak is pressed, we cannot set e.Cancel=true....
-                    // 
+                    //
                     break;
+
                 case ConsoleSpecialKey.ControlC:
                     try
                     {
@@ -907,6 +887,7 @@ namespace Microsoft.Samples.Tools.Mdbg
                     }
                     e.Cancel = true;
                     break;
+
                 default:
                     break;
             }
@@ -941,7 +922,6 @@ namespace Microsoft.Samples.Tools.Mdbg
             }
             Console.Write(s + TEXT_PROMPT_STRING);
         }
-
 
         private const string TEXT_PROMPT_STRING = "mdbg> ";
         private const string TEXT_ERROR = "Error: ";
@@ -1058,7 +1038,6 @@ namespace Microsoft.Samples.Tools.Mdbg
                 }
             }
 
-
             if (al.Count == 0)
             {
                 throw new MDbgShellException("Command '" + commandName + "' not found.");
@@ -1111,7 +1090,6 @@ namespace Microsoft.Samples.Tools.Mdbg
 
         private Dictionary<string, List<IMDbgCommand>> m_commands = new Dictionary<string, List<IMDbgCommand>>();
     }
-
 
     //////////////////////////////////////////////////////////////////////////////////
     //
@@ -1181,7 +1159,7 @@ namespace Microsoft.Samples.Tools.Mdbg
                 }
                 realPath = null;
             }
-        Found:
+            Found:
             m_fileLocations.Add(idx, realPath);
             return realPath;
         }

@@ -2,13 +2,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using VSProvider;
 using WinExplorer.UI;
@@ -51,7 +46,6 @@ namespace WinExplorer.Services.NuGet
                 main.Text = "NuGet Project Manager: " + project;
             }
 
-            
             dg.Scroll += Dg_Scroll;
 
             cbSource = comboBox1;
@@ -78,12 +72,11 @@ namespace WinExplorer.Services.NuGet
             int i = cbSource.SelectedIndex;
             if (i < 0)
                 return;
-
         }
 
-        ComboBox cbSource { get; set; }
+        private ComboBox cbSource { get; set; }
 
-        SearchTextBox searchText { get; set; }
+        private SearchTextBox searchText { get; set; }
 
         public enum task
         {
@@ -94,7 +87,7 @@ namespace WinExplorer.Services.NuGet
             none
         }
 
-        task tasks = task.none;
+        private task tasks = task.none;
 
         public bool GetPrerelease()
         {
@@ -109,16 +102,15 @@ namespace WinExplorer.Services.NuGet
                 if (tasks == task.browse)
                 {
                     LoadNextPackages();
-                } else if( tasks == task.search)
+                }
+                else if (tasks == task.search)
                 {
                     LoadNextPackages(searchText.GetText());
                 }
             }
         }
 
-        VSProject vs { get; set; }
-
-
+        private VSProject vs { get; set; }
 
         private void Dg_Resize(object sender, EventArgs e)
         {
@@ -134,23 +126,20 @@ namespace WinExplorer.Services.NuGet
             dg.Width = sp.Panel1.Width - 10;
         }
 
-        Label main { get; set; }
-        LabelEx lbrowse { get; set; }
-        LabelEx linstalled { get; set; }
+        private Label main { get; set; }
+        private LabelEx lbrowse { get; set; }
+        private LabelEx linstalled { get; set; }
 
-        LabelEx lupdates { get; set; }
+        private LabelEx lupdates { get; set; }
 
-        FlowPanel dg { get; set; }
+        private FlowPanel dg { get; set; }
 
-        SplitContainer sp { get; set; }
+        private SplitContainer sp { get; set; }
 
-        ImageList imgList = new ImageList();
+        private ImageList imgList = new ImageList();
 
         public void LoadForVSProject()
         {
-
-
-
             NuGetPacketShort s = new NuGetPacketShort();
             s.Width = this.Width - 1;
             //s.Anchor = AnchorStyles.Left | AnchorStyles.Right;
@@ -163,22 +152,18 @@ namespace WinExplorer.Services.NuGet
             s.Width = this.Width - 1;
             //s.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             dg.Controls.Add(s);
-
         }
 
         private void NuGetForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -193,9 +178,9 @@ namespace WinExplorer.Services.NuGet
             LoadNextPackages(text, GetPrerelease());
         }
 
-        int currentPackage = 0;
+        private int currentPackage = 0;
 
-        List<IPackage> q = null;
+        private List<IPackage> q = null;
 
         private void labelEx1_Click(object sender, EventArgs e)
         {
@@ -204,7 +189,7 @@ namespace WinExplorer.Services.NuGet
             tasks = task.browse;
             if (repo == null)
                 repo = nuget.GetRepository();
-             //IQueryable<IPackage> q = nuget.repo.GetPackages();
+            //IQueryable<IPackage> q = nuget.repo.GetPackages();
             currentPackage = 0;
 
             UnloadUpdate(tasks);
@@ -227,15 +212,12 @@ namespace WinExplorer.Services.NuGet
                     i++;
                     currentPackage++;
                 }
-
             }));
         }
 
+        private IPackageRepository repo = null;
 
-
-        IPackageRepository repo = null;
-
-        void LoadNextPackages(string text = "Microsoft", bool prerelease = false)
+        private void LoadNextPackages(string text = "Microsoft", bool prerelease = false)
         {
             NuGets nuget = new NuGets();
             if (repo == null)
@@ -243,8 +225,6 @@ namespace WinExplorer.Services.NuGet
 
             this.BeginInvoke(new Action(() =>
             {
-
-
                 q = NuGets.Select(currentPackage, 10, repo, text, prerelease);
 
                 int i = 0;
@@ -261,7 +241,6 @@ namespace WinExplorer.Services.NuGet
                     i++;
                     currentPackage++;
                 }
-
             }));
         }
 
@@ -286,9 +265,9 @@ namespace WinExplorer.Services.NuGet
                 }
                 catch (Exception ex)
                 {
-
                 }
-            } else
+            }
+            else
             {
                 Bitmap icon = Resources.VSO_NugetLogo_52x;
                 s.SetIcon(icon);
@@ -304,7 +283,7 @@ namespace WinExplorer.Services.NuGet
             //dg.Refresh();
         }
 
-        void UnloadUpdate(NuGetForm.task tasks = task.none)
+        private void UnloadUpdate(NuGetForm.task tasks = task.none)
         {
             return;
             if (tasks != task.update)
@@ -322,7 +301,7 @@ namespace WinExplorer.Services.NuGet
             }
         }
 
-        NuGetPacketInfo ns { get; set; }
+        private NuGetPacketInfo ns { get; set; }
 
         private void S_nugetShortSelectedEvent(NuGetPacketShort sender)
         {
@@ -332,32 +311,31 @@ namespace WinExplorer.Services.NuGet
             IPackage package = ng.package;
             if (package == null)
                 return;
-            if (ns == null) { 
+            if (ns == null)
+            {
                 ns = new NuGetPacketInfo(vs);
-            ns.Dock = DockStyle.Fill;
-            //sp.Panel2.Controls.Clear();
-            sp.Panel2.Controls.Add(ns);
-        }
+                ns.Dock = DockStyle.Fill;
+                //sp.Panel2.Controls.Clear();
+                sp.Panel2.Controls.Add(ns);
+            }
             bool isInstalled = false;
-            foreach(IPackage p in InstalledPackages)
-                if(p.GetFullName() == package.GetFullName())
+            foreach (IPackage p in InstalledPackages)
+                if (p.GetFullName() == package.GetFullName())
                 {
                     isInstalled = true;
                     break;
                 }
-            
-            ns.LoadPackage(package, repo, tasks, isInstalled);
 
-            
+            ns.LoadPackage(package, repo, tasks, isInstalled);
         }
 
-        List<IPackage> InstalledPackages = null;
+        private List<IPackage> InstalledPackages = null;
 
         private void labelEx2_Click(object sender, EventArgs e)
         {
             EmptyNuGetInfo();
             InstalledPackages = new List<IPackage>();
-            if(repo == null)
+            if (repo == null)
             {
                 NuGets nuget = new NuGets();
                 repo = nuget.GetRepository();
@@ -372,7 +350,6 @@ namespace WinExplorer.Services.NuGet
             ArrayList L = vs.GetReferences();
             foreach (string p in L)
             {
-
                 string hint = vs.GetPathHint(p);
                 if (String.IsNullOrEmpty(hint))
                     continue;
@@ -380,7 +357,6 @@ namespace WinExplorer.Services.NuGet
 
                 if (File.Exists(folder))
                 {
-
                 }
 
                 string pp = "";
@@ -404,7 +380,6 @@ namespace WinExplorer.Services.NuGet
                         break;
                     j++;
                 }
-
 
                 pp = Path.GetFullPath(pp);
 
@@ -429,13 +404,12 @@ namespace WinExplorer.Services.NuGet
                     continue;
 
                 InstalledPackages.Add(package);
-                
+
                 {
                     IPackage packages = NuGets.GetNuGetPackage(package.Id, package.Version.ToFullString());
                     if (packages != null)
                         AddNugetPackageInfo(packages);
                 }
-
             }
         }
 
@@ -444,13 +418,12 @@ namespace WinExplorer.Services.NuGet
             InstalledPackages = new List<IPackage>();
             if (vs == null)
                 return;
-            
+
             dg.Controls.Clear();
             dg.Refresh();
             ArrayList L = vs.GetReferences();
             foreach (string p in L)
             {
-
                 string hint = vs.GetPathHint(p);
                 if (String.IsNullOrEmpty(hint))
                     continue;
@@ -458,7 +431,6 @@ namespace WinExplorer.Services.NuGet
 
                 if (File.Exists(folder))
                 {
-
                 }
 
                 string pp = "";
@@ -483,9 +455,6 @@ namespace WinExplorer.Services.NuGet
                     j++;
                 }
 
-
-
-
                 if (!Directory.Exists(pp))
                     continue;
 
@@ -509,13 +478,12 @@ namespace WinExplorer.Services.NuGet
                 InstalledPackages.Add(package);
                 if (loadInfo == true)
                 {
-                    IPackage packages = NuGets.GetNuGetPackage(package.Id,package.Version.ToFullString());
+                    IPackage packages = NuGets.GetNuGetPackage(package.Id, package.Version.ToFullString());
                     if (packages != null)
                         AddNugetPackageInfo(packages);
                 }
             }
         }
-
 
         private void labelEx3_Click(object sender, EventArgs e)
         {
@@ -524,12 +492,10 @@ namespace WinExplorer.Services.NuGet
 
             UnloadUpdate(tasks);
 
-
             if (InstalledPackages == null)
             {
                 LoadInstalled();
             }
-                
 
             NuGets nuget = new NuGets();
             if (repo == null)
@@ -543,23 +509,25 @@ namespace WinExplorer.Services.NuGet
                 AddNugetPackageInfo(package, tasks);
             }
         }
-        void EmptyNuGetInfo()
+
+        private void EmptyNuGetInfo()
         {
             sp.Panel2.Controls.Clear();
             sp.Panel2.Refresh();
             ns = null;
         }
-        void EmptyNuGet()
+
+        private void EmptyNuGet()
         {
             dg.Controls.Clear();
             dg.Refresh();
-
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             LoadOptions();
         }
+
         private OptionsForms opsf { get; set; }
 
         private void LoadOptions()

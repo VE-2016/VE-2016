@@ -1,7 +1,7 @@
-
 namespace WinExplorer
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Globalization;
@@ -9,12 +9,12 @@ namespace WinExplorer
     using System.Management.Automation.Host;
     using System.Management.Automation.Runspaces;
     using System.Text;
-    using PowerShell = System.Management.Automation.PowerShell;
     using System.Threading.Tasks;
-    using System.Collections;
+    using PowerShell = System.Management.Automation.PowerShell;
+
     /// <summary>
-    /// This sample shows how to implement a basic read-evaluate-print 
-    /// loop (or 'listener') that allowing you to interactively work 
+    /// This sample shows how to implement a basic read-evaluate-print
+    /// loop (or 'listener') that allowing you to interactively work
     /// with the Windows PowerShell engine.
     /// </summary>
     public class PSListenerConsoleSample
@@ -23,9 +23,6 @@ namespace WinExplorer
         /// Used to read user input.
         /// </summary>
         public ConsoleReadLine consoleReadLine { get; set; }
-
-
-
 
         /// <summary>
         /// Holds a reference to the runspace for this interpeter.
@@ -59,7 +56,7 @@ namespace WinExplorer
         private object _instanceLock = new object();
 
         /// <summary>
-        /// Gets or sets a value indicating whether the host application 
+        /// Gets or sets a value indicating whether the host application
         /// should exit.
         /// </summary>
         public bool ShouldExit
@@ -69,7 +66,7 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether the host application 
+        /// Gets or sets a value indicating whether the host application
         /// should exit.
         /// </summary>
         public int ExitCode
@@ -109,13 +106,14 @@ namespace WinExplorer
         }
 
         private PSListenerConsoleSample listener { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the PSListenerConsoleSample class.
         /// </summary>
         public PSListenerConsoleSample(ConsoleControls c)
         {
-            // Create the host and runspace instances for this interpreter. 
-            // Note that this application does not support console files so 
+            // Create the host and runspace instances for this interpreter.
+            // Note that this application does not support console files so
             // only the default snap-ins will be available.
 
             _myHost = new MyHost(this, c);
@@ -124,7 +122,7 @@ namespace WinExplorer
             this.console = c;
             this.consoleReadLine = new ConsoleReadLine(c);
 
-            // Create a PowerShell object to run the commands used to create 
+            // Create a PowerShell object to run the commands used to create
             // $profile and load the profiles.
             lock (_instanceLock)
             {
@@ -144,8 +142,8 @@ namespace WinExplorer
             }
             finally
             {
-                // Dispose the PowerShell object and set currentPowerShell 
-                // to null. It is locked because currentPowerShell may be 
+                // Dispose the PowerShell object and set currentPowerShell
+                // to null. It is locked because currentPowerShell may be
                 // accessed by the ctrl-C handler.
                 lock (_instanceLock)
                 {
@@ -156,13 +154,13 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// A helper class that builds and executes a pipeline that writes 
-        /// to the default output path. Any exceptions that are thrown are 
-        /// just passed to the caller. Since all output goes to the default 
+        /// A helper class that builds and executes a pipeline that writes
+        /// to the default output path. Any exceptions that are thrown are
+        /// just passed to the caller. Since all output goes to the default
         /// outter, this method does not return anything.
         /// </summary>
         /// <param name="cmd">The script to run.</param>
-        /// <param name="input">Any input arguments to pass to the script. 
+        /// <param name="input">Any input arguments to pass to the script.
         /// If null then nothing is passed in.</param>
         private void executeHelper(string cmd, object input)
         {
@@ -180,8 +178,8 @@ namespace WinExplorer
                 _currentPowerShell = PowerShell.Create();
             }
 
-            // Add a script and command to the pipeline and then run the pipeline. Place 
-            // the results in the currentPowerShell variable so that the pipeline can be 
+            // Add a script and command to the pipeline and then run the pipeline. Place
+            // the results in the currentPowerShell variable so that the pipeline can be
             // stopped.
             try
             {
@@ -189,8 +187,8 @@ namespace WinExplorer
 
                 _currentPowerShell.AddScript(cmd);
 
-                // Add the default outputter to the end of the pipe and then call the 
-                // MergeMyResults method to merge the output and error streams from the 
+                // Add the default outputter to the end of the pipe and then call the
+                // MergeMyResults method to merge the output and error streams from the
                 // pipeline. This will result in the output being written using the PSHost
                 // and PSHostUserInterface classes instead of returning objects to the host
                 // application.
@@ -210,8 +208,8 @@ namespace WinExplorer
             }
             finally
             {
-                // Dispose the PowerShell object and set currentPowerShell to null. 
-                // It is locked because currentPowerShell may be accessed by the 
+                // Dispose the PowerShell object and set currentPowerShell to null.
+                // It is locked because currentPowerShell may be accessed by the
                 // ctrl-C handler.
                 lock (_instanceLock)
                 {
@@ -222,11 +220,11 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// To display an exception using the display formatter, 
+        /// To display an exception using the display formatter,
         /// run a second pipeline passing in the error record.
         /// The runtime will bind this to the $input variable,
         /// which is why $input is being piped to the Out-String
-        /// cmdlet. The WriteErrorLine method is called to make sure 
+        /// cmdlet. The WriteErrorLine method is called to make sure
         /// the error gets displayed in the correct error color.
         /// </summary>
         /// <param name="e">The exception to display.</param>
@@ -275,7 +273,7 @@ namespace WinExplorer
                 }
                 finally
                 {
-                    // Dispose of the pipeline and set it to null, locking it  because 
+                    // Dispose of the pipeline and set it to null, locking it  because
                     // currentPowerShell may be accessed by the ctrl-C handler.
                     lock (_instanceLock)
                     {
@@ -288,7 +286,7 @@ namespace WinExplorer
 
         /// <summary>
         /// Basic script execution routine. Any runtime exceptions are
-        /// caught and passed back to the Windows PowerShell engine to 
+        /// caught and passed back to the Windows PowerShell engine to
         /// display.
         /// </summary>
         /// <param name="cmd">Script to run.</param>
@@ -310,9 +308,9 @@ namespace WinExplorer
         /// pipeline Stop() method to stop execution. If any exceptions occur
         /// they are printed to the console but otherwise ignored.
         /// </summary>
-        /// <param name="sender">See sender property documentation of  
+        /// <param name="sender">See sender property documentation of
         /// ConsoleCancelEventHandler.</param>
-        /// <param name="e">See e property documentation of 
+        /// <param name="e">See e property documentation of
         /// ConsoleCancelEventHandler.</param>
         private void HandleControlC(object sender, ConsoleCancelEventArgs e)
         {
@@ -386,7 +384,7 @@ namespace WinExplorer
     }
 
     /// <summary>
-    /// This class is used to read the command line and color the text as 
+    /// This class is used to read the command line and color the text as
     /// it is entered. Tokens are determined using the PSParser.Tokenize
     /// method.
     /// </summary>
@@ -452,7 +450,7 @@ namespace WinExplorer
         ConsoleColor.DarkCyan,   // StatementSeparator
                 _defaultColor,            // NewLine
                 _defaultColor,            // LineContinuation
-                _defaultColor,            // Position            
+                _defaultColor,            // Position
             };
         }
 
@@ -473,26 +471,34 @@ namespace WinExplorer
                     case ConsoleKey.Backspace:
                         this.OnBackspace();
                         break;
+
                     case ConsoleKey.Delete:
                         this.OnDelete();
                         break;
+
                     case ConsoleKey.Enter:
                         return this.OnEnter();
+
                     case ConsoleKey.RightArrow:
                         this.OnRight(key.Modifiers);
                         break;
+
                     case ConsoleKey.LeftArrow:
                         this.OnLeft(key.Modifiers);
                         break;
+
                     case ConsoleKey.Escape:
                         this.OnEscape();
                         break;
+
                     case ConsoleKey.Home:
                         this.OnHome();
                         break;
+
                     case ConsoleKey.End:
                         this.OnEnd();
                         break;
+
                     case ConsoleKey.UpArrow:
                     case ConsoleKey.DownArrow:
                     case ConsoleKey.LeftWindows:
@@ -570,7 +576,7 @@ namespace WinExplorer
         /// <summary>
         /// Moves to the left of the cursor position.
         /// </summary>
-        /// <param name="consoleModifiers">Enumeration for Alt, Control, 
+        /// <param name="consoleModifiers">Enumeration for Alt, Control,
         /// and Shift keys.</param>
         private void OnLeft(ConsoleModifiers consoleModifiers)
         {
@@ -607,7 +613,7 @@ namespace WinExplorer
         /// Determines if a character is a seperator.
         /// </summary>
         /// <param name="ch">Character to investigate.</param>
-        /// <returns>A value that indicates whether the character 
+        /// <returns>A value that indicates whether the character
         /// is a seperator.</returns>
         private static bool IsSeperator(char ch)
         {
@@ -617,7 +623,7 @@ namespace WinExplorer
         /// <summary>
         /// Moves to what is to the right of the cursor position.
         /// </summary>
-        /// <param name="consoleModifiers">Enumeration for Alt, Control, 
+        /// <param name="consoleModifiers">Enumeration for Alt, Control,
         /// and Shift keys.</param>
         private void OnRight(ConsoleModifiers consoleModifiers)
         {
@@ -854,10 +860,11 @@ namespace WinExplorer
             }
         } // End Cursor
     }
+
     /// <summary>
-    /// This is a sample implementation of the PSHost abstract class for 
-    /// console applications. Not all members are implemented. Those that 
-    /// are not implemented throw a NotImplementedException exception or 
+    /// This is a sample implementation of the PSHost abstract class for
+    /// console applications. Not all members are implemented. Those that
+    /// are not implemented throw a NotImplementedException exception or
     /// return nothing.
     /// </summary>
     internal class MyHost : PSHost, IHostSupportsInteractiveSession
@@ -898,17 +905,14 @@ namespace WinExplorer
         /// </summary>
         private MyHostUserInterface myHostUserInterface { get; set; }
 
-
-
         /// <summary>
         /// A reference to the runspace used to start an interactive session.
         /// </summary>
         public Runspace pushedRunspace = null;
 
-
         /// <summary>
-        /// Gets the culture information to use. This implementation 
-        /// returns a snapshot of the culture information of the thread 
+        /// Gets the culture information to use. This implementation
+        /// returns a snapshot of the culture information of the thread
         /// that created this object.
         /// </summary>
         public override CultureInfo CurrentCulture
@@ -917,8 +921,8 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// Gets the UI culture information to use. This implementation 
-        /// returns a snapshot of the UI culture information of the thread 
+        /// Gets the UI culture information to use. This implementation
+        /// returns a snapshot of the UI culture information of the thread
         /// that created this object.
         /// </summary>
         public override CultureInfo CurrentUICulture
@@ -927,7 +931,7 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// Gets an identifier for this host. This implementation always 
+        /// Gets an identifier for this host. This implementation always
         /// returns the GUID allocated at instantiation time.
         /// </summary>
         public override Guid InstanceId
@@ -936,7 +940,7 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// Gets a string that contains the name of this host implementation. 
+        /// Gets a string that contains the name of this host implementation.
         /// Keep in mind that this string may be used by script writers to
         /// identify when your host is being used.
         /// </summary>
@@ -956,7 +960,7 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// Gets the version object for this application. Typically this 
+        /// Gets the version object for this application. Typically this
         /// should match the version resource in the application.
         /// </summary>
         public override Version Version
@@ -967,7 +971,7 @@ namespace WinExplorer
         #region IHostSupportsInteractiveSession Properties
 
         /// <summary>
-        /// Gets a value indicating whether a request 
+        /// Gets a value indicating whether a request
         /// to open a PSSession has been made.
         /// </summary>
         public bool IsRunspacePushed
@@ -983,12 +987,13 @@ namespace WinExplorer
             get { return _program.myRunSpace; }
             internal set { _program.myRunSpace = value; }
         }
+
         #endregion IHostSupportsInteractiveSession Properties
 
         /// <summary>
-        /// This API Instructs the host to interrupt the currently running 
-        /// pipeline and start a new nested input loop. In this example this 
-        /// functionality is not needed so the method throws a 
+        /// This API Instructs the host to interrupt the currently running
+        /// pipeline and start a new nested input loop. In this example this
+        /// functionality is not needed so the method throws a
         /// NotImplementedException exception.
         /// </summary>
         public override void EnterNestedPrompt()
@@ -998,8 +1003,8 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// This API instructs the host to exit the currently running input loop. 
-        /// In this example this functionality is not needed so the method 
+        /// This API instructs the host to exit the currently running input loop.
+        /// In this example this functionality is not needed so the method
         /// throws a NotImplementedException exception.
         /// </summary>
         public override void ExitNestedPrompt()
@@ -1009,10 +1014,10 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// This API is called before an external application process is 
-        /// started. Typically it is used to save state so that the parent  
-        /// can restore state that has been modified by a child process (after 
-        /// the child exits). In this example this functionality is not  
+        /// This API is called before an external application process is
+        /// started. Typically it is used to save state so that the parent
+        /// can restore state that has been modified by a child process (after
+        /// the child exits). In this example this functionality is not
         /// needed so the method returns nothing.
         /// </summary>
         public override void NotifyBeginApplication()
@@ -1023,7 +1028,7 @@ namespace WinExplorer
         /// <summary>
         /// This API is called after an external application process finishes.
         /// Typically it is used to restore state that a child process has
-        /// altered. In this example, this functionality is not needed so  
+        /// altered. In this example, this functionality is not needed so
         /// the method returns nothing.
         /// </summary>
         public override void NotifyEndApplication()
@@ -1036,7 +1041,7 @@ namespace WinExplorer
         /// been requested. Pass the exit code that the host
         /// application should use when exiting the process.
         /// </summary>
-        /// <param name="exitCode">The exit code that the 
+        /// <param name="exitCode">The exit code that the
         /// host application should use.</param>
         public override void SetShouldExit(int exitCode)
         {
@@ -1067,12 +1072,13 @@ namespace WinExplorer
 
         #endregion IHostSupportsInteractiveSession Methods
     }
+
     /// <summary>
-    /// A sample implementation of the PSHostUserInterface abstract class for 
-    /// console applications. Not all members are implemented. Those that are 
-    /// not implemented throw a NotImplementedException exception or return 
-    /// nothing. Members that are implemented include those that map easily to 
-    /// Console APIs and a basic implementation of the prompt API provided. 
+    /// A sample implementation of the PSHostUserInterface abstract class for
+    /// console applications. Not all members are implemented. Those that are
+    /// not implemented throw a NotImplementedException exception or return
+    /// nothing. Members that are implemented include those that map easily to
+    /// Console APIs and a basic implementation of the prompt API provided.
     /// </summary>
     internal class MyHostUserInterface : PSHostUserInterface, IHostUISupportsMultipleChoiceSelection
     {
@@ -1098,12 +1104,12 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// Prompts the user for input. 
+        /// Prompts the user for input.
         /// <param name="caption">The caption or title of the prompt.</param>
         /// <param name="message">The text of the prompt.</param>
-        /// <param name="descriptions">A collection of FieldDescription objects  
+        /// <param name="descriptions">A collection of FieldDescription objects
         /// that describe each field of the prompt.</param>
-        /// <returns>A dictionary object that contains the results of the user 
+        /// <returns>A dictionary object that contains the results of the user
         /// prompts.</returns>
         public override Dictionary<string, PSObject> Prompt(
                                   string caption,
@@ -1134,16 +1140,16 @@ namespace WinExplorer
 
         /// <summary>
 
-        /// Provides a set of choices that enable the user to choose a 
-        /// single option from a set of options. 
+        /// Provides a set of choices that enable the user to choose a
+        /// single option from a set of options.
         /// </summary>
         /// <param name="caption">Text that proceeds (a title) the choices.</param>
         /// <param name="message">A message that describes the choice.</param>
-        /// <param name="choices">A collection of ChoiceDescription objects that  
+        /// <param name="choices">A collection of ChoiceDescription objects that
         /// describ each choice.</param>
-        /// <param name="defaultChoice">The index of the label in the Choices  
+        /// <param name="defaultChoice">The index of the label in the Choices
         /// parameter collection. To indicate no default choice, set to -1.</param>
-        /// <returns>The index of the Choices parameter collection element that 
+        /// <returns>The index of the Choices parameter collection element that
         /// corresponds to the option that is selected by the user.</returns>
         public override int PromptForChoice(
                                             string caption,
@@ -1158,7 +1164,7 @@ namespace WinExplorer
                            caption + "\n" + message + "\n");
 
             // Convert the choice collection into something that is
-            // easier to work with. See the BuildHotkeysAndPlainLabels 
+            // easier to work with. See the BuildHotkeysAndPlainLabels
             // method for details.
             string[,] promptData = BuildHotkeysAndPlainLabels(choices);
 
@@ -1208,16 +1214,16 @@ namespace WinExplorer
         #region IHostUISupportsMultipleChoiceSelection Members
 
         /// <summary>
-        /// Provides a set of choices that enable the user to choose a one or 
-        /// more options from a set of options. 
+        /// Provides a set of choices that enable the user to choose a one or
+        /// more options from a set of options.
         /// </summary>
         /// <param name="caption">Text that proceeds (a title) the choices.</param>
         /// <param name="message">A message that describes the choice.</param>
-        /// <param name="choices">A collection of ChoiceDescription objects that  
+        /// <param name="choices">A collection of ChoiceDescription objects that
         /// describ each choice.</param>
-        /// <param name="defaultChoices">The index of the label in the Choices  
+        /// <param name="defaultChoices">The index of the label in the Choices
         /// parameter collection. To indicate no default choice, set to -1.</param>
-        /// <returns>The index of the Choices parameter collection element that 
+        /// <returns>The index of the Choices parameter collection element that
         /// corresponds to the option that is selected by the user.</returns>
         public Collection<int> PromptForChoice(
                                                string caption,
@@ -1232,7 +1238,7 @@ namespace WinExplorer
                            caption + "\n" + message + "\n");
 
             // Convert the choice collection into something that is
-            // easier to work with. See the BuildHotkeysAndPlainLabels 
+            // easier to work with. See the BuildHotkeysAndPlainLabels
             // method for details.
             string[,] promptData = BuildHotkeysAndPlainLabels(choices);
 
@@ -1282,7 +1288,7 @@ namespace WinExplorer
             Collection<int> results = new Collection<int>();
             while (true)
             {
-            ReadNext:
+                ReadNext:
                 string prompt = string.Format(CultureInfo.CurrentCulture, "Choice[{0}]:", results.Count);
                 this.Write(ConsoleColor.Cyan, ConsoleColor.Black, prompt);
                 string data = Console.ReadLine().Trim().ToUpper(CultureInfo.CurrentCulture);
@@ -1309,19 +1315,19 @@ namespace WinExplorer
             }
         }
 
-        #endregion
+        #endregion IHostUISupportsMultipleChoiceSelection Members
 
         /// <summary>
-        /// Prompts the user for credentials with a specified prompt window 
-        /// caption, prompt message, user name, and target name. In this 
-        /// example this functionality is not needed so the method throws a 
+        /// Prompts the user for credentials with a specified prompt window
+        /// caption, prompt message, user name, and target name. In this
+        /// example this functionality is not needed so the method throws a
         /// NotImplementException exception.
         /// </summary>
         /// <param name="caption">The caption for the message window.</param>
         /// <param name="message">The text of the message.</param>
-        /// <param name="userName">The user name whose credential is to be 
+        /// <param name="userName">The user name whose credential is to be
         /// prompted for.</param>
-        /// <param name="targetName">The name of the target for which the 
+        /// <param name="targetName">The name of the target for which the
         /// credential is collected.</param>
         /// <returns>Throws a NotImplementedException exception.</returns>
         public override PSCredential PromptForCredential(
@@ -1335,21 +1341,21 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// Prompts the user for credentials by using a specified prompt window 
-        /// caption, prompt message, user name and target name, credential 
-        /// types allowed to be returned, and UI behavior options. In this 
-        /// example this functionality is not needed so the method throws a 
+        /// Prompts the user for credentials by using a specified prompt window
+        /// caption, prompt message, user name and target name, credential
+        /// types allowed to be returned, and UI behavior options. In this
+        /// example this functionality is not needed so the method throws a
         /// NotImplementException exception.
         /// </summary>
         /// <param name="caption">The caption for the message window.</param>
         /// <param name="message">The text of the message.</param>
-        /// <param name="userName">The user name whose credential is to be 
+        /// <param name="userName">The user name whose credential is to be
         /// prompted for.</param>
-        /// <param name="targetName">The name of the target for which the 
+        /// <param name="targetName">The name of the target for which the
         /// credential is collected.</param>
-        /// <param name="allowedCredentialTypes">A PSCredentialTypes constant  
+        /// <param name="allowedCredentialTypes">A PSCredentialTypes constant
         /// that identifies the type of credentials that can be returned.</param>
-        /// <param name="options">A PSCredentialUIOptions constant that 
+        /// <param name="options">A PSCredentialUIOptions constant that
         /// identifies the UI behavior when it gathers the credentials.</param>
         /// <returns>Throws a NotImplementedException exception.</returns>
         public override PSCredential PromptForCredential(
@@ -1365,7 +1371,7 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// Reads characters that are entered by the user until a newline 
+        /// Reads characters that are entered by the user until a newline
         /// (carriage return) is encountered.
         /// </summary>
         /// <returns>The characters that are entered by the user.</returns>
@@ -1375,9 +1381,9 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// Reads characters entered by the user until a newline (carriage return) 
-        /// is encountered and returns the characters as a secure string. In this 
-        /// example this functionality is not needed so the method throws a 
+        /// Reads characters entered by the user until a newline (carriage return)
+        /// is encountered and returns the characters as a secure string. In this
+        /// example this functionality is not needed so the method throws a
         /// NotImplementException exception.
         /// </summary>
         /// <returns>Throws a NotImplemented exception.</returns>
@@ -1396,8 +1402,8 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// Writes characters to the output display of the host with possible 
-        /// foreground and background colors. 
+        /// Writes characters to the output display of the host with possible
+        /// foreground and background colors.
         /// </summary>
         /// <param name="foregroundColor">The color of the characters.</param>
         /// <param name="backgroundColor">The backgound color to use.</param>
@@ -1416,10 +1422,9 @@ namespace WinExplorer
             Console.BackgroundColor = oldBg;
         }
 
-
         /// <summary>
-        /// Writes a line of characters to the output display of the host 
-        /// with foreground and background colors and appends a newline (carriage return). 
+        /// Writes a line of characters to the output display of the host
+        /// with foreground and background colors and appends a newline (carriage return).
         /// </summary>
         /// <param name="foregroundColor">The forground color of the display. </param>
         /// <param name="backgroundColor">The background color of the display. </param>
@@ -1450,7 +1455,6 @@ namespace WinExplorer
                            String.Format(CultureInfo.CurrentCulture, "DEBUG: {0}", message));
         }
 
-
         /// <summary>
         /// Writes an error message to the output display of the host.
         /// </summary>
@@ -1464,8 +1468,8 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// Writes a newline character (carriage return) 
-        /// to the output display of the host. 
+        /// Writes a newline character (carriage return)
+        /// to the output display of the host.
         /// </summary>
         public override void WriteLine()
         {
@@ -1473,8 +1477,8 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// Writes a line of characters to the output display of the host 
-        /// and appends a newline character(carriage return). 
+        /// Writes a line of characters to the output display of the host
+        /// and appends a newline character(carriage return).
         /// </summary>
         /// <param name="value">The line to be written.</param>
         public override void WriteLine(string value)
@@ -1514,7 +1518,6 @@ namespace WinExplorer
                            ConsoleColor.Black,
                            String.Format(CultureInfo.CurrentCulture, "WARNING: {0}", message));
         }
-
 
         /// <summary>
         /// Parse a string containing a hotkey character.
@@ -1576,10 +1579,11 @@ namespace WinExplorer
             return hotkeysAndPlainLabels;
         }
     }
+
     /// <summary>
     /// A sample implementation of the PSHostRawUserInterface for console
-    /// applications. Members of this class that easily map to the .NET 
-    /// console class are implemented. More complex methods are not 
+    /// applications. Members of this class that easily map to the .NET
+    /// console class are implemented. More complex methods are not
     /// implemented and throw a NotImplementedException exception.
     /// </summary>
     internal class MyRawUserInterface : PSHostRawUserInterface
@@ -1597,7 +1601,7 @@ namespace WinExplorer
         public ConsoleControls consoles { get; set; }
 
         /// <summary>
-        /// Gets or sets the host buffer size adapted from the Console buffer 
+        /// Gets or sets the host buffer size adapted from the Console buffer
         /// size members.
         /// </summary>
         public override Size BufferSize
@@ -1607,8 +1611,8 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// Gets or sets the cursor position. In this example this 
-        /// functionality is not needed so the property throws a 
+        /// Gets or sets the cursor position. In this example this
+        /// functionality is not needed so the property throws a
         /// NotImplementException exception.
         /// </summary>
         public override Coordinates CursorPosition
@@ -1626,7 +1630,7 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// Gets or sets the cursor size taken directly from the 
+        /// Gets or sets the cursor size taken directly from the
         /// Console.CursorSize property.
         /// </summary>
         public override int CursorSize
@@ -1646,7 +1650,7 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// Gets a value indicating whether a key is available. This maps to  
+        /// Gets a value indicating whether a key is available. This maps to
         /// the corresponding Console.KeyAvailable property.
         /// </summary>
         public override bool KeyAvailable
@@ -1655,8 +1659,8 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// Gets the maximum physical size of the window adapted from the  
-        /// Console.LargestWindowWidth and Console.LargestWindowHeight 
+        /// Gets the maximum physical size of the window adapted from the
+        /// Console.LargestWindowWidth and Console.LargestWindowHeight
         /// properties.
         /// </summary>
         public override Size MaxPhysicalWindowSize
@@ -1665,8 +1669,8 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// Gets the maximum window size adapted from the 
-        /// Console.LargestWindowWidth and console.LargestWindowHeight 
+        /// Gets the maximum window size adapted from the
+        /// Console.LargestWindowWidth and console.LargestWindowHeight
         /// properties.
         /// </summary>
         public override Size MaxWindowSize
@@ -1675,7 +1679,7 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// Gets or sets the window position adapted from the Console window position 
+        /// Gets or sets the window position adapted from the Console window position
         /// members.
         /// </summary>
         public override Coordinates WindowPosition
@@ -1685,7 +1689,7 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// Gets or sets the window size adapted from the corresponding Console 
+        /// Gets or sets the window size adapted from the corresponding Console
         /// calls.
         /// </summary>
         public override Size WindowSize
@@ -1695,7 +1699,7 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// Gets or sets the title of the window mapped to the Console.Title 
+        /// Gets or sets the title of the window mapped to the Console.Title
         /// property.
         /// </summary>
         public override string WindowTitle
@@ -1705,7 +1709,7 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// This API resets the input buffer. In this example this 
+        /// This API resets the input buffer. In this example this
         /// functionality is not needed so the method returns nothing.
         /// </summary>
         public override void FlushInputBuffer()
@@ -1713,8 +1717,8 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// This API returns a rectangular region of the screen buffer. In 
-        /// this example this functionality is not needed so the method throws 
+        /// This API returns a rectangular region of the screen buffer. In
+        /// this example this functionality is not needed so the method throws
         /// a NotImplementException exception.
         /// </summary>
         /// <param name="rectangle">Defines the size of the rectangle.</param>
@@ -1726,13 +1730,13 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// This API Reads a pressed, released, or pressed and released keystroke 
-        /// from the keyboard device, blocking processing until a keystroke is 
-        /// typed that matches the specified keystroke options. In this example 
+        /// This API Reads a pressed, released, or pressed and released keystroke
+        /// from the keyboard device, blocking processing until a keystroke is
+        /// typed that matches the specified keystroke options. In this example
         /// this functionality is not needed so the method throws a
         /// NotImplementException exception.
         /// </summary>
-        /// <param name="options">Options, such as IncludeKeyDown,  used when 
+        /// <param name="options">Options, such as IncludeKeyDown,  used when
         /// reading the keyboard.</param>
         /// <returns>Throws a NotImplementedException exception.</returns>
         public override KeyInfo ReadKey(ReadKeyOptions options)
@@ -1742,12 +1746,12 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// This API crops a region of the screen buffer. In this example 
+        /// This API crops a region of the screen buffer. In this example
         /// this functionality is not needed so the method throws a
         /// NotImplementException exception.
         /// </summary>
         /// <param name="source">The region of the screen to be scrolled.</param>
-        /// <param name="destination">The region of the screen to receive the 
+        /// <param name="destination">The region of the screen to receive the
         /// source region contents.</param>
         /// <param name="clip">The region of the screen to include in the operation.</param>
         /// <param name="fill">The character and attributes to be used to fill all cell.</param>
@@ -1758,8 +1762,8 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// This API copies an array of buffer cells into the screen buffer 
-        /// at a specified location. In this example this  functionality is 
+        /// This API copies an array of buffer cells into the screen buffer
+        /// at a specified location. In this example this  functionality is
         /// not needed si the method  throws a NotImplementedException exception.
         /// </summary>
         /// <param name="origin">The parameter is not used.</param>
@@ -1771,8 +1775,8 @@ namespace WinExplorer
         }
 
         /// <summary>
-        /// This API Copies a given character, foreground color, and background 
-        /// color to a region of the screen buffer. In this example this 
+        /// This API Copies a given character, foreground color, and background
+        /// color to a region of the screen buffer. In this example this
         /// functionality is not needed so the method throws a
         /// NotImplementException exception./// </summary>
         /// <param name="rectangle">Defines the area to be filled. </param>
@@ -1821,6 +1825,7 @@ namespace WinExplorer
 
             return c;
         }
+
         public string Next()
         {
             if (N == null)

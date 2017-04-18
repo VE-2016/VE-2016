@@ -1,15 +1,10 @@
-﻿using System;
+﻿using NuGet;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using NuGet;
 using VSProvider;
-using System.IO;
 
 namespace WinExplorer.Services.NuGet
 {
@@ -25,7 +20,7 @@ namespace WinExplorer.Services.NuGet
             pbIcon = pictureBox1;
             opPanel = panel1;
             rbDesc = richTextBox1;
-            
+
             cbDep = comboBox1;
             cbCon = comboBox2;
             cbUpdate = comboBox3;
@@ -40,30 +35,31 @@ namespace WinExplorer.Services.NuGet
         }
 
         public IPackage package { get; set; }
-        Label pLabel;
-        PictureBox pbIcon { get; set; }
-        RichTextBox rbDesc { get; set; }
+        private Label pLabel;
+        private PictureBox pbIcon { get; set; }
+        private RichTextBox rbDesc { get; set; }
 
-        ComboBox cbDep { get; set; }
+        private ComboBox cbDep { get; set; }
 
-        ComboBox cbCon { get; set; }
+        private ComboBox cbCon { get; set; }
 
-        ComboBox cbUpdate { get; set; }
+        private ComboBox cbUpdate { get; set; }
 
-        TextBox tbInstalled { get; set; }
+        private TextBox tbInstalled { get; set; }
 
-        VSProject vp { get; set; }
+        private VSProject vp { get; set; }
 
-        ComboBox cb { get; set; }
+        private ComboBox cb { get; set; }
 
-        NuGetForm.task tasks { get; set; }
+        private NuGetForm.task tasks { get; set; }
+
         public void LoadPackage(IPackage package, IPackageRepository repo, NuGetForm.task task, bool isInstalled)
         {
             if (package == null)
                 return;
             this.Dock = DockStyle.Fill;
 
-            if(task == NuGetForm.task.browse)
+            if (task == NuGetForm.task.browse)
             {
                 SetBrowse(isInstalled);
             }
@@ -82,8 +78,6 @@ namespace WinExplorer.Services.NuGet
             {
                 cb.Items.Add(p.Version.ToFullString());
             }
-
-
         }
 
         public void LoadDescription()
@@ -94,7 +88,7 @@ namespace WinExplorer.Services.NuGet
             rbDesc.AppendText(package.Description);
             rbDesc.AppendText("\r\n");
             rbDesc.AppendText("\r\n");
-            
+
             rbDesc.SelectionHangingIndent = 110;
             rbDesc.AppendText("Version:");
             rbDesc.AppendText(package.Version.ToFullString());
@@ -110,8 +104,8 @@ namespace WinExplorer.Services.NuGet
             rbDesc.AppendText("License:   ");
             rbDesc.AppendText("\r\n");
             rbDesc.AppendText("\r\n");
-            if(package.LicenseUrl != null)
-            rbDesc.AppendText(package.LicenseUrl.ToString());
+            if (package.LicenseUrl != null)
+                rbDesc.AppendText(package.LicenseUrl.ToString());
             rbDesc.AppendText("\r\n");
             rbDesc.AppendText("\r\n");
             rbDesc.AppendText("Date published:   ");
@@ -119,8 +113,8 @@ namespace WinExplorer.Services.NuGet
             rbDesc.AppendText("\r\n");
             rbDesc.AppendText("\r\n");
             rbDesc.AppendText("Project URL:");
-            if(package.ProjectUrl != null)
-            rbDesc.AppendText(package.ProjectUrl.ToString());
+            if (package.ProjectUrl != null)
+                rbDesc.AppendText(package.ProjectUrl.ToString());
             rbDesc.AppendText("\r\n");
             rbDesc.AppendText("\r\n");
             rbDesc.AppendText("Report_Abuse:   ");
@@ -132,8 +126,8 @@ namespace WinExplorer.Services.NuGet
             rbDesc.AppendText("\r\n");
             rbDesc.AppendText("\r\n");
             rbDesc.AppendText("Dependencies:   ");
-            foreach(var s in package.DependencySets)
-            rbDesc.AppendText(s.ToString());
+            foreach (var s in package.DependencySets)
+                rbDesc.AppendText(s.ToString());
             rbDesc.AppendText("\r\n");
             rbDesc.AppendText("\r\n");
             SetAsBold("Description");
@@ -146,6 +140,7 @@ namespace WinExplorer.Services.NuGet
             SetAsBold("Tags:");
             SetAsBold("Dependency:");
         }
+
         public void SetAsBold(string s)
         {
             rbDesc.Find(s, RichTextBoxFinds.MatchCase);
@@ -153,9 +148,9 @@ namespace WinExplorer.Services.NuGet
             rbDesc.SelectionFont = new Font("Verdana", 8.25f, FontStyle.Bold);
             rbDesc.SelectionColor = Color.Black;
         }
+
         public void LoadIcon()
         {
-            
             if (package.IconUrl != null)
             {
                 try
@@ -166,18 +161,18 @@ namespace WinExplorer.Services.NuGet
                 }
                 catch (Exception ex)
                 {
-
                 }
             }
         }
 
-        Panel opPanel { get; set; }
+        private Panel opPanel { get; set; }
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             if (opPanel.Visible == true)
             {
                 opPanel.Visible = false;
-                labelLine2.Location = new Point(labelLine1.Location.X, opPanel.Location.Y  + 25);
+                labelLine2.Location = new Point(labelLine1.Location.X, opPanel.Location.Y + 25);
                 rbDesc.Location = new Point(rbDesc.Location.X, labelLine2.Location.Y + 10);
             }
             else
@@ -190,7 +185,6 @@ namespace WinExplorer.Services.NuGet
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void SetBrowse(bool isInstalled)
@@ -205,11 +199,13 @@ namespace WinExplorer.Services.NuGet
             }
             else button2.Text = "Uninstall";
         }
+
         private void SetInstalled(IPackage package)
         {
             tbInstalled.BackColor = Color.FromKnownColor(KnownColor.ControlDark);
             tbInstalled.Text = package.Version.ToFullString();
         }
+
         private void button2_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Ready to uninstall");
@@ -222,17 +218,14 @@ namespace WinExplorer.Services.NuGet
 
             // var c = Directory.GetFiles(path + "\\" + package.AssemblyReferences.ToList()[0].EffectivePath, SearchOption.AllDirectories);
 
-
             string file = path + "\\" + package.Id + "." + package.Version.ToFullString() + "\\" + package.AssemblyReferences.ToList()[0].Path;
 
             vp.RemoveReference(file);
 
             //foreach (var d in package.DependencySets)
             //{
-
             //    foreach (var de in d.Dependencies)
             //    {
-
             //        IPackage package = p.LocalRepository.FindPackage(de.Id);
             //        MessageBox.Show("Package " + package.GetFullName() + "found");
 
@@ -241,7 +234,6 @@ namespace WinExplorer.Services.NuGet
             //        vp.RemoveReference(file);
             //    }
             //}
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -252,7 +244,7 @@ namespace WinExplorer.Services.NuGet
                 UpdatePackage();
         }
 
-        void InstallPackage()
+        private void InstallPackage()
         {
             if (vp == null)
                 return;
@@ -270,10 +262,8 @@ namespace WinExplorer.Services.NuGet
 
             foreach (var d in package.DependencySets)
             {
-
                 foreach (var de in d.Dependencies)
                 {
-
                     IPackage package = p.LocalRepository.FindPackage(de.Id);
                     MessageBox.Show("Package " + package.GetFullName() + "found");
 
@@ -282,9 +272,9 @@ namespace WinExplorer.Services.NuGet
                     vp.SetReference(file);
                 }
             }
-
         }
-        void UpdatePackage()
+
+        private void UpdatePackage()
         {
             if (vp == null)
                 return;
@@ -298,22 +288,19 @@ namespace WinExplorer.Services.NuGet
 
             //Connect to the official package repository
             IPackageRepository repo = PackageRepositoryFactory.Default.CreateRepository("https://packages.nuget.org/api/v2");
-            PackageManager pp  = new PackageManager(repo, path);
+            PackageManager pp = new PackageManager(repo, path);
             string files = path + "\\" + package.Id + "." + package.Version.ToFullString() + "\\" + package.AssemblyReferences.ToList()[0].Path;
             vp.RemoveReference(files);
 
             PackageManager p = NuGets.UpdatePackage(package.Id, path, version, false);
             string file = path + "\\" + package.Id + "." + version + "\\" + package.AssemblyReferences.ToList()[0].Path;
-            
 
             vp.SetReference(file);
 
             //foreach (var d in package.DependencySets)
             //{
-
             //    foreach (var de in d.Dependencies)
             //    {
-
             //        IPackage package = p.LocalRepository.FindPackage(de.Id);
             //        MessageBox.Show("Package " + package.GetFullName() + "found");
 
@@ -322,7 +309,6 @@ namespace WinExplorer.Services.NuGet
             //        vp.SetReference(file);
             //    }
             //}
-
         }
     }
 }

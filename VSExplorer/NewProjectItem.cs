@@ -83,8 +83,6 @@ namespace WinExplorer
 
             lv.FullRowSelect = true;
 
-            
-
             lv.Columns.Add("Name");
             lv.Columns.Add("Description");
         }
@@ -140,7 +138,7 @@ namespace WinExplorer
             foreach (DirectoryInfo s in dd)
             {
                 string v = "";
-                v  = s.Name;
+                v = s.Name;
 
                 v += "$" + s.FullName;
 
@@ -186,10 +184,9 @@ namespace WinExplorer
 
             return L;
         }
+
         static public string ProjectFolder(string name, Dictionary<string, string> dict)
         {
-            
-
             foreach (string s in dict.Keys)
             {
                 if (s != name)
@@ -204,10 +201,9 @@ namespace WinExplorer
 
             return "";
         }
+
         static public string GetSubType(string name, Dictionary<string, string> dict)
         {
-            
-
             foreach (string s in dict.Keys)
             {
                 if (s != name)
@@ -225,6 +221,7 @@ namespace WinExplorer
 
             return "";
         }
+
         public ArrayList GetProjectFiles(string name)
         {
             ArrayList L = new ArrayList();

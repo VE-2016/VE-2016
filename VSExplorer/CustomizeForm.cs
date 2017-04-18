@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Drawing;
-using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -11,11 +10,10 @@ namespace WinExplorer
 {
     public partial class CustomizeForm : Form
     {
+        private ToolCommands tc { get; set; }
 
-       
-        ToolCommands tc { get; set; }
+        private CheckedListBox chTB { get; set; }
 
-        CheckedListBox chTB { get; set; }
         public CustomizeForm()
         {
             InitializeComponent();
@@ -34,11 +32,9 @@ namespace WinExplorer
             comboBox4.Items.Add("Tfs");
             comboBox4.SelectedIndex = 0;
 
-
             radioButton1.CheckedChanged += RadioButton1_CheckedChanged;
             radioButton2.CheckedChanged += RadioButton2_CheckedChanged;
             radioButton3.CheckedChanged += RadioButton3_CheckedChanged;
-
 
             panel1.Resize += Panel1_Resize;
 
@@ -46,15 +42,11 @@ namespace WinExplorer
 
             //this.KeyPreview = true;
 
-            
-
             modContext = contextMenuStrip1;
 
             textOnlyinMenusToolStripMenuItem.Enabled = false;
 
             modButton = button11;
-
-
 
             modButton.Click += ModButton_Click;
 
@@ -66,7 +58,7 @@ namespace WinExplorer
             cs.font = new Font("Times New Roman", 7); ;
 
             modContext.Items.RemoveAt(1);
-            modContext.Items.Insert(1,  cs);
+            modContext.Items.Insert(1, cs);
 
             modContext.KeyDown += ModContext_KeyDown;
 
@@ -99,7 +91,6 @@ namespace WinExplorer
             //posContext.MouseCaptureChanged += PosContext_MouseCaptureChanged;
 
             this.Capture = true;
-
         }
 
         private void RadioButton3_CheckedChanged(object sender, EventArgs e)
@@ -142,10 +133,11 @@ namespace WinExplorer
             }
             else if (e.KeyCode == Keys.Left)
                 cs.MoveCaret(false);
-            else if(e.KeyCode == Keys.Back)
+            else if (e.KeyCode == Keys.Back)
             {
                 cs.DeleteAtCaret();
-            } else if(e.KeyCode == Keys.Delete)
+            }
+            else if (e.KeyCode == Keys.Delete)
             {
                 cs.DeleteAtCaret(true);
             }
@@ -156,10 +148,11 @@ namespace WinExplorer
             else if (e.KeyCode == Keys.End)
             {
                 cs.SetCaret();
-            } else
+            }
+            else
             {
-                if((int)e.KeyCode >= 32)
-                cs.InsertAtCaret(e.KeyData.ToString());
+                if ((int)e.KeyCode >= 32)
+                    cs.InsertAtCaret(e.KeyData.ToString());
                 //cs.SetCaret();
             }
 
@@ -168,7 +161,7 @@ namespace WinExplorer
             cc.Refresh();
         }
 
-        ToolStripCombos cs { get; set; }
+        private ToolStripCombos cs { get; set; }
 
         private void ModContext_Closing(object sender, ToolStripDropDownClosingEventArgs e)
         {
@@ -186,11 +179,10 @@ namespace WinExplorer
         {
             Dictionary<string, ToolStrip> regToolstrips = ExplorerForms.regToolstrips;
 
-            foreach(string s in regToolstrips.Keys)
-            comboBox3.Items.Add(s);
-            
-            comboBox3.SelectedIndex = 0;
+            foreach (string s in regToolstrips.Keys)
+                comboBox3.Items.Add(s);
 
+            comboBox3.SelectedIndex = 0;
         }
 
         protected override void OnMouseClick(MouseEventArgs e)
@@ -199,14 +191,13 @@ namespace WinExplorer
 
             // Do something.
         }
+
         private void PosContext_MouseCaptureChanged(object sender, EventArgs e)
         {
-            
         }
 
         private void PosContext_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            
         }
 
         private void PosContext_MouseLeave(object sender, EventArgs e)
@@ -224,41 +215,30 @@ namespace WinExplorer
 
         private void PosContext_MouseClick(object sender, MouseEventArgs e)
         {
-           
         }
 
         private void CustomizeForm_Click(object sender, EventArgs e)
         {
-            
         }
 
         private void PosContext_Click(object sender, EventArgs e)
         {
-           
         }
 
-        bool shouldclose = false;
+        private bool shouldclose = false;
 
         private void PosContext_LostFocus(object sender, EventArgs e)
         {
-          
-            
-
             //if ((Control.MouseButtons & MouseButtons.Left) == MouseButtons.Left)
             //{
-
             //    Rectangle location = posContext.RectangleToScreen(posContext.ClientRectangle);
-
 
             //    Point p = this.PointToScreen(Cursor.Position);
 
-
             //    if (location.Contains(p) == false)
             //    {
-
             //        shouldclose = true;
             //        posContext.Close();
-                    
 
             //        //MessageBox.Show("Mouse");
 
@@ -268,7 +248,6 @@ namespace WinExplorer
             //else posContext.Select();
 
             //this.Capture = true;
-
         }
 
         private void PosContext_Closing(object sender, ToolStripDropDownClosingEventArgs e)
@@ -281,29 +260,25 @@ namespace WinExplorer
                 posContext.Items[0].Select();
             }
             else shouldclose = false;
-            
         }
 
         private void PosButton_Click(object sender, EventArgs e)
         {
-            
             posContext.Show(button12, 0, 20);
             thread = new Thread(Track);
             thread.Start(posContext);
         }
 
-        Thread thread { get; set; }
+        private Thread thread { get; set; }
 
-        void Track(object obs)
+        private void Track(object obs)
         {
-
             ContextMenuStrip c = obs as ContextMenuStrip;
 
             completed = false;
 
             while (true)
             {
-
                 try
                 {
                     if (this.IsDisposed == false) this.Invoke(new Action(() => { if (this.IsDisposed == false) OutsideMenuContext(c); }));
@@ -311,7 +286,6 @@ namespace WinExplorer
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
-                    
                 }
 
                 if (completed == true)
@@ -321,13 +295,12 @@ namespace WinExplorer
             }
         }
 
-        bool completed = false;
-        string OutsideMenuContext(ContextMenuStrip posContexts)
-        {
+        private bool completed = false;
 
+        private string OutsideMenuContext(ContextMenuStrip posContexts)
+        {
             if ((Control.MouseButtons & MouseButtons.Left) == MouseButtons.Left)
             {
-
                 //Point c = (this.Location);
 
                 Point d = posContexts.Location;
@@ -336,7 +309,6 @@ namespace WinExplorer
                 //c.Y += d.Y;
 
                 Rectangle r = new Rectangle(d, posContexts.Size);
-                
 
                 //location = this.RectangleToScreen(location);
 
@@ -346,34 +318,29 @@ namespace WinExplorer
 
                 //Point p = Cursor.Position;
 
-
                 if (r.Contains(p) == false)
                 {
-
                     shouldclose = true;
                     posContexts.Close();
 
                     completed = true;
 
                     return "true";
-
-
                 }
                 else posContexts.Select();
             }
-
             else posContexts.Select();
 
             completed = false;
 
             return "false";
         }
+
         private void ModButton_Click(object sender, EventArgs e)
         {
             int i = cc.highlight;
-            if(i >= 0)
+            if (i >= 0)
             {
-
                 ToolStripItem b = cc.Items[i];
 
                 string name = b.Text;
@@ -382,10 +349,8 @@ namespace WinExplorer
 
                 int k = GetItemIndex(name);
 
-                if(k >= 0)
+                if (k >= 0)
                 {
-
-
                     string names = module.temp[k] as string;
 
                     if (names.Contains("@@"))
@@ -393,28 +358,24 @@ namespace WinExplorer
                     else if (names.Contains("@"))
                         textOnlyToolStripMenuItem.Checked = true;
                     else defaultStyleToolStripMenuItem.Checked = true;
-
-
-
                 }
-
             }
             modContext.Show(button11, 0, 20);
             thread = new Thread(Track);
             thread.Start(modContext);
         }
 
-        Button modButton { get; set; }
+        private Button modButton { get; set; }
 
-        Button posButton { get; set; }
+        private Button posButton { get; set; }
 
-        ContextMenuStrip modContext { get; set; }
+        private ContextMenuStrip modContext { get; set; }
 
-        ContextMenuStrip posContext { get; set; }
+        private ContextMenuStrip posContext { get; set; }
 
         private void CustomizeForm_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
-            if(e.Control.GetType() == typeof(ContextMenuStrips))
+            if (e.Control.GetType() == typeof(ContextMenuStrips))
             {
                 switch (e.KeyCode)
                 {
@@ -432,14 +393,14 @@ namespace WinExplorer
                 return;
             cc.Size = panel1.Size;
             foreach (ToolStripItem b in cc.Items)
-                if(b.GetType() == typeof(ToolStripCombo))
-                b.Width = panel1.Size.Width - 50;
-            else b.Width = panel1.Size.Width;
+                if (b.GetType() == typeof(ToolStripCombo))
+                    b.Width = panel1.Size.Width - 50;
+                else b.Width = panel1.Size.Width;
             cc.Invalidate();
             this.Refresh();
         }
 
-        Module module { get; set; }
+        private Module module { get; set; }
 
         public void LoadView(string c)
         {
@@ -463,31 +424,25 @@ namespace WinExplorer
 
                     module = Module.GetModule(s);
 
-
-                    
                     LoadPanel(module);
                 }
                 else if (cc[1] == "Menubar")
                     radioButton1.Checked = true;
                 else if (cc[1] == "ContextMenu")
                     radioButton3.Checked = true;
-
-
-
-
             }
             Panel1_Resize(this, null);
         }
 
         public void AdjustLists()
         {
-            if(radioButton1.Checked == true)
+            if (radioButton1.Checked == true)
             {
                 comboBox2.Enabled = true;
                 comboBox3.Enabled = false;
                 comboBox4.Enabled = false;
             }
-            else if(radioButton2.Checked == true)
+            else if (radioButton2.Checked == true)
             {
                 comboBox2.Enabled = false;
                 comboBox3.Enabled = true;
@@ -501,10 +456,10 @@ namespace WinExplorer
             }
         }
 
-        ContextMenuStrips cc = null;
+        private ContextMenuStrips cc = null;
+
         public void LoadPanel(Module module)
         {
-
             if (module == null)
                 return;
 
@@ -526,20 +481,14 @@ namespace WinExplorer
             r.cs = cc;
             cc.Renderer = r;
 
-            
-
             cc.PreviewKeyDown += Cc_PreviewKeyDown;
 
-           // cc.Renderer = new WinExplorers.Debuggers.Renderer(new ProfessionalColorTable());
+            // cc.Renderer = new WinExplorers.Debuggers.Renderer(new ProfessionalColorTable());
 
             foreach (string s in temp)
             {
-
                 if (s == "Separator")
                 {
-
-
-
                     ToolStripSeparator b = new ToolStripSeparator();
                     cc.Items.Add(b);
                     b.AutoSize = false;
@@ -551,11 +500,10 @@ namespace WinExplorer
                 Command cmd = null;
 
                 if (dict.Contains(s) == true)
-                cmd = dict[s] as Command;
+                    cmd = dict[s] as Command;
 
                 if (cmd != null && cmd.Name == "Gui")
                 {
-
                     gui.Command_Gui cmds = cmd as gui.Command_Gui;
 
                     ToolStripCombos cb = new ToolStripCombos();
@@ -579,29 +527,22 @@ namespace WinExplorer
                     ToolStripItem dd = d as ToolStripItem;
                     d.Click += D_Click;
                     dd.MouseEnter += Dd_MouseLeave;
-                    
+
                     dd.AutoSize = false;
                     d.Width = size.Width;
-                    if(cmd != null)
-                    dd.Image = cmd.image;
+                    if (cmd != null)
+                        dd.Image = cmd.image;
                 }
-
-
-
             }
-
 
             cc.TopLevel = false;
 
-            // Attach an event handler for the 
+            // Attach an event handler for the
             // ContextMenuStrip control's Opening event.
             //fruitContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(cms_Opening);
 
-
             ToolStripMenuItem c = new ToolStripMenuItem();
             //c.DropDown = cc;
-
-
 
             panel1.Controls.Add(cc);
             cc.BackColor = Color.FromKnownColor(KnownColor.Control);
@@ -612,10 +553,9 @@ namespace WinExplorer
             cc.Dock = DockStyle.Fill;
             cc.Click += Cc_Click;
             cc.AutoClose = false;
-            
+
             cc.Closing += Cc_Closing;
             cc.Closed += Cc_Closed;
-
 
             //cc.KeyPress += Cc_KeyPress;
 
@@ -626,7 +566,6 @@ namespace WinExplorer
         {
             if (e.KeyCode == Keys.Up)
             {
-
                 int highlight = cc.highlight;
 
                 if (highlight >= 1)
@@ -637,12 +576,9 @@ namespace WinExplorer
                     {
                         if (cc.highlight >= 1)
                         {
-
                             cc.Items[cc.highlight - 1].Select();
 
                             cc.highlight--;
-
-
                         }
                     }
                 }
@@ -651,7 +587,6 @@ namespace WinExplorer
             }
             else if (e.KeyCode == Keys.Down)
             {
-
                 int highlight = cc.highlight;
 
                 if (highlight < cc.Items.Count - 1)
@@ -662,12 +597,9 @@ namespace WinExplorer
                     {
                         if (highlight < cc.Items.Count - 1)
                         {
-
                             cc.Items[cc.highlight + 1].Select();
 
                             cc.highlight++;
-
-
                         }
                     }
                 }
@@ -682,7 +614,6 @@ namespace WinExplorer
 
         private void Cc_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
-            
             {
                 switch (e.KeyCode)
                 {
@@ -698,13 +629,10 @@ namespace WinExplorer
         {
             if (e.KeyChar == (char)Keys.Up)
             {
-
                 int highlight = cc.highlight;
 
                 if (highlight >= 1)
                 {
-
-
                     cc.Items[highlight - 1].Select();
 
                     cc.highlight--;
@@ -713,12 +641,9 @@ namespace WinExplorer
                     {
                         if (cc.highlight >= 1)
                         {
-
                             cc.Items[cc.highlight - 1].Select();
 
                             cc.highlight--;
-
-
                         }
                     }
                 }
@@ -727,33 +652,27 @@ namespace WinExplorer
 
         private void Dd_MouseLeave(object sender, EventArgs e)
         {
-            
             //cc.highlight = cc.Items.IndexOf((ToolStripItem)sender);
             //cc.Items[cc.highlight].Select();
         }
 
         private void Cc_Closed(object sender, ToolStripDropDownClosedEventArgs e)
         {
-            
         }
 
         private void Cc_Closing(object sender, ToolStripDropDownClosingEventArgs e)
         {
-
             e.Cancel = true;
-
         }
 
         private void Cc_Click(object sender, EventArgs e)
         {
-
         }
 
         private AddCommandForm adf { get; set; }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
             if (module == null)
                 return;
 
@@ -775,14 +694,12 @@ namespace WinExplorer
             module.temp.Insert(highlight, cmd.Name);
 
             LoadPanel(module);
-
-
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-
         }
+
         public void LoadToolbars()
         {
             chTB.Items.Clear();
@@ -794,7 +711,6 @@ namespace WinExplorer
             {
                 chTB.Items.Add(s);
             }
-
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -807,8 +723,6 @@ namespace WinExplorer
             ContextMenuStrip cc = new ContextMenuStrip();
             foreach (string s in tc.MF)
             {
-
-
                 var d = cc.Items.Add(s);
 
                 ToolStripMenuItem dd = d as ToolStripMenuItem;
@@ -820,13 +734,11 @@ namespace WinExplorer
                 d.Width = 500;
             }
 
-
             cc.TopLevel = false;
 
-            // Attach an event handler for the 
+            // Attach an event handler for the
             // ContextMenuStrip control's Opening event.
             //fruitContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(cms_Opening);
-
 
             ToolStripMenuItem c = new ToolStripMenuItem();
             //c.DropDown = cc;
@@ -847,7 +759,6 @@ namespace WinExplorer
             cc.Refresh();
         }
 
-     
         private void button8_Click(object sender, EventArgs e)
         {
             int i = -1;
@@ -860,13 +771,11 @@ namespace WinExplorer
                     found = true;
                     break;
                 }
-             
             }
 
             if (found == false)
                 return;
 
-          
             if (i < 0)
                 return;
 
@@ -908,12 +817,10 @@ namespace WinExplorer
                     found = true;
                     break;
                 }
-
             }
 
             if (found == false)
                 return;
-
 
             if (i < 0 || i >= cc.Items.Count - 1)
                 return;
@@ -931,8 +838,6 @@ namespace WinExplorer
 
             if (p < 0)
                 return;
-
-           
 
             GT.RemoveAt(p);
 
@@ -955,14 +860,12 @@ namespace WinExplorer
                     found = true;
                     break;
                 }
-
             }
 
             if (found == false)
                 return;
 
-
-            if (i < 0 || i >= cc.Items.Count )
+            if (i < 0 || i >= cc.Items.Count)
                 return;
 
             if (module == null)
@@ -980,10 +883,8 @@ namespace WinExplorer
                 return;
 
             GT.RemoveAt(p);
-              
-            LoadPanel(module);
 
-            
+            LoadPanel(module);
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -998,12 +899,10 @@ namespace WinExplorer
                     found = true;
                     break;
                 }
-
             }
 
             if (found == false)
                 return;
-
 
             if (i < 0 || i >= cc.Items.Count)
                 return;
@@ -1030,7 +929,6 @@ namespace WinExplorer
             dd.MouseEnter += Dd_MouseLeave;
             dd.AutoSize = false;
             d.Width = panel1.Size.Width;
-           
 
             GT.Insert(p, names);
 
@@ -1042,9 +940,7 @@ namespace WinExplorer
 
             string s = comboBox3.Items[w].ToString();
 
-            comboBox3.Items.Insert(w, s + " " + "|" +" " + names);
-            
-
+            comboBox3.Items.Insert(w, s + " " + "|" + " " + names);
         }
 
         private void dockTopToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1053,15 +949,13 @@ namespace WinExplorer
 
             if (ef == null)
                 return;
-            
-                ToolStrip c = ToolCommands.TFF[0] as ToolStrip;
-                ef.Command_ChangeToolstrip(c, AnchorStyles.Top);
+
+            ToolStrip c = ToolCommands.TFF[0] as ToolStrip;
+            ef.Command_ChangeToolstrip(c, AnchorStyles.Top);
             ClearPositionItems();
             dockTopToolStripMenuItem.Checked = true;
             posContext.Focus();
             posContext.Capture = true;
-
-
         }
 
         public void ClearPositionItems()
@@ -1070,7 +964,6 @@ namespace WinExplorer
             dockBottomToolStripMenuItem.Checked = false;
             dockLeftToolStripMenuItem.Checked = false;
             dockRightToolStripMenuItem.Checked = false;
-
         }
 
         private void dockBottomToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1084,8 +977,6 @@ namespace WinExplorer
             ef.Command_ChangeToolstrip(c, AnchorStyles.Bottom);
             ClearPositionItems();
             dockBottomToolStripMenuItem.Checked = true;
-            
-            
         }
 
         private void dockLeftToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1099,7 +990,6 @@ namespace WinExplorer
             ef.Command_ChangeToolstrip(c, AnchorStyles.Left);
             ClearPositionItems();
             dockLeftToolStripMenuItem.Checked = true;
-
         }
 
         private void dockRightToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1117,7 +1007,6 @@ namespace WinExplorer
 
         private void button12_Click(object sender, EventArgs e)
         {
-
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
@@ -1132,9 +1021,7 @@ namespace WinExplorer
             ToolStrip ts = regToolstrips[s];
             module = Module.GetModule(s);
             LoadPanel(module);
-
         }
-        
 
         private void beginGroupToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1227,17 +1114,15 @@ namespace WinExplorer
 
             if (name == "")
                 return;
-            
-           
+
             int i = GetItemIndex(name);
 
             if (i < 0)
                 return;
 
-            if(textonly == true)
-            module.temp[i] = name + "@";
+            if (textonly == true)
+                module.temp[i] = name + "@";
             else module.temp[i] = name;
-
         }
 
         private void defaultStyleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1250,7 +1135,7 @@ namespace WinExplorer
             }
             else
             {
-                defaultStyleToolStripMenuItem.Checked  = true;
+                defaultStyleToolStripMenuItem.Checked = true;
                 textOnlyToolStripMenuItem.Checked = false;
                 imageAndTextToolStripMenuItem.Checked = false;
             }
@@ -1270,9 +1155,8 @@ namespace WinExplorer
             module.temp[i] = name + "@";
         }
 
-        int GetItemIndex(string name)
+        private int GetItemIndex(string name)
         {
-
             int i = -1;
             int k = 0;
             while (k < module.temp.Count)
@@ -1280,6 +1164,7 @@ namespace WinExplorer
                     i = k - 1;
             return i;
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (module == null)
@@ -1297,13 +1182,11 @@ namespace WinExplorer
             ExplorerForms.ef.Command_ReloadToolbar(ts, s);
 
             this.Close();
-
         }
     }
 
     public class ToolCommands
     {
-
         static public ArrayList TFF { get; set; }
 
         public ArrayList MF { get; set; }
@@ -1314,17 +1197,12 @@ namespace WinExplorer
 
         public ToolCommands()
         {
-
             GetToolbars();
             GetMenubars();
-
         }
-
-
 
         public ArrayList GetToolbars()
         {
-
             TF = new ArrayList();
 
             TF.Add("Standard");
@@ -1332,11 +1210,10 @@ namespace WinExplorer
             TF.Add("Debug");
 
             return TF;
-
         }
+
         public ArrayList GetMenubars()
         {
-
             MF = new ArrayList();
 
             MF.Add("File");
@@ -1351,25 +1228,17 @@ namespace WinExplorer
             MF.Add("Window");
             MF.Add("Help");
             return MF;
-
-
-
-
         }
-
     }
+
     public class ContextMenuStrips : ContextMenuStrip
     {
-
-
         protected override void OnMouseLeave(EventArgs e)
         {
             //base.OnMouseLeave(e);
-            if(highlight >= 0)
-            this.Items[highlight].Select();
+            if (highlight >= 0)
+                this.Items[highlight].Select();
             this.Focus();
-
-            
         }
 
         protected override void OnClick(EventArgs e)
@@ -1377,16 +1246,18 @@ namespace WinExplorer
             base.OnClick(e);
             this.Focus();
         }
+
         protected override void OnLostFocus(EventArgs e)
         {
             //base.OnLostFocus(e);
         }
+
         protected override void OnClosing(ToolStripDropDownClosingEventArgs e)
         {
-            
             //base.OnClosing(e);
             e.Cancel = true;
         }
+
         protected override void OnLeave(EventArgs e)
         {
             //base.OnLeave(e);
@@ -1397,27 +1268,28 @@ namespace WinExplorer
         protected override void OnClosed(ToolStripDropDownClosedEventArgs e)
         {
             //base.OnClosed(e);
-            
         }
+
         protected override void OnMouseHover(EventArgs e)
         {
             //base.OnMouseHover(e);
-          
         }
+
         protected override void OnMouseEnter(EventArgs e)
         {
-           // base.OnMouseEnter(e);
-
+            // base.OnMouseEnter(e);
         }
+
         //protected override void OnMouseMove(EventArgs e)
         //{
-            // base.OnMouseMove(e);
+        // base.OnMouseMove(e);
 
         //}
         protected override void OnKeyPress(KeyPressEventArgs e)
         {
             base.OnKeyPress(e);
         }
+
         protected override void OnPreviewKeyDown(PreviewKeyDownEventArgs e)
         {
             base.OnPreviewKeyDown(e);
@@ -1430,6 +1302,7 @@ namespace WinExplorer
                     break;
             }
         }
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             switch (keyData)
@@ -1437,12 +1310,15 @@ namespace WinExplorer
                 case Keys.Left:
                     // left arrow key pressed
                     return true;
+
                 case Keys.Right:
                     // right arrow key pressed
                     return true;
+
                 case Keys.Up:
                     // up arrow key pressed
                     return true;
+
                 case Keys.Down:
                     // down arrow key pressed
                     return true;
@@ -1450,6 +1326,7 @@ namespace WinExplorer
 
             return base.ProcessCmdKey(ref msg, keyData);
         }
+
         protected override bool IsInputKey(Keys keyData)
         {
             switch (keyData)
@@ -1459,6 +1336,7 @@ namespace WinExplorer
                 case Keys.Up:
                 case Keys.Down:
                     return true;
+
                 case Keys.Shift | Keys.Right:
                 case Keys.Shift | Keys.Left:
                 case Keys.Shift | Keys.Up:
@@ -1466,15 +1344,11 @@ namespace WinExplorer
                     return true;
             }
             return base.IsInputKey(keyData);
-            
         }
-        
     }
-
 
     public class Combos : UserControl
     {
-
         public Combos()
         {
             this.Size = new Size(400, 20);
@@ -1487,14 +1361,13 @@ namespace WinExplorer
             this.cb.Location = new Point(200, 0);
             //this.cb.DropDown += (o, e) => ((ComboBox)o).DroppedDown = false;
             this.cb.Dock = DockStyle.Right;
-            this.Click += Cb_GotFocus;    
+            this.Click += Cb_GotFocus;
             this.Controls.Add(text);
             this.Controls.Add(cb);
             brush = new SolidBrush(Color.FromArgb(150, SystemColors.Highlight));
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.Selectable, true);
             //SetStyle(ControlStyles.AllPaintingInWmPaint, true);
-
         }
 
         private void Cb_GotFocus(object sender, EventArgs e)
@@ -1515,29 +1388,23 @@ namespace WinExplorer
             pe.Graphics.FillRectangle(brush, r);
         }
 
-        Brush brush { get; set; }
-
+        private Brush brush { get; set; }
     }
 
     //Declare a class that inherits from ToolStripControlHost.
     public class ToolStripCombo : ToolStripControlHost
     {
-        
-        public ToolStripCombo() : base(new Label()) {
-
-
-           
+        public ToolStripCombo() : base(new Label())
+        {
             this.BackColor = Color.FromKnownColor(KnownColor.Control);
-           
+
             brush = new SolidBrush(Color.FromArgb(150, SystemColors.Highlight));
-            
-            
         }
 
         private void Cb_GotFocus(object sender, EventArgs e)
         {
-            
         }
+
         public Control control
         {
             get
@@ -1546,37 +1413,27 @@ namespace WinExplorer
             }
         }
 
-        Brush brush { get; set; }
+        private Brush brush { get; set; }
+
         protected override void OnPaint(PaintEventArgs pe)
         {
-           
             base.OnPaint(pe);
             Rectangle r = new Rectangle(-100, 0, this.Width, this.Height);
             r.Inflate(-1, -1);
             pe.ClipRectangle.Inflate(-1, -1);
             pe.Graphics.FillRectangle(brush, r);
-            
-            
         }
-
     }
 
     public class Threads
     {
-
         public void Track()
         {
-
         }
-
-
     }
 
     public class ToolStripCombos : ToolStripMenuItem
     {
-      
-        
-
         public ToolStripCombos()
         {
             b = new ComboBox();
@@ -1589,11 +1446,7 @@ namespace WinExplorer
             tb.Size = new Size(300, 20);
             tb.Location = new Point(100, 0);
 
-
             Blink();
-
-
-
         }
 
         private async void Blink()
@@ -1609,15 +1462,15 @@ namespace WinExplorer
 
         public Color color = Color.Black;
 
-        ComboBox b { get; set; }
+        private ComboBox b { get; set; }
 
-        Color c { get; set; }
+        private Color c { get; set; }
 
-        Brush bw { get; set; }
+        private Brush bw { get; set; }
 
-        Brush bb { get; set; }
+        private Brush bb { get; set; }
 
-        Brush brush { get; set; }
+        private Brush brush { get; set; }
 
         public ContextMenuStrips cs { get; set; }
 
@@ -1625,30 +1478,26 @@ namespace WinExplorer
 
         public bool drawarrow = true;
 
-        public string ctext {
+        public string ctext
+        {
             get; set;
         }
 
         public Font font { get; set; }
-
-
 
         public Brush GetBrush()
         {
             if (color == Color.White)
                 return bw;
             else return bb;
-
         }
 
         public void SetCaret()
         {
-
             caret = ctext.Length - 1;
 
             if (caret < 0)
                 caret = 0;
-
         }
 
         public void SetCaret(int c)
@@ -1656,7 +1505,7 @@ namespace WinExplorer
             caret = c;
         }
 
-        int GetCaret(Graphics g)
+        private int GetCaret(Graphics g)
         {
             if (font == null)
                 return 0;
@@ -1673,7 +1522,7 @@ namespace WinExplorer
 
         public void MoveCaret(bool right)
         {
-            if(right == true)
+            if (right == true)
             {
                 if (caret < ctext.Length)
                     caret++;
@@ -1701,11 +1550,9 @@ namespace WinExplorer
 
         public void InsertAtCaret(string c)
         {
-
             ctext = ctext.Insert(caret, c);
 
             caret++;
-
         }
 
         public bool IsSelected()
@@ -1717,7 +1564,6 @@ namespace WinExplorer
 
             if (i == cs.highlight)
                 return true;
-
 
             return false;
         }
@@ -1731,15 +1577,13 @@ namespace WinExplorer
             if (ctext == null)
                 ctext = "";
 
-
-
             b.Text = this.Text;
 
             int text = (int)e.Graphics.MeasureString(Text, b.Font).Width;
 
-            int x = w - text -15 - 50;
+            int x = w - text - 15 - 50;
 
-            if(drawarrow == false)
+            if (drawarrow == false)
                 if (this.IsSelected())
                     e.Graphics.FillRectangle(brush, e.ClipRectangle);
 
@@ -1747,7 +1591,6 @@ namespace WinExplorer
 
                 if (font == null)
                     ComboBoxRenderer.DrawTextBox(e.Graphics, new Rectangle(text + 10 + 50, 2, x - 5, 16), System.Windows.Forms.VisualStyles.ComboBoxState.Pressed);
-
                 else
                 {
                     int start = 0;
@@ -1759,25 +1602,19 @@ namespace WinExplorer
 
                     ComboBoxRenderer.DrawTextBox(e.Graphics, new Rectangle(text + 10 + 50, 2, x - 5, 17), ctext.Substring(start, ctext.Length - start), font, TextFormatFlags.VerticalCenter, System.Windows.Forms.VisualStyles.ComboBoxState.Pressed);
 
-                  
-
                     Point p = new Point(ax, ay);
 
                     p.X += text + 10 + 50;
                     string c = Char.ConvertFromUtf32('\u258F');
                     Brush br = GetBrush();
                     e.Graphics.DrawString(c, font, br, p);
-
-                    
                 }
             if (drawarrow == true)
             {
                 ComboBoxRenderer.DrawDropDownButton(e.Graphics, new Rectangle(w - 22, 2, 20, 16), System.Windows.Forms.VisualStyles.ComboBoxState.Normal);
 
-
                 if (this.IsSelected())
                     e.Graphics.FillRectangle(brush, e.ClipRectangle);
-                
             }
         }
     }
@@ -1791,40 +1628,37 @@ namespace WinExplorer
 
     public class Renderers : ToolStripProfessionalRenderer
     {
-        public Renderers() : base() {
+        public Renderers() : base()
+        {
         }
-        public Renderers(ProfessionalColorTable c): base(c)
-         {
+
+        public Renderers(ProfessionalColorTable c) : base(c)
+        {
             this.c = c;
-           
+
             brush = new SolidBrush(Color.FromArgb(150, c.CheckSelectedBackground));
         }
 
         public ProfessionalColorTable c { get; }
-      
+
         public ContextMenuStrips cs { get; set; }
 
         public Brush brush { get; set; }
 
-
-          protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
+        protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
         {
             base.OnRenderMenuItemBackground(e);
 
             int i = cs.Items.IndexOf(e.Item);
 
-          
-
             if (i < 0)
                 return;
 
             if (cs.highlight == i)
-                
-            e.Graphics.FillRectangle(brush, 0,0, cs.Width, 20);
+
+                e.Graphics.FillRectangle(brush, 0, 0, cs.Width, 20);
 
             //else e.Graphics.FillRectangle(Brushes.LightGray, e.Item.Bounds);
-
         }
-      
     }
 }

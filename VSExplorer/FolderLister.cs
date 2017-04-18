@@ -76,7 +76,6 @@ namespace WinExplorer
         {
             lb.Columns.Add("", 100);
 
-            
             lb.View = View.Details;
             lb.FullRowSelect = true;
 
@@ -266,13 +265,9 @@ namespace WinExplorer
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(LoadByClick == true)
+            if (LoadByClick == true)
             {
-
                 listView1_DoubleClick(this, null);
-
-
-
             }
 
             if (lb.SelectedIndices == null)
@@ -343,7 +338,7 @@ namespace WinExplorer
         public void LoadFolder(string p)
         {
             lb.Items.Clear();
-            
+
             ListDirectoryContent(p);
         }
 

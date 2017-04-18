@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using GACManagerApi.Fusion;
+using System;
 using System.Runtime.InteropServices;
-using System.Text;
-using GACManagerApi.Fusion;
 
 namespace GACManagerApi
 {
@@ -47,10 +44,10 @@ namespace GACManagerApi
             }
         }
 
-        // assemblyName has to be fully specified name. 
+        // assemblyName has to be fully specified name.
         // A.k.a, for v1.0/v1.1 assemblies, it should be "name, Version=xx, Culture=xx, PublicKeyToken=xx".
         // For v2.0 assemblies, it should be "name, Version=xx, Culture=xx, PublicKeyToken=xx, ProcessorArchitecture=xx".
-        // If assemblyName is not fully specified, a random matching assembly will be uninstalled. 
+        // If assemblyName is not fully specified, a random matching assembly will be uninstalled.
         public static void UninstallAssembly(String assemblyName, FUSION_INSTALL_REFERENCE reference,
                                              out IASSEMBLYCACHE_UNINSTALL_DISPOSITION disp)
         {

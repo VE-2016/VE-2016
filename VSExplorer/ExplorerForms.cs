@@ -1,8 +1,12 @@
 using AIMS.Libraries.CodeEditor;
 using AIMS.Libraries.Scripting.ScriptControl;
-using NUnit;
 using DockProject;
 using GACProject;
+using Microsoft.Diagnostics.Runtime;
+using NUnit.Engine;
+using NUnit.Gui;
+using NUnit.Gui.Model;
+using NUnit.Gui.Presenters;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,25 +17,15 @@ using System.Drawing.Drawing2D;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Text.RegularExpressions;
+using System.Threading;
 using System.Windows.Forms;
+using utils;
 using VSProvider;
 using WeifenLuo.WinFormsUI.Docking;
 using WinExplorer.Environment;
-using WinExplorer.UI;
-using NUnit.Engine;
-using NUnit.Gui.Model;
-using NUnit.Gui.Presenters;
-using NUnit.Gui;
-using utils;
-using System.Threading.Tasks;
-using System.Threading;
-using Microsoft.Diagnostics.Runtime;
-using WinExplorers;
-using AIMS.Libraries.CodeEditor.Syntax;
-
-using WinExplorer.UI.Views;
 using WinExplorer.Services.NuGet;
+using WinExplorer.UI;
+using WinExplorer.UI.Views;
 
 namespace WinExplorer
 {
@@ -40,7 +34,6 @@ namespace WinExplorer
     /// </summary>
     public partial class ExplorerForms : Form
     {
-       
         private class DummyNode : TreeNode { }
 
         [DllImport("uxtheme.dll", CharSet = CharSet.Unicode)]
@@ -51,14 +44,13 @@ namespace WinExplorer
 
         public static ErrorListForm elf { get; set; }
 
-        static public Dictionary<string, ToolStrip > regToolstrips { get; set; }
+        static public Dictionary<string, ToolStrip> regToolstrips { get; set; }
 
         /// <summary>
         /// Main Form Constructor
-        /// </summary>        
+        /// </summary>
         public ExplorerForms()
         {
-            
             ef = this;
 
             this.CreateHandle();
@@ -78,7 +70,7 @@ namespace WinExplorer
             _components = new System.ComponentModel.Container();
 
             #endregion Form Setup
-            
+
             Application.EnableVisualStyles();
 
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
@@ -100,11 +92,11 @@ namespace WinExplorer
             toolStrip4.Renderer = new MyRenderer();
 
             #region Docking Panel
-            
+
             dock = new DockPanel();
 
             dock.DocumentTabStripLocation = DocumentTabStripLocation.Top;
-                       
+
             dock.BackColor = Color.White;
 
             dock.Dock = DockStyle.Fill;
@@ -116,7 +108,7 @@ namespace WinExplorer
             this.toolStripContainer1.ContentPanel.Controls.Add(dock);
 
             #endregion Docking Panel
-            
+
             ScriptControl.LoadSettings();
 
             scr = new ScriptControl(this, dock);
@@ -125,7 +117,7 @@ namespace WinExplorer
 
             string Theme = scr.GetTheme();
 
-             if (Theme == "VS2012Light")
+            if (Theme == "VS2012Light")
                 dock.Theme = new VS2012LightTheme();
             else
                 dock.Theme = new VS2013BlueTheme();
@@ -133,8 +125,8 @@ namespace WinExplorer
             scr.Dock = DockStyle.Fill;
 
             if (scr.hst != null && scr.hst.Modules != null)
-                               Module.LoadFromString(scr.hst.Modules);
-                            else Module.Initialize();
+                Module.LoadFromString(scr.hst.Modules);
+            else Module.Initialize();
 
             Module.InitializeTemplates("Standards");
 
@@ -146,7 +138,6 @@ namespace WinExplorer
             CodeEditorControl.AutoListImages = imgs;
 
             #region Components
-
 
             LoadSE("Explorer", false);
             solutionExplorerToolStripMenuItem.Checked = true;
@@ -184,7 +175,7 @@ namespace WinExplorer
             LoadDocumentWindow(false);
             LoadDT("Data Sources", false);
             LoadQE("SQL Server Explorer", false);
-            
+
             ResumeLayout();
 
             #endregion Components
@@ -242,10 +233,9 @@ namespace WinExplorer
 
             //_sv._SolutionTreeView.MouseDown += new MouseEventHandler(treeView1_MouseDown);
 
-
             _sv._SolutionTreeView.MouseDoubleClick += _SolutionTreeView_MouseDoubleClick;
 
-           // _sv._SolutionTreeView.KeyDown += _SolutionTreeView_KeyPress;
+            // _sv._SolutionTreeView.KeyDown += _SolutionTreeView_KeyPress;
 
             //_selectedNodes = new List<TreeNode>();
 
@@ -278,8 +268,8 @@ namespace WinExplorer
 
             GACForm.GetAssembliesList("");
 
-            if(Module.GetModule("Standards") == null)
-            Module.Template("Standards");
+            if (Module.GetModule("Standards") == null)
+                Module.Template("Standards");
 
             debuggers = new WinExplorers.Debuggers();
 
@@ -300,23 +290,21 @@ namespace WinExplorer
             ve.regToolstrips = regToolstrips;
 
             ve.modules = Module.modules;
-            
-            ToolStrips ves =  ve.CreateToolStrips("Standards");
+
+            ToolStrips ves = ve.CreateToolStrips("Standards");
 
             ToolStripItem ge = ves.GetItem("Navigate Backward");
             ToolStripSplitButton gb = ge as ToolStripSplitButton;
-            if(gb != null)
+            if (gb != null)
             {
                 _sv._ddButton = gb;
             }
 
             appLoadedEvent += LoadBreakpoints;
-            
         }
 
         //protected override void WndProc(ref Message m)
         //{
-           
         //    // WM_SYSCOMMAND
         //    if (m.Msg == 0x0112)
         //    {
@@ -345,8 +333,9 @@ namespace WinExplorer
         //    }
         //}
         public Tools ve { get; set; }
+
         public WinExplorers.Debuggers debuggers { get; set; }
-  
+
         public void AfterSelectActivate(bool activate)
         {
             if (activate == true)
@@ -380,7 +369,6 @@ namespace WinExplorer
                 return;
 
             s = node.Text;
-
 
             string file = "";
 
@@ -444,7 +432,6 @@ namespace WinExplorer
 
             if (File.Exists(file) == true)
             {
- 
                 if (CodeEditorControl.AutoListImages == null)
                 {
                     ImageList imgs = CreateView_Solution.CreateImageList();
@@ -455,15 +442,11 @@ namespace WinExplorer
 
                 this.Invoke(new Action(() =>
                 {
- 
                     _eo.LoadFile(file, pp);
-
- 
                 }));
             }
         }
 
- 
         public bool running = false;
 
         public ArrayList Queue = new ArrayList();
@@ -538,7 +521,6 @@ namespace WinExplorer
                     return;
                 }
 
-
                 node.EnsureVisible();
 
                 _sv._SolutionTreeView.SelectedNode = node;
@@ -552,7 +534,6 @@ namespace WinExplorer
                 running = false;
             }));
         }
-
 
         private SplashForm splashForm { get; set; }
 
@@ -757,7 +738,6 @@ namespace WinExplorer
 
         public void LoadDefaults()
         {
-       
             SuspendLayout();
 
             LoadDocumentWindow(true);
@@ -807,7 +787,6 @@ namespace WinExplorer
                 rw.Controls.Add(fr);
 
                 rw.types = "rw";
-
             }
             if (load)
                 rw.Show(dock, DockState.DockLeft);
@@ -817,7 +796,7 @@ namespace WinExplorer
 
         public OutputForm ofm { get; set; }
 
-        RichTextBox rbb { get; set; }
+        private RichTextBox rbb { get; set; }
 
         public void LoadORW(string name, bool load)
         {
@@ -844,17 +823,10 @@ namespace WinExplorer
 
             OutputForm.ofm = ofm;
 
-
             ows.types = "ou";
 
             if (load)
                 ows.Show(dock, DockState.DockBottom);
-
-
-
-
-
-
         }
 
         public ErrorListForm efs { get; set; }
@@ -1016,13 +988,10 @@ namespace WinExplorer
 
         public ToolWindow wt { get; set; }
 
-
         private static NUnit.Gui.Views.MainForm nunit()
         {
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
-
-
 
             var testEngine = TestEngineActivator.CreateInstance(true);
             CommandLineOptions options = new CommandLineOptions();
@@ -1048,6 +1017,7 @@ namespace WinExplorer
 
         public ToolWindow qe { get; set; }
         public DatabaseInspectorForm qdtf { get; set; }
+
         public void LoadQE(string name, bool load)
         {
             qe = new ToolWindow();
@@ -1074,9 +1044,9 @@ namespace WinExplorer
                 qe.Show(dock, DockState.DockLeft);
         }
 
-
         public ToolWindow dt { get; set; }
         public DataSourceForm dtf { get; set; }
+
         public void LoadDT(string name, bool load)
         {
             dt = new ToolWindow();
@@ -1098,13 +1068,14 @@ namespace WinExplorer
             dt.Controls.Add(dtf);
 
             dt.types = "dt";
-                        
+
             if (load)
                 dt.Show(dock, DockState.DockLeft);
         }
 
         public ToolWindow xt { get; set; }
         public XmlDocumentForm xfm { get; set; }
+
         public void LoadXL(string name, bool load)
         {
             xt = new ToolWindow();
@@ -1130,8 +1101,10 @@ namespace WinExplorer
             if (load)
                 xt.Show(dock, DockState.DockLeft);
         }
+
         public ToolWindow tx { get; set; }
         public Toolbox txf { get; set; }
+
         public void LoadTB(string name, bool load)
         {
             tx = new ToolWindow();
@@ -1157,6 +1130,7 @@ namespace WinExplorer
             if (load)
                 tx.Show(dock, DockState.DockLeft);
         }
+
         public ToolWindow nt { get; set; }
 
         public NUnit.Gui.Views.MainForm gunit { get; set; }
@@ -1223,13 +1197,10 @@ namespace WinExplorer
             wd.TabText = name;
             wd.TopLevel = true;
 
-
-
             wdf = new ListViewOwnerDraw();
             wdf.FormBorderStyle = FormBorderStyle.None;
             wdf.TopLevel = false;
             wdf.Dock = DockStyle.Fill;
-
 
             wd.Controls.Add(wdf);
             wdf.Show();
@@ -1239,6 +1210,7 @@ namespace WinExplorer
             if (load)
                 wd.Show(dock, DockState.DockBottom);
         }
+
         public ToolWindow wbr { get; set; }
 
         public BreakpointForm bdf { get; set; }
@@ -1252,13 +1224,10 @@ namespace WinExplorer
             wbr.TabText = name;
             wbr.TopLevel = true;
 
-
-
             bdf = new BreakpointForm();
             bdf.FormBorderStyle = FormBorderStyle.None;
             bdf.TopLevel = false;
             bdf.Dock = DockStyle.Fill;
-
 
             wbr.Controls.Add(bdf);
             bdf.Show();
@@ -1268,6 +1237,7 @@ namespace WinExplorer
             if (load)
                 wbr.Show(dock, DockState.DockBottom);
         }
+
         public ToolWindow cd { get; set; }
 
         public void LoadCD(string name, bool load)
@@ -1278,7 +1248,6 @@ namespace WinExplorer
             cd.FormBorderStyle = FormBorderStyle.None;
             cd.TabText = name;
             cd.TopLevel = true;
-
 
             cd.Controls.Add(toolStrip5);
             cd.Controls.Add(textBox4);
@@ -1294,8 +1263,6 @@ namespace WinExplorer
         }
 
         public ToolWindow re { get; set; }
-
-
 
         public void LoadRE(string name, bool load)
         {
@@ -1348,6 +1315,7 @@ namespace WinExplorer
             if (load)
                 fd.Show(dock, DockState.DockRight);
         }
+
         public ToolWindow sf { get; set; }
 
         public ServerExplorerForm sef { get; set; }
@@ -1361,13 +1329,10 @@ namespace WinExplorer
             sf.TabText = name;
             sf.TopLevel = true;
 
-
-
             sef = new ServerExplorerForm();
             sef.FormBorderStyle = FormBorderStyle.None;
             sef.TopLevel = false;
             sef.Dock = DockStyle.Fill;
-
 
             sf.Controls.Add(sef);
             sef.Show();
@@ -1377,6 +1342,7 @@ namespace WinExplorer
             if (load)
                 sf.Show(dock, DockState.DockLeft);
         }
+
         private void Open_Click(object sender, EventArgs e)
         {
             string recent = forms.tb.Text;
@@ -1415,7 +1381,6 @@ namespace WinExplorer
                 pgp = new PropertyGrid();
                 pgp.Dock = DockStyle.Fill;
 
-
                 if (pw == null)
                 {
                     pw = new ToolWindow();
@@ -1430,7 +1395,6 @@ namespace WinExplorer
                 pw.Controls.Add(pgp);
 
                 pw.types = "pw";
-
             }
 
             if (load)
@@ -1457,10 +1421,8 @@ namespace WinExplorer
 
         public void LoadSE(string name, bool load)
         {
-
             if (se == null)
             {
-
                 se = new ToolWindow();
                 se.Text = name;
                 se.HideOnClose = true;
@@ -1470,7 +1432,7 @@ namespace WinExplorer
                 se.TabText = name;
                 se.TopLevel = false;
                 //ww.DockAreas = DockAreas.DockLeft | DockAreas.DockRight | DockAreas.DockTop | DockAreas.DockBottom;
-                
+
                 nav = new Navigator(treeView1);
 
                 ses = new ToolStrip();
@@ -1494,9 +1456,6 @@ namespace WinExplorer
                 sess = new ToolStripSeparator();
 
                 ses.Items.Add(sess);
-
-
-
 
                 sest = new ToolStripButton();
                 sest.DisplayStyle = ToolStripItemDisplayStyle.Image;
@@ -1523,7 +1482,6 @@ namespace WinExplorer
                 se.Controls.Add(ses);
 
                 se.types = "se";
-
             }
 
             if (load)
@@ -1813,7 +1771,7 @@ namespace WinExplorer
 
                     if (vp != null)
                     {
-                       // MessageBox.Show("Active project - " + vp.Name);
+                        // MessageBox.Show("Active project - " + vp.Name);
                     }
 
                     vp.SetPlatformConfig("", "");
@@ -1857,18 +1815,13 @@ namespace WinExplorer
 
         public FolderLister CreateOutputWindow()
         {
-          
             forms = new FolderLister();
 
-          
             forms.Dock = DockStyle.Fill;
 
-          
             forms.Show();
 
             return forms;
-
-          
         }
 
         public void ClearOutput()
@@ -1876,8 +1829,6 @@ namespace WinExplorer
             if (efs != null)
                 efs.ClearOutput();
         }
-
-
 
         public string currentproject { get; set; }
 
@@ -1929,7 +1880,6 @@ namespace WinExplorer
 
             psf.Show();
         }
-
 
         private ProjectPropertyForm ppf { get; set; }
 
@@ -2074,7 +2024,6 @@ namespace WinExplorer
             _sv.context1 = contextMenuStrip1;
             _sv.context2 = contextMenuStrip2;
 
-    
             _ls.eo = _eo;
             _ls._mainToolStrip = toolStrip4;
             _ls.doinit(this);
@@ -2094,12 +2043,7 @@ namespace WinExplorer
 
         private WinExplorer.CreateView_Logger _ls = new CreateView_Logger();
 
-        
-        #region Toolbar Events
 
-
-
-        #endregion Toolbar Events
 
         #region Form Events
 
@@ -2110,8 +2054,6 @@ namespace WinExplorer
         #endregion Form Events
 
         #region Public UI Elements
-
-
 
         ///// <summary>
         ///// The explorer window toolbar.
@@ -2135,19 +2077,9 @@ namespace WinExplorer
         public ContextMenuStrip TreeViewContextMenu
         {
             get { return new ContextMenuStrip(); }
-
-                   }
-
-
+        }
 
         #endregion Public UI Elements
-
-
-        #region Helpers
-
-
-
-        #endregion Helpers
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
@@ -2364,20 +2296,16 @@ namespace WinExplorer
 
         public void startprogress()
         {
-            
             BackgroundWorker bw = new BackgroundWorker();
             bw.WorkerReportsProgress = true;
             bw.WorkerSupportsCancellation = true;
             bw.DoWork += new DoWorkEventHandler(bw_DoWork);
             bw.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChanged);
-            
-        
         }
 
         private void bw_DoWork(object sender, DoWorkEventArgs e)
         {
             _bw.ReportProgress(50);
-            
         }
 
         private void bw_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -2396,7 +2324,6 @@ namespace WinExplorer
 
             if (tv == null)
                 return;
-
 
             s.BeginInvoke(new Action(() =>
             {
@@ -2474,7 +2401,6 @@ namespace WinExplorer
 
             ArrayList L = null;
 
-
             this.BeginInvoke(new Action(() =>
             {
                 Loads2(tv, _sv._SolutionTreeView); this.Text = Path.GetFileName(recent) + " - Visual Explorer";
@@ -2507,14 +2433,10 @@ namespace WinExplorer
                 }
 
                 //Command.running = false;
-
             }));
 
-
-//            Command.counter--;
-
+            //            Command.counter--;
         }
-
 
         public delegate void ApplicationLoaded(object sender, EventArgs e);
 
@@ -2524,8 +2446,6 @@ namespace WinExplorer
         {
             //this.Focus(); ScriptControl.br.LoadBreakpoints(); /*MessageBox.Show("Starting..." + Row.counter);*/
         }
-
-        
 
         private void TestForm(string s)
         {
@@ -2673,13 +2593,11 @@ namespace WinExplorer
 
         public void Command_LoadSolution(string recent)
         {
-           
             scr.ClearHistory();
 
             if (efs != null)
                 efs.Invoke(new Action(() => { efs.ClearOutput(); }));
 
-            
             _sv._SolutionTreeView.Nodes.Clear();
 
             _sv.save_recent_solution(recent);
@@ -2687,15 +2605,14 @@ namespace WinExplorer
             workerFunctionDelegate w = workerFunction;
             w.BeginInvoke(recent, null, null);
         }
+
         public void Command_SetPlatforms()
         {
-
             if (gui.Command_SolutionPlaform.platform == null)
                 return;
             gui.Command_SolutionPlaform.platform.Execute();
-
-            
         }
+
         public ArrayList Command_LoadPlatforms()
         {
             VSSolution vs = GetVSSolution();
@@ -2703,6 +2620,7 @@ namespace WinExplorer
 
             return L;
         }
+
         public ArrayList Command_LoadConfigurations()
         {
             VSSolution vs = GetVSSolution();
@@ -2710,6 +2628,7 @@ namespace WinExplorer
 
             return L;
         }
+
         public ArrayList Command_LoadStartupProjects()
         {
             VSSolution vs = GetVSSolution();
@@ -2719,23 +2638,19 @@ namespace WinExplorer
 
             return L;
         }
+
         public void Command_SetConfigurations()
         {
-
             if (gui.Command_SolutionConfiguration.configuration == null)
                 return;
             gui.Command_SolutionConfiguration.configuration.Execute();
-
-
         }
+
         public void Command_CloseAllDocuments()
         {
-
             scr.ClearHistory();
 
             scr.CloseAll();
-
-          
         }
 
         public void Command_AddConnection(string provider = "")
@@ -2758,30 +2673,28 @@ namespace WinExplorer
 
             string d = b + "Extensions\\procdump.exe";
 
-            if(Directory.Exists("Snapshots") == false)
+            if (Directory.Exists("Snapshots") == false)
             {
-
                 Directory.CreateDirectory("Snapshots");
-                
             }
-            
+
             int c = Directory.GetFiles("Snapshots").Length;
 
             string file = b + "Snapshots\\snapshot" + c + ".dmp";
 
-            cmds.RunExternalExes(d, " -ma " + process + " "  + file);
-
-
+            cmds.RunExternalExes(d, " -ma " + process + " " + file);
         }
 
         public DocumentForm Command_OpenDocumentForm(string name)
         {
             return _sv.eo.OpenDocumentForm(name);
         }
+
         public Document Command_OpenGenericDocument(string name)
         {
             return scr.AddGenericDocument(name);
         }
+
         public void Command_TakeTypedDataset(string filename)
         {
             string b = AppDomain.CurrentDomain.BaseDirectory;
@@ -2808,19 +2721,18 @@ namespace WinExplorer
             File.Copy(cs, designer);
 
             File.Delete(cs);
-                       
-            string [] dd = Directory.GetFiles(b + "Templates\\xsd");
 
-            foreach(string s in dd)
+            string[] dd = Directory.GetFiles(b + "Templates\\xsd");
+
+            foreach (string s in dd)
             {
                 string c = folder + "\\" + Path.GetFileName(s).Replace("databaseDataSet", filewithoutextension);
                 if (File.Exists(c))
                     File.Delete(c);
                 File.Copy(s, c);
             }
-            
-            
         }
+
         public void Command_ImportTlb(string filename, string output)
         {
             string b = AppDomain.CurrentDomain.BaseDirectory;
@@ -2831,27 +2743,24 @@ namespace WinExplorer
 
             string filewithoutextension = Path.GetFileNameWithoutExtension(filename);
 
-            string cmd = "\""  + filename + "\" " + "/out:" + output;
+            string cmd = "\"" + filename + "\" " + "/out:" + output;
 
             cmds.RunExternalExes(d, cmd);
+        }
 
-           }
         public void Command_ConfigurationManager()
         {
-
             ConfigurationManagerForm c = new ConfigurationManagerForm();
             VSSolution vs = GetVSSolution();
             c.LoadConfigs(vs);
             c.SetConfigView();
             c.LoadPage_MSBuild();
             c.ShowDialog();
-
-
         }
 
         public void Command_ReloadToolbar(ToolStrip ts, string module_name)
         {
-          // ToolStrip ns = _sv.LoadToolbar(ts, module_name);
+            // ToolStrip ns = _sv.LoadToolbar(ts, module_name);
 
             ToolStrip ns = ve.LoadToolbar(ts, module_name);
 
@@ -2860,8 +2769,7 @@ namespace WinExplorer
 
         public void Command_ChangeToolstrip(ToolStrip c, AnchorStyles p, bool remove = false, int x = 900, int y = 0)
         {
-         
-           if(remove == true)
+            if (remove == true)
             {
                 c.Parent.Controls.Remove(c);
                 return;
@@ -2877,17 +2785,15 @@ namespace WinExplorer
                 toolStripContainer1.RightToolStripPanel.Controls.Add(c);
             else if (p == AnchorStyles.Top)
             {
-                
                 toolStripContainer1.TopToolStripPanel.SuspendLayout();
                 c.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
                 int b = toolStripContainer1.TopToolStripPanel.Controls.Count;
-                  toolStripContainer1.TopToolStripPanel.Join(c, pc);
+                toolStripContainer1.TopToolStripPanel.Join(c, pc);
                 //toolStripContainer1.TopToolStripPanel.Controls.SetChildIndex(c, 0);
                 toolStripContainer1.TopToolStripPanel.ResumeLayout();
             }
             else if (p == AnchorStyles.Bottom)
                 toolStripContainer1.BottomToolStripPanel.Controls.Add(c);
-           
         }
 
         public void Command_CustomizeDialog(string c)
@@ -2896,7 +2802,6 @@ namespace WinExplorer
             cc.LoadView(c);
             cc.ShowDialog();
         }
-
 
         public void CloseCurrentSolution()
         {
@@ -2982,7 +2887,6 @@ namespace WinExplorer
         public void SetVSProject(string mainproject)
         {
             _sv.SetVSProject(mainproject);
-
         }
 
         private void setAsMainProjectToolStripMenuItem_Click(object sender, EventArgs e)
@@ -3022,13 +2926,11 @@ namespace WinExplorer
         public void rebuild_alls(string recent, msbuilder_alls.MSBuild msbuilds)
         {
             _sv.build_solution(recent, true, msbuilds);
-            
         }
 
         public void build_alls(string recent, msbuilder_alls.MSBuild msbuilds)
         {
             _sv.build_solution(recent, false, msbuilds);
-            
         }
 
         public void build_project(string recent, msbuilder_alls.MSBuild msbuilds)
@@ -3095,9 +2997,6 @@ namespace WinExplorer
 
             workerFunctionDelegate w = workerFunction;
             IAsyncResult r = w.BeginInvoke(recent, null, null);
-
-            
-            
 
             //w.EndInvoke(r);
         }
@@ -3209,8 +3108,6 @@ namespace WinExplorer
 
             LoadListTabs(df);
         }
-
-
 
         private StyleCop.StyleCopCore core { get; set; }
 
@@ -3351,8 +3248,6 @@ namespace WinExplorer
 
             string c = _sv.GetConfiguration();
 
-
-
             msbuilder_alls.MSBuild msbuilds = new msbuilder_alls.MSBuild();
 
             msbuilds.Platform = p;
@@ -3448,6 +3343,7 @@ namespace WinExplorer
                 CopyAll(diSourceSubDir, nextTargetSubDir);
             }
         }
+
         public static void CopyAll(DirectoryInfo source, DirectoryInfo target, Dictionary<string, string> dict)
         {
             // Check if the target directory exists; if not, create it.
@@ -3471,6 +3367,7 @@ namespace WinExplorer
                 CopyAll(diSourceSubDir, nextTargetSubDir);
             }
         }
+
         private void viewSolutionFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VSSolution vs = _sv._SolutionTreeView.Tag as VSSolution;
@@ -3559,8 +3456,6 @@ namespace WinExplorer
             reload_solution(file);
         }
 
-
-
         private void treeView1_MouseUp(object sender, MouseEventArgs e)
         {
             TreeView treeView = treeView1;
@@ -3596,13 +3491,11 @@ namespace WinExplorer
                         }
                     }
 
-
-
                     if (node.Parent == null)
                     {
                         context2.Show(treeView, p);
                         return;
-                    } 
+                    }
                     else if (node.Parent.Text == "Reference" || node.Text == "Reference")
                     {
                         context5.Show(treeView, p);
@@ -3659,7 +3552,6 @@ namespace WinExplorer
                 if (node != null)
                 {
                     context5.Show(treeView2, p);
-
 
                     treeView.Refresh();
                 }
@@ -4049,17 +3941,13 @@ namespace WinExplorer
             }
         }
 
-        public void Command_OpenFile(string file, AutoResetEvent autoEvent = null  )
+        public void Command_OpenFile(string file, AutoResetEvent autoEvent = null)
         {
             VSSolution vs = GetVSSolution();
 
             VSProject pp = vs.GetVSProject(file);
 
             _eo.LoadFile(file, pp, autoEvent);
-
-            
-
-            
         }
 
         public void Command_OpenFileAndGotoLine(string file, string line)
@@ -4075,10 +3963,6 @@ namespace WinExplorer
             int s = Convert.ToInt32(line);
 
             scr.SelectText(s, 0);
-
-
-
-
         }
 
         public void OpenFile(string file, string line)
@@ -4125,12 +4009,8 @@ namespace WinExplorer
 
             int y = Convert.ToInt32(Y);
 
-
-
             scr.SelectTextXY(x, y, length);
         }
-
-
 
         public void OpenFileLine(string file, string line, int length)
         {
@@ -4149,6 +4029,7 @@ namespace WinExplorer
 
             scr.SelectTextLine(s, length);
         }
+
         public void OpenFileLineHighlight(string file, string line, int length)
         {
             VSSolution vs = GetVSSolution();
@@ -4166,6 +4047,7 @@ namespace WinExplorer
 
             scr.BeginInvoke(new Action(() => { scr.SelectTextLine(s, length, true); }));
         }
+
         public void OpenFileFromProject(string files)
         {
             _sv.CreateNodeDict(_sv._SolutionTreeView);
@@ -4268,7 +4150,6 @@ namespace WinExplorer
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
-
             TreeNode node = treeView1.SelectedNode;
 
             if (node == null)
@@ -4289,7 +4170,6 @@ namespace WinExplorer
             //workerBuildDelegate b = build_project;
             //b.BeginInvoke(p.FileName, msbuilds, null, null);
 
-
             VSSolution vs = GetVSSolution();
 
             if (vs == null)
@@ -4301,8 +4181,6 @@ namespace WinExplorer
             string p = _sv.GetPlatform();
 
             string c = _sv.GetConfiguration();
-
-
 
             msbuilder_alls.MSBuild msbuilds = new msbuilder_alls.MSBuild();
 
@@ -4319,9 +4197,6 @@ namespace WinExplorer
             workerBuildDelegate b = build_alls;
 
             b.BeginInvoke(vs.solutionFileName, msbuilds, null, null);
-
-
-
         }
 
         private void AfterSelect(object sender, TreeViewEventArgs e)
@@ -4335,13 +4210,12 @@ namespace WinExplorer
 
         private void AfterSelects(TreeNode node)
         {
-            if (Control.MouseButtons == MouseButtons.Right) 
+            if (Control.MouseButtons == MouseButtons.Right)
                 return;
 
             nav.Add(node);
 
             string s = node.Text;
-
 
             string file = "";
 
@@ -4382,7 +4256,7 @@ namespace WinExplorer
 
             VSProject pp = pr0.ps;
 
-            if(pp != project_VSProject)
+            if (pp != project_VSProject)
             {
                 project_VSProject = pp;
                 if (event_SelectedProjectChanged != null)
@@ -4414,7 +4288,6 @@ namespace WinExplorer
                         _sv.projectmapper(file, node, false);
                     }
                 }
-                
             }
             else
             {
@@ -4422,8 +4295,6 @@ namespace WinExplorer
 
                 return;
             }
-
-           
         }
 
         private static void ExpandGroup(PropertyGrid propertyGrid, string groupName)
@@ -4451,8 +4322,6 @@ namespace WinExplorer
             }
         }
 
-
-
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
             TreeNode node = treeView1.SelectedNode;
@@ -4475,7 +4344,6 @@ namespace WinExplorer
             //workerBuildDelegate b = build_project;
             //b.BeginInvoke(p.FileName, msbuilds, null, null);
 
-
             VSSolution vs = GetVSSolution();
 
             if (vs == null)
@@ -4487,8 +4355,6 @@ namespace WinExplorer
             string p = _sv.GetPlatform();
 
             string c = _sv.GetConfiguration();
-
-
 
             msbuilder_alls.MSBuild msbuilds = new msbuilder_alls.MSBuild();
 
@@ -4505,10 +4371,7 @@ namespace WinExplorer
             workerBuildDelegate b = build_alls;
 
             b.BeginInvoke(vs.solutionFileName, msbuilds, null, null);
-
         }
-
-
 
         public VSSolution GetVSSolution()
         {
@@ -4556,11 +4419,9 @@ namespace WinExplorer
             if (vs == null)
                 return;
 
-
             msbuilder_alls.MSBuild msbuilds = new msbuilder_alls.MSBuild();
             workerBuildDelegate b = build_alls;
             b.BeginInvoke(vs.solutionFileName, msbuilds, null, null);
-
         }
 
         private void runToolStripMenuItem_Click(object sender, EventArgs e)
@@ -4734,9 +4595,9 @@ namespace WinExplorer
         {
             if (scr == null)
                 return;
-            if(scr.hst != null)
-            scr.hst.Modules = Module.ToString();
-            
+            if (scr.hst != null)
+                scr.hst.Modules = Module.ToString();
+
             scr.SaveSolution();
 
             string configFile = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "DockPanel.config");
@@ -4762,7 +4623,7 @@ namespace WinExplorer
             ClearOutput();
         }
 
-        bool starting = true;
+        private bool starting = true;
 
         public void SolutionClose()
         {
@@ -4865,9 +4726,6 @@ namespace WinExplorer
             else LoadDefaults();
 
             CheckStates();
-
-
-
 
             Settings s = CodeEditorControl.settings;
 
@@ -5104,7 +4962,6 @@ namespace WinExplorer
 
             string folds = Path.GetDirectoryName(pp.FileName);// Path.GetDirectoryName(pr);
 
-
             string names = "";
 
             string dg = "";
@@ -5118,7 +4975,6 @@ namespace WinExplorer
 
                 dg = cc[0];
                 dict = pp.AddFormItem(L, "");
-
             }
             else
                 pp.SetCompileItems(L);
@@ -5130,10 +4986,6 @@ namespace WinExplorer
             if (names == "")
                 CopyAll(project, folder);
             else CopyAll(project, folder, dict);
-
-
-
-
 
             //if (SubType == "WindowsForm" || SubType == "Resource")
 
@@ -5147,10 +4999,9 @@ namespace WinExplorer
 
             //CopyAll(project, folder);
 
-
-
             reload_solution(file);
         }
+
         public void Command_AddNewProjectItem(string name, VSProject pp)
         {
             VSSolution vs = GetVSSolution();
@@ -5159,11 +5010,9 @@ namespace WinExplorer
 
             string file = vs.solutionFileName;
 
-
             Dictionary<string, string> dict = NewProjectItem.Templates();
 
             ArrayList L = NewProjectItem.ProjectFiles(name, dict);
-
 
             string pf = NewProjectItem.ProjectFolder(name, dict);
 
@@ -5178,8 +5027,6 @@ namespace WinExplorer
 
             string dg = "";
 
-            
-
             Dictionary<string, string> dd = new Dictionary<string, string>();
 
             if (SubType == "WindowsForm" || SubType == "Resource")
@@ -5189,7 +5036,6 @@ namespace WinExplorer
 
                 dg = cc[0];
                 dd = pp.AddFormItem(L, "");
-
             }
             else
                 pp.SetCompileItems(L);
@@ -5201,79 +5047,72 @@ namespace WinExplorer
             if (dict.Count <= 0)
                 CopyAll(project, folder);
             CopyAll(project, folder, dd);
- 
+
             reload_solution(file);
         }
 
         public void Command_NavigateForward()
         {
-
             _sv.NavigateForward();
-
         }
 
         public void Command_NavigateBackward()
         {
             _sv.NavigateBackward();
-
-
         }
+
         public void Command_OpenFile()
         {
             _sv.OpenFile();
-
-
         }
+
         public void Command_SaveFile()
         {
             _sv.save_active();
-
-
         }
+
         public void Command_SaveAllFiles()
         {
             _sv.save_active();
-
-
         }
+
         public void Command_Undo()
         {
             _sv.undo();
-
-
         }
+
         public void Command_Redo()
         {
             _sv.redo();
-
-
         }
+
         public void Command_AddItem()
         {
-
         }
 
         public void Command_Copy()
         {
-            if(scr != null)
-            scr.Copy();
-
+            if (scr != null)
+                scr.Copy();
         }
+
         public void Command_SetPropertyGrid(object obs)
         {
-            pgp.BeginInvoke(new Action(()=> { pgp.SelectedObject = obs; }));
+            pgp.BeginInvoke(new Action(() => { pgp.SelectedObject = obs; }));
         }
+
         public void Command_SolutionExplorer()
         {
-
         }
+
         public void Command_Launch(string s)
         {
-            if(s == "Properties")
+            if (s == "Properties")
             {
                 LoadPG("Properties", true);
                 propertyGridToolStripMenuItem.Checked = true;
-            } else if (s == "Find In Files")
+            }
+            else if (s == "Find In Files")
             {
                 LoadRW("Find Replace", true);
                 findAndReplaceToolStripMenuItem.Checked = true;
@@ -5284,18 +5123,19 @@ namespace WinExplorer
                 solutionExplorerToolStripMenuItem.Checked = true;
             }
         }
+
         public void Command_PropertiesWindows()
         {
-
         }
+
         public void Command_StartPage()
         {
-
         }
+
         public void Command_OtherWindows()
         {
-
         }
+
         public void Command_NewConnection()
         {
             AddConnectionForm ac = new AddConnectionForm();
@@ -5304,41 +5144,36 @@ namespace WinExplorer
 
         public Dictionary<VSProject, ArrayList> Command_Get_DataSources()
         {
-
             VSSolution vs = GetVSSolution();
 
             if (vs == null)
                 return null;
 
             return vs.GetDataSources();
-
-           
         }
+
         public void Command_Paste()
         {
             if (scr != null)
                 scr.Paste();
-
-
         }
+
         public void Command_Cut()
         {
             if (scr != null)
                 scr.Cut();
-
         }
 
-        FindResults r { get; set; }
+        private FindResults r { get; set; }
+
         public void Command_Find(string name)
         {
-
             //MessageBox.Show("Search for " + name);
 
             Document doc = scr.GetActiveDocument();
 
             if (r == null || doc.FileName != r.filename)
             {
-
                 ArrayList Results = FindReplaceForm.FindInActiveDocument(name);
 
                 r = new FindResults();
@@ -5352,38 +5187,30 @@ namespace WinExplorer
                 r.HighLightWords();
             }
             else r.HighLightNext();
-
-
         }
+
         public void Command_SolutionConfigurations(string cfg)
         {
-
             _sv.SetConfiguration(cfg);
         }
+
         public void Command_SolutionPlatforms(string plf)
         {
-
             _sv.SetPlatform(plf);
-
         }
+
         public void Command_StartupProjects()
         {
-
-            
-
         }
+
         public void DebugTarget()
         {
-          
-
         }
+
         public void DebugType()
         {
-       
-
-
         }
-       
+
         public void Command_AddNewFileProjectItem(string name, VSProject pp)
         {
             VSSolution vs = GetVSSolution();
@@ -5392,8 +5219,7 @@ namespace WinExplorer
 
             string file = vs.solutionFileName;
 
-
-           // Dictionary<string, string> dict = NewProjectItem.Templates();
+            // Dictionary<string, string> dict = NewProjectItem.Templates();
 
             ArrayList L = new ArrayList();
 
@@ -5401,7 +5227,6 @@ namespace WinExplorer
 
             pp.SetCompileItems(L);
 
-           
             reload_solution(file);
         }
 
@@ -5418,8 +5243,6 @@ namespace WinExplorer
             //CloseCurrentSolution();
 
             string bs = AppDomain.CurrentDomain.BaseDirectory + "TemplateProjects";
-
-
 
             string file = npf.GetSolutionFile();
 
@@ -5438,7 +5261,6 @@ namespace WinExplorer
             workerFunctionDelegate w = workerFunction;
 
             w.Invoke(recent);
-
 
             VSSolution vs = _sv._SolutionTreeView.Tag as VSSolution;
 
@@ -5498,9 +5320,7 @@ namespace WinExplorer
 
             pn = fds;
 
-
             CopyAll(project, folder);
-
 
             string tempfile = sln + "\\" + pn + "\\" + Path.GetFileName(projs);
 
@@ -5511,10 +5331,8 @@ namespace WinExplorer
             reload_solution(file);
         }
 
-
         public void Command_AddNewProject(bool addproject, NewProject nw)
         {
-
             Command.counter = 2;
 
             string bs = AppDomain.CurrentDomain.BaseDirectory + "TemplateProjects";
@@ -5533,14 +5351,12 @@ namespace WinExplorer
             workerFunctionDelegate w = workerFunction;
             w.Invoke(recent);
 
-
             VSSolution vs = _sv._SolutionTreeView.Tag as VSSolution;
 
             string sln = vs.SolutionPath;
 
             string pn = nw.ProjectName;
 
-            
             string pr = nw.GetProjectFile();
 
             string prf = pr.Replace(bs + "\\", "");
@@ -5595,26 +5411,20 @@ namespace WinExplorer
 
             File.Move(tempfile, projectfile);
 
- //           while(Command.running == true);
-
-            
+            //           while(Command.running == true);
 
             reload_solution(file);
 
-            
+            //         ThreadWorker worker = new ThreadWorker();
 
-   //         ThreadWorker worker = new ThreadWorker();
-
-   //         Thread thread1 = new Thread(worker.Run);
-   //         thread1.Start();
+            //         Thread thread1 = new Thread(worker.Run);
+            //         thread1.Start();
 
             // this.Invoke(new Action(() => { while (Command.counter > 0) ; } ));
-   //         thread1.Join();
-
+            //         thread1.Join();
         }
 
-
-         public CreateView_Solution.ProjectItemInfo GetProjectInfo()
+        public CreateView_Solution.ProjectItemInfo GetProjectInfo()
         {
             TreeNode node = treeView1.SelectedNode;
 
@@ -5741,8 +5551,6 @@ namespace WinExplorer
             {
                 _sv._SolutionTreeView.ResumeLayout();
 
-
-
                 AfterSelectActivate(true);
 
                 return;
@@ -5760,8 +5568,6 @@ namespace WinExplorer
             {
                 L.Add(ns);
             }
-
-
 
             foreach (TreeNode ns in L)
             {
@@ -5826,9 +5632,7 @@ namespace WinExplorer
 
             System.Threading.Tasks.Task.Run(new Action(() =>
             {
-
                 this.Invoke(new Action(() => { wf.wb.Document.ExecCommand("fontSize", false, "4pt"); }));
-
             }));
 
             //wf.wb.Navigate("file://" + s + "Documentation\\Documentation.chm");
@@ -5858,8 +5662,6 @@ namespace WinExplorer
 
             string c = _sv.GetConfiguration();
 
-
-
             msbuilder_alls.MSBuild msbuilds = new msbuilder_alls.MSBuild();
 
             msbuilds.build = msbuilder_alls.Build.build;
@@ -5875,10 +5677,6 @@ namespace WinExplorer
             workerBuildDelegate b = build_alls;
 
             b.BeginInvoke(vs.solutionFileName, msbuilds, null, null);
-
-
-
-
         }
 
         private void toolStripMenuItem18_Click(object sender, EventArgs e)
@@ -5900,8 +5698,6 @@ namespace WinExplorer
 
             string c = _sv.GetConfiguration();
 
-
-
             msbuilder_alls.MSBuild msbuilds = new msbuilder_alls.MSBuild();
 
             msbuilds.build = msbuilder_alls.Build.clean;
@@ -5917,8 +5713,6 @@ namespace WinExplorer
             workerBuildDelegate b = build_alls;
 
             b.BeginInvoke(vs.solutionFileName, msbuilds, null, null);
-
-
         }
 
         private void buildSolutionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -5947,7 +5741,6 @@ namespace WinExplorer
             //workerBuildDelegate b = build_project;
             //b.BeginInvoke(p.FileName, msbuilds, null, null);
 
-
             VSSolution vs = GetVSSolution();
 
             if (vs == null)
@@ -5975,15 +5768,10 @@ namespace WinExplorer
             workerBuildDelegate b = build_alls;
 
             b.BeginInvoke(vs.solutionFileName, msbuilds, null, null);
-
         }
 
         public void Command_Rebuild(string project = "")
         {
-
-            
-
-
             //while (Command.running == true) ;
 
             //Command.running = true;
@@ -6016,34 +5804,27 @@ namespace WinExplorer
 
             msbuilds.MSBuildFile = project;
 
-            if(project == "")
+            if (project == "")
 
-            msbuilds.MSBuildFile = vs.solutionFileName;
+                msbuilds.MSBuildFile = vs.solutionFileName;
 
             workerBuildDelegate b = build_alls;
 
             b.BeginInvoke(vs.solutionFileName, msbuilds, null, null);
 
-
             //Command.running = false;
-
-            
-
         }
 
         public void Command_Config(string plf, string cfg)
         {
-
             if (plf != "")
                 _sv.SetPlatform(plf);
 
             if (cfg != "")
                 _sv.SetConfiguration(cfg);
 
-             this.BeginInvoke(new Action(() => { this.Refresh(); }));
-
+            this.BeginInvoke(new Action(() => { this.Refresh(); }));
         }
-
 
         private void formToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -6679,11 +6460,6 @@ namespace WinExplorer
                 ows.Show(dock, DockState.DockBottom);
                 outputWindowToolStripMenuItem.Checked = true;
             }
-
-
-
-
-
         }
 
         private void errorListToolStripMenuItem_Click(object sender, EventArgs e)
@@ -6713,7 +6489,6 @@ namespace WinExplorer
 
         private void projectToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-           
             //  WinExplorer.UI.ProjectPropertyForm ppf = new WinExplorer.UI.ProjectPropertyForm();
             //  ppf.Show();
             //WinExplorer.UI.ListViewOwnerDraw od = new ListViewOwnerDraw();
@@ -6889,7 +6664,6 @@ namespace WinExplorer
 
         private void outlineWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
 
         private void projectSolutionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -6947,11 +6721,13 @@ namespace WinExplorer
             string web = "Start Page";
             scr.OpenWebForm(web, "https://www.nuget.org/packages");
         }
+
         public void OpenNuGetPage()
         {
             string web = "Start Page";
             scr.OpenWebForm(web, "https://www.nuget.org/packages");
         }
+
         private void projectToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             AddNewProject(false);
@@ -7114,8 +6890,7 @@ namespace WinExplorer
             LoadPS(df, df.FileName);
         }
 
-
-        static void HeapInfo()
+        private static void HeapInfo()
         {
             // Create the DataTarget.  This can be done through a crash dump, a live process pid, or
             // via an IDebugClient pointer.
@@ -7187,14 +6962,11 @@ namespace WinExplorer
 
         private void guiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             //NuGetForm ngf = new NuGetForm(project_VSProject);
             //ngf.ShowDialog();
             //return;
 
-
             //WinExplorer.Services.Syntax.Syntaxer.Execute(new RichTextBox());
-
 
             //NewProjectForm.gcommands.GetCommand("AddConnection").Execute("Oracle");
 
@@ -7224,9 +6996,6 @@ namespace WinExplorer
 
             //NewProjectForm.gcommands.GetCommand("MSBuild").Execute();
 
-
-
-        
             ThreadWorker worker = new ThreadWorker();
             worker.ef = ef;
             Thread thread = new Thread(worker.Runs);
@@ -7234,8 +7003,6 @@ namespace WinExplorer
 
             // Thread thread_gui = new Thread(worker.Run);
             //  thread_gui.Start();
-
-
         }
 
         private void existingItemToolStripMenuItem_Click(object sender, EventArgs e)
@@ -7245,14 +7012,11 @@ namespace WinExplorer
             if (r != DialogResult.OK)
                 return;
 
-
-
             string file = ofd.FileName;
 
             VSProject vp = GetVSProject();
 
             Command_AddNewFileProjectItem(file, vp);
-
         }
 
         private void ExplorerForms_ResizeBegin(object sender, EventArgs e)
@@ -7261,8 +7025,6 @@ namespace WinExplorer
                 return;
 
             scr.HideAndRedraw();
-
-            
         }
 
         private void ExplorerForms_ResizeEnd(object sender, EventArgs e)
@@ -7280,7 +7042,6 @@ namespace WinExplorer
 
         private void toolStripMenuItem73_Click(object sender, EventArgs e)
         {
-
         }
 
         private void watchToolStripMenuItem_Click(object sender, EventArgs e)
@@ -7348,10 +7109,8 @@ namespace WinExplorer
             //}
         }
 
-
         //protected override void WndProc(ref Message m)
         //{
-
         //    base.WndProc(ref m);
         //    // WM_SYSCOMMAND
         //    if (m.Msg == 0x0112)
@@ -7401,9 +7160,7 @@ namespace WinExplorer
 
         public event SelectedProjectItemChange event_SelectedProjectItemChanged;
 
-
-
-        #endregion
+        #endregion Events
 
         private void toolStripMenuItem83_Click(object sender, EventArgs e)
         {
@@ -7476,28 +7233,23 @@ namespace WinExplorer
             //VSSolution vs = GetVSSolution();
             //string file = vs.SolutionPath + "\\" + "packages\\NuGet.Core.2.14.0\\NuGet.Core.2.14.0.nupkg";
             //nuget.ReadNuSpec(file);
-    
-            
-                    
+
             NuGetForm ngf = new NuGetForm(project_VSProject);
             ngf.ShowDialog();
         }
     }
 
-    class ThreadWorker
+    internal class ThreadWorker
     {
-
         public ExplorerForms ef { get; set; }
 
         public void Runs(object state)
         {
-
             string b = AppDomain.CurrentDomain.BaseDirectory;
             NewProject nw = new NewProject();
             nw.ProjectName = b + "TemplateProjects\\ConsoleApplication5";
             nw.Location = b + "Projects";
             nw.SolutionName = "MakeProject";
-
 
             NewProjectForm.gcommands.GetCommand("LoadSolution").Execute(b + "Projects\\SharpDisasm\\SharpDisasm.sln");
 
@@ -7519,18 +7271,14 @@ namespace WinExplorer
 
             //NewProjectForm.gcommands.GetCommand("AddProjectItem").Execute("WindowsForm");
 
-
-
             int i = 0;
             while (true)
             {
-
                 //string b = AppDomain.CurrentDomain.BaseDirectory;
                 //NewProject nw = new NewProject();
                 //nw.ProjectName = b + "TemplateProjects\\ConsoleApplication5";
                 //nw.Location = b + "Projects";
                 //nw.SolutionName = "MakeProject";
-
 
                 //NewProjectForm.gcommands.GetCommand("LoadSolution").Execute(b + "Projects\\SharpDisasm\\SharpDisasm.sln");
 
@@ -7557,7 +7305,7 @@ namespace WinExplorer
                 VSProject vpb = null;
                 ArrayList Fb = null;
                 ef.Invoke(new Action(() => { VSSolution vs = ef.GetVSSolution(); vpb = vs.MainVSProject; Fb = vpb.GetCompileItems(); }));
-                
+
                 foreach (string file in Fb)
                     NewProjectForm.gcommands.GetCommand("OpenDocument").Execute(file);
 
@@ -7572,15 +7320,7 @@ namespace WinExplorer
                 System.GC.Collect();
 
                 //NewProjectForm.gcommands.GetCommand("TakeSnapshot").Execute("WinExplorer.exe");
-
-                
-
-
-                
-
             }
-
-
         }
 
         public void Run(object state)
@@ -7606,18 +7346,12 @@ namespace WinExplorer
 
                 double dy = r.NextDouble() * (1000 - 300);
 
-                
-
                 ef.Invoke(new Action(() => { ef.Location = new Point((int)dx, (int)dy); }));
 
                 Thread.Sleep(1000);
 
-             
-
-
-                ef.Invoke(new Action(() => {
-
-
+                ef.Invoke(new Action(() =>
+                {
                     x += 30;
 
                     if (x > 1000)
@@ -7634,13 +7368,7 @@ namespace WinExplorer
                     if (y < 500)
                         y = 500;
 
-
                     ef.Size = new Size(x, y); ef.Refresh();
-
-
-
-
-
                 }));
 
                 Thread.Sleep(1000);
@@ -7677,18 +7405,21 @@ namespace WinExplorer
                 return modules[name];
             return null;
         }
+
         public ArrayList GetModuleItems(string name)
         {
             if (modules.ContainsKey(name))
                 return modules[name].temp;
             return null;
         }
+
         public ToolStrips GetToolStrips(string name)
         {
             if (np.ContainsKey(name))
                 return np[name];
             return null;
         }
+
         public void AddToolStrip(string name, ToolStrip ns)
         {
             regToolstrips.Add(name, ns);
@@ -7709,25 +7440,18 @@ namespace WinExplorer
 
         public ToolStrip LoadToolbar(ToolStrip ts, string module_name)
         {
-
             ToolStrips s = GetToolStrips(module_name);
 
             s.LoadToolbar(module_name, ts);
 
             return s.GetToolStrip();
-
         }
     }
 
     public class ToolStrips
     {
-
-
         public ToolStrips()
         {
-
-
-
         }
 
         public ToolStrip GetToolStrip()
@@ -7739,7 +7463,6 @@ namespace WinExplorer
 
         public ToolStrip LoadToolbar(string module_name, ToolStrip np = null)
         {
-
             ToolStripDropDownItem b = new ToolStripDropDownButton("");
 
             module = Module.GetModule(module_name);
@@ -7756,7 +7479,6 @@ namespace WinExplorer
 
             if (module != null)
             {
-
                 foreach (string c in module.dict.Keys)
                 {
                     Command cmd = module.dict[c] as Command;
@@ -7768,14 +7490,14 @@ namespace WinExplorer
                     //v.Click += new EventHandler(OptionToolbarHandler);
 
                     //ToolStripItem dd = null;
-                    
+
                     ToolStripItem r0 = CreateToolSripItem(cmd.Name, cmd.Name, cmd.image, cmd) as ToolStripItem;
 
                     ToolStripMenuItem r1 = r0 as ToolStripMenuItem;
-                    
+
                     if (cmd.keyboard != null)
                     {
-                         if (r1 != null)
+                        if (r1 != null)
                         {
                             Keys k = Keys.None;
                             bool first = true;
@@ -7819,7 +7541,6 @@ namespace WinExplorer
 
                                 if (r1 != null)
                                 {
-
                                     if (cmds.keyboard != null)
                                     {
                                         Keys k = Keys.None;
@@ -7847,9 +7568,7 @@ namespace WinExplorer
                                 //ToolStripItem b0 = CreateToolStripDropDown(r0, cmds);
 
                                 //r0.DropDownItems.Add(b0);
-
                             }
-
                         }
                     }
                     if (cmd.GetType().IsSubclassOf(typeof(gui.Command_Gui)) || cmd.Name == "Gui")
@@ -7863,9 +7582,7 @@ namespace WinExplorer
 
                         p0.Text = bb.Names;
 
-
                         DG.Add(p0);
-
                     }
                     else if (cmd.Name == "Launcher")
                     {
@@ -7876,7 +7593,6 @@ namespace WinExplorer
 
                     if (r1 != null)
                     {
-
                         if (GT.IndexOf(r0.Name) >= 0)
                             r1.Checked = true;
                         else
@@ -7884,9 +7600,7 @@ namespace WinExplorer
 
                         if (GT.IndexOf(r0.Text) >= 0)
                             r1.Checked = true;
-
                     }
-
                 }
 
                 ToolStrip nr = new ToolStrip();
@@ -7895,14 +7609,12 @@ namespace WinExplorer
 
                 if (np != null)
                 {
-
                     pc = np.Location;
                     np.Tag = np.Tag;
-
                 }
 
-                if(np != null)
-                ExplorerForms.ef.Command_ChangeToolstrip(np, AnchorStyles.Top, true);
+                if (np != null)
+                    ExplorerForms.ef.Command_ChangeToolstrip(np, AnchorStyles.Top, true);
                 FilterItems(nr, GT, DG);
                 d0 = GetCustomize(DG);
                 ChekedStates(GT, d0);
@@ -7911,14 +7623,13 @@ namespace WinExplorer
                 ExplorerForms.ef.Command_ChangeToolstrip(nr, AnchorStyles.Top, false, pc.X, pc.Y);
 
                 ns = nr;
-
             }
             return ns;
         }
 
-        ArrayList DG { get; set; }
+        private ArrayList DG { get; set; }
 
-        ToolStripDropDownButton d0 { get; set; }
+        private ToolStripDropDownButton d0 { get; set; }
 
         public ToolStripMenuItem CreateToolStripDropDown(ToolStripMenuItem v, Command cmds)
         {
@@ -7950,7 +7661,7 @@ namespace WinExplorer
 
             return vv;
         }
-        
+
         public ToolStripItem CreateToolSripItem(string text, string name, Image image, Command cmd)
         {
             ToolStripMenuItem r0 = new ToolStripMenuItem();
@@ -7971,7 +7682,6 @@ namespace WinExplorer
             r0.Tag = cmd;
             r0.Click += R0_Click;
             return r0;
-
         }
 
         private void R0_Click(object sender, EventArgs e)
@@ -7998,7 +7708,6 @@ namespace WinExplorer
             r0.Tag = cmd;
             //r0.Click += R0_Clicked;
             return r0;
-
         }
 
         private void R0_Clicked(object sender, EventArgs e)
@@ -8020,14 +7729,13 @@ namespace WinExplorer
             nr.Items.Clear();
             foreach (string name in G)
             {
-
                 if (name == "Separator")
                     nr.Items.Add(new ToolStripSeparator());
                 else
                     foreach (ToolStripItem b in DG)
                     {
                         if (b.Text != null)
-                            if (b.Text.Trim() == name.Replace("@",""))
+                            if (b.Text.Trim() == name.Replace("@", ""))
                             {
                                 if (name.Contains("@@"))
                                     b.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
@@ -8035,38 +7743,27 @@ namespace WinExplorer
                                     b.DisplayStyle = ToolStripItemDisplayStyle.Text;
                                 else b.DisplayStyle = ToolStripItemDisplayStyle.Image;
                                 nr.Items.Add(b);
-
                             }
-
                     }
-
-
             }
-
-
-
         }
+
         public void ChekedStates(ArrayList G, ToolStripDropDownButton d)
         {
-
             ToolStripDropDownItem b = GetSuggestions(d);
-
 
             foreach (ToolStripItem c in b.DropDownItems)
             {
                 ToolStripMenuItem s = c as ToolStripMenuItem;
                 if (s != null)
                     s.Checked = false;
-
             }
 
             foreach (ToolStripItem p in b.DropDownItems)
             {
-
                 ToolStripMenuItem c = p as ToolStripMenuItem;
                 if (c == null)
                     continue;
-
 
                 foreach (string s in G)
                 {
@@ -8075,16 +7772,13 @@ namespace WinExplorer
                     if (s.Trim() == c.Text.Trim())
                     {
                         c.Checked = true;
-
-
                     }
                 }
             }
-
         }
+
         public ToolStripDropDownButton GetCustomize(ArrayList DG)
         {
-
             ToolStripDropDownButton dd = new ToolStripDropDownButton();
 
             ToolStripDropDownItem b = dd.DropDownItems.Add("Add or Remove Items") as ToolStripDropDownItem;
@@ -8132,13 +7826,9 @@ namespace WinExplorer
             cc.Click += new EventHandler(customize);
             b.DropDownItems.Add(cc);
 
-
             cc = new ToolStripButton("Reset toolbox");
             //cc.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
             b.DropDownItems.Add(cc);
-
-
-
 
             return dd;
         }
@@ -8148,18 +7838,15 @@ namespace WinExplorer
             if (b.DropDownItems.Count > 0)
                 return b.DropDownItems[0] as ToolStripDropDownItem;
             return null;
-
         }
 
         public ToolStrip ns { get; set; }
 
         private void customize(object sender, EventArgs e)
         {
-
             ExplorerForms ef = ExplorerForms.ef;
             if (ef == null)
                 return;
-
 
             string name = "Commands-Toolbar-" + module.Name;
 
@@ -8172,8 +7859,6 @@ namespace WinExplorer
 
             if (b == null)
                 return;
-
-
         }
 
         public string append(string name)
@@ -8192,14 +7877,11 @@ namespace WinExplorer
 
             if (b.Checked == true)
             {
-
-
                 GT.Remove(name);
                 b.Checked = false;
             }
             else
             {
-
                 if (d < 0)
                     d = 0;
                 GT.Insert(d, name);
@@ -8209,17 +7891,14 @@ namespace WinExplorer
             FilterItems(ns, GT, DG);
 
             ns.Items.Add(d0);
-
         }
 
-        
-        Dictionary<string, ToolStripItem> ST { get; set; }
+        private Dictionary<string, ToolStripItem> ST { get; set; }
 
-        ArrayList GT { get; set; }
+        private ArrayList GT { get; set; }
 
-        int GetIndex(string name)
+        private int GetIndex(string name)
         {
-
             name = name.Trim();
 
             int i = GT.IndexOf(name);
@@ -8227,11 +7906,9 @@ namespace WinExplorer
             if (i >= 0)
                 return i;
 
-
             foreach (string b in ST.Keys)
             {
                 ToolStripMenuItem d = ST[b] as ToolStripMenuItem;
-
 
                 int p = GT.IndexOf(d.Name);
                 if (p >= 0)
@@ -8239,15 +7916,13 @@ namespace WinExplorer
                 if (d.Name == name)
                 {
                     return i;
-
                 }
-
             }
             return 0;
         }
-        int GetIndex(ArrayList GT, ArrayList DG, string name)
-        {
 
+        private int GetIndex(ArrayList GT, ArrayList DG, string name)
+        {
             name = name.Trim();
 
             int i = GT.IndexOf(name);
@@ -8255,11 +7930,9 @@ namespace WinExplorer
             if (i >= 0)
                 return i;
 
-
             foreach (ToolStripItem b in DG)
             {
                 ToolStripItem d = b;
-
 
                 int p = GT.IndexOf(d.Name);
                 if (p >= 0)
@@ -8267,7 +7940,6 @@ namespace WinExplorer
                     if (d.Text.Trim() == name)
                     {
                         return p;
-
                     }
                     else
                         i = p;
@@ -8276,12 +7948,11 @@ namespace WinExplorer
                     if (d.Text.Trim() == name)
                     {
                         return i + 1;
-
                     }
-
             }
             return i;
         }
+
         public void open_file(object sender, EventArgs e)
         {
             OpenFile();
@@ -8289,7 +7960,6 @@ namespace WinExplorer
 
         public void OpenFile()
         {
-
         }
 
         public ToolStripItem GetItem(string name)
@@ -8301,6 +7971,5 @@ namespace WinExplorer
                     return s;
             return null;
         }
-        
     }
 }

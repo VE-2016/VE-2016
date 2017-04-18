@@ -1,7 +1,7 @@
+using AndersLiu.Reflector.Core;
 using Microsoft.Cci;
 using System;
 using System.Drawing;
-using AndersLiu.Reflector.Core;
 
 namespace AndersLiu.Reflector.Program.UI.AssemblyTreeNode
 {

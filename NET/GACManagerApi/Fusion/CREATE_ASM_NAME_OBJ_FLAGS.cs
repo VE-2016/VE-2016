@@ -1,5 +1,4 @@
-﻿
-namespace GACManagerApi.Fusion
+﻿namespace GACManagerApi.Fusion
 {
     public enum CREATE_ASM_NAME_OBJ_FLAGS
     {

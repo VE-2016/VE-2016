@@ -1,15 +1,8 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using Oracle.ManagedDataAccess.Client;
 
 namespace WinExplorer.UI
 {
@@ -30,74 +23,75 @@ namespace WinExplorer.UI
         {
             cb.DropDownStyle = ComboBoxStyle.DropDownList;
             cb.Items.Clear();
-            foreach(string name in Enum.GetNames(typeof(Oracle)))
+            foreach (string name in Enum.GetNames(typeof(Oracle)))
             {
                 cb.Items.Add(name);
             }
         }
 
-        ComboBox cb { get; set; }
+        private ComboBox cb { get; set; }
 
-        ComboBox ca { get; set; }
+        private ComboBox ca { get; set; }
 
         private void button5_Click(object sender, EventArgs e)
-        { 
-
+        {
             Connect();
-
-
-         
 
             //DataTable databases = conn.GetSchema("Databases");
             //foreach (DataRow database in databases.Rows)
             //{
             //    String databaseName = database["database_name"] as string;
             //    short dbID = (short)database["dbid"];
-                
+
             //    cb.Items.Add(databaseName);
             //}
 
             //conn.Close();
         }
-        string GetUser()
+
+        private string GetUser()
         {
             return textBox2.Text;
         }
-        string GetPassword()
+
+        private string GetPassword()
         {
             return textBox3.Text;
         }
 
-        bool GetAuthentification()
+        private bool GetAuthentification()
         {
             return checkBox1.Checked;
         }
-        bool GetDBAprivilage()
+
+        private bool GetDBAprivilage()
         {
             return checkBox3.Checked;
         }
-        string GetServerName()
+
+        private string GetServerName()
         {
             return comboBox2.Text;
         }
-        string GetDatabase()
+
+        private string GetDatabase()
         {
             return cb.Text;
         }
 
-        string GetConnectionString()
+        private string GetConnectionString()
         {
             //con.ConnectionString = "User Id=sys;Password=sys;DBA Privilege=sysdba;Data Source=orcl";
             string c = "";
             c += "Data Source=" + GetServerName() + ";";
             bool d = GetAuthentification();
-            if(d == true)
+            if (d == true)
             {
-                c+= "Integrated Security=SSPI;";
+                c += "Integrated Security=SSPI;";
             }
             else
             {
-                c += "User Id=" + GetUser() +";";
+                c += "User Id=" + GetUser() + ";";
                 c += "Password=" + GetPassword() + ";";
             }
             d = GetDBAprivilage();
@@ -113,9 +107,8 @@ namespace WinExplorer.UI
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            
-            
         }
+
         public static List<DataRow> GetTables(string connectionString)
         {
             using (OracleConnection connection = new OracleConnection(connectionString))
@@ -130,6 +123,7 @@ namespace WinExplorer.UI
                 return TableNames;
             }
         }
+
         public static List<DataRow> GetViews(string connectionString)
         {
             using (OracleConnection connection = new OracleConnection(connectionString))
@@ -144,6 +138,7 @@ namespace WinExplorer.UI
                 return TableNames;
             }
         }
+
         public static List<string> GetSchemas(string connectionString)
         {
             using (OracleConnection connection = new OracleConnection(connectionString))
@@ -158,6 +153,7 @@ namespace WinExplorer.UI
                 return TableNames;
             }
         }
+
         public static List<string> GetPackages(string connectionString)
         {
             using (OracleConnection connection = new OracleConnection(connectionString))
@@ -172,6 +168,7 @@ namespace WinExplorer.UI
                 return TableNames;
             }
         }
+
         public static List<string> GetProcedures(string connectionString)
         {
             using (OracleConnection connection = new OracleConnection(connectionString))
@@ -186,6 +183,7 @@ namespace WinExplorer.UI
                 return TableNames;
             }
         }
+
         public static List<string> GetFunctions(string connectionString)
         {
             using (OracleConnection connection = new OracleConnection(connectionString))
@@ -200,6 +198,7 @@ namespace WinExplorer.UI
                 return TableNames;
             }
         }
+
         public static List<string> GetTriggers(string connectionString)
         {
             using (OracleConnection connection = new OracleConnection(connectionString))
@@ -214,6 +213,7 @@ namespace WinExplorer.UI
                 return TableNames;
             }
         }
+
         public static List<string> GetIndexes(string connectionString)
         {
             using (OracleConnection connection = new OracleConnection(connectionString))
@@ -228,16 +228,14 @@ namespace WinExplorer.UI
                 return TableNames;
             }
         }
+
         public static DataTable GetTableSchema(string connectionString, string table)
         {
-         
             OracleConnection connection = new OracleConnection(connectionString);
             {
-
                 connection.Open();
                 using (var schemaCommand = new OracleCommand("SELECT * FROM " + table, connection))
                 {
-
                     var reader = schemaCommand.ExecuteReader();
                     {
                         DataTable dataTable = new DataTable();
@@ -248,16 +246,15 @@ namespace WinExplorer.UI
                         return dataTable;
                     }
                 }
-
             }
         }
-    
+
         public static List<string> GetRoles(string connectionString)
         {
             using (OracleConnection connection = new OracleConnection(connectionString))
             {
                 connection.Open();
-                DataTable schema = GetTableSchema(connectionString,"DBA_ROLES");
+                DataTable schema = GetTableSchema(connectionString, "DBA_ROLES");
                 List<string> TableNames = new List<string>();
                 foreach (DataRow row in schema.Rows)
                 {
@@ -266,13 +263,12 @@ namespace WinExplorer.UI
                 return TableNames;
             }
         }
+
         private void button6_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
 
             shortcut = GetConnectionString();
-
-            
 
             this.Close();
         }
@@ -282,9 +278,10 @@ namespace WinExplorer.UI
             ChooseDataSourceForm cdf = new ChooseDataSourceForm();
             cdf.ShowDialog();
         }
-        OracleConnection con;
 
-        void Connect()
+        private OracleConnection con;
+
+        private void Connect()
         {
             string c = GetConnectionString();
             con = new OracleConnection();
@@ -310,12 +307,10 @@ namespace WinExplorer.UI
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
-
         }
     }
 
@@ -352,5 +347,4 @@ namespace WinExplorer.UI
         DatabaseTriggers,
         SchemaTriggers
     }
-    
-    }
+}

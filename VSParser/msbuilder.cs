@@ -1,20 +1,16 @@
 // VSSolution
 
-using Microsoft.CodeAnalysis.Emit;
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.MSBuild;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-
 using System.Linq;
 using System.Reflection;
-using Microsoft.CodeAnalysis.MSBuild;
-using System.Text;
 using System.Threading.Tasks;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.Windows.Forms;
 
 namespace VSProvider
 {
@@ -168,7 +164,7 @@ namespace VSProvider
                 return file.DirectoryName;
             }
         }
-               
+
         public void GetAllTypes(Compilation cc, INamespaceSymbol c, List<INamespaceOrTypeSymbol> b)
         {
             foreach (INamespaceSymbol ns in c.GetNamespaceMembers())
@@ -176,13 +172,12 @@ namespace VSProvider
                 b.Add(ns);
                 foreach (INamedTypeSymbol s in ns.GetTypeMembers())
                 {
-                  
                     b.Add(s);
                 }
                 GetAllTypes(cc, ns, b);
             }
-
         }
+
         public List<INamespaceOrTypeSymbol> GetAllTypes(Compilation cc)
         {
             List<INamespaceOrTypeSymbol> b = new List<INamespaceOrTypeSymbol>();
@@ -194,14 +189,12 @@ namespace VSProvider
                     foreach (INamedTypeSymbol s in ns.GetTypeMembers())
                     {
                         b.Add(s);
-
                     }
                     GetAllTypes(cc, ns, b);
                 }
             }
             catch (Exception ex)
             {
-
             }
             return b;
         }
@@ -226,18 +219,17 @@ namespace VSProvider
 
         public Dictionary<string, List<INamespaceOrTypeSymbol>> named { get; set; }
 
-        void LoadSolution(Task<Microsoft.CodeAnalysis.Solution> solution)
+        private void LoadSolution(Task<Microsoft.CodeAnalysis.Solution> solution)
         {
-
         }
 
-        MSBuildWorkspace workspace { get; set; }
+        private MSBuildWorkspace workspace { get; set; }
 
         public async void CompileSolution()
         {
             //bool success = true;
 
-           // int count = 0;
+            // int count = 0;
 
             //EmitResult result = null;
 
@@ -249,21 +241,16 @@ namespace VSProvider
             //Microsoft.CodeAnalysis.Solution solution = null;
             ProjectDependencyGraph projectGraph = null;
 
-            
-            
             //try
             //{
-
             Microsoft.CodeAnalysis.Solution solution = null;
             workspace = MSBuildWorkspace.Create();
-                solution = await workspace.OpenSolutionAsync(solutionFileName);
+            solution = await workspace.OpenSolutionAsync(solutionFileName);
 
-           // solutions.ContinueWith(LoadSolution);
+            // solutions.ContinueWith(LoadSolution);
 
-            
-
-                projectGraph = solution.GetProjectDependencyGraph();
-                //Dictionary<string, Stream> assemblies = new Dictionary<string, Stream>();
+            projectGraph = solution.GetProjectDependencyGraph();
+            //Dictionary<string, Stream> assemblies = new Dictionary<string, Stream>();
             //}
             //catch (ReflectionTypeLoadException ex)
             //{
@@ -286,10 +273,8 @@ namespace VSProvider
             //    //Display or log the error based on your application.
             //}
 
-
             foreach (ProjectId projectId in projectGraph.GetTopologicallySortedProjects())
             {
-              
                 Compilation projectCompilation = solution.GetProject(projectId).GetCompilationAsync().Result;
 
                 Microsoft.CodeAnalysis.Project project = solution.GetProject(projectId);
@@ -318,14 +303,10 @@ namespace VSProvider
                 //    }
 
                 //}
-
-
             }
-
-           
         }
 
-        static SyntaxNode GetNode(SyntaxTree tree)
+        private static SyntaxNode GetNode(SyntaxTree tree)
         {
             var syntaxRoot = tree.GetRoot();
             var TypeDefinition = syntaxRoot.DescendantNodes().OfType<TypeDeclarationSyntax>()
@@ -333,20 +314,21 @@ namespace VSProvider
             return TypeDefinition;
         }
 
-        List<ISymbol> BaseClassMembers(ISymbol symbol)
+        private List<ISymbol> BaseClassMembers(ISymbol symbol)
         {
             List<ISymbol> s = new List<ISymbol>();
-                ITypeSymbol b = ((ITypeSymbol)symbol).BaseType;
-                while(b != null)
-                {
-                    if (b.BaseType == null)
-                        break;
-                    s.AddRange(b.GetMembers().Where(x => s.FirstOrDefault(y => y.Name == x.Name) == null).ToList());
-                    b = ((ITypeSymbol)b).BaseType;
-                }
+            ITypeSymbol b = ((ITypeSymbol)symbol).BaseType;
+            while (b != null)
+            {
+                if (b.BaseType == null)
+                    break;
+                s.AddRange(b.GetMembers().Where(x => s.FirstOrDefault(y => y.Name == x.Name) == null).ToList());
+                b = ((ITypeSymbol)b).BaseType;
+            }
             return s;
         }
-        List<ISymbol> BaseClassMembers(List<ISymbol> symbols)
+
+        private List<ISymbol> BaseClassMembers(List<ISymbol> symbols)
         {
             List<ISymbol> s = new List<ISymbol>();
 
@@ -367,24 +349,26 @@ namespace VSProvider
             }
             return s;
         }
-        string ExtractMethodName(string name)
+
+        private string ExtractMethodName(string name)
         {
             string names = name;
 
             int s = name.IndexOf("(");
-            
+
             names = names.Substring(s + 1, name.Length - s - 1);
 
             return names;
         }
-        enum methods
+
+        private enum methods
         {
             start,
             end,
             none
         }
 
-        List<ISymbol> GetBuiltInTypeCompletion(VSProject vp, string name, string names, methods me)
+        private List<ISymbol> GetBuiltInTypeCompletion(VSProject vp, string name, string names, methods me)
         {
             var b = named[vp.FileName].Select(s => s).Where(t => t.Name.ToLower() == names.ToLower()).FirstOrDefault();
             if (b == null)
@@ -396,7 +380,6 @@ namespace VSProvider
 
                 if (d != null)
                 {
-
                     var property = d
                         .ToList()
                         .Where(s => s.Kind == SymbolKind.Property && s.Name == name)
@@ -405,7 +388,6 @@ namespace VSProvider
 
                     if (property != null)
                     {
-
                         //d = property.Type;
                         var p = property.Type.GetMembers();
                         return property.Type.GetMembers().Concat(BaseClassMembers(property.Type)).OrderBy(f => f.Name).GroupBy(f => f.Name, f => f).Select(g => g.First()).ToList();
@@ -432,8 +414,6 @@ namespace VSProvider
                         List<ISymbol> c = new List<ISymbol>();
                         c.Add(events);
                         return c;
-
-                        
                     }
 
                     var field = d
@@ -455,13 +435,9 @@ namespace VSProvider
 
         public List<ISymbol> GetCodeCompletion(VSProject vp, string filename, string content, int offset, string name, string names)
         {
-
-
             List<ISymbol> b = new List<ISymbol>();
 
             Compilation cc = comp[vp.FileName];
-
-            
 
             SyntaxTree syntaxTree = cc.SyntaxTrees.Select(s => s).Where(t => t.FilePath == filename).First();
 
@@ -478,14 +454,15 @@ namespace VSProvider
 
             var semanticModel = cc.GetSemanticModel(syntaxTree);
 
-            if (name == "this") {
+            if (name == "this")
+            {
                 var nv = semanticModel.LookupNamespacesAndTypes(offset).Select(s => s).Where(t => t.Kind == SymbolKind.NamedType).FirstOrDefault();
-                if(nv != null)
-                    if(nv.ContainingType != null)
-                return nv.ContainingType.GetMembers().ToList();
+                if (nv != null)
+                    if (nv.ContainingType != null)
+                        return nv.ContainingType.GetMembers().ToList();
                 return semanticModel.LookupNamespacesAndTypes(offset).Select(s => s).Where(t => t.Kind == SymbolKind.NamedType).ToList();
-             }
-            else if(name != "")
+            }
+            else if (name != "")
             {
                 if (name.Contains("(") && name.Contains(")") && name.StartsWith("."))
                 {
@@ -502,9 +479,9 @@ namespace VSProvider
                 if (symbols.Count() <= 0)
                 {
                     var np = semanticModel.LookupNamespacesAndTypes(offset).Select(s => s).Where(t => t.Kind == SymbolKind.NamedType).FirstOrDefault();
-                    if(np != null)
-                        if(np.ContainingType != null)
-                    symbols = semanticModel.LookupNamespacesAndTypes(offset).Select(s => s).Where(t => t.Kind == SymbolKind.NamedType).First().ContainingType.GetMembers().Select(s => s).Where(t => t.Name == name).ToList();
+                    if (np != null)
+                        if (np.ContainingType != null)
+                            symbols = semanticModel.LookupNamespacesAndTypes(offset).Select(s => s).Where(t => t.Kind == SymbolKind.NamedType).First().ContainingType.GetMembers().Select(s => s).Where(t => t.Name == name).ToList();
                     if (symbols.Count() <= 0)
                     {
                         var nv = named[vp.FileName].Select(s => s).Where(t => t.Kind == SymbolKind.NamedType && t.Name == name).FirstOrDefault();
@@ -521,7 +498,6 @@ namespace VSProvider
 
                     if (d != null && d.ContainingType != null)
                     {
-
                         var property = d.ContainingType.GetMembers()
                             .ToList()
                             .Where(s => s.Kind == SymbolKind.Property && s.Name == name)
@@ -530,7 +506,6 @@ namespace VSProvider
 
                         if (property != null)
                         {
-
                             d = property.Type;
                             var p = property.Type.GetMembers();
                             return property.Type.GetMembers().Concat(BaseClassMembers(property.Type)).OrderBy(f => f.Name).GroupBy(f => f.Name, f => f).Select(g => g.First()).ToList();
@@ -592,30 +567,25 @@ namespace VSProvider
                         var br = GetBuiltInTypeCompletion(vp, name, names, me);
                         if (br != null && br.Count > 0)
                             return br;
-
-
                     }
-                       var types = semanticModel.LookupNamespacesAndTypes(offset).Select(s => s).Where(t => t.Kind == SymbolKind.NamedType).First().ContainingType.GetMembers().Select(s => s).Where(t => t.Name == name).OrderBy(f => f.Name).GroupBy(f => f.Name, f => f).Select(g => g.First()).ToList();
+                    var types = semanticModel.LookupNamespacesAndTypes(offset).Select(s => s).Where(t => t.Kind == SymbolKind.NamedType).First().ContainingType.GetMembers().Select(s => s).Where(t => t.Name == name).OrderBy(f => f.Name).GroupBy(f => f.Name, f => f).Select(g => g.First()).ToList();
                     //      types.AddRange(named[vp.FileName].Select(s => s).OrderBy(f => f.Name).GroupBy(f => f.Name, f => f).Select(g => g.First()).ToList());
 
                     var ns = semanticModel.LookupNamespacesAndTypes(offset).Select(s => s).Where(t => t.Kind == SymbolKind.Namespace).ToList();
                     types.AddRange(ns);
                     return types;
-                   
-                    
                 }
             }
-                        
- 
+
             var type = semanticModel.LookupSymbols(offset).OrderBy(f => f.Name).GroupBy(f => f.Name, f => f).Select(g => g.First()).ToList();
             var ps = semanticModel.LookupNamespacesAndTypes(offset).Select(s => s).Where(t => t.Kind == SymbolKind.Namespace).ToList();
             type.AddRange(ps);
-            return type;          
-         }
+            return type;
+        }
 
         public List<INamespaceOrTypeSymbol> GetProjectTypes(string filename)
         {
-              return named[filename].Select(s => s).OrderBy(f => f.Name).GroupBy(f => f.Name, f => f).Select(g => g.First()).ToList();
+            return named[filename].Select(s => s).OrderBy(f => f.Name).GroupBy(f => f.Name, f => f).Select(g => g.First()).ToList();
         }
 
         public Dictionary<VSProject, ArrayList> GetDataSources()
@@ -640,7 +610,6 @@ namespace VSProvider
                 vp.SetRestorePackages(restore);
             }
         }
-
 
         public enum OutputType
         {
@@ -675,8 +644,6 @@ namespace VSProvider
                         if (s != "")
                             E.Add(s);
                     }
-
-
                 }
             }
 
@@ -738,9 +705,9 @@ namespace VSProvider
 
             string text = File.ReadAllText(solutionFileName);
 
-            if(content != "")
+            if (content != "")
 
-            text = text.Replace(content, "");
+                text = text.Replace(content, "");
 
             File.WriteAllText(solutionFileName, text);
         }
@@ -838,7 +805,6 @@ namespace VSProvider
 
             int g = (c.IndexOf(b, s + 2) - c.IndexOf(a, start) - a.Length);
 
-
             if (g < 0)
                 return w;
 
@@ -848,7 +814,6 @@ namespace VSProvider
 
             return d;
         }
-
 
         public static ArrayList GetVSProjects(string file)
         {

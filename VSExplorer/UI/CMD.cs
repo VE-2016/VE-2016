@@ -1,16 +1,13 @@
 using System;
+using System.Collections;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Win32;
-using System.Threading;
-using System.Runtime.InteropServices;
-using System.Collections;
 
 namespace WinExplorer
 {
@@ -28,7 +25,6 @@ namespace WinExplorer
         {
             //    if (running == true)
             //        return;
-
 
             _process = new Process();
             ProcessStartInfo startInfo = new ProcessStartInfo();
@@ -89,7 +85,7 @@ namespace WinExplorer
             running = false;
         }
 
-        string ReplaceNonPrintableCharacters(string s, char replaceWith)
+        private string ReplaceNonPrintableCharacters(string s, char replaceWith)
         {
             StringBuilder result = new StringBuilder();
             for (int i = 0; i < s.Length; i++)
@@ -118,14 +114,13 @@ namespace WinExplorer
             {
                 Task<int> output = _process.StandardOutput.ReadAsync(buffer, i, c);
                 //r = _process.StandardOutput.Read(buffer, i, c);
-                 r = output.Result;
+                r = output.Result;
 
                 if (rb.IsDisposed == true)
                     break;
                 rb.Invoke(new Action(() =>
                 {
-
-                    byte []bytes = Encoding.GetEncoding("UTF-8").GetBytes(buffer);
+                    byte[] bytes = Encoding.GetEncoding("UTF-8").GetBytes(buffer);
 
                     string b = Encoding.UTF8.GetString(bytes);
 
@@ -139,14 +134,10 @@ namespace WinExplorer
 
                     //string []p = b.Split("\n".ToCharArray());
 
-                   
-
                     //string p = b.Substring(b.Length - 3);
 
                     if (b.TrimEnd().EndsWith(">") == false) rb.AppendText("\n");
                 }));
-
-                 
 
                 Array.Clear(buffer, 0, buffer.Length);
             }
@@ -166,15 +157,12 @@ namespace WinExplorer
             {
                 Task<int> output = _process.StandardError.ReadAsync(buffer, i, c);
                 // r = _process.StandardError.Read(buffer, i, c);
-                 r = output.Result;
+                r = output.Result;
 
                 if (rb.IsDisposed == true)
                     break;
                 rb.Invoke(new Action(() =>
                 {
-
-                    
-
                     byte[] bytes = Encoding.UTF8.GetBytes(buffer);
 
                     string b = Encoding.UTF8.GetString(bytes);
@@ -189,8 +177,6 @@ namespace WinExplorer
 
                     //string []p = b.Split("\n".ToCharArray());
 
-                    
-
                     //string p = b.Substring(b.Length - 3);
 
                     if (b.TrimEnd().EndsWith(">") == false) rb.AppendText("\n");
@@ -200,7 +186,6 @@ namespace WinExplorer
 
                 Array.Clear(buffer, 0, buffer.Length);
             }
-
         }
 
         public void EndProcess()
@@ -219,6 +204,7 @@ namespace WinExplorer
         {
             runCommand("cmd.exe", args);
         }
+
         public void Run(string args)
         {
             runCommand(args);
@@ -235,29 +221,28 @@ namespace WinExplorer
             SendCommand("cd " + c + "\n");
         }
 
-
         public void runCommands(string c)
         {
             start s = Run;
             s.BeginInvoke(c, null, null);
         }
+
         public void runAndInit(string c)
         {
             start s = RunAndInit;
             s.BeginInvoke(c, null, null);
             // SetFolder(folder);
-
         }
+
         public void runCommandsExternal(string c)
         {
             start s = Run;
             s.BeginInvoke(c, null, null);
         }
+
         public delegate void start(string c);
 
         public RichTextBox rb { get; set; }
-
-
 
         private static void Process_ErrorDataReceived(object sender, DataReceivedEventArgs e)
         {
@@ -271,7 +256,6 @@ namespace WinExplorer
             lock (_obs)
             {
                 _process.StandardInput.Write(c + "\n");
-                
             }
         }
     }
@@ -307,7 +291,7 @@ namespace WinExplorer
         /// allocates a new console for the calling process.
         /// </summary>
         /// <returns>If the function succeeds, the return value is nonzero.
-        /// If the function fails, the return value is zero. 
+        /// If the function fails, the return value is zero.
         /// To get extended error information, call Marshal.GetLastWin32Error.</returns>
         [DllImport("kernel32", SetLastError = true)]
         public static extern bool AllocConsole();
@@ -316,7 +300,7 @@ namespace WinExplorer
         /// Detaches the calling process from its console
         /// </summary>
         /// <returns>If the function succeeds, the return value is nonzero.
-        /// If the function fails, the return value is zero. 
+        /// If the function fails, the return value is zero.
         /// To get extended error information, call Marshal.GetLastWin32Error.</returns>
         [DllImport("kernel32", SetLastError = true)]
         public static extern bool FreeConsole();
@@ -326,12 +310,11 @@ namespace WinExplorer
         /// </summary>
         /// <param name="dwProcessId">[in] Identifier of the process, usually will be ATTACH_PARENT_PROCESS</param>
         /// <returns>If the function succeeds, the return value is nonzero.
-        /// If the function fails, the return value is zero. 
+        /// If the function fails, the return value is zero.
         /// To get extended error information, call Marshal.GetLastWin32Error.</returns>
         [DllImport("kernel32.dll", SetLastError = true)]
         public static extern bool AttachConsole(uint dwProcessId);
     }
-
 
     public class ConsoleApp
     {
@@ -661,7 +644,6 @@ namespace WinExplorer
                 handler(this, e);
         }
 
-
         #region IDisposable
 
         private bool _disposed;
@@ -698,8 +680,7 @@ namespace WinExplorer
                 throw new ObjectDisposedException("Object was disposed.");
         }
 
-        #endregion
-
+        #endregion IDisposable
 
         #region Static utility methods
 
@@ -735,8 +716,9 @@ namespace WinExplorer
             }
         }
 
-        #endregion
+        #endregion Static utility methods
     }
+
     public class ConsoleOutputEventArgs : EventArgs
     {
         public ConsoleOutputEventArgs(string line, bool isError)
@@ -801,6 +783,7 @@ namespace WinExplorer
 
             return Find(c);
         }
+
         public string Prev()
         {
             if (N == null)
@@ -815,6 +798,7 @@ namespace WinExplorer
 
             return c;
         }
+
         public string Next()
         {
             if (N == null)
@@ -830,7 +814,7 @@ namespace WinExplorer
             if (act < 0)
                 act = 0;
 
-            if ( act >= N.Count)
+            if (act >= N.Count)
                 return "";
 
             string s = N[act] as string;
@@ -838,6 +822,7 @@ namespace WinExplorer
             return s;
         }
     }
+
     public class VBoxKeyboardHelper
     {
         //public IKeyboard Keyboard { get; private set; }
@@ -915,6 +900,7 @@ namespace WinExplorer
             if ((code & 0xff00) != 0) kbdPutCode((code >> 8) & 0xff);
             kbdPutCode((code & 0xff) | (down ? 0 : 0x80));
         }
+
         private void kbdPutCode(int code)
         {
             try
@@ -928,5 +914,3 @@ namespace WinExplorer
         }
     }
 }
-
-

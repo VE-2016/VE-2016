@@ -3,90 +3,88 @@
 // Copyright 2005-2009 Paul Kohler (https://github.com/paul-kohler-au/minisqlquery). All rights reserved.
 // This source code is made available under the terms of the Microsoft Public License (Ms-PL)
 // http://minisqlquery.codeplex.com/license
-#endregion
 
-using System;
-using System.IO;
-using System.Media;
-using System.Windows.Forms;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Data;
-using MiniSqlQuery.Core.DbModel;
-using System.Management;
-using System.Data.Sql;
-using Microsoft.Win32;
+#endregion License
+
+using AIMS.Libraries.Scripting.ScriptControl;
+using Microsoft.SqlServer.Management.Common;
 using Microsoft.SqlServer.Management.Smo;
 using Microsoft.SqlServer.Management.Smo.Wmi;
-using System.Diagnostics;
+using Microsoft.Win32;
+using MiniSqlQuery.Core.DbModel;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Sql;
+using System.Data.SqlClient;
 using System.Linq;
-using Microsoft.SqlServer.Management.Common;
-using AIMS.Libraries.Scripting.ScriptControl;
 using System.Text;
+using System.Windows.Forms;
+
 //using Microsoft.SqlServer.Management.Smo..Wmi;
 
 namespace WinExplorer.UI
 {
-	/// <summary>The database inspector form.</summary>
-	public partial class DatabaseInspectorForm : Form
-	{
-		/// <summary>The root tag.</summary>
-		private static readonly object RootTag = new object();
+    /// <summary>The database inspector form.</summary>
+    public partial class DatabaseInspectorForm : Form
+    {
+        /// <summary>The root tag.</summary>
+        private static readonly object RootTag = new object();
 
-		/// <summary>The tables tag.</summary>
-		private static readonly object TablesTag = new object();
+        /// <summary>The tables tag.</summary>
+        private static readonly object TablesTag = new object();
 
-		/// <summary>The views tag.</summary>
-		private static readonly object ViewsTag = new object();
-	
-		/// <summary>The _meta data service.</summary>
-		private IDatabaseSchemaService _metaDataService;
+        /// <summary>The views tag.</summary>
+        private static readonly object ViewsTag = new object();
 
-		/// <summary>The _model.</summary>
-		private DbModelInstance _model;
+        /// <summary>The _meta data service.</summary>
+        private IDatabaseSchemaService _metaDataService;
+
+        /// <summary>The _model.</summary>
+        private DbModelInstance _model;
 
         private List<string> _models;
 
-		/// <summary>The _populated.</summary>
-		private bool _populated;
+        /// <summary>The _populated.</summary>
+        private bool _populated;
 
-		/// <summary>The _right clicked model object.</summary>
-		private IDbModelNamedObject _rightClickedModelObject;
+        /// <summary>The _right clicked model object.</summary>
+        private IDbModelNamedObject _rightClickedModelObject;
 
-		/// <summary>The _right clicked node.</summary>
-		private TreeNode _rightClickedNode;
+        /// <summary>The _right clicked node.</summary>
+        private TreeNode _rightClickedNode;
 
-		/// <summary>The _sql writer.</summary>
-		private ISqlWriter _sqlWriter;
+        /// <summary>The _sql writer.</summary>
+        private ISqlWriter _sqlWriter;
 
-		/// <summary>The _tables node.</summary>
-		private TreeNode _tablesNode;
+        /// <summary>The _tables node.</summary>
+        private TreeNode _tablesNode;
 
-		/// <summary>The _views node.</summary>
-		private TreeNode _viewsNode;
+        /// <summary>The _views node.</summary>
+        private TreeNode _viewsNode;
 
-		/// <summary>Initializes a new instance of the <see cref="DatabaseInspectorForm"/> class.</summary>
-		/// <param name="services">The services.</param>
-		/// <param name="hostWindow">The host window.</param>
-		public DatabaseInspectorForm()
-		{
-			InitializeComponent();
+        /// <summary>Initializes a new instance of the <see cref="DatabaseInspectorForm"/> class.</summary>
+        /// <param name="services">The services.</param>
+        /// <param name="hostWindow">The host window.</param>
+        public DatabaseInspectorForm()
+        {
+            InitializeComponent();
 
             v = DatabaseTreeView;
-            
+
             ts = toolStrip1;
             ts.GripStyle = ToolStripGripStyle.Hidden;
             tbContext = contextMenuStrip1;
             CreateImageList();
             DatabaseTreeView.Nodes.Clear();
-			//TreeNode root = CreateRootNodes();
-			//root.Nodes.Add("Loading problem - check connection details and reset...");
-			//DatabaseTreeView.Nodes.Add(root);
+            //TreeNode root = CreateRootNodes();
+            //root.Nodes.Add("Loading problem - check connection details and reset...");
+            //DatabaseTreeView.Nodes.Add(root);
             // DatabaseTreeView.ExpandAll();
 
             sql = SQLServerInstances.LocalSqlServerInstancesgSqlWmi(ProviderArchitecture.Use64bit);
 
-            foreach(ServerInstance s in sql)
+            foreach (ServerInstance s in sql)
             {
                 TreeNode node = new TreeNode();
                 node.Text = s.Name;
@@ -99,20 +97,20 @@ namespace WinExplorer.UI
                 node.Tag = server;
                 this.server = server;
             }
-		
-		}
+        }
 
-        List<ServerInstance> sql { get; set; }
+        private List<ServerInstance> sql { get; set; }
 
-        Server server { get; set; }
+        private Server server { get; set; }
 
-        TreeView v { get; set; }
+        private TreeView v { get; set; }
 
-        ImageList g { get; set; }
+        private ImageList g { get; set; }
 
-        ToolStrip ts { get; set; }
+        private ToolStrip ts { get; set; }
 
-        ContextMenuStrip tbContext { get; set; }
+        private ContextMenuStrip tbContext { get; set; }
+
         public void CreateImageList()
         {
             g = new ImageList();
@@ -127,144 +125,147 @@ namespace WinExplorer.UI
             v.ImageList = g;
         }
 
-		/// <summary>Gets ColumnMenu.</summary>
-		public ContextMenuStrip ColumnMenu
-		{
-			get { return ColumnNameContextMenuStrip; }
-		}
+        /// <summary>Gets ColumnMenu.</summary>
+        public ContextMenuStrip ColumnMenu
+        {
+            get { return ColumnNameContextMenuStrip; }
+        }
 
-		/// <summary>Gets DbSchema.</summary>
-		public DbModelInstance DbSchema
-		{
-			get { return _model; }
-		}
+        /// <summary>Gets DbSchema.</summary>
+        public DbModelInstance DbSchema
+        {
+            get { return _model; }
+        }
 
-		/// <summary>Gets RightClickedModelObject.</summary>
-		public IDbModelNamedObject RightClickedModelObject
-		{
-			get { return _rightClickedModelObject; }
-		}
+        /// <summary>Gets RightClickedModelObject.</summary>
+        public IDbModelNamedObject RightClickedModelObject
+        {
+            get { return _rightClickedModelObject; }
+        }
 
-		/// <summary>Gets RightClickedTableName.</summary>
-		public string RightClickedTableName
-		{
-			get
-			{
-				if (_rightClickedNode == null)
-				{
-					return null;
-				}
+        /// <summary>Gets RightClickedTableName.</summary>
+        public string RightClickedTableName
+        {
+            get
+            {
+                if (_rightClickedNode == null)
+                {
+                    return null;
+                }
 
-				return _rightClickedNode.Text;
-			}
-		}
+                return _rightClickedNode.Text;
+            }
+        }
 
-		/// <summary>Gets TableMenu.</summary>
-		public ContextMenuStrip TableMenu
-		{
-			get { return TableNodeContextMenuStrip; }
-		}
+        /// <summary>Gets TableMenu.</summary>
+        public ContextMenuStrip TableMenu
+        {
+            get { return TableNodeContextMenuStrip; }
+        }
 
-		/// <summary>The load database details.</summary>
-		public void LoadDatabaseDetails(DataConnection dc)
-		{
-			ExecLoadDatabaseDetails(dc);
-		}
+        /// <summary>The load database details.</summary>
+        public void LoadDatabaseDetails(DataConnection dc)
+        {
+            ExecLoadDatabaseDetails(dc);
+        }
 
-		/// <summary>The navigate to.</summary>
-		/// <param name="modelObject">The model object.</param>
-		public void NavigateTo(IDbModelNamedObject modelObject)
-		{
-			if (modelObject == null)
-			{
-				return;
-			}
-            
+        /// <summary>The navigate to.</summary>
+        /// <param name="modelObject">The model object.</param>
+        public void NavigateTo(IDbModelNamedObject modelObject)
+        {
+            if (modelObject == null)
+            {
+                return;
+            }
+
             // todo - ensure expanded
 
-			switch (modelObject.ObjectType)
-			{
-				case ObjectTypes.Table:
-					foreach (TreeNode treeNode in _tablesNode.Nodes)
-					{
-						IDbModelNamedObject obj = treeNode.Tag as IDbModelNamedObject;
-						if (obj != null && modelObject == obj)
-						{
-							SelectNode(treeNode);
-						}
-					}
+            switch (modelObject.ObjectType)
+            {
+                case ObjectTypes.Table:
+                    foreach (TreeNode treeNode in _tablesNode.Nodes)
+                    {
+                        IDbModelNamedObject obj = treeNode.Tag as IDbModelNamedObject;
+                        if (obj != null && modelObject == obj)
+                        {
+                            SelectNode(treeNode);
+                        }
+                    }
 
-					break;
-				case ObjectTypes.View:
-					foreach (TreeNode treeNode in _viewsNode.Nodes)
-					{
-						IDbModelNamedObject obj = treeNode.Tag as IDbModelNamedObject;
-						if (obj != null && modelObject == obj)
-						{
-							SelectNode(treeNode);
-						}
-					}
+                    break;
 
-					break;
-				case ObjectTypes.Column:
-					DbModelColumn modelColumn = modelObject as DbModelColumn;
-					if (modelColumn != null)
-					{
-						foreach (TreeNode treeNode in _tablesNode.Nodes)
-						{
+                case ObjectTypes.View:
+                    foreach (TreeNode treeNode in _viewsNode.Nodes)
+                    {
+                        IDbModelNamedObject obj = treeNode.Tag as IDbModelNamedObject;
+                        if (obj != null && modelObject == obj)
+                        {
+                            SelectNode(treeNode);
+                        }
+                    }
+
+                    break;
+
+                case ObjectTypes.Column:
+                    DbModelColumn modelColumn = modelObject as DbModelColumn;
+                    if (modelColumn != null)
+                    {
+                        foreach (TreeNode treeNode in _tablesNode.Nodes)
+                        {
                             // only look in the tables nodw for FK refs
-							DbModelTable modelTable = treeNode.Tag as DbModelTable;
-							if (modelTable != null && modelTable == modelColumn.ParentTable)
-							{
-								// now find the column in the child nodes
-								foreach (TreeNode columnNode in treeNode.Nodes)
-								{
-									DbModelColumn modelReferingColumn = columnNode.Tag as DbModelColumn;
-									if (modelReferingColumn != null && modelReferingColumn == modelColumn)
-									{
-										SelectNode(columnNode);
-									}
-								}
-							}
-						}
-					}
+                            DbModelTable modelTable = treeNode.Tag as DbModelTable;
+                            if (modelTable != null && modelTable == modelColumn.ParentTable)
+                            {
+                                // now find the column in the child nodes
+                                foreach (TreeNode columnNode in treeNode.Nodes)
+                                {
+                                    DbModelColumn modelReferingColumn = columnNode.Tag as DbModelColumn;
+                                    if (modelReferingColumn != null && modelReferingColumn == modelColumn)
+                                    {
+                                        SelectNode(columnNode);
+                                    }
+                                }
+                            }
+                        }
+                    }
 
-					break;
-			}
-		}
+                    break;
+            }
+        }
 
-		/// <summary>The build image key.</summary>
-		/// <param name="column">The column.</param>
-		/// <returns>The build image key.</returns>
-		private string BuildImageKey(DbModelColumn column)
-		{
-			string imageKey = column.ObjectType;
-			if (column.IsRowVersion)
-			{
-				imageKey += "-RowVersion";
-			}
-			else
-			{
-				if (column.IsKey)
-				{
-					imageKey += "-PK";
-				}
+        /// <summary>The build image key.</summary>
+        /// <param name="column">The column.</param>
+        /// <returns>The build image key.</returns>
+        private string BuildImageKey(DbModelColumn column)
+        {
+            string imageKey = column.ObjectType;
+            if (column.IsRowVersion)
+            {
+                imageKey += "-RowVersion";
+            }
+            else
+            {
+                if (column.IsKey)
+                {
+                    imageKey += "-PK";
+                }
 
-				if (column.ForeignKeyReference != null)
-				{
-					imageKey += "-FK";
-				}
-			}
+                if (column.ForeignKeyReference != null)
+                {
+                    imageKey += "-FK";
+                }
+            }
 
-			return imageKey;
-		}
-		/// <summary>The build tree from db model.</summary>
-		/// <param name="connection">The connection.</param>
-		private void BuildTreeFromDbModel(string connection)
-		{
-			//DatabaseTreeView.Nodes.Clear();
-			TreeNode root = CreateRootNodes();
-			root.ToolTipText = connection;
+            return imageKey;
+        }
+
+        /// <summary>The build tree from db model.</summary>
+        /// <param name="connection">The connection.</param>
+        private void BuildTreeFromDbModel(string connection)
+        {
+            //DatabaseTreeView.Nodes.Clear();
+            TreeNode root = CreateRootNodes();
+            root.ToolTipText = connection;
 
             //if (_model.Tables != null)
             //{
@@ -285,7 +286,6 @@ namespace WinExplorer.UI
             int i = 0;
             foreach (string d in _models)
             {
-                
                 TreeNode node = new TreeNode(d);
                 node.Tag = "database";
                 node.ImageKey = "database";
@@ -297,21 +297,18 @@ namespace WinExplorer.UI
                 i++;
 
                 // node.Nodes.Add(new TreeNode("Empty"));
-
-
             }
 
-		    DatabaseTreeView.Nodes.Add(root);
+            DatabaseTreeView.Nodes.Add(root);
             DatabaseTreeView.ExpandAll();
-		}
+        }
+
         public void BuildTreeFromDbModel(DbModelInstance model, TreeNode nodes)
         {
-
             nodes.Tag = model;
 
             if (model.Tables != null)
             {
-
                 TreeNode ng = null;
 
                 foreach (TreeNode b in nodes.Nodes)
@@ -340,7 +337,6 @@ namespace WinExplorer.UI
 
             if (model.Views != null)
             {
-
                 TreeNode ng = null;
 
                 foreach (TreeNode b in nodes.Nodes)
@@ -351,8 +347,6 @@ namespace WinExplorer.UI
                     if (b.Text == "System Views")
                         views = b;
 
-
-
                 //nodes.Nodes.Add(ng);
 
                 foreach (DbModelView view in model.Views)
@@ -361,7 +355,6 @@ namespace WinExplorer.UI
                 }
                 foreach (string v in model.vw)
                     views.Nodes.Add(new TreeNode(v));
-
             }
             TreeNode ns = null;
             foreach (TreeNode b in nodes.Nodes)
@@ -373,66 +366,64 @@ namespace WinExplorer.UI
                     bg = b;
 
             CreateTreeNodes_StoredProcedures(bg);
-
         }
 
-        TreeNode SysDatabases { get; set; }
+        private TreeNode SysDatabases { get; set; }
 
-        TreeNode Databases { get; set; }
+        private TreeNode Databases { get; set; }
 
-        TreeNode Security { get; set; }
+        private TreeNode Security { get; set; }
 
-        TreeNode LinkedServerLogins { get; set; }
+        private TreeNode LinkedServerLogins { get; set; }
 
-        TreeNode Logins { get; set; }
+        private TreeNode Logins { get; set; }
 
-        TreeNode ServerRoles { get; set; }
+        private TreeNode ServerRoles { get; set; }
 
-        TreeNode Credentials { get; set; }
+        private TreeNode Credentials { get; set; }
 
-        TreeNode CryptographicProviders { get; set; }
+        private TreeNode CryptographicProviders { get; set; }
 
-        TreeNode Audits { get; set; }
+        private TreeNode Audits { get; set; }
 
-        TreeNode ServerAuditSpecifications { get; set; }
+        private TreeNode ServerAuditSpecifications { get; set; }
 
-        TreeNode EventSessions { get; set; }
+        private TreeNode EventSessions { get; set; }
 
-        TreeNode ServerObjects { get; set; }
+        private TreeNode ServerObjects { get; set; }
 
-        TreeNode EndPoints { get; set; }
+        private TreeNode EndPoints { get; set; }
 
-        TreeNode LinkedServers { get; set; }
+        private TreeNode LinkedServers { get; set; }
 
-        TreeNode Triggers { get; set; }
+        private TreeNode Triggers { get; set; }
 
-        TreeNode ErrorMessages { get; set; }
+        private TreeNode ErrorMessages { get; set; }
 
-        TreeNode ServerEventNotifications { get; set; }
+        private TreeNode ServerEventNotifications { get; set; }
 
         /// <summary>The create root nodes.</summary>
         /// <returns></returns>
         private TreeNode CreateRootNodes()
-		{
-			TreeNode root = new TreeNode("Resources.Database");
-			root.ImageKey = "Database";
-			root.SelectedImageKey = "Database";
-			root.ContextMenuStrip = InspectorContextMenuStrip;
-			root.Tag = RootTag;
+        {
+            TreeNode root = new TreeNode("Resources.Database");
+            root.ImageKey = "Database";
+            root.SelectedImageKey = "Database";
+            root.ContextMenuStrip = InspectorContextMenuStrip;
+            root.Tag = RootTag;
 
-			_tablesNode = new TreeNode("Resources.Tables");
-			_tablesNode.ImageKey = "Tables";
-			_tablesNode.SelectedImageKey = "Tables";
-			_tablesNode.Tag = TablesTag;
+            _tablesNode = new TreeNode("Resources.Tables");
+            _tablesNode.ImageKey = "Tables";
+            _tablesNode.SelectedImageKey = "Tables";
+            _tablesNode.Tag = TablesTag;
 
-			_viewsNode = new TreeNode("Resources.Views");
-			_viewsNode.ImageKey = "Views";
-			_viewsNode.SelectedImageKey = "Views";
-			_viewsNode.Tag = ViewsTag;
+            _viewsNode = new TreeNode("Resources.Views");
+            _viewsNode.ImageKey = "Views";
+            _viewsNode.SelectedImageKey = "Views";
+            _viewsNode.Tag = ViewsTag;
 
             //root.Nodes.Add(_tablesNode);
             //root.Nodes.Add(_viewsNode);
-
 
             TreeNode ng = new TreeNode("Databases");
 
@@ -486,7 +477,7 @@ namespace WinExplorer.UI
             ng.Nodes.Add(ns);
             ns = new TreeNode("setupadmin");
             ng.Nodes.Add(ns);
-            
+
             ServerRoles = ng;
 
             ng = new TreeNode("Credentials");
@@ -518,7 +509,6 @@ namespace WinExplorer.UI
             Security.Nodes.Add(ng);
 
             EventSessions = ng;
-
 
             ng = new TreeNode("Server Objects");
 
@@ -612,43 +602,44 @@ namespace WinExplorer.UI
             ServerEventNotifications = ng;
 
             return root;
-		}
+        }
 
-		/// <summary>The create tree nodes.</summary>
-		/// <param name="table">The table.</param>
-		private void CreateTreeNodes(DbModelTable table)
-		{
-			TreeNode tableNode = new TreeNode(table.FullName);
-			tableNode.Name = table.FullName;
-			tableNode.ImageKey = table.ObjectType;
-			tableNode.SelectedImageKey = table.ObjectType;
-			tableNode.ContextMenuStrip = TableNodeContextMenuStrip;
-			tableNode.Tag = table;
+        /// <summary>The create tree nodes.</summary>
+        /// <param name="table">The table.</param>
+        private void CreateTreeNodes(DbModelTable table)
+        {
+            TreeNode tableNode = new TreeNode(table.FullName);
+            tableNode.Name = table.FullName;
+            tableNode.ImageKey = table.ObjectType;
+            tableNode.SelectedImageKey = table.ObjectType;
+            tableNode.ContextMenuStrip = TableNodeContextMenuStrip;
+            tableNode.Tag = table;
 
-			foreach (DbModelColumn column in table.Columns)
-			{
-				string friendlyColumnName = column.Name;
-				TreeNode columnNode = new TreeNode(friendlyColumnName);
-				columnNode.Name = column.Name;
-				string imageKey = BuildImageKey(column);
-				columnNode.ImageKey = imageKey;
-				columnNode.SelectedImageKey = imageKey;
-				columnNode.ContextMenuStrip = ColumnNameContextMenuStrip;
-				columnNode.Tag = column;
-				columnNode.Text =column.Name;
-				tableNode.Nodes.Add(columnNode);
-			}
+            foreach (DbModelColumn column in table.Columns)
+            {
+                string friendlyColumnName = column.Name;
+                TreeNode columnNode = new TreeNode(friendlyColumnName);
+                columnNode.Name = column.Name;
+                string imageKey = BuildImageKey(column);
+                columnNode.ImageKey = imageKey;
+                columnNode.SelectedImageKey = imageKey;
+                columnNode.ContextMenuStrip = ColumnNameContextMenuStrip;
+                columnNode.Tag = column;
+                columnNode.Text = column.Name;
+                tableNode.Nodes.Add(columnNode);
+            }
 
-			switch (table.ObjectType)
-			{
-				case ObjectTypes.Table:
-					_tablesNode.Nodes.Add(tableNode);
-					break;
-				case ObjectTypes.View:
-					_viewsNode.Nodes.Add(tableNode);
-					break;
-			}
-		}
+            switch (table.ObjectType)
+            {
+                case ObjectTypes.Table:
+                    _tablesNode.Nodes.Add(tableNode);
+                    break;
+
+                case ObjectTypes.View:
+                    _viewsNode.Nodes.Add(tableNode);
+                    break;
+            }
+        }
 
         public string cs { get; set; }
 
@@ -685,7 +676,6 @@ namespace WinExplorer.UI
 
         private void CreateTreeNodes(DbModelTable table, TreeNode nodes)
         {
-
             TreeNode ng = new TreeNode("Columns");
 
             TreeNode tableNode = new TreeNode(table.FullName);
@@ -709,7 +699,6 @@ namespace WinExplorer.UI
                 columnNode.Tag = column;
                 columnNode.Text = column.Name + "(" + column.DbType.Summary + ")";
                 ng.Nodes.Add(columnNode);
-                
             }
 
             nodes.Nodes.Add(tableNode);
@@ -743,15 +732,11 @@ namespace WinExplorer.UI
             ng.Tag = table.FullName;
 
             tableNode.Nodes.Add(ng);
-
-
         }
+
         private void CreateTreeNodes_View(DbModelTable table, TreeNode nodes)
         {
-
             TreeNode ng = new TreeNode("Columns");
-
-            
 
             TreeNode tableNode = new TreeNode(table.FullName);
             tableNode.Name = table.FullName;
@@ -773,7 +758,7 @@ namespace WinExplorer.UI
                 columnNode.ContextMenuStrip = ColumnNameContextMenuStrip;
                 columnNode.Tag = column;
                 columnNode.Text = column.Name;
-               
+
                 ng.Nodes.Add(columnNode);
             }
 
@@ -792,98 +777,84 @@ namespace WinExplorer.UI
             ng = new TreeNode("Statistics");
 
             tableNode.Nodes.Add(ng);
-
         }
+
         private void CreateTreeNodes_StoredProcedures(TreeNode nodes)
         {
-
             List<string> list = GetDatabaseStoredProcedures(database);
 
-            foreach(string s in list)
+            foreach (string s in list)
             {
-
                 string[] cc = s.Split(" ".ToCharArray());
-
 
                 int i = 0;
                 while (cc[i] == "")
                     i++;
-
 
                 TreeNode ng = new TreeNode(cc[i]);
 
                 ng.Tag = "Stored Procedure - " + cc[i];
 
                 nodes.Nodes.Add(ng);
-
-
             }
-           
         }
-      
 
+        /// <summary>The database inspector form_ load.</summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The e.</param>
+        private void DatabaseInspectorForm_Load(object sender, EventArgs e)
+        {
+        }
 
-		/// <summary>The database inspector form_ load.</summary>
-		/// <param name="sender">The sender.</param>
-		/// <param name="e">The e.</param>
-		private void DatabaseInspectorForm_Load(object sender, EventArgs e)
-		{
-		}
+        /// <summary>The database tree view_ before expand.</summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The e.</param>
+        private void DatabaseTreeView_BeforeExpand(object sender, TreeViewCancelEventArgs e)
+        {
+            TreeNode node = e.Node;
 
-		/// <summary>The database tree view_ before expand.</summary>
-		/// <param name="sender">The sender.</param>
-		/// <param name="e">The e.</param>
-		private void DatabaseTreeView_BeforeExpand(object sender, TreeViewCancelEventArgs e)
-		{
+            if (node != null && node.Tag == RootTag && !_populated)
+            {
+                _populated = true;
 
-            
-			TreeNode node = e.Node;
+                //            bool ok = ExecLoadDatabaseDetails();
 
-			if (node != null && node.Tag == RootTag && !_populated)
-			{
-				_populated = true;
-              
-    //            bool ok = ExecLoadDatabaseDetails();
+                //if (ok && DatabaseTreeView.Nodes.Count > 0)
+                //{
+                //	DatabaseTreeView.Nodes[0].Expand();
+                //}
+                //else
+                //{
+                //	e.Cancel = true;
+                //}
+            }
+        }
 
-				//if (ok && DatabaseTreeView.Nodes.Count > 0)
-				//{
-				//	DatabaseTreeView.Nodes[0].Expand();
-				//}
-				//else
-				//{
-				//	e.Cancel = true;
-				//}
-			}
-      
-		}
+        /// <summary>The database tree view_ node mouse click.</summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The e.</param>
+        private void DatabaseTreeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            TreeNode node = e.Node;
+            if (e.Button == MouseButtons.Right)
+            {
+                IDbModelNamedObject namedObject = node.Tag as IDbModelNamedObject;
+                _rightClickedModelObject = namedObject;
 
-		/// <summary>The database tree view_ node mouse click.</summary>
-		/// <param name="sender">The sender.</param>
-		/// <param name="e">The e.</param>
-		private void DatabaseTreeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
-		{
-			TreeNode node = e.Node;
-			if (e.Button == MouseButtons.Right)
-			{
-				IDbModelNamedObject namedObject = node.Tag as IDbModelNamedObject;
-				_rightClickedModelObject = namedObject;
-
-				if (namedObject != null &&
-				    (namedObject.ObjectType == ObjectTypes.Table || namedObject.ObjectType == ObjectTypes.View))
-				{
-					_rightClickedNode = node;
+                if (namedObject != null &&
+                    (namedObject.ObjectType == ObjectTypes.Table || namedObject.ObjectType == ObjectTypes.View))
+                {
+                    _rightClickedNode = node;
                     tbContext.Show(v, e.Location);
-				}
-				else
-				{
-					_rightClickedNode = null;
-				}
-			}
-		}
+                }
+                else
+                {
+                    _rightClickedNode = null;
+                }
+            }
+        }
 
-	
-
-             public List<string> GetTableKeys(string table_name)
+        public List<string> GetTableKeys(string table_name)
         {
             List<string> list = new List<string>();
 
@@ -910,17 +881,14 @@ namespace WinExplorer.UI
                         while (dr.Read())
                         {
                             list.Add(dr[0].ToString());
-                            
                         }
                     }
                 }
             }
 
-            
-
             return list;
-
         }
+
         public List<string> GetTableIndexes(string table_name)
         {
             List<string> list = new List<string>();
@@ -949,14 +917,11 @@ namespace WinExplorer.UI
                         }
                     }
                 }
-               
             }
 
-
-
             return list;
-
         }
+
         public List<string> GetTableConstraints(string table_name)
         {
             List<string> list = new List<string>();
@@ -980,19 +945,16 @@ namespace WinExplorer.UI
                             int i = 0;
                             while (i < dr.FieldCount)
                                 b += " " + dr[i++] as string;
-                           // string b = dr[1].ToString();
+                            // string b = dr[1].ToString();
                             list.Add(b);
                         }
                     }
                 }
-
             }
 
-
-
             return list;
-
         }
+
         public List<string> GetTableStatistics(string table_name)
         {
             List<string> list = new List<string>();
@@ -1021,7 +983,6 @@ namespace WinExplorer.UI
                         }
                     }
                 }
-
             }
             return list;
         }
@@ -1043,7 +1004,7 @@ namespace WinExplorer.UI
         //--SN = Synonym
         //--SQ = Service queue
         //--TA = Assembly(CLR) trigger
-        //--TR = SQL trigger 
+        //--TR = SQL trigger
         //--IF = SQL inlined table-valued function
         //--TF = SQL table-valued function
         //--U = Table(user-defined)
@@ -1051,7 +1012,6 @@ namespace WinExplorer.UI
         //--V = View
         //--X = Extended stored procedure
         //--IT = Internal table
-
 
         public List<string> GetSystemFunctions(string function)
         {
@@ -1081,12 +1041,9 @@ namespace WinExplorer.UI
                         }
                     }
                 }
-
             }
 
-
             return list;
-
         }
 
         //SELECT* FROM sys.objects WHERE type='U'
@@ -1119,19 +1076,15 @@ namespace WinExplorer.UI
                         }
                     }
                 }
-
             }
 
-
             return list;
-
         }
 
         //SELECT name FROM master..sysxlogins WHERE sid IS NOT NULL
 
         public List<string> GetLogins()
         {
-
             cs = GetConnectionString("");
 
             List<string> list = new List<string>();
@@ -1160,12 +1113,9 @@ namespace WinExplorer.UI
                         }
                     }
                 }
-
             }
 
-
             return list;
-
         }
 
         //SELECT* FROM sys.database_principals
@@ -1198,13 +1148,11 @@ namespace WinExplorer.UI
                         }
                     }
                 }
-
             }
 
-
             return list;
-
         }
+
         public List<string> GetDatabaseRoles()
         {
             List<string> list = new List<string>();
@@ -1233,13 +1181,11 @@ namespace WinExplorer.UI
                         }
                     }
                 }
-
             }
 
-
             return list;
-
         }
+
         public List<string> GetStoredProcedure(string procedure_name)
         {
             List<string> list = new List<string>();
@@ -1268,13 +1214,11 @@ namespace WinExplorer.UI
                         }
                     }
                 }
-
             }
 
-
             return list;
-
         }
+
         public List<string> GetDatabaseStoredProcedures(string database)
         {
             List<string> list = new List<string>();
@@ -1303,14 +1247,11 @@ namespace WinExplorer.UI
                         }
                     }
                 }
-
             }
 
-
-
             return list;
-
         }
+
         public List<string> GetDatabaseList(string conString)
         {
             List<string> list = new List<string>();
@@ -1336,10 +1277,10 @@ namespace WinExplorer.UI
                 }
             }
             return list;
-
         }
 
-        List<string> views { get; set; }
+        private List<string> views { get; set; }
+
         public List<string> GetDatabaseViewsList(string conString)
         {
             List<string> views = new List<string>();
@@ -1365,104 +1306,92 @@ namespace WinExplorer.UI
                 }
             }
 
-            
             return views;
-
         }
+
         //SELECT[TABLE_NAME] FROM INFORMATION_SCHEMA.VIEWS
 
         /// <summary>The exec load database details.</summary>
         /// <returns>The exec load database details.</returns>
         public bool ExecLoadDatabaseDetails(DataConnection dc)
-		{
-			bool populate = false;
-			string connection = string.Empty;
-			bool success = false;
-
-			try
-			{
-				
-				if (_metaDataService == null)
-				{
-					_metaDataService = DatabaseMetaDataService.Create("SQL Server");
-				}
-
-				connection = dc.GetConnectionStringr();
-				populate = true;
-			}
-			catch (Exception exp)
-			{
-				string msg = string.Format(
-					"{0}\r\n\r\nCheck the connection and select 'Reset Database Connection'.", 
-					exp.Message);
-				
-			}
-			finally
-			{
-				
-			}
-
-			if (populate)
-			{
-				try
-				{
-			
-					_model = _metaDataService.GetDbObjectModel(dc.GetConnectionStringr());
-                    _models = GetDatabaseList(dc.GetConnectionStringr());
-                   // Data Source = DESKTOP - COMP; Initial Catalog = master; Integrated Security = False; User ID = sa; Password = sa
-                }
-				finally
-				{
-					
-				}
-				BuildTreeFromDbModel(connection);
-				
-				success = true;
-			}
-			else
-			{
-				_populated = false;
-				DatabaseTreeView.CollapseAll();
-			}
-
-			return success;
-		}
-        public DbModelInstance LoadDatabase(string c)
         {
-            
+            bool populate = false;
             string connection = string.Empty;
-            dc.SetKeyValue("Initial Catalog", c);
-            cs =  dc.GetConnectionString();// GetConnectionString(c);
-
-            DbModelInstance model = null;
+            bool success = false;
 
             try
             {
-                
+                if (_metaDataService == null)
                 {
-                    _metaDataService = DatabaseMetaDataService.Create("System.Data.SqlClient");
+                    _metaDataService = DatabaseMetaDataService.Create("SQL Server");
                 }
 
-                connection = _metaDataService.GetDescription();
-                
+                connection = dc.GetConnectionStringr();
+                populate = true;
             }
             catch (Exception exp)
             {
                 string msg = string.Format(
                     "{0}\r\n\r\nCheck the connection and select 'Reset Database Connection'.",
                     exp.Message);
-                
             }
             finally
             {
-                
             }
 
-            
+            if (populate)
             {
                 try
                 {
-                    
+                    _model = _metaDataService.GetDbObjectModel(dc.GetConnectionStringr());
+                    _models = GetDatabaseList(dc.GetConnectionStringr());
+                    // Data Source = DESKTOP - COMP; Initial Catalog = master; Integrated Security = False; User ID = sa; Password = sa
+                }
+                finally
+                {
+                }
+                BuildTreeFromDbModel(connection);
+
+                success = true;
+            }
+            else
+            {
+                _populated = false;
+                DatabaseTreeView.CollapseAll();
+            }
+
+            return success;
+        }
+
+        public DbModelInstance LoadDatabase(string c)
+        {
+            string connection = string.Empty;
+            dc.SetKeyValue("Initial Catalog", c);
+            cs = dc.GetConnectionString();// GetConnectionString(c);
+
+            DbModelInstance model = null;
+
+            try
+            {
+                {
+                    _metaDataService = DatabaseMetaDataService.Create("System.Data.SqlClient");
+                }
+
+                connection = _metaDataService.GetDescription();
+            }
+            catch (Exception exp)
+            {
+                string msg = string.Format(
+                    "{0}\r\n\r\nCheck the connection and select 'Reset Database Connection'.",
+                    exp.Message);
+            }
+            finally
+            {
+            }
+
+            {
+                try
+                {
                     model = _metaDataService.GetDbObjectModel(cs);
                     //_models = GetDatabaseList(_services.Settings.ConnectionDefinition.ConnectionString);
                     // Data Source = DESKTOP - COMP; Initial Catalog = master; Integrated Security = False; User ID = sa; Password = sa
@@ -1470,23 +1399,17 @@ namespace WinExplorer.UI
                 }
                 finally
                 {
-                    
                 }
-
-
-
-               
-                
             }
-          
 
             return model;
         }
-        string ds = "Data Source = DESKTOP-COMP; Integrated Security = False; User ID = sa; Password = sa";
 
-        string dd = "; Initial Catalog = ";
+        private string ds = "Data Source = DESKTOP-COMP; Integrated Security = False; User ID = sa; Password = sa";
 
-        string database = "";
+        private string dd = "; Initial Catalog = ";
+
+        private string database = "";
 
         public string GetConnectionString(string s)
         {
@@ -1495,30 +1418,23 @@ namespace WinExplorer.UI
             return ds + dd + s;
         }
 
-   
+        /// <summary>The select node.</summary>
+        /// <param name="treeNode">The tree node.</param>
+        private void SelectNode(TreeNode treeNode)
+        {
+            if (treeNode.Parent != null)
+            {
+                treeNode.Parent.EnsureVisible();
+            }
 
-		/// <summary>The select node.</summary>
-		/// <param name="treeNode">The tree node.</param>
-		private void SelectNode(TreeNode treeNode)
-		{
-			if (treeNode.Parent != null)
-			{
-				treeNode.Parent.EnsureVisible();
-			}
-
-			treeNode.EnsureVisible();
-			DatabaseTreeView.SelectedNode = treeNode;
-			treeNode.Expand();
-		    DatabaseTreeView.Focus();
-		}
-
-
-
-	
+            treeNode.EnsureVisible();
+            DatabaseTreeView.SelectedNode = treeNode;
+            treeNode.Expand();
+            DatabaseTreeView.Focus();
+        }
 
         public TreeNode LoadDatabaseNodes(TreeNode nodes)
         {
-
             TreeNode ng = new TreeNode("Database Diagrams");
 
             nodes.Nodes.Add(ng);
@@ -1535,7 +1451,6 @@ namespace WinExplorer.UI
 
             ng.Nodes.Add(ngs);
 
-
             ng = new TreeNode("External Resources");
 
             nodes.Nodes.Add(ng);
@@ -1551,7 +1466,6 @@ namespace WinExplorer.UI
             ng = new TreeNode("Synonyms");
 
             nodes.Nodes.Add(ng);
-
 
             ng = new TreeNode("Programmability");
 
@@ -1759,7 +1673,6 @@ namespace WinExplorer.UI
             rn = new TreeNode("Broker Priorities");
             ng.Nodes.Add(rn);
 
-
             ng = new TreeNode("Storage");
 
             nodes.Nodes.Add(ng);
@@ -1819,19 +1732,14 @@ namespace WinExplorer.UI
             ng.Nodes.Add(rn);
 
             return ng;
-
-
         }
-
 
         private void DatabaseTreeView_AfterSelect(object sender, TreeViewEventArgs e)
         {
             TreeNode node = e.Node;
 
-
-         if (node.Tag == "database")
+            if (node.Tag == "database")
             {
-
                 node.Nodes.Clear();
 
                 DbModelInstance model = LoadDatabase(node.Text);
@@ -1839,14 +1747,9 @@ namespace WinExplorer.UI
                 LoadDatabaseNodes(node);
 
                 BuildTreeFromDbModel(model, node);
-
-
-
-
             }
             else if (node.Text == "Triggers")
             {
-
                 string name = ExecStoredProcedure(node.Tag as string);
 
                 if (name == "")
@@ -1855,12 +1758,9 @@ namespace WinExplorer.UI
                 TreeNode ng = new TreeNode(name);
 
                 node.Nodes.Add(ng);
-
-
             }
             else if (node.Text == "Keys")
             {
-
                 List<string> names = GetTableKeys(node.Tag as string);
 
                 if (names.Count <= 0)
@@ -1874,7 +1774,6 @@ namespace WinExplorer.UI
 
                 //foreach (string name in names)
                 {
-
                     foreach (DbModelColumn c in table.Columns)
                     {
                         if (c.IsKey || c.HasFK)
@@ -1894,15 +1793,12 @@ namespace WinExplorer.UI
                                 ng.SelectedImageKey = "PK";
                             }
                             node.Nodes.Add(ng);
-
                         }
                     }
-                                    }
-
+                }
             }
             else if (node.Text == "Indexes")
             {
-
                 List<string> names = GetTableIndexes(node.Tag as string);
 
                 if (names.Count <= 0)
@@ -1916,11 +1812,9 @@ namespace WinExplorer.UI
 
                     node.Nodes.Add(ng);
                 }
-
             }
             else if (node.Text == "Constraints")
             {
-
                 List<string> names = GetTableConstraints(node.Tag as string);
 
                 if (names.Count <= 0)
@@ -1934,11 +1828,9 @@ namespace WinExplorer.UI
 
                     node.Nodes.Add(ng);
                 }
-
             }
             else if (node.Text == "Statistics")
             {
-
                 List<string> names = GetTableStatistics(node.Tag as string);
 
                 if (names.Count <= 0)
@@ -1952,10 +1844,9 @@ namespace WinExplorer.UI
 
                     node.Nodes.Add(ng);
                 }
-
-            } else if (node.Text == "Schemas")
+            }
+            else if (node.Text == "Schemas")
             {
-
                 List<string> names = GetSchema();
 
                 if (names.Count <= 0)
@@ -1969,10 +1860,9 @@ namespace WinExplorer.UI
 
                     node.Nodes.Add(ng);
                 }
-
-            } else if (node.Text == "Database Roles")
+            }
+            else if (node.Text == "Database Roles")
             {
-
                 List<string> names = GetDatabaseRoles();
 
                 if (names.Count <= 0)
@@ -1986,11 +1876,9 @@ namespace WinExplorer.UI
 
                     node.Nodes.Add(ng);
                 }
-
             }
             else if (node.Text == "Users")
             {
-
                 List<string> names = GetDatabaseUsers();
 
                 if (names.Count <= 0)
@@ -2004,11 +1892,9 @@ namespace WinExplorer.UI
 
                     node.Nodes.Add(ng);
                 }
-
             }
             else if (node.Text == "Logins")
             {
-
                 List<string> names = GetLogins();
 
                 if (names.Count <= 0)
@@ -2022,7 +1908,6 @@ namespace WinExplorer.UI
 
                     node.Nodes.Add(ng);
                 }
-
             }
             else
             {
@@ -2030,10 +1915,8 @@ namespace WinExplorer.UI
 
                 if (data != null)
                 {
-
                     if ((data).StartsWith("Stored Procedure") == true)
                     {
-
                         string procedure = data.Replace("Stored Procedure - ", "");
 
                         List<string> names = GetStoredProcedure(procedure);
@@ -2053,10 +1936,9 @@ namespace WinExplorer.UI
 
                             nodes.Nodes.Add(ng);
                         }
-
-                    } else if ((data).StartsWith("System Functions") == true)
+                    }
+                    else if ((data).StartsWith("System Functions") == true)
                     {
-
                         string function = data.Replace("System Functions - ", "");
 
                         List<string> names = GetSystemFunctions(function);
@@ -2076,23 +1958,20 @@ namespace WinExplorer.UI
 
                             node.Nodes.Add(ng);
                         }
-
                     }
                 }
             }
             ExplorerForms.ef.Command_SetPropertyGrid(node.Tag);
         }
-        DataConnection dc { get; set; }
+
+        private DataConnection dc { get; set; }
+
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-           
-
         }
+
         public static bool EnumerateSQLInstances()
         {
-        
-           
-
             return true;
         }
 
@@ -2114,7 +1993,7 @@ namespace WinExplorer.UI
             dvf.FormBorderStyle = FormBorderStyle.None;
             dvf.TopLevel = false;
             dvf.Dock = DockStyle.Fill;
-            
+
             dvf.Load(_rightClickedNode.Tag as DbModelObjectBase);
             dvf.Show();
             df.Controls.Add(dvf);
@@ -2133,13 +2012,12 @@ namespace WinExplorer.UI
 
         private void viewCodeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             DbModelTable b = _rightClickedNode.Tag as DbModelTable;
             ScriptingOptions sc = new ScriptingOptions();
             sc.ScriptData = true;
             sc.ScriptSchema = false;
             string s = SQLScripter.CreateTableScript("localhost", "sa", "sa", "database", b.Name, sc);
-            
+
             DocumentForm df = ExplorerForms.ef.Command_OpenDocumentForm("tables");
             ViewCodeForm dvf = new ViewCodeForm(s);
             dvf.FormBorderStyle = FormBorderStyle.None;
@@ -2156,7 +2034,7 @@ namespace WinExplorer.UI
             sc.ScriptData = false;
             sc.ScriptSchema = true;
             string s = SQLScripter.CreateTableScript("localhost", "sa", "sa", "database", b.Name, sc);
-            
+
             DocumentForm df = ExplorerForms.ef.Command_OpenDocumentForm("tables");
             ViewCodeForm dvf = new ViewCodeForm(s);
             dvf.FormBorderStyle = FormBorderStyle.None;
@@ -2164,36 +2042,33 @@ namespace WinExplorer.UI
             dvf.Dock = DockStyle.Fill;
             dvf.Show();
             df.Controls.Add(dvf);
-           
         }
 
         /// <summary>
         /// Method returns the correct SQL namespace to use to detect SQL Server instances.
         /// </summary>
         /// <returns>namespace to use to detect SQL Server instances</returns>
-
     }
 
     public class SQLScripter
     {
-            public static string CreateTableScript(string datasource, string user, string password, string databases, string tableName, ScriptingOptions sc)
+        public static string CreateTableScript(string datasource, string user, string password, string databases, string tableName, ScriptingOptions sc)
+        {
+            var server = new Server(new ServerConnection { ConnectionString = new SqlConnectionStringBuilder { DataSource = @datasource, UserID = user, Password = password }.ToString() });
+            server.ConnectionContext.Connect();
+            var database = server.Databases[databases];
+
+            //using (FileStream fs = new FileStream(@"H:\database_scripts\Gaurav.sql", FileMode.Append, FileAccess.Write))
+            //using (StreamWriter sw = new StreamWriter(fs))
             {
-
-                var server = new Server(new ServerConnection { ConnectionString = new SqlConnectionStringBuilder { DataSource = @datasource, UserID = user, Password = password }.ToString() });
-                server.ConnectionContext.Connect();
-                var database = server.Databases[databases];
-
-                //using (FileStream fs = new FileStream(@"H:\database_scripts\Gaurav.sql", FileMode.Append, FileAccess.Write))
-                //using (StreamWriter sw = new StreamWriter(fs))
+                //foreach(Table table in database.Tables)
                 {
-                    //foreach(Table table in database.Tables)
-                    {
                     Table table = database.Tables[tableName];
-                        //if (table.Name == tableName)
-                        {
-//                        ScriptingOptions sc = new ScriptingOptions();
-//                        sc.ScriptSchema = false;
-//                        sc.ScriptData = true;
+                    //if (table.Name == tableName)
+                    {
+                        //                        ScriptingOptions sc = new ScriptingOptions();
+                        //                        sc.ScriptSchema = false;
+                        //                        sc.ScriptData = true;
 
                         // s = "";
                         var scripter = new Scripter(server);
@@ -2204,20 +2079,17 @@ namespace WinExplorer.UI
                         StringBuilder b = new StringBuilder();
                         foreach (string line in script)
                         {
-
                             b.AppendLine(line);
-
                         }
                         return b.ToString();
-                        }
                     }
                 }
-            return "";
             }
-        
+            return "";
+        }
     }
 
-    public  class SQLServerInstances
+    public class SQLServerInstances
     {
         //private static List<string> GetLocalSqlServerInstancesByCallingSqlBrowser()
         //{
@@ -2263,6 +2135,7 @@ namespace WinExplorer.UI
                 return new List<string>();
             }
         }
+
         public static List<ServerInstance> LocalSqlServerInstancesgSqlWmi(ProviderArchitecture providerArchitecture)
         {
             try
@@ -2287,6 +2160,7 @@ namespace WinExplorer.UI
                 return new List<ServerInstance>();
             }
         }
+
         private static List<string> GetLocalSqlServerInstancesByReadingRegInstalledInstances()
         {
             try
@@ -2348,19 +2222,16 @@ namespace WinExplorer.UI
                 .ToList();
         }
 
-     
-     
         public static DataTable LocalNetworkSQLInstances()
         {
-            // Retrieve the enumerator instance and then the data.  
+            // Retrieve the enumerator instance and then the data.
             SqlDataSourceEnumerator instance =
               SqlDataSourceEnumerator.Instance;
 
             System.Data.DataTable table = instance.GetDataSources();
 
-            // Display the contents of the table.  
+            // Display the contents of the table.
             return table;
-            
         }
     }
 }

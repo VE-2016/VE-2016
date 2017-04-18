@@ -155,9 +155,9 @@ namespace WinExplorer
 
             sp.Panel2.Controls.Add(panel9);
 
-            if(mbp != null)
+            if (mbp != null)
 
-            mbp.Show();
+                mbp.Show();
 
             ResumeLayout();
         }
@@ -352,8 +352,6 @@ namespace WinExplorer
 
             if (vs == null)
                 return L;
-
-
 
             L = vs.GetSolutionPlatforms();
 

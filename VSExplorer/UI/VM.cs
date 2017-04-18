@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinExplorer.UI
@@ -17,6 +10,7 @@ namespace WinExplorer.UI
         {
             InitializeComponent();
         }
+
         public string virtualBoxManage;
         private string virtualBoxMachineName;
 
@@ -52,14 +46,17 @@ namespace WinExplorer.UI
             }
             return "-1";
         }
+
         private String launchVBoxManager(String args)
         {
             return this.launchVBoxManager(args, "");
         }
+
         public void stopVM(String VMName)
         {
             launchVBoxManager(" controlvm \"" + VMName + "\" poweroff");
         }
+
         public String ipVM(String VMName)
         {
             //Checking IP
@@ -74,6 +71,7 @@ namespace WinExplorer.UI
                 return "0.0.0.0";
             }
         }
+
         public void startVM(String VMName)
         {
             String start = " startvm \"" + this.virtualBoxMachineName + "\" --type headless";

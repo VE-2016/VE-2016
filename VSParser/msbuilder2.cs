@@ -17,7 +17,6 @@ using System.Windows.Forms;
 using System.Xml;
 using VSParsers;
 
-
 namespace VSProvider
 {
     [DebuggerDisplay("{ProjectName}, {RelativePath}, {ProjectGuid}")]
@@ -65,7 +64,6 @@ namespace VSProvider
         {
             get
             {
-                
                 return _projectFileName;
             }
             set
@@ -80,8 +78,6 @@ namespace VSProvider
 
         public CSParsers CSParsers()
         {
-
-
             if (csd == null)
             {
                 if (typeLoadingStarted == false)
@@ -101,12 +97,10 @@ namespace VSProvider
 
                         if (dcc.ContainsKey(c) == true)
                         {
-
                             Assembly asm = dcc[c];
 
                             A.Add(asm);
                         }
-
                         else
                         if (dc.ContainsKey(c) == true)
                         {
@@ -140,7 +134,7 @@ namespace VSProvider
 
                         //dcc.Add("mscorlib", asm);
                     }
-                    
+
                     csd.AddProjectFiles(L, A);
                     csd.addProjectFiles(L, A);
                     ImportProjectTypes();
@@ -192,15 +186,13 @@ namespace VSProvider
                     vp.CSParsers();
 
                 ArrayList L = vp.GetCompileItems();
-                
+
                 csd.AddProjectFiles(L);
 
                 csd.addProjectFiles(L);
-                
-                csd.snx.cc = csd.snx.cc.AddReferences(vp.csd.snx.cc.References);
 
+                csd.snx.cc = csd.snx.cc.AddReferences(vp.csd.snx.cc.References);
             }
-            
         }
 
         public Dictionary<string, string> GetTypeNames()
@@ -241,9 +233,6 @@ namespace VSProvider
             return s;
         }
 
-
-
-
         static VSProject()
         {
             s_ProjectInSolution = Type.GetType("Microsoft.Build.Construction.ProjectInSolution, Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
@@ -253,9 +242,6 @@ namespace VSProvider
             s_ProjectInSolution_RelativePath = s_ProjectInSolution.GetProperty("RelativePath", BindingFlags.NonPublic | BindingFlags.Instance);
             s_ProjectInSolution_ProjectGuid = s_ProjectInSolution.GetProperty("ProjectGuid", BindingFlags.NonPublic | BindingFlags.Instance);
 
-
-
-
             //s_ProjectRootElement_OutDir = s_ProjectInSolution.GetProperty("OutDir", BindingFlags.NonPublic | BindingFlags.Instance);
             //s_ProjectRootElement_AssemblyName = s_ProjectInSolution.GetProperty("AssemblyName", BindingFlags.NonPublic | BindingFlags.Instance);
 
@@ -263,7 +249,6 @@ namespace VSProvider
             s_ProjectRootElementCache = Type.GetType("Microsoft.Build.Evaluation.ProjectRootElementCache, Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
 
             s_ProjectRootElement_Items = s_ProjectRootElement.GetProperty("Items", BindingFlags.Public | BindingFlags.Instance);
-
 
             s_ProjectRootElement_OutputType = s_ProjectRootElement.GetProperty("Properties", BindingFlags.Public | BindingFlags.Instance);
         }
@@ -298,9 +283,8 @@ namespace VSProvider
             {
                 pc = new Microsoft.Build.Evaluation.Project(FileName);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-
             }
             if (pc == null)
                 return;
@@ -308,14 +292,13 @@ namespace VSProvider
             ArrayList D = new ArrayList();
 
             var c = pc.GetItems("None");
-            foreach(ProjectItem p in c)
+            foreach (ProjectItem p in c)
             {
                 if (p.EvaluatedInclude.EndsWith(".datasource"))
                     D.Add(p.EvaluatedInclude);
 
                 if (p.EvaluatedInclude.EndsWith(".xsd"))
                     D.Add(p.EvaluatedInclude);
-
             }
 
             dict.Add(this, D);
@@ -339,7 +322,6 @@ namespace VSProvider
             this.ProjectType = s_ProjectInSolution_ProjectType.GetValue(internalSolutionProject, null).ToString();
             this.RelativePath = s_ProjectInSolution_RelativePath.GetValue(internalSolutionProject, null) as string;
             this.ProjectGuid = s_ProjectInSolution_ProjectGuid.GetValue(internalSolutionProject, null) as string;
-
 
             _internalSolutionProject = internalSolutionProject;
 
@@ -372,8 +354,6 @@ namespace VSProvider
                     _items.Add(new VSProjectItem(this, item));
                 }
                 this.properties = s_ProjectRootElement_OutputType.GetValue(rootElement, null) as ICollection<ProjectPropertyElement>;
-
-
 
                 string outtype = Find("OutputType");
                 string assembly = Find("AssemblyName");
@@ -426,7 +406,6 @@ namespace VSProvider
                 return exe;
 
             Microsoft.Build.Evaluation.ProjectProperty outtype = pc.GetProperty("OutputType");
-
 
             if (outtype != null)
                 if (outtype.EvaluatedValue == "WinExe" || outtype.EvaluatedValue.ToLower().Contains("exe"))
@@ -488,6 +467,7 @@ namespace VSProvider
             e.Save();
             pc.Save();
         }
+
         public void SetPlatformConfig(string config, string platform, Microsoft.Build.Evaluation.Project pc)
         {
             if (pc == null)
@@ -499,6 +479,7 @@ namespace VSProvider
 
             pc.Save();
         }
+
         public void SetPlatformConfig(string config, string platform)
         {
             Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(FileName);
@@ -557,7 +538,6 @@ namespace VSProvider
             return null;
         }
 
-
         public string GetPropertyBase(string s)
         {
             Microsoft.Build.Evaluation.Project pc = null;
@@ -583,10 +563,12 @@ namespace VSProvider
 
             return d.EvaluatedValue;
         }
+
         public string GetTargetFrameworkVersion()
         {
             return GetPropertyBase("TargetFrameworkVersion");
         }
+
         public void SetTargetFrameworkVersion(string v, Microsoft.Build.Evaluation.Project pc)
         {
             SetProperty("TargetFrameworkVersion", v, pc);
@@ -596,46 +578,57 @@ namespace VSProvider
         {
             return GetPropertyBase("OutputPath");
         }
+
         public void SetOutputPath(string v, Microsoft.Build.Evaluation.Project pc)
         {
             SetProperty("OutputPath", v, pc);
         }
+
         public string TreatWarningsAsErrors()
         {
             return GetPropertyBase("TreatWarningsAsErrors");
         }
+
         public void SetTreatWarningsAsErrors(string v, Microsoft.Build.Evaluation.Project pc)
         {
             SetProperty("TreatWarningsAsErrors", v, pc);
         }
+
         public string GetWarningLevel()
         {
             return GetPropertyBase("WarningLevel");
         }
+
         public void SetWarningLevel(string v, Microsoft.Build.Evaluation.Project pc)
         {
             SetProperty("WarningLevel", v, pc);
         }
+
         public string GetDefineConstants()
         {
             return GetPropertyBase("DefineConstants");
         }
+
         public void SetDefineConstants(string v, Microsoft.Build.Evaluation.Project pc)
         {
             SetProperty("DefineConstants", v, pc);
         }
+
         public string GetUnsafeBlocks()
         {
             return GetPropertyBase("AllowUnsafeBlocks");
         }
+
         public void SetUnsafeBlocks(string v, Microsoft.Build.Evaluation.Project pc)
         {
             SetProperty("AllowUnsafeBlocks", v, pc);
         }
+
         public string GetOptimize()
         {
             return GetPropertyBase("Optimize");
         }
+
         public void SetOptimize(string v, Microsoft.Build.Evaluation.Project pc)
         {
             SetProperty("Optimize", v, pc);
@@ -671,8 +664,6 @@ namespace VSProvider
 
             string outs = "";
 
-            
-
             foreach (ProjectProperty p in L)
                 if (p.Name == "OutDir")
                     outs = p.EvaluatedValue;
@@ -694,9 +685,6 @@ namespace VSProvider
             // string s = outdir.EvaluatedValue + "\\" + assname.EvaluatedValue + ext;
 
             string s = outs + "\\" + assname.EvaluatedValue + ext;
-
-
-
 
             pc.ProjectCollection.UnloadAllProjects();
 
@@ -837,7 +825,6 @@ namespace VSProvider
             {
                 if (p.EvaluatedInclude == refs)
                 {
-                  
                     foreach (Microsoft.Build.Evaluation.ProjectMetadata m in p.Metadata)
                     {
                         if (m.Name == "HintPath")
@@ -846,15 +833,12 @@ namespace VSProvider
                             return m.UnevaluatedValue;
                         }
                     }
-
-               }
+                }
             }
 
             pc.ProjectCollection.UnloadAllProjects();
             return "";
-      
         }
-
 
         public string GetReferenceHint(string refs)
         {
@@ -864,8 +848,6 @@ namespace VSProvider
                 return "";
 
             string hint = GetReferenceHint(p);
-
-            
 
             return hint;
         }
@@ -903,6 +885,7 @@ namespace VSProvider
 
             return L;
         }
+
         public ArrayList GetReferences()
         {
             ArrayList L = new ArrayList();
@@ -927,11 +910,10 @@ namespace VSProvider
 
                 if (p.HasMetadata("HintPath"))
                 {
-                    
                     file = Path.GetFullPath(folder + "\\" + p.GetMetadata("HintPath").UnevaluatedValue);
                 }
-                else 
-                if(!p.HasMetadata("HintPath"))
+                else
+                if (!p.HasMetadata("HintPath"))
                     file = p.EvaluatedInclude;
 
                 L.Add(file);
@@ -973,12 +955,11 @@ namespace VSProvider
                 L.Add(file);
             }
 
-
-
             pc.ProjectCollection.UnloadAllProjects();
 
             return L;
         }
+
         public ArrayList GetProjectReferencesFiles(string name)
         {
             ArrayList L = new ArrayList();
@@ -1008,12 +989,11 @@ namespace VSProvider
                 L.Add(file);
             }
 
-
-
             pc.ProjectCollection.UnloadAllProjects();
 
             return L;
         }
+
         public void RenameItem(string type, string evInclude, string newvalue)
         {
             Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(FileName);
@@ -1045,7 +1025,6 @@ namespace VSProvider
 
                 ArrayList L = new ArrayList();
 
-
                 IEnumerable<ProjectMetadata> metadata = pp.Metadata;
 
                 foreach (ProjectMetadata b in metadata)
@@ -1066,6 +1045,7 @@ namespace VSProvider
 
             pc.ProjectCollection.UnloadAllProjects();
         }
+
         public void RenameItem(string type, string evInclude, string newvalue, string prevform, string newform)
         {
             Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(FileName);
@@ -1132,10 +1112,7 @@ namespace VSProvider
                     }
                 }
 
-
-
                 MoveItem(evInclude, newvalue);
-
 
                 pc.Save();
             }
@@ -1162,8 +1139,6 @@ namespace VSProvider
                 else
                     c += "\\" + _names[b];
             }
-
-
 
             return c;
         }
@@ -1238,7 +1213,6 @@ namespace VSProvider
         {
             string dest = GetProjectFolder() + "\\" + name;
 
-
             if (Directory.Exists(dest) == false)
                 Directory.CreateDirectory(dest);
         }
@@ -1274,9 +1248,9 @@ namespace VSProvider
             if (File.Exists(source) == false)
                 return;
 
-
             File.Move(source, dest);
         }
+
         public ArrayList GetAllItems(Microsoft.Build.Evaluation.Project pc = null)
         {
             ArrayList L = new ArrayList();
@@ -1301,14 +1275,13 @@ namespace VSProvider
 
             return L;
         }
+
         public IDictionary<string, Microsoft.Build.Execution.ProjectTargetInstance> GetTargets()
         {
             Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(FileName);
 
             if (pc == null)
                 return null;
-
-
 
             string folder = Path.GetDirectoryName(FileName);
 
@@ -1318,6 +1291,7 @@ namespace VSProvider
 
             return s;
         }
+
         public ArrayList GetImports()
         {
             ArrayList L = new ArrayList();
@@ -1326,8 +1300,6 @@ namespace VSProvider
 
             if (pc == null)
                 return L;
-
-
 
             string folder = Path.GetDirectoryName(FileName);
 
@@ -1342,6 +1314,7 @@ namespace VSProvider
 
             return L;
         }
+
         public ArrayList GetItems(string name)
         {
             ArrayList L = new ArrayList();
@@ -1355,8 +1328,6 @@ namespace VSProvider
 
             ICollection<Microsoft.Build.Evaluation.ProjectItem> s = pc.GetItems(name);
 
-
-
             foreach (Microsoft.Build.Evaluation.ProjectItem p in s)
             {
                 L.Add(p);
@@ -1366,6 +1337,7 @@ namespace VSProvider
 
             return L;
         }
+
         public ArrayList GetItems(string name, bool folds)
         {
             ArrayList L = new ArrayList();
@@ -1401,7 +1373,6 @@ namespace VSProvider
                         file = Path.GetFullPath(folder + "\\" + p.EvaluatedInclude);
                 }
 
-
                 L.Add(file);
             }
 
@@ -1409,6 +1380,7 @@ namespace VSProvider
 
             return L;
         }
+
         public ArrayList GetItems(Microsoft.Build.Evaluation.Project pc, string name)
         {
             ArrayList L = new ArrayList();
@@ -1521,7 +1493,6 @@ namespace VSProvider
 
         public ArrayList GetProperties(string proj, string platform)
         {
-
             if (File.Exists(FileName) == false)
                 return new ArrayList();
 
@@ -1551,7 +1522,7 @@ namespace VSProvider
 
                 pc.ProjectCollection.UnloadAllProjects();
             }
-            catch(Exception ex) { }
+            catch (Exception ex) { }
 
             return L;
         }
@@ -1695,7 +1666,6 @@ namespace VSProvider
             return L;
         }
 
-
         public void SetReference(string file, bool withhint = true)
         {
             Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(FileName);
@@ -1715,7 +1685,6 @@ namespace VSProvider
 
             int i = R.IndexOf(libName);
 
-
             MessageBox.Show("Reference will be added " + libName);
 
             IList<ProjectItem> pp = pc.AddItem("Reference", libName);
@@ -1733,8 +1702,6 @@ namespace VSProvider
 
             pc.ProjectCollection.UnloadAllProjects();
         }
-
-
 
         public ArrayList SetReferences(ArrayList L)
         {
@@ -1764,6 +1731,7 @@ namespace VSProvider
 
             return L;
         }
+
         public void SetRestorePackages(bool restore)
         {
             Microsoft.Build.Evaluation.Project pc = null;
@@ -1806,8 +1774,6 @@ namespace VSProvider
 
             IDictionaryEnumerator dict = mg.GetEnumerator();
 
-
-
             while (dict.MoveNext())
             {
                 ResXDataNode node = (ResXDataNode)dict.Value;
@@ -1845,11 +1811,7 @@ namespace VSProvider
                 mg.AddResource(nodes);
             }
 
-
-
             ResXDataNode node = (ResXDataNode)new ResXDataNode(name, new ResXFileRef(file, typename));
-
-
 
             mg.AddResource(node);
             mg.Generate();
@@ -1859,7 +1821,6 @@ namespace VSProvider
         public ArrayList GetEmbeddedResourcesFiles(Microsoft.Build.Evaluation.Project pc = null)
         {
             ArrayList L = new ArrayList();
-
 
             try
             {
@@ -1919,10 +1880,10 @@ namespace VSProvider
         public void GetSubTypes()
         {
         }
+
         public ArrayList GetCompile(Microsoft.Build.Evaluation.Project pc = null, bool fs = true)
         {
             ArrayList L = new ArrayList();
-
 
             try
             {
@@ -1941,6 +1902,7 @@ namespace VSProvider
 
             return R;
         }
+
         public ArrayList GetCompileItems(bool fs = true)
         {
             ArrayList L = new ArrayList();
@@ -1985,6 +1947,7 @@ namespace VSProvider
 
             return name;
         }
+
         public string GetResourceName(ArrayList L)
         {
             string name = "";
@@ -2008,9 +1971,6 @@ namespace VSProvider
 
         public string RenameTo(string name)
         {
-
-            
-
             string[] cc = name.Split(".".ToCharArray());
 
             string r = cc[0];
@@ -2018,12 +1978,10 @@ namespace VSProvider
             name = cc[0] + "1";
 
             return name;
-
         }
 
-        public ArrayList RenameForm(ArrayList L, ArrayList R, string name, Dictionary<string,string> dict)
+        public ArrayList RenameForm(ArrayList L, ArrayList R, string name, Dictionary<string, string> dict)
         {
-
             ArrayList F = new ArrayList();
 
             string[] cc = name.Split(".".ToCharArray());
@@ -2049,35 +2007,29 @@ namespace VSProvider
 
             name = dd[0];
 
-            foreach(string s in L)
+            foreach (string s in L)
             {
-
-
-                
                 string d = s.Replace(r, name);
 
                 F.Add(d);
 
                 dict[s] = d;
-
             }
 
             return F;
-
         }
 
         public Dictionary<string, string> RenameToName(Microsoft.Build.Evaluation.Project pc, ArrayList L)
         {
-
             Dictionary<string, string> dict = new Dictionary<string, string>();
 
-           // Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(FileName);
+            // Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(FileName);
 
             if (pc == null)
                 return dict;
 
             string s = Path.GetDirectoryName(FileName);
-           
+
             ArrayList R = GetItems(pc, "Compile", false);
 
             string name = GetFormName(L);
@@ -2092,24 +2044,22 @@ namespace VSProvider
 
             if (R.Contains(name))
             {
-
                 L = RenameForm(L, R, name, dict);
                 names = RenameTo(name);
                 //name = name.Replace(name, names);
-
             }
 
             return dict;
         }
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="L"></param>
         /// <param name="folders"></param>
         /// <returns></returns>
         public Dictionary<string, string> AddFormItem(ArrayList L, string folders)
         {
-
             Dictionary<string, string> dict = new Dictionary<string, string>();
 
             Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(FileName);
@@ -2134,16 +2084,13 @@ namespace VSProvider
 
             string names = "";
 
-            
             if (R.Contains(name))
             {
-
                 L = RenameForm(L, R, name, dict);
 
                 names = RenameTo(name);
-                
-                //name = name.Replace(name, names);
 
+                //name = name.Replace(name, names);
             }
 
             if (dict.ContainsKey(name))
@@ -2208,8 +2155,6 @@ namespace VSProvider
                 //  <EmbeddedResource Include="OptionsForms.resx">
                 //  <DependentUpon>OptionsForms.cs</DependentUpon>
                 //  </EmbeddedResource>
-
-                
             }
 
             pc.Save(FileName);
@@ -2217,7 +2162,6 @@ namespace VSProvider
             pc.ProjectCollection.UnloadAllProjects();
 
             return dict;
-
         }
 
         public void AddDataSource(string name)
@@ -2232,12 +2176,10 @@ namespace VSProvider
             pc.Save(FileName);
 
             pc.ProjectCollection.UnloadAllProjects();
-
         }
 
         public void AddXSDItem(string name)
         {
-
             Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(FileName);
 
             if (pc == null)
@@ -2253,7 +2195,7 @@ namespace VSProvider
 
             string xss = name + ".xss";
 
-            IEnumerable <KeyValuePair<string, string>> metadata = Enumerable.Empty<KeyValuePair<string, string>>();
+            IEnumerable<KeyValuePair<string, string>> metadata = Enumerable.Empty<KeyValuePair<string, string>>();
             List<KeyValuePair<string, string>> list = metadata.ToList();
             list.Add(new KeyValuePair<string, string>("AutoGen", "True"));
             list.Add(new KeyValuePair<string, string>("DesignTime", "True"));
@@ -2282,9 +2224,8 @@ namespace VSProvider
             pc.Save(FileName);
 
             pc.ProjectCollection.UnloadAllProjects();
-
-           
         }
+
         public void LoadMetaData(ArrayList L)
         {
             Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(FileName);
@@ -2332,13 +2273,11 @@ namespace VSProvider
             return;
         }
 
-
         public bool HasInclude(ICollection<ProjectItem> P, string s)
         {
             foreach (ProjectItem p in P)
                 if (p.EvaluatedInclude == s)
                     return true;
-
 
             return false;
         }
@@ -2356,8 +2295,6 @@ namespace VSProvider
 
             ICollection<ProjectItem> P = pc.GetItems("Compile");
             ICollection<ProjectItem> E = pc.GetItems("EmbeddedResource");
-
-
 
             int N = L.Count;
 
@@ -2416,7 +2353,6 @@ namespace VSProvider
                     }
                 }
 
-
                 if (type != null)
                 {
                     IList<Microsoft.Build.Evaluation.ProjectItem> e = pc.AddItem(type, include);
@@ -2452,8 +2388,6 @@ namespace VSProvider
             string c = cc[cc.Length - 1];
             return c;
         }
-
-
 
         public void Shuffle(Microsoft.Build.Evaluation.Project pc = null)
         {
@@ -2495,19 +2429,12 @@ namespace VSProvider
 
             //pc.ProjectCollection.Dispose();
 
-
-
             //pc = new Microsoft.Build.Evaluation.Project(r);
-
-
-
-
 
             pc.Save(filename);
 
             pc.ProjectCollection.UnloadAllProjects();
         }
-
 
         public Dictionary<string, ArrayList> GetSubtypes(Microsoft.Build.Evaluation.Project pc = null)
         {
@@ -2559,7 +2486,6 @@ namespace VSProvider
                         B.Add(p);
                     }
                 }
-
                 else if (p.ItemType == "EmbeddedResource")
                 {
                     if (p.HasMetadata("DependentUpon") == true)
@@ -2577,7 +2503,6 @@ namespace VSProvider
             }
             return di;
         }
-
 
         public Microsoft.Build.Evaluation.Project LoadProjectToMemory()
         {
@@ -2612,7 +2537,6 @@ namespace VSProvider
                 return pc;
             }
         }
-
 
         public ArrayList SetCompileItems(ArrayList L, Microsoft.Build.Evaluation.Project pc = null)
         {
@@ -2761,9 +2685,9 @@ namespace VSProvider
 
             pc.ProjectCollection.UnloadAllProjects();
         }
+
         public void RemoveReference(string file)
         {
-
             Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(FileName);
 
             if (pc == null)
@@ -2787,6 +2711,7 @@ namespace VSProvider
 
             pc.ProjectCollection.UnloadAllProjects();
         }
+
         public void CleanProject()
         {
             string s = GetOutDirs();
@@ -2989,13 +2914,11 @@ namespace VSProvider
                     if (Directory.Exists(folders) == false)
                         Directory.CreateDirectory(folders);
 
-
                     i++;
 
                     if (i == cc.Length - 1)
                         break;
                 }
-
 
                 File.Copy(c, d);
             }

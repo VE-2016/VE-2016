@@ -1,4 +1,3 @@
-
 namespace WinReflector.Reflector.Runtime
 {
     public class Project_Explorer

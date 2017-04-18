@@ -38,7 +38,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
@@ -55,10 +54,9 @@ namespace VSParsers
     {
         public CSParsers()
         {
-
         }
 
-       // private static SyntaxTree s_syntaxTree;
+        // private static SyntaxTree s_syntaxTree;
 
         public IProjectContent pctx { get; set; }
 
@@ -85,7 +83,6 @@ namespace VSParsers
             {
                 try
                 {
-
                     IUnresolvedFile r = null;
 
                     if (df.ContainsKey(s) == true)
@@ -97,15 +94,12 @@ namespace VSParsers
                         syntaxTree.Freeze();
                         r = syntaxTree.ToTypeSystem();
                         df.Add(s, r);
-
                     }
                     pctx = pctx.AddOrUpdateFiles(r);
                 }
                 catch (Exception e)
                 {
                 }
-
-
             }
 
             cmp = pctx.CreateCompilation();
@@ -120,6 +114,7 @@ namespace VSParsers
                     dict.Add(d.FullName, d);
             }
         }
+
         public Syntaxer snx { get; set; }
 
         public ArrayList refs = new ArrayList();
@@ -138,7 +133,6 @@ namespace VSParsers
             {
                 string[] r = getAssembliesFiles(A);
 
-                
                 foreach (string c in r)
                 {
                     if (refs.IndexOf(c) < 0)
@@ -158,29 +152,22 @@ namespace VSParsers
                 {
                     if (syns.IndexOf(filename) < 0)
                     {
-
                         string content = File.ReadAllText(filename);
                         Microsoft.CodeAnalysis.SyntaxTree syntaxTree = CSharpSyntaxTree.ParseText(content, null, filename);
                         sl.Add(syntaxTree);
                         syns.Add(filename);
-
                     }
                     //snx.cc.AddSyntaxTrees(syntaxTree);
-                   
-                   
                 }
                 catch (Exception e)
                 {
                 }
-                
-                    
-                
             }
 
             snx.cc = snx.cc.AddReferences(pl).AddSyntaxTrees(sl);
 
             List<INamedTypeSymbol> T = snx.GetAllTypes();
-            
+
             Dict = new Dictionary<string, Microsoft.CodeAnalysis.INamedTypeSymbol>();
 
             foreach (Microsoft.CodeAnalysis.INamedTypeSymbol d in T)
@@ -189,6 +176,7 @@ namespace VSParsers
                     Dict.Add(d.Name, d);
             }
         }
+
         public IEnumerable<ITypeDefinition> T { get; set; }
 
         public IEnumerable<ICompletionData> GetCodeComplete(string filename, string editorText, int offset, int X, int Y) // not the best way to put in the whole string every time
@@ -210,10 +198,7 @@ namespace VSParsers
 
             var mb = new DefaultCompletionContextProvider(doc, unresolvedFile);
 
-
-
             pctx = pctx.AddOrUpdateFiles(unresolvedFile);
-
 
             cmp = pctx.CreateCompilation();
 
@@ -221,7 +206,6 @@ namespace VSParsers
             var completionContext = new CSharpCompletionContext(doc, offset, pctx);
             var completionFactory = new CSharpCompletionContext.CSharpCompletionDataFactory2(resolver3.CurrentTypeResolveContext, completionContext);
             var engine = new CSharpCompletionEngine(doc, mb, completionFactory, pctx, resolver3.CurrentTypeResolveContext);
-
 
             engine.EolMarker = Environment.NewLine;
             engine.EditorBrowsableBehavior = EditorBrowsableBehavior.IncludeAdvanced;
@@ -325,7 +309,6 @@ namespace VSParsers
             return L;
         }
 
-
         public ArrayList GetAllTypes()
         {
             ArrayList L = new ArrayList();
@@ -339,7 +322,6 @@ namespace VSParsers
 
             return L;
         }
-
 
         public ITypeDefinition GetAllTypes(string name)
         {
@@ -572,12 +554,6 @@ namespace VSParsers
             return data;
         }
 
-
-
-
-
-
-
         private int GetOffset(TextBox textBox, TextLocation location)
         {
             // TextBox uses 0-based coordinates, TextLocation is 1-based
@@ -590,7 +566,6 @@ namespace VSParsers
             int col = offset - textBox.GetFirstCharIndexFromLine(line);
             return new TextLocation(line + 1, col + 1);
         }
-
 
         private static Lazy<IList<IUnresolvedAssembly>> s_builtInLibs = new Lazy<IList<IUnresolvedAssembly>>(
             delegate
@@ -630,17 +605,14 @@ namespace VSParsers
 
         public static Type GetTypeForName(string name)
         {
-
-            foreach(IUnresolvedAssembly s in dd.Values)
+            foreach (IUnresolvedAssembly s in dd.Values)
             {
-
                 var d = s.GetAllTypeDefinitions();
-                foreach(IUnresolvedTypeDefinition b in d)
+                foreach (IUnresolvedTypeDefinition b in d)
                 {
                     if (b.FullName.EndsWith(name))
                         return b.GetType();
                 }
-
             }
             return null;
         }
@@ -659,8 +631,8 @@ namespace VSParsers
                 else
                 {
                     p = loader.LoadAssemblyFile(asm.Location);
-                    if(!dd.ContainsKey(asm.FullName))
-                    dd.Add(asm.FullName, p);
+                    if (!dd.ContainsKey(asm.FullName))
+                        dd.Add(asm.FullName, p);
                 }
                 R.Add(p);
             }
@@ -674,9 +646,9 @@ namespace VSParsers
                 i++;
             }
 
-
             return r;
         }
+
         private Assembly[] getAssemblies(ArrayList A)
         {
             ArrayList R = new ArrayList();
@@ -703,16 +675,15 @@ namespace VSParsers
                 i++;
             }
 
-
             return r;
         }
+
         private string[] getAssembliesFiles(ArrayList A)
         {
             ArrayList R = new ArrayList();
 
             foreach (Assembly asm in A)
             {
-                
                 R.Add(asm.Location);
             }
 
@@ -725,9 +696,9 @@ namespace VSParsers
                 i++;
             }
 
-
             return r;
         }
+
         public ResolveResult Resolve(TextLocation location, string content, string filename)
         {
             ICSharpCode.NRefactory.CSharp.SyntaxTree syntaxTree = null;
@@ -742,7 +713,6 @@ namespace VSParsers
             }
             var unresolvedFile = syntaxTree.ToTypeSystem();
             pctx = pctx.AddOrUpdateFiles(unresolvedFile);
-
 
             cmp = pctx.CreateCompilation();
 
@@ -762,12 +732,9 @@ namespace VSParsers
 
         public Syntaxer syntaxer { get; set; }
 
-      
         public ArrayList ResolveAt(TextLocation location, string content, string filename, VSProject vp)
         {
             shouldstop = false;
-
-
 
             // IProjectContent project = new CSharpProjectContent();
             ICSharpCode.NRefactory.CSharp.SyntaxTree syntaxTree = null;
@@ -863,10 +830,10 @@ namespace VSParsers
 
             //return null;
         }
+
         public ArrayList ResolveAtTypes(string content, string filename)
         {
             shouldstop = false;
-
 
             ICSharpCode.NRefactory.CSharp.SyntaxTree syntaxTree = null;
 
@@ -904,14 +871,11 @@ namespace VSParsers
                     E.Add(node);
                 if (node.GetType() == typeof(ICSharpCode.NRefactory.CSharp.ConstructorDeclaration))
                     E.Add(node);
-
-
             }
 
             return E;
-
-
         }
+
         public class mappers
         {
             public mappers()
@@ -969,7 +933,6 @@ namespace VSParsers
 
             string filename = path;
 
-
             string sourceText = content;
 
             CSharpParser parser = new CSharpParser();
@@ -994,7 +957,6 @@ namespace VSParsers
             catch (Exception e) { }
 
             syntax = syntaxTree2;
-
 
             string ents = "";
 
@@ -1030,8 +992,6 @@ namespace VSParsers
                     {
                         TypeDeclaration d = (TypeDeclaration)asc;
 
-
-
                         maps.Classes.Add(d);
 
                         //nods.Text = d.Name;
@@ -1055,8 +1015,6 @@ namespace VSParsers
                 }
 
                 int nw = 0;
-
-
 
                 foreach (AstNode ast in asc.DescendantsAndSelf)
                 {
@@ -1106,8 +1064,6 @@ namespace VSParsers
                             //}
 
                             //nv.Text += " " + pp + ") : " + dec2.ReturnType.ToString();
-
-
 
                             //Modifiers m = dec2.Modifiers;
                             //if (m == Modifiers.Protected)
@@ -1231,11 +1187,7 @@ namespace VSParsers
 
             return maps;
         }
-
-
-
     }
-    
 
     public sealed class CSharpCompletionContext
     {

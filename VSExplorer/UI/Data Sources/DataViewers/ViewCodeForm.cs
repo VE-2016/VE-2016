@@ -1,12 +1,4 @@
 ﻿using AIMS.Libraries.Scripting.ScriptControl;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinExplorer.UI
@@ -26,7 +18,8 @@ namespace WinExplorer.UI
             this.Controls.Add(doc);
             this.Controls.Add(ts);
         }
-        ToolStrip ts { get; set; }
+
+        private ToolStrip ts { get; set; }
         public Document doc { get; set; }
     }
 }

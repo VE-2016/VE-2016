@@ -1,25 +1,22 @@
-﻿using Microsoft.CSharp;
+﻿using AIMS.Libraries.Scripting.ScriptControl;
+using Microsoft.CSharp;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.CodeDom;
 using System.CodeDom.Compiler;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Resources;
 using System.Resources.Tools;
+using System.Windows.Forms;
 using VSProvider;
-using AIMS.Libraries.Scripting.ScriptControl;
-using System.Data.Common;
-using Oracle.ManagedDataAccess.Client;
 
 namespace WinExplorer.UI
 {
@@ -60,24 +57,23 @@ namespace WinExplorer.UI
                 }
         }
 
-        ListView v { get; set; }
+        private ListView v { get; set; }
 
-        ImageList g { get; set; }
+        private ImageList g { get; set; }
 
-        ComboBox cbcs { get; set; }
+        private ComboBox cbcs { get; set; }
 
-        TreeView db { get; set; }
+        private TreeView db { get; set; }
 
         public VSProject vp { get; set; }
 
         public void Init()
         {
-
             g = new ImageList();
 
             g.ImageSize = new Size(32, 32);
 
-            g.Images.Add("database",Resources.Database_256x);
+            g.Images.Add("database", Resources.Database_256x);
             g.Images.Add("data", Resources.DataSourceView_16x);
 
             v = listView1;
@@ -91,8 +87,7 @@ namespace WinExplorer.UI
             listView.ForeColor = Color.Black;
             listView.Dock = DockStyle.Fill;
             listView.View = View.LargeIcon;
- 
-            
+
             listView.Columns.Add("Name", "Name", 400);
 
             ListViewItem c = new ListViewItem("Connect to Database");
@@ -110,9 +105,9 @@ namespace WinExplorer.UI
 
             v.SelectedIndexChanged += V_SelectedIndexChanged;
         }
+
         public void Init_DatabaseModel()
         {
-
             ListView listView = listView2;
 
             ListView v = listView2;
@@ -125,7 +120,6 @@ namespace WinExplorer.UI
             g.Images.Add("web", Resources.ConnectWeb_16x);
 
             v.LargeImageList = g;
-            
 
             // Initialize the ListView control.
             listView.BackColor = Color.White;
@@ -133,13 +127,11 @@ namespace WinExplorer.UI
             listView.Dock = DockStyle.Fill;
             listView.View = View.LargeIcon;
 
-
             listView.Columns.Add("Name", "Name", 400);
 
             ListViewItem c = new ListViewItem("Database Model");
             c.ImageKey = "database";
             v.Items.Add(c);
-
 
             db.CheckBoxes = true;
 
@@ -147,8 +139,8 @@ namespace WinExplorer.UI
             gd.Images.Add("database", Resources.Database_256x);
             gd.Images.Add("web", Resources.ConnectWeb_16x);
             db.ImageList = gd;
-
         }
+
         private void V_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (v.SelectedIndices == null || v.SelectedIndices.Count <= 0)
@@ -162,16 +154,14 @@ namespace WinExplorer.UI
             richTextBox1.Text = texts[index];
         }
 
-        private string[] texts = { "Lets you connect to a database and choose the database objects for your application.", "Opens the Add Service Reference dialog box that lets you create a connection to a service that returns the data for your application." , "Lets you choose objects that can later be used to generate data-bound controls.", "Lets you connect to a SharePoint site and choose the SharePoint objects for your application." };
+        private string[] texts = { "Lets you connect to a database and choose the database objects for your application.", "Opens the Add Service Reference dialog box that lets you create a connection to a service that returns the data for your application.", "Lets you choose objects that can later be used to generate data-bound controls.", "Lets you connect to a SharePoint site and choose the SharePoint objects for your application." };
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         public void LoadTab(int index)
@@ -180,25 +170,21 @@ namespace WinExplorer.UI
             panel9.Controls.Clear();
             if (index == 0)
             {
-                
                 ChoosePanel(panel1);
             }
             else if (index == 2)
             {
-
                 ChoosePanel(panel5);
             }
             else if (index == 3)
             {
-
                 ChoosePanel(panel10);
             }
             else if (index == 4)
             {
-
                 ChoosePanel(panel14);
-            } 
-            else if(index == 5)
+            }
+            else if (index == 5)
             {
                 ChoosePanel(panel18);
                 LoadFromConnection();
@@ -207,18 +193,13 @@ namespace WinExplorer.UI
 
         public void ChoosePanel(Panel panel)
         {
-
             panel9.Controls.Clear();
             panel9.Controls.Add(panel);
             panel.Dock = DockStyle.Fill;
-
-
-
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private string dataSourceType { get; set; }
@@ -237,7 +218,6 @@ namespace WinExplorer.UI
                 dataSourceType = "tables";
                 prev = 4;
                 LoadTab(5);
-                
             }
             else
             if (dataSourceType == "database")
@@ -261,7 +241,6 @@ namespace WinExplorer.UI
                 LoadTab(2);
                 LoadAssemblies();
             }
-           
         }
 
         private int prev = -1;
@@ -272,19 +251,13 @@ namespace WinExplorer.UI
                 return;
             dataSourceType = "";
             LoadTab(prev);
-
         }
 
         private void panel14_Paint(object sender, PaintEventArgs e)
         {
-     
-
-
-            
-
         }
 
-        ImageList img { get; set; }
+        private ImageList img { get; set; }
 
         private void LoadAssemblies()
         {
@@ -307,14 +280,10 @@ namespace WinExplorer.UI
 
             VSSolution vs = ef.GetVSSolution();
 
-            
-
             if (vs == null)
             {
-
                 MessageBox.Show("Open and build VS Solution first");
                 return;
-
             }
 
             ArrayList L = vs.GetExecutables(VSSolution.OutputType.both);
@@ -338,7 +307,6 @@ namespace WinExplorer.UI
 
                 try
                 {
-
                     Assembly assembly = Assembly.LoadFrom(s);
 
                     var namespaces = assembly.GetTypes()
@@ -356,7 +324,7 @@ namespace WinExplorer.UI
                         var types = assembly.GetTypes()
                              .Where(t => t.Namespace == c)
                              .Distinct();
-                        foreach(Type b in types)
+                        foreach (Type b in types)
                         {
                             TreeNode ng = new TreeNode();
                             ng.Text = b.Name;
@@ -370,14 +338,13 @@ namespace WinExplorer.UI
                             data.vs = vs;
                             data.vp = vpp;
                             ng.Tag = data;
-                            
-                            
+
                             nodes.Nodes.Add(ng);
 
                             var bb = b.GetMembers()
                              .Where(t => t.MemberType == (MemberTypes.Property));
-                             
-                            foreach(MemberInfo d in bb)
+
+                            foreach (MemberInfo d in bb)
                             {
                                 TreeNode bg = new TreeNode(" " + d.Name);
                                 bg.ImageKey = "string";
@@ -391,14 +358,11 @@ namespace WinExplorer.UI
                         }
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     continue;
                 }
-
             }
-
-
         }
 
         private void G_AfterCheck(object sender, TreeViewEventArgs e)
@@ -407,13 +371,12 @@ namespace WinExplorer.UI
             if (node == null)
                 return;
             TreeNode ng = null;
-            if(node.Checked == true)
+            if (node.Checked == true)
             {
                 foreach (TreeNode ns in node.Nodes)
                 {
                     ns.Checked = true;
                     ng = ns;
-
 
                     //while (ng.Parent != null)
                     //{
@@ -423,7 +386,7 @@ namespace WinExplorer.UI
                     //}
                 }
             }
-            else if(node.Checked == false)
+            else if (node.Checked == false)
             {
                 foreach (TreeNode ns in node.Nodes)
                     ns.Checked = false;
@@ -447,16 +410,17 @@ namespace WinExplorer.UI
 
             dataSourceType = "database_connection";
         }
+
         public void SaveConnection(string c)
         {
-
-            if(File.Exists("Extensions//Databases//Connections//connections.settings") == false)
+            if (File.Exists("Extensions//Databases//Connections//connections.settings") == false)
             {
                 FileStream fs = File.Create("Extensions//Databases//Connections//connections.settings");
                 fs.Close();
             }
             File.AppendAllText("Extensions//Databases//Connections//connections.settings", "\n" + c);
         }
+
         public void LoadConnections()
         {
             if (File.Exists("Extensions//Databases//Connections//connections.settings") == false)
@@ -469,6 +433,7 @@ namespace WinExplorer.UI
             foreach (string c in cs)
                 cbcs.Items.Add(c);
         }
+
         public static ArrayList GetConnections()
         {
             if (File.Exists("Extensions//Databases//Connections//connections.settings") == false)
@@ -480,8 +445,8 @@ namespace WinExplorer.UI
             ArrayList L = new ArrayList();
             L.AddRange(cs.ToArray());
             return L;
-              
         }
+
         public static List<string> GetTables(SqlConnection connection, string schemas, dataset data = null)
         {
             //using (SqlConnection connection = new SqlConnection(connectionString))
@@ -491,13 +456,12 @@ namespace WinExplorer.UI
                 List<string> TableNames = new List<string>();
                 foreach (DataRow row in schema.Rows)
                 {
-                    
                     TableNames.Add(row[2].ToString());
                     //if (data != null)
                     //    data.ns.Add(row);
                 }
                 if (data != null)
-                    data.SchemaTables = schema; 
+                    data.SchemaTables = schema;
 
                 connection.Close();
 
@@ -507,13 +471,13 @@ namespace WinExplorer.UI
 
         public static bool CanConnect(string connectionString)
         {
-           SqlConnection connection = null;
+            SqlConnection connection = null;
             try
             {
                 connection = new SqlConnection(connectionString);
                 connection.Open();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return false;
             }
@@ -529,11 +493,10 @@ namespace WinExplorer.UI
                 List<DataRow> TableNames = new List<DataRow>();
                 foreach (DataRow row in schema.Rows)
                 {
-
                     TableNames.Add(row);
-                    
-                  //  if (data != null)
-                  //      data.ns.Add(row);
+
+                    //  if (data != null)
+                    //      data.ns.Add(row);
                 }
                 if (data != null)
                     data.SchemaTables = schema;
@@ -547,13 +510,11 @@ namespace WinExplorer.UI
         public static DataTable GetTableSchema(SqlConnection con, string table)
         {
             DataTable schema = null;
-            
-            {
 
+            {
                 con.Open();
                 using (var schemaCommand = new SqlCommand("SELECT * FROM " + table, con))
                 {
-
                     var reader = schemaCommand.ExecuteReader(CommandBehavior.SchemaOnly);
                     {
                         schema = reader.GetSchemaTable();
@@ -567,13 +528,12 @@ namespace WinExplorer.UI
             }
         }
 
-        public void GetColumnsOracle(TreeNode node,string name)
+        public void GetColumnsOracle(TreeNode node, string name)
         {
             OracleConnection conn = new OracleConnection();
-                        conn.ConnectionString = data.connectionString;
+            conn.ConnectionString = data.connectionString;
             try
             {
-               
             }
             catch (Exception ex)
             {
@@ -585,23 +545,20 @@ namespace WinExplorer.UI
 
             foreach (DataColumn r in b.Columns)
             {
-
                 string cs = r.ColumnName;
-
 
                 TreeNode ng = new TreeNode(cs.ToString());
                 node.Nodes.Add(ng);
-
             }
             node.Tag = b;
         }
+
         static public void GetColumnsOracle(TreeNode node, string name, string connectionString)
         {
             OracleConnection conn = new OracleConnection();
             conn.ConnectionString = connectionString;
             try
             {
-
             }
             catch (Exception ex)
             {
@@ -613,26 +570,23 @@ namespace WinExplorer.UI
 
             foreach (DataColumn r in b.Columns)
             {
-
                 string cs = r.ColumnName;
-
 
                 TreeNode ng = new TreeNode(cs.ToString());
                 node.Nodes.Add(ng);
-
             }
             node.Tag = b;
         }
 
-        TextBox tb_dataset { get; set; }
+        private TextBox tb_dataset { get; set; }
 
-        static public void LoadfromOracleConnection(TreeNode db,string connectionString)
+        static public void LoadfromOracleConnection(TreeNode db, string connectionString)
         {
             OracleConnection conn = new OracleConnection();
             // conn.ConnectionString =
             // "Data Source=localhost;" +
             //// "Initial Catalog=DataBaseName;" +
-            ////"Integrated Security=SSPI; + 
+            ////"Integrated Security=SSPI; +
             // "User id=sa;" +
             // "Password=sa;";
             conn.ConnectionString = connectionString;
@@ -662,9 +616,7 @@ namespace WinExplorer.UI
 
                 //foreach (DataColumn r in b.Columns)
                 //{
-
                 //    string cs = r.ColumnName;
-
 
                 //    TreeNode ng = new TreeNode(cs.ToString());
                 //    nodes.Nodes.Add(ng);
@@ -689,9 +641,7 @@ namespace WinExplorer.UI
 
                 //foreach (DataColumn r in b.Columns)
                 //{
-
                 //    string cs = r.ColumnName;
-
 
                 //    TreeNode ng = new TreeNode(cs.ToString());
                 //    nodes.Nodes.Add(ng);
@@ -723,15 +673,15 @@ namespace WinExplorer.UI
             //}
 
             //wz = wizard.databaseobjects;
-
         }
+
         public void LoadfromOracleConnection(TreeView db, string connectionString)
         {
             OracleConnection conn = new OracleConnection();
             // conn.ConnectionString =
             // "Data Source=localhost;" +
             //// "Initial Catalog=DataBaseName;" +
-            ////"Integrated Security=SSPI; + 
+            ////"Integrated Security=SSPI; +
             // "User id=sa;" +
             // "Password=sa;";
             conn.ConnectionString = connectionString;
@@ -761,9 +711,7 @@ namespace WinExplorer.UI
 
                 //foreach (DataColumn r in b.Columns)
                 //{
-
                 //    string cs = r.ColumnName;
-
 
                 //    TreeNode ng = new TreeNode(cs.ToString());
                 //    nodes.Nodes.Add(ng);
@@ -788,9 +736,7 @@ namespace WinExplorer.UI
 
                 //foreach (DataColumn r in b.Columns)
                 //{
-
                 //    string cs = r.ColumnName;
-
 
                 //    TreeNode ng = new TreeNode(cs.ToString());
                 //    nodes.Nodes.Add(ng);
@@ -822,7 +768,6 @@ namespace WinExplorer.UI
             //}
 
             wz = wizard.databaseobjects;
-
         }
 
         public void LoadFromConnection()
@@ -843,7 +788,7 @@ namespace WinExplorer.UI
 
             data.name = textBox1.Text;
 
-            if(provider.ToLower() == "oracle")
+            if (provider.ToLower() == "oracle")
             {
                 DataConnection d = new DataConnection();
                 d.Load(c);
@@ -858,7 +803,7 @@ namespace WinExplorer.UI
             // conn.ConnectionString =
             // "Data Source=localhost;" +
             //// "Initial Catalog=DataBaseName;" +
-            ////"Integrated Security=SSPI; + 
+            ////"Integrated Security=SSPI; +
             // "User id=sa;" +
             // "Password=sa;";
             conn.ConnectionString = c;
@@ -879,19 +824,17 @@ namespace WinExplorer.UI
             db.Nodes.Clear();
             TreeNode node = new TreeNode("Tables");
             db.Nodes.Add(node);
-            foreach(DataRow row in tables)
+            foreach (DataRow row in tables)
             {
                 string name = row[2].ToString();
                 TreeNode nodes = new TreeNode(name);
 
                 DataTable b = PullData(conn, name);// GetTableSchema(conn, name);
 
-                   foreach (DataColumn r in b.Columns)
+                foreach (DataColumn r in b.Columns)
                 {
-
                     string cs = r.ColumnName;
 
-         
                     TreeNode ng = new TreeNode(cs.ToString());
                     nodes.Nodes.Add(ng);
                 }
@@ -912,9 +855,7 @@ namespace WinExplorer.UI
 
                 foreach (DataColumn r in b.Columns)
                 {
-
                     string cs = r.ColumnName;
-
 
                     TreeNode ng = new TreeNode(cs.ToString());
                     nodes.Nodes.Add(ng);
@@ -943,7 +884,6 @@ namespace WinExplorer.UI
             //}
 
             wz = wizard.databaseobjects;
-
         }
 
         public static void LoadFromConnection(TreeNode db, DataConnection dc)
@@ -957,7 +897,7 @@ namespace WinExplorer.UI
             c = dc.GetConnectionStringr();
 
             if (provider == "Oracle")
-                LoadfromOracleConnection(db,c);
+                LoadfromOracleConnection(db, c);
             else LoadFromSQLServerConnection(db, dc);
         }
 
@@ -967,15 +907,13 @@ namespace WinExplorer.UI
 
             string c = dc.connectionString;
 
-
-
             string[] cc = c.Split(";".ToCharArray());
 
             SqlConnection conn = new SqlConnection();
             // conn.ConnectionString =
             // "Data Source=localhost;" +
             //// "Initial Catalog=DataBaseName;" +
-            ////"Integrated Security=SSPI; + 
+            ////"Integrated Security=SSPI; +
             // "User id=sa;" +
             // "Password=sa;";
             conn.ConnectionString = dc.GetConnectionStringr();
@@ -1005,9 +943,7 @@ namespace WinExplorer.UI
 
                 foreach (DataColumn r in b.Columns)
                 {
-
                     string cs = r.ColumnName;
-
 
                     TreeNode ng = new TreeNode(cs.ToString());
                     nodes.Nodes.Add(ng);
@@ -1029,9 +965,7 @@ namespace WinExplorer.UI
 
                 foreach (DataColumn r in b.Columns)
                 {
-
                     string cs = r.ColumnName;
-
 
                     TreeNode ng = new TreeNode(cs.ToString());
                     nodes.Nodes.Add(ng);
@@ -1058,16 +992,11 @@ namespace WinExplorer.UI
             //    TreeNode nodes = new TreeNode(s);
             //    node.Nodes.Add(nodes);
             //}
-
-            
         }
 
         public void LoadDatabaseTables()
         {
-
-
         }
-
 
         public DataTable fillDataTable(string table)
         {
@@ -1081,8 +1010,8 @@ namespace WinExplorer.UI
                 dt.Load(cmd.ExecuteReader());
                 return dt;
             }
-            
         }
+
         public static void Designercs()
         {
             //CreateResXFile();
@@ -1101,15 +1030,12 @@ namespace WinExplorer.UI
             sw.Close();
         }
 
-        
         static public DataTable PullData(SqlConnection conn, string tableName)
         {
             //string connString = @"your connection string here";
             string query = "select * from " + tableName + " where 1 = 0";
 
             DataTable dataTable = new DataTable(tableName);
-
-            
 
             //SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand(query, conn);
@@ -1123,14 +1049,13 @@ namespace WinExplorer.UI
             da.Dispose();
             return dataTable;
         }
+
         static public DataTable PullData_Oracle(OracleConnection conn, string tableName)
         {
             //string connString = @"your connection string here";
             string query = "select * from " + tableName + " where 1 = 0";
 
             DataTable dataTable = new DataTable(tableName);
-
-
 
             //SqlConnection conn = new SqlConnection(connString);
             OracleCommand cmd = new OracleCommand(query, conn);
@@ -1148,6 +1073,7 @@ namespace WinExplorer.UI
             da.Dispose();
             return dataTable;
         }
+
         private static void CreateResXFile()
         {
             Bitmap logo = new Bitmap(@".\Logo.bmp");
@@ -1158,6 +1084,7 @@ namespace WinExplorer.UI
             rw.Generate();
             rw.Close();
         }
+
         public void GenerateXSD()
         {
             string xmlFilePath = @"myxmlfile.xml";
@@ -1170,6 +1097,7 @@ namespace WinExplorer.UI
 
             ds.WriteXmlSchema(xsdOutputPath);
         }
+
         /// <summary>
         /// Compiles the input string and saves it in memory
         /// </summary>
@@ -1199,13 +1127,13 @@ namespace WinExplorer.UI
 
             return Compile(parameters, source);
         }
+
         private static CompilerResults Compile(CompilerParameters parameters, string source)
         {
             CodeDomProvider compiler = CSharpCodeProvider.CreateProvider("CSharp");
             return compiler.CompileAssemblyFromSource(parameters, source);
         }
 
-        
         public enum wizard
         {
             start,
@@ -1214,34 +1142,29 @@ namespace WinExplorer.UI
             database,
             databaseobjects,
             databaseobjectsready
-
         }
 
         public wizard wz = wizard.start;
 
-
-        void LoadNodes(TreeNode node, ArrayList L)
+        private void LoadNodes(TreeNode node, ArrayList L)
         {
             foreach (TreeNode ns in node.Nodes)
             {
                 if (ns.Checked == true)
                     L.Add(ns);
                 else LoadNodes(ns, L);
-
             }
         }
 
         public dataset data { get; set; }
 
-        void LoadDatabaseNodes(TreeNode node, ArrayList L)
+        private void LoadDatabaseNodes(TreeNode node, ArrayList L)
         {
-            
             foreach (TreeNode ng in node.Nodes)
             {
                 if (ng.Checked == true)
                     data.ns.Add((DataTable)ng.Tag);
                 else LoadDatabaseNodes(ng, L);
-
             }
         }
 
@@ -1249,27 +1172,21 @@ namespace WinExplorer.UI
 
         public void ImportDataObjects(ArrayList L)
         {
-
-            
-
-
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             ArrayList L = new ArrayList();
 
-            if(wz == wizard.dataobjects)
+            if (wz == wizard.dataobjects)
             {
-               // MessageBox.Show("Import data objects selected");
+                // MessageBox.Show("Import data objects selected");
 
                 TreeView g = treeView1;
 
-                foreach(TreeNode ns in g.Nodes)
+                foreach (TreeNode ns in g.Nodes)
                 {
-
                     LoadNodes(ns, L);
-
                 }
 
                 dataSourceObjects = L;
@@ -1282,17 +1199,15 @@ namespace WinExplorer.UI
 
                 this.Close();
             }
-            else if(wz == wizard.databaseobjects)
+            else if (wz == wizard.databaseobjects)
             {
-                 MessageBox.Show("Import database objects selected");
+                MessageBox.Show("Import database objects selected");
 
                 data.ns = new List<DataTable>();
 
                 foreach (TreeNode ns in db.Nodes)
                 {
                     LoadDatabaseNodes(ns, L);
-                   
-
                 }
                 wz = wizard.databaseobjectsready;
 
@@ -1301,14 +1216,11 @@ namespace WinExplorer.UI
                 this.DialogResult = DialogResult.OK;
 
                 this.Close();
-
             }
-
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
     }
 
@@ -1349,9 +1261,8 @@ namespace WinExplorer.UI
             DataSet d = obs as DataSet;
 
             DataTable table = d.Tables[tableName];
-            
+
             return table;
-            
         }
 
         public SqlDataAdapter GetDataTableAdapter()
@@ -1376,25 +1287,20 @@ namespace WinExplorer.UI
 
             //if (p == null || p.Length >= 1)
             //    return da;
-               
 
             //da = p[0].GetValue(obs) as SqlDataAdapter;
 
             //p = T.GetProperties().Where(s => s.Name == "Connection").ToArray();
 
-
             //p[0].SetValue(da, new SqlConnection(""));
-               
-            
 
             return da;
-
         }
     }
 
     public class DataConnection
     {
-        public Dictionary<string,string> dict { get; set; }
+        public Dictionary<string, string> dict { get; set; }
         public string connectionString { get; set; }
 
         public void Load(string c)
@@ -1402,11 +1308,12 @@ namespace WinExplorer.UI
             connectionString = c;
             Parse();
         }
+
         public void Parse()
         {
             dict = new Dictionary<string, string>();
             string[] bb = connectionString.Split(";".ToCharArray());
-            foreach(string b in bb)
+            foreach (string b in bb)
             {
                 if (String.IsNullOrEmpty(b))
                     continue;
@@ -1434,7 +1341,6 @@ namespace WinExplorer.UI
             string[] cc = c.Split("-".ToCharArray());
 
             return cc[1].Trim();
-            
         }
 
         public string GetConnectionStringProvider()
@@ -1443,11 +1349,12 @@ namespace WinExplorer.UI
 
             return cc[0].Trim();
         }
+
         public string GetConnectionStringr()
         {
             string[] cc = connectionString.Split("-".ToCharArray());
 
             return cc[1].Trim();
         }
-    } 
+    }
 }

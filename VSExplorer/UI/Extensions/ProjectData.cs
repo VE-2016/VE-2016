@@ -1,36 +1,18 @@
-﻿using Microsoft.CSharp;
-using System;
-using System.CodeDom;
-using System.CodeDom.Compiler;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Resources;
-using System.Resources.Tools;
-using VSProvider;
 using System.Globalization;
+using System.Reflection;
 
 namespace WinExplorer
 {
-
     public class EnumConverters : EnumConverter
     {
-
         public EnumConverters(Type T) : base(T)
         {
             this.T = T;
         }
 
-        Type T;
+        private Type T;
 
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
         {
@@ -49,10 +31,12 @@ namespace WinExplorer
             }
             return Enum.Parse(T, (string)value);
         }
+
         public override bool CanConvertTo(ITypeDescriptorContext context, Type destType)
         {
             return destType == typeof(string);
         }
+
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture,
                                    object value, Type destType)
         {
@@ -70,41 +54,49 @@ namespace WinExplorer
     {
         [Description("Compile")]
         Compile,
+
         [Description("Content")]
         Content,
+
         [Description("Embedded Resource")]
         EmbeddedResource,
+
         [Description("Additional Files")]
         AdditionalFiles,
+
         [Description("Code Analysis Dictionary")]
         CodeAnalysisDictionary,
+
         [Description("Application Definition")]
         ApplicationDefinition,
+
         [Description("Page")]
         Page,
+
         [Description("Resource")]
         Resource,
+
         [Description("Splash Screen")]
         SplashScreen,
+
         [Description("Design Data")]
         DesignData
-
     }
+
     public enum CopyToOutput
     {
         [Description("Copy always")]
         CopyAlways,
+
         [Description("Do not copy")]
         DoNotCopy,
+
         [Description("Copy if newer")]
         CopyIfNewer
-
-
     }
 
     public class ProjectFileData
     {
-
         [CategoryAttribute("Advanced")]
         [DisplayName("Build Action")]
         [Description("Build Action")]
@@ -145,7 +137,6 @@ namespace WinExplorer
         public ProjectFileData(object obs)
         {
             this.data = obs;
-
         }
     }
 }

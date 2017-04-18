@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinExplorer.UI.Views
@@ -34,13 +29,13 @@ namespace WinExplorer.UI.Views
             v.Columns[0].Width = v.Width - 5;
         }
 
-        ViewList v { get; set; }
+        private ViewList v { get; set; }
 
-        ArrayList models { get; set; }
+        private ArrayList models { get; set; }
 
-        ImageList img { get; set; }
+        private ImageList img { get; set; }
 
-        ContextMenuStrip context { get; set; }
+        private ContextMenuStrip context { get; set; }
 
         public ViewList AddTestListView()
         {
@@ -71,6 +66,7 @@ namespace WinExplorer.UI.Views
 
             return v;
         }
+
         public ViewList AddListView(DataTable table)
         {
             ViewList v = new ViewList();
@@ -100,6 +96,7 @@ namespace WinExplorer.UI.Views
 
             return v;
         }
+
         public ViewList AddListViewAdapter(DataTable table)
         {
             ViewList v = new ViewList();
@@ -129,9 +126,9 @@ namespace WinExplorer.UI.Views
 
             return v;
         }
+
         public void Init()
         {
-
             context = contextMenuStrip1;
 
             models = new ArrayList();
@@ -149,7 +146,6 @@ namespace WinExplorer.UI.Views
             img.Images.Add("TableAdapter_16x", Resources.TableAdapter_16x);
             img.Images.Add("DataTable_256x", Resources.DataTable_256x);
 
-
             v = new ViewList();
             v.GridLines = true;
             v.View = View.Details;
@@ -164,7 +160,6 @@ namespace WinExplorer.UI.Views
             v.Columns[0].Width = v.Width - 5;
             v.Columns[0].ImageKey = "DataTable_256x";
             v.LargeImageList = img;
-            
 
             int i = 0;
             while (i < 6)
@@ -174,8 +169,7 @@ namespace WinExplorer.UI.Views
                 i++;
             }
 
-
-            ModelPanel p = new ModelPanel(new Size(6000,6000));
+            ModelPanel p = new ModelPanel(new Size(6000, 6000));
 
             p.control = imageBox1;
 
@@ -186,8 +180,6 @@ namespace WinExplorer.UI.Views
             //v.SetModelPanel( p );
 
             //this.imageBox1.Controls.Add(p);
-
-          
 
             //ViewList bb = AddTestListView();
 
@@ -204,7 +196,6 @@ namespace WinExplorer.UI.Views
             //for(int ax = 0; ax < 30; ax++)
             //    for(int bx = 0; bx < 15; bx++)
             //    {
-
             //        ModelPanel pp = InitModelPanel();
             //        pp.Location = new Point(ax * 250, bx * 500);
 
@@ -212,7 +203,6 @@ namespace WinExplorer.UI.Views
 
             //        if (pc != null)
             //        {
-
             //            Connector c = ModelPanel.Connect(pc, pp, guid++);
 
             //            pp.AddConnector(c);
@@ -228,19 +218,15 @@ namespace WinExplorer.UI.Views
             //    }
 
             this.imageBox1.Draw();
-
         }
 
         public void LoadModel(DataSet dd)
         {
-            
-
             int ax = 1;
             int bx = 1;
 
             foreach (DataTable d in dd.Tables)
             {
-
                 ModelPanel pp = InitModelPanel(d);
 
                 pp.Location = new Point(ax * 250, bx * 500);
@@ -249,7 +235,6 @@ namespace WinExplorer.UI.Views
 
                 //if (pc != null)
                 //{
-
                 //    Connector c = ModelPanel.Connect(pc, pp, guid++);
 
                 //    pp.AddConnector(c);
@@ -258,32 +243,29 @@ namespace WinExplorer.UI.Views
 
                 //pc = pp;
 
-         //pp.AddControl(bb);
+                //pp.AddControl(bb);
 
-         //               ViewList bb = AddListView(d);
+                //               ViewList bb = AddListView(d);
 
-         //       bb.modelPanel = pp;
+                //       bb.modelPanel = pp;
 
-         //      v.SetModelPanel(pp);
+                //      v.SetModelPanel(pp);
                 this.imageBox1.Controls.Add(pp);
                 pp.Refresh();
 
                 ax += 1;
-                if(ax > 6)
+                if (ax > 6)
                 {
                     ax = 1;
                     bx++;
                 }
-
             }
             imageBox1.Draw();
         }
 
         public ModelPanel InitModelPanel()
         {
-
-
-            ModelPanel p = new ModelPanel(new Size(600,600));
+            ModelPanel p = new ModelPanel(new Size(600, 600));
 
             p.control = imageBox1;
 
@@ -312,7 +294,6 @@ namespace WinExplorer.UI.Views
 
             //p.AddControl(v);
 
-            
             //this.imageBox1.Controls.Add(p);
 
             ViewList bb = AddTestListView();
@@ -323,10 +304,9 @@ namespace WinExplorer.UI.Views
 
             return p;
         }
+
         public ModelPanel InitModelPanel(DataTable table)
         {
-
-
             ModelPanel p = new ModelPanel(new Size(600, 600));
 
             p.control = imageBox1;
@@ -338,9 +318,7 @@ namespace WinExplorer.UI.Views
             v = AddListViewAdapter(table);
             v.modelPanel = p;
             p.AddControl(v);
-      
-           
-            
+
             return p;
         }
     }

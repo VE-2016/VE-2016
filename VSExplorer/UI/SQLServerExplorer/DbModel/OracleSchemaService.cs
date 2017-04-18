@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
-using System.Linq;
-using System.Text;
 
 namespace MiniSqlQuery.Core.DbModel
 {
     public class OracleSchemaService : GenericSchemaService
     {
-
         protected override int SafeGetInt(DataRow row, string columnName)
         {
             try
@@ -17,7 +14,7 @@ namespace MiniSqlQuery.Core.DbModel
                 return base.SafeGetInt(row, columnName);
             }
             catch (OverflowException)
-            { 
+            {
                 // Coerce to Max.Int32
                 return Int32.MaxValue;
             }
@@ -25,7 +22,6 @@ namespace MiniSqlQuery.Core.DbModel
 
         public override DbModelInstance GetDbObjectModel(string connection)
         {
-
             //_connection = connection;
 
             DbModelInstance model = new DbModelInstance();
@@ -75,7 +71,7 @@ namespace MiniSqlQuery.Core.DbModel
                     GetColumnsForTable(dbTable, schemaTableKeyInfo, dbTypes);
                 }
 
-                // build FK relationships 
+                // build FK relationships
                 if (model.Tables != null)
                 {
                     foreach (DbModelTable table in model.Tables)
@@ -98,6 +94,5 @@ namespace MiniSqlQuery.Core.DbModel
 
             return model;
         }
-
     }
 }

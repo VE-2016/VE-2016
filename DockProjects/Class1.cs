@@ -1,5 +1,4 @@
-﻿
-namespace WinExplorer
+﻿namespace WinExplorer
 {
     internal class Class1
     {

@@ -52,7 +52,6 @@ namespace WinExplorer
                 c.SelectedItem = output;
                 return outputs[output];
             }
-
         }
 
         public void AddOrUpdateOutputs(string output)
@@ -60,7 +59,7 @@ namespace WinExplorer
             this.BeginInvoke(new Action(() => { C = AddOrUpdateOutput(output); }));
         }
 
-        ArrayList C { get; set; }
+        private ArrayList C { get; set; }
 
         public void SetOutput(string output)
         {
@@ -129,12 +128,10 @@ namespace WinExplorer
 
         public delegate void workerDisplayLine(string file, string line, string c, int g);
 
-
         private void DisplayLine(string file, string line, string c, int g)
         {
             ef.BeginInvoke(new Action(() => { ef.OpenFileXY(file, line, c, g); }));
         }
-
 
         private static void ProcessInformation(IAsyncResult result)
         {

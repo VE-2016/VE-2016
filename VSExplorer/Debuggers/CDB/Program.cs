@@ -1,31 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Diagnostics.Runtime;
-using Microsoft.Diagnostics.Runtime.Interop;
-using Microsoft.Diagnostics.Runtime.Desktop;
-using Microsoft.Samples.Debugging.Native;
+﻿using Microsoft.Diagnostics.Runtime.Interop;
+using System;
 
-namespace DumpFileAnalyzer {
-	class Program {
-		static void Main2(string[] args) {
-			//if(args.Length < 1) {
-			//	Console.WriteLine("Usage: dumpfileanalyzer <dump file path>");
-			//	return;
-			//}
+namespace DumpFileAnalyzer
+{
+    internal class Program
+    {
+        private static void Main2(string[] args)
+        {
+            //if(args.Length < 1) {
+            //	Console.WriteLine("Usage: dumpfileanalyzer <dump file path>");
+            //	return;
+            //}
 
-			//var target = DataTarget.LoadCrashDump("dump.dmp", CrashDumpReader.DbgEng);
+            //var target = DataTarget.LoadCrashDump("dump.dmp", CrashDumpReader.DbgEng);
 
-			//var client = target.DebuggerInterface as IDebugClient5;
-			//var control = client as IDebugControl6;
+            //var client = target.DebuggerInterface as IDebugClient5;
+            //var control = client as IDebugControl6;
 
-			//ulong extHandle;
-			//control.AddExtensionWide(@"folders\kdexts.dll", 0, out extHandle);
+            //ulong extHandle;
+            //control.AddExtensionWide(@"folders\kdexts.dll", 0, out extHandle);
 
-			//Console.Title = "Analyzing " + args[0];
-
+            //Console.Title = "Analyzing " + args[0];
 
             Guid guid = typeof(IDebugClient).GUID;
 
@@ -35,12 +30,12 @@ namespace DumpFileAnalyzer {
             var client = obj as IDebugClient5;
             var control = client as IDebugControl6;
 
-
             var events = new EventCallbacks(control);
             client.SetEventCallbacksWide(events);
             client.SetOutputCallbacksWide(new OutputCallbacks());
 
-            Console.CancelKeyPress += (s, e) => {
+            Console.CancelKeyPress += (s, e) =>
+            {
                 e.Cancel = true;
                 control.SetInterrupt(DEBUG_INTERRUPT.ACTIVE);
             };
@@ -99,7 +94,7 @@ namespace DumpFileAnalyzer {
                 Console.Write(" ");
                 Console.ForegroundColor = ConsoleColor.Gray;
                 string command = Console.ReadLine();
-                
+
                 //command = "pc";
 
                 //Console.WriteLine(command);
@@ -107,23 +102,21 @@ namespace DumpFileAnalyzer {
           DEBUG_EXECUTE.DEFAULT);
             }
 
-   //         string input;
-			//do {
-			//	Console.ForegroundColor = ConsoleColor.Green;
-			//	Console.Write("> ");
-			//	input = Console.ReadLine();
+            //         string input;
+            //do {
+            //	Console.ForegroundColor = ConsoleColor.Green;
+            //	Console.Write("> ");
+            //	input = Console.ReadLine();
 
-			//	control.ExecuteWide(DEBUG_OUTCTL.THIS_CLIENT, input, DEBUG_EXECUTE.DEFAULT);
-				
-			//	Console.WriteLine();
-			//} while(input != "q");
-			
-		}
+            //	control.ExecuteWide(DEBUG_OUTCTL.THIS_CLIENT, input, DEBUG_EXECUTE.DEFAULT);
 
-        static bool CheckHr(int hresult)
+            //	Console.WriteLine();
+            //} while(input != "q");
+        }
+
+        private static bool CheckHr(int hresult)
         {
             return true;
         }
-	}
-
+    }
 }

@@ -12,7 +12,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.IO.MemoryMappedFiles;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -58,8 +57,7 @@ namespace WinExplorer
         /// before any events are raised.
         /// </summary>
         //public override void Initialize(IEventSource eventSource)
-        //{ 
-
+        //{
         //        eventSource.ProjectStarted += new ProjectStartedEventHandler(eventSource_ProjectStarted);
         //        eventSource.TaskStarted += new TaskStartedEventHandler(eventSource_TaskStarted);
         //        // eventSource.MessageRaised += new BuildMessageEventHandler(eventSource_MessageRaised);
@@ -69,7 +67,6 @@ namespace WinExplorer
         //        eventSource.ProjectFinished += new ProjectFinishedEventHandler(eventSource_ProjectFinished);
         //        //eventSource.AnyEventRaised += EventSource_AnyEventRaised;
         //        _running = true;
-
 
         //    rb = VSProvider.cmds.rb;
 
@@ -228,7 +225,7 @@ namespace WinExplorer
 
             BasicFileLogger logger = new BasicFileLogger();
 
-           // logger.Parameters = b + "\\" + "logger.txt";
+            // logger.Parameters = b + "\\" + "logger.txt";
 
             VSProvider.VSSolution vs = null;
 
@@ -236,7 +233,8 @@ namespace WinExplorer
             {
                 vs = new VSSolution(Path.GetFullPath(path));
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
                 Console.WriteLine(e.Message);
             }
 
@@ -294,7 +292,7 @@ namespace WinExplorer
 
             BasicFileLogger logger = new BasicFileLogger();
 
-           // logger.Parameters = b + "\\" + "logger.txt";
+            // logger.Parameters = b + "\\" + "logger.txt";
 
             //VSProvider.VSSolution vs = new VSSolution(Path.GetFullPath(path));
             //foreach (VSProject ps in vs.Projects)
@@ -322,12 +320,10 @@ namespace WinExplorer
             return logger;
         }
 
-
         //msbuild.exe YourMSBuildProject.csproj /t:Rebuild /l:TcpIpLogger, C:\Loggers.dll,; Ip=”127.0.0.1″;Port=1200″;
 
         //    static void TCPClient()
         //{
-
         //    TcpClient clientSocketWriter = new System.Net.Sockets.TcpClient();
         //    clientSocketWriter.Connect(ipServer, port);
         //    networkStream = clientSocketWriter.GetStream();
@@ -364,7 +360,6 @@ namespace WinExplorer
 
             private void ServeData(object clientSocket)
             {
-
                 Console.WriteLine("Started msbuild thread  " + Thread.CurrentThread.ManagedThreadId);
 
                 OutputForm ofm = OutputForm.ofm;
@@ -390,7 +385,6 @@ namespace WinExplorer
                     {
                         //if (rnd.NextDouble() < 0.1)
                         {
-
                             //int p = 0;
 
                             ////var msg = Encoding.ASCII.GetBytes("Status update from thread " + Thread.CurrentThread.ManagedThreadId);
@@ -408,8 +402,6 @@ namespace WinExplorer
 
                             ////int c = stream.Read(msg, 0, msg.Length);
 
-                            
-
                             int c = stream.Read(msg, 0, msg.Length);
 
                             string s = Encoding.ASCII.GetString(msg, 0, c);
@@ -418,7 +410,7 @@ namespace WinExplorer
 
                             string[] cc = s.Trim().Split("\n".ToCharArray());
 
-                            if(prev != null)
+                            if (prev != null)
                             {
                                 cc[0] = prev + cc[0];
                                 prev = null;
@@ -435,7 +427,6 @@ namespace WinExplorer
 
                             foreach (string b in cc)
                             {
-
                                 if (b == null)
                                     continue;
                                 if (b.StartsWith("$") == false)
@@ -443,8 +434,6 @@ namespace WinExplorer
                                 //return string.Format("{0}:{1}:{2}:{3}:{4}:{5}$$", e.HelpKeyword, e.Message, e.File, e.ColumnNumber, e.LineNumber, e.ProjectFile);
                                 if (b[2] == '4' || b[2] == '5')
                                 {
-
-                                   
                                     string[] dd = b.Trim().Replace("\r", "").Split("$".ToCharArray());
 
                                     if (dd.Length < 6)
@@ -456,11 +445,10 @@ namespace WinExplorer
                                     int p = 0;
                                     foreach (string w in dd)
                                     {
-                                        if(p == 0)
-                                        if (w == "")
-                                            continue;
+                                        if (p == 0)
+                                            if (w == "")
+                                                continue;
 
-                                        
                                         gg[p++] = w;
                                     }
 
@@ -477,26 +465,20 @@ namespace WinExplorer
                                         BuildWarningEventArgs be = new BuildWarningEventArgs("", dd[0], dd[3], Convert.ToInt32(dd[5]), Convert.ToInt32(dd[4]), Convert.ToInt32(dd[5]), Convert.ToInt32(dd[4]), dd[2], dd[1], "");
                                         be.ProjectFile = dd[6];
                                         ws.Add(be);
-
                                     }
 
                                     i++;
-
                                 }
                                 //else if (b[2] == '0' || b[2] == '1')
                                 //    Console.WriteLine(b);
                                 //Console.WriteLine(b);
+                                else
 
-                                else 
-                                
-                               
-                                
                                 if (ofm != null)
                                     ofm.Invoke(new Action(() => { ofm.AddOutput("> " + b + "\n"); }));
 
                                 if (i > 10)
                                 {
-
                                     ef.Invoke(new Action(() => { ef.AddCompileResults(es, ws, me); }));
                                     es.Clear();
                                     ws.Clear();
@@ -505,24 +487,18 @@ namespace WinExplorer
                                     i = 0;
                                 }
                             }
-
-                            
-
-                          
-
                         }
                         //if (i > 10)
                         {
-
                             ef.Invoke(new Action(() => { ef.AddCompileResults(es, ws, me); }));
                             es.Clear();
                             ws.Clear();
                             me.Clear();
                         }
-                            
+
                         // wait until the next update - I made the wait time so small 'cause I was bored :)
                         //Thread.Sleep(new TimeSpan(0, 0, rnd.Next(1, 5)));
-                        }
+                    }
                 }
                 catch (SocketException e)
                 {
@@ -542,12 +518,10 @@ namespace WinExplorer
             build,
             clean,
             none
-
         }
 
         public class MSBuild
         {
-
             public string msbuildPath { get; set; }
 
             public string IP { get; set; }
@@ -564,17 +538,15 @@ namespace WinExplorer
 
             public string GetMSBuild()
             {
-
                 //    string additionalArguments = String.Concat(msbuildProjPath, " ", additionalArgs, " ",
                 //"/fileLoggerParameters:LogFile=MsBuildLog.txt;append=true;Verbosity=normal;Encoding=UTF-8 /l:YourDll.MsBuildLogger.TcpIpLogger,",
                 //currentAssemblyFullpath, ";Ip=", "ipAddressSettings.GetIPAddress()", ";Port=", "ipAddressSettings.Port", ";");
-
 
                 string s = "\"" + MSBuildFile + "\"";
 
                 //string s = " /t:Rebuild ";// MSBuildFile;
 
-                if(build == Build.rebuild)
+                if (build == Build.rebuild)
                     s += " /t:Rebuild ";
                 else if (build == Build.build)
                     s += " /t:Build ";
@@ -594,9 +566,9 @@ namespace WinExplorer
                 if (Configuration != null)
                     //                    p = " /p:Platform=" + "\"Any CPU\"";// Configuration;
                     p = " /p:Platform=" + "\"" + Configuration + "\"";
-                if(MSBuildFile.EndsWith("sln") == false)
-                if(Configuration == "Any CPU")
-                    p = " /p:Platform=" + "\"AnyCPU\"";// Configuration;
+                if (MSBuildFile.EndsWith("sln") == false)
+                    if (Configuration == "Any CPU")
+                        p = " /p:Platform=" + "\"AnyCPU\"";// Configuration;
 
                 s += p;
 
@@ -608,14 +580,11 @@ namespace WinExplorer
                 s += ";Port=" + Port + " ";
                 //s += " " + MSBuildFile;
 
-
-                    return s;
+                return s;
             }
-
-    
         }
 
-        static string MSBUILD_PATH { get; set; }
+        private static string MSBUILD_PATH { get; set; }
 
         static public string BuildMsBuildAdditionalArguments(string msbuildProjPath, string ipAddressSettings,
             string additionalArgs, string currentAssemblyFullpath)
@@ -633,8 +602,6 @@ namespace WinExplorer
             string additionalArguments = "";
             //(msbuildProjPath, ipAddressSettings, additionalArgs, currentAssemblyFullpath);
 
-
-
             ProcessStartInfo procStartInfo = new ProcessStartInfo(MSBUILD_PATH, additionalArguments);
             procStartInfo.RedirectStandardOutput = false;
             //procStartInfo.UseShellExecute = true;
@@ -649,10 +616,8 @@ namespace WinExplorer
 
         static public Process ExecuteMsbuildProject(MSBuild msbuild)
         {
-
             string args = msbuild.GetMSBuild();
 
-    
             ProcessStartInfo procStartInfo = new ProcessStartInfo(msbuild.msbuildPath, args);
             procStartInfo.RedirectStandardOutput = false;
             //procStartInfo.UseShellExecute = true;
@@ -663,7 +628,6 @@ namespace WinExplorer
             Process proc = new Process();
             proc.StartInfo = procStartInfo;
             proc.Start();
-
 
             proc.WaitForExit();
 
@@ -741,7 +705,6 @@ namespace WinExplorer
             return mf;
         }
 
-
         static public VSProject getvsproject(string paths, int ids)
         {
             string path = Path.GetFullPath(paths);
@@ -758,8 +721,6 @@ namespace WinExplorer
 
             return null;
         }
-
-
 
         public void AddRootNode(TreeView msv, string file, int i)
         {
@@ -935,7 +896,8 @@ namespace WinExplorer
                     //pgs.Invoke(new Action(() => { pgs.Maximum = 100 * vs.Projects.Count(); pgs.Maximum = 100 * vs.Projects.Count(); pgs.Value = 0; }));
                 }
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
                 Console.WriteLine(e.Message);
             };
             Dictionary<string, TreeNode> DSN;
@@ -944,7 +906,6 @@ namespace WinExplorer
                 ArrayList NL = new ArrayList();
 
                 DSN = new Dictionary<string, TreeNode>();
-
 
                 if (thisproject != "")
                     if (thisproject != ps.FileName)
@@ -1050,8 +1011,6 @@ namespace WinExplorer
                     t.SelectedImageKey = "VBProject_SolutionExplorerNode";
                 }
 
-
-
                 if (ps.FileName.EndsWith(".wixproj"))
                 {
                     t.Text += " (incompatible project)";
@@ -1111,9 +1070,6 @@ namespace WinExplorer
 
                     TreeNode n = t;
                     n.Text = ps.Name;
-
-
-
 
                     CreateView_Solution.ProjectItemInfo pr0 = new CreateView_Solution.ProjectItemInfo();
                     pr0.vs = vs;
@@ -1204,11 +1160,9 @@ namespace WinExplorer
                         b.Tag = pr3;
                         continue;
                     }
-                 
-                    else 
-                    if (dependentupon != "" )
+                    else
+                    if (dependentupon != "")
                     {
-
                         if (!DSN.ContainsKey(dependentupon))
                         {
                             TreeNode ns = new TreeNode();
@@ -1217,7 +1171,7 @@ namespace WinExplorer
 
                             DSN.Add(dependentupon, ns);
 
-                            if(dependentupon != dependsupon)
+                            if (dependentupon != dependsupon)
                             {
                                 TreeNode ng = new TreeNode();
                                 ng.Text = pi.Include;
@@ -1239,13 +1193,11 @@ namespace WinExplorer
                     else
                     if (pi.SubTypes != "")
                     {
-
                         if (!DSN.ContainsKey(dependsupon))
                         {
                             TreeNode ns = new TreeNode();
                             ns.Text = pi.Include;
                             ns.Tag = pr3;
-
 
                             DSN.Add(dependsupon, ns);
 
@@ -1257,7 +1209,6 @@ namespace WinExplorer
                             b.Tag = pr3;
                             continue;
                         }
-
                     }
 
                     if (pi.Info != null)
@@ -1298,7 +1249,6 @@ namespace WinExplorer
                             CDD.Add(pi);
                         if (Path.GetExtension(pi.Include) == ".datasource")
                             DDD.Add(pi);
-
                     }
                     else
                     if (pi.ItemType == "file")
@@ -1318,7 +1268,6 @@ namespace WinExplorer
                         t2.ImageKey = "Folder";
                         t2.SelectedImageKey = "FolderOpen";
 
- 
                         t2.Tag = pr3;
 
                         t.Nodes.Add(t2);
@@ -1334,7 +1283,6 @@ namespace WinExplorer
 
                         string gs = Path.GetFileName(g);
 
-                    
                         string filapath = "";
 
                         if (Path.IsPathRooted(pi.Include) == true)
@@ -1402,7 +1350,6 @@ namespace WinExplorer
 
                                 t.Nodes.Add(bbb);
 
-
                                 bbb.Tag = ppb;
 
                                 FD.Add(bbb);
@@ -1434,7 +1381,6 @@ namespace WinExplorer
                                     }
                         t2.Tag = pr3;
 
-
                         if (g == null)
                             g = pi.Include;
 
@@ -1448,12 +1394,10 @@ namespace WinExplorer
 
                         t = res;
                     }
-
                     else if (pi.ItemType == "Folder")
                     {
                         FDD.Add(pi.Include);
                     }
-
                     else if (pi.ItemType == "EmbeddedResource")
                     {
                         EMB.Add(pi.Include);
@@ -1497,7 +1441,6 @@ namespace WinExplorer
 
                                             ns.Nodes.Add(node);
 
-
                                             node.Tag = pr3;
 
                                             node.ImageKey = "filesource";
@@ -1513,7 +1456,6 @@ namespace WinExplorer
                                 if (re == false)
                                 {
                                     TreeNode ns2 = new TreeNode(pw[0]);
-
 
                                     ns2.ImageKey = "Folder";
                                     ns2.SelectedImageKey = "FolderOpen";
@@ -1559,7 +1501,6 @@ namespace WinExplorer
                                         t2.ImageKey = "filesource";
                                         t2.SelectedImageKey = "filesource";
 
-
                                         t2.Tag = pr3;
 
                                         if (g == null)
@@ -1580,8 +1521,6 @@ namespace WinExplorer
                                 continue;
                             }
 
-
-
                         if (found == true)
                         {
                             string dd = "";
@@ -1589,7 +1528,8 @@ namespace WinExplorer
                             {
                                 dd = Path.GetFileName(g);
                             }
-                            catch (Exception e) {
+                            catch (Exception e)
+                            {
                                 Console.WriteLine(e.Message);
                             }
 
@@ -1597,9 +1537,7 @@ namespace WinExplorer
 
                             TreeNode t4 = new TreeNode(b);
 
-
                             t4.Tag = pr3;
-
 
                             t4.ImageKey = "filesource";
                             t4.SelectedImageKey = "filesource";
@@ -1616,8 +1554,6 @@ namespace WinExplorer
                                 try
                                 {
                                     string pc = Path.GetFullPath(Path.GetFileName(g));
-
-
 
                                     pc = pc.Replace("\\", "\\\\");
 
@@ -1665,7 +1601,8 @@ namespace WinExplorer
                             {
                                 da = Path.GetFileName(g);
                             }
-                            catch (Exception e) {
+                            catch (Exception e)
+                            {
                                 Console.WriteLine(e.Message);
                             }
 
@@ -1699,13 +1636,13 @@ namespace WinExplorer
                                     d[pc] = tp;
                                 }
                             }
-                            catch (Exception e) {
+                            catch (Exception e)
+                            {
                                 Console.WriteLine(e.Message);
                             };
                         }
                     }
                 }
-
 
                 tv.BeginUpdate();
 
@@ -1732,8 +1669,6 @@ namespace WinExplorer
 
                 MoveContent(t, DDD);
 
-               
-
                 MoveContent(t, DSN);
 
                 ProjectCleanUp(t);
@@ -1759,7 +1694,6 @@ namespace WinExplorer
 
             int pcp = NestedProject(solution, tv.Nodes[0]);
 
-
             foreach (TreeNode ns in tv.Nodes[0].Nodes)
                 SortMainNodes(ns);
 
@@ -1768,10 +1702,9 @@ namespace WinExplorer
             SortProjectNodes(tv.Nodes[0]);
 
             string projectCounts = Path.GetFileNameWithoutExtension(vs.Name) + "(" + projects + " projects)";
-            if(projects == 1)
+            if (projects == 1)
                 projectCounts = Path.GetFileNameWithoutExtension(vs.Name) + "(" + projects + " project)";
             tv.Nodes[0].Text = projectCounts;
-
 
             foreach (TreeNode node in PD)
             {
@@ -1787,12 +1720,11 @@ namespace WinExplorer
                 }
             }
 
-
             tv.ResumeLayout();
-
 
             return vs;
         }
+
         public void loggers(TreeNode node, string s)
         {
             if (node.Text != "MSBuildTask.Shared")
@@ -1825,6 +1757,7 @@ namespace WinExplorer
                 return true;
             return false;
         }
+
         public string GetFileName(TreeNode node)
         {
             CreateView_Solution.ProjectItemInfo p = node.Tag as CreateView_Solution.ProjectItemInfo;
@@ -1834,6 +1767,7 @@ namespace WinExplorer
                 return "";
             return p.ps.FileName;
         }
+
         public void AppendEmptyFolders(TreeNode master, ArrayList L, VSSolution vs, VSProject pp)
         {
             foreach (string s in L)
@@ -1913,7 +1847,6 @@ namespace WinExplorer
             {
                 Guid guid = new Guid(entry);
 
-
                 VSProvider.Project pp = FindProject(p, guid);
 
                 if (pp == null)
@@ -1936,7 +1869,6 @@ namespace WinExplorer
                     }
                 }
 
-
                 if (node == null)
                     MessageBox.Show("no node");
 
@@ -1950,7 +1882,6 @@ namespace WinExplorer
 
                 //if (entry == "{3F40F71B-7DCF-44A1-B15C-38CA34824143}")
                 //    MessageBox.Show("Compilers");
-
 
                 guid = new Guid(entrys);
 
@@ -1979,13 +1910,10 @@ namespace WinExplorer
                 if (nodes == null)
                     continue;
 
-
                 Move2Node(master, node, nodes);
-
 
                 i++;
             }
-
 
             Merge2Clean(master);
 
@@ -2023,7 +1951,6 @@ namespace WinExplorer
                 ns = ns.Parent;
             }
 
-
             return false;
         }
 
@@ -2046,7 +1973,6 @@ namespace WinExplorer
 
             if (node.Parent == nodes)
                 return;
-
 
             //            if (isNested(node, nodes))
             //                return;
@@ -2083,7 +2009,6 @@ namespace WinExplorer
                     TreeNode ns = R[i] as TreeNode;
                     nodes.Nodes.Remove(ns);
                     nodes.Nodes.Insert(nodes.Nodes.Count, ns);
-
 
                     i++;
                 }
@@ -2166,7 +2091,6 @@ namespace WinExplorer
             return null;
         }
 
-
         public void MoveContent(TreeNode master, ArrayList CDD)
         {
             foreach (VSProjectItem pi in CDD)
@@ -2204,7 +2128,6 @@ namespace WinExplorer
                 //if (Include.Contains("ApplicationIcon"))
                 //    MessageBox.Show("");
 
-
                 int i = 0;
                 foreach (string s in cc)
                 {
@@ -2236,7 +2159,6 @@ namespace WinExplorer
 
                         //master.Nodes.Remove(node);
 
-
                         string[] bb = s.Split(".".ToCharArray());
 
                         if (bb.Length <= 1)
@@ -2259,110 +2181,106 @@ namespace WinExplorer
         {
             //foreach (string cs in D.Keys)
             {
-            //    master.Nodes.Add(D[cs]);
+                //    master.Nodes.Add(D[cs]);
             }
 
-                foreach (string cs in D.Keys)
+            foreach (string cs in D.Keys)
             {
                 //master.Nodes.Add(D[cs]);
                 TreeNode ng = D[cs];
                 CreateView_Solution.ProjectItemInfo pc = ng.Tag as CreateView_Solution.ProjectItemInfo;
                 VSProjectItem pi = pc.psi;
-                
-                    string Include = pi.Include;
 
-                    string c = Include;
+                string Include = pi.Include;
 
-                    if (Include == null)
-                        continue;
+                string c = Include;
 
-                    string guid = "";
+                if (Include == null)
+                    continue;
 
-                    TreeNode nodes = FindNodesIncludeExact(master, Include);
+                string guid = "";
 
-                    CreateView_Solution.ProjectItemInfo p = null;
+                TreeNode nodes = FindNodesIncludeExact(master, Include);
 
-                    if (nodes != null)
+                CreateView_Solution.ProjectItemInfo p = null;
+
+                if (nodes != null)
+                {
+                    p = nodes.Tag as CreateView_Solution.ProjectItemInfo;
+
+                    if (p != null)
                     {
-                        p = nodes.Tag as CreateView_Solution.ProjectItemInfo;
-
-                        if (p != null)
-                        {
-                            guid = p.Guid;
-                            p.psi.fileName = pi.fileName;
-                        }
+                        guid = p.Guid;
+                        p.psi.fileName = pi.fileName;
                     }
+                }
 
-                    nodes = master;
+                nodes = master;
 
-                    string[] cc = c.Split("\\".ToCharArray());
+                string[] cc = c.Split("\\".ToCharArray());
 
-                    string d = "";
+                string d = "";
 
-                    //if (Include.Contains("ApplicationIcon"))
-                    //    MessageBox.Show("");
+                //if (Include.Contains("ApplicationIcon"))
+                //    MessageBox.Show("");
 
-
-                    int i = 0;
-                    foreach (string s in cc)
-                    {
+                int i = 0;
+                foreach (string s in cc)
+                {
                     if (s.Contains("."))
                         continue;
 
-                        if (i == 0)
-                            d = s;
-                        else
-                            d += "\\" + s;
+                    if (i == 0)
+                        d = s;
+                    else
+                        d += "\\" + s;
 
-                        //TreeNode ns = FindNodesIncludeExact(nodes, d);
+                    //TreeNode ns = FindNodesIncludeExact(nodes, d);
 
-                        TreeNode ns = FindNodesIncludeExact(nodes, s);
+                    TreeNode ns = FindNodesIncludeExact(nodes, s);
 
-                        if (ns == null)
+                    if (ns == null)
+                    {
+                        ns = new TreeNode();
+                        ns.Text = s;
+                        CreateView_Solution.ProjectItemInfo pp = new CreateView_Solution.ProjectItemInfo();
+                        pp.ps = new VSProject();
+                        pp.psi = new VSProjectItem();
+                        pp.psi.Include = d;
+                        ns.Tag = pp;
+                        pp.psi.fileName = pi.fileName;
+
+                        //ns.SelectedImageKey = "Folder";
+                        //ns.ImageKey = "Folder";
+
+                        //nodes.ImageKey = "Folder";
+                        //nodes.SelectedImageKey = "FolderOpen";
+
+                        //master.Nodes.Remove(node);
+
+                        string[] bb = s.Split(".".ToCharArray());
+
+                        if (bb.Length <= 1)
+                            pp.psi.ItemType = "Folder";
+                        if (i < cc.Length - 1)
                         {
-                            ns = new TreeNode();
-                            ns.Text = s;
-                            CreateView_Solution.ProjectItemInfo pp = new CreateView_Solution.ProjectItemInfo();
-                            pp.ps = new VSProject();
-                            pp.psi = new VSProjectItem();
-                            pp.psi.Include = d;
-                            ns.Tag = pp;
-                            pp.psi.fileName = pi.fileName;
-
-                            //ns.SelectedImageKey = "Folder";
-                            //ns.ImageKey = "Folder";
-
-                            //nodes.ImageKey = "Folder";
-                            //nodes.SelectedImageKey = "FolderOpen";
-
-                            //master.Nodes.Remove(node);
-
-
-                            string[] bb = s.Split(".".ToCharArray());
-
-                            if (bb.Length <= 1)
-                                pp.psi.ItemType = "Folder";
-                            if (i < cc.Length - 1)
-                            {
-                                ns.SelectedImageKey = "Folder";
-                                ns.ImageKey = "Folder";
-                            }
-                            nodes.Nodes.Add(ns);
+                            ns.SelectedImageKey = "Folder";
+                            ns.ImageKey = "Folder";
                         }
-
-                        nodes = ns;
-                        i++;
+                        nodes.Nodes.Add(ns);
                     }
 
-                
+                    nodes = ns;
+                    i++;
+                }
+
                 nodes.Nodes.Add(ng);
             }
         }
+
         public void MoveContent(TreeNode master, string name)
         {
             TreeNode b = FindNode(master, name);
-
-
 
             if (b == null)
                 return;
@@ -2395,20 +2313,14 @@ namespace WinExplorer
 
                 string Include = p.psi.Include.Trim();
 
-
-
                 if (Include == null)
                     continue;
 
                 TreeNode nodes = master;// FindNodesIncludeExact(master, Include);
 
-
                 string[] cc = Include.Split("\\".ToCharArray());
 
                 string d = "";
-
-
-
 
                 int i = 0;
                 foreach (string s in cc)
@@ -2471,26 +2383,20 @@ namespace WinExplorer
                 n.Parent.Nodes.Remove(n);
         }
 
-
         //public void MoveNodeContent(TreeNode master)
         //{
-
-
-
         //    ArrayList N = new ArrayList();
 
         //    Nodes2Array(master, N);
 
         //    foreach (TreeNode ng in N)
         //    {
-
         //        if (ng == null)
         //            continue;
 
         //        //MoveNodeContent(ng);
 
         //        //string Include = c;
-
 
         //        CreateView_Solution.ProjectItemInfo p = ng.Tag as CreateView_Solution.ProjectItemInfo;
 
@@ -2500,8 +2406,6 @@ namespace WinExplorer
         //            {
         //                if (p.psi.ItemType != "Folder")
         //                {
-
-
         //                    string Include = p.psi.Include;
 
         //                    //if (Include.Contains("ApplicationIcon"))
@@ -2527,7 +2431,6 @@ namespace WinExplorer
 
         //                        if (ns == null)
         //                        {
-
         //                            ns = new TreeNode();
         //                            ns.Text = s;
         //                            CreateView_Solution.ProjectItemInfo pp = new CreateView_Solution.ProjectItemInfo();
@@ -2549,11 +2452,8 @@ namespace WinExplorer
         //                            }
         //                            else if (i == cc.Length - 1)
         //                            {
-
-
         //                                if (ng != nodes)
         //                                {
-
         //                                    master.Nodes.Remove(ng);
 
         //                                    nodes.Nodes.Add(ng);
@@ -2563,11 +2463,9 @@ namespace WinExplorer
         //                            }
         //                            else if (i == cc.Length - 1)
         //                            {
-
         //                                if(nodes != null)
         //                                if (ng != nodes)
         //                                {
-
         //                                    master.Nodes.Remove(ng);
 
         //                                    nodes.Nodes.Add(ng);
@@ -2575,8 +2473,6 @@ namespace WinExplorer
         //                                }
 
         //                            }
-
-
 
         //                        }
         //                        //            if(ns != null)
@@ -2588,12 +2484,9 @@ namespace WinExplorer
         //            }
         //        }
 
-
         //    }
 
         //}
-
-
 
         public void ProjectCleanUp(TreeNode master)
         {
@@ -2607,7 +2500,6 @@ namespace WinExplorer
 
             SetExtensions(master);
         }
-
 
         public void MoveEmbeddedResources(TreeNode master, ArrayList EMB)
         {
@@ -2636,7 +2528,6 @@ namespace WinExplorer
                 master.Nodes.Add(node);
             }
         }
-
 
         public void MoveFolderNodes(TreeNode master)
         {
@@ -2682,7 +2573,6 @@ namespace WinExplorer
 
             R = SortNodes(R, false);
 
-
             if (R.Count > 0)
             {
                 int i = 0;
@@ -2722,8 +2612,6 @@ namespace WinExplorer
             }
         }
 
-
-
         public void MoveOtherNodes(TreeView v, TreeNode master, ArrayList NL)
         {
             v.BeginUpdate();
@@ -2747,7 +2635,6 @@ namespace WinExplorer
 
                 TreeNode nodes = FindNodesInclude(master, Include);
 
-
                 if (nodes == null)
                     continue;
 
@@ -2769,9 +2656,7 @@ namespace WinExplorer
         {
             CreateView_Solution.ProjectItemInfo pp = node.Tag as CreateView_Solution.ProjectItemInfo;
 
-
             CreateView_Solution.ProjectItemInfo pnp = null;
-
 
             CreateView_Solution.ProjectItemInfo pc = null;
 
@@ -2803,8 +2688,6 @@ namespace WinExplorer
 
                     //nb.Text = b;
 
-
-
                     nb.ImageKey = "filesource";
                     nb.SelectedImageKey = "filesource";
                     nb.Tag = pc;
@@ -2812,9 +2695,9 @@ namespace WinExplorer
                 }
             }
 
-
             return null;
         }
+
         public void MoveProjectOtherNodes(ArrayList EMB, TreeView v, TreeNode master)
         {
             v.BeginUpdate();
@@ -2839,8 +2722,6 @@ namespace WinExplorer
 
                 TreeNode nodes = FindNodesInclude(master, Include);
 
-
-
                 if (nodes != null && nodes != master)
                 {
                     master.Nodes.Remove(node);
@@ -2860,8 +2741,6 @@ namespace WinExplorer
                         node.Nodes.Add(b);
 
                     // MergeTheSameForms(node);
-
-
 
                     int index = Include.LastIndexOf("\\");
                     if (index > 0)
@@ -2924,8 +2803,8 @@ namespace WinExplorer
 
         public void SortProjectNodes(TreeNode master)
         {
-     //        if (master.Text == "AnalyzerDriver")
-     //            MessageBox.Show("d");
+            //        if (master.Text == "AnalyzerDriver")
+            //            MessageBox.Show("d");
 
             ArrayList L = Nodes2Array(master);
 
@@ -2933,18 +2812,15 @@ namespace WinExplorer
 
             ArrayList A = new ArrayList();
 
-
-            foreach(TreeNode ns in A)
+            foreach (TreeNode ns in A)
             {
-
- //               if (ns.Text == "AnalyzerDriver")
- //                   MessageBox.Show("d");
+                //               if (ns.Text == "AnalyzerDriver")
+                //                   MessageBox.Show("d");
 
                 string text = ns.Text.Trim();
 
                 if (Path.IsPathRooted(text))
                 {
-
                     string[] cc = text.Split("\\".ToCharArray());
 
                     if (cc.Length > 1)
@@ -2952,9 +2828,7 @@ namespace WinExplorer
                         text = cc[cc.Length - 1];
                         ns.Text = text;
                     }
-
                 }
-
             }
 
             //ArrayList S = new ArrayList();
@@ -2981,16 +2855,13 @@ namespace WinExplorer
                 if (p.IsProjectNode == true)
                 {
                     P.Add(node);
-                    if(p.ps != null)
+                    if (p.ps != null)
                         if (p.ps.FileName != null)
                             if (p.ps.FileName.EndsWith(".shproj"))
-                            A.Add(node);
+                                A.Add(node);
                     SetProjectExtension(node);
                     _projectCount++;
                 }
-
-                
-
             }
 
             P = SortNodes(P, true);
@@ -3012,11 +2883,10 @@ namespace WinExplorer
                                 node.Text += " (unavailble)";
                         }
 
-
                 SortProjectNodes(node);
             }
 
-            foreach(TreeNode node in A)
+            foreach (TreeNode node in A)
             {
                 master.Nodes.Remove(node);
                 master.Nodes.Add(node);
@@ -3032,9 +2902,7 @@ namespace WinExplorer
             {
                 master.Nodes.Remove(node);
 
-
                 string text = node.Text;
-
 
                 if (Path.IsPathRooted(text) == true)
                 {
@@ -3050,7 +2918,6 @@ namespace WinExplorer
                 {
                     master.Nodes.Insert(0, node);
                     SortProjectNodes(node);
-
                 }
             }
 
@@ -3083,8 +2950,6 @@ namespace WinExplorer
                         {
                             string include = p.psi.Include;
 
-
-
                             if (include.EndsWith("proj"))
                             {
                                 VSSolution vs = p.vs;
@@ -3094,7 +2959,6 @@ namespace WinExplorer
                                 string c = Path.GetDirectoryName(vp.FileName) + "\\" + include;
 
                                 c = Path.GetFullPath(c);
-
 
                                 if (vs.dd.ContainsKey(c) == true)
                                 {
@@ -3143,10 +3007,7 @@ namespace WinExplorer
                 if (DD.ContainsKey(vp.FileName) == false)
                     continue;
 
-
                 TreeNode node = DD[vp.FileName];
-
-
 
                 //if (vp.Name == "Composition")
                 {
@@ -3206,15 +3067,11 @@ namespace WinExplorer
 
                         Dictionary<string, string> g = JsonConvert.DeserializeObject<Dictionary<string, string>>((string)js.dependencies.ToString());
 
-
-
                         foreach (string s in g.Keys)
                         {
                             if (ns == null)
                             {
                                 ns = new TreeNode("Reference");
-
-
 
                                 p = new CreateView_Solution.ProjectItemInfo();
                                 {
@@ -3229,7 +3086,6 @@ namespace WinExplorer
                                 }
                             }
 
-
                             TreeNode ng = new TreeNode(s);
                             p = new CreateView_Solution.ProjectItemInfo();
                             p.vs = vs;
@@ -3237,7 +3093,6 @@ namespace WinExplorer
                             p.psi = new VSProjectItem();
                             p.psi.ItemType = "Reference";
                             p.psi.Include = s;
-
 
                             ng.ImageKey = "nuget";
                             ng.SelectedImageKey = "nuget";
@@ -3249,7 +3104,6 @@ namespace WinExplorer
                 //string s = vp.GetProjectExec();
                 //s = Path.GetFileName(s);
                 //vp.OutputName = s;
-
             }
         }
 
@@ -3264,7 +3118,6 @@ namespace WinExplorer
                 ArrayList F = new ArrayList();
 
                 ArrayList N = new ArrayList();
-
 
                 foreach (TreeNode node in L)
                 {
@@ -3284,8 +3137,6 @@ namespace WinExplorer
 
                 foreach (TreeNode node in N)
                 {
-                   
-
                     master.Nodes.Add(node);
                 }
 
@@ -3294,7 +3145,6 @@ namespace WinExplorer
                 foreach (TreeNode node in F)
                 {
                     master.Nodes.Remove(node);
-
 
                     string text = node.Text;
 
@@ -3311,20 +3161,15 @@ namespace WinExplorer
                 SortFolderNodes(ns);
         }
 
-
         static public void LoadNonFolders(TreeNode node, ArrayList L)
         {
-
-            foreach(TreeNode nodes in node.Nodes)
+            foreach (TreeNode nodes in node.Nodes)
             {
-
                 if (nodes.ImageKey != "Folder")
                     L.Add(node);
 
                 LoadNonFolders(nodes, L);
-
             }
-
         }
 
         static public void SortProjectNodes(TreeView master)
@@ -3359,19 +3204,14 @@ namespace WinExplorer
             //    master.Nodes.Insert(0, node);
             //}
 
-
             N = SortNodes(N);
-
 
             master.Nodes.Clear();
 
             foreach (TreeNode node in N)
             {
-                
                 master.Nodes.Add(node);
             }
-
-
         }
 
         static public ArrayList SortNodes(ArrayList L)
@@ -3438,10 +3278,9 @@ namespace WinExplorer
 
         public void SetExtensions(TreeNode node)
         {
-
             string[] gg = node.Text.Split("\\".ToCharArray());
 
-            if(gg.Length > 0)
+            if (gg.Length > 0)
                 node.Text = gg[gg.Length - 1];
 
             if (dc != null)
@@ -3465,31 +3304,26 @@ namespace WinExplorer
                             string dd = (string)dc[exts];
                             if (dd != "")
                             {
-                        
-
                                 if (p != null)
                                     if (p.psi.ItemType == "Reference")
                                         return;
 
-
                                 if (exts == ".cs")
                                 {
-
-
                                     if (p != null)
                                     {
                                         if (p.psi != null)
-                                            if(p.psi.SubTypes == "Component")
+                                            if (p.psi.SubTypes == "Component")
                                             {
                                                 node.ImageKey = "component";
                                                 node.SelectedImageKey = "component";
                                             }
                                             else if (p.psi.SubTypes == "UserControl")
-                                                {
-                                                    node.ImageKey = "usercontrol";
-                                                    node.SelectedImageKey = "usercontrol";
-                                                }
-                                                else if (p.psi.SubTypes == "Form" || p.psi.SubTypes == "Forms")
+                                            {
+                                                node.ImageKey = "usercontrol";
+                                                node.SelectedImageKey = "usercontrol";
+                                            }
+                                            else if (p.psi.SubTypes == "Form" || p.psi.SubTypes == "Forms")
                                             {
                                                 node.ImageKey = "forms";
                                                 node.SelectedImageKey = "forms";
@@ -3508,7 +3342,6 @@ namespace WinExplorer
                                 }
                                 else
                                 {
-
                                     node.ImageKey = dd;
                                     node.SelectedImageKey = dd;
                                 }
@@ -3521,7 +3354,6 @@ namespace WinExplorer
                         {
                             node.ImageKey = "filesource";
                             node.SelectedImageKey = "filesource";
-
                         }
                         else
                         {
@@ -3540,7 +3372,6 @@ namespace WinExplorer
                 //        return;
                 //    if (exts == null)
                 //        return;
-
 
                 //    if (dc.ContainsKey(exts))
                 //    {
@@ -3573,7 +3404,6 @@ namespace WinExplorer
                     return;
                 if (exts == null)
                     return;
-
 
                 if (dc.ContainsKey(exts))
                 {
@@ -3671,7 +3501,6 @@ namespace WinExplorer
             }
         }
 
-
         public void EmptyRemoveNode(TreeNode master)
         {
             TreeNode nodes = FindNode(master, "Properties");
@@ -3727,7 +3556,6 @@ namespace WinExplorer
                 if (guid != guids)
                     return;
 
-
             int i = 0;
 
             ArrayList L = new ArrayList();
@@ -3772,17 +3600,13 @@ namespace WinExplorer
 
                 string[] s = node.Text.Split(".".ToCharArray());
 
-
                 TreeNode ns = FindNode(master, s[0]);
-
-
 
                 //if (ns.ImageKey == "resourcefile")
                 //{
                 //    i++;
                 //    continue;
                 //}
-
 
                 CreateView_Solution.ProjectItemInfo nsc = ns.Tag as CreateView_Solution.ProjectItemInfo;
 
@@ -3792,7 +3616,6 @@ namespace WinExplorer
                 //    ems = FindNode(nodes, s[0]);
 
                 CreateView_Solution.ProjectItemInfo pp = node.Tag as CreateView_Solution.ProjectItemInfo;
-
 
                 CreateView_Solution.ProjectItemInfo pc = null;
 
@@ -3856,7 +3679,6 @@ namespace WinExplorer
                     ng.SelectedImageKey = "usercontrol";
                 }
 
-
                 if (ems != null)
                     if (ns != null)
                         if (ems.Text == ns.Text)
@@ -3901,7 +3723,6 @@ namespace WinExplorer
 
                 ng.Nodes.Add(node);
 
-
                 if (ng.Nodes.Count == 2)
                 {
                     bool recursive = false;
@@ -3944,7 +3765,6 @@ namespace WinExplorer
                     //}
                 }
 
-
                 master.Nodes.Add(ng);
 
                 i++;
@@ -3964,7 +3784,6 @@ namespace WinExplorer
             if (master.Text.EndsWith(".cs") == true)
                 return;
 
-
             if (master.Text.EndsWith(".resx") == true)
                 return;
 
@@ -3978,22 +3797,15 @@ namespace WinExplorer
             {
                 TreeNode node = L[i] as TreeNode;
 
-
-
-
-
                 string names = node.Text.Replace(folder + "\\", "");
 
                 //string filename = names.Replace(".cs", "");
                 string filename = names.Replace(".Designer", "");
                 filename = filename.Replace(".designer", "");
 
-
                 string[] s = names.Split(".".ToCharArray());
 
                 ArrayList N = FindNodesExact(master, filename, node);
-
-
 
                 //ArrayList N = FindNodes(master, s[0]);
 
@@ -4014,8 +3826,6 @@ namespace WinExplorer
 
                 TreeNode ems = null;
 
-
-
                 //if(N.Count > 1)
                 //ems = N[1] as TreeNode;
 
@@ -4023,7 +3833,6 @@ namespace WinExplorer
                 //    ems = FindNode(nodes, s[0]);
 
                 CreateView_Solution.ProjectItemInfo pp = node.Tag as CreateView_Solution.ProjectItemInfo;
-
 
                 CreateView_Solution.ProjectItemInfo pnp = null;
 
@@ -4060,8 +3869,6 @@ namespace WinExplorer
 
                         //nb.Text = b;
 
-
-
                         nb.ImageKey = "filesource";
                         nb.SelectedImageKey = "filesource";
                         nb.Tag = pc;
@@ -4080,32 +3887,24 @@ namespace WinExplorer
                 //    ems = bc;
                 //}
 
-
-
-
                 string[] cc = node.Text.Split(".".ToCharArray());
-
-
 
                 TreeNode ng = new TreeNode();
                 ng.ImageKey = "forms";
                 ng.SelectedImageKey = "forms";
-
 
                 string named = pp.psi.Include.Replace(".resx", "");
                 named = named.Replace(".cs", "");
                 named = named.Replace(".Designer", "");
                 named = named.Replace(".designer", "");
 
-
                 CreateView_Solution.ProjectItemInfo pcc = new CreateView_Solution.ProjectItemInfo();
                 pcc.vs = pp.vs;
                 pcc.ps = pp.ps;
                 pcc.psi = new VSProjectItem();
-                pcc.psi.Include =  pp.psi.Include; // named;
+                pcc.psi.Include = pp.psi.Include; // named;
                 pcc.psi.SubTypes = pp.psi.SubTypes;
                 //pcc.psi.SubType = pp.SubType;
-
 
                 if (pp.psi.SubTypes == "UserControl")
                 {
@@ -4209,13 +4008,9 @@ namespace WinExplorer
 
                 master.Nodes.Add(ng);
 
-
-
                 i++;
             }
         }
-
-
 
         public TreeNode FindNode(TreeNode master, string name)
         {
@@ -4242,6 +4037,7 @@ namespace WinExplorer
 
             return null;
         }
+
         public TreeNode FindNodeExactTree(TreeNode master, string name)
         {
             name = name.ToUpper();
@@ -4257,6 +4053,7 @@ namespace WinExplorer
 
             return null;
         }
+
         public void FindNodeExactTree(TreeNode master, string name, ArrayList N)
         {
             name = name.ToUpper();
@@ -4268,6 +4065,7 @@ namespace WinExplorer
                 FindNodeExactTree(node, name, N);
             }
         }
+
         public TreeNode FindNodesInclude(TreeNode master, string Include)
         {
             Include = Include.ToUpper();
@@ -4288,6 +4086,7 @@ namespace WinExplorer
 
             return null;
         }
+
         public TreeNode FindNodesIncludeExact(TreeView v, string Include)
         {
             Include = Include.ToUpper();
@@ -4309,7 +4108,6 @@ namespace WinExplorer
                     if (ns == null)
                         continue;
 
-
                     if (i >= cc.Length)
                         if (ns != null)
                             return ns;
@@ -4317,6 +4115,7 @@ namespace WinExplorer
             }
             return null;
         }
+
         public TreeNode GetProjectNode(TreeNode n, VSProject vp)
         {
             foreach (TreeNode ns in n.Nodes)
@@ -4335,6 +4134,7 @@ namespace WinExplorer
 
             return null;
         }
+
         public TreeNode GetProjectNode(TreeView v, VSProject vp)
         {
             foreach (TreeNode ns in v.Nodes)
@@ -4381,6 +4181,7 @@ namespace WinExplorer
 
             return null;
         }
+
         public TreeNode FindNodesIncludes(TreeNode master, string Include)
         {
             Include = Include.ToUpper().Trim();
@@ -4409,6 +4210,7 @@ namespace WinExplorer
             }
             return null;
         }
+
         public ArrayList FindNodesExacts(TreeNode master, string name, ArrayList L)
         {
             name = name.ToUpper();
@@ -4517,8 +4319,6 @@ namespace WinExplorer
             return L;
         }
 
-
-
         public ArrayList Designers(TreeNode master)
         {
             ArrayList L = new ArrayList(0);
@@ -4535,8 +4335,6 @@ namespace WinExplorer
                 string[] bb = node.Text.Split(".".ToCharArray());
 
                 string name = bb[0];
-
-
 
                 if (text.ToLower().Contains(".designer.") == true)
                 {
@@ -4591,8 +4389,6 @@ namespace WinExplorer
                 }
             }
 
-
-
             foreach (TreeNode node in master.Nodes)
             {
                 int i = L.LastIndexOf(node);
@@ -4625,8 +4421,6 @@ namespace WinExplorer
                             L.Add(node);
                     }
             }
-
-
 
             return L;
         }
@@ -4780,6 +4574,7 @@ namespace WinExplorer
 
             return L;
         }
+
         static public ArrayList Nodes2Array(TreeNode node, ArrayList N)
         {
             if (node == null)
@@ -4799,10 +4594,9 @@ namespace WinExplorer
                 i++;
             }
 
-
-
             return N;
         }
+
         static public ArrayList Nodes2Array(TreeView node)
         {
             ArrayList L = new ArrayList();
@@ -4879,8 +4673,6 @@ namespace WinExplorer
             //if (folder.StartsWith("Parser"))
             //    MessageBox.Show("Found");
 
-
-
             Dictionary<string, ArrayList> dict = new Dictionary<string, ArrayList>();
 
             ArrayList FD = new ArrayList();
@@ -4890,9 +4682,6 @@ namespace WinExplorer
             foreach (TreeNode ns in node.Nodes)
             {
                 string s = ns.Text;
-
-
-
 
                 //if (s.Contains("VBNetParser"))
                 //    MessageBox.Show("");
@@ -4943,7 +4732,6 @@ namespace WinExplorer
             {
                 //if (key == "Parser5")
                 //    MessageBox.Show("Parser5");
-
 
                 TreeNode nods = new TreeNode();
                 nods.Text = key;
@@ -5001,7 +4789,6 @@ namespace WinExplorer
 
                             nods.Nodes.Add(ng);
                     }
-
 
                     i++;
                 }
@@ -5071,11 +4858,9 @@ namespace WinExplorer
                 if (s != null)
 
                     b = s;
-
                 else
                 {
                     first.Nodes.Add(b);
-
 
                     CreateView_Solution.ProjectItemInfo pc = new CreateView_Solution.ProjectItemInfo();
                     pc.psi = new VSProjectItem();
@@ -5088,7 +4873,6 @@ namespace WinExplorer
                     b.Tag = pc;
                 }
                 nc = b;
-
 
                 first = b;
 
@@ -5104,7 +4888,6 @@ namespace WinExplorer
             nodes.Nodes.Remove(ng);
 
             first.Nodes.Add(ng);
-
 
             return ng;
         }
@@ -5134,8 +4917,6 @@ namespace WinExplorer
 
                         //if(ng.Text.Contains(".cs") == false)
 
-
-
                         if (ng != ns)
                         {
                             node.Nodes.Remove(ng);
@@ -5153,6 +4934,7 @@ namespace WinExplorer
                 i++;
             }
         }
+
         public void MergeTheSameForms(TreeNode node)
         {
             if (node.Nodes.Count != 1)
@@ -5167,7 +4949,6 @@ namespace WinExplorer
             string[] bb = nodes.Text.Split("\\".ToCharArray());
 
             string b = bb[bb.Length - 1];
-
 
             c = Path.GetFileNameWithoutExtension(c);
 
@@ -5186,6 +4967,7 @@ namespace WinExplorer
                 node.Nodes.Add(ns);
             }
         }
+
         public static void SetTreeView(TreeView tv)
         {
             if (tv.ImageKey != "Folder")
@@ -5259,7 +5041,6 @@ namespace WinExplorer
 
             System.Resources.ResourceReader mg = new System.Resources.ResourceReader(r);
 
-
             foreach (var item in mg)
             {
                 dicAttributes.Add(((System.Collections.DictionaryEntry)(item)).Key.ToString(), ((System.Collections.DictionaryEntry)(item)).Value);
@@ -5271,7 +5052,6 @@ namespace WinExplorer
 
             return dicAttributes;
         }
-
 
         static public ImageList CreateImageList(string s)
         {
@@ -5403,10 +5183,8 @@ namespace WinExplorer
             //d.Add(".cur", "cursor_16xLG");
             //d.Add(".shproj", "shared");
 
-
             return d;
         }
-
 
         public void loads_vs_dict()
         {
@@ -5503,7 +5281,6 @@ namespace WinExplorer
             d.Add("VALUETYPE_SEALED", "VALUETYPE_SEALED");
         }
 
-
         static public TreeView LoadProject(string file, string bb = "")
         {
             string s = AppDomain.CurrentDomain.BaseDirectory;
@@ -5564,7 +5341,6 @@ namespace WinExplorer
 
             if (tv == null)
                 return;
-
 
             //s.BeginInvoke(new Action(() =>
             {

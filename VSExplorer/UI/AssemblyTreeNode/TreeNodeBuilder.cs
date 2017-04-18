@@ -1,13 +1,9 @@
-
+using AndersLiu.Reflector.Core;
 using Microsoft.Cci;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-using AndersLiu.Reflector.Core;
-using AndersLiu.Reflector.Program.UI.AssemblyTreeNode;
-using AndersLiu.Reflector.Core;
-
 
 namespace AndersLiu.Reflector.Core
 {
@@ -85,7 +81,8 @@ namespace AndersLiu.Reflector.Program.UI.AssemblyTreeNode
                 if (File.Exists(b) == true)
                     File.Delete(b);
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
                 Console.WriteLine(e.Message);
             }
 
@@ -94,7 +91,8 @@ namespace AndersLiu.Reflector.Program.UI.AssemblyTreeNode
                 if (File.Exists(file))
                     File.Copy(file, b);
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
                 Console.WriteLine(e.Message);
             }
 

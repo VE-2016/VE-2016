@@ -5,7 +5,6 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Reflection;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using VSParsers;
@@ -20,7 +19,7 @@ namespace WinExplorer.UI
 
         private ServiceBitmaps service { get; set; }
 
-        int editor = 0;
+        private int editor = 0;
 
         private TextBox editbox = new TextBox();
 
@@ -39,9 +38,9 @@ namespace WinExplorer.UI
             nodes.Tag = listViewItem1;
             MainNode.Nodes.Add(nodes);
         }
+
         public void ChangeNode(ListViewItem v, string name)
         {
-
             Type type = GACForm.FindTypeFromAssemblies("." + name);
 
             if (type == null)
@@ -58,7 +57,6 @@ namespace WinExplorer.UI
                 v.Tag = T;
 
                 v.SubItems[3].Text = type.FullName;
-
             }
             else
             {
@@ -68,11 +66,10 @@ namespace WinExplorer.UI
                 T.Item4.Text = "f";
                 v.Tag = T;
             }
- 
         }
+
         public ListViewOwnerDraw()
         {
-
             service = new ServiceBitmaps();
 
             // Initialize the ListView control.
@@ -142,7 +139,7 @@ namespace WinExplorer.UI
             _listView1.ColumnWidthChanged += new ColumnWidthChangedEventHandler(listView1_ColumnWidthChanged);
             _listView1.Invalidated += new InvalidateEventHandler(listView1_Invalidated);
 
-           // _listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSizeColumnContent);
+            // _listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSizeColumnContent);
             _listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 
             // Initialize the form and add the ListView control to it.
@@ -165,8 +162,6 @@ namespace WinExplorer.UI
             editbox.KeyPress += Editbox_KeyPress;
             _listView1.MouseDoubleClick += new MouseEventHandler(listView_MouseDoubleClick);
             _listView1.KeyDown += _listView1_KeyPress;
-            
-
         }
 
         private void _listView1_KeyPress(object sender, KeyEventArgs e)
@@ -178,7 +173,7 @@ namespace WinExplorer.UI
                     return;
                 ListViewItem v = hitinfo.Item;
 
-                foreach(TreeNode node in MainNode.Nodes)
+                foreach (TreeNode node in MainNode.Nodes)
                 {
                     ListViewItem b = node.Tag as ListViewItem;
 
@@ -194,12 +189,10 @@ namespace WinExplorer.UI
                         return;
                     }
                 }
-
             }
-                
         }
 
-        private void Editbox_KeyPress(object sender, KeyPressEventArgs e)  
+        private void Editbox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (Char)Keys.Enter)
                 editbox_LostFocus(null, null);
@@ -208,6 +201,7 @@ namespace WinExplorer.UI
         private ListViewHitTestInfo hitinfo;
 
         private ListViewItem edited;
+
         private void listView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             hitinfo = _listView1.HitTest(e.X, e.Y);
@@ -229,7 +223,8 @@ namespace WinExplorer.UI
             editbox.Focus();
             editbox.Show();
         }
-        void editbox_LostFocus(object sender, EventArgs e)
+
+        private void editbox_LostFocus(object sender, EventArgs e)
         {
             if (sender == null)
             {
@@ -241,12 +236,13 @@ namespace WinExplorer.UI
                 _listView1.Refresh();
             }
         }
+
         private void Lv_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
         {
             if (e.ItemIndex >= GV.Count)
                 e.Item = GV[GV.Count - 1] as ListViewItem;
             else
-            e.Item = GV[e.ItemIndex] as ListViewItem;
+                e.Item = GV[e.ItemIndex] as ListViewItem;
         }
 
         public static void DoubleBuffer(Control control)
@@ -255,18 +251,20 @@ namespace WinExplorer.UI
             System.Reflection.PropertyInfo dbProp = typeof(System.Windows.Forms.Control).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
             dbProp.SetValue(control, true, null);
         }
+
         private void ListViewOwnerDraw_ResizeEnd(object sender, EventArgs e)
         {
             ResizeColumnHeaders();
         }
+
         private void ResizeColumnHeaders()
         {
             int c = this.Width / (_listView1.Columns.Count - 1);
             for (int i = 1; i < this._listView1.Columns.Count; i++) this._listView1.Columns[i].Width = c;
-           // this._listView1.Columns[this._listView1.Columns.Count - 1].Width = -2;
+            // this._listView1.Columns[this._listView1.Columns.Count - 1].Width = -2;
         }
 
-        delegate void threadWorker(int row);
+        private delegate void threadWorker(int row);
 
         public void workerFunction(int row)
         {
@@ -321,7 +319,6 @@ namespace WinExplorer.UI
             base.Dispose(disposing);
         }
 
-    
         // Sets the ListView control to the List view.
         private void menuItemList_Click(object sender, EventArgs e)
         {
@@ -388,7 +385,7 @@ namespace WinExplorer.UI
         {
             //TextFormatFlags flags = TextFormatFlags.Left;
 
-            int w = resource_vsc.PropertyIcon_24.Width + Resources.Expand.Width + 3 - 5 ;
+            int w = resource_vsc.PropertyIcon_24.Width + Resources.Expand.Width + 3 - 5;
 
             ListViewItem v = e.Item;
 
@@ -411,8 +408,6 @@ namespace WinExplorer.UI
 
             using (StringFormat sf = new StringFormat())
             {
-      
-
                 e.DrawBackground();
 
                 if (e.ColumnIndex == 1)
@@ -424,24 +419,15 @@ namespace WinExplorer.UI
                     {
                         if (node.Text == "ce")
                         {
-                          
                             VisualStyleRenderer treeOpen = new VisualStyleRenderer(VisualStyleElement.TreeView.Glyph.Opened);
                             treeOpen.DrawBackground(e.Graphics, new Rectangle(bb.X, bb.Y, 16, 16));
-                            
-
                         }
                         else
                         {
                             VisualStyleRenderer treeClose = new VisualStyleRenderer(VisualStyleElement.TreeView.Glyph.Closed);
                             treeClose.DrawBackground(e.Graphics, new Rectangle(bb.X, bb.Y, 16, 16));
-                            
-
-
                         }
-
                     }
-
-                    
 
                     //   e.DrawDefault = false;
                     //    e.DrawBackground();
@@ -464,12 +450,7 @@ namespace WinExplorer.UI
 
                     //else e.Graphics.DrawImage(resource_vsc.PropertyIcon_24, cc.Location/*e.SubItem.Bounds.Location*/);
 
-
-
-
                     //e.Graphics.DrawString(e.SubItem.Text, e.SubItem.Font, new SolidBrush(e.SubItem.ForeColor), (e.SubItem.Bounds.Location.X + Resources.Aspx.Width), e.SubItem.Bounds.Location.Y);
-
-
 
                     e.Graphics.DrawString(e.SubItem.Text, _listView1.Font, Brushes.Black, bc/*e.Bounds*/, sf);
                 }
@@ -486,7 +467,6 @@ namespace WinExplorer.UI
                     // background to make it stand out from the gradient.
                     if ((e.ItemState & ListViewItemStates.Selected) == 0)
                     {
-                             
                         // Draw the subitem text in red to highlight it.
                         e.Graphics.DrawString(e.SubItem.Text,
                             _listView1.Font, Brushes.Black, e.Bounds, sf);
@@ -549,7 +529,6 @@ namespace WinExplorer.UI
             if (item != null)
             {
                 _listView1.Invalidate(item.SubItems[1].Bounds);
-                
             }
         }
 
@@ -558,7 +537,7 @@ namespace WinExplorer.UI
         {
             //foreach (ListViewItem item in _listView1.Items)
             {
-               // if (item == null) return;
+                // if (item == null) return;
                 // item.Tag = null;
             }
         }
@@ -570,8 +549,7 @@ namespace WinExplorer.UI
             _listView1.Invalidate();
         }
 
-
-        void RemoveMainNode(TreeNode node)
+        private void RemoveMainNode(TreeNode node)
         {
             RemoveNodes(node, true);
             _listView1.VirtualListSize = GV.Count;
@@ -579,10 +557,8 @@ namespace WinExplorer.UI
 
         private object obs { get; set; }
 
-
         public void RemoveNodes(TreeNode main, bool hide = false)
         {
-
             foreach (TreeNode nodes in main.Nodes)
             {
                 TreeNode n = nodes;
@@ -596,51 +572,42 @@ namespace WinExplorer.UI
 
             if (hide == true)
             {
-
                 ListViewItem v = main.Tag as ListViewItem;
                 G.Remove(v);
                 GV.Remove(v);
             }
-
         }
 
         public void HideNodes(TreeNode main, bool hide = false)
         {
-
             foreach (TreeNode nodes in main.Nodes)
             {
                 TreeNode n = nodes;
                 ListViewItem v = n.Tag as ListViewItem;
 
-
-                GV.Remove(v);  
+                GV.Remove(v);
 
                 HideNodes(n, true);
             }
 
-            if(hide == true)
+            if (hide == true)
             {
-
                 ListViewItem v = main.Tag as ListViewItem;
                 GV.Remove(v);
             }
-
         }
+
         public void ExpandNodes(TreeNode main, ref int act, bool expand = true)
         {
-
             if (main.IsExpanded == true)
                 expand = true;
 
             foreach (TreeNode nodes in main.Nodes)
             {
-
                 ListViewItem v = nodes.Tag as ListViewItem;
 
                 if (nodes.IsExpanded || expand == true)
                 {
-
-                    
                     if (v == null)
                         continue;
                     //lv.Items.Insert(act + 1, v);
@@ -648,17 +615,13 @@ namespace WinExplorer.UI
 
                     GV.Insert(act + 1, v);
                     act = GV.IndexOf(v);
-                    
-                    if(nodes.IsExpanded)
-                    ExpandNodes(nodes, ref act, false);
+
+                    if (nodes.IsExpanded)
+                        ExpandNodes(nodes, ref act, false);
 
                     //nodes.Expand();
                 }
-                
             }
-
-           
-
         }
 
         public Type GetTypeFor(object obs)
@@ -669,9 +632,9 @@ namespace WinExplorer.UI
             else return obs.GetType();
         }
 
-        ArrayList G = new ArrayList();
+        private ArrayList G = new ArrayList();
 
-        ArrayList GV = new ArrayList();
+        private ArrayList GV = new ArrayList();
 
         public void LoadFields(int row)
         {
@@ -693,24 +656,20 @@ namespace WinExplorer.UI
 
             TreeNode ns = null;
 
-            foreach(TreeNode ng in main.Nodes)
+            foreach (TreeNode ng in main.Nodes)
             {
-
                 if (ng.Text == "placeholder")
                 {
                     ns = ng;
                     break;
                 }
-
             }
 
             if (ns != null)
                 main.Nodes.Remove(ns);
-            
 
             if (main.Text == "ce")
             {
-
                 HideNodes(main);
 
                 //foreach (TreeNode nodes in main.Nodes)
@@ -744,7 +703,6 @@ namespace WinExplorer.UI
 
                 if (tc != null)
                 {
-
                     TreeNode ng = tc.Item4 as TreeNode;
 
                     //foreach (TreeNode nodes in ng.Nodes)
@@ -761,7 +719,6 @@ namespace WinExplorer.UI
                     ExpandNodes(main, ref acts);
 
                     //ng.Expand();
-
                 }
                 //ng.Text = "ce";
                 main.Text = "ce";
@@ -772,8 +729,8 @@ namespace WinExplorer.UI
                 lv.Refresh();
                 return;
             }
-           // else
-           // main.Text = "ce";
+            // else
+            // main.Text = "ce";
 
             Type b = T.Item3 as Type;
 
@@ -824,14 +781,12 @@ namespace WinExplorer.UI
 
             if (T.Item2 != null)
             {
-                
                 {
                     if (GetTypeFor(T.Item2).IsPrimitive == true /*|| T.Item2.GetType().IsValueType == true*/ /*||  T.Item2.GetType().IsPointer == true*/)
                         r = true;
                 }
 
                 baseType = GetTypeFor(T.Item2).BaseType;
-
             }
 
             TreeNode node_vs = new TreeNode();
@@ -850,11 +805,10 @@ namespace WinExplorer.UI
 
             int sa = row;
 
-
             if (r == false)
             {
                 main.Nodes.Add(node_vs);
-                
+
                 vs.Text = "Static members";
                 vs.SubItems.Add("Static members" + " for " + c.SubItems[1].Text);
                 vs.SubItems.Add(" ");
@@ -866,7 +820,7 @@ namespace WinExplorer.UI
                 //node_vs.ImageKey = "Class_yellow_256x";
 
                 main.Nodes.Add(node_vp);
-                
+
                 vp.Text = "Non-Public members";
                 vp.SubItems.Add("Non-Public members");
                 vp.SubItems.Add(" ");
@@ -875,11 +829,9 @@ namespace WinExplorer.UI
                 vp.Tag = tc;
                 node_vp.Tag = vp;
                 node_vp.Text = "uc";
-             
 
-                if(baseType != null)
+                if (baseType != null)
                 {
-
                     main.Nodes.Add(node_bs);
 
                     bs.Text = "Base";
@@ -891,15 +843,11 @@ namespace WinExplorer.UI
                     node_bs.Tag = bs;
                     node_bs.Text = "nc";
                     node_bs.Nodes.Add(new TreeNode("placeholder"));
-
-
                 }
-
 
                 int cc = G.IndexOf(c);
                 G.Insert(cc + 1, vs);
                 cc = G.IndexOf(vs);
-                
 
                 //lv.Items.Insert(cc + 1, vp);
                 G.Insert(cc + 1, vp);
@@ -917,31 +865,25 @@ namespace WinExplorer.UI
                 GV.Insert(cc + 1, vp);
                 sa = cc + 1;
 
-                if(baseType != null)
+                if (baseType != null)
                 {
                     GV.Insert(cc + 2, bs);
                     sa = cc + 2;
                 }
-
-
             }
-                   
+
             //FieldInfo[] f = ((Type)b).GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Static);
-            
 
             if (T.Item2 != null)
-                
-            {
 
+            {
                 r = false;
-                if(T.Item2.GetType().IsPrimitive == true/* || T.Item2.GetType().IsValueType == true*/)
+                if (T.Item2.GetType().IsPrimitive == true/* || T.Item2.GetType().IsValueType == true*/)
                     r = true;
 
                 if (r == false)
                 {
-
                     FieldInfo[] f = ((Type)GetTypeFor(T.Item2)).GetFields(BindingFlags.DeclaredOnly | (BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static));
-
 
                     foreach (FieldInfo s in f)
                     {
@@ -975,17 +917,16 @@ namespace WinExplorer.UI
                         Tuple<int, object, object, TreeNode, Image> t = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 1, dd, s, node, Resources.Field_blue_16x);
                         v.Tag = t;
                         node.Tag = v;
-                       // node.ImageKey = service.GetKeyForField(s);
+                        // node.ImageKey = service.GetKeyForField(s);
                         if (s.IsStatic == true)
                         {
                             node_vs.Nodes.Add(node);
 
-                            
                             Tuple<int, object, object, TreeNode, Image> tt = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 2, dd, s, node, service.GetImage("s_Field_blue_16x"));
                             v.Tag = tt;
 
                             S.Add(v);
-                           // node.Text = "ce";
+                            // node.Text = "ce";
                         }
                         else if (s.IsPrivate == true)
                         {
@@ -993,7 +934,7 @@ namespace WinExplorer.UI
                             Tuple<int, object, object, TreeNode, Image> tt = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 2, dd, s, node, Resources.FieldPrivate_16x);
                             v.Tag = tt;
                             //node.Text = "ce";
-                             P.Add(v);
+                            P.Add(v);
                         }
                         else if (s.IsPublic == false)
                         {
@@ -1006,8 +947,8 @@ namespace WinExplorer.UI
                         else
                         {
                             main.Nodes.Add(node);
-                //            lv.Items.Insert(act + 1, v);
-                //            act = lv.Items.IndexOf(v);
+                            //            lv.Items.Insert(act + 1, v);
+                            //            act = lv.Items.IndexOf(v);
                             G.Insert(act + 1, v);
                             act = G.IndexOf(v);
                             GV.Insert(sa + 1, v);
@@ -1017,18 +958,15 @@ namespace WinExplorer.UI
                 }
             }
             //PropertyInfo[] p = ((Type)b).GetProperties(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Static);
-            
 
             if (T.Item2 != null)
             {
-
                 r = false;
                 if (T.Item2.GetType().IsPrimitive == true/* || T.Item2.GetType().IsValueType == true*/)
                     r = true;
 
                 if (r == false)
                 {
-
                     PropertyInfo[] p = ((Type)GetTypeFor(T.Item2)).GetProperties(BindingFlags.DeclaredOnly | (BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static));
 
                     foreach (PropertyInfo s in p)
@@ -1049,7 +987,7 @@ namespace WinExplorer.UI
                         }
                         catch (Exception e)
                         {
-                           // Console.WriteLine(e.Message);
+                            // Console.WriteLine(e.Message);
                         };
                         if (dd == null)
                             dd = s.PropertyType;
@@ -1076,26 +1014,23 @@ namespace WinExplorer.UI
 
                         if (mf == null)
                             mf = s.GetSetMethod();
-                        
-                        if(s.GetGetMethod(true) != null || s.GetSetMethod(true) != null)
+
+                        if (s.GetGetMethod(true) != null || s.GetSetMethod(true) != null)
                         {
                             t = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 1, dd, s, node, Resources.PropertyPrivate_16x);
                             v.Tag = t;
-                            
-                            if(mf != null && mf.IsPrivate == false)
+
+                            if (mf != null && mf.IsPrivate == false)
                             {
                                 t = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 1, dd, s, node, Resources.PropertyProtect_16x);
                                 v.Tag = t;
-                                
                             }
                         }
                         if (mf != null && mf.IsStatic)
                         {
-
                             //node.ImageKey = service.GetKeyForProperty(s, "static");
 
                             node_vs.Nodes.Add(node);
-
 
                             Tuple<int, object, object, TreeNode, Image> tt = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 2, dd, s, node, service.GetImage("s_Property_16x"));
                             v.Tag = tt;
@@ -1106,8 +1041,8 @@ namespace WinExplorer.UI
                         else
                         {
                             main.Nodes.Add(node);
-                  //          lv.Items.Insert(act + 1, v);
-                  //          act = lv.Items.IndexOf(v);
+                            //          lv.Items.Insert(act + 1, v);
+                            //          act = lv.Items.IndexOf(v);
                             G.Insert(act + 1, v);
                             act = G.IndexOf(v);
                             GV.Insert(sa + 1, v);
@@ -1120,7 +1055,6 @@ namespace WinExplorer.UI
             main.Text = "ce";
 
             //lv.Items.Insert(row + 1, vs);
-
 
             if (S.Count/*node_vs.Nodes.Count*/ <= 0)
             {
@@ -1150,7 +1084,6 @@ namespace WinExplorer.UI
             }
             else
             {
-
                 act = lv.Items.IndexOf(vp);
 
                 foreach (ListViewItem v in P)
@@ -1174,33 +1107,25 @@ namespace WinExplorer.UI
 
             lv.Refresh();
         }
+
         public bool HasItems(Type T, TreeNode node)
         {
-
             Type b = T;
-       
-          
-            ArrayList P = new ArrayList();
 
-            
+            ArrayList P = new ArrayList();
 
             FieldInfo[] f = ((Type)b).GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Static);
 
-            if(f.Length >= 1)
+            if (f.Length >= 1)
             {
-
-                
-
                 node.Nodes.Add(new TreeNode("placeholder"));
 
                 return true;
             }
 
-            
-      
             PropertyInfo[] p = ((Type)b).GetProperties(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Static);
 
-            if(p.Length >= 1)
+            if (p.Length >= 1)
             {
                 node.Nodes.Add(new TreeNode("placeholder"));
 
@@ -1213,16 +1138,16 @@ namespace WinExplorer.UI
         private void InitializeComponent()
         {
             this.SuspendLayout();
-            // 
+            //
             // ListViewOwnerDraw
-            // 
+            //
             this.ClientSize = new System.Drawing.Size(686, 456);
             this.Name = "ListViewOwnerDraw";
             this.ResumeLayout(false);
-
         }
     }
-    class ThreadWorkers
+
+    internal class ThreadWorkers
     {
         public event EventHandler<EventArgs> Done = (s, e) => { };
 

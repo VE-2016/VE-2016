@@ -1,4 +1,3 @@
-
 namespace AndersLiu.Reflector.Program.UI.AssemblyTreeNode
 {
     /// <summary>
@@ -9,6 +8,5 @@ namespace AndersLiu.Reflector.Program.UI.AssemblyTreeNode
         /// <summary>
         /// Get the associated workspace unit.
         /// </summary>
-
     }
 }

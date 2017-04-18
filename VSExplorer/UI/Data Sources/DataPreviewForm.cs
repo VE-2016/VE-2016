@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinExplorer.UI
@@ -21,7 +16,7 @@ namespace WinExplorer.UI
             cb.DropDownStyle = ComboBoxStyle.DropDown;
 
             cb.Text = "database";
-            
+
             cb.DropDownHeight = 1;
 
             cb.DropDown += Cb_DropDown;
@@ -34,12 +29,12 @@ namespace WinExplorer.UI
             LoadConnections();
         }
 
-        ListBox lb { get; set; }
+        private ListBox lb { get; set; }
 
         public void LoadConnections()
         {
             ArrayList C = DataSourceWizard.GetConnections();
-            foreach(string c in C)
+            foreach (string c in C)
             {
                 lb.Items.Add(c);
             }
@@ -52,22 +47,22 @@ namespace WinExplorer.UI
             this.Controls.Remove(v);
         }
 
-        TreeView v { get; set; }
+        private TreeView v { get; set; }
 
         private void Cb_DropDown(object sender, EventArgs e)
         {
-           
             vv.Bounds = new Rectangle(cb.Location.X, cb.Location.Y + 20, cb.Width, 200);
-                        
+
             this.Controls.Add(vv);
             this.Controls.SetChildIndex(vv, 0);
         }
 
-        ComboBox cb { get; set; }
+        private ComboBox cb { get; set; }
 
-        TreeView vv { get; set; }
+        private TreeView vv { get; set; }
 
-        TableInfo info { get; set; }
+        private TableInfo info { get; set; }
+
         public void LoadData(TreeView vv)
         {
             this.vv = vv;
@@ -76,14 +71,13 @@ namespace WinExplorer.UI
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             if (info == null)
                 return;
-            
+
             DataTable datatable = info.GetDataTable();
 
             if (lb.SelectedIndex < 0)
@@ -102,8 +96,6 @@ namespace WinExplorer.UI
             da.Fill(datatable);
 
             dg.DataSource = datatable;
-
-
         }
     }
 }

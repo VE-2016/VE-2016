@@ -1,5 +1,4 @@
-﻿
-namespace GACManagerApi.Fusion
+﻿namespace GACManagerApi.Fusion
 {
     /// <summary>
     /// The values of the ASM_NAME enumeration are the property IDs for the name-value pairs included in a side-by-side assembly name.

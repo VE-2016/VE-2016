@@ -1,4 +1,3 @@
-
 namespace AndersLiu.Reflector.Program.UI.AssemblyTreeNode
 {
     /// <summary>

@@ -2,19 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static WinExplorer.NewProjectForm;
 
 namespace WinExplorer
 {
-
-
-
     public class Module
     {
-
         public static Dictionary<string, Module> modules = new Dictionary<string, Module>();
 
         public static Dictionary<string, Module> templates = new Dictionary<string, Module>();
@@ -27,13 +19,8 @@ namespace WinExplorer
 
         public string Name { get; set; }
 
-
-
         public static void Initialize()
         {
-
-            
-
             Module d = new Module();
 
             d.Name = "Standard";
@@ -65,8 +52,6 @@ namespace WinExplorer
             dd.dict.Add("New Project", c);
             c = new gui.Command_NewWebSite(ExplorerForms.ef);
             dd.dict.Add("New Web Site", c);
-            
-           
 
             c = new gui.Command_OpenFile(ExplorerForms.ef);
             d.dict.Add("Open File", c);
@@ -109,34 +94,26 @@ namespace WinExplorer
             d.temp.Add("Startup Projects");
             d.temp.Add("Separator");
 
-         
-
             gui.Command_Launcher lc = new gui.Command_Launcher(ExplorerForms.ef);
             lc.Names = "Find In Files";
             d.dict.Add("Find In Files", lc);
             d.temp.Add("Find In Files");
 
-
             gc = new gui.Command_Find(ExplorerForms.ef);
             gc.Names = "Find";
             d.dict.Add("Find", gc);
 
-
-
             c = new gui.Command_SolutionExplorer(ExplorerForms.ef);
             d.dict.Add("Solution Explorer", c);
-            
 
             lc = new gui.Command_Launcher(ExplorerForms.ef);
             lc = new gui.Command_Launcher(ExplorerForms.ef);
             lc.Names = "Properties";
             d.dict.Add("Properties", lc);
-            
 
             lc = new gui.Command_Launcher(ExplorerForms.ef);
             lc.Names = "Start Page";
             d.dict.Add("Start Page", lc);
-
 
             Module dr = new Module();
 
@@ -154,13 +131,10 @@ namespace WinExplorer
             c = new gui.Command_NewWebSite(ExplorerForms.ef);
             dr.dict.Add("Step Out", c);
             dr.temp.Add("Step Out");
-
         }
+
         public static void InitializeTemplates(string template)
         {
-
-
-
             Module d = new Module();
 
             d.Name = template;
@@ -187,14 +161,11 @@ namespace WinExplorer
 
             d.dict.Add("Add Item", cc);
             d.temp.Add("Add Item");
-            
 
             c = new gui.Command_NewProject(ExplorerForms.ef);
             dd.dict.Add("New Project", c);
             c = new gui.Command_NewWebSite(ExplorerForms.ef);
             dd.dict.Add("New Web Site", c);
-
-
 
             c = new gui.Command_OpenFile(ExplorerForms.ef);
             d.dict.Add("Open File", c);
@@ -237,34 +208,26 @@ namespace WinExplorer
             d.temp.Add("Startup Projects");
             d.temp.Add("Separator");
 
-
-
             gui.Command_Launcher lc = new gui.Command_Launcher(ExplorerForms.ef);
             lc.Names = "Find In Files";
             d.dict.Add("Find In Files", lc);
             d.temp.Add("Find In Files");
 
-
             gc = new gui.Command_Find(ExplorerForms.ef);
             gc.Names = "Find";
             d.dict.Add("Find", gc);
 
-
-
             c = new gui.Command_SolutionExplorer(ExplorerForms.ef);
             d.dict.Add("Solution Explorer", c);
-
 
             lc = new gui.Command_Launcher(ExplorerForms.ef);
             lc = new gui.Command_Launcher(ExplorerForms.ef);
             lc.Names = "Properties";
             d.dict.Add("Properties", lc);
 
-
             lc = new gui.Command_Launcher(ExplorerForms.ef);
             lc.Names = "Start Page";
             d.dict.Add("Start Page", lc);
-
 
             Module dr = new Module();
 
@@ -282,8 +245,8 @@ namespace WinExplorer
             c = new gui.Command_NewWebSite(ExplorerForms.ef);
             dr.dict.Add("Step Out", c);
             dr.temp.Add("Step Out");
-
         }
+
         public static void Template(string template)
         {
             Module d = new Module();
@@ -318,8 +281,6 @@ namespace WinExplorer
             c = new gui.Command_NewWebSite(ExplorerForms.ef);
             dd.dict.Add("New Web Site", c);
 
-
-
             c = new gui.Command_OpenFile(ExplorerForms.ef);
             d.dict.Add("Open File", c);
             d.temp.Add("Open File");
@@ -361,8 +322,6 @@ namespace WinExplorer
             d.temp.Add("Startup Projects");
             d.temp.Add("Separator");
 
-         
-
             c = new gui.Command_FindInFiles(ExplorerForms.ef);
             d.dict.Add("Find In Files", c);
             d.temp.Add("Find In Files");
@@ -373,26 +332,18 @@ namespace WinExplorer
             c = new gui.Command_SolutionExplorer(ExplorerForms.ef);
             d.dict.Add("Solution Explorer", c);
 
-
             gui.Command_Launcher lc = new gui.Command_Launcher(ExplorerForms.ef);
             lc = new gui.Command_Launcher(ExplorerForms.ef);
             lc.Names = "Properties";
             d.dict.Add("Properties", lc);
 
-
             lc = new gui.Command_Launcher(ExplorerForms.ef);
             lc.Names = "Start Page";
             d.dict.Add("Start Page", lc);
-
-
-          
-
         }
-
 
         static public string ToString(Module module)
         {
-
             string s = "";
             s = module.Name + "\n";
 
@@ -435,7 +386,7 @@ namespace WinExplorer
 
             module.dict = new OrderedDictionary();
 
-            foreach(string d in dd)
+            foreach (string d in dd)
             {
                 if (d == "")
                     continue;
@@ -446,19 +397,13 @@ namespace WinExplorer
                 if (cmd == null)
                     cmd = Command.FromName(bb[1]);
 
-
                 cmd.FromStrings(d);
-
 
                 //if(bb.Length > 2)
                 //cmd.Names = bb[2];
 
-                
-
                 module.dict.Add(bb[0], cmd);
             }
-
-
 
             module.temp = new ArrayList();
 
@@ -474,37 +419,32 @@ namespace WinExplorer
             return module;
         }
 
-
         static public string ToString()
         {
             string s = "";
 
-            foreach(string c in modules.Keys)
+            foreach (string c in modules.Keys)
             {
                 s += ToString(modules[c]) + "%$#@!";
             }
-
 
             return s;
         }
 
         static public Dictionary<string, Module> LoadFromString(string s)
         {
-
             Dictionary<string, Module> dd = new Dictionary<string, Module>();
 
             string[] cc = s.Split(new string[] { "%$#@!" }, StringSplitOptions.None);
 
-            foreach(string c in cc)
+            foreach (string c in cc)
             {
-
                 if (c == "")
                     continue;
 
                 Module module = FromString(c);
 
                 dd.Add(module.Name, module);
-
             }
 
             modules = dd;
@@ -514,9 +454,10 @@ namespace WinExplorer
 
         static public void RegisterModule(string name, Module module)
         {
-            if(modules.ContainsKey(name) == false)
-            modules.Add(name, module);
+            if (modules.ContainsKey(name) == false)
+                modules.Add(name, module);
         }
+
         static public void RegisterTemplate(string name, Module module)
         {
             if (templates.ContainsKey(name) == false)
@@ -537,10 +478,9 @@ namespace WinExplorer
             {
                 if (templates[name].dict.Contains(item))
                     return true;
-
             }
             else return true;
-                        
+
             return false;
         }
 
@@ -564,10 +504,6 @@ namespace WinExplorer
                 L.Add(s);
 
             return L;
-
         }
-
-
-
     }
 }

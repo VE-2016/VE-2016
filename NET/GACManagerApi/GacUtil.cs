@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace GACManagerApi
@@ -66,7 +64,6 @@ namespace GACManagerApi
                 if (c.Extension != ".dll")
                     continue;
 
-
                 AssemblyDescription desc = new AssemblyDescription(c.FullName, "");
 
                 L.Add(desc);
@@ -90,7 +87,6 @@ namespace GACManagerApi
             foreach (DirectoryInfo c in dd)
                 L.Add(c);
 
-
             return L;
         }
 
@@ -108,7 +104,6 @@ namespace GACManagerApi
 
             foreach (DirectoryInfo c in dd)
                 L.Add(c);
-
 
             return L;
         }
@@ -131,8 +126,8 @@ namespace GACManagerApi
             ArrayList L = new ArrayList();
 
             DirectoryInfo[] dd = new DirectoryInfo[] { d };
-            if(subfolders)
-             d.GetDirectories();
+            if (subfolders)
+                d.GetDirectories();
 
             foreach (DirectoryInfo s in dd)
             {
@@ -158,6 +153,7 @@ namespace GACManagerApi
 
             return L;
         }
+
         public static ArrayList GetWPFFiles(DirectoryInfo d, bool subfolders = true)
         {
             ArrayList L = new ArrayList();
@@ -190,6 +186,7 @@ namespace GACManagerApi
 
             return L;
         }
+
         public static async Task<ArrayList> GetExtensions(string s)
         {
             // F = GetFrameworks();
@@ -212,6 +209,7 @@ namespace GACManagerApi
 
             return L;
         }
+
         public static ArrayList GetWPF()
         {
             string system = Directory.GetParent(Environment.GetFolderPath(Environment.SpecialFolder.System)).FullName;
@@ -233,7 +231,6 @@ namespace GACManagerApi
 
         //public string GetDocumentation(string assemblyName, string data)
         //{
-
         //    string file = GACForm.dicts[dtd.ParentAssembly.AssemblyName] as string;
 
         //    string docuPath = file.Substring(0, file.LastIndexOf(".")) + ".XML";
@@ -255,14 +252,11 @@ namespace GACManagerApi
         //            // if(xmlElement.Attributes.Count > 0)
         //            if (xmlElement.Attributes["name"].Value.Equals("T:" + dtd.FullName))
         //            {
-
         //                matchedElement = xmlElement;
 
         //                doc = matchedElement.InnerText;
         //            }
         //        }
-
-
 
         //    }
 

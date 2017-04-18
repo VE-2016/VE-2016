@@ -1,25 +1,19 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.Common;
 using System.Data.OleDb;
-using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinExplorer.UI
 {
     public partial class ChooseDataSourceForm : Form
     {
-
         [DllImport("odbccp32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
         private static extern bool SQLGetInstalledDriversW(char[] lpszBuf, ushort cbufMax, out ushort pcbBufOut);
-
 
         public ChooseDataSourceForm()
         {
@@ -57,9 +51,9 @@ namespace WinExplorer.UI
             SP = GetProviders("SQL Server");
         }
 
-        ArrayList SP { get; set; }
+        private ArrayList SP { get; set; }
 
-        ArrayList OP { get; set; }
+        private ArrayList OP { get; set; }
 
         public static ArrayList GetProviders(string provider, bool odbc = false)
         {
@@ -108,12 +102,12 @@ namespace WinExplorer.UI
             }
             DataTable d = GetProviderFactoryClasses();
 
-            foreach(DataRow r in d.Rows)
+            foreach (DataRow r in d.Rows)
             {
-                if(r.ItemArray.Count() >= 2)
+                if (r.ItemArray.Count() >= 2)
                 {
                     string s = r[1] as string;
-                    if(s.Contains("Oracle"))
+                    if (s.Contains("Oracle"))
                     {
                         P.Add(s);
                         continue;
@@ -124,15 +118,14 @@ namespace WinExplorer.UI
             return P;
         }
 
-
-        string[] texts = { "Access", "ODBC", "SQL Server", "SQL Server database file", "MySQL", "Oracle" };
+        private string[] texts = { "Access", "ODBC", "SQL Server", "SQL Server database file", "MySQL", "Oracle" };
 
         private void Lb_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = lb.SelectedIndex;
             if (index < 0)
                 return;
-            if(index == 2)
+            if (index == 2)
             {
                 ArrayList L = GetSQLServerProviders();
 
@@ -140,8 +133,6 @@ namespace WinExplorer.UI
 
                 foreach (string s in L)
                     comboBox1.Items.Add(s);
-
-
             }
             else if (index == 4)
             {
@@ -169,11 +160,11 @@ namespace WinExplorer.UI
                 rb.Text = texts[index];
         }
 
-        ListBox lb { get; set; }
+        private ListBox lb { get; set; }
 
-        ComboBox cb { get; set; }
+        private ComboBox cb { get; set; }
 
-        RichTextBox rb { get; set; }
+        private RichTextBox rb { get; set; }
 
         /// <summary>
         /// Gets the ODBC driver names from the SQLGetInstalledDrivers function.
@@ -196,6 +187,7 @@ namespace WinExplorer.UI
 
             return odbcDriverNames;
         }
+
         // This example assumes a reference to System.Data.Common.
         public static DataTable GetProviderFactoryClasses()
         {
@@ -212,6 +204,7 @@ namespace WinExplorer.UI
             }
             return table;
         }
+
         private void LoadOleDB()
         {
             // OleDbEnumerator enumerator = new OleDbEnumerator();
@@ -220,7 +213,8 @@ namespace WinExplorer.UI
             foreach (DataRow dc in d.Rows)
                 listBox1.Items.Add(dc[2]);
         }
-        void DisplayData()
+
+        private void DisplayData()
         {
             var reader = OleDbEnumerator.GetRootEnumerator();
 
@@ -239,25 +233,27 @@ namespace WinExplorer.UI
             reader.Close();
         }
 
-        ArrayList GetSQLServerProviders()
+        private ArrayList GetSQLServerProviders()
         {
             ArrayList L = new ArrayList();
-            foreach(string s in SP)
-            L.Add(s);
+            foreach (string s in SP)
+                L.Add(s);
             return L;
         }
-        ArrayList GetMySQLServerProviders()
+
+        private ArrayList GetMySQLServerProviders()
         {
             ArrayList L = new ArrayList();
             L.Add("NET Framework MySQL ODBC Provider");
             L.Add("NET Framework MySQL Server provider");
             return L;
         }
-        ArrayList GetOracleServerProviders()
+
+        private ArrayList GetOracleServerProviders()
         {
             ArrayList L = new ArrayList();
-            foreach(string s in OP)
-            L.Add(s);
+            foreach (string s in OP)
+                L.Add(s);
             return L;
         }
 
@@ -266,18 +262,18 @@ namespace WinExplorer.UI
         private void button1_Click(object sender, EventArgs e)
         {
             int index = lb.SelectedIndex;
-            if(index == 2)
+            if (index == 2)
             {
                 AddConnectionForm acd = new AddConnectionForm();
                 DialogResult r = acd.ShowDialog();
-                if(r == DialogResult.OK)
+                if (r == DialogResult.OK)
                 {
                     shortcut = "SQL Server - " + acd.shortcut;
                     DialogResult = DialogResult.OK;
                     this.Close();
                 }
-
-            } else if (index == 4)
+            }
+            else if (index == 4)
             {
                 AddConnectionForm_Oracle acd = new AddConnectionForm_Oracle();
                 DialogResult r = acd.ShowDialog();
@@ -287,7 +283,6 @@ namespace WinExplorer.UI
                     DialogResult = DialogResult.OK;
                     this.Close();
                 }
-
             }
         }
     }

@@ -1,24 +1,16 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GACManagerApi;
-using GACProject;
 
 namespace WinExplorer.UI.Views
 {
     public partial class ChooseToolboxItemsForm : Form
     {
+        private Module[] modules = new Module[10];
 
-        Module[] modules = new Module[10];
-
-        TabControl tc { get; set; }
+        private TabControl tc { get; set; }
 
         public ChooseToolboxItemsForm()
         {
@@ -33,7 +25,6 @@ namespace WinExplorer.UI.Views
             modules[2] = new Module();
             modules[2].v = listView3;
 
-
             InitListView(modules[0].v);
             InitListView(modules[1].v);
             InitListView(modules[2].v);
@@ -46,7 +37,7 @@ namespace WinExplorer.UI.Views
                 return;
             if (i >= modules.Length)
                 return;
-            if(i == 0)
+            if (i == 0)
             {
                 ArrayList C = LoadNETFrameowrkComponents();
                 modules[0].Init(C);
@@ -61,7 +52,6 @@ namespace WinExplorer.UI.Views
                 ArrayList C = LoadWPFComponents();
                 modules[2].Init(C);
             }
-
         }
 
         public void InitListView(ListView v)
@@ -76,21 +66,22 @@ namespace WinExplorer.UI.Views
             v.Columns.Add("Version");
             v.Columns.Add("Directory");
         }
+
         public ArrayList LoadNETFrameowrkComponents()
         {
             Task<ArrayList> F = GACManagerApi.GacUtil.GetFramework("");
             ArrayList G = F.Result;
             ArrayList C = Toolbox.LoadNETFrameworkComponents(G);
             return C;
-
         }
+
         public ArrayList LoadCOMComponents()
         {
             ArrayList F = GACProject.GACForm.GetTLB();
             ArrayList C = Toolbox.LoadCOMComponents(F);
             return C;
-
         }
+
         public ArrayList LoadWPFComponents()
         {
             ArrayList F = GACManagerApi.GacUtil.GetWPF();
@@ -98,12 +89,13 @@ namespace WinExplorer.UI.Views
             return C;
         }
     }
+
     public class Module
     {
         public ListView v { get; set; }
 
         public TabPage tp { get; set; }
-        
+
         public TabControl tc { get; set; }
 
         public bool active = false;
@@ -121,8 +113,6 @@ namespace WinExplorer.UI.Views
                 b.SubItems.Add(T.Assembly.FullName);
                 v.Items.Add(b);
             }
-
-        }   
-
+        }
     }
 }

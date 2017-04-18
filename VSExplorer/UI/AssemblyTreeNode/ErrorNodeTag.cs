@@ -55,7 +55,6 @@ namespace AndersLiu.Reflector.Program.UI.AssemblyTreeNode
             if (errorMessage == null)
                 throw new ArgumentNullException("errorMessage");
 
-
             if (treeNode == null)
                 throw new ArgumentNullException("treeNode");
 

@@ -1,5 +1,4 @@
-﻿
-namespace GACManagerApi.Fusion
+﻿namespace GACManagerApi.Fusion
 {
     public enum AssemblyCommitFlags
     {

@@ -1,13 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using VSProvider;
 
@@ -44,8 +39,6 @@ namespace WinExplorer
 
         //private void Ns_DrawNode(object sender, DrawTreeNodeEventArgs e)
         //{
-
-
         //    // Draw the background and node text for a selected node.
         //    if (search != null &&  search != "" && e.Node.Text.ToLower().Contains(search.ToLower()))
         //    {
@@ -73,7 +66,7 @@ namespace WinExplorer
         //    }
 
         //}
-        //// Returns the bounds of the specified node, including the region 
+        //// Returns the bounds of the specified node, including the region
         //// occupied by the node label and any node tag displayed.
         //private Rectangle NodeBounds(TreeNode node)
         //{
@@ -96,7 +89,6 @@ namespace WinExplorer
         //    return bounds;
 
         //}
-
 
         private void Ns_AfterSelect(object sender, TreeViewEventArgs e)
         {
@@ -133,6 +125,7 @@ namespace WinExplorer
         {
             CheckProjectItems();
         }
+
         public void Initialize()
         {
             dg.ColumnCount = 2;
@@ -166,6 +159,7 @@ namespace WinExplorer
                 row.Cells[1].Value = p.EvaluatedValue;
             }
         }
+
         public void LoadAllProjectItems()
         {
             Initialize();
@@ -201,8 +195,6 @@ namespace WinExplorer
             if (vp == null)
                 return;
 
-
-
             IDictionary<string, Microsoft.Build.Execution.ProjectTargetInstance> s = vp.GetTargets();
 
             foreach (string p in s.Keys)
@@ -214,6 +206,7 @@ namespace WinExplorer
                 row.Cells[1].Value = c.Name;
             }
         }
+
         public void LoadProjectImports()
         {
             Initialize();
@@ -239,6 +232,7 @@ namespace WinExplorer
                 row.Cells[1].Value = p.ImportedProject.InitialTargets;
             }
         }
+
         public void LoadProjectItems()
         {
             Initialize();
@@ -264,6 +258,7 @@ namespace WinExplorer
                 row.Cells[1].Value = p.UnevaluatedInclude;
             }
         }
+
         public void LoadConditionedProperties()
         {
             Initialize();
@@ -327,8 +322,6 @@ namespace WinExplorer
                 ng.Visible = false;
             }
         }
-
-
 
         public void Pages()
         {
@@ -432,6 +425,7 @@ namespace WinExplorer
 
             dg.Visible = true;
         }
+
         public VSProject GetVSProject(TreeView b)
         {
             TreeNode node = b.SelectedNode;
@@ -445,6 +439,7 @@ namespace WinExplorer
 
             return s.ps;
         }
+
         public VSSolution GetVSSolution(TreeNode b)
         {
             foreach (TreeNode node in b.Nodes)
@@ -458,6 +453,7 @@ namespace WinExplorer
 
             return null;
         }
+
         public VSSolution GetVSSolution(TreeView b)
         {
             foreach (TreeNode node in b.Nodes)
@@ -475,6 +471,7 @@ namespace WinExplorer
 
             return null;
         }
+
         private void Open_Click(object sender, EventArgs e)
         {
             string file = folderLister1.tb.Text;
@@ -488,7 +485,6 @@ namespace WinExplorer
         {
             MergeProjectItems();
         }
-
 
         public void MergeProjectItems()
         {
@@ -578,8 +574,6 @@ namespace WinExplorer
             if (vs == null)
                 return;
 
-
-
             if (pc != null)
                 pc.ProjectCollection.UnloadAllProjects();
 
@@ -589,7 +583,6 @@ namespace WinExplorer
                     continue;
 
                 pc = p.LoadProjectToMemory();
-
 
                 p.Shuffle(pc);
             }
@@ -631,6 +624,7 @@ namespace WinExplorer
                 r.AppendText(g + "\n");
             }
         }
+
         public void MockProject()
         {
             VSSolution vs = GetVSSolution(ns);
@@ -683,7 +677,6 @@ namespace WinExplorer
                 if (include == null)
                     continue;
 
-
                 TreeNode ng = b.FindNodesIncludes(d, include);
 
                 if (ng == null)
@@ -715,7 +708,6 @@ namespace WinExplorer
         {
             Initialize();
 
-
             foreach (TreeNode node in ns.Nodes)
             {
                 int rowId = dg.Rows.Add();
@@ -740,8 +732,6 @@ namespace WinExplorer
                 GeTNodes(node);
             }
         }
-
-
 
         public void GeTNodes(TreeNode node)
         {
@@ -822,13 +812,12 @@ namespace WinExplorer
                 FindNodes(node, N, text);
             }
         }
+
         private TreeNode master { get; set; }
 
         public void ViewFind(ArrayList N)
         {
             //ns.BeginUpdate();
-
-
 
             ArrayList PP = new ArrayList();
 
@@ -840,13 +829,11 @@ namespace WinExplorer
 
             ArrayList R = GetAllNodes(ts);
 
-
             ClearAllNodes(R);
 
             ns.Nodes.Clear();
 
             //ns = new TreeView();
-
 
             foreach (ArrayList P in PP)
             {
@@ -868,9 +855,7 @@ namespace WinExplorer
                 }
             }
 
-
             // MessageBox.Show("ns -" + ns.Nodes.Count);
-
 
             ns.EndUpdate();
         }
@@ -909,6 +894,7 @@ namespace WinExplorer
                 GetAllNodes(nodes, D);
             }
         }
+
         private void ClearAllNodes(ArrayList D)
         {
             foreach (TreeNode node in D)
@@ -920,6 +906,7 @@ namespace WinExplorer
                     node.Nodes.Remove(nodes);
             }
         }
+
         private void ClearAllNodes(TreeView v)
         {
             foreach (TreeNode node in v.Nodes)
@@ -932,6 +919,7 @@ namespace WinExplorer
                 ClearAllNodes(node);
             }
         }
+
         private void ClearAllNodes(TreeNode b)
         {
             foreach (TreeNode node in b.Nodes)
@@ -944,6 +932,7 @@ namespace WinExplorer
                 ClearAllNodes(node);
             }
         }
+
         public void CopyTreeNodes(TreeView treeview1, TreeView treeview2)
         {
             treeView2.ImageList = CreateView_Solution.CreateImageList();
@@ -962,6 +951,7 @@ namespace WinExplorer
                 CopyChildren(newTn, tn);
             }
         }
+
         public void CopyChildren(TreeNode parent, TreeNode original)
         {
             TreeNode newTn;
@@ -986,4 +976,3 @@ namespace WinExplorer
         }
     }
 }
-

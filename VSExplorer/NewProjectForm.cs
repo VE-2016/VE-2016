@@ -13,8 +13,8 @@ namespace WinExplorer
 {
     public partial class NewProjectForm : Form
     {
-
         public static gui gcommands = new gui();
+
         public NewProjectForm()
         {
             InitializeComponent();
@@ -32,19 +32,14 @@ namespace WinExplorer
             ResumeLayout();
         }
 
-
         public NewProject Project(NewProject nw = null)
         {
-
-            if(nw == null)
+            if (nw == null)
             {
-
                 nw.ProjectName = textBox1.Text;
                 nw.Location = textBox2.Text;
                 nw.SolutionName = textBox4.Text;
                 return nw;
-
-
             }
 
             textBox1.Text = nw.ProjectName;
@@ -56,7 +51,6 @@ namespace WinExplorer
 
         public class Category
         {
-
             public string Name { get; set; }
 
             public ArrayList C { get; set; }
@@ -65,14 +59,7 @@ namespace WinExplorer
             {
                 C = new ArrayList();
             }
-
-
         }
-
-    
-
-
-         
 
         private string _theme = "";
 
@@ -136,7 +123,6 @@ namespace WinExplorer
             Close();
         }
 
-
         public void CreateNewProject()
         {
             string SolutionFolder = textBox2.Text;
@@ -144,7 +130,6 @@ namespace WinExplorer
             string SolutionName = textBox4.Text;
 
             string folder = SolutionFolder + "\\" + SolutionName;
-
 
             CreateDefaultSolution(folder, "");
         }
@@ -173,7 +158,6 @@ namespace WinExplorer
                 _solutionFile = folder + "\\" + Path.GetFileName(c.FullName);
             }
         }
-
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -266,7 +250,6 @@ namespace WinExplorer
 
         public ArrayList GetTemplates(string folder)
         {
-
             ArrayList L = new ArrayList();
 
             DirectoryInfo d = new DirectoryInfo(folders);
@@ -278,15 +261,10 @@ namespace WinExplorer
 
             foreach (DirectoryInfo s in dd)
             {
-              
-
-               L.Add(s.FullName);
-
-                
+                L.Add(s.FullName);
             }
 
             return L;
-
         }
 
         public string GetProjectFile()
@@ -367,7 +345,6 @@ namespace WinExplorer
 
             s = s.Replace("}", "");
 
-
             string[] cc = s.Split("\\".ToCharArray());
 
             textBox1.Text = cc[cc.Length - 1];
@@ -415,10 +392,11 @@ namespace WinExplorer
 
         private void listView1_SizeChanged(object sender, EventArgs e)
         {
-            if(lv != null)
-            lv.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            if (lv != null)
+                lv.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
     }
+
     public class NewProject
     {
         public string ProjectName { get; set; }
@@ -433,7 +411,6 @@ namespace WinExplorer
 
         public string GetProjectFile()
         {
-
             string s = ProjectName;
 
             DirectoryInfo d = new DirectoryInfo(s);
@@ -451,12 +428,11 @@ namespace WinExplorer
         {
             string SolutionFolder = Location;
 
-            
             string folder = SolutionFolder + "\\" + SolutionName;
-
 
             CreateDefaultSolution(folder, "");
         }
+
         public void CreateDefaultSolution(string folder, string name)
         {
             Directory.CreateDirectory(folder);
@@ -474,14 +450,13 @@ namespace WinExplorer
                 SolutionFile = folder + "\\" + Path.GetFileName(c.FullName);
             }
         }
-
     }
+
     /// <summary>
     /// The 'Command' abstract class
     /// </summary>
     public abstract class Command
     {
-
         public static bool running = false;
 
         public static int counter = 0;
@@ -588,10 +563,8 @@ namespace WinExplorer
                 return new gui.Command_GetProject(ef);
             else if (name == "Properties")
                 return new gui.Command_PropertyWindow(ef);
-            else return null;  
+            else return null;
         }
-
-
 
         // Constructor
         public Command(ExplorerForms ef)
@@ -610,8 +583,8 @@ namespace WinExplorer
         public virtual string ToStrings()
         {
             return Name + "\t" + Names + "\t" + Module;
-
         }
+
         public virtual void FromStrings(string s)
         {
             string[] bb = s.Split("\t".ToCharArray());
@@ -624,9 +597,9 @@ namespace WinExplorer
                 Module = bb[3];
         }
     }
+
     public class gui
     {
-
         public Dictionary<string, Command> guis { get; set; }
 
         static public NewProjectForm npf { get; set; }
@@ -643,7 +616,6 @@ namespace WinExplorer
             L.Add("Format");
 
             return L;
-
         }
 
         public static ArrayList CommandList()
@@ -655,12 +627,8 @@ namespace WinExplorer
             L.Add("AddTemplate");
             L.Add("GetProject");
 
-
             return L;
         }
-
-        
-
 
         public gui()
         {
@@ -672,10 +640,8 @@ namespace WinExplorer
             return guis[command];
         }
 
-
         static public Dictionary<string, Command> Init()
         {
-
             ExplorerForms ef = ExplorerForms.ef;
 
             Dictionary<string, Command> guis = new Dictionary<string, Command>();
@@ -725,7 +691,6 @@ namespace WinExplorer
 
         public void Init(ExplorerForms ef)
         {
-
             guis = new Dictionary<string, Command>();
             guis.Add("OpenForm", new Command_OpenForm(ef));
             guis.Add("GetTemplates", new Command_GetTemplates(ef));
@@ -752,8 +717,6 @@ namespace WinExplorer
 
         public class Command_SolutionPlaform : Command_Gui
         {
-
-
             public static Command_SolutionPlaform platform { get; set; }
 
             public Command_SolutionPlaform(ExplorerForms ef) : base(ef)
@@ -761,14 +724,10 @@ namespace WinExplorer
                 Name = "Solution Platforms";
             }
 
-
-           
-
-            ToolStripComboBoxes cb { get; set; }
+            private ToolStripComboBoxes cb { get; set; }
 
             public override object Configure(object obs)
             {
-
                 cb = obs as ToolStripComboBoxes;
 
                 if (cb == null)
@@ -786,12 +745,9 @@ namespace WinExplorer
                 cb.SelectedIndexChanged += Cb_SelectedIndexChanged;
 
                 return base.Configure(obs);
-
-
-
             }
 
-            void LoadPlatforms(ArrayList P)
+            private void LoadPlatforms(ArrayList P)
             {
                 cb.Items.Clear();
                 foreach (string s in P)
@@ -813,12 +769,10 @@ namespace WinExplorer
 
                 if (s == "Configuration Manager")
                     ef.BeginInvoke(new Action(() => { ef.Command_ConfigurationManager(); }));
-
             }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return obs;
 
@@ -826,8 +780,8 @@ namespace WinExplorer
 
                 return obs;
             }
-
         }
+
         public class Command_SolutionConfiguration : Command_Gui
         {
             public static Command_SolutionConfiguration configuration { get; set; }
@@ -837,11 +791,10 @@ namespace WinExplorer
                 Name = "Solution Configurations";
             }
 
-            ToolStripComboBoxes cb { get; set; }
+            private ToolStripComboBoxes cb { get; set; }
 
             public override object Configure(object obs)
             {
-
                 cb = obs as ToolStripComboBoxes;
 
                 if (cb == null)
@@ -857,12 +810,9 @@ namespace WinExplorer
                 ef.BeginInvoke(new Action(() => { cb.Items.Clear(); ArrayList P = ef.Command_LoadConfigurations(); LoadPlatforms(P); }));
 
                 return base.Configure(obs);
-
-
-
             }
 
-            void LoadPlatforms(ArrayList P)
+            private void LoadPlatforms(ArrayList P)
             {
                 cb.Items.Clear();
                 foreach (string s in P)
@@ -873,7 +823,6 @@ namespace WinExplorer
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return obs;
 
@@ -884,25 +833,23 @@ namespace WinExplorer
 
                 ef.BeginInvoke(new Action(() => { cb.Items.Clear(); ArrayList P = ef.Command_LoadConfigurations(); LoadPlatforms(P); }));
 
-
                 return obs;
             }
-
         }
+
         public class Command_SolutionRun : Command_Gui
         {
-
             public static Command_SolutionRun projects { get; set; }
 
             public Command_SolutionRun(ExplorerForms ef) : base(ef)
             {
                 Name = "Startup Projects";
             }
-            ToolStripComboBoxes cb { get; set; }
+
+            private ToolStripComboBoxes cb { get; set; }
 
             public override object Configure(object obs)
             {
-
                 cb = obs as ToolStripComboBoxes;
 
                 if (cb == null)
@@ -918,12 +865,9 @@ namespace WinExplorer
                 ef.BeginInvoke(new Action(() => { cb.Items.Clear(); ArrayList P = ef.Command_LoadStartupProjects(); LoadPlatforms(P); }));
 
                 return base.Configure(obs);
-
-
-
             }
 
-            void LoadPlatforms(ArrayList P)
+            private void LoadPlatforms(ArrayList P)
             {
                 cb.Items.Clear();
                 foreach (string s in P)
@@ -934,7 +878,6 @@ namespace WinExplorer
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return obs;
 
@@ -945,23 +888,18 @@ namespace WinExplorer
 
                 ef.BeginInvoke(new Action(() => { cb.Items.Clear(); ArrayList P = ef.Command_LoadStartupProjects(); LoadPlatforms(P); }));
 
-
                 return obs;
             }
-
         }
+
         public class Command_Customize : Command
         {
-
-
             public Command_Customize(ExplorerForms ef) : base(ef)
             {
-
             }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return obs;
 
@@ -972,48 +910,37 @@ namespace WinExplorer
 
                 ef.BeginInvoke(new Action(() => { ef.Command_CustomizeDialog(dialogs); }));
 
-
                 return obs;
             }
-
         }
+
         public class Command_AddConnection : Command
         {
-
-
             public Command_AddConnection(ExplorerForms ef) : base(ef)
             {
-
             }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return obs;
 
                 string c = obs as string;
 
-                
-                    ef.Command_AddConnection(c);
-                
+                ef.Command_AddConnection(c);
 
                 return obs;
             }
-
         }
+
         public class Command_TakeSnapshot : Command
         {
-
-
             public Command_TakeSnapshot(ExplorerForms ef) : base(ef)
             {
-
             }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return obs;
 
@@ -1022,50 +949,39 @@ namespace WinExplorer
 
                 string snapshot = obs as string;
 
-                                ef.BeginInvoke(new Action(() => { ef.Command_TakeSnapshot(snapshot); }));
-
+                ef.BeginInvoke(new Action(() => { ef.Command_TakeSnapshot(snapshot); }));
 
                 return obs;
             }
-
         }
+
         public class Command_SetMainProject : Command
         {
-
-
             public Command_SetMainProject(ExplorerForms ef) : base(ef)
             {
-
             }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return obs;
-
 
                 string mainproject = obs as string;
 
                 ef.BeginInvoke(new Action(() => { ef.SetVSProject(mainproject); }));
 
-
                 return obs;
             }
-
         }
+
         public class Command_Config : Command
         {
-
-
             public Command_Config(ExplorerForms ef) : base(ef)
             {
-
             }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return obs;
 
@@ -1075,23 +991,18 @@ namespace WinExplorer
 
                 ef.BeginInvoke(new Action(() => { ef.Command_Config("", cfg); }));
 
-
                 return obs;
             }
-
         }
+
         public class Command_Platform : Command
         {
-
-
             public Command_Platform(ExplorerForms ef) : base(ef)
             {
-
             }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return obs;
 
@@ -1105,20 +1016,16 @@ namespace WinExplorer
 
                 return obs;
             }
-
         }
+
         public class Command_MSBuild : Command
         {
-
-
             public Command_MSBuild(ExplorerForms ef) : base(ef)
             {
-
             }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return obs;
 
@@ -1135,23 +1042,18 @@ namespace WinExplorer
 
                 return obs;
             }
-
         }
 
         public class Command_OpenForm : Command
         {
-
-
             public Command_OpenForm(ExplorerForms ef) : base(ef)
             {
-
             }
 
-            NewProjectForm npf { get; set; }
+            private NewProjectForm npf { get; set; }
 
             override public object Execute(object obs = null)
             {
-
                 npf = new NewProjectForm();
 
                 //npf.CreateControl();
@@ -1162,25 +1064,22 @@ namespace WinExplorer
 
                 System.Threading.Tasks.Task.Run(new Action(() =>
                 {
-
                     gui.npf = npf;
                     npf.BeginInvoke(new Action(() => { npf.ShowDialog(); }));
                 }));
 
                 return npf;
             }
-
         }
+
         public class Command_CloseForm : Command
         {
-
-
             public Command_CloseForm(ExplorerForms ef) : base(ef)
             {
                 Name = "Close Form";
             }
 
-            NewProjectForm npf { get; set; }
+            private NewProjectForm npf { get; set; }
 
             override public object Execute(object obs = null)
             {
@@ -1188,20 +1087,16 @@ namespace WinExplorer
                 //while (gui.npf.Visible == false) ;
                 gui.npf.BeginInvoke(new Action(() => { gui.npf.Close(); }));
                 return null;
-
             }
-
         }
+
         public class Command_GetTemplates : Command
         {
-
-
             public Command_GetTemplates(ExplorerForms ef) : base(ef)
             {
-
             }
 
-            NewProjectForm npf { get; set; }
+            private NewProjectForm npf { get; set; }
 
             public ArrayList T { get; set; }
 
@@ -1212,24 +1107,19 @@ namespace WinExplorer
                     return T;
                 T = gui.npf.GetTemplates("");
                 return T;
-
             }
-
         }
+
         public class Command_AddTemplate : Command
         {
-
-
             public Command_AddTemplate(ExplorerForms ef) : base(ef)
             {
-
             }
 
-            NewProjectForm npf { get; set; }
+            private NewProjectForm npf { get; set; }
 
             override public object Execute(object obs = null)
             {
-
                 if (obs == null)
                     return obs;
 
@@ -1249,13 +1139,10 @@ namespace WinExplorer
 
                 return obs;
             }
-
         }
 
         public class Command_GetProject : Command
         {
-
-
             public Command_GetProject(ExplorerForms ef) : base(ef)
             {
                 Name = "Get Project";
@@ -1263,7 +1150,6 @@ namespace WinExplorer
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
@@ -1274,24 +1160,18 @@ namespace WinExplorer
 
                 NewProject nw = npf.Project();
 
-
                 return nw;
             }
-
         }
 
         public class Command_SetProject : Command
         {
-
-
             public Command_SetProject(ExplorerForms ef) : base(ef)
             {
-
             }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
@@ -1306,23 +1186,18 @@ namespace WinExplorer
 
                 return nw;
             }
-
         }
 
         public class Command_LoadProjectTemplate : Command
         {
-
-
             public Command_LoadProjectTemplate(ExplorerForms ef) : base(ef)
             {
-
             }
 
-            NewProjectForm npf { get; set; }
+            private NewProjectForm npf { get; set; }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
@@ -1339,13 +1214,10 @@ namespace WinExplorer
 
                 return obs;
             }
-
         }
+
         public class Command_NavigateForward : Command
         {
-
-
-
             public Command_NavigateForward(ExplorerForms ef) : base(ef)
             {
                 Name = "Navigate Forward";
@@ -1355,32 +1227,23 @@ namespace WinExplorer
                 keyboard[0] = Keys.Control;
                 keyboard[1] = Keys.Shift;
                 keyboard[2] = Keys.Subtract;
-
-
             }
 
-            NewProjectForm npf { get; set; }
+            private NewProjectForm npf { get; set; }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
-
-
                 ef.BeginInvoke(new Action(() => { ef.Command_NavigateForward(); }));
-
-
 
                 return obs;
             }
-
         }
+
         public class Command_NavigateBackward : Command
         {
-
-
             public Command_NavigateBackward(ExplorerForms ef) : base(ef)
             {
                 Name = "Navigate Backward";
@@ -1388,27 +1251,21 @@ namespace WinExplorer
                 GuiHint = "ToolStripDropDownButton";
             }
 
-            NewProjectForm npf { get; set; }
+            private NewProjectForm npf { get; set; }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
                 ef.BeginInvoke(new Action(() => { ef.Command_NavigateBackward(); }));
 
-
-
                 return obs;
             }
-
         }
+
         public class Command_NewProject : Command
         {
-
-
-
             public Command_NewProject(ExplorerForms ef) : base(ef)
             {
                 Name = "New Project";
@@ -1417,63 +1274,44 @@ namespace WinExplorer
 
                 keyboard[0] = Keys.Control;
                 keyboard[1] = Keys.Subtract;
-
             }
 
-            NewProjectForm npf { get; set; }
+            private NewProjectForm npf { get; set; }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
-
-
                 //ef.BeginInvoke(new Action(() => { ef.Command_AddNewProject(); }));
-
-
 
                 return obs;
             }
-
         }
+
         public class Command_NewWebSite : Command
         {
-
-
-
             public Command_NewWebSite(ExplorerForms ef) : base(ef)
             {
                 Name = "New Web Site";
                 image = Resources.OpenWeb_16x;
-
-
             }
 
-            NewProjectForm npf { get; set; }
+            private NewProjectForm npf { get; set; }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
-
-
                 //ef.BeginInvoke(new Action(() => { ef.Command_AddNewProject(); }));
-
-
 
                 return obs;
             }
-
         }
+
         public class Command_OpenProject : Command
         {
-
-
-
             public Command_OpenProject(ExplorerForms ef) : base(ef)
             {
                 Name = "Open Project";
@@ -1482,32 +1320,23 @@ namespace WinExplorer
 
                 keyboard[0] = Keys.Control;
                 keyboard[1] = Keys.E;
-
             }
 
-            NewProjectForm npf { get; set; }
+            private NewProjectForm npf { get; set; }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
-
-
                 //ef.BeginInvoke(new Action(() => { ef.Command_AddNewProject(); }));
-
-
 
                 return obs;
             }
-
         }
+
         public class Command_Save : Command
         {
-
-
-
             public Command_Save(ExplorerForms ef) : base(ef)
             {
                 Name = "Save";
@@ -1516,32 +1345,23 @@ namespace WinExplorer
 
                 keyboard[0] = Keys.Control;
                 keyboard[1] = Keys.S;
-
             }
 
-            NewProjectForm npf { get; set; }
+            private NewProjectForm npf { get; set; }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
-
-
                 //ef.BeginInvoke(new Action(() => { ef.Command_AddNewProject(); }));
-
-
 
                 return obs;
             }
-
         }
+
         public class Command_SaveAll : Command
         {
-
-
-
             public Command_SaveAll(ExplorerForms ef) : base(ef)
             {
                 Name = "Save All";
@@ -1551,32 +1371,23 @@ namespace WinExplorer
                 keyboard[0] = Keys.Control;
                 keyboard[1] = Keys.Shift;
                 keyboard[2] = Keys.S;
-
             }
 
-            NewProjectForm npf { get; set; }
+            private NewProjectForm npf { get; set; }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
-
-
                 //ef.BeginInvoke(new Action(() => { ef.Command_AddNewProject(); }));
-
-
 
                 return obs;
             }
-
         }
+
         public class Command_StartupPage : Command_Launcher
         {
-
-
-
             public Command_StartupPage(ExplorerForms ef) : base(ef)
             {
                 Name = "Start Page";
@@ -1586,32 +1397,23 @@ namespace WinExplorer
                 keyboard[0] = Keys.Control;
                 keyboard[1] = Keys.Shift;
                 keyboard[2] = Keys.S;
-
             }
 
-            NewProjectForm npf { get; set; }
+            private NewProjectForm npf { get; set; }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
-
-
                 //ef.BeginInvoke(new Action(() => { ef.Command_AddNewProject(); }));
-
-
 
                 return obs;
             }
-
         }
+
         public class Command_Cut : Command
         {
-
-
-
             public Command_Cut(ExplorerForms ef) : base(ef)
             {
                 Name = "Cut";
@@ -1620,32 +1422,23 @@ namespace WinExplorer
 
                 keyboard[0] = Keys.Control;
                 keyboard[1] = Keys.X;
-
             }
 
-            NewProjectForm npf { get; set; }
+            private NewProjectForm npf { get; set; }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
-
-
                 //ef.BeginInvoke(new Action(() => { ef.Command_AddNewProject(); }));
-
-
 
                 return obs;
             }
-
         }
+
         public class Command_Copy : Command
         {
-
-
-
             public Command_Copy(ExplorerForms ef) : base(ef)
             {
                 Name = "Copy";
@@ -1654,32 +1447,23 @@ namespace WinExplorer
 
                 keyboard[0] = Keys.Control;
                 keyboard[1] = Keys.C;
-
             }
 
-            NewProjectForm npf { get; set; }
+            private NewProjectForm npf { get; set; }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
-
-
                 //ef.BeginInvoke(new Action(() => { ef.Command_AddNewProject(); }));
-
-
 
                 return obs;
             }
-
         }
+
         public class Command_Paste : Command
         {
-
-
-
             public Command_Paste(ExplorerForms ef) : base(ef)
             {
                 Name = "Paste";
@@ -1688,29 +1472,21 @@ namespace WinExplorer
 
                 keyboard[0] = Keys.Control;
                 keyboard[1] = Keys.V;
-
             }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
-
-
                 //ef.BeginInvoke(new Action(() => { ef.Command_AddNewProject(); }));
-
-
 
                 return obs;
             }
-
         }
 
         public class Command_Undo : Command
         {
-
             public Command_Undo(ExplorerForms ef) : base(ef)
             {
                 Name = "Undo";
@@ -1719,32 +1495,23 @@ namespace WinExplorer
 
                 keyboard[0] = Keys.Control;
                 keyboard[1] = Keys.Z;
-
             }
 
-            NewProjectForm npf { get; set; }
+            private NewProjectForm npf { get; set; }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
-
-
                 //ef.BeginInvoke(new Action(() => { ef.Command_AddNewProject(); }));
-
-
 
                 return obs;
             }
-
         }
+
         public class Command_Redo : Command
         {
-
-
-
             public Command_Redo(ExplorerForms ef) : base(ef)
             {
                 Name = "Redo";
@@ -1753,32 +1520,23 @@ namespace WinExplorer
 
                 keyboard[0] = Keys.Control;
                 keyboard[1] = Keys.Y;
-
             }
 
-            NewProjectForm npf { get; set; }
+            private NewProjectForm npf { get; set; }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
-
-
                 //ef.BeginInvoke(new Action(() => { ef.Command_AddNewProject(); }));
-
-
 
                 return obs;
             }
-
         }
+
         public class Command_FindInFiles : Command_Launcher
         {
-
-
-
             public Command_FindInFiles(ExplorerForms ef) : base(ef)
             {
                 Name = "Find In Files";
@@ -1788,32 +1546,21 @@ namespace WinExplorer
                 keyboard[0] = Keys.Control;
                 keyboard[1] = Keys.Shift;
                 keyboard[2] = Keys.F;
-
             }
-
-            
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
-                
-
                 ef.BeginInvoke(new Action(() => { ef.Command_Launch(Names); }));
-
-
 
                 return obs;
             }
-
         }
+
         public class Command_Find : Command_Gui
         {
-
-
-
             public Command_Find(ExplorerForms ef) : base(ef)
             {
                 Name = "Find";
@@ -1824,14 +1571,12 @@ namespace WinExplorer
 
                 keyboard[0] = Keys.Control;
                 keyboard[1] = Keys.D;
-
             }
 
-            ToolStripComboBoxes cb { get; set; }
+            private ToolStripComboBoxes cb { get; set; }
 
             public override object Configure(object obs)
             {
-
                 cb = obs as ToolStripComboBoxes;
 
                 if (cb == null)
@@ -1840,22 +1585,15 @@ namespace WinExplorer
                 if (ef == null)
                     return obs;
 
-
-
-
                 cb.SelectedIndexChanged += Cb_SelectedIndexChanged;
 
                 cb.KeyPress += Cb_TextChanged;
 
                 return base.Configure(obs);
-
-
-
             }
 
             private void Cb_TextChanged(object sender, KeyPressEventArgs e)
             {
-
                 if (e.KeyChar != (char)Keys.Enter)
                     return;
 
@@ -1864,12 +1602,9 @@ namespace WinExplorer
 
                 //MessageBox.Show("Find Text Changed");
 
-
                 string s = cb.Text;
 
-
                 Execute(s);
-
             }
 
             private void Cb_SelectedIndexChanged(object sender, EventArgs e)
@@ -1879,8 +1614,6 @@ namespace WinExplorer
 
             override public object Execute(object obs = null)
             {
-
-
                 if (ef == null)
                     return obs;
 
@@ -1891,14 +1624,12 @@ namespace WinExplorer
 
                 ef.BeginInvoke(new Action(() => { ef.Command_Find(text); }));
 
-
                 return obs;
             }
-
         }
+
         public class Command_Module : Command
         {
-
             public string ModuleName { get; set; }
 
             //public string Names { get; set; }
@@ -1918,26 +1649,19 @@ namespace WinExplorer
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
-
-
                 //ef.BeginInvoke(new Action(() => { ef.Command_AddNewProject(); }));
-
-
 
                 return obs;
             }
-
         }
+
         public class Command_Gui : Command
         {
-
             public string ModuleName { get; set; }
 
-            
             public bool Visible { get; set; }
 
             public Command_Gui(ExplorerForms ef) : base(ef)
@@ -1956,7 +1680,6 @@ namespace WinExplorer
                 return base.Configure(obs);
             }
 
-
             public Command GetCommand()
             {
                 return NewProjectForm.gcommands.GetCommand(Names);
@@ -1964,15 +1687,10 @@ namespace WinExplorer
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
-
-
                 //ef.BeginInvoke(new Action(() => { ef.Command_AddNewProject(); }));
-
-
 
                 return obs;
             }
@@ -1980,8 +1698,8 @@ namespace WinExplorer
             public override string ToStrings()
             {
                 return Name + "\t" + Names + "\t" + Module;
-               
             }
+
             public override void FromStrings(string s)
             {
                 string[] bb = s.Split("\t".ToCharArray());
@@ -1994,12 +1712,12 @@ namespace WinExplorer
                     Module = bb[3];
             }
         }
+
         public class Command_Launcher : Command
         {
-
             public string ModuleName { get; set; }
 
-           // public string Names { get; set; }
+            // public string Names { get; set; }
 
             public bool Visible { get; set; }
 
@@ -2010,27 +1728,21 @@ namespace WinExplorer
                 Visible = true;
             }
 
-            NewProjectForm npf { get; set; }
+            private NewProjectForm npf { get; set; }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
-
-
                 ef.BeginInvoke(new Action(() => { ef.Command_Launch(Names); }));
-
-
 
                 return obs;
             }
-
         }
+
         public class Command_SolutionExplorer : Command_Launcher
         {
-
             public string ModuleName { get; set; }
 
             //public string Names { get; set; }
@@ -2051,27 +1763,21 @@ namespace WinExplorer
                 Visible = true;
             }
 
-            NewProjectForm npf { get; set; }
+            private NewProjectForm npf { get; set; }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
-
-
                 ef.BeginInvoke(new Action(() => { ef.Command_Launch(Name); }));
-
-
 
                 return obs;
             }
-
         }
+
         public class Command_PropertyWindow : Command_Launcher
         {
-
             public string ModuleName { get; set; }
 
             //public string Names { get; set; }
@@ -2094,7 +1800,6 @@ namespace WinExplorer
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
@@ -2102,24 +1807,19 @@ namespace WinExplorer
 
                 return obs;
             }
-
         }
+
         public class Command_AddProjectItem : Command_Module
         {
-
-
             public Command_AddProjectItem(ExplorerForms ef) : base(ef)
             {
                 Name = "Add Item";
 
                 image = Resources.NewItem_16x;
-                
             }
-
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
@@ -2130,41 +1830,31 @@ namespace WinExplorer
 
                 Command.counter = 1;
 
-
-
-                ef.BeginInvoke(new Action(() => {
-
+                ef.BeginInvoke(new Action(() =>
+                {
                     VSSolution vs = ef.GetVSSolution();
 
                     VSProject vp = vs.MainVSProject;
 
                     ef.Command_AddNewProjectItem(name, vp);
-
-
-
-
                 }));
 
                 while (Command.counter > 0) ;
 
                 return obs;
             }
-
         }
+
         public class Command_LoadSolution : Command
         {
-
-
             public Command_LoadSolution(ExplorerForms ef) : base(ef)
             {
-
             }
 
-            NewProjectForm npf { get; set; }
+            private NewProjectForm npf { get; set; }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
@@ -2183,37 +1873,30 @@ namespace WinExplorer
 
                 return obs;
             }
-
         }
+
         public class Command_CloseAllDocuments : Command
         {
-
-
             public Command_CloseAllDocuments(ExplorerForms ef) : base(ef)
             {
                 Name = "Open All Documents";
             }
 
-            NewProjectForm npf { get; set; }
+            private NewProjectForm npf { get; set; }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
                 ef.BeginInvoke(new Action(() => { ef.Command_CloseAllDocuments(); }));
 
-
                 return obs;
             }
-
         }
 
         public class Command_OpenFile : Command
         {
-
-
             public Command_OpenFile(ExplorerForms ef) : base(ef)
             {
                 Name = "Open File";
@@ -2222,12 +1905,10 @@ namespace WinExplorer
 
                 keyboard[0] = Keys.Control;
                 keyboard[1] = Keys.O;
-
             }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
@@ -2246,21 +1927,16 @@ namespace WinExplorer
 
                 return obs;
             }
-
         }
 
         public class Command_OpenDocument : Command
         {
-
-
             public Command_OpenDocument(ExplorerForms ef) : base(ef)
             {
-
             }
 
             override public object Execute(object obs = null)
             {
-
                 if (ef == null)
                     return ef;
 
@@ -2279,11 +1955,6 @@ namespace WinExplorer
 
                 return obs;
             }
-
         }
-
     }
-
-
-
 }

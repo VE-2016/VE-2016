@@ -1,13 +1,8 @@
+using GACManagerApi;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading.Tasks;
-using GACManagerApi;
-
 using System.Windows.Forms;
 
 namespace GACProject
@@ -25,7 +20,6 @@ namespace GACProject
         }
     }
 
-
     //C#
     // Implements the manual sorting of items by column.
     internal class ListViewItemComparer : IComparer
@@ -33,15 +27,18 @@ namespace GACProject
         private int _col;
 
         private SortOrder _sorting;
+
         public ListViewItemComparer()
         {
             _col = 0;
         }
+
         public ListViewItemComparer(int column, SortOrder s)
         {
             _col = column;
             _sorting = s;
         }
+
         public int Compare(object x, object y)
         {
             int returnVal = -1;
@@ -71,13 +68,10 @@ namespace GACProject
             //  Enumerate the assemblies.
             var assemblyName = assemblyCacheEnum.GetNextAssembly();
 
-
             while (assemblyName != null)
             {
                 //  Create the assembly description.
                 var desc = new AssemblyDescription(assemblyName);
-
-
 
                 //  Create an assembly view model.
                 //onAssemblyEnumerated(desc);
@@ -96,4 +90,3 @@ namespace GACProject
         }
     }
 }
-

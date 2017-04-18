@@ -1,15 +1,9 @@
 using GACProject;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using VSProvider;
 
@@ -241,7 +235,6 @@ namespace WinExplorer.UI
             comboBox7.Text = "N/A";
             comboBox7.Enabled = false;
 
-
             try
             {
                 ArrayList L = new ArrayList();
@@ -253,18 +246,16 @@ namespace WinExplorer.UI
                     foreach (DirectoryInfo d in Fs)
                         L.Add(".NET Framework " + d.Name);
                 }
-
                 else
                     L = VSParsers.frameworks.GetFrameworks();
-
 
                 foreach (string s in L)
                 {
                     comboBox4.Items.Add(s);
                 }
             }
-            catch (Exception e) {
-
+            catch (Exception e)
+            {
                 Console.WriteLine(e.Message);
             };
 
@@ -276,7 +267,6 @@ namespace WinExplorer.UI
             Microsoft.Build.Evaluation.ProjectProperty TargetFramework = pc.GetProperty("TargetFrameworkVersion");
 
             textBox3.Text = rootassname.EvaluatedValue;
-
 
             comboBox3.Text = assname.EvaluatedValue;
 
@@ -302,7 +292,6 @@ namespace WinExplorer.UI
             if (i >= 0)
                 comboBox4.SelectedIndex = i;
 
-
             pc.ProjectCollection.UnloadAllProjects();
 
             string w = vp.GetWarningLevel();
@@ -321,7 +310,6 @@ namespace WinExplorer.UI
                 radioButton4.Checked = true;
                 radioButton5.Checked = false;
             }
-
 
             InitDefineConstants();
 
@@ -352,8 +340,6 @@ namespace WinExplorer.UI
             InitPlatform(comboBox12, sc);
             InitPlatform(comboBox18, sc);
             InitPlatform(comboBox22, sc);
-
-
 
             //if (comboBox10.Items.Contains(sc) == false)
             //    comboBox10.Items.Add(sc);
@@ -395,7 +381,6 @@ namespace WinExplorer.UI
             comboBox7.Text = "N/A";
             comboBox7.Enabled = false;
 
-
             try
             {
                 ArrayList L = VSParsers.frameworks.GetFrameworks();
@@ -405,8 +390,8 @@ namespace WinExplorer.UI
                     comboBox4.Items.Add(s);
                 }
             }
-            catch (Exception e) {
-
+            catch (Exception e)
+            {
                 Console.WriteLine(e.Message);
             };
 
@@ -417,7 +402,6 @@ namespace WinExplorer.UI
 
             textBox3.Text = rootassname.EvaluatedValue;
 
-
             comboBox3.Text = assname.EvaluatedValue;
 
             string outtypes = outtype.EvaluatedValue;
@@ -427,13 +411,9 @@ namespace WinExplorer.UI
 
             comboBox5.Text = outtypes;
 
-
             textBox9.Text = outdir.EvaluatedValue;
 
             comboBox2.Text = "(Not Set)";
-
-
-
 
             string w = vp.GetWarningLevel();
             comboBox13.Text = w;
@@ -453,8 +433,6 @@ namespace WinExplorer.UI
             }
 
             pc.ProjectCollection.UnloadAllProjects();
-
-
 
             //vp.SetProperty("Configuration", config, false);
 
@@ -492,17 +470,14 @@ namespace WinExplorer.UI
             //InitPlatform(comboBox18, sc);
             //InitPlatform(comboBox22, sc);
 
-
             //sc = vp.GetConfiguration();
             //sc = "Active(" + sc + ")";
             //InitPlatform(comboBox11, sc);
             //InitPlatform(comboBox19, sc);
             //InitPlatform(comboBox23, sc);
 
-
             ResumeLayout();
         }
-
 
         public void InitDefineConstants()
         {
@@ -546,12 +521,10 @@ namespace WinExplorer.UI
 
             //foreach (string d in s)
             //{
-
             //    if (d == "DEBUG")
             //        checkBox1.Checked = true;
             //    else if (d == "TRACE")
             //        checkBox2.Checked = true;
-
 
             //}
 
@@ -566,7 +539,6 @@ namespace WinExplorer.UI
                 w += "TRACE";
             }
             vp.SetDefineConstants(w, pc);
-
 
             w = "false";
             if (checkBox3.Checked == true)
@@ -583,7 +555,6 @@ namespace WinExplorer.UI
                 w = "true";
             vp.SetOptimize(w, pc);
 
-
             w = "false";
             if (checkBox5.Checked == true)
                 w = "true";
@@ -591,7 +562,6 @@ namespace WinExplorer.UI
 
             w = comboBox13.Text;
             vp.SetWarningLevel(w, pc);
-
 
             w = vp.TreatWarningsAsErrors();
             if (radioButton3.Checked == true)
@@ -652,6 +622,7 @@ namespace WinExplorer.UI
             LoadProjectPlatforms(comboBox18, P);
             LoadSolutionPlatforms(comboBox19, L);
         }
+
         public void LoadNA(ComboBox cb)
         {
             if (cb.Items.Contains("N\\A") == false)
@@ -666,13 +637,13 @@ namespace WinExplorer.UI
             foreach (string s in L)
                 cb.Items.Add(s);
         }
+
         public void LoadProjectPlatforms(ComboBox cb, ArrayList L)
         {
             cb.Items.Clear();
             foreach (string s in L)
                 cb.Items.Add(s);
         }
-
 
         public void SetProperties()
         {
@@ -689,12 +660,7 @@ namespace WinExplorer.UI
             platform = platform.Replace("(", "");
             platform = platform.Replace(")", "");
 
-
-
             vp.SetPlatformConfig(config, platform, pc);
-
-
-
 
             string rootassname = textBox3.Text;
             string outtype = comboBox5.Text;
@@ -703,7 +669,6 @@ namespace WinExplorer.UI
 
             if (outtype == "Class Library")
                 outtype = "Library";
-
 
             pc.SetProperty("RootNamespace", rootassname);
             pc.SetProperty("AssemblyName", assname);
@@ -759,8 +724,6 @@ namespace WinExplorer.UI
 
             if (vp == null)
                 return;
-
-
 
             ArrayList L = vp.GetEmbeddedResourcesFiles();
             if (L == null || L.Count <= 0)
@@ -857,6 +820,7 @@ namespace WinExplorer.UI
             lv.Visible = true;
             lv.Dock = DockStyle.Fill;
         }
+
         public void toggledg()
         {
             dg.Size = lv.Size;
@@ -882,7 +846,6 @@ namespace WinExplorer.UI
                 togglelist();
 
                 listView1.BeginUpdate();
-
 
                 listView1.VirtualMode = false;
 
@@ -1008,7 +971,6 @@ namespace WinExplorer.UI
         {
             items = new ArrayList();
 
-
             string[] exts = { ".png", ".bmp", "jpeg", ".icon" };
 
             foreach (ListViewItem v in cache)
@@ -1016,7 +978,6 @@ namespace WinExplorer.UI
                 string name = v.Text;
 
                 string ext = Path.GetExtension(name);
-
 
                 foreach (string e in exts)
                     if (e == ext)
@@ -1028,7 +989,6 @@ namespace WinExplorer.UI
         {
             items = new ArrayList();
 
-
             string[] exts = { ".icon", ".ico" };
 
             foreach (ListViewItem v in cache)
@@ -1036,7 +996,6 @@ namespace WinExplorer.UI
                 string name = v.Text;
 
                 string ext = Path.GetExtension(name);
-
 
                 foreach (string e in exts)
                     if (e.ToLower() == ext)
@@ -1124,7 +1083,6 @@ namespace WinExplorer.UI
             {
                 textBox4.Enabled = true;
             }
-
             else
             {
                 textBox4.Enabled = false;
@@ -1149,7 +1107,6 @@ namespace WinExplorer.UI
             if (File.Exists(c) == false)
                 File.Copy(file, c);
 
-
             if (resourcefile == null || resourcefile == "")
             {
                 string source = AppDomain.CurrentDomain.BaseDirectory + "TemplateFiles\\resourcefile.resx";
@@ -1158,7 +1115,6 @@ namespace WinExplorer.UI
 
                 resourcefile = b + "\\" + "resource.resx";
             }
-
 
             Assembly asm = typeof(Bitmap).Assembly;
             Type T = asm.GetType("System.Drawing.Bitmap");
@@ -1220,7 +1176,6 @@ namespace WinExplorer.UI
 
             pc.ProjectCollection.UnloadAllProjects();
 
-
             GetProperties(config, platform);
 
             _notloaded = false;
@@ -1233,11 +1188,11 @@ namespace WinExplorer.UI
             if (i < 0)
                 return "";
 
-
             string platform = comboBox10.Items[i].ToString();
 
             return platform;
         }
+
         public string GetFormConfig()
         {
             int i = comboBox11.SelectedIndex;
@@ -1248,7 +1203,6 @@ namespace WinExplorer.UI
             return config;
         }
 
-
         private void bMPImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddNewResource anr = new AddNewResource();
@@ -1256,6 +1210,7 @@ namespace WinExplorer.UI
             if (r != DialogResult.OK)
                 return;
         }
+
         public void LoadResourcesView(string r)
         {
             SuspendLayout();
@@ -1312,7 +1267,6 @@ namespace WinExplorer.UI
             ppd.Dock = DockStyle.Fill;
             ppd.TopLevel = false;
             ppd.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-
 
             tabControl1.SelectedTab = tabPage14;
 

@@ -1,35 +1,28 @@
 //---------------------------------------------------------------------
 //  This file is part of the CLR Managed Debugger (mdbg) Sample.
-// 
+//
 //  Copyright (C) Microsoft Corporation.  All rights reserved.
 //---------------------------------------------------------------------
 
-using System;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Reflection;
-using System.Diagnostics;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Security.Permissions;
-using System.Globalization;
-
-using System.Runtime.Remoting;
-using System.Runtime.Remoting.Channels;
-
-using Microsoft.Samples.Debugging.MdbgEngine;
 using Microsoft.Samples.Debugging.CorDebug;
-using Microsoft.Samples.Debugging.CorMetadata;
 using Microsoft.Samples.Debugging.CorDebug.NativeApi;
 using Microsoft.Samples.Debugging.CorPublish;
+using Microsoft.Samples.Debugging.MdbgEngine;
 using Microsoft.Samples.Debugging.Native;
-using Microsoft.Samples.Debugging.CorDebug.Utility;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Globalization;
+using System.IO;
+using System.Reflection;
+using System.Security.Permissions;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Microsoft.Samples.Tools.Mdbg
 {
-    // no instances of this class 
-
+    // no instances of this class
 
     sealed internal class MdbgCommands : CommandBase
     {
@@ -74,12 +67,12 @@ namespace Microsoft.Samples.Tools.Mdbg
             Shell.Debugger.Processes.ProcessAdded += new ProcessCollectionChangedEventHandler(Processes_ProcessAdded);
         }
 
-        static void Processes_ProcessAdded(object sender, ProcessCollectionChangedEventArgs e)
+        private static void Processes_ProcessAdded(object sender, ProcessCollectionChangedEventArgs e)
         {
             e.Process.PostDebugEvent += new PostCallbackEventHandler(PostDebugEventHandler);
         }
 
-        static void PostDebugEventHandler(object sender, CustomPostCallbackEventArgs e)
+        private static void PostDebugEventHandler(object sender, CustomPostCallbackEventArgs e)
         {
             MDbgStopOptions stopOptions = Shell.Properties[MDbgStopOptions.PropertyName]
                 as MDbgStopOptions;
@@ -127,11 +120,11 @@ namespace Microsoft.Samples.Tools.Mdbg
             }
 
             /// <summary>
-            /// Creates a CorGenericValue object for primitive types, for use in function 
+            /// Creates a CorGenericValue object for primitive types, for use in function
             /// evaluations and setting debugger variables.
             /// </summary>
             /// <param name="input">input has to be in the form "input" or "(type)input", where
-            /// we use the ldasm naming convention (e.g. "int", "sbyte", "ushort", etc...) OR 
+            /// we use the ldasm naming convention (e.g. "int", "sbyte", "ushort", etc...) OR
             /// full type names (e.g. System.Char, System.Int32) for type.
             /// Example inputs: 45, 'a', true, 556.3, (long)45, (sbyte)5, (System.Int64)65 </param>
             /// <param name="result">A CorGenericValue that has the value of input</param>
@@ -361,7 +354,6 @@ namespace Microsoft.Samples.Tools.Mdbg
                         }
                     }
                     return false;
-
                 }
                 // if the value is parsable as an int, assume it represents one
                 else if (int.TryParse(input, NumberStyles.Any, CultureInfo.InvariantCulture, out intResult))
@@ -530,7 +522,6 @@ namespace Microsoft.Samples.Tools.Mdbg
             Shell.QuitWithExitCode(exitCode);
         }
 
-
         [
          CommandDescription(
            CommandName = "?",
@@ -689,7 +680,6 @@ namespace Microsoft.Samples.Tools.Mdbg
                 throw new MDbgShellException("Could not create debugging interface for runtime version " + version);
             }
 
-            
             p.DebugMode = options.DebugMode;
             p.CreateProcess(options.Application, options.Arguments);
 
@@ -740,7 +730,6 @@ namespace Microsoft.Samples.Tools.Mdbg
                 // We can't wait for targets that never run (e.g. NoninvasiveStopGoController against a dump)
                 if (p.CanExecute())
                     p.StopEvent.WaitOne();
-
             }
             catch
             {
@@ -760,7 +749,6 @@ namespace Microsoft.Samples.Tools.Mdbg
             // for debug builds.
             p = null;
         }
-
 
         [
          CommandDescription(
@@ -794,37 +782,48 @@ namespace Microsoft.Samples.Tools.Mdbg
                         case HResult.CORDBG_S_BAD_START_SEQUENCE_POINT:
                             reason = "Attempt to SetIP from non-sequence point.";
                             break;
+
                         case HResult.CORDBG_S_BAD_END_SEQUENCE_POINT:
                             reason = "Attempt to SetIP from non-sequence point.";
                             break;
+
                         case HResult.CORDBG_S_INSUFFICIENT_INFO_FOR_SET_IP:
                             reason = "Insufficient information to fix program flow.";
                             break;
+
                         case HResult.CORDBG_E_CANT_SET_IP_INTO_FINALLY:
                             reason = "Attempt to SetIP into finally block.";
                             break;
+
                         case HResult.CORDBG_E_CANT_SET_IP_OUT_OF_FINALLY:
                         case HResult.CORDBG_E_CANT_SET_IP_OUT_OF_FINALLY_ON_WIN64:
                             reason = "Attempt to SetIP out of finally block.";
                             break;
+
                         case HResult.CORDBG_E_CANT_SET_IP_INTO_CATCH:
                             reason = "Attempt to SetIP into catch block.";
                             break;
+
                         case HResult.CORDBG_E_CANT_SET_IP_OUT_OF_CATCH_ON_WIN64:
                             reason = "Attempt to SetIP out of catch block.";
                             break;
+
                         case HResult.CORDBG_E_SET_IP_NOT_ALLOWED_ON_NONLEAF_FRAME:
                             reason = "Attempt to SetIP on non-leaf frame.";
                             break;
+
                         case HResult.CORDBG_E_SET_IP_IMPOSSIBLE:
                             reason = "The operation cannot be completed.";
                             break;
+
                         case HResult.CORDBG_E_CANT_SETIP_INTO_OR_OUT_OF_FILTER:
                             reason = "Attempt to SetIP into or out of filter.";
                             break;
+
                         case HResult.CORDBG_E_SET_IP_NOT_ALLOWED_ON_EXCEPTION:
                             reason = "SetIP is not allowed on exception.";
                             break;
+
                         default:
                             reason = "Reason unknown.";
                             break;
@@ -1038,10 +1037,9 @@ namespace Microsoft.Samples.Tools.Mdbg
             }
         }
 
-
-        // Default breakpoint parser for the MDbg shell. 
+        // Default breakpoint parser for the MDbg shell.
         // We don't expose this class publically, but extensions can grab the interface pointer from the Breakpoint Collection's parser property.
-        class DefaultBreakpointParser : IBreakpointParser
+        private class DefaultBreakpointParser : IBreakpointParser
         {
             // Parse a function breakpoint.
             ISequencePointResolver IBreakpointParser.ParseFunctionBreakpoint(string arguments)
@@ -1117,8 +1115,8 @@ namespace Microsoft.Samples.Tools.Mdbg
 
                 // now, to be valid, it must be in the form:
                 //    "b mdbg!Mdbg.Main+3"
-                //    
-                // Note that this case must be checked after the source-file case above because 
+                //
+                // Note that this case must be checked after the source-file case above because
                 // we want to assume that a number by itself is a source line, not a method name.
                 // This is the most general form, so check this case last. (Eg, "Mdbg.cs:34" could
                 // match as Class='MDbg', Method = 'cs:34'. )
@@ -1127,17 +1125,17 @@ namespace Microsoft.Samples.Tools.Mdbg
                 // in a method name, including spaces. Both C#, VB and MDbg's parsing are more restrictive.
                 // Note we allow most characters in class and method names, except those we are using for separators
                 // (+, ., :), <> since those are typically used to represent generics which we don't
-                // support, and spaces since those are usually command syntax errors.  
-                // We exclude '*' for sanity reasons. 
-                // 
+                // support, and spaces since those are usually command syntax errors.
+                // We exclude '*' for sanity reasons.
+                //
                 // Other caveats:
-                // - we must allow periods in the method name for methods like ".ctor". 
+                // - we must allow periods in the method name for methods like ".ctor".
                 // - be sure to allow $ character in the method and class names. Some compilers
                 // like to use this in function names.
                 // - Classes can't start with a number, but can include and end with numbers.
-                // 
-                // Ideally we'd have a quoting mechanism and a more flexible parsing system to 
-                // handle generics, method overloads, etc. across all of MDbg.  At least we have the 'x' 
+                //
+                // Ideally we'd have a quoting mechanism and a more flexible parsing system to
+                // handle generics, method overloads, etc. across all of MDbg.  At least we have the 'x'
                 // command and ~ shortcuts as a work-around.
 
                 r = new Regex(@"^" +
@@ -1176,10 +1174,9 @@ namespace Microsoft.Samples.Tools.Mdbg
                     return new BreakpointFunctionLocation(module, className, method, intOffset);
                 }
 
-                // We don't recognize the syntax. Return null. If the parser is chained, it gives 
+                // We don't recognize the syntax. Return null. If the parser is chained, it gives
                 // our parent a chance to handle it.
                 return null;
-
             } // end function ParseFunctionBreakpoint
         } // end class DefaultBreakpointParser
 
@@ -1486,9 +1483,9 @@ namespace Microsoft.Samples.Tools.Mdbg
             ThreadResumeSuspendHelper(ap, CorDebugThreadState.THREAD_RUN, true);
         }
 
-        // Helper to set the debug state and ignore certain errors. 
+        // Helper to set the debug state and ignore certain errors.
         // Throws on error.
-        static void SetDebugStateWrapper(MDbgThread t, CorDebugThreadState newState, bool showWarnings)
+        private static void SetDebugStateWrapper(MDbgThread t, CorDebugThreadState newState, bool showWarnings)
         {
             if ((newState == CorDebugThreadState.THREAD_SUSPEND) &&
                 ((t.CorThread.UserState & CorDebugUserState.USER_UNSAFE_POINT) != 0))
@@ -1496,7 +1493,7 @@ namespace Microsoft.Samples.Tools.Mdbg
                 // Hard-suspending a thread while the thread is not at GC-safe point is bad.
                 // If the users resumes a process and the GC triggers, the GC suspension logic
                 // will not be able to suspend because it will wait forever on the thread that
-                // is not at the GC safe point.  However, in this scenario, a debugger can always 
+                // is not at the GC safe point.  However, in this scenario, a debugger can always
                 // async-break and resume the suspended thread to avoid a live lock.  So we just
                 // issue a warning here.
                 if (showWarnings)
@@ -1524,6 +1521,7 @@ namespace Microsoft.Samples.Tools.Mdbg
                 throw; // let error propogate up.
             }
         }
+
         private static void ThreadResumeSuspendHelper(ArgParser ap, CorDebugThreadState newState, bool showWarnings)
         {
             int threadNumber;
@@ -1569,7 +1567,6 @@ namespace Microsoft.Samples.Tools.Mdbg
             {
                 SetDebugStateWrapper(Debugger.Processes.Active.Threads.Active, newState, showWarnings);
             }
-
         }
 
         [
@@ -1664,9 +1661,9 @@ namespace Microsoft.Samples.Tools.Mdbg
          )
         ]
         ///<summary>
-        /// enables or disables notifications for a particular type 
+        /// enables or disables notifications for a particular type
         /// </summary>
-        /// <param name="argString">string including the fully qualified type name and a "1" or "0" to 
+        /// <param name="argString">string including the fully qualified type name and a "1" or "0" to
         /// indicate whether to enable or disable
         /// </param>
         public static void EnableCustomNotificationCmd(string argString)
@@ -1686,10 +1683,7 @@ namespace Microsoft.Samples.Tools.Mdbg
             {
                 ModifyStopOptions(MDbgStopOptionPolicy.DebuggerBehavior.Notify, "cn");
             }
-
         }
-
-
 
         private static void DisplayStopOptions()
         {
@@ -1709,7 +1703,7 @@ namespace Microsoft.Samples.Tools.Mdbg
             }
             else
             {
-                // Break up arguments string into the event type acronym and the arguments to 
+                // Break up arguments string into the event type acronym and the arguments to
                 // send to the actual stop option policy. For example, if the arguments string
                 // is "ex System.Exception System.ArgumentException", this will be split into:
                 // eventType = "ex"
@@ -1747,13 +1741,12 @@ namespace Microsoft.Samples.Tools.Mdbg
             stopOptions.Add(stopPolicy, ManagedCallbackType.OnExceptionUnwind2);
         }
 
-
         private static void InitModeShellProperty()
         {
             MDbgModeSettings modeSettings = new MDbgModeSettings();
             Shell.Properties.Add(MDbgModeSettings.PropertyName, modeSettings);
 
-            GetModeValueEvent modeValueCallback = delegate(MDbgModeItem item)
+            GetModeValueEvent modeValueCallback = delegate (MDbgModeItem item)
             {
                 switch (item.ShortCut)
                 {
@@ -1768,7 +1761,7 @@ namespace Microsoft.Samples.Tools.Mdbg
                         return false;
                 }
             };
-            ModeChangedEvent modeChangedCallback = delegate(MDbgModeItem item, bool onOff)
+            ModeChangedEvent modeChangedCallback = delegate (MDbgModeItem item, bool onOff)
             {
                 switch (item.ShortCut)
                 {
@@ -1814,7 +1807,6 @@ namespace Microsoft.Samples.Tools.Mdbg
                                                     modeValueCallback, modeChangedCallback));
             modeSettings.Items.Add(new MDbgModeItem("ei", "Exception Info",
                                                     modeValueCallback, modeChangedCallback));
-
         }
 
         [
@@ -1834,7 +1826,6 @@ namespace Microsoft.Samples.Tools.Mdbg
             if (modeSettings == null)
                 throw new MDbgShellException("corrupted internal state.");
 
-
             ArgParser ap = new ArgParser(arguments);
             if (!ap.Exists(0))
             {
@@ -1846,7 +1837,6 @@ namespace Microsoft.Samples.Tools.Mdbg
             }
             else
             {
-
                 bool on = ap.AsCommand(1, new CommandArgument("on", "off")) == "on";
                 string shortcut = ap.AsString(0);
 
@@ -1897,7 +1887,7 @@ namespace Microsoft.Samples.Tools.Mdbg
 
             if (m_loadedExtensions.ContainsKey(extName) && m_loadedExtensions[extName])
             {
-                // If we have already loaded the extension and it marked as active, then we need to unload it 
+                // If we have already loaded the extension and it marked as active, then we need to unload it
                 // before continuing to reload it.
                 ExecuteExtensionMethod(asext, "UnloadExtension");
                 m_loadedExtensions[extName] = false;    // Make sure that we mark the extension as unloaded
@@ -1919,7 +1909,7 @@ namespace Microsoft.Samples.Tools.Mdbg
         }
 
         // Try and find the full path of the extension.
-        static string FindFilePath(string extName)
+        private static string FindFilePath(string extName)
         {
             Debug.Assert(extName != null);
 
@@ -1965,7 +1955,7 @@ namespace Microsoft.Samples.Tools.Mdbg
 
         // Attempt to load the extention at the given path.  If no such file exists, returns null.
         // Throws on error.
-        static Assembly LoadExtensionAssembly(string extensionPath)
+        private static Assembly LoadExtensionAssembly(string extensionPath)
         {
             if (File.Exists(extensionPath))
             {
@@ -1976,8 +1966,8 @@ namespace Microsoft.Samples.Tools.Mdbg
 
         // Given the assembly for an extension, find the main type in that assembly.
         // This will throw on error. It will not return null.
-        static Type FindMainTypeInExtension(Assembly asext)
-        {                   // 1) Try to load old-style extensions. 
+        private static Type FindMainTypeInExtension(Assembly asext)
+        {                   // 1) Try to load old-style extensions.
             // These have goofy requirements that don't make sense for non-samples.
             {
                 const string ExtNameSpace = "Microsoft.Samples.Tools.Mdbg.Extension.";
@@ -2014,7 +2004,7 @@ namespace Microsoft.Samples.Tools.Mdbg
 
         // Given an Assembly for an extension command, execute it.
         // This will throw if the extension is an invalid format.
-        static void ExecuteExtensionMethod(Assembly asext, string methodName)
+        private static void ExecuteExtensionMethod(Assembly asext, string methodName)
         {
             Debug.Assert(asext != null);
             Type ext = FindMainTypeInExtension(asext);
@@ -2235,7 +2225,6 @@ namespace Microsoft.Samples.Tools.Mdbg
                 {
                     vars.Add(v as CorValue);
                 }
-
                 else
                 {
                     CorHeapValue hv = v.CastToHeapValue();
@@ -2251,7 +2240,6 @@ namespace Microsoft.Samples.Tools.Mdbg
                         vars.Add(v);
                     }
                 }
-
             }
 
             eval.CallFunction(func.CorFunction, (CorValue[])vars.ToArray(typeof(CorValue)));
@@ -2374,7 +2362,7 @@ namespace Microsoft.Samples.Tools.Mdbg
         ]
         public static void SetCmd(string arguments)
         {
-            // Arguments has to be in the form of variable=varName, variable=value or variable=(<type>)value, 
+            // Arguments has to be in the form of variable=varName, variable=value or variable=(<type>)value,
             // where we use the ldasm naming convention (e.g. "int", "sbyte", "ushort", etc...) for <type>.
             // Example inputs: var=myInt, var=45, var=(long)45
             int idx = arguments.IndexOf('=');
@@ -2417,7 +2405,6 @@ namespace Microsoft.Samples.Tools.Mdbg
                 }
             }
 
-
             CorValue val = Shell.ExpressionParser.ParseExpression2(value, Debugger.Processes.Active,
                     Debugger.Processes.Active.Threads.Active.CurrentFrame);
 
@@ -2435,7 +2422,6 @@ namespace Microsoft.Samples.Tools.Mdbg
                 {
                     lsDVar.Value = val;
                 }
-
                 else
                 {
                     CorHeapValue rsHeapVal = val.CastToHeapValue();
@@ -2449,7 +2435,6 @@ namespace Microsoft.Samples.Tools.Mdbg
                     }
                 }
             }
-
             else if (lsMVar != null)
             {
                 //variable is a program variable
@@ -2461,7 +2446,7 @@ namespace Microsoft.Samples.Tools.Mdbg
                         throw new MDbgShellException("cannot set constant values to unavailable variables");
                     }
 
-                    // val is a primitive value                    
+                    // val is a primitive value
                     CorGenericValue lsGenVal = lsVar.CastToGenericValue();
                     if (lsGenVal == null)
                     {
@@ -2500,7 +2485,6 @@ namespace Microsoft.Samples.Tools.Mdbg
                     }
                 }
             }
-
 
             // as a last thing we do is to print new value of the variable
             lsMVar = Debugger.Processes.Active.ResolveVariable(varName,
@@ -2546,6 +2530,7 @@ namespace Microsoft.Samples.Tools.Mdbg
                         }
                     }
                     break;
+
                 case "appdomains":
                     WriteOutput("Current appDomains:");
                     foreach (MDbgAppDomain ad in Debugger.Processes.Active.AppDomains)
@@ -2565,6 +2550,7 @@ namespace Microsoft.Samples.Tools.Mdbg
                     }
 
                     break;
+
                 default:
                     Debug.Assert(false);
                     break;
@@ -2687,6 +2673,7 @@ namespace Microsoft.Samples.Tools.Mdbg
                         }
                     }
                     break;
+
                 case "list":
                     {
                         IEnumerable modules;
@@ -2711,6 +2698,7 @@ namespace Microsoft.Samples.Tools.Mdbg
                         }
                     }
                     break;
+
                 default:
                     Debug.Assert(false);
                     break;
@@ -2747,7 +2735,6 @@ namespace Microsoft.Samples.Tools.Mdbg
             WriteOutput(outputString);
         }
 
-
         [
          CommandDescription(
            CommandName = "processenum",
@@ -2758,11 +2745,9 @@ namespace Microsoft.Samples.Tools.Mdbg
         ]
         public static void ProcessEnumCmd(string arguments)
         {
-
             WriteOutput("Active processes on current machine:");
             foreach (Process p in Process.GetProcesses())
             {
-
                 if (Process.GetCurrentProcess().Id == p.Id)  // let's hide our process
                 {
                     continue;
@@ -2987,11 +2972,9 @@ namespace Microsoft.Samples.Tools.Mdbg
                 pid = ap.GetOption(pidArg).AsInt;
             }
 
-
             //
             // Do some sanity checks to give useful end-user errors.
-            // 
-
+            //
 
             // Can't attach to ourselves!
             if (Process.GetCurrentProcess().Id == pid)
@@ -3004,7 +2987,7 @@ namespace Microsoft.Samples.Tools.Mdbg
             // For example, ICD may propogate an error from the OS, and the OS may return
             // something like AccessDenied if another debugger is already attached.
             // This only checks for cases where this same instance of MDbg is already debugging
-            // the process of interest. 
+            // the process of interest.
             foreach (MDbgProcess procOther in Debugger.Processes)
             {
                 if (pid == procOther.CorProcess.Id)
@@ -3106,7 +3089,6 @@ namespace Microsoft.Samples.Tools.Mdbg
             Shell.DisplayCurrentLocation();
         }
 
-
         [
          CommandDescription(
            CommandName = "down",
@@ -3195,7 +3177,6 @@ namespace Microsoft.Samples.Tools.Mdbg
             }
         }
 
-
         private class MdbgSymbol
         {
             public MdbgSymbol(int moduleNumber, string className, string method, int offset)
@@ -3236,7 +3217,7 @@ namespace Microsoft.Samples.Tools.Mdbg
                 return m_list.Count - 1;
             }
 
-            ArrayList m_list = new ArrayList();
+            private ArrayList m_list = new ArrayList();
         }
 
         [
@@ -3373,12 +3354,15 @@ namespace Microsoft.Samples.Tools.Mdbg
                     case ' ':
                         sb.Append('\\').Append(c);
                         break;
+
                     case '*':
                         sb.Append(".*");
                         break;
+
                     case '?':
                         sb.Append(".");
                         break;
+
                     default:
                         sb.Append(c);
                         break;
@@ -3522,7 +3506,6 @@ namespace Microsoft.Samples.Tools.Mdbg
         //
         //////////////////////////////////////////////////////////////////////////////////
 
-
         private class ExecuteCmdAction
         {
             public ExecuteCmdAction(IMDbgShell mdbg,
@@ -3561,6 +3544,7 @@ namespace Microsoft.Samples.Tools.Mdbg
                     bHaveCondition = true;
                 }
             }
+
             public int Number
             {
                 get
@@ -3607,13 +3591,11 @@ namespace Microsoft.Samples.Tools.Mdbg
                         //execute on ThreadCreated [num] do
                         return Number == (stopReason as ThreadCreatedStopReason).Thread.Number;
                     }
-
                     else if (m_stopReasonType == typeof(BreakpointHitStopReason))
                     {
                         //execute on BreakpointHit [num] do
                         return Number == (stopReason as BreakpointHitStopReason).Breakpoint.Number;
                     }
-
                     else if (m_stopReasonType == typeof(ModuleLoadedStopReason))
                     {
                         //execute on ModuleLoaded [name] do
@@ -3625,20 +3607,17 @@ namespace Microsoft.Samples.Tools.Mdbg
                         //execute on ClassLoaded [name] do
                         throw new NotImplementedException();
                     }
-
                     else if (m_stopReasonType == typeof(AssemblyLoadedStopReason))
                     {
-                        //execute on AssemblyLoaded [name] do 
+                        //execute on AssemblyLoaded [name] do
                         return IdentifierEquals(Name, Path.GetFileName((stopReason as AssemblyLoadedStopReason).
                                                                       Assembly.Name));
                     }
-
                     else if (m_stopReasonType == typeof(AssemblyUnloadedStopReason))
                     {
                         //execute on AssemblyUnloaded [name] do
                         throw new NotImplementedException();
                     }
-
                     else if (m_stopReasonType == typeof(ExceptionThrownStopReason))
                     {
                         //execute on ExceptionThrown [name] do
@@ -3692,7 +3671,6 @@ namespace Microsoft.Samples.Tools.Mdbg
                     CommandBase.ExecuteCommand(cmds[i]);
                 }
             }
-
 
             public override string ToString()
             {
@@ -3804,85 +3782,104 @@ namespace Microsoft.Samples.Tools.Mdbg
                         {
                             case 0:
                                 break;
+
                             default:
                                 throw new ArgumentException();
                         }
                         break;
+
                     case "ProcessExited":
                         action = new ExecuteCmdAction(Shell, cmdString, typeof(ProcessExitedStopReason));
                         switch (argCount)
                         {
                             case 0:
                                 break;
+
                             default:
                                 throw new ArgumentException();
                         }
                         break;
+
                     case "ThreadCreated":
                         action = new ExecuteCmdAction(Shell, cmdString, typeof(ThreadCreatedStopReason));
                         switch (argCount)
                         {
                             case 0:
                                 break;
+
                             case 1:
                                 action.Number = ap.AsInt(1);
                                 break;
+
                             default:
                                 throw new ArgumentException();
                         }
                         break;
+
                     case "BreakpointHit":
                         action = new ExecuteCmdAction(Shell, cmdString, typeof(BreakpointHitStopReason));
                         switch (argCount)
                         {
                             case 0:
                                 break;
+
                             case 1:
                                 action.Number = ap.AsInt(1);
                                 break;
+
                             default:
                                 throw new ArgumentException();
                         }
                         break;
+
                     case "ModuleLoaded":
                         action = new ExecuteCmdAction(Shell, cmdString, typeof(BreakpointHitStopReason));
                         switch (argCount)
                         {
                             case 0:
                                 break;
+
                             case 1:
                                 action.Name = ap.AsString(1);
                                 break;
+
                             default:
                                 throw new ArgumentException();
                         }
                         break;
+
                     case "ClassLoaded":
                         action = new ExecuteCmdAction(Shell, cmdString, typeof(ClassLoadedStopReason));
                         switch (argCount)
                         {
                             case 0:
                                 break;
+
                             case 1:
                                 action.Name = ap.AsString(1);
                                 break;
+
                             default:
                                 throw new ArgumentException();
                         }
                         break;
+
                     case "AssemblyLoaded":
                         action = new ExecuteCmdAction(Shell, cmdString, typeof(AssemblyLoadedStopReason));
                         switch (argCount)
                         {
                             case 0:
                                 break;
+
                             case 1:
                                 action.Name = ap.AsString(1);
                                 break;
+
                             default:
                                 throw new ArgumentException();
                         }
                         break;
+
                     case "AssemblyUnloaded":
                         throw new NotImplementedException();
 
@@ -3892,46 +3889,56 @@ namespace Microsoft.Samples.Tools.Mdbg
                         {
                             case 0:
                                 break;
+
                             default:
                                 throw new ArgumentException();
                         }
                         break;
+
                     case "ExceptionThrown":
                         action = new ExecuteCmdAction(Shell, cmdString, typeof(ExceptionThrownStopReason));
                         switch (argCount)
                         {
                             case 0:
                                 break;
+
                             case 1:
                                 action.Name = ap.AsString(1);
                                 break;
+
                             default:
                                 throw new ArgumentException();
                         }
                         break;
+
                     case "UnhandledExceptionThrown":
                         action = new ExecuteCmdAction(Shell, cmdString, typeof(UnhandledExceptionThrownStopReason));
                         switch (argCount)
                         {
                             case 0:
                                 break;
+
                             case 1:
                                 action.Name = ap.AsString(1);
                                 break;
+
                             default:
                                 throw new ArgumentException();
                         }
                         break;
+
                     case "AsyncStop":
                         action = new ExecuteCmdAction(Shell, cmdString, typeof(AsyncStopStopReason));
                         switch (argCount)
                         {
                             case 0:
                                 break;
+
                             default:
                                 throw new ArgumentException();
                         }
                         break;
+
                     case "AttachComplete":
                         if (argCount != 0)
                         {
@@ -3939,6 +3946,7 @@ namespace Microsoft.Samples.Tools.Mdbg
                         }
                         action = new ExecuteCmdAction(Shell, cmdString, typeof(AttachCompleteStopReason));
                         break;
+
                     case "UserBreak":
                         if (argCount != 0)
                         {
@@ -3946,6 +3954,7 @@ namespace Microsoft.Samples.Tools.Mdbg
                         }
                         action = new ExecuteCmdAction(Shell, cmdString, typeof(UserBreakStopReason));
                         break;
+
                     case "EvalComplete":
                         if (argCount != 0)
                         {
@@ -3953,6 +3962,7 @@ namespace Microsoft.Samples.Tools.Mdbg
                         }
                         action = new ExecuteCmdAction(Shell, cmdString, typeof(EvalCompleteStopReason));
                         break;
+
                     case "EvalException":
                         if (argCount != 0)
                         {
@@ -3960,6 +3970,7 @@ namespace Microsoft.Samples.Tools.Mdbg
                         }
                         action = new ExecuteCmdAction(Shell, cmdString, typeof(EvalExceptionStopReason));
                         break;
+
                     case "RemapOpportunityReached":
                         if (argCount != 0)
                         {
@@ -3967,6 +3978,7 @@ namespace Microsoft.Samples.Tools.Mdbg
                         }
                         action = new ExecuteCmdAction(Shell, cmdString, typeof(RemapOpportunityReachedStopReason));
                         break;
+
                     default:
                         throw new ArgumentException("invalid event name");
                 }
@@ -4001,7 +4013,6 @@ namespace Microsoft.Samples.Tools.Mdbg
             cmdString = sb.ToString();
             argCount = i - startPart;
         }
-
 
         internal static void WhenHandler(object sender, CommandExecutedEventArgs e)
         {
@@ -4161,9 +4172,10 @@ namespace Microsoft.Samples.Tools.Mdbg
             {
                 case extPathCmd:
                     ExtensionPath = ap.AsString(1);
-                PrintExt:
+                    PrintExt:
                     WriteOutput(string.Format("ExtensionPath={0}", ExtensionPath));
                     break;
+
                 case extPathAddCmd:
                     ExtensionPath = ExtensionPath + Path.PathSeparator + ap.AsString(1);
                     goto PrintExt;
@@ -4172,7 +4184,6 @@ namespace Microsoft.Samples.Tools.Mdbg
                     break;
             }
         }
-
 
         [CommandDescription(
           CommandName = "printexception",
@@ -4226,7 +4237,6 @@ namespace Microsoft.Samples.Tools.Mdbg
             }
             WriteOutput("");
         }
-
 
         [
          CommandDescription(

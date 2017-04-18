@@ -4,9 +4,7 @@
 // This source code is made available under the terms of the Microsoft Public License (Ms-PL)
 // http://minisqlquery.codeplex.com/license
 
-#endregion
-
-using System;
+#endregion License
 
 namespace MiniSqlQuery.Core.DbModel
 {

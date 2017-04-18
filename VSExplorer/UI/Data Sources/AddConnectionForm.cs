@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinExplorer.UI
@@ -22,9 +17,9 @@ namespace WinExplorer.UI
             ca = comboBox2;
         }
 
-        ComboBox cb { get; set; }
+        private ComboBox cb { get; set; }
 
-        ComboBox ca { get; set; }
+        private ComboBox ca { get; set; }
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -32,7 +27,7 @@ namespace WinExplorer.UI
             // conn.ConnectionString =
             // "Data Source=localhost;" +
             //// "Initial Catalog=DataBaseName;" +
-            ////"Integrated Security=SSPI; + 
+            ////"Integrated Security=SSPI; +
             // "User id=sa;" +
             // "Password=sa;";
             conn.ConnectionString = GetConnectionString();
@@ -40,7 +35,7 @@ namespace WinExplorer.UI
             {
                 conn.Open();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Connection failed " + ex.Message);
                 return;
@@ -51,49 +46,53 @@ namespace WinExplorer.UI
             {
                 String databaseName = database["database_name"] as string;
                 short dbID = (short)database["dbid"];
-                
+
                 cb.Items.Add(databaseName);
             }
 
             conn.Close();
         }
-        string GetUser()
+
+        private string GetUser()
         {
             return textBox2.Text;
         }
-        string GetPassword()
+
+        private string GetPassword()
         {
             return textBox3.Text;
         }
 
-        string GetAuthentification()
+        private string GetAuthentification()
         {
             int index = ca.SelectedIndex;
             if (index == 0)
                 return "SSPI";
             else return "";
         }
-        string GetServerName()
+
+        private string GetServerName()
         {
             return comboBox1.Text;
         }
-        string GetDatabase()
+
+        private string GetDatabase()
         {
             return cb.Text;
         }
 
-        string GetConnectionString()
+        private string GetConnectionString()
         {
             string c = "";
             c += "Data Source=" + GetServerName() + ";";
             string d = GetAuthentification();
-            if(d != "")
+            if (d != "")
             {
-                c+= "Integrated Security=SSPI;";
+                c += "Integrated Security=SSPI;";
             }
             else
             {
-                c += "User Id=" + GetUser() +";";
+                c += "User Id=" + GetUser() + ";";
                 c += "Password=" + GetPassword() + ";";
             }
             d = GetDatabase();
@@ -109,9 +108,8 @@ namespace WinExplorer.UI
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            
-            
         }
+
         public static List<string> GetTables(string connectionString)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -126,13 +124,12 @@ namespace WinExplorer.UI
                 return TableNames;
             }
         }
+
         private void button6_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
 
             shortcut = GetConnectionString();
-
-            
 
             this.Close();
         }

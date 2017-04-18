@@ -2,14 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
 using System.Management;
 using System.ServiceProcess;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinExplorer.UI
@@ -29,7 +24,6 @@ namespace WinExplorer.UI
             v.BeforeExpand += V_BeforeExpand;
             v.AfterSelect += V_AfterSelect;
             v.MouseClick += V_MouseClick;
-          
         }
 
         private void V_MouseClick(object sender, MouseEventArgs e)
@@ -39,10 +33,11 @@ namespace WinExplorer.UI
             TreeNode node = v.SelectedNode;
             if (node == null)
                 return;
-            if(node.Text == "Data Connections")
+            if (node.Text == "Data Connections")
             {
                 contextDC.Show(v, e.Location);
-            } else if (node.Text == "Servers")
+            }
+            else if (node.Text == "Servers")
             {
                 contextSR.Show(v, e.Location);
             }
@@ -56,10 +51,11 @@ namespace WinExplorer.UI
             }
         }
 
-        ContextMenuStrip contextDC { get; set; }
-        ContextMenuStrip contextSR { get; set; }
-        ContextMenuStrip contextSC { get; set; }
-        ContextMenuStrip contextPC { get; set; }
+        private ContextMenuStrip contextDC { get; set; }
+        private ContextMenuStrip contextSR { get; set; }
+        private ContextMenuStrip contextSC { get; set; }
+        private ContextMenuStrip contextPC { get; set; }
+
         private void V_AfterSelect(object sender, TreeViewEventArgs e)
         {
             TreeNode node = e.Node;
@@ -68,16 +64,14 @@ namespace WinExplorer.UI
             {
                 if (node.Tag.GetType() == typeof(DataConnection))
                 {
-
                     DataConnection d = node.Tag as DataConnection;
 
                     DataSourceWizard.LoadFromConnection(node, d);
-
                 }
                 ExplorerForms.ef.SetPropertyGridObject(node.Tag);
             }
-           
         }
+
         private void V_BeforeExpand(object sender, TreeViewCancelEventArgs e)
         {
             TreeNode node = e.Node;
@@ -104,11 +98,9 @@ namespace WinExplorer.UI
             }
             else
             {
-                
                 if (node.Nodes.Count == 1)
                     if (node.Nodes[0].Text == "Oracle")
                     {
-
                         node.Nodes.Clear();
                         TreeNode ns = node.Parent;
                         if (ns == null)
@@ -124,11 +116,11 @@ namespace WinExplorer.UI
             }
         }
 
-        ToolStrip ts { get; set; }
+        private ToolStrip ts { get; set; }
 
-        TreeView v { get; set; }
+        private TreeView v { get; set; }
 
-        ImageList g { get; set; }
+        private ImageList g { get; set; }
 
         public void Init()
         {
@@ -143,9 +135,6 @@ namespace WinExplorer.UI
             g.Images.Add("services", Resources.Services_16x);
             g.Images.Add("datasource", Resources.AddDataSource_16x);
             g.Images.Add("stopped", Resources.Stop_grey_16x);
-            
-
-
 
             v.ImageList = g;
 
@@ -159,7 +148,7 @@ namespace WinExplorer.UI
             node.ImageKey = "datasource";
             v.Nodes.Add(node);
             AddConnections(node);
-         
+
             Servers = new TreeNode();
             Servers.Text = "Servers";
             Servers.ImageKey = "servers";
@@ -167,16 +156,13 @@ namespace WinExplorer.UI
             v.Nodes.Add(Servers);
 
             AddLocalServer();
-
-
         }
 
         private void ServerExplorerForm_Load(object sender, EventArgs e)
         {
-           
         }
 
-        void AddConnections(TreeNode node)
+        private void AddConnections(TreeNode node)
         {
             ArrayList C = DataSourceWizard.GetConnections();
             foreach (string c in C)
@@ -193,7 +179,7 @@ namespace WinExplorer.UI
             }
         }
 
-        TreeNode Servers { get; set; }
+        private TreeNode Servers { get; set; }
 
         public void AddLocalServer()
         {
@@ -205,7 +191,6 @@ namespace WinExplorer.UI
 
             Servers.Nodes.Add(node);
 
-                       
             TreeNode nodes = new TreeNode();
             nodes.Text = "Event Logs";
             nodes.ImageKey = "events";
@@ -213,7 +198,7 @@ namespace WinExplorer.UI
             TreeNode ns = new TreeNode();
             ns.Text = "void";
             nodes.Nodes.Add(ns);
-            
+
             nodes = new TreeNode();
             nodes.Text = "Message Queues";
             nodes.ImageKey = "messages";
@@ -234,7 +219,6 @@ namespace WinExplorer.UI
             ns = new TreeNode();
             ns.Text = "void";
             nodes.Nodes.Add(ns);
-
         }
 
         public void Load_LocalServices(TreeNode node)
@@ -242,7 +226,6 @@ namespace WinExplorer.UI
             ServiceController[] scServices;
             scServices = ServiceController.GetServices();
 
-                     
             foreach (ServiceController scTemp in scServices)
             {
                 //if (scTemp.Status == ServiceControllerStatus.Running)
@@ -275,7 +258,7 @@ namespace WinExplorer.UI
         {
             string categoryName = "";
             string machineName = machine;
-            
+
             PerformanceCounterCategory pcc;
             PerformanceCounter[] counters = null;
 
@@ -302,12 +285,11 @@ namespace WinExplorer.UI
                     {
                         pcc = new PerformanceCounterCategory(categoryName);
                     }
-                  
+
                     counters = pcc.GetCounters();
                 }
                 catch (Exception ex)
                 {
-                   
                 }
                 if (counters != null)
                 {
@@ -319,13 +301,11 @@ namespace WinExplorer.UI
                         // Console.WriteLine("{0,4} - {1}", objX + 1, counters[objX].CounterName);
                         ns.Tag = counters[objX];
                         nodes.Nodes.Add(ns);
-
                     }
                 }
-
             }
-            
         }
+
         public static void Load_EventLogs(TreeNode node)
         {
             // Iterate through the current set of event log files,
@@ -333,11 +313,9 @@ namespace WinExplorer.UI
 
             Dictionary<string, TreeNode> dict = new Dictionary<string, TreeNode>();
 
-
             EventLog[] eventLogs = EventLog.GetEventLogs();
             foreach (EventLog e in eventLogs)
             {
-
                 TreeNode nodes = new TreeNode();
                 nodes.Text = e.Log;
                 node.Nodes.Add(nodes);
@@ -346,7 +324,7 @@ namespace WinExplorer.UI
                     foreach (EventLogEntry entry in e.Entries)
                     {
                         string c = entry.Source;
-                        if(dict.ContainsKey(c) == false)
+                        if (dict.ContainsKey(c) == false)
                         {
                             TreeNode ng = new TreeNode();
                             ng.Text = c;
@@ -360,19 +338,16 @@ namespace WinExplorer.UI
                         b.Nodes.Add(ns);
                     }
                 }
-                catch(Exception ex) { };
-                
+                catch (Exception ex) { };
             }
         }
 
         private void contextMenuStrip5_Opening(object sender, CancelEventArgs e)
         {
-
         }
 
         private void toolStripMenuItem24_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

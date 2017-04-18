@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.Samples.Tools.Mdbgs;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinExplorer;
-
-using Microsoft.Samples.Tools.Mdbgs;
 
 namespace WinExplorers
 {
@@ -20,29 +15,29 @@ namespace WinExplorers
             ts = CreateToolstrip();
         }
 
-        ToolStripButton breakall { get; set; }
+        private ToolStripButton breakall { get; set; }
 
-        ToolStripButton stop { get; set; }
+        private ToolStripButton stop { get; set; }
 
-        ToolStripButton restart { get; set; }
+        private ToolStripButton restart { get; set; }
 
-        ToolStripButton refresh { get; set; }
+        private ToolStripButton refresh { get; set; }
 
-        ToolStripButton stepin { get; set; }
+        private ToolStripButton stepin { get; set; }
 
-        ToolStripButton stepout { get; set; }
+        private ToolStripButton stepout { get; set; }
 
-        ToolStripButton stepover { get; set; }
+        private ToolStripButton stepover { get; set; }
 
-        ToolStripButton thread { get; set; }
+        private ToolStripButton thread { get; set; }
 
-        ToolStripSeparator s0 { get; set; }
+        private ToolStripSeparator s0 { get; set; }
 
-        ToolStripSeparator s1 { get; set; }
+        private ToolStripSeparator s1 { get; set; }
 
-        ToolStripSeparator s2 { get; set; }
+        private ToolStripSeparator s2 { get; set; }
 
-        ToolStripDropDownButton dd { get; set; }
+        private ToolStripDropDownButton dd { get; set; }
 
         public ToolStrip CreateToolstrip()
         {
@@ -109,16 +104,13 @@ namespace WinExplorers
             //dd.Image = Resources.Thread_256x;
             dd.ImageTransparentColor = Color.Magenta;
             dd.Click += new System.EventHandler(BreakAllHandler);
-           
-           
+
             ToolStripDropDownItem b = dd.DropDownItems.Add("Add or Remove Items") as ToolStripDropDownItem;
             ToolStripMenuItem v = b.DropDownItems.Add("       Debugger 1") as ToolStripMenuItem;
             b.DropDownItems.Add("       Debugger 2");
             v.Checked = true;
             v.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
             v.Image = Resources.StepOver_16x;
-           
-
 
             t.Items.Add(breakall);
             t.Items.Add(stop);
@@ -134,43 +126,36 @@ namespace WinExplorers
             t.Items.Add(dd);
 
             ProfessionalColorTableExtended pc = new ProfessionalColorTableExtended();
-           
+
             t.Renderer = new Renderer(pc);
 
             return t;
         }
 
-
-        public class ProfessionalColorTableExtended : ProfessionalColorTable {
-
+        public class ProfessionalColorTableExtended : ProfessionalColorTable
+        {
             public override Color CheckBackground { get { return Color.DimGray; } }
 
             public override Color MenuItemBorder { get { return Color.DimGray; } }
-
         }
-
 
         public class Renderer : ToolStripProfessionalRenderer
         {
+            private ProfessionalColorTable c { get; set; }
 
-            ProfessionalColorTable c { get; set; }
-
-            public Renderer(ProfessionalColorTable c): base(c)
+            public Renderer(ProfessionalColorTable c) : base(c)
             {
                 this.c = c;
                 brush = new SolidBrush(Color.FromArgb(150, c.CheckSelectedBackground));
             }
 
-            Brush brush { get; set; }
+            private Brush brush { get; set; }
 
-
-
-            Image image { get; set; }
+            private Image image { get; set; }
 
             protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
             {
                 base.OnRenderMenuItemBackground(e);
-               
             }
 
             protected override void OnRenderItemCheck(ToolStripItemImageRenderEventArgs e)
@@ -178,48 +163,38 @@ namespace WinExplorers
                 //if (!e.Item.Selected) base.OnRenderItemCheck(e);
                 //else
                 {
-
-
                     e.Graphics.DrawImage(Resources.CheckBox_256x, 3, 1, 18, 18);
 
                     if (e.Item.Selected == true)
                         e.Graphics.FillRectangle(brush, 3, 1, 18, 18);
-                
                 }
-                
             }
 
             protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
             {
-
                 base.OnRenderItemText(e);
-                
-                
             }
 
             protected override void OnRenderItemImage(ToolStripItemImageRenderEventArgs e)
             {
-
                 if (e.Item.Text.StartsWith("     ") == false)
                     base.OnRenderItemImage(e);
-                else 
-                
+                else
 
                     e.Graphics.DrawImage(e.Image, 21 + 5, 3, 17, 17);
             }
-
         }
+
         public void BreakAllHandler(object sender, EventArgs e)
         {
-
         }
 
-        MainForm mf { get; set; }
+        private MainForm mf { get; set; }
+
         public void RestartHandler(object sender, EventArgs e)
         {
             mf = new MainForm(new string[0]);
             mf.Show();
-
         }
     }
 }

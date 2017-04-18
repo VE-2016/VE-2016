@@ -4,7 +4,7 @@
 // This source code is made available under the terms of the Microsoft Public License (Ms-PL)
 // http://minisqlquery.codeplex.com/license
 
-#endregion
+#endregion License
 
 using System;
 using System.Collections.Generic;
@@ -139,15 +139,15 @@ namespace MiniSqlQuery.Core.DbModel
         public DbModelType Copy()
         {
             DbModelType copy = new DbModelType(Name, Length)
-                                   {
-                                       CreateFormat = CreateFormat,
-                                       CreateParameters = CreateParameters,
-                                       LiteralPrefix = LiteralPrefix,
-                                       LiteralSuffix = LiteralSuffix,
-                                       Precision = Precision,
-                                       Scale = Scale,
-                                       SystemType = SystemType,
-                                   };
+            {
+                CreateFormat = CreateFormat,
+                CreateParameters = CreateParameters,
+                LiteralPrefix = LiteralPrefix,
+                LiteralSuffix = LiteralSuffix,
+                Precision = Precision,
+                Scale = Scale,
+                SystemType = SystemType,
+            };
             return copy;
         }
 
@@ -177,10 +177,13 @@ namespace MiniSqlQuery.Core.DbModel
                 {
                     case "System.String":
                         return string.Concat(LiteralPrefix, LiteralSuffix);
+
                     case "System.DateTime":
                         return "'?'";
+
                     case "System.Guid":
                         return string.Concat("'", Guid.Empty, "'");
+
                     default:
                         return "0"; // take a punt
                 }

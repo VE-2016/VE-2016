@@ -329,7 +329,6 @@ namespace WinExplorer
                 int c = b.LineNumber;
                 int p = b.LineNumber;
 
-
                 //ef.BeginInvoke(new Action(() => { ef.OpenFileLineHighlight(file, c.ToString(), p); }));
 
                 AsyncCallback callBack = new AsyncCallback(ProcessInformation);
@@ -337,8 +336,6 @@ namespace WinExplorer
                 g.BeginInvoke(file, c.ToString(), p, callBack, "null");
             }
         }
-
-
 
         private static void ProcessInformation(IAsyncResult result)
         {

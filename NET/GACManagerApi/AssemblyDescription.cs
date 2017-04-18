@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using GACManagerApi.Fusion;
+using System;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
-using GACManagerApi.Fusion;
-using System.Reflection;
 using System.Xml;
-using System.IO;
-using System.Reflection.Emit;
-using System.Collections;
 
 namespace GACManagerApi
 {
     /// <summary>
     /// An AssemblyDescription holds only the most basic assembly
-    /// details that would be loaded from an application such as gacutil. 
+    /// details that would be loaded from an application such as gacutil.
     /// </summary>
     public class AssemblyDescription
     {
@@ -43,18 +40,15 @@ namespace GACManagerApi
 
         public Type[] GetAllTypes()
         {
-
             Type[] TT = null;
 
             try
             {
-
                 Assembly asm = Assembly.LoadFrom(Path);
 
                 TT = asm.GetTypes();
-
             }
-            catch(Exception ex) { };
+            catch (Exception ex) { };
 
             return TT;
         }
@@ -62,12 +56,12 @@ namespace GACManagerApi
         public Type GetTypeForName(string name)
         {
             Type[] TT = GetAllTypes();
-            if(TT != null)
-            foreach(Type T in TT)
-            {
-                if (T.FullName.EndsWith(name))
-                    return T;
-            }
+            if (TT != null)
+                foreach (Type T in TT)
+                {
+                    if (T.FullName.EndsWith(name))
+                        return T;
+                }
             return null;
         }
 
@@ -92,7 +86,6 @@ namespace GACManagerApi
 
                             ImageFileMachine b;
 
-
                             asm.GetModules()[0].GetPEKind(out p, out b);
 
                             ProcessorArchitecture = p.ToString();
@@ -103,9 +96,9 @@ namespace GACManagerApi
                     Path = filename;
 
                     LoadPropertiesFromDisplayName(DisplayName);
-                } catch(BadImageFormatException ex)
+                }
+                catch (BadImageFormatException ex)
                 {
-
                 }
             }
             catch (Exception e)
@@ -124,8 +117,6 @@ namespace GACManagerApi
                 //AssemblyBuilder asmb = converter.ConvertTypeLibToAssembly(typeLib, "Interop.Somedll.dll", 0, eventHandler, null, null, null, null);
                 //asmb.Save("Interop.Somedll.dll");
 
-
-
                 //typeLib = null;
 
                 //Assembly asm = Assembly.Load(File.ReadAllBytes("Interop.Somedll.dll"));
@@ -137,16 +128,13 @@ namespace GACManagerApi
                 //if (d != null)
                 //    if (d.Length >= 1)
                 //    {
-
                 //        PortableExecutableKinds p;
 
                 //        ImageFileMachine b;
 
-
                 //        asm.GetModules()[0].GetPEKind(out p, out b);
 
                 //        ProcessorArchitecture = p.ToString();
-
 
                 //    }
 
@@ -156,13 +144,7 @@ namespace GACManagerApi
 
                 //LoadPropertiesFromDisplayName(DisplayName);
 
-
-
                 //File.Delete("Interop.Somedll.dll");
-
-
-
-
             }
 
             //string file = GACForm.dicts[dtd.ParentAssembly.AssemblyName] as string;
@@ -199,13 +181,11 @@ namespace GACManagerApi
 
         public XmlDocument xml { get; set; }
 
-
         public XmlElement GetDocument(string data, string prefix)
         {
             if (xml == null)
                 return null;
 
-            
             foreach (XmlElement xmlElement in xml["doc"]["members"])
             {
                 if (xmlElement.Attributes.Count > 0)
@@ -217,9 +197,6 @@ namespace GACManagerApi
 
             return null;
         }
-
-
-
 
         public string RuntimeVersion { get; set; }
 

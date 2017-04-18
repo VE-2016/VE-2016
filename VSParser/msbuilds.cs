@@ -2093,8 +2093,6 @@ namespace VSProvider
 
         public event CmdEvent OnCmdEvent;
 
-        
-
         public cmds()
         {
             this.OnCmdEvent += new CmdEvent(Foo_OnMyEvent);
@@ -2268,9 +2266,9 @@ namespace VSProvider
 
             process.StartInfo.FileName = filename;
             process.StartInfo.WorkingDirectory = Path.GetDirectoryName(filename);
-            
+
             {
-                process.StartInfo.Arguments =  arguments;
+                process.StartInfo.Arguments = arguments;
             }
 
             process.StartInfo.CreateNoWindow = false;
@@ -2310,12 +2308,10 @@ namespace VSProvider
                 //    rb.AppendText(output);
 
                 //string error = p.StandardError.ReadToEnd();
-            //    await System.Threading.Tasks.Task.Factory.StartNew(() =>
-             //   {
-                    process.WaitForExit();
-            //    });
-
-              
+                //    await System.Threading.Tasks.Task.Factory.StartNew(() =>
+                //   {
+                process.WaitForExit();
+                //    });
 
                 string output = reader.ReadToEnd();
                 if (rb != null)
@@ -2330,8 +2326,6 @@ namespace VSProvider
 
                 if (rb != null)
                     rb.AppendText("\n");
-
-              
             }
             catch (Exception e)
             {
@@ -2339,10 +2333,7 @@ namespace VSProvider
 
                 return;
             }
-
-            
         }
-
 
         static public string Format(string filename, string arguments)
         {

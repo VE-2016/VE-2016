@@ -1,6 +1,4 @@
 using System;
-using System.Drawing;
-using System.Windows.Forms;
 
 namespace WinExplorer
 {
@@ -30,7 +28,6 @@ namespace WinExplorer
     ///// </summary>
     //public abstract class Command
     //{
-
     //    public static bool running = false;
 
     //    public static int counter = 0;
@@ -75,7 +72,6 @@ namespace WinExplorer
     //        guis.Add("Solution Configurations", new Command_Customize(ef));
     //        guis.Add("Find", new Command_Find(ef));
     //    }
-       
 
     //    // Constructor
     //    public Command(ExplorerForms ef)
