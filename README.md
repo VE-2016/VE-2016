@@ -5,14 +5,14 @@ Visual Studio Explorer
 
 Application for creating, editing, building Visual Studio C# Windows Form projects.
 
-Functionality
+Functionality:
 - create new project
 - add c# files
 - edit c# files
 - build project
 - run exec
 
-Technologies
+Technologies:
 - Roslyn
 - DockPanel Suite
 - NRefactory
