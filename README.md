@@ -1,18 +1,23 @@
-# VE-2016
-Visual Studio Explorer
+## Visual Studio Explorer VE-2016
 
 [![Build status](https://ci.appveyor.com/api/projects/status/4fh2aspsborjal0s?svg=true)](https://ci.appveyor.com/project/VE-2016/ve-2016)
 
-Application for creating, editing, building Visual Studio C# Windows Form projects.
+## Main Features
 
-Functionality:
+Application for creating, editing, building Visual Studio C# Windows Form projects. Functionality by means of
+- Solution component
+- Document component
+- Building component
+- Program component.
+
+## Functionality:
 - create new project
 - add c# files
 - edit c# files
 - build project
 - run exec
 
-Technologies:
+## Technologies:
 - Roslyn
 - DockPanel Suite
 - NRefactory
