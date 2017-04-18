@@ -21,3 +21,7 @@ Technologies
 - Windows Forms
 - C# .NET Framework
 - Reflection
+
+Binary installer availible at Visual Studio Marketplace
+
+[![](https://marketplace.visualstudio.com/items?itemName=gkjyi.VisualStudioExplorer)
