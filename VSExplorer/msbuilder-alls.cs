@@ -1768,6 +1768,8 @@ namespace WinExplorer
             SortProjectNodes(tv.Nodes[0]);
 
             string projectCounts = Path.GetFileNameWithoutExtension(vs.Name) + "(" + projects + " projects)";
+            if(projects == 1)
+                projectCounts = Path.GetFileNameWithoutExtension(vs.Name) + "(" + projects + " project)";
             tv.Nodes[0].Text = projectCounts;
 
 

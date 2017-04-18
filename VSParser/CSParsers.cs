@@ -427,6 +427,8 @@ namespace VSParsers
             //    c += m.Name + "\n";
             //}
 
+            c += "\t";
+
             //foreach(ITypeDefinition dd in name.GetAllBaseTypeDefinitions()){
             foreach (IMember m in name.Members)
             {

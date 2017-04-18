@@ -227,9 +227,6 @@ c:\Users\me\VE-2016\VSExplorer\bin\Debug\Images\Tree\Default\Inconclusive.png
 c:\Users\me\VE-2016\VSExplorer\bin\Debug\Images\Tree\Default\Skipped.png
 c:\Users\me\VE-2016\VSExplorer\bin\Debug\Images\Tree\Default\Success.png
 c:\Users\me\VE-2016\VSExplorer\bin\Debug\nunit.engine.addins
-c:\Users\me\VE-2016\VSExplorer\bin\Debug\WinExplorer.exe.config
-c:\Users\me\VE-2016\VSExplorer\bin\Debug\WinExplorer.exe
-c:\Users\me\VE-2016\VSExplorer\bin\Debug\WinExplorer.pdb
 c:\Users\me\VE-2016\VSExplorer\bin\Debug\CodeEditor.dll
 c:\Users\me\VE-2016\VSExplorer\bin\Debug\corapi.dll
 c:\Users\me\VE-2016\VSExplorer\bin\Debug\DockProjects.exe
@@ -329,7 +326,6 @@ c:\Users\me\VE-2016\VSExplorer\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS201
 c:\Users\me\VE-2016\VSExplorer\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2012.pdb
 c:\Users\me\VE-2016\VSExplorer\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2013.pdb
 c:\Users\me\VE-2016\VSExplorer\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2015.pdb
-c:\Users\me\VE-2016\VSExplorer\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
 c:\Users\me\VE-2016\VSExplorer\bin\Debug\Loggers.pdb
 c:\Users\me\VE-2016\VSExplorer\bin\Debug\GACManagerApi.pdb
 c:\Users\me\VE-2016\VSExplorer\bin\Debug\GACProject.pdb
@@ -437,10 +433,14 @@ c:\Users\me\VE-2016\VSExplorer\obj\Debug\WinExplorer.UI.BreakpointForm.resources
 c:\Users\me\VE-2016\VSExplorer\obj\Debug\WinExplorer.UI.ListViewOwnerDraw.resources
 c:\Users\me\VE-2016\VSExplorer\obj\Debug\WinExplorer.VSExplorerForm.resources
 c:\Users\me\VE-2016\VSExplorer\obj\Debug\VSExplorer.csproj.GenerateResource.Cache
-c:\Users\me\VE-2016\VSExplorer\obj\Debug\WinExplorer.exe
-c:\Users\me\VE-2016\VSExplorer\obj\Debug\WinExplorer.pdb
 c:\Users\me\VE-2016\VSExplorer\bin\Debug\ICSharpCode.NRefactory.Cecil.dll
 c:\Users\me\VE-2016\VSExplorer\bin\Debug\ICSharpCode.NRefactory.Cecil.xml
 C:\Users\me\VE-2016\VSExplorer\bin\Debug\System.IO.FileSystem.dll
 C:\Users\me\VE-2016\VSExplorer\bin\Debug\System.IO.FileSystem.Primitives.dll
 C:\Users\me\VE-2016\VSExplorer\bin\Debug\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\me\VE-2016\VSExplorer\bin\Debug\WinExplorer.exe.config
+C:\Users\me\VE-2016\VSExplorer\bin\Debug\WinExplorer.exe
+C:\Users\me\VE-2016\VSExplorer\bin\Debug\WinExplorer.pdb
+C:\Users\me\VE-2016\VSExplorer\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
+C:\Users\me\VE-2016\VSExplorer\obj\Debug\WinExplorer.exe
+C:\Users\me\VE-2016\VSExplorer\obj\Debug\WinExplorer.pdb

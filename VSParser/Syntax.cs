@@ -45,13 +45,8 @@ namespace VSParsers
 
             if (dg == null)
                 return null;
-
-
             
             SyntaxTree syntaxTree = CSharpSyntaxTree.ParseText(content, null, filename);
-
-
-            
 
             //CSharpCompilation cc = CSharpCompilation.Create("form").AddReferences(
             //                                        MetadataReference.CreateFromFile(

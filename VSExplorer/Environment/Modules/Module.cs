@@ -183,10 +183,11 @@ namespace WinExplorer
 
             gui.Command_Module cc = new gui.Command_Module(ExplorerForms.ef);
             cc.Names = "Add Item";
-            cc.image = Resources.NewItem_16x;
+            //cc.image = Resources.NewItem_16x;
 
             d.dict.Add("Add Item", cc);
             d.temp.Add("Add Item");
+            
 
             c = new gui.Command_NewProject(ExplorerForms.ef);
             dd.dict.Add("New Project", c);

@@ -36,22 +36,12 @@ using WinExplorer.Services.NuGet;
 namespace WinExplorer
 {
     /// <summary>
-    /// The Application Studio main window form.
+    /// The Visual Explorer main window form.
     /// </summary>
     public partial class ExplorerForms : Form
     {
-        //this to change.......
-        #region Nested Classes
-
+       
         private class DummyNode : TreeNode { }
-
-        //private class FileNamePattern
-        //{
-        //    public Regex Regex;
-        //    public bool MatchResult = true;
-        //}
-
-        #endregion Nested Classes
 
         [DllImport("uxtheme.dll", CharSet = CharSet.Unicode)]
         private extern static int SetWindowTheme(IntPtr hWnd, string pszSubAppName,
@@ -61,14 +51,11 @@ namespace WinExplorer
 
         public static ErrorListForm elf { get; set; }
 
-
-
         static public Dictionary<string, ToolStrip > regToolstrips { get; set; }
 
         /// <summary>
-        /// Create the visual explorer main window form.
-        /// </summary>
-       
+        /// Main Form Constructor
+        /// </summary>        
         public ExplorerForms()
         {
             
@@ -129,8 +116,7 @@ namespace WinExplorer
             this.toolStripContainer1.ContentPanel.Controls.Add(dock);
 
             #endregion Docking Panel
-
-
+            
             ScriptControl.LoadSettings();
 
             scr = new ScriptControl(this, dock);
@@ -158,6 +144,9 @@ namespace WinExplorer
             VSProject.dc = CreateView_Solution.GetDC();
 
             CodeEditorControl.AutoListImages = imgs;
+
+            #region Components
+
 
             LoadSE("Explorer", false);
             solutionExplorerToolStripMenuItem.Checked = true;
@@ -198,15 +187,19 @@ namespace WinExplorer
             
             ResumeLayout();
 
-            
+            #endregion Components
 
             update_z_order(this);
+
+            #region GUI Utils
 
             loadcurrentproject();
 
             loadtoolmenu(scr);
 
             loadcontmenu();
+
+            #endregion GUI Utils
 
             CreateMenuBasedOnArray();
 
@@ -308,7 +301,14 @@ namespace WinExplorer
 
             ve.modules = Module.modules;
             
-            ve.CreateToolStrips("Standards");
+            ToolStrips ves =  ve.CreateToolStrips("Standards");
+
+            ToolStripItem ge = ves.GetItem("Navigate Backward");
+            ToolStripSplitButton gb = ge as ToolStripSplitButton;
+            if(gb != null)
+            {
+                _sv._ddButton = gb;
+            }
 
             appLoadedEvent += LoadBreakpoints;
             
@@ -421,7 +421,7 @@ namespace WinExplorer
                 {
                     if (node.Nodes[0].GetType() != typeof(TreeViewBase.DummyNode)) // if (node.Nodes[0].GetType() != typeof(TreeViewBase.DummyNode))
                     {
-                        return;
+                        //return;
                     }
                     else
                     {
@@ -2477,7 +2477,7 @@ namespace WinExplorer
 
             this.BeginInvoke(new Action(() =>
             {
-                Loads2(tv, _sv._SolutionTreeView); this.Text = Path.GetFileName(recent) + " - Explorer Studio";
+                Loads2(tv, _sv._SolutionTreeView); this.Text = Path.GetFileName(recent) + " - Visual Explorer";
                 if (scr != null)
                 {
                     vs = GetVSSolution();
@@ -7740,9 +7740,7 @@ namespace WinExplorer
         public ToolStrip LoadToolbar(string module_name, ToolStrip np = null)
         {
 
-
             ToolStripDropDownItem b = new ToolStripDropDownButton("");
-
 
             module = Module.GetModule(module_name);
 
@@ -7770,67 +7768,44 @@ namespace WinExplorer
                     //v.Click += new EventHandler(OptionToolbarHandler);
 
                     //ToolStripItem dd = null;
+                    
+                    ToolStripItem r0 = CreateToolSripItem(cmd.Name, cmd.Name, cmd.image, cmd) as ToolStripItem;
 
-
-
-
-                    ToolStripMenuItem r0 = CreateToolSripItem(cmd.Name, cmd.Name, cmd.image, cmd) as ToolStripMenuItem;
-
-
+                    ToolStripMenuItem r1 = r0 as ToolStripMenuItem;
+                    
                     if (cmd.keyboard != null)
                     {
-                        Keys k = Keys.None;
-                        bool first = true;
-                        foreach (Keys g in cmd.keyboard)
+                         if (r1 != null)
                         {
-                            k |= g;
-                            string p = g.ToString();
+                            Keys k = Keys.None;
+                            bool first = true;
+                            foreach (Keys g in cmd.keyboard)
+                            {
+                                k |= g;
+                                string p = g.ToString();
 
-                            if (g == Keys.Control)
-                                p = "Ctrl";
-                            else if (g == (Keys)109)
-                                p = "-";
-                            if (first == false)
-                                p = "+" + p;
-                            r0.ShortcutKeyDisplayString += p + " ";
-                            first = false;
+                                if (g == Keys.Control)
+                                    p = "Ctrl";
+                                else if (g == (Keys)109)
+                                    p = "-";
+                                if (first == false)
+                                    p = "+" + p;
+                                r1.ShortcutKeyDisplayString += p + " ";
+                                first = false;
+                            }
+                            //v.ShortcutKeys = k;
+                            r1.ShortcutKeys = k;
+                            //r0.ShortcutKeyDisplayString = v.ShortcutKeyDisplayString;
                         }
-                        //v.ShortcutKeys = k;
-                        r0.ShortcutKeys = k;
-                        //r0.ShortcutKeyDisplayString = v.ShortcutKeyDisplayString;
                     }
-
                     if (cmd.Name != "Gui" && cmd.GetType().IsSubclassOf(typeof(gui.Command_Gui)) == false)
                         DG.Add(r0);
-
                     if (cmd.Name == "Module")
                     {
                         gui.Command_Module bb = cmd as gui.Command_Module;
-
-                        //v.Text = append(bb.Names);
-                        //v.Name = bb.Names;
-
                         r0.Text = append(bb.Names);
                         r0.Name = bb.Names;
                         r0.Tag = bb;
-
-                        //foreach (ToolStripItem p in _mainToolStrip.Items)
-                        //{
-                        //    if (p.Name == bb.Names)
-                        //    {
-                        //        dd = p;
-                        //        break;
-                        //    }
-                        //}
-
-                        //if (dd != null)
-
-                        //{
-                        //    dd.Tag = cmd;
-                        //    v.Tag = dd;
-                        //}
-
-
                         Module modules = Module.GetModule(cmd.Module);
 
                         if (modules != null)
@@ -7841,30 +7816,35 @@ namespace WinExplorer
                                 //ToolStripMenuItem vv = v.DropDownItems.Add(cmds.Name) as ToolStripMenuItem;
                                 //vv.Image = cmds.image;
                                 //vv.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
-                                if (cmds.keyboard != null)
-                                {
-                                    Keys k = Keys.None;
-                                    bool first = true;
-                                    foreach (Keys g in cmds.keyboard)
-                                    {
-                                        k |= g;
-                                        string p = g.ToString();
 
-                                        if (g == Keys.Control)
-                                            p = "Ctrl";
-                                        else if (g == (Keys)109)
-                                            p = "-";
-                                        if (first == false)
-                                            p = "+" + p;
-                                        r0.ShortcutKeyDisplayString += p + " ";
-                                        first = false;
+                                if (r1 != null)
+                                {
+
+                                    if (cmds.keyboard != null)
+                                    {
+                                        Keys k = Keys.None;
+                                        bool first = true;
+                                        foreach (Keys g in cmds.keyboard)
+                                        {
+                                            k |= g;
+                                            string p = g.ToString();
+
+                                            if (g == Keys.Control)
+                                                p = "Ctrl";
+                                            else if (g == (Keys)109)
+                                                p = "-";
+                                            if (first == false)
+                                                p = "+" + p;
+                                            r1.ShortcutKeyDisplayString += p + " ";
+                                            first = false;
+                                        }
+                                        r1.ShortcutKeys = k;
                                     }
-                                    r0.ShortcutKeys = k;
+
+                                    r1.Checked = true;
                                 }
 
-                                r0.Checked = true;
-
-                                ToolStripItem b0 = CreateToolStripDropDown(r0, cmds);
+                                //ToolStripItem b0 = CreateToolStripDropDown(r0, cmds);
 
                                 //r0.DropDownItems.Add(b0);
 
@@ -7894,15 +7874,18 @@ namespace WinExplorer
                         r0.Tag = bb;
                     }
 
-                    if (GT.IndexOf(r0.Name) >= 0)
-                        r0.Checked = true;
-                    else
-                        r0.Checked = false;
+                    if (r1 != null)
+                    {
 
-                    if (GT.IndexOf(r0.Text) >= 0)
-                        r0.Checked = true;
+                        if (GT.IndexOf(r0.Name) >= 0)
+                            r1.Checked = true;
+                        else
+                            r1.Checked = false;
 
-        
+                        if (GT.IndexOf(r0.Text) >= 0)
+                            r1.Checked = true;
+
+                    }
 
                 }
 
@@ -7967,11 +7950,21 @@ namespace WinExplorer
 
             return vv;
         }
-
-
+        
         public ToolStripItem CreateToolSripItem(string text, string name, Image image, Command cmd)
         {
             ToolStripMenuItem r0 = new ToolStripMenuItem();
+            if (cmd.GuiHint == "ToolStripDropDownButton")
+            {
+                ToolStripSplitButton r1 = new ToolStripSplitButton(cmd.image);
+                r1.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                r1.Text = text;
+                r1.Name = name;
+                //r1.Image = image;
+                r1.Tag = cmd;
+                r1.Click += R0_Click;
+                return r1;
+            }
             r0.Text = text;
             r0.Name = name;
             r0.Image = image;
@@ -8299,5 +8292,15 @@ namespace WinExplorer
 
         }
 
+        public ToolStripItem GetItem(string name)
+        {
+            if (ns == null)
+                return null;
+            foreach (ToolStripItem s in ns.Items)
+                if (s.Name == name)
+                    return s;
+            return null;
+        }
+        
     }
 }

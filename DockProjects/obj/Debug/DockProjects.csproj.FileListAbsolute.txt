@@ -128,7 +128,6 @@ C:\Users\me\VE-2016\DockProjects\obj\Debug\DockProjects.pdb
 C:\Users\me\VE-2016\DockProjects\bin\Debug\DockProjects.exe
 C:\Users\me\VE-2016\DockProjects\bin\Debug\DockProjects.pdb
 C:\Users\me\VE-2016\DockProjects\bin\Debug\WeifenLuo.WinFormsUI.Docking.dll
-C:\Users\me\VE-2016\DockProjects\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
 C:\Users\me\VE-2016\DockProjects\obj\Debug\DockProjects.csprojResolveAssemblyReference.cache
 C:\Users\me\VE-2016\DockProjects\obj\Debug\DockProjects.Form1.resources
 C:\Users\me\VE-2016\DockProjects\obj\Debug\DockProjects.Properties.Resources.resources

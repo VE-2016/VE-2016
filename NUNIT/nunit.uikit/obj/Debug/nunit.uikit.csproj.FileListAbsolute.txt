@@ -37,3 +37,4 @@ C:\Users\me\VE-2016\NUNIT\nunit.uikit\obj\Debug\NUnit.UiKit.Controls.TipWindow.r
 C:\Users\me\VE-2016\NUNIT\nunit.uikit\obj\Debug\nunit.uikit.csproj.GenerateResource.Cache
 C:\Users\me\VE-2016\NUNIT\nunit.uikit\obj\Debug\nunit.uikit.dll
 C:\Users\me\VE-2016\NUNIT\nunit.uikit\obj\Debug\nunit.uikit.pdb
+C:\Users\me\VE-2016\NUNIT\nunit.uikit\obj\Debug\nunit.uikit.csprojResolveAssemblyReference.cache

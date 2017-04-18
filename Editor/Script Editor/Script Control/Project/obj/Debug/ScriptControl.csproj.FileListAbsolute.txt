@@ -574,7 +574,6 @@ c:\Users\me\VE-2016\Editor\Script Editor\Script Control\Project\Bin\Debug\Weifen
 c:\Users\me\VE-2016\Editor\Script Editor\Script Control\Project\Bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2012.pdb
 c:\Users\me\VE-2016\Editor\Script Editor\Script Control\Project\Bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2013.pdb
 c:\Users\me\VE-2016\Editor\Script Editor\Script Control\Project\Bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2015.pdb
-c:\Users\me\VE-2016\Editor\Script Editor\Script Control\Project\Bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
 c:\Users\me\VE-2016\Editor\Script Editor\Script Control\Project\Bin\Debug\ICSharpCode.NRefactory.xml
 c:\Users\me\VE-2016\Editor\Script Editor\Script Control\Project\Bin\Debug\ICSharpCode.NRefactory.Cecil.xml
 c:\Users\me\VE-2016\Editor\Script Editor\Script Control\Project\Bin\Debug\ICSharpCode.NRefactory.CSharp.xml

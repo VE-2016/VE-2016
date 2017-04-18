@@ -3292,9 +3292,7 @@ namespace AIMS.Libraries.CodeEditor
                 ins = new PanelIns(vp);
                 ins.Hide();
                 ins.cec = this;
-
                 //ins.FastLoader(vp);
-
                 //if (form == null)
                 {
                     form = new TopForm();
@@ -3304,7 +3302,6 @@ namespace AIMS.Libraries.CodeEditor
                 }
                 ins.Hide();
                 form.Hide();
-  
             }
             
             Point p = Selection.GetCursor();

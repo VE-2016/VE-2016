@@ -486,7 +486,7 @@ namespace WinExplorer
 
         public static int counter = 0;
 
-        protected Receiver receiver;
+        //protected Receiver receiver;
 
         public string Name { get; set; }
 
@@ -499,6 +499,8 @@ namespace WinExplorer
         public string Module { get; set; }
 
         public ExplorerForms ef { get; set; }
+
+        public string GuiHint = "";
 
         static public Command FromName(string name)
         {
@@ -1383,6 +1385,7 @@ namespace WinExplorer
             {
                 Name = "Navigate Backward";
                 image = Resources.Backward_256x;
+                GuiHint = "ToolStripDropDownButton";
             }
 
             NewProjectForm npf { get; set; }
@@ -1906,6 +1909,9 @@ namespace WinExplorer
 
                 Module = "NewItems";
 
+                GuiHint = "ToolStripDropDownButton";
+
+                image = Resources.Backward_256x;
             }
 
             //NewProjectForm npf { get; set; }
@@ -2212,6 +2218,7 @@ namespace WinExplorer
             {
                 Name = "Open File";
                 keyboard = new Keys[2];
+                image = Resources.Open_6529_24;
 
                 keyboard[0] = Keys.Control;
                 keyboard[1] = Keys.O;
