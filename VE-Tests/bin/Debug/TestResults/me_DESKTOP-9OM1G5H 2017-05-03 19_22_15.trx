@@ -1,0 +1,19 @@
+<TestRun id="63118e87-5cc6-46b9-bcc0-3cc50870e3ee" name="me@DESKTOP-9OM1G5H 5/3/2017 5:22:15 PM" runUser="DESKTOP-9OM1G5H\me" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Results>
+    <UnitTestResult computerName="DESKTOP-9OM1G5H" duration="00:00:07.1216171" endTime="2017-05-03T19:22:08.6085696+02:00" executionId="2caae40e-59c6-40a6-b79f-555d5378a4b4" outcome="Passed" startTime="2017-05-03T19:22:01.4278974+02:00" testId="VE_Tests.VSExplorerTest.LoadVESolution" testListId="63118e87-5cc6-46b9-bcc0-3cc50870e3ee" testName="LoadVESolution" testType="63118e87-5cc6-46b9-bcc0-3cc50870e3ee">
+      <Output>
+        <StdOut></StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult computerName="DESKTOP-9OM1G5H" duration="00:00:06.6507078" endTime="2017-05-03T19:22:15.2764528+02:00" executionId="ccb91568-41de-47bc-a0d2-7bef8fd690ad" outcome="Failed" startTime="2017-05-03T19:22:08.6241911+02:00" testId="VE_Tests.VSExplorerTest.CheckSolution" testListId="63118e87-5cc6-46b9-bcc0-3cc50870e3ee" testName="CheckSolution" testType="63118e87-5cc6-46b9-bcc0-3cc50870e3ee">
+      <Output>
+        <StdOut></StdOut>
+        <ErrorInfo>
+          <Message>Assert.IsNotNull failed. </Message>
+          <StackTrace>   at VE_Tests.VSExplorerTest.CheckSolution() in C:\Users\me\VE-2016\VE-Tests\VEUnitTest.cs:line 180
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

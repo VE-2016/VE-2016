@@ -1,0 +1,10 @@
+C:\MSBuildProjects-beta\bin\Release\nunit.uikit.dll
+C:\MSBuildProjects-beta\bin\Release\nunit.uikit.pdb
+C:\MSBuildProjects-beta\Nunit-gui\nunit.uikit\obj\Release\NUnit.UiKit.Controls.TipWindow.resources
+C:\MSBuildProjects-beta\Nunit-gui\nunit.uikit\obj\Release\nunit.uikit.csproj.GenerateResource.Cache
+C:\MSBuildProjects-beta\Nunit-gui\nunit.uikit\obj\Release\nunit.uikit.dll
+C:\MSBuildProjects-beta\Nunit-gui\nunit.uikit\obj\Release\nunit.uikit.pdb
+C:\MSBuildProjects-beta\NUNIT\nunit.uikit\obj\Release\NUnit.UiKit.Controls.TipWindow.resources
+C:\MSBuildProjects-beta\NUNIT\nunit.uikit\obj\Release\nunit.uikit.csproj.GenerateResource.Cache
+C:\MSBuildProjects-beta\NUNIT\nunit.uikit\obj\Release\nunit.uikit.dll
+C:\MSBuildProjects-beta\NUNIT\nunit.uikit\obj\Release\nunit.uikit.pdb

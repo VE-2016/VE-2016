@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.Build.Utilities.v3.5</name>
+  </assembly>
+  <members>
+    <member name="M:Microsoft.Build.Utilities.CommandLineBuilder.#ctor(System.Boolean)"></member>
+    <member name="M:Microsoft.Build.Utilities.CommandLineBuilder.AppendQuotedTextToBuffer(System.Text.StringBuilder,System.String)"></member>
+    <member name="T:Microsoft.Build.Utilities.ProcessorArchitecture">
+      <summary>
+                    Determines the correct tool in the Toolset that MSBuild should use, based on the current system's processor architecture.
+                </summary>
+    </member>
+    <member name="F:Microsoft.Build.Utilities.ProcessorArchitecture.AMD64">
+      <summary>
+                    Represents the AMD64 processor.
+                </summary>
+    </member>
+    <member name="P:Microsoft.Build.Utilities.ProcessorArchitecture.CurrentProcessArchitecture">
+      <summary>
+                    Gets the current processor architecture of the system.
+                </summary>
+      <returns>
+                    A string containing the processor architecture value.
+                </returns>
+    </member>
+    <member name="F:Microsoft.Build.Utilities.ProcessorArchitecture.IA64">
+      <summary>
+                    Represents the IA64 processor.
+                </summary>
+    </member>
+    <member name="F:Microsoft.Build.Utilities.ProcessorArchitecture.MSIL">
+      <summary>
+                    Represents MSIL.
+                </summary>
+    </member>
+    <member name="F:Microsoft.Build.Utilities.ProcessorArchitecture.X86">
+      <summary>
+                    Represents an x86 processor.
+                </summary>
+    </member>
+    <member name="P:Microsoft.Build.Utilities.Task.BuildEngine2"></member>
+    <member name="M:Microsoft.Build.Utilities.TaskLoggingHelper.LogErrorFromException(System.Exception,System.Boolean,System.Boolean,System.String)">
+      <summary>
+                    Logs an error using the message, and optionally the stack-trace from the given exception and any inner exceptions.
+                </summary>
+      <param name="exception">
+                    The exception to log.
+                </param>
+      <param name="showStackTrace">true to include the stack trace in the log; otherwise, false.
+                </param>
+      <param name="showDetail">true to log exception types and any inner exceptions; otherwise, false.
+                </param>
+      <param name="file">
+                    The name of the file related to the exception, or null if the project file should be logged.
+                </param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="e" /> is null.
+                </exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:Microsoft.Build.Utilities.ToolLocationHelper.GetDotNetFrameworkSdkRootRegistryKey(Microsoft.Build.Utilities.TargetDotNetFrameworkVersion)"></member>
+    <member name="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToDotNetFrameworkReferenceAssemblies(Microsoft.Build.Utilities.TargetDotNetFrameworkVersion)"></member>
+    <member name="P:Microsoft.Build.Utilities.ToolTask.HasLoggedErrors"></member>
+    <member name="P:Microsoft.Build.Utilities.ToolTask.StandardErrorImportance"></member>
+    <member name="P:Microsoft.Build.Utilities.ToolTask.StandardOutputImportance"></member>
+    <member name="P:Microsoft.Build.Utilities.ToolTask.ToolExe"></member>
+  </members>
+</doc>

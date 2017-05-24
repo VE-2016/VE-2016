@@ -1,0 +1,7 @@
+Diagnostic data adapter message: Could not find diagnostic data adapter 'Code Coverage'.  Make sure diagnostic data adapter is installed and try again.
+5/3/2017 7:22:01 PM +02:00 Passed
+5/3/2017 7:22:08 PM +02:00 Failed
+Total Executed: 2
+Total Passed: 1
+Total Failed: 1
+Total Skippeds: 0

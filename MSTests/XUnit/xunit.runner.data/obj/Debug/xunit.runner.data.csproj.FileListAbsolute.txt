@@ -1,0 +1,15 @@
+C:\Users\me\Downloads\xunit.runner.wpf-master\xunit.runner.wpf-master\xunit.runner.data\bin\Debug\xunit.runner.data.dll
+C:\Users\me\Downloads\xunit.runner.wpf-master\xunit.runner.wpf-master\xunit.runner.data\bin\Debug\xunit.runner.data.pdb
+C:\Users\me\Downloads\xunit.runner.wpf-master\xunit.runner.wpf-master\xunit.runner.data\obj\Debug\xunit.runner.data.csprojResolveAssemblyReference.cache
+C:\Users\me\Downloads\xunit.runner.wpf-master\xunit.runner.wpf-master\xunit.runner.data\obj\Debug\xunit.runner.data.dll
+C:\Users\me\Downloads\xunit.runner.wpf-master\xunit.runner.wpf-master\xunit.runner.data\obj\Debug\xunit.runner.data.pdb
+C:\Users\me\VE-2016\MSTests\XUnit\xunit.runner.data\bin\Debug\xunit.runner.data.dll
+C:\Users\me\VE-2016\MSTests\XUnit\xunit.runner.data\bin\Debug\xunit.runner.data.pdb
+C:\Users\me\VE-2016\MSTests\XUnit\xunit.runner.data\obj\Debug\xunit.runner.data.csprojResolveAssemblyReference.cache
+C:\Users\me\VE-2016\MSTests\XUnit\xunit.runner.data\obj\Debug\xunit.runner.data.dll
+C:\Users\me\VE-2016\MSTests\XUnit\xunit.runner.data\obj\Debug\xunit.runner.data.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\MSTests\XUnit\xunit.runner.data\bin\Debug\xunit.runner.data.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\MSTests\XUnit\xunit.runner.data\bin\Debug\xunit.runner.data.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\MSTests\XUnit\xunit.runner.data\obj\Debug\xunit.runner.data.csproj.CoreCompileInputs.cache
+F:\Windows-Enterprise-VE-2016\VE-2016\MSTests\XUnit\xunit.runner.data\obj\Debug\xunit.runner.data.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\MSTests\XUnit\xunit.runner.data\obj\Debug\xunit.runner.data.pdb

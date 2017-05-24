@@ -1,0 +1,7 @@
+C:\Users\me\VE-2016\MSTestLogger\bin\Debug\MSTestLogger.dll
+C:\Users\me\VE-2016\MSTestLogger\bin\Debug\MSTestLogger.pdb
+C:\Users\me\VE-2016\MSTestLogger\bin\Debug\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
+C:\Users\me\VE-2016\MSTestLogger\obj\Debug\MSTestLogger.dll
+C:\Users\me\VE-2016\MSTestLogger\obj\Debug\MSTestLogger.pdb
+C:\Users\me\VE-2016\MSTestLogger\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\me\VE-2016\MSTestLogger\obj\Debug\MSTestLogger.csprojResolveAssemblyReference.cache
