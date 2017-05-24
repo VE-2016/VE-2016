@@ -1970,6 +1970,7 @@ namespace AIMS.Libraries.CodeEditor
                 throw new IOException("Invalid Filename.");
 
             this.Open(this.FileName);
+     
         }
 
 

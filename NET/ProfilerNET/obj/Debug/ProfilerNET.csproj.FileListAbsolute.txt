@@ -52,3 +52,17 @@ C:\Users\me\VE-2016\NET\ProfilerNET\obj\Debug\ProfilerNET.Properties.Resources.r
 C:\Users\me\VE-2016\NET\ProfilerNET\obj\Debug\ProfilerNET.csproj.GenerateResource.Cache
 C:\Users\me\VE-2016\NET\ProfilerNET\obj\Debug\ProfilerNET.exe
 C:\Users\me\VE-2016\NET\ProfilerNET\obj\Debug\ProfilerNET.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\ProfilerNET\bin\Debug\ProfilerNET.exe.config
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\ProfilerNET\bin\Debug\ProfilerNET.exe
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\ProfilerNET\bin\Debug\ProfilerNET.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\ProfilerNET\bin\Debug\System.Web.DataVisualization.Design.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\ProfilerNET\bin\Debug\System.Web.DataVisualization.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\ProfilerNET\bin\Debug\System.Windows.Forms.DataVisualization.Design.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\ProfilerNET\bin\Debug\System.Windows.Forms.DataVisualization.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\ProfilerNET\obj\Debug\ProfilerNET.csprojResolveAssemblyReference.cache
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\ProfilerNET\obj\Debug\ProfilerNET.Form1.resources
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\ProfilerNET\obj\Debug\ProfilerNET.Properties.Resources.resources
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\ProfilerNET\obj\Debug\ProfilerNET.csproj.GenerateResource.Cache
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\ProfilerNET\obj\Debug\ProfilerNET.csproj.CoreCompileInputs.cache
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\ProfilerNET\obj\Debug\ProfilerNET.exe
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\ProfilerNET\obj\Debug\ProfilerNET.pdb

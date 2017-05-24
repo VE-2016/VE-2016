@@ -165,3 +165,15 @@ C:\Users\me\VE-2016\NET\GACProject\obj\Debug\GACProject.Properties.Resources.res
 C:\Users\me\VE-2016\NET\GACProject\obj\Debug\GACProject.csproj.GenerateResource.Cache
 C:\Users\me\VE-2016\NET\GACProject\obj\Debug\GACProject.exe
 C:\Users\me\VE-2016\NET\GACProject\obj\Debug\GACProject.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACProject\bin\Debug\GACProject.exe.config
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACProject\bin\Debug\GACProject.exe
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACProject\bin\Debug\GACProject.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACProject\bin\Debug\GACManagerApi.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACProject\bin\Debug\GACManagerApi.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACProject\obj\Debug\GACProject.csprojResolveAssemblyReference.cache
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACProject\obj\Debug\GACProject.GACForm.resources
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACProject\obj\Debug\GACProject.Properties.Resources.resources
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACProject\obj\Debug\GACProject.csproj.GenerateResource.Cache
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACProject\obj\Debug\GACProject.csproj.CoreCompileInputs.cache
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACProject\obj\Debug\GACProject.exe
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACProject\obj\Debug\GACProject.pdb

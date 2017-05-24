@@ -34,19 +34,14 @@ namespace Loggers
         #endregion
 
         #region ILogger Members
-
         public override void Initialize(IEventSource eventSource)
         {
             try
             {
                 Console.WriteLine("MSBuild initialization starts...");
-
                 this.InitializeParameters();
-
                 this.SubscribeToEvents(eventSource);
-
                 //log.Info("Initialize MS Build Logger!");
-
                 string ipStr = GetParameterValue("ip");
                 IPAddress ipServer = IPAddress.Parse(ipStr);
                 int port = int.Parse(GetParameterValue("port"));

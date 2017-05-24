@@ -54,3 +54,9 @@ C:\Users\me\VE-2016\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.pdb
 C:\Users\me\VE-2016\NET\MetadataModel\obj\Debug\MetadataModel.csprojResolveAssemblyReference.cache
 C:\Users\me\VE-2016\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.dll
 C:\Users\me\VE-2016\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.xml
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataModel\obj\Debug\MetadataModel.csproj.CoreCompileInputs.cache
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.pdb

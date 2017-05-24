@@ -273,12 +273,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\nunit.uikit\nunit.uikit.csproj">
-      <Project>{353bc38a-ffb9-4cac-a542-afbf016d2629}</Project>
-      <Name>nunit.uikit</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Images\RunTests.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -297,6 +291,12 @@
     <Content Include="Images\Tree\Default\Success.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\nunit.uikit\nunit.uikit.csproj">
+      <Project>{353bc38a-ffb9-4cac-a542-afbf016d2629}</Project>
+      <Name>nunit.uikit</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

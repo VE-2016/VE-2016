@@ -8,7 +8,7 @@ using System.Reflection;
 namespace VSProvider
 {
     [DebuggerDisplay("{ProjectName}, {RelativePath}, {ProjectGuid}")]
-    public class VSProjectItem
+    public class VSProjectItem : object
     {
         private static readonly Type s_ProjectItemElement;
         private static readonly PropertyInfo s_ProjectItemElement_ItemType;
@@ -21,7 +21,8 @@ namespace VSProvider
 
         static VSProjectItem()
         {
-            s_ProjectItemElement = Type.GetType("Microsoft.Build.Construction.ProjectItemElement, Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
+            //s_ProjectItemElement = Type.GetType("Microsoft.Build.Construction.ProjectItemElement, Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
+            s_ProjectItemElement = Type.GetType("Microsoft.Build.Construction.ProjectItemElement, Microsoft.Build, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
 
             s_ProjectItemElement_ItemType = s_ProjectItemElement.GetProperty("ItemType", BindingFlags.Public | BindingFlags.Instance);
             s_ProjectItemElement_Include = s_ProjectItemElement.GetProperty("Include", BindingFlags.Public | BindingFlags.Instance);
@@ -60,8 +61,8 @@ namespace VSProvider
 
         public string GetSubType(out string dependentupon)
         {
-            Microsoft.Build.Construction.ProjectItemElement c = _internalProjectItem as Microsoft.Build.Construction.ProjectItemElement;
-
+            Microsoft.Build.Construction.ProjectItemElement c = (Microsoft.Build.Construction.ProjectItemElement)_internalProjectItem;
+            
             dependentupon = "";
 
             string subtype = "";
@@ -98,9 +99,9 @@ namespace VSProvider
         {
             get
             {
-                if (File.Exists(fileName) == false)
+                //if (File.Exists(fileName) == false)
                     return null;
-                return File.ReadAllBytes(fileName);
+                //return File.ReadAllBytes(fileName);
             }
         }
 

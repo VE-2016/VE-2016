@@ -1,15 +1,6 @@
-// ****************************************************************
-// Copyright 2007, Charlie Poole
-// This is free software licensed under the NUnit license. You may
-// obtain a copy of the license at http://nunit.org
-// ****************************************************************
-
 using System;
 using System.Collections;
 using NUnit.Framework.Constraints;
-
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

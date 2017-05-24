@@ -1,5 +1,6 @@
 // VSSolution
 
+using Microsoft.Build.Construction;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -7,6 +8,7 @@ using Microsoft.CodeAnalysis.MSBuild;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -22,7 +24,8 @@ namespace VSProvider
 
         private static readonly Type s_SolutionParser;
         private static readonly MethodInfo s_SolutionParser_parseSolution;
-        private static readonly PropertyInfo s_SolutionParser_projects;
+        //private static readonly PropertyInfo s_SolutionParser_projects;
+        private static readonly FieldInfo s_SolutionParser_projects;
         private static readonly PropertyInfo s_SolutionParser_solutionReader;
 
         public List<VSProject> projects;
@@ -32,10 +35,18 @@ namespace VSProvider
 
         static VSSolution()
         {
+
             s_SolutionParser = Type.GetType("Microsoft.Build.Construction.SolutionParser, Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
             s_SolutionParser_solutionReader = s_SolutionParser.GetProperty("SolutionReader", BindingFlags.NonPublic | BindingFlags.Instance);
-            s_SolutionParser_projects = s_SolutionParser.GetProperty("Projects", BindingFlags.NonPublic | BindingFlags.Instance);
+            //s_SolutionParser_projects = s_SolutionParser.GetProperty("Projects", BindingFlags.NonPublic | BindingFlags.Instance);
             s_SolutionParser_parseSolution = s_SolutionParser.GetMethod("ParseSolution", BindingFlags.NonPublic | BindingFlags.Instance);
+            
+
+            
+            s_SolutionParser = Type.GetType("Microsoft.Build.Construction.SolutionFile, Microsoft.Build, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
+            s_SolutionParser_solutionReader = s_SolutionParser.GetProperty("SolutionReader", BindingFlags.NonPublic | BindingFlags.Instance);
+            s_SolutionParser_projects = s_SolutionParser.GetField("_projects", BindingFlags.NonPublic | BindingFlags.Instance);
+            s_SolutionParser_parseSolution = s_SolutionParser.GetMethod("Parse", BindingFlags.Public | BindingFlags.Static);
         }
 
         public VSSolution()
@@ -85,6 +96,8 @@ namespace VSProvider
 
         public VSProject MainVSProject { get; set; }
 
+        public SolutionFile sf { get; set; }
+
         public VSSolution(string solutionFileName)
         {
             if (s_SolutionParser == null)
@@ -94,25 +107,32 @@ namespace VSProvider
 
             var solutionParser = s_SolutionParser.GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic).First().Invoke(null);
 
-            var streamReader = new StreamReader(solutionFileName);
-            {
-                s_SolutionParser_solutionReader.SetValue(solutionParser, streamReader, null);
-                s_SolutionParser_parseSolution.Invoke(solutionParser, null);
-            }
+            //var streamReader = new StreamReader(solutionFileName);
+            //{
+            //    s_SolutionParser_solutionReader.SetValue(solutionParser, streamReader, null);
+            //    s_SolutionParser_parseSolution.Invoke(solutionParser, null);
+            //}
+
+            sf = (SolutionFile)s_SolutionParser_parseSolution.Invoke(solutionParser, new[] { solutionFileName });
 
             this.solutionFileName = solutionFileName;
 
             projects = new List<VSProject>();
-            var array = (Array)s_SolutionParser_projects.GetValue(solutionParser, null);
+            //var array = (Array)s_SolutionParser_projects.GetValue(solutionParser, null);
+            //var array = (Array)s_SolutionParser_projects.GetValue(sf);
+            var array = (Dictionary<string, ProjectInSolution>)s_SolutionParser_projects.GetValue(sf);
+            //for (int i = 0; i < array.Keys.Count; i++)
+            //{
+            //    projects.Add(new VSProject(this, array.GetValue(i)));
+            //}
 
-            for (int i = 0; i < array.Length; i++)
+
+            foreach (string s in array.Keys)
             {
-                projects.Add(new VSProject(this, array.GetValue(i)));
+                projects.Add(new VSProject(this, array[s]));
             }
-
-            streamReader.Close();
-
-            streamReader.Dispose();
+            //streamReader.Close();
+            //streamReader.Dispose();
         }
 
         public VSProject GetVSProject(string file)
@@ -210,7 +230,7 @@ namespace VSProvider
             List<INamespaceOrTypeSymbol> b = GetAllTypes(cc);
             nts[FileName] = b;
 
-            var d = b.Select(s => s).Where(t => t.GetAttributes() != null).ToList();
+            //var d = b.Select(s => s).Where(t => t.GetAttributes() != null).ToList();
 
             return b;
         }
@@ -275,13 +295,23 @@ namespace VSProvider
 
             foreach (ProjectId projectId in projectGraph.GetTopologicallySortedProjects())
             {
+                Stopwatch sw = Stopwatch.StartNew();
+               
+      
                 Compilation projectCompilation = solution.GetProject(projectId).GetCompilationAsync().Result;
+
+                sw.Stop();
+
+                System.Diagnostics.Debug.WriteLine("Time taken compilation creation: {0}ms", sw.Elapsed.TotalMilliseconds);
+
 
                 Microsoft.CodeAnalysis.Project project = solution.GetProject(projectId);
 
                 comp.Add(project.FilePath, projectCompilation);
 
+
                 List<INamespaceOrTypeSymbol> ns = GetAllTypes(project.FilePath);
+
                 named.Add(project.FilePath, ns);
                 //var type = ns.Select(s => s).Where(t => t.Name.ToLower() == name.ToLower()).First().GetMembers().OrderBy(f => f.Name).GroupBy(f => f.Name, f => f).Select(g => g.First()).ToList();
                 //return type;

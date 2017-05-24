@@ -191,6 +191,7 @@ namespace VSProvider
 
                 csd.addProjectFiles(L);
 
+                if(vp.csd.snx.cc != null)
                 csd.snx.cc = csd.snx.cc.AddReferences(vp.csd.snx.cc.References);
             }
         }
@@ -236,6 +237,8 @@ namespace VSProvider
         static VSProject()
         {
             s_ProjectInSolution = Type.GetType("Microsoft.Build.Construction.ProjectInSolution, Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
+            s_ProjectInSolution = Type.GetType("Microsoft.Build.Construction.ProjectInSolution, Microsoft.Build, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
+            
 
             s_ProjectInSolution_ProjectName = s_ProjectInSolution.GetProperty("ProjectName", BindingFlags.NonPublic | BindingFlags.Instance);
             s_ProjectInSolution_ProjectType = s_ProjectInSolution.GetProperty("ProjectType", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -247,6 +250,10 @@ namespace VSProvider
 
             s_ProjectRootElement = Type.GetType("Microsoft.Build.Construction.ProjectRootElement, Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
             s_ProjectRootElementCache = Type.GetType("Microsoft.Build.Evaluation.ProjectRootElementCache, Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
+
+            s_ProjectRootElement = Type.GetType("Microsoft.Build.Construction.ProjectRootElement, Microsoft.Build, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
+            s_ProjectRootElementCache = Type.GetType("Microsoft.Build.Evaluation.ProjectRootElementCache, Microsoft.Build, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
+
 
             s_ProjectRootElement_Items = s_ProjectRootElement.GetProperty("Items", BindingFlags.Public | BindingFlags.Instance);
 
@@ -318,10 +325,19 @@ namespace VSProvider
 
         public VSProject(VSSolution solution, object internalSolutionProject)
         {
-            this.Name = s_ProjectInSolution_ProjectName.GetValue(internalSolutionProject, null) as string;
-            this.ProjectType = s_ProjectInSolution_ProjectType.GetValue(internalSolutionProject, null).ToString();
-            this.RelativePath = s_ProjectInSolution_RelativePath.GetValue(internalSolutionProject, null) as string;
-            this.ProjectGuid = s_ProjectInSolution_ProjectGuid.GetValue(internalSolutionProject, null) as string;
+            //this.Name = s_ProjectInSolution_ProjectName.GetValue(internalSolutionProject, null) as string;
+            //this.ProjectType = s_ProjectInSolution_ProjectType.GetValue(internalSolutionProject, null).ToString();
+            //this.RelativePath = s_ProjectInSolution_RelativePath.GetValue(internalSolutionProject, null) as string;
+            //this.ProjectGuid = s_ProjectInSolution_ProjectGuid.GetValue(internalSolutionProject, null) as string;
+
+            ProjectInSolution s = internalSolutionProject as ProjectInSolution;
+
+            this.Name = s.ProjectName;
+            this.ProjectType = s.ProjectType.ToString();
+            this.RelativePath = s.RelativePath;
+            this.ProjectGuid = s.ProjectGuid;
+
+            
 
             _internalSolutionProject = internalSolutionProject;
 
@@ -331,11 +347,11 @@ namespace VSProvider
 
             if (this.ProjectType == "KnownToBeMSBuildFormat")
             {
-                this.Parse();
+                this.Parse(s);
             }
         }
 
-        private void Parse()
+        private void Parse(ProjectInSolution s)
         {
             try
             {
@@ -343,7 +359,7 @@ namespace VSProvider
                 var reader = XmlReader.Create(stream);
                 var cache = s_ProjectRootElementCache.GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic).First().Invoke(new object[] { true });
                 ConstructorInfo[] inf = s_ProjectRootElement.GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic);
-                var rootElement = s_ProjectRootElement.GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic).First().Invoke(new object[] { reader, cache, true });
+                var rootElement = s_ProjectRootElement.GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic).First().Invoke(new object[] { reader, cache, true, true });
 
                 stream.Close();
 
@@ -1262,7 +1278,7 @@ namespace VSProvider
 
             string folder = Path.GetDirectoryName(FileName);
 
-            ICollection<Microsoft.Build.Evaluation.ProjectItem> s = pc.AllEvaluatedItems;
+            ICollection<Microsoft.Build.Evaluation.ProjectItem> s = pc.Items;//.AllEvaluatedItems;
 
             foreach (Microsoft.Build.Evaluation.ProjectItem p in s)
             {
@@ -2503,8 +2519,7 @@ namespace VSProvider
             }
             return di;
         }
-
-        public Microsoft.Build.Evaluation.Project LoadProjectToMemory()
+        public object LoadProjectToMemorys()
         {
             MemoryStream dd = new MemoryStream();
             TextWriter xml = new StreamWriter(dd);
@@ -2515,8 +2530,30 @@ namespace VSProvider
             MemoryStream bb = new MemoryStream(dd.ToArray());
             XmlReader xmls = new XmlTextReader(bb);
             pc = new Microsoft.Build.Evaluation.Project(xmls);
-
+           
             return pc;
+        }
+        public Microsoft.Build.Evaluation.Project LoadProjectToMemory()
+        {
+            try
+            {
+                MemoryStream dd = new MemoryStream();
+                TextWriter xml = new StreamWriter(dd);
+                Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(FileName);
+                pc.Save(xml);
+                pc.ProjectCollection.UnloadAllProjects();
+
+                MemoryStream bb = new MemoryStream(dd.ToArray());
+                XmlReader xmls = new XmlTextReader(bb);
+                pc = new Microsoft.Build.Evaluation.Project(xmls);
+
+                return pc;
+            }
+            catch(Exception e)
+            {
+
+            }
+            return null;
         }
 
         public Microsoft.Build.Evaluation.Project LoadProject(Microsoft.Build.Evaluation.Project pc)

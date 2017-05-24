@@ -1205,7 +1205,7 @@ namespace AIMS.Libraries.CodeEditor.Syntax
             //	ResetVisibleRows();
             //	this.OnChange ();
         }
-        
+        bool TextChanged = false;
         /// <summary>
         /// Gets or Sets the text of the entire document
         /// </summary>		
@@ -1218,24 +1218,23 @@ namespace AIMS.Libraries.CodeEditor.Syntax
             {
                 int i = 0;
                 StringBuilder sb = new StringBuilder();
-
+               // if(TextChanged == true)
                 ParseAll(true);
                 foreach (Row tr in _mDocument)
                 {
                     if (i > 0)
                         sb.Append(Environment.NewLine);
-                    tr.MatchCase();
+                    //tr.MatchCase();
                     sb.Append(tr.Text);
                     i++;
                 }
                 string c = sb.ToString();
-                
+                TextChanged = false;
                 return c;
             }
 
             set
             {
-                
                 this.clear();
                 this.Add("");
                 InsertText(value, 0, 0);
@@ -1245,6 +1244,7 @@ namespace AIMS.Libraries.CodeEditor.Syntax
                 _mIsParsed = false;
                 //OnChange();
                 InvokeChange();
+                TextChanged = true;
             }
         }
 
@@ -1361,6 +1361,7 @@ namespace AIMS.Libraries.CodeEditor.Syntax
 
         private void OnChange()
         {
+            TextChanged = true;
             //System.Windows.Forms.MessageBox.Show ("on change");
             if (Change != null)
                 Change(this, new EventArgs());
