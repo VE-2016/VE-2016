@@ -95,7 +95,7 @@ namespace WinExplorer
         CopyIfNewer
     }
 
-    public class ProjectFileData
+    public class ProjectFileData : object
     {
         [CategoryAttribute("Advanced")]
         [DisplayName("Build Action")]
@@ -128,15 +128,69 @@ namespace WinExplorer
         [DisplayName("Full Path")]
         [Description("Full Path")]
         public string filePath { get; set; }
-
+        private object m_data;
         [CategoryAttribute("Misc")]
         [DisplayName("Data")]
         [Description("Data")]
-        public object data { get; set; }
-
+        [TypeConverter(typeof(ProjectItemInfoConverter))]
+        public object data
+        {
+            get { return m_data; }
+            set { m_data = value; }
+        }
         public ProjectFileData(object obs)
         {
             this.data = obs;
         }
     }
+
+    class ProjectItemInfoConverter : TypeConverter
+    {
+        // Return true if we need to convert from a string.
+        public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
+        {
+            if (sourceType == typeof(CreateView_Solution.ProjectItemInfo)) return true;
+            return base.CanConvertFrom(context, sourceType);
+        }
+
+        // Return true if we need to convert into a string.
+        public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)
+        {
+            if (destinationType == typeof(CreateView_Solution.ProjectItemInfo)) return true;
+            return base.CanConvertTo(context, destinationType);
+        }
+
+        // Convert from a ProjectItemInfo
+        public override object ConvertFrom(ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value)
+        {
+            if (value.GetType() == typeof(CreateView_Solution.ProjectItemInfo))
+            {
+                return value;
+            }
+            else
+            {
+                return base.ConvertFrom(context, culture, value);
+            }
+        }
+
+        
+        public override object ConvertTo(ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType)
+        {
+            if (destinationType == typeof(CreateView_Solution.ProjectItemInfo)) return value.ToString();
+            return base.ConvertTo(context, culture, value, destinationType);
+        }
+
+        // Return true to indicate that the object supports properties.
+        public override bool GetPropertiesSupported(ITypeDescriptorContext context)
+        {
+            return true;
+        }
+
+        // Return a property description collection.
+        public override PropertyDescriptorCollection GetProperties(ITypeDescriptorContext context, object value, Attribute[] attributes)
+        {
+            return TypeDescriptor.GetProperties(value);
+        }
+    }
+
 }

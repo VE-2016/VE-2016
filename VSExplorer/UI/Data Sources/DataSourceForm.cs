@@ -91,6 +91,9 @@ namespace WinExplorer.UI
 
             this.vp = vp;
 
+            if (vp == null)
+                return;
+
             if (dataSource.ContainsKey(vp))
             {
                 P = dataSource[vp];

@@ -2455,7 +2455,8 @@ namespace SolutionFormProject
 
             private static readonly Type s_SolutionParser;
             private static readonly MethodInfo s_SolutionParser_parseSolution;
-            private static readonly PropertyInfo s_SolutionParser_projects;
+            //private static readonly PropertyInfo s_SolutionParser_projects;
+            private static readonly FieldInfo s_SolutionParser_projects;
             private static readonly PropertyInfo s_SolutionParser_solutionReader;
             private List<VSProject> _projects;
             private string _solutionFileName;
@@ -2464,8 +2465,14 @@ namespace SolutionFormProject
             {
                 s_SolutionParser = Type.GetType("Microsoft.Build.Construction.SolutionParser, Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
                 s_SolutionParser_solutionReader = s_SolutionParser.GetProperty("SolutionReader", BindingFlags.NonPublic | BindingFlags.Instance);
-                s_SolutionParser_projects = s_SolutionParser.GetProperty("Projects", BindingFlags.NonPublic | BindingFlags.Instance);
+                //s_SolutionParser_projects = s_SolutionParser.GetProperty("Projects", BindingFlags.NonPublic | BindingFlags.Instance);
                 s_SolutionParser_parseSolution = s_SolutionParser.GetMethod("ParseSolution", BindingFlags.NonPublic | BindingFlags.Instance);
+
+                s_SolutionParser = Type.GetType("Microsoft.Build.Construction.SolutionFile, Microsoft.Build, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
+                s_SolutionParser_solutionReader = s_SolutionParser.GetProperty("SolutionReader", BindingFlags.NonPublic | BindingFlags.Instance);
+                s_SolutionParser_projects = s_SolutionParser.GetField("_projects", BindingFlags.NonPublic | BindingFlags.Instance);
+                s_SolutionParser_parseSolution = s_SolutionParser.GetMethod("Parse", BindingFlags.Public | BindingFlags.Static);
+
             }
 
             public VSSolution(string solutionFileName)
@@ -2486,7 +2493,7 @@ namespace SolutionFormProject
                 _solutionFileName = solutionFileName;
 
                 _projects = new List<VSProject>();
-                var array = (Array)s_SolutionParser_projects.GetValue(solutionParser, null);
+                var array = (Array)s_SolutionParser_projects.GetValue(solutionParser/*, null*/);
 
                 for (int i = 0; i < array.Length; i++)
                 {
@@ -2562,6 +2569,7 @@ namespace SolutionFormProject
             static VSProject()
             {
                 s_ProjectInSolution = Type.GetType("Microsoft.Build.Construction.ProjectInSolution, Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
+                s_ProjectInSolution = Type.GetType("Microsoft.Build.Construction.ProjectInSolution, Microsoft.Build, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
 
                 s_ProjectInSolution_ProjectName = s_ProjectInSolution.GetProperty("ProjectName", BindingFlags.NonPublic | BindingFlags.Instance);
                 s_ProjectInSolution_ProjectType = s_ProjectInSolution.GetProperty("ProjectType", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -2570,6 +2578,11 @@ namespace SolutionFormProject
 
                 s_ProjectRootElement = Type.GetType("Microsoft.Build.Construction.ProjectRootElement, Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
                 s_ProjectRootElementCache = Type.GetType("Microsoft.Build.Evaluation.ProjectRootElementCache, Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
+
+
+                s_ProjectRootElement = Type.GetType("Microsoft.Build.Construction.ProjectRootElement, Microsoft.Build, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
+                s_ProjectRootElementCache = Type.GetType("Microsoft.Build.Evaluation.ProjectRootElementCache, Microsoft.Build, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
+
 
                 s_ProjectRootElement_Items = s_ProjectRootElement.GetProperty("Items", BindingFlags.Public | BindingFlags.Instance);
             }
@@ -2654,6 +2667,7 @@ namespace SolutionFormProject
             static VSProjectItem()
             {
                 s_ProjectItemElement = Type.GetType("Microsoft.Build.Construction.ProjectItemElement, Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
+                s_ProjectItemElement = Type.GetType("Microsoft.Build.Construction.ProjectItemElement, Microsoft.Build, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
 
                 s_ProjectItemElement_ItemType = s_ProjectItemElement.GetProperty("ItemType", BindingFlags.Public | BindingFlags.Instance);
                 s_ProjectItemElement_Include = s_ProjectItemElement.GetProperty("Include", BindingFlags.Public | BindingFlags.Instance);

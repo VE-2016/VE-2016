@@ -5578,6 +5578,7 @@ namespace WinExplorer
             {
                 return isItem;
             }
+            public string Include { get; set; }
         }
     }
 

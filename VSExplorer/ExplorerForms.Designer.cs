@@ -59,7 +59,7 @@ namespace WinExplorer
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.treeView4 = new System.Windows.Forms.TreeView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.treeView1 = new WinExplorer.TreeViews();
+            this.treeView1 = new WinExplorer.UI.TreeViewEx();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -290,9 +290,14 @@ namespace WinExplorer
             this.custToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tESTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectedTestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.runTestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vSExplorerTestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem85 = new System.Windows.Forms.ToolStripSeparator();
+            this.windowToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.testExplorerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lastRunTestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wINDOWToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeAllDocumentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator21 = new System.Windows.Forms.ToolStripSeparator();
@@ -394,7 +399,6 @@ namespace WinExplorer
             this.contextMenuStrip6.SuspendLayout();
             this.contextMenuStrip7.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
-            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -405,7 +409,6 @@ namespace WinExplorer
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.Location = new System.Drawing.Point(22, 21);
             this.splitContainer1.Name = "splitContainer1";
-            
             // 
             // splitContainer1.Panel1
             // 
@@ -417,7 +420,6 @@ namespace WinExplorer
             this.splitContainer1.Size = new System.Drawing.Size(892, 459);
             this.splitContainer1.SplitterDistance = 435;
             this.splitContainer1.TabIndex = 2;
-           
             // 
             // tabControl1
             // 
@@ -457,7 +459,6 @@ namespace WinExplorer
             // 
             // toolStripButton11
             // 
-            File.WriteAllText("starter.bat", "before");
             this.toolStripButton11.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripButton11.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton11.Image")));
             this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -465,7 +466,6 @@ namespace WinExplorer
             this.toolStripButton11.Size = new System.Drawing.Size(87, 22);
             this.toolStripButton11.Text = "Open Solution";
             this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
-            File.WriteAllText("starter.bat", "after");
             // 
             // _mainTreeView
             // 
@@ -475,6 +475,7 @@ namespace WinExplorer
             this._mainTreeView.Name = "_mainTreeView";
             this._mainTreeView.Size = new System.Drawing.Size(421, 487);
             this._mainTreeView.TabIndex = 0;
+            this._mainTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this._mainTreeView_AfterSelect);
             // 
             // tabPage2
             // 
@@ -582,8 +583,10 @@ namespace WinExplorer
             this.treeView1.context1 = null;
             this.treeView1.context2 = null;
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.ImageIndex = 0;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
+            this.treeView1.SelectedImageIndex = 0;
             this.treeView1.Size = new System.Drawing.Size(427, 433);
             this.treeView1.TabIndex = 0;
             // 
@@ -1048,7 +1051,7 @@ namespace WinExplorer
             this.openCMDToolStripMenuItem.Name = "openCMDToolStripMenuItem";
             this.openCMDToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.openCMDToolStripMenuItem.Text = "Open CMD";
-            this.openCMDToolStripMenuItem.Click += new System.EventHandler(this.openCMDToolStripMenuItem_Click);
+            this.openCMDToolStripMenuItem.Click += OpenCMDToolStripMenuItem_Click;
             // 
             // powerShellToolStripMenuItem
             // 
@@ -1253,7 +1256,6 @@ namespace WinExplorer
             this.menuStrip1.Size = new System.Drawing.Size(1049, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
-            
             // 
             // toolStripMenuItem1
             // 
@@ -1609,7 +1611,6 @@ namespace WinExplorer
             // 
             // bookmarksToolStripMenuItem
             // 
-
             this.bookmarksToolStripMenuItem.Name = "bookmarksToolStripMenuItem";
             this.bookmarksToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.bookmarksToolStripMenuItem.Text = "Bookmarks";
@@ -1815,6 +1816,7 @@ namespace WinExplorer
             this.commandWindowToolStripMenuItem.Name = "commandWindowToolStripMenuItem";
             this.commandWindowToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.commandWindowToolStripMenuItem.Text = "Command Window";
+            this.commandWindowToolStripMenuItem.Click += new System.EventHandler(this.commandWindowToolStripMenuItem_Click);
             // 
             // webBrowserToolStripMenuItem
             // 
@@ -1950,7 +1952,6 @@ namespace WinExplorer
             // 
             // pROJECTToolStripMenuItem
             // 
-            
             this.pROJECTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addWindowsFormToolStripMenuItem,
             this.addUserControlToolStripMenuItem,
@@ -2362,12 +2363,23 @@ namespace WinExplorer
             // tESTToolStripMenuItem
             // 
             this.tESTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.selectedTestsToolStripMenuItem,
             this.runTestsToolStripMenuItem,
             this.testSettingsToolStripMenuItem,
-            this.vSExplorerTestsToolStripMenuItem});
+            this.vSExplorerTestsToolStripMenuItem,
+            this.toolStripMenuItem85,
+            this.windowToolStripMenuItem1,
+            this.lastRunTestsToolStripMenuItem});
             this.tESTToolStripMenuItem.Name = "tESTToolStripMenuItem";
             this.tESTToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.tESTToolStripMenuItem.Text = "TEST";
+            // 
+            // selectedTestsToolStripMenuItem
+            // 
+            this.selectedTestsToolStripMenuItem.Enabled = false;
+            this.selectedTestsToolStripMenuItem.Name = "selectedTestsToolStripMenuItem";
+            this.selectedTestsToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.selectedTestsToolStripMenuItem.Text = "Selected Tests";
             // 
             // runTestsToolStripMenuItem
             // 
@@ -2389,6 +2401,33 @@ namespace WinExplorer
             this.vSExplorerTestsToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.vSExplorerTestsToolStripMenuItem.Text = "VSExplorer tests";
             this.vSExplorerTestsToolStripMenuItem.Click += new System.EventHandler(this.vSExplorerTestsToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem85
+            // 
+            this.toolStripMenuItem85.Name = "toolStripMenuItem85";
+            this.toolStripMenuItem85.Size = new System.Drawing.Size(153, 6);
+            // 
+            // windowToolStripMenuItem1
+            // 
+            this.windowToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.testExplorerToolStripMenuItem});
+            this.windowToolStripMenuItem1.Name = "windowToolStripMenuItem1";
+            this.windowToolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
+            this.windowToolStripMenuItem1.Text = "Windows";
+            // 
+            // testExplorerToolStripMenuItem
+            // 
+            this.testExplorerToolStripMenuItem.Name = "testExplorerToolStripMenuItem";
+            this.testExplorerToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.testExplorerToolStripMenuItem.Text = "Test Explorer";
+            this.testExplorerToolStripMenuItem.Click += new System.EventHandler(this.testExplorerToolStripMenuItem_Click);
+            // 
+            // lastRunTestsToolStripMenuItem
+            // 
+            this.lastRunTestsToolStripMenuItem.Enabled = false;
+            this.lastRunTestsToolStripMenuItem.Name = "lastRunTestsToolStripMenuItem";
+            this.lastRunTestsToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.lastRunTestsToolStripMenuItem.Text = "Last Run Tests";
             // 
             // wINDOWToolStripMenuItem
             // 
@@ -2423,6 +2462,7 @@ namespace WinExplorer
             this.hELPToolStripMenuItem.Name = "hELPToolStripMenuItem";
             this.hELPToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.hELPToolStripMenuItem.Text = "HELP";
+            this.hELPToolStripMenuItem.Click += new System.EventHandler(this.hELPToolStripMenuItem_Click);
             // 
             // viewHelpFilesToolStripMenuItem
             // 
@@ -2925,10 +2965,6 @@ namespace WinExplorer
             this.toolStripContainer1.TabIndex = 7;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
-            // toolStripContainer1.TopToolStripPanel
-            // 
-            //this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip4);
-            // 
             // ExplorerForms
             // 
             this.ClientSize = new System.Drawing.Size(1049, 584);
@@ -2985,13 +3021,16 @@ namespace WinExplorer
             this.contextMenuStrip6.ResumeLayout(false);
             this.contextMenuStrip7.ResumeLayout(false);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
-            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
-            this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-            File.WriteAllText("starter.bat", "EF4 - I am fine");
+
+        }
+
+        private void OpenCMDToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            openCMD();
         }
 
         #endregion
@@ -3188,7 +3227,7 @@ namespace WinExplorer
         private ToolStripMenuItem addProjectReferenceToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem48;
         private TreeViews treeView2;
-        private TreeViews treeView1;
+        private /*TreeViews*/  UI.TreeViewEx treeView1;
         private AIMS.Libraries.Scripting.ScriptControl.ScriptControl scriptControl1;
         private ToolStripMenuItem outputWindowToolStripMenuItem1;
         private ToolStripMenuItem errorListToolStripMenuItem;
@@ -3319,5 +3358,10 @@ namespace WinExplorer
         private ToolStripMenuItem managedNuGetPackagesToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem86;
         private ToolStripMenuItem scopeToThisToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem85;
+        private ToolStripMenuItem windowToolStripMenuItem1;
+        private ToolStripMenuItem testExplorerToolStripMenuItem;
+        private ToolStripMenuItem selectedTestsToolStripMenuItem;
+        private ToolStripMenuItem lastRunTestsToolStripMenuItem;
     }
 }

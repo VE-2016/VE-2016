@@ -3,6 +3,7 @@ using AIMS.Libraries.Scripting.ScriptControl;
 using DockProject;
 using GACProject;
 using Microsoft.Diagnostics.Runtime;
+using Microsoft.Win32;
 using NUnit.Engine;
 using NUnit.Gui;
 using NUnit.Gui.Model;
@@ -15,6 +16,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -26,6 +28,7 @@ using WinExplorer.Environment;
 using WinExplorer.Services.NuGet;
 using WinExplorer.UI;
 using WinExplorer.UI.Views;
+using xunit.runner;
 
 namespace WinExplorer
 {
@@ -71,6 +74,8 @@ namespace WinExplorer
 
             #endregion Form Setup
 
+
+           
             Application.EnableVisualStyles();
 
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
@@ -175,6 +180,7 @@ namespace WinExplorer
             LoadDocumentWindow(false);
             LoadDT("Data Sources", false);
             LoadQE("SQL Server Explorer", false);
+            LoadTE("Test Explorer", false);
 
             ResumeLayout();
 
@@ -1043,7 +1049,34 @@ namespace WinExplorer
             if (load)
                 qe.Show(dock, DockState.DockLeft);
         }
+        public ToolWindow te { get; set; }
+        public MSTestForm tef { get; set; }
 
+        public void LoadTE(string name, bool load)
+        {
+            te = new ToolWindow();
+            te.Text = name;
+            te.HideOnClose = true;
+            te.FormBorderStyle = FormBorderStyle.None;
+            te.TabText = name;
+            te.TopLevel = false;
+
+            if (tef == null)
+            {
+                tef = new MSTestForm();
+                tef.TopLevel = false;
+                tef.FormBorderStyle = FormBorderStyle.None;
+                tef.Dock = DockStyle.Fill;
+                tef.Show();
+            }
+
+            te.Controls.Add(tef);
+
+            te.types = "te";
+
+            if (load)
+                te.Show(dock, DockState.DockLeft);
+        }
         public ToolWindow dt { get; set; }
         public DataSourceForm dtf { get; set; }
 
@@ -1477,7 +1510,14 @@ namespace WinExplorer
                 sesa.Click += Sesa_Click;
                 ses.Items.Add(sesa);
 
-                se.Controls.Add(treeView1);
+                TreeViewEx v = treeView1;
+
+                v.DrawMode = TreeViewDrawMode.OwnerDrawAll;
+                v.DrawNode += V_DrawNode;
+                v.ShowLines = false;
+                v.HideSelection = false;
+
+                se.Controls.Add(v);
 
                 se.Controls.Add(ses);
 
@@ -1498,7 +1538,10 @@ namespace WinExplorer
                 }
             }
         }
-
+        private void V_DrawNode(object sender, DrawTreeNodeEventArgs e)
+        {
+            treeView1.OnDrawTreeNode(sender, e);
+        }
         private void Sesf_Click(object sender, EventArgs e)
         {
             nav.Next();
@@ -1704,6 +1747,8 @@ namespace WinExplorer
                     return xt;
                 else if (parsedStrings[1] == "tx")
                     return tx;
+                else if (parsedStrings[1] == "te")
+                    return te;
                 return null;
             }
         }
@@ -2426,6 +2471,7 @@ namespace WinExplorer
                         this.Focus();
                         if (appLoadedEvent != null)
                             appLoadedEvent(this, new EventArgs());
+                        if(vs != null)
                         vs.CompileSolution();
                     }));
                     if (event_SelectedSolutionChanged != null)
@@ -2963,13 +3009,8 @@ namespace WinExplorer
                 return;
 
             string recent = _sv.load_recent_solution();
-
             _sv._SolutionTreeView.Nodes.Clear();
-
             _sv.save_recent_solution(recent);
-
-            //CreateProgressBar();
-
             workerFunctionDelegate w = workerFunction;
             w.BeginInvoke(recent, null, null);
         }
@@ -2981,24 +3022,14 @@ namespace WinExplorer
 
             _started = true;
 
-            //SolutionClose();
-
+    
             string recent = _sv.load_recent_solution();
-
             _sv._SolutionTreeView.Nodes.Clear();
-
             _sv.save_recent_solution(recent);
-
-            //CreateProgressBar();
-
-            //sv._configList.SetDrawMode(false);
-
-            //sv._platList.SetDrawMode(false);
-
             workerFunctionDelegate w = workerFunction;
             IAsyncResult r = w.BeginInvoke(recent, null, null);
 
-            //w.EndInvoke(r);
+    
         }
 
         public event EventHandler CompletedChange = null;
@@ -5612,6 +5643,19 @@ namespace WinExplorer
 
         private void viewHelpFilesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            VSSolution vs = GetVSSolution();
+            var ex = vs.GetExecutables(VSSolution.OutputType.both).ToArray();
+            var b = System.Array.ConvertAll(ex, x => x.ToString());
+
+            var assemblies = b.Select(x => new AssemblyAndConfigFile(x, configFileName: null));
+            
+
+            xrunner runner = new xrunner();
+            runner.LoadAssemblies(assemblies);
+
+            return;
+
             ViewHelpFiles();
 
             //System.Windows.Forms.Help.ShowHelp(this, "CHM\\index.chm");
@@ -6302,8 +6346,48 @@ namespace WinExplorer
 
         private void runTestsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            workerFunctionTestDelegate w = TestForm;
-            w.BeginInvoke("recent", null, null);
+
+
+            var c = System.Threading.Tasks.Task.Run(() =>
+            {
+                tef.ClearTests();
+                VSSolution vs = GetVSSolution();
+                foreach (VSProject vp in vs.Projects)
+                {
+                    //VSProject vp = vs.GetProjectbyName("VE-Tests");
+                    msbuilder_alls.MSTest mstest = new msbuilder_alls.MSTest();
+                    mstest.msTestPath = AppDomain.CurrentDomain.BaseDirectory + "\\Extensions\\_starters-discovery.bat";
+                    mstest.SetTestLibrary(vp.GetProjectExec());
+
+
+                    msbuilder_alls.ExecuteMsTests(mstest);
+
+
+                    List<string> b = mstest.GetDiscoveredTests();
+
+                    if (te == null)
+                        return;
+                    tef.Invoke(new Action(() => { tef.LoadTest(vp, b); }));
+
+
+                }
+
+            }
+        );
+            var t = System.Threading.Tasks.Task.Run(() =>
+            {
+
+
+
+                MSTestServer server = new MSTestServer();
+
+            }
+
+            );
+
+
+            //workerFunctionTestDelegate w = TestForm;
+            //w.BeginInvoke("recent", null, null);
         }
 
         ///////////////////////////////
@@ -6830,7 +6914,21 @@ namespace WinExplorer
             _sv.hst.ReloadRecentSolutions();
         }
 
-        private void openCMDToolStripMenuItem_Click(object sender, EventArgs e)
+        public static string GetVisualStudio2017InstalledPath()
+        {
+            var visualStudioInstalledPath = string.Empty;
+            var visualStudioRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\WOW6432Node\Microsoft\VisualStudio\SxS\VS7");
+            if (visualStudioRegistryPath != null)
+            {
+                visualStudioInstalledPath = visualStudioRegistryPath.GetValue("15.0", string.Empty) as string;
+            }
+
+           
+
+            return visualStudioInstalledPath;
+        }
+
+        private void openCMD()
         {
             WinExplorer.CreateView_Solution.ProjectItemInfo prs = _eo.cvs.getactiveproject();
 
@@ -7236,6 +7334,37 @@ namespace WinExplorer
 
             NuGetForm ngf = new NuGetForm(project_VSProject);
             ngf.ShowDialog();
+        }
+
+        private void testExplorerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (te == null)
+                LoadTE("Test Explorer", false);
+            else if (te.Visible == true)
+            {
+                te.Hide();
+                testExplorerToolStripMenuItem.Checked = false;
+            }
+            else
+            {
+                te.Show(dock, DockState.DockLeft);
+                testExplorerToolStripMenuItem.Checked = true;
+            }
+        }
+
+        private void hELPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void commandWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openCMD();
+        }
+
+        private void _mainTreeView_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
         }
     }
 

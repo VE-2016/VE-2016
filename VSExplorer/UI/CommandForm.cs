@@ -366,6 +366,15 @@ namespace WinExplorer
 
             DirectoryInfo[] dd = d.GetDirectories("Microsoft Visual Studio*");
 
+            string v2017 = ExplorerForms.GetVisualStudio2017InstalledPath();
+
+            if (!string.IsNullOrEmpty(v2017))
+                if (Directory.Exists(v2017))
+                {
+
+                    Array.Resize(ref dd, dd.Length + 1);
+                    dd[dd.Length - 1] = new DirectoryInfo(v2017);
+                }
             foreach (DirectoryInfo c in dd)
             {
                 DirectoryInfo[] cc = c.GetDirectories("Common7*");
@@ -392,6 +401,7 @@ namespace WinExplorer
                     }
                 }
             }
+
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)

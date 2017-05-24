@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WinExplorer</RootNamespace>
     <AssemblyName>WinExplorer</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -124,6 +124,10 @@
     <Reference Include="Microsoft.CodeAnalysis, Version=1.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Roslyn-all-in-one\Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=1.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Roslyn-all-in-one\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces, Version=1.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -355,6 +359,13 @@
     <Compile Include="FolderLister.Designer.cs">
       <DependentUpon>FolderLister.cs</DependentUpon>
     </Compile>
+    <Compile Include="MSTests\MSTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MSTests\MSTestForm.Designer.cs">
+      <DependentUpon>MSTestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MSTests\MSTestServer.cs" />
     <Compile Include="NewItemName.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -488,6 +499,9 @@
     </Compile>
     <Compile Include="SplashForm.Designer.cs">
       <DependentUpon>SplashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\TreeViewEx.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\Data Sources\UniqueConstraintSelectionForm.cs">
       <SubType>Form</SubType>
@@ -901,6 +915,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FolderLister.resx">
       <DependentUpon>FolderLister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSTests\MSTestForm.resx">
+      <DependentUpon>MSTestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewItemName.resx">
       <DependentUpon>NewItemName.cs</DependentUpon>
@@ -2382,6 +2399,10 @@
       <Project>{0da0a71d-59a3-446e-a28b-63ef0ae70ebe}</Project>
       <Name>Loggers</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MSTests\NUnit\nunit-gui\nunit-gui.csproj">
+      <Project>{9E15166C-D2B7-4B24-AB1C-1C69FFCEC9D3}</Project>
+      <Name>nunit-gui</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NET\GACManagerApi\GACManagerApi.csproj">
       <Project>{2909743e-72ff-48bf-a081-e61a73d2e6ec}</Project>
       <Name>GACManagerApi</Name>
@@ -2402,13 +2423,13 @@
       <Project>{34b9a0ce-df18-4cbc-8f7a-90c2b74338d5}</Project>
       <Name>PeReader</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NUNIT\nunit-gui\nunit-gui.csproj">
-      <Project>{9e15166c-d2b7-4b24-ab1c-1c69ffcec9d3}</Project>
-      <Name>nunit-gui</Name>
-    </ProjectReference>
     <ProjectReference Include="..\VSParser\VSParsers.csproj">
       <Project>{91fef9d7-5376-4ea4-be09-cfb0ebb083fd}</Project>
       <Name>VSParsers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xunit.runner\xunit.runner.csproj">
+      <Project>{668b86ef-f21c-434a-90b4-c53ef7691cce}</Project>
+      <Name>xunit.runner</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -5047,6 +5068,11 @@
     <None Include="Resources\abstr1_32.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\StatusOK_cyan_16x.png" />
+    <None Include="Resources\StatusInformation_exp_16x.png" />
+    <None Include="Resources\RunTestDialog_16x.png" />
+    <None Include="Resources\ParallelExecution_16x.png" />
+    <None Include="Resources\GroupClause_16x.png" />
     <None Include="Resources\Triangle_16x.png" />
     <None Include="Resources\StatusWarning_16x.png" />
     <None Include="Resources\NugetPackage.bmp" />

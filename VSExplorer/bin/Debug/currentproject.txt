@@ -1,1 +1,1 @@
-C:\Users\me\Documents\Visual Studio 2015\Projects\RoslynPlayground\RoslynPlayground.sln
+C:\MSBuildProjects-beta\VStudio.sln

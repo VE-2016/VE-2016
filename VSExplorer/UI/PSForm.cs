@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace WinExplorer
@@ -58,7 +59,22 @@ namespace WinExplorer
 
             C = new ArrayList();
 
-            string[] cc = File.ReadAllLines("a.txt");
+
+            string[] cc = null;
+
+            try
+            {
+                cc = File.ReadAllLines("a.txt");
+            }
+            catch(Exception e)
+            {
+                while(c == null)
+                {
+                    Thread.Sleep(2000);
+                    cc = File.ReadAllLines("a.txt");
+                }
+            }
+
             int i = 0;
             while (i < cc.Length)
             {

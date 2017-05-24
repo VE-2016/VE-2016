@@ -641,7 +641,112 @@ namespace WinExplorer
 
             return proc;
         }
+        public class MSTest
+        {
+            public string msTestPath { get; set; }
 
+            public string IP { get; set; }
+            public string Port { get; set; }
+            public string LoggerClass { get; set; }
+            public string LoggerDLL { get; set; }
+
+            public string MSTestFile { get; set; }
+
+            public string file_library { get; set; }
+
+            public string folder_library { get; set; }
+
+            public void SetTestLibrary(string file)
+            {
+                string file_tested = file;
+
+                if (!File.Exists(msTestPath))
+                    return;
+                string content = File.ReadAllText(msTestPath);
+
+                
+                file_library = Path.GetFileName(file);
+
+                folder_library = Path.GetDirectoryName(file);
+
+                file = msTestPath;
+
+                string filename = Path.GetFileName(file);
+
+                file = file.Replace(filename, filename.Remove(0, 1));
+                
+                msTestPath = file;
+
+                file_library = Path.GetFileName(file);
+
+                content = content.Replace("{####}", folder_library);
+
+                content = content.Replace("{#####}", file_tested);
+
+                File.WriteAllText(msTestPath, content);
+            }
+            
+            public string GetMSTest()
+            {
+                return "";
+            }
+            
+            public List<string> GetDiscoveredTests()
+            {
+                List<string> b = new System.Collections.Generic.List<string>();
+
+                //string folder_library = AppDomain.CurrentDomain.BaseDirectory + "\\Extensions";
+
+                if (!File.Exists(folder_library + "\\" + "results.vs"))
+                    return b;
+
+                string c = File.ReadAllText(folder_library + "\\" + "results.vs");
+
+                string[] cc = c.Split("\n".ToCharArray());
+
+                bool found = false;
+
+                foreach (string d in cc)
+                {
+                    
+                    if (d.StartsWith("The following Tests are available"))
+                    {
+                        found = true;
+                        continue;
+                    }
+                    if (found)
+                        if (!string.IsNullOrEmpty(d))
+                    b.Add(d);
+
+                }
+                return b;
+            }
+        }
+        static public Process ExecuteMsTests(MSTest mstest)
+        {
+            string args = mstest.GetMSTest();
+
+            ProcessStartInfo procStartInfo = new ProcessStartInfo(mstest.msTestPath, args);
+            procStartInfo.RedirectStandardOutput = false;
+            procStartInfo.UseShellExecute = false;
+            procStartInfo.CreateNoWindow = false;
+            procStartInfo.RedirectStandardError = true;
+            Process proc = new Process();
+            proc.StartInfo = procStartInfo;
+            proc.Start();
+
+            proc.WaitForExit();
+
+            Command.counter--;
+
+            string stderr = proc.StandardError.ReadToEnd();
+
+            Console.WriteLine(stderr);
+
+            msbuilder_alls.Server.running = false;
+
+            return proc;
+        }
         static public void checkprojectreferences(string path, string projectname)
         {
             //         VSProvider.VSSolution vs = new VSSolution(Path.GetFullPath(path));
@@ -840,6 +945,26 @@ namespace WinExplorer
             return vs;
         }
 
+
+        public static string GetDependentResource(string data, string resource, string depends)
+        {
+            string[] cc = data.Split("\\".ToCharArray());
+
+            //if (!depends.EndsWith(".resx"))
+            //{
+
+            //    string d = data.Replace(cc[cc.Length - 1], "");
+
+            //    return d + resource;
+            //}
+            //else
+            {
+                string d = data.Replace(cc[cc.Length - 1], "");
+
+                return d + depends;
+            }
+        }
+
         public static int projects = 0;
 
         public ProgressBar pgs { get; set; }
@@ -1021,7 +1146,7 @@ namespace WinExplorer
                     try
                     {
                         Dictionary<string, string> globalProperties = new Dictionary<string, string>();
-                        Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(ps.FileName, globalProperties, "14.0");
+                        Microsoft.Build.Evaluation.Project pc = new Microsoft.Build.Evaluation.Project(ps.FileName, globalProperties, "15.0");
 
                         List<VSProjectItem> list = new List<VSProjectItem>();
 
@@ -1030,6 +1155,9 @@ namespace WinExplorer
 
                         foreach (Microsoft.Build.Evaluation.ProjectItem b in pc.Items)
                         {
+                            if (b.ItemType != "Compile")
+                                continue;
+                                                       
                             string g = Path.GetFullPath(ps.FileName).Replace(Path.GetFileName(ps.FileName), "");
 
                             string p = b.EvaluatedInclude.Replace(g, "");
@@ -1135,15 +1263,18 @@ namespace WinExplorer
 
                 foreach (VSProjectItem pi in ps.Items)
                 {
-                    //TreeNode []c = t.Nodes.Find(pi.ItemType.ItemName, false);
 
-                    //if(c == null)
+
+                    //if (pi.Include.Contains("C:\\Program Files (x86)\\MSBuild\\14.0\\bin\\amd64\\CSharp.ProjectItemsSchema.xaml"))
+                    //    MessageBox.Show("found");
 
                     CreateView_Solution.ProjectItemInfo pr3 = new CreateView_Solution.ProjectItemInfo();
                     pr3.vs = vs;
                     pr3.ps = ps;
                     pr3.psi = pi;
+                    pr3.Include = pi.Include;
 
+      
                     string g = pi.fileName;
 
                     string dependentupon = "";
@@ -1154,28 +1285,42 @@ namespace WinExplorer
 
                     string dependsupon = bc[bc.Length - 1];
 
-                    if (DSN.ContainsKey(dependsupon))
+                    if (DSN.ContainsKey(pi.Include/*dependsupon*/))
                     {
-                        TreeNode b = DSN[dependsupon];
-                        b.Tag = pr3;
+                        //TreeNode b = DSN[pi.Include/*dependsupon*/];
+                        //b.Tag = pr3;
+
+                        TreeNode ng = new TreeNode();
+                        ng.Text = pi.Include;
+                        TreeNode b = DSN[pi.Include/*dependentupon*/];
+                        ng.Tag = pr3;
+                        b.Nodes.Add(ng);
+
                         continue;
                     }
                     else
                     if (dependentupon != "")
                     {
+                        dependentupon = GetDependentResource(pi.Include, dependsupon, dependentupon);
                         if (!DSN.ContainsKey(dependentupon))
                         {
                             TreeNode ns = new TreeNode();
-                            ns.Text = dependentupon;
+                            ns.Text = pi.Include;// dependentupon;
                             ns.Tag = pr3;
 
                             DSN.Add(dependentupon, ns);
 
-                            if (dependentupon != dependsupon)
+                            if (dependentupon != pi.Include/*dependsupon*/)
                             {
+                                CreateView_Solution.ProjectItemInfo pr4 = new CreateView_Solution.ProjectItemInfo();
+                                pr4.vs = vs;
+                                pr4.ps = ps;
+                                pr4.psi = pi;
+                                pr4.Include = dependentupon;// pi.Include;
+
                                 TreeNode ng = new TreeNode();
-                                ng.Text = pi.Include;
-                                ng.Tag = pr3;
+                                ng.Text = dependentupon;// pi.Include;
+                                ng.Tag = pr4;
                                 ns.Nodes.Add(ng);
                             }
                         }
@@ -1193,19 +1338,19 @@ namespace WinExplorer
                     else
                     if (pi.SubTypes != "")
                     {
-                        if (!DSN.ContainsKey(dependsupon))
+                        if (!DSN.ContainsKey(pi.Include/*dependsupon*/))
                         {
                             TreeNode ns = new TreeNode();
                             ns.Text = pi.Include;
                             ns.Tag = pr3;
 
-                            DSN.Add(dependsupon, ns);
+                            DSN.Add(pi.Include/*dependsupon*/, ns);
 
                             continue;
                         }
                         else
                         {
-                            TreeNode b = DSN[dependsupon];
+                            TreeNode b = DSN[pi.Include/*dependsupon*/];
                             b.Tag = pr3;
                             continue;
                         }
@@ -1214,11 +1359,10 @@ namespace WinExplorer
                     if (pi.Info != null)
                     {
                         pi.Include = pi.Info;
+                        pr3.Include = pi.Info;
                     }
 
-                    //if (pi.Include.Contains("Bin\\Logo"))
-                    //    MessageBox.Show("..");
-
+                  
                     if (pi.ItemType == "Content")
                     {
                         CDD.Add(pi);
@@ -1231,12 +1375,13 @@ namespace WinExplorer
                     else
                     if (pi.ItemType == "None" && pi.Info != null)
                     {
+                        
                         pi.Include = pi.Info;
                         pi.fileName = ps.FileName;
                         CDD.Add(pi);
                     }
                     else
-                    if (pi.ItemType == "None")
+                    if (pi.ItemType == "None" || pi.ItemType == "Resource")
                     {
                         pi.fileName = ps.FileName;
                         if (Path.GetExtension(pi.Include) == ".sh")
@@ -1249,6 +1394,13 @@ namespace WinExplorer
                             CDD.Add(pi);
                         if (Path.GetExtension(pi.Include) == ".datasource")
                             DDD.Add(pi);
+
+                        
+                        TreeNode ns = new TreeNode();
+                        ns.Text = pi.Include;
+                        ns.Tag = pr3;
+                        //ns.ImageKey = "new";
+                        t.Nodes.Add(ns);
                     }
                     else
                     if (pi.ItemType == "file")
@@ -1275,6 +1427,11 @@ namespace WinExplorer
                     else
                         if (pi.ItemType == "Compile")
                     {
+
+                       // if (pi.Include.Contains("Build\\version.cs"))
+                       //     MessageBox.Show("bv");
+
+
                         TreeNode res = t;
 
                         pi.GetSubType(out dependentupon);
@@ -1345,8 +1502,8 @@ namespace WinExplorer
 
                                 ppp.Include = cc[0];
                                 ppb.psi = ppp;
-
-                                bbb.Tag = pr3; ;
+                                ppb.Include = cc[0];
+                                //bbb.Tag = pr3; ;
 
                                 t.Nodes.Add(bbb);
 
@@ -1394,12 +1551,24 @@ namespace WinExplorer
 
                         t = res;
                     }
-                    else if (pi.ItemType == "Folder")
+                    else if (pi.ItemType == "Folder" ||  pi.ItemType == "WCFMetadata")
                     {
+                        
                         FDD.Add(pi.Include);
                     }
                     else if (pi.ItemType == "EmbeddedResource")
                     {
+                        if (!pi.Include.EndsWith(".resx") || dependentupon == "")
+                        {
+                            pi.fileName = ps.FileName;
+                      
+                            TreeNode ns = new TreeNode();
+                            ns.Text = pi.Include;
+                            ns.Tag = pr3;
+                            t.Nodes.Add(ns);
+                            continue;
+                        }
+
                         EMB.Add(pi.Include);
                     }
                     else
@@ -1645,6 +1814,8 @@ namespace WinExplorer
                 }
 
                 tv.BeginUpdate();
+                //ArrayList G = new ArrayList();
+                //FindNodesByInclude(t, "AsynchronousMessage_13464_32.bmp", G);
 
                 ProjectOrder(t, FD, REF, nds);
 
@@ -1655,16 +1826,19 @@ namespace WinExplorer
                     ProjectSubForms(EMB, t, node, node.Text);
                 }
 
+              
                 ProjectCleanUp(t);
-
+               
                 AppendEmptyFolders(t, FDD, vs, ps);
+                
                 MoveFolderNodes(t);
+                
                 MoveEmbeddedResources(t, EMB);
-
+                
                 MoveOtherNodes(tv, t, NL);
 
                 MoveProjectOtherNodes(EMB, tv, t);
-
+                
                 MoveContent(t, CDD);
 
                 MoveContent(t, DDD);
@@ -1672,11 +1846,16 @@ namespace WinExplorer
                 MoveContent(t, DSN);
 
                 ProjectCleanUp(t);
-
+              
                 MoveContent(t, "Resources");
-
+                //if (ps.Name == "VSExplorer")
+                //    MessageBox.Show("ve");
+                MoveContentTo(t);
+                ArrayList G = new ArrayList();
+                FindNodesByInclude(t, "Formatting\\XmlLiterals.resx", G);
                 RemoveDuplicates(t);
-
+                G = new ArrayList();
+                FindNodesByInclude(t, "Formatting\\XmlLiterals.resx", G);
                 SortFolderNodes(t);
 
                 tv.EndUpdate();
@@ -1768,6 +1947,13 @@ namespace WinExplorer
             return p.ps.FileName;
         }
 
+        /// <summary>
+        /// Appends the empty folders.
+        /// </summary>
+        /// <param name="master">The master.</param>
+        /// <param name="L">The l.</param>
+        /// <param name="vs">The vs.</param>
+        /// <param name="pp">The pp.</param>
         public void AppendEmptyFolders(TreeNode master, ArrayList L, VSSolution vs, VSProject pp)
         {
             foreach (string s in L)
@@ -1805,6 +1991,7 @@ namespace WinExplorer
                         p.psi.SubType = "Folder";
                         p.psi.Include = folders;
                         p.psi.ItemType = "Folder";
+                        p.Include = folders;
 
                         nodes.Tag = p;
 
@@ -1869,8 +2056,8 @@ namespace WinExplorer
                     }
                 }
 
-                if (node == null)
-                    MessageBox.Show("no node");
+                //if (node == null)
+                //    MessageBox.Show("no node");
 
                 string entrys = g.Entries[entry];
 
@@ -2150,6 +2337,7 @@ namespace WinExplorer
                         pp.psi.Include = d;
                         ns.Tag = pp;
                         pp.psi.fileName = pi.fileName;
+                        pp.Include = d;
 
                         //ns.SelectedImageKey = "Folder";
                         //ns.ImageKey = "Folder";
@@ -2191,7 +2379,12 @@ namespace WinExplorer
                 CreateView_Solution.ProjectItemInfo pc = ng.Tag as CreateView_Solution.ProjectItemInfo;
                 VSProjectItem pi = pc.psi;
 
-                string Include = pi.Include;
+                string Include = pc.Include;// pi.Include;
+
+                //if (Include == "Editors\\Dialogs\\Settings.resx")
+                //    MessageBox.Show("OK");
+                //if (Include == "Editors\\Dialogs\\Settings.cs")
+                //    MessageBox.Show("OK");
 
                 string c = Include;
 
@@ -2247,6 +2440,7 @@ namespace WinExplorer
                         pp.ps = new VSProject();
                         pp.psi = new VSProjectItem();
                         pp.psi.Include = d;
+                       // pp.Include = pc.Include; 
                         ns.Tag = pp;
                         pp.psi.fileName = pi.fileName;
 
@@ -2380,7 +2574,85 @@ namespace WinExplorer
             }
 
             foreach (TreeNode n in N)
+                if(n.Parent.Text == n.Text)
+                    
                 n.Parent.Nodes.Remove(n);
+        }
+
+        public void MoveContentTo(TreeNode master)
+        {
+            ArrayList P = Nodes2Array(master);
+
+            foreach (TreeNode node in P)
+            {
+
+                
+                if (node == null)
+                    continue;
+                CreateView_Solution.ProjectItemInfo p = node.Tag as CreateView_Solution.ProjectItemInfo;
+                if (p == null)
+                    continue;
+                if(p.psi.ItemType == "None" || p.psi.ItemType == "EmbeddedResource")
+                {
+                    master.Nodes.Remove(node);
+                    string s = p.Include;
+                    string []cc = s.Split("\\".ToCharArray());
+                    string name = "";
+                    TreeNode nodes = master;
+                  
+                    int i = 0;
+                    foreach (string d in cc)
+                    {
+                        if (name != "")
+                            name += "\\";
+                        name += d;
+                        TreeNode ns = FindNodesIncludeExact(nodes, d);
+                        if (ns == null)
+                        {
+                            ns = new TreeNode();
+                            ns.Text = d;
+                            CreateView_Solution.ProjectItemInfo pp = new CreateView_Solution.ProjectItemInfo();
+                            pp.ps = new VSProject();
+                            pp.psi = new VSProjectItem();
+                            pp.psi.Include = name;
+                            ns.Tag = pp;
+                         //   ns.SelectedImageKey = "Folder";
+                         //   ns.ImageKey = "Folder";
+                            pp.Include = name;
+
+                            if (i < cc.Length - 1)
+                            {
+                                pp.psi.ItemType = "Folder";
+                                ns.SelectedImageKey = "Folder";
+                                ns.ImageKey = "Folder";
+                                nodes.Nodes.Add(ns);
+                            }
+                            else
+                            {
+                                string[] bb = d.Split(".".ToCharArray());
+
+                                //pp.psi.ItemType = "resourcefile";
+                                //ns.SelectedImageKey = "resourcefile";
+
+                                if (bb.Length <= 1)
+                                {
+                                    pp.psi.ItemType = "Folder";
+                                    ns.SelectedImageKey = "Folder";
+                                    ns.ImageKey = "Folder";
+                                }
+                                
+                                nodes.Nodes.Add(ns);
+                                SetExtensions(ns);
+                            }
+
+                            nodes = ns;
+                        }
+                        else nodes = ns;
+                        i++;
+                    }
+                    
+                }
+            }
         }
 
         //public void MoveNodeContent(TreeNode master)
@@ -2522,6 +2794,7 @@ namespace WinExplorer
                 p.psi = new VSProjectItem();
                 p.psi.Include = s;
                 p.ps = null;
+                p.Include = s;
 
                 node.Tag = p;
 
@@ -2786,10 +3059,9 @@ namespace WinExplorer
         {
             ArrayList L = Nodes2Array(master);
 
-            L = SortNodes(L);
+            //L = SortNodes(L);
 
-            //ArrayList S = new ArrayList();
-
+           
             master.Nodes.Clear();
 
             foreach (TreeNode node in L)
@@ -3064,6 +3336,9 @@ namespace WinExplorer
                         string content = File.ReadAllText(c);
 
                         json js = JsonConvert.DeserializeObject<json>(content);
+
+                        if (js.dependencies == null)
+                            continue;
 
                         Dictionary<string, string> g = JsonConvert.DeserializeObject<Dictionary<string, string>>((string)js.dependencies.ToString());
 
@@ -3461,26 +3736,34 @@ namespace WinExplorer
             {
                 TreeNode ns = L[i] as TreeNode;
 
+                CreateView_Solution.ProjectItemInfo p0 = ns.Tag as CreateView_Solution.ProjectItemInfo;
+
                 int j = i + 1;
                 while (j < L.Count)
                 {
                     TreeNode ng = L[j] as TreeNode;
 
-                    if (ng.Text == ns.Text)
-                        L.Remove(ng);
+                    CreateView_Solution.ProjectItemInfo p1 = ng.Tag as CreateView_Solution.ProjectItemInfo;
 
-                    if (ng.Text == "")
-                        L.Remove(ng);
-                    if (ng.Text == "..")
-                        L.Remove(ng);
-                    if (ng.Text == "bin")
-                        L.Remove(ng);
-                    if (ng.Text == "obj")
-                        L.Remove(ng);
-                    if (ng.Text.Length > 1)
-                        if (ng.Text[1] == ':')
+                    if (p0.Include == p1.Include)
+                    {
+
+                        if (ng.Text == ns.Text)
+                            if(!ng.Equals(ns))
                             L.Remove(ng);
 
+                        if (ng.Text == "")
+                            L.Remove(ng);
+                        if (ng.Text == "..")
+                            L.Remove(ng);
+                        //if (ng.Text == "bin")
+                        //    L.Remove(ng);
+                        if (ng.Text == "obj")
+                            L.Remove(ng);
+                        if (ng.Text.Length > 1)
+                            if (ng.Text[1] == ':')
+                                L.Remove(ng);
+                    }
                     j++;
                 }
 
@@ -3632,6 +3915,7 @@ namespace WinExplorer
                         pc.psi = new VSProjectItem();
                         pc.psi.Include = b;
                         pc.psi.SubType = "EmbeddedResource";
+                        pc.Include = b;
 
                         TreeNode nb = new TreeNode();
                         nb.Text = b;
@@ -3650,7 +3934,7 @@ namespace WinExplorer
                 prs.psi.SubTypes = pp.psi.SubTypes;
                 prs.psi.Include = pp.psi.Include;
                 prs.psi.SubType = "Form";
-
+                prs.Include = pp.psi.Include;
                 // if (pp.SubType != "")
                 //     prs.psi.SubType = pp.SubType;
 
@@ -3854,6 +4138,7 @@ namespace WinExplorer
                     if (name == file)
                     {
                         pc = new CreateView_Solution.ProjectItemInfo();
+                        pc.Include = b;
                         pc.vs = pp.vs;
                         pc.ps = pp.ps;
                         pc.psi = new VSProjectItem();
@@ -3903,6 +4188,7 @@ namespace WinExplorer
                 pcc.ps = pp.ps;
                 pcc.psi = new VSProjectItem();
                 pcc.psi.Include = pp.psi.Include; // named;
+                pcc.Include = pp.psi.Include;
                 pcc.psi.SubTypes = pp.psi.SubTypes;
                 //pcc.psi.SubType = pp.SubType;
 
@@ -4124,12 +4410,17 @@ namespace WinExplorer
 
                 if (p != null)
                 {
-                    if (p.psi != null)
+                    if(p.IsProjectNode)
+                    if (p.ps != null)
                     {
-                        if (p.psi.project.Name == vp.Name)
-                            return ns;
+                        if (p.ps.Name == vp.Name)
+                                return ns;
                     }
                 }
+                TreeNode ng = GetProjectNode(ns, vp);
+
+                if (ng != null)
+                    return ng;
             }
 
             return null;
@@ -4143,9 +4434,12 @@ namespace WinExplorer
 
                 if (p != null)
                 {
-                    if (p.psi != null)
+                    if(p.IsProjectNode)
+                        
+
+                    if (p.ps != null)
                     {
-                        if (p.psi.project.Name == vp.Name)
+                        if (p.ps.Name == vp.Name)
                             return ns;
                     }
                 }
@@ -4186,19 +4480,31 @@ namespace WinExplorer
         {
             Include = Include.ToUpper().Trim();
 
-            string[] cc = Include.Split("\\".ToCharArray());
+            CreateView_Solution.ProjectItemInfo p = master.Tag as CreateView_Solution.ProjectItemInfo;
 
-            foreach (TreeNode ns in master.Nodes)
+            if (p != null)
             {
-                CreateView_Solution.ProjectItemInfo p = ns.Tag as CreateView_Solution.ProjectItemInfo;
+                if (p.Include != null)
+                {
+                    string include = p.Include.ToUpper().Trim();
+
+                    if (include.Contains(Include))
+                        return master;
+                }
+            }
+
+                foreach (TreeNode ns in master.Nodes)
+            {
+
+                p = ns.Tag as CreateView_Solution.ProjectItemInfo;
 
                 if (p != null)
                 {
-                    if (p.psi != null)
+                    if (p.Include != null)
                     {
-                        string include = p.psi.Include;
+                        string include = p.Include.ToUpper().Trim();
 
-                        if (Include == include.ToUpper().Trim())
+                        if (include.Contains( Include))
                             return ns;
                     }
 
@@ -4225,7 +4531,57 @@ namespace WinExplorer
 
             return L;
         }
+        public ArrayList FindNodesByInclude(TreeView master, string name, ArrayList L)
+        {
+            name = name.ToUpper();
 
+            CreateView_Solution.ProjectItemInfo p0 = master.Tag as CreateView_Solution.ProjectItemInfo;
+
+            if (!string.IsNullOrEmpty(p0.Include))
+                if (p0.Include.ToUpper() == name)
+                L.Add(master);
+
+            foreach (TreeNode node in master.Nodes)
+            {
+                // if (node.Text.ToUpper().Contains(name) == true)
+                //     L.Add(node);
+
+                CreateView_Solution.ProjectItemInfo p1 = node.Tag as CreateView_Solution.ProjectItemInfo;
+                if (!string.IsNullOrEmpty(p1.Include))
+                    if (p1.Include.ToUpper() == name)
+                    L.Add(master);
+
+                FindNodesByInclude(node, name, L);
+            }
+
+            return L;
+        }
+        public ArrayList FindNodesByInclude(TreeNode master, string name, ArrayList L)
+        {
+            name = name.ToUpper();
+
+            CreateView_Solution.ProjectItemInfo p0 = master.Tag as CreateView_Solution.ProjectItemInfo;
+
+            if(!string.IsNullOrEmpty(p0.Include))
+            if (p0.Include.ToUpper().Contains(name))
+                L.Add(master);
+
+            foreach (TreeNode node in master.Nodes)
+            {
+               // if (node.Text.ToUpper().Contains(name) == true)
+               //     L.Add(node);
+
+                CreateView_Solution.ProjectItemInfo p1= node.Tag as CreateView_Solution.ProjectItemInfo;
+
+                if (!string.IsNullOrEmpty(p1.Include))
+                    if (p1.Include.ToUpper().Contains(name))
+                    L.Add(master);
+
+                FindNodesByInclude(node, name, L);
+            }
+
+            return L;
+        }
         public ArrayList FindNodes(TreeNode master, string name)
         {
             ArrayList L = new ArrayList();
