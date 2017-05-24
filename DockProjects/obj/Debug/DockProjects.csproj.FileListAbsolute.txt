@@ -144,6 +144,5 @@ F:\Windows-Enterprise-VE-2016\VE-2016\DockProjects\obj\Debug\DockProjects.Form1.
 F:\Windows-Enterprise-VE-2016\VE-2016\DockProjects\obj\Debug\DockProjects.Properties.Resources.resources
 F:\Windows-Enterprise-VE-2016\VE-2016\DockProjects\obj\Debug\DockProject.ToolWindow.resources
 F:\Windows-Enterprise-VE-2016\VE-2016\DockProjects\obj\Debug\DockProjects.csproj.GenerateResource.Cache
-F:\Windows-Enterprise-VE-2016\VE-2016\DockProjects\obj\Debug\DockProjects.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\DockProjects\obj\Debug\DockProjects.exe
 F:\Windows-Enterprise-VE-2016\VE-2016\DockProjects\obj\Debug\DockProjects.pdb

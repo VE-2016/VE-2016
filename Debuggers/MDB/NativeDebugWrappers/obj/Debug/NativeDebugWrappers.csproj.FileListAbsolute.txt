@@ -52,6 +52,6 @@ F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\NativeDebugWrappers\bin\Debu
 F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.pdb
 F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.dll.CodeAnalysisLog.xml
 F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.dll.lastcodeanalysissucceeded
-F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\NativeDebugWrappers\obj\Debug\NativeDebugWrappers.csprojResolveAssemblyReference.cache

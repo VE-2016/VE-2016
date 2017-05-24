@@ -125,6 +125,6 @@ F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting
 F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\bin\Microsoft.DotNet.CodeFormatting\Debug\System.Composition.Hosting.xml
 F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\bin\Microsoft.DotNet.CodeFormatting\Debug\System.Composition.Runtime.xml
 F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\bin\Microsoft.DotNet.CodeFormatting\Debug\System.Composition.TypedParts.xml
-F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\obj\Microsoft.DotNet.CodeFormatting\Debug\Microsoft.DotNet.CodeFormatting.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\obj\Microsoft.DotNet.CodeFormatting\Debug\Microsoft.DotNet.CodeFormatting.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\obj\Microsoft.DotNet.CodeFormatting\Debug\Microsoft.DotNet.CodeFormatting.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\obj\Microsoft.DotNet.CodeFormatting\Debug\Microsoft.DotNet.CodeFormatting.csprojResolveAssemblyReference.cache

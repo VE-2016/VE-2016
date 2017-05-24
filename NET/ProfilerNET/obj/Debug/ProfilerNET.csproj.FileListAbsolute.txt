@@ -59,7 +59,6 @@ F:\Windows-Enterprise-VE-2016\VE-2016\NET\ProfilerNET\bin\Debug\System.Web.DataV
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\ProfilerNET\bin\Debug\System.Web.DataVisualization.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\ProfilerNET\bin\Debug\System.Windows.Forms.DataVisualization.Design.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\ProfilerNET\bin\Debug\System.Windows.Forms.DataVisualization.dll
-F:\Windows-Enterprise-VE-2016\VE-2016\NET\ProfilerNET\obj\Debug\ProfilerNET.csprojResolveAssemblyReference.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\ProfilerNET\obj\Debug\ProfilerNET.Form1.resources
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\ProfilerNET\obj\Debug\ProfilerNET.Properties.Resources.resources
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\ProfilerNET\obj\Debug\ProfilerNET.csproj.GenerateResource.Cache

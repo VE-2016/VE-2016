@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\preview\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2017\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
 <FxCopReport Version="15.0">
  <Targets>
   <Target Name="F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng\bin\Debug\mdbgeng.dll">
    <Modules>
     <Module Name="mdbgeng.dll">
      <Messages>
-      <Message TypeName="MarkAssembliesWithAssemblyVersion" Category="Microsoft.Design" CheckId="CA1016" Status="Active" Created="2017-05-24 13:05:43Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkAssembliesWithAssemblyVersion" Category="Microsoft.Design" CheckId="CA1016" Status="Active" Created="2017-05-24 20:04:20Z" FixCategory="NonBreaking">
        <Issue Certainty="95" Level="Error">Add an AssemblyVersion attribute to 'mdbgeng.dll'.</Issue>
       </Message>
      </Messages>
@@ -17,7 +17,7 @@
          <Members>
           <Member Name="#LoadLibrary(System.String)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2017-05-24 13:05:43Z" FixCategory="Breaking">
+            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2017-05-24 20:04:20Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="CriticalWarning">Because it is a P/Invoke method, 'LibraryProvider.LoadLibrary(string)' should be defined in a class named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Issue>
             </Message>
            </Messages>
@@ -30,7 +30,7 @@
            <Accessors>
             <Accessor Name="#get_Item(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
              <Messages>
-              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-05-24 13:05:43Z" FixCategory="Breaking">
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-05-24 20:04:20Z" FixCategory="Breaking">
                <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng" File="Appdomain.cs" Line="63">'MDbgAppDomainCollection.this.get(string)' creates an exception of type 'MDbgAmbiguousModuleNameException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
               </Message>
              </Messages>
@@ -43,7 +43,7 @@
          <Members>
           <Member Name="#.ctor(Microsoft.Samples.Debugging.MdbgEngine.MDbgBreakpointCollection,Microsoft.Samples.Debugging.MdbgEngine.ISequencePointResolver)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2017-05-24 13:05:43Z" FixCategory="NonBreaking">
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2017-05-24 20:04:20Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="CriticalWarning" Path="F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng" File="Breakpoint.cs" Line="847">'MDbgFunctionBreakpoint.MDbgFunctionBreakpoint(MDbgBreakpointCollection, ISequencePointResolver)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;MDbgFunctionBreakpoint..ctor(MDbgBreakpointCollection, ISequencePointResolver)&#xD;&#xA;MDbgBreakpoint.Bind():Boolean</Issue>
             </Message>
            </Messages>
@@ -52,49 +52,49 @@
         </Type>
         <Type Name="MDbgProcess" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2017-05-24 13:05:43Z" FixCategory="DependsOnFix">
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2017-05-24 20:04:20Z" FixCategory="DependsOnFix">
            <Issue Name="DependsOnFix" Certainty="95" Level="CriticalError">Implement IDisposable on 'MDbgProcess' because it creates members of the following IDisposable types: 'MDbgModuleCollection', 'ManualResetEvent'. If 'MDbgProcess' has previously shipped, adding new members that implement IDisposable to this type is considered a breaking change to existing consumers.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#AsyncStop()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002" Status="Active" Created="2017-05-24 13:05:43Z" FixCategory="NonBreaking">
+            <Message TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002" Status="Active" Created="2017-05-24 20:04:20Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="CriticalError" Path="F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng" File="Process.cs" Line="1473">'MDbgProcess.AsyncStop()' locks on a reference of type 'MDbgProcess'. Replace this with a lock against an object with strong-identity.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#CleanAfterProcessExit()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002" Status="Active" Created="2017-05-24 13:05:43Z" FixCategory="NonBreaking">
+            <Message TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002" Status="Active" Created="2017-05-24 20:04:20Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="CriticalError" Path="F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng" File="Process.cs" Line="2466">'MDbgProcess.CleanAfterProcessExit()' locks on a reference of type 'MDbgProcess'. Replace this with a lock against an object with strong-identity.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#HandleCustomPostCallback(Microsoft.Samples.Debugging.CorDebug.ManagedCallbackType,Microsoft.Samples.Debugging.CorDebug.CorEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002" Status="Active" Created="2017-05-24 13:05:43Z" FixCategory="NonBreaking">
+            <Message TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002" Status="Active" Created="2017-05-24 20:04:20Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="CriticalError" Path="F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng" File="Process.cs" Line="3492">'MDbgProcess.HandleCustomPostCallback(ManagedCallbackType, CorEventArgs)' locks on a reference of type 'MDbgProcess'. Replace this with a lock against an object with strong-identity.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#InternalHandleRawMode(Microsoft.Samples.Debugging.CorDebug.ManagedCallbackType,Microsoft.Samples.Debugging.CorDebug.CorEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002" Status="Active" Created="2017-05-24 13:05:43Z" FixCategory="NonBreaking">
+            <Message TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002" Status="Active" Created="2017-05-24 20:04:20Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="CriticalError" Path="F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng" File="Process.cs" Line="2489">'MDbgProcess.InternalHandleRawMode(ManagedCallbackType, CorEventArgs)' locks on a reference of type 'MDbgProcess'. Replace this with a lock against an object with strong-identity.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#InternalSignalRuntimeIsStopped(Microsoft.Samples.Debugging.CorDebug.CorThread,System.Object)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002" Status="Active" Created="2017-05-24 13:05:43Z" FixCategory="NonBreaking">
+            <Message TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002" Status="Active" Created="2017-05-24 20:04:20Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="CriticalError" Path="F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng" File="Process.cs" Line="2397">'MDbgProcess.InternalSignalRuntimeIsStopped(CorThread, object)' locks on a reference of type 'MDbgProcess'. Replace this with a lock against an object with strong-identity.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ReallyContinueProcess()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002" Status="Active" Created="2017-05-24 13:05:43Z" FixCategory="NonBreaking">
+            <Message TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002" Status="Active" Created="2017-05-24 20:04:20Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="CriticalError" Path="F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng" File="Process.cs" Line="2299">'MDbgProcess.ReallyContinueProcess()' locks on a reference of type 'MDbgProcess'. Replace this with a lock against an object with strong-identity.</Issue>
             </Message>
            </Messages>
@@ -107,7 +107,7 @@
            <Accessors>
             <Accessor Name="#get_Active()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
              <Messages>
-              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-05-24 13:05:43Z" FixCategory="Breaking">
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-05-24 20:04:20Z" FixCategory="Breaking">
                <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng" File="Process.cs" Line="121">'MDbgProcessCollection.Active.get()' creates an exception of type 'MDbgNoActiveInstanceException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
               </Message>
              </Messages>
@@ -122,7 +122,7 @@
            <Accessors>
             <Accessor Name="#get_CurrentFrame()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
              <Messages>
-              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-05-24 13:05:43Z" FixCategory="Breaking">
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-05-24 20:04:20Z" FixCategory="Breaking">
                <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng" File="Thread.cs" Line="185">'MDbgThread.CurrentFrame.get()' creates an exception of type 'MDbgNoCurrentFrameException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
                <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng" File="Thread.cs" Line="189">'MDbgThread.CurrentFrame.get()' creates an exception of type 'MDbgNoCurrentFrameException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
                <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng" File="Thread.cs" Line="195">'MDbgThread.CurrentFrame.get()' creates an exception of type 'MDbgNoCurrentFrameException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
@@ -135,7 +135,7 @@
            <Accessors>
             <Accessor Name="#get_Suspended()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
              <Messages>
-              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-05-24 13:05:43Z" FixCategory="Breaking">
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-05-24 20:04:20Z" FixCategory="Breaking">
                <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng" File="Thread.cs" Line="42">'MDbgThread.Suspended.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
               </Message>
              </Messages>
@@ -150,7 +150,7 @@
            <Accessors>
             <Accessor Name="#get_Active()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
              <Messages>
-              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-05-24 13:05:43Z" FixCategory="Breaking">
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-05-24 20:04:20Z" FixCategory="Breaking">
                <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng" File="Thread.cs" Line="538">'MDbgThreadCollection.Active.get()' creates an exception of type 'MDbgNoActiveInstanceException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
               </Message>
              </Messages>
@@ -165,7 +165,7 @@
            <Accessors>
             <Accessor Name="#get_Value()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
              <Messages>
-              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-05-24 13:05:43Z" FixCategory="Breaking">
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2017-05-24 20:04:20Z" FixCategory="Breaking">
                <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng" File="Value.cs" Line="331">'MDbgValue.Value.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
               </Message>
              </Messages>

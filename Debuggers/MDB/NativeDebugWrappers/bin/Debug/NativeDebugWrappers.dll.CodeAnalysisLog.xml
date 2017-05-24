@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\preview\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2017\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
 <FxCopReport Version="15.0">
  <Targets>
   <Target Name="F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\NativeDebugWrappers\bin\Debug\NativeDebugWrappers.dll">
    <Modules>
     <Module Name="nativedebugwrappers.dll">
      <Messages>
-      <Message TypeName="MarkAssembliesWithAssemblyVersion" Category="Microsoft.Design" CheckId="CA1016" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkAssembliesWithAssemblyVersion" Category="Microsoft.Design" CheckId="CA1016" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="NonBreaking">
        <Issue Certainty="95" Level="Error">Add an AssemblyVersion attribute to 'NativeDebugWrappers.dll'.</Issue>
       </Message>
      </Messages>
@@ -17,7 +17,7 @@
          <Members>
           <Member Name="#Dispose(System.Boolean)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Name="DisposeBoolSignature" Certainty="95" Level="Error" Path="F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\NativeDebugWrappers" File="amd64Context.cs" Line="579">Ensure that 'AMD64Context.Dispose(bool)' is declared as protected, virtual, and unsealed.</Issue>
             </Message>
            </Messages>
@@ -28,7 +28,7 @@
          <Members>
           <Member Name="#Dispose(System.Boolean)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Name="DisposeBoolSignature" Certainty="95" Level="Error" Path="F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\NativeDebugWrappers" File="context.cs" Line="178">Ensure that 'ContextAccessor.Dispose(bool)' is declared as protected, virtual, and unsealed.</Issue>
             </Message>
            </Messages>
@@ -39,49 +39,49 @@
          <Members>
           <Member Name="#hFile" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'CREATE_PROCESS_DEBUG_INFO.hFile' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#hProcess" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'CREATE_PROCESS_DEBUG_INFO.hProcess' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#hThread" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'CREATE_PROCESS_DEBUG_INFO.hThread' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#lpBaseOfImage" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'CREATE_PROCESS_DEBUG_INFO.lpBaseOfImage' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#lpImageName" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'CREATE_PROCESS_DEBUG_INFO.lpImageName' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#lpStartAddress" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'CREATE_PROCESS_DEBUG_INFO.lpStartAddress' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#lpThreadLocalBase" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'CREATE_PROCESS_DEBUG_INFO.lpThreadLocalBase' private.</Issue>
             </Message>
            </Messages>
@@ -92,21 +92,21 @@
          <Members>
           <Member Name="#hThread" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'CREATE_THREAD_DEBUG_INFO.hThread' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#lpStartAddress" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'CREATE_THREAD_DEBUG_INFO.lpStartAddress' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#lpThreadLocalBase" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'CREATE_THREAD_DEBUG_INFO.lpThreadLocalBase' private.</Issue>
             </Message>
            </Messages>
@@ -115,107 +115,107 @@
         </Type>
         <Type Name="DebugEvent32" Kind="Struct" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message Id="CreateProcess" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="CreateProcess" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'DebugEventUnion' contains the following non-portable fields: 'DebugEventUnion.CreateProcess'.</Issue>
           </Message>
-          <Message Id="CreateThread" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="CreateThread" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'DebugEventUnion' contains the following non-portable fields: 'DebugEventUnion.CreateThread'.</Issue>
           </Message>
-          <Message Id="Exception" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="Exception" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'DebugEventUnion' contains the following non-portable fields: 'DebugEventUnion.Exception'.</Issue>
           </Message>
-          <Message Id="ExceptionAddress" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="ExceptionAddress" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'EXCEPTION_RECORD' contains the following non-portable fields: 'EXCEPTION_RECORD.ExceptionAddress'.</Issue>
           </Message>
-          <Message Id="ExceptionInformation0" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="ExceptionInformation0" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'EXCEPTION_RECORD' contains the following non-portable fields: 'EXCEPTION_RECORD.ExceptionInformation0'.</Issue>
           </Message>
-          <Message Id="ExceptionInformation1" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="ExceptionInformation1" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'EXCEPTION_RECORD' contains the following non-portable fields: 'EXCEPTION_RECORD.ExceptionInformation1'.</Issue>
           </Message>
-          <Message Id="ExceptionInformation10" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="ExceptionInformation10" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'EXCEPTION_RECORD' contains the following non-portable fields: 'EXCEPTION_RECORD.ExceptionInformation10'.</Issue>
           </Message>
-          <Message Id="ExceptionInformation11" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="ExceptionInformation11" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'EXCEPTION_RECORD' contains the following non-portable fields: 'EXCEPTION_RECORD.ExceptionInformation11'.</Issue>
           </Message>
-          <Message Id="ExceptionInformation12" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="ExceptionInformation12" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'EXCEPTION_RECORD' contains the following non-portable fields: 'EXCEPTION_RECORD.ExceptionInformation12'.</Issue>
           </Message>
-          <Message Id="ExceptionInformation13" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="ExceptionInformation13" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'EXCEPTION_RECORD' contains the following non-portable fields: 'EXCEPTION_RECORD.ExceptionInformation13'.</Issue>
           </Message>
-          <Message Id="ExceptionInformation14" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="ExceptionInformation14" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'EXCEPTION_RECORD' contains the following non-portable fields: 'EXCEPTION_RECORD.ExceptionInformation14'.</Issue>
           </Message>
-          <Message Id="ExceptionInformation2" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="ExceptionInformation2" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'EXCEPTION_RECORD' contains the following non-portable fields: 'EXCEPTION_RECORD.ExceptionInformation2'.</Issue>
           </Message>
-          <Message Id="ExceptionInformation3" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="ExceptionInformation3" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'EXCEPTION_RECORD' contains the following non-portable fields: 'EXCEPTION_RECORD.ExceptionInformation3'.</Issue>
           </Message>
-          <Message Id="ExceptionInformation4" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="ExceptionInformation4" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'EXCEPTION_RECORD' contains the following non-portable fields: 'EXCEPTION_RECORD.ExceptionInformation4'.</Issue>
           </Message>
-          <Message Id="ExceptionInformation5" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="ExceptionInformation5" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'EXCEPTION_RECORD' contains the following non-portable fields: 'EXCEPTION_RECORD.ExceptionInformation5'.</Issue>
           </Message>
-          <Message Id="ExceptionInformation6" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="ExceptionInformation6" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'EXCEPTION_RECORD' contains the following non-portable fields: 'EXCEPTION_RECORD.ExceptionInformation6'.</Issue>
           </Message>
-          <Message Id="ExceptionInformation7" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="ExceptionInformation7" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'EXCEPTION_RECORD' contains the following non-portable fields: 'EXCEPTION_RECORD.ExceptionInformation7'.</Issue>
           </Message>
-          <Message Id="ExceptionInformation8" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="ExceptionInformation8" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'EXCEPTION_RECORD' contains the following non-portable fields: 'EXCEPTION_RECORD.ExceptionInformation8'.</Issue>
           </Message>
-          <Message Id="ExceptionInformation9" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="ExceptionInformation9" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'EXCEPTION_RECORD' contains the following non-portable fields: 'EXCEPTION_RECORD.ExceptionInformation9'.</Issue>
           </Message>
-          <Message Id="ExceptionRecord" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="ExceptionRecord" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'EXCEPTION_DEBUG_INFO' contains the following non-portable fields: 'EXCEPTION_DEBUG_INFO.ExceptionRecord'.</Issue>
            <Issue Certainty="95" Level="CriticalError">Structure 'EXCEPTION_RECORD' contains the following non-portable fields: 'EXCEPTION_RECORD.ExceptionRecord'.</Issue>
           </Message>
-          <Message Id="LoadDll" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="LoadDll" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'DebugEventUnion' contains the following non-portable fields: 'DebugEventUnion.LoadDll'.</Issue>
           </Message>
-          <Message Id="OutputDebugString" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="OutputDebugString" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'DebugEventUnion' contains the following non-portable fields: 'DebugEventUnion.OutputDebugString'.</Issue>
           </Message>
-          <Message Id="hFile" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="hFile" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'CREATE_PROCESS_DEBUG_INFO' contains the following non-portable fields: 'CREATE_PROCESS_DEBUG_INFO.hFile'.</Issue>
            <Issue Certainty="95" Level="CriticalError">Structure 'LOAD_DLL_DEBUG_INFO' contains the following non-portable fields: 'LOAD_DLL_DEBUG_INFO.hFile'.</Issue>
           </Message>
-          <Message Id="hProcess" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="hProcess" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'CREATE_PROCESS_DEBUG_INFO' contains the following non-portable fields: 'CREATE_PROCESS_DEBUG_INFO.hProcess'.</Issue>
           </Message>
-          <Message Id="hThread" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="hThread" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'CREATE_PROCESS_DEBUG_INFO' contains the following non-portable fields: 'CREATE_PROCESS_DEBUG_INFO.hThread'.</Issue>
            <Issue Certainty="95" Level="CriticalError">Structure 'CREATE_THREAD_DEBUG_INFO' contains the following non-portable fields: 'CREATE_THREAD_DEBUG_INFO.hThread'.</Issue>
           </Message>
-          <Message Id="lpBaseOfDll" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="lpBaseOfDll" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'LOAD_DLL_DEBUG_INFO' contains the following non-portable fields: 'LOAD_DLL_DEBUG_INFO.lpBaseOfDll'.</Issue>
            <Issue Certainty="95" Level="CriticalError">Structure 'UNLOAD_DLL_DEBUG_INFO' contains the following non-portable fields: 'UNLOAD_DLL_DEBUG_INFO.lpBaseOfDll'.</Issue>
           </Message>
-          <Message Id="lpBaseOfImage" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="lpBaseOfImage" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'CREATE_PROCESS_DEBUG_INFO' contains the following non-portable fields: 'CREATE_PROCESS_DEBUG_INFO.lpBaseOfImage'.</Issue>
           </Message>
-          <Message Id="lpDebugStringData" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="lpDebugStringData" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'OUTPUT_DEBUG_STRING_INFO' contains the following non-portable fields: 'OUTPUT_DEBUG_STRING_INFO.lpDebugStringData'.</Issue>
           </Message>
-          <Message Id="lpImageName" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="lpImageName" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'CREATE_PROCESS_DEBUG_INFO' contains the following non-portable fields: 'CREATE_PROCESS_DEBUG_INFO.lpImageName'.</Issue>
            <Issue Certainty="95" Level="CriticalError">Structure 'LOAD_DLL_DEBUG_INFO' contains the following non-portable fields: 'LOAD_DLL_DEBUG_INFO.lpImageName'.</Issue>
           </Message>
-          <Message Id="lpStartAddress" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="lpStartAddress" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'CREATE_PROCESS_DEBUG_INFO' contains the following non-portable fields: 'CREATE_PROCESS_DEBUG_INFO.lpStartAddress'.</Issue>
            <Issue Certainty="95" Level="CriticalError">Structure 'CREATE_THREAD_DEBUG_INFO' contains the following non-portable fields: 'CREATE_THREAD_DEBUG_INFO.lpStartAddress'.</Issue>
           </Message>
-          <Message Id="lpThreadLocalBase" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="lpThreadLocalBase" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'CREATE_PROCESS_DEBUG_INFO' contains the following non-portable fields: 'CREATE_PROCESS_DEBUG_INFO.lpThreadLocalBase'.</Issue>
            <Issue Certainty="95" Level="CriticalError">Structure 'CREATE_THREAD_DEBUG_INFO' contains the following non-portable fields: 'CREATE_THREAD_DEBUG_INFO.lpThreadLocalBase'.</Issue>
           </Message>
-          <Message Id="union" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+          <Message Id="union" TypeName="ValueTypeFieldsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1900" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="CriticalError">Structure 'DebugEvent32' contains the following non-portable fields: 'DebugEvent32.union'.</Issue>
           </Message>
          </Messages>
@@ -224,119 +224,119 @@
          <Members>
           <Member Name="#ExceptionAddress" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'EXCEPTION_RECORD.ExceptionAddress' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ExceptionInformation0" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'EXCEPTION_RECORD.ExceptionInformation0' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ExceptionInformation1" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'EXCEPTION_RECORD.ExceptionInformation1' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ExceptionInformation10" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'EXCEPTION_RECORD.ExceptionInformation10' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ExceptionInformation11" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'EXCEPTION_RECORD.ExceptionInformation11' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ExceptionInformation12" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'EXCEPTION_RECORD.ExceptionInformation12' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ExceptionInformation13" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'EXCEPTION_RECORD.ExceptionInformation13' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ExceptionInformation14" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'EXCEPTION_RECORD.ExceptionInformation14' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ExceptionInformation2" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'EXCEPTION_RECORD.ExceptionInformation2' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ExceptionInformation3" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'EXCEPTION_RECORD.ExceptionInformation3' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ExceptionInformation4" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'EXCEPTION_RECORD.ExceptionInformation4' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ExceptionInformation5" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'EXCEPTION_RECORD.ExceptionInformation5' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ExceptionInformation6" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'EXCEPTION_RECORD.ExceptionInformation6' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ExceptionInformation7" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'EXCEPTION_RECORD.ExceptionInformation7' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ExceptionInformation8" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'EXCEPTION_RECORD.ExceptionInformation8' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ExceptionInformation9" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'EXCEPTION_RECORD.ExceptionInformation9' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ExceptionRecord" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'EXCEPTION_RECORD.ExceptionRecord' private.</Issue>
             </Message>
            </Messages>
@@ -347,7 +347,7 @@
          <Members>
           <Member Name="#Dispose(System.Boolean)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Name="DisposeBoolSignature" Certainty="95" Level="Error" Path="F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\NativeDebugWrappers" File="ia64Context.cs" Line="993">Ensure that 'IA64Context.Dispose(bool)' is declared as protected, virtual, and unsealed.</Issue>
             </Message>
            </Messages>
@@ -358,21 +358,21 @@
          <Members>
           <Member Name="#hFile" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'LOAD_DLL_DEBUG_INFO.hFile' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#lpBaseOfDll" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'LOAD_DLL_DEBUG_INFO.lpBaseOfDll' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#lpImageName" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'LOAD_DLL_DEBUG_INFO.lpImageName' private.</Issue>
             </Message>
            </Messages>
@@ -383,14 +383,14 @@
          <Members>
           <Member Name="#EntryPoint" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'ModuleInfo.EntryPoint' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#lpBaseOfDll" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'ModuleInfo.lpBaseOfDll' private.</Issue>
             </Message>
            </Messages>
@@ -401,197 +401,197 @@
          <Members>
           <Member Name="#CloseHandle(System.IntPtr)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.CloseHandle(IntPtr)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ContinueDebugEvent(System.UInt32,System.UInt32,Microsoft.Samples.Debugging.Native.NativeMethods+ContinueStatus)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.ContinueDebugEvent(uint, uint, NativeMethods.ContinueStatus)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#CreateFileMapping(Microsoft.Win32.SafeHandles.SafeFileHandle,System.IntPtr,Microsoft.Samples.Debugging.Native.NativeMethods+PageProtection,System.UInt32,System.UInt32,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.CreateFileMapping(SafeFileHandle, IntPtr, NativeMethods.PageProtection, uint, uint, string)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
-            <Message Id="5" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="NonBreaking">
+            <Message Id="5" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="NonBreaking">
              <Issue Name="ParameterImplicitAnsi" Certainty="75" Level="Error">To reduce security risk, marshal parameter 'lpName' as Unicode, by setting DllImport.CharSet to CharSet.Unicode, or by explicitly marshaling the parameter as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, specify MarshalAs explicitly, and set BestFitMapping=false; for added security, also set ThrowOnUnmappableChar=true.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#CreateProcess(System.String,System.String,System.IntPtr,System.IntPtr,System.Boolean,Microsoft.Samples.Debugging.Native.NativeMethods+CreateProcessFlags,System.IntPtr,System.String,Microsoft.Samples.Debugging.Native.Private.STARTUPINFO,Microsoft.Samples.Debugging.Native.Private.PROCESS_INFORMATION)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.CreateProcess(string, string, IntPtr, IntPtr, bool, NativeMethods.CreateProcessFlags, IntPtr, string, STARTUPINFO, PROCESS_INFORMATION)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
-            <Message Id="STARTUPINFO.lpDesktop" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="NonBreaking">
+            <Message Id="STARTUPINFO.lpDesktop" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="NonBreaking">
              <Issue Name="FieldImplicitAnsi" Certainty="75" Level="Error">To reduce security risk, marshal field 'STARTUPINFO.lpDesktop' as Unicode, by setting StructLayout.CharSet on 'STARTUPINFO' to CharSet.Unicode, or by explicitly marshaling the field as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, specify MarshalAs explicitly, use the BestFitMapping attribute to turn best-fit mapping off, and for added security, to turn ThrowOnUnmappableChar on.</Issue>
             </Message>
-            <Message Id="STARTUPINFO.lpReserved" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="NonBreaking">
+            <Message Id="STARTUPINFO.lpReserved" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="NonBreaking">
              <Issue Name="FieldImplicitAnsi" Certainty="75" Level="Error">To reduce security risk, marshal field 'STARTUPINFO.lpReserved' as Unicode, by setting StructLayout.CharSet on 'STARTUPINFO' to CharSet.Unicode, or by explicitly marshaling the field as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, specify MarshalAs explicitly, use the BestFitMapping attribute to turn best-fit mapping off, and for added security, to turn ThrowOnUnmappableChar on.</Issue>
             </Message>
-            <Message Id="STARTUPINFO.lpTitle" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="NonBreaking">
+            <Message Id="STARTUPINFO.lpTitle" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="NonBreaking">
              <Issue Name="FieldImplicitAnsi" Certainty="75" Level="Error">To reduce security risk, marshal field 'STARTUPINFO.lpTitle' as Unicode, by setting StructLayout.CharSet on 'STARTUPINFO' to CharSet.Unicode, or by explicitly marshaling the field as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, specify MarshalAs explicitly, use the BestFitMapping attribute to turn best-fit mapping off, and for added security, to turn ThrowOnUnmappableChar on.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#DebugActiveProcess(System.UInt32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.DebugActiveProcess(uint)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#DebugActiveProcessStop(System.UInt32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.DebugActiveProcessStop(uint)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#DebugBreakProcess(System.IntPtr)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.DebugBreakProcess(IntPtr)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#DebugSetProcessKillOnExit(System.Boolean)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.DebugSetProcessKillOnExit(bool)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#GetCurrentThreadId()" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.GetCurrentThreadId()' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#GetFileSizeEx(System.IntPtr,System.Int64&amp;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.GetFileSizeEx(IntPtr, out long)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#GetModuleInformation(System.IntPtr,System.IntPtr,Microsoft.Samples.Debugging.Native.ModuleInfo&amp;,System.UInt32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.GetModuleInformation(IntPtr, IntPtr, out ModuleInfo, uint)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#GetSystemInfo(Microsoft.Samples.Debugging.Native.NativeMethods+SYSTEM_INFO&amp;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.GetSystemInfo(out NativeMethods.SYSTEM_INFO)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#GetThreadContext(System.IntPtr,System.IntPtr)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.GetThreadContext(IntPtr, IntPtr)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IsWow64Process(Microsoft.Samples.Debugging.Native.SafeWin32Handle,System.Boolean&amp;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.IsWow64Process(SafeWin32Handle, ref bool)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#LoadLibraryEx(System.String,System.Int32,Microsoft.Samples.Debugging.Native.NativeMethods+LoadLibraryFlags)" Kind="Method" Static="True" Accessibility="Assembly" ExternallyVisible="False">
            <Messages>
-            <Message Id="1" TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="NonBreaking">
+            <Message Id="1" TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="NonBreaking">
              <Issue Name="Parameter" Certainty="95" Level="Error">As it is declared in your code, parameter 'hFile' of P/Invoke 'NativeMethods.LoadLibraryEx(string, int, NativeMethods.LoadLibraryFlags)' will be 4 bytes wide on 64-bit platforms. This is not correct, as the actual native declaration of this API indicates it should be 8 bytes wide on 64-bit platforms. Consult the MSDN Platform SDK documentation for help determining what data type should be used instead of 'int'.</Issue>
             </Message>
-            <Message Id="0" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="NonBreaking">
+            <Message Id="0" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="NonBreaking">
              <Issue Name="ParameterImplicitAnsi" Certainty="75" Level="Error">To reduce security risk, marshal parameter 'fileName' as Unicode, by setting DllImport.CharSet to CharSet.Unicode, or by explicitly marshaling the parameter as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, specify MarshalAs explicitly, and set BestFitMapping=false; for added security, also set ThrowOnUnmappableChar=true.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#MapViewOfFile(Microsoft.Samples.Debugging.Native.SafeWin32Handle,System.UInt32,System.UInt32,System.UInt32,System.IntPtr)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.MapViewOfFile(SafeWin32Handle, uint, uint, uint, IntPtr)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#OpenProcess(System.Int32,System.Boolean,System.Int32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.OpenProcess(int, bool, int)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#OpenThread(Microsoft.Samples.Debugging.Native.ThreadAccess,System.Boolean,System.UInt32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.OpenThread(ThreadAccess, bool, uint)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ReadProcessMemory(System.IntPtr,System.IntPtr,System.Byte[],System.UIntPtr,System.Int32&amp;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.ReadProcessMemory(IntPtr, IntPtr, byte[], UIntPtr, out int)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SetEvent(Microsoft.Samples.Debugging.Native.SafeWin32Handle)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.SetEvent(SafeWin32Handle)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SetThreadContext(System.IntPtr,System.IntPtr)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.SetThreadContext(IntPtr, IntPtr)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#TerminateProcess(System.IntPtr,System.UInt32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.TerminateProcess(IntPtr, uint)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#UnmapViewOfFile(System.IntPtr)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.UnmapViewOfFile(IntPtr)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#WaitForDebugEvent32(Microsoft.Samples.Debugging.Native.DebugEvent32&amp;,System.Int32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.WaitForDebugEvent32(ref DebugEvent32, int)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#WaitForDebugEvent64(Microsoft.Samples.Debugging.Native.DebugEvent64&amp;,System.Int32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.WaitForDebugEvent64(ref DebugEvent64, int)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#WaitForSingleObject(System.IntPtr,System.UInt32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.WaitForSingleObject(IntPtr, uint)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
@@ -602,21 +602,21 @@
          <Members>
           <Member Name="#dwActiveProcessorMask" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'NativeMethods.SYSTEM_INFO.dwActiveProcessorMask' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#lpMaximumApplicationAddress" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'NativeMethods.SYSTEM_INFO.lpMaximumApplicationAddress' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#lpMinimumApplicationAddress" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'NativeMethods.SYSTEM_INFO.lpMinimumApplicationAddress' private.</Issue>
             </Message>
            </Messages>
@@ -627,7 +627,7 @@
          <Members>
           <Member Name="#lpDebugStringData" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'OUTPUT_DEBUG_STRING_INFO.lpDebugStringData' private.</Issue>
             </Message>
            </Messages>
@@ -638,7 +638,7 @@
          <Members>
           <Member Name="#lpBaseOfDll" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'UNLOAD_DLL_DEBUG_INFO.lpBaseOfDll' private.</Issue>
             </Message>
            </Messages>
@@ -649,7 +649,7 @@
          <Members>
           <Member Name="#Dispose(System.Boolean)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Name="DisposeBoolSignature" Certainty="95" Level="Error" Path="F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\NativeDebugWrappers" File="x86Context.cs" Line="555">Ensure that 'X86Context.Dispose(bool)' is declared as protected, virtual, and unsealed.</Issue>
             </Message>
            </Messages>
@@ -664,14 +664,14 @@
          <Members>
           <Member Name="#hProcess" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'PROCESS_INFORMATION.hProcess' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#hThread" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'PROCESS_INFORMATION.hThread' private.</Issue>
             </Message>
            </Messages>
@@ -680,14 +680,14 @@
         </Type>
         <Type Name="STARTUPINFO" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="DependsOnFix">
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="DependsOnFix">
            <Issue Name="DependsOnFix" Certainty="95" Level="CriticalError">Implement IDisposable on 'STARTUPINFO' because it creates members of the following IDisposable types: 'SafeFileHandle'. If 'STARTUPINFO' has previously shipped, adding new members that implement IDisposable to this type is considered a breaking change to existing consumers.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#lpReserved2" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:04:55Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:40Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'STARTUPINFO.lpReserved2' private.</Issue>
             </Message>
            </Messages>

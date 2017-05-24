@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\preview\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2017\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
 <FxCopReport Version="15.0">
  <Targets>
   <Target Name="F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\raw\bin\Debug\raw.dll">
    <Modules>
     <Module Name="raw.dll">
      <Messages>
-      <Message TypeName="MarkAssembliesWithAssemblyVersion" Category="Microsoft.Design" CheckId="CA1016" Status="Active" Created="2017-05-24 13:05:18Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkAssembliesWithAssemblyVersion" Category="Microsoft.Design" CheckId="CA1016" Status="Active" Created="2017-05-24 20:03:58Z" FixCategory="NonBreaking">
        <Issue Certainty="95" Level="Error">Add an AssemblyVersion attribute to 'raw.dll'.</Issue>
       </Message>
      </Messages>
@@ -17,14 +17,14 @@
          <Members>
           <Member Name="#hProcess" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:05:18Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:58Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'PROCESS_INFORMATION.hProcess' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#hThread" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 13:05:18Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:58Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'PROCESS_INFORMATION.hThread' private.</Issue>
             </Message>
            </Messages>

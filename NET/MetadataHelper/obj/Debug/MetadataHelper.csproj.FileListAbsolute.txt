@@ -95,6 +95,5 @@ F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataHelper\bin\Debug\Microsoft.Cci
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataModel.pdb
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataModel.xml
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataHelper\obj\Debug\MetadataHelper.csprojResolveAssemblyReference.cache
-F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataHelper\obj\Debug\MetadataHelper.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataHelper\obj\Debug\Microsoft.Cci.MetadataHelper.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataHelper\obj\Debug\Microsoft.Cci.MetadataHelper.pdb

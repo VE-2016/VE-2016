@@ -303,6 +303,10 @@ C:\Users\me\VE-2016\Editor\SyntaxDocument\obj\Debug\AIMS.Libraries.CodeEditor.Sy
 C:\Users\me\VE-2016\Editor\SyntaxDocument\obj\Debug\CodeEditor.SyntaxDocument.csproj.GenerateResource.Cache
 C:\Users\me\VE-2016\Editor\SyntaxDocument\obj\Debug\SyntaxDocument.dll
 C:\Users\me\VE-2016\Editor\SyntaxDocument\obj\Debug\SyntaxDocument.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxDocument\obj\Debug\CodeEditor.SyntaxDocument.csprojResolveAssemblyReference.cache
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxDocument\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.RowEventArgs.resources
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxDocument\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.TextStyleDesignerDialog.resources
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxDocument\obj\Debug\CodeEditor.SyntaxDocument.csproj.GenerateResource.Cache
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxDocument\Bin\SyntaxDocument.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxDocument\Bin\SyntaxDocument.pdb
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxDocument\Bin\ICSharpCode.NRefactory.Cecil.dll
@@ -367,10 +371,5 @@ F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxDocument\Bin\ru\Microsoft.Bui
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxDocument\Bin\tr\Microsoft.Build.Utilities.Core.resources.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxDocument\Bin\zh-Hans\Microsoft.Build.Utilities.Core.resources.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxDocument\Bin\zh-Hant\Microsoft.Build.Utilities.Core.resources.dll
-F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxDocument\obj\Debug\CodeEditor.SyntaxDocument.csprojResolveAssemblyReference.cache
-F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxDocument\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.RowEventArgs.resources
-F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxDocument\obj\Debug\AIMS.Libraries.CodeEditor.Syntax.TextStyleDesignerDialog.resources
-F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxDocument\obj\Debug\CodeEditor.SyntaxDocument.csproj.GenerateResource.Cache
-F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxDocument\obj\Debug\CodeEditor.SyntaxDocument.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxDocument\obj\Debug\SyntaxDocument.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxDocument\obj\Debug\SyntaxDocument.pdb

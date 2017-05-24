@@ -282,6 +282,5 @@ F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxFiles\Bin\GACProject.exe.conf
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxFiles\Bin\GACManagerApi.pdb
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxFiles\Bin\Microsoft.CodeAnalysis.VisualBasic.xml
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxFiles\obj\Debug\CodeEditor.SyntaxFiles.csprojResolveAssemblyReference.cache
-F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxFiles\obj\Debug\CodeEditor.SyntaxFiles.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxFiles\obj\Debug\SyntaxFiles.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\SyntaxFiles\obj\Debug\SyntaxFiles.pdb

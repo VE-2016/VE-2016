@@ -387,6 +387,9 @@ C:\Users\me\VE-2016\VSParser\obj\Debug\VSParsers.Properties.Resources.resources
 C:\Users\me\VE-2016\VSParser\obj\Debug\VSParsers.csproj.GenerateResource.Cache
 C:\Users\me\VE-2016\VSParser\obj\Debug\VSParsers.dll
 C:\Users\me\VE-2016\VSParser\obj\Debug\VSParsers.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\obj\Debug\VSParsers.csprojResolveAssemblyReference.cache
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\obj\Debug\VSParsers.Properties.Resources.resources
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\obj\Debug\VSParsers.csproj.GenerateResource.Cache
 F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\VSParsers.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\VSParsers.pdb
 F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\GACManagerApi.dll
@@ -411,6 +414,7 @@ F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Composition.Conv
 F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Composition.Hosting.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Composition.Runtime.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Composition.TypedParts.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Reflection.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Reflection.Metadata.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Security.Cryptography.Algorithms.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Threading.Tasks.Dataflow.dll
@@ -432,10 +436,5 @@ F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\ICSharpCode.NRefactory.
 F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\ICSharpCode.NRefactory.CSharp.xml
 F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\ICSharpCode.NRefactory.Xml.xml
 F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Composition.TypedParts.xml
-F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\obj\Debug\VSParsers.csprojResolveAssemblyReference.cache
-F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\obj\Debug\VSParsers.Properties.Resources.resources
-F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\obj\Debug\VSParsers.csproj.GenerateResource.Cache
-F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\obj\Debug\VSParsers.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\obj\Debug\VSParsers.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\obj\Debug\VSParsers.pdb
-F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Reflection.dll
