@@ -497,7 +497,6 @@ F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\obj\Debug\WinExplorer.Resources
 F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\obj\Debug\WinExplorer.resource_alls.resources
 F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\obj\Debug\WinExplorer.Services.NuGet.NuGetForm.resources
 F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\obj\Debug\WinExplorer.Services.NuGet.NuGetPacketInfo.resources
-F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\obj\Debug\WinExplorer.Services.NuGet.NuGetPacketShort.resources
 F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\obj\Debug\WinExplorer.SplashForm.resources
 F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\obj\Debug\WinExplorer.UI.AddConnectionForm_Oracle.resources
 F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\obj\Debug\WinExplorer.UI.AddConnectionForm.resources
@@ -694,3 +693,11 @@ F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\bin\Debug\Microsoft.CodeAnalysi
 F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\bin\Debug\System.Composition.TypedParts.xml
 F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\obj\Debug\WinExplorer.exe
 F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\obj\Debug\WinExplorer.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\bin\Debug\Microsoft.Build.Utilities.v3.5.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\bin\Debug\Microsoft.Build.Utilities.v3.5.xml
+F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\obj\Debug\WinExplorer.UI.StartPageForm.resources
+F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\obj\Debug\WinExplorer.UI.DevNewsPanel.resources
+F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\obj\Debug\WinExplorer.UI.OpenItemShort.resources
+F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\obj\Debug\WinExplorer.UI.OpenItemGroup.resources
+F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\obj\Debug\WinExplorer.UI.OpenProjectShort.resources
+F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\obj\Debug\WinExplorer.Services.NuGet.NuGetPacketShort.resources

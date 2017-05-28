@@ -307,6 +307,8 @@ namespace WinExplorer
             }
 
             appLoadedEvent += LoadBreakpoints;
+
+            
         }
 
         //protected override void WndProc(ref Message m)
@@ -2675,6 +2677,22 @@ namespace WinExplorer
             return L;
         }
 
+        public void Command_StartPage()
+        {
+            //string web = "Start Page";
+            //scr.OpenWebForm(web, "https://www.nuget.org/packages");
+
+            DocumentForm df = scr.OpenDocumentForm();
+            df.Text = "Start Page";
+            StartPageForm spf = new StartPageForm();
+            spf.FormBorderStyle = FormBorderStyle.None;
+            spf.TopLevel = false;
+            spf.Dock = DockStyle.Fill;
+            df.Controls.Add(spf);
+            spf.Show();
+            spf.GetFeed();
+        }
+
         public ArrayList Command_LoadStartupProjects()
         {
             VSSolution vs = GetVSSolution();
@@ -4271,7 +4289,16 @@ namespace WinExplorer
             //if (pgp != null)
             this.BeginInvoke(new Action(() =>
             {
-                pgp.SelectedObject = new WinExplorer.ProjectFileData(pr0);
+                if (pr0.SubType == "SolutionFolder")
+                    pgp.SelectedObject = new WinExplorer.SolutionFolder(pr0);
+                else if (pr0.psi != null && pr0.psi.SubType == "Folder")
+                    pgp.SelectedObject = new WinExplorer.ProjectFolder(pr0); 
+                else if (pr0.SubType == "SolutionNode")
+                    pgp.SelectedObject = new WinExplorer.SolutionFile(pr0);
+                else if (pr0.IsProjectNode)
+                    pgp.SelectedObject = new WinExplorer.ProjectFile(pr0);
+                else 
+                    pgp.SelectedObject = new WinExplorer.ProjectFileData(pr0);
                 ExpandGroup(pgp, "Projects");
             }));
 
@@ -4756,6 +4783,8 @@ namespace WinExplorer
                 dock.LoadFromXml(configFile, _deserializeDockContent);
             else LoadDefaults();
 
+            Command_StartPage();
+
             CheckStates();
 
             Settings s = CodeEditorControl.settings;
@@ -5082,6 +5111,11 @@ namespace WinExplorer
             reload_solution(file);
         }
 
+        public List<string> Command_RecentSolutions()
+        {
+            return _sv.hst.GetRecentSolutions();
+        }
+
         public void Command_NavigateForward()
         {
             _sv.NavigateForward();
@@ -5092,6 +5126,49 @@ namespace WinExplorer
             _sv.NavigateBackward();
         }
 
+        public void Command_OpenFolder(string foldername = "")
+        {
+            if (string.IsNullOrEmpty(foldername))
+            {
+                
+                FolderBrowserDialog ofb = new FolderBrowserDialog();
+                DialogResult r = ofb.ShowDialog();
+                if (r != DialogResult.OK)
+                    return;
+                foldername = ofb.SelectedPath;
+            }
+            if (forms == null)
+                return;
+            forms.ListDirectoryContent(foldername);
+
+        }
+
+        public void Command_OpenSolution(string filename = "")
+        {
+
+            if (string.IsNullOrEmpty(filename))
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                DialogResult r = ofd.ShowDialog();
+                if (r != DialogResult.OK)
+                    return;
+                filename = ofd.FileName;
+            }
+            
+            scr.ClearHistory();
+
+            ClearOutput();
+
+            string recent = filename;
+
+            _sv._SolutionTreeView.Nodes.Clear();
+
+            _sv.save_recent_solution(recent);
+
+            workerFunctionDelegate w = workerFunction;
+            w.BeginInvoke(recent, null, null);
+        }
+        
         public void Command_OpenFile()
         {
             _sv.OpenFile();
@@ -5156,10 +5233,6 @@ namespace WinExplorer
         }
 
         public void Command_PropertiesWindows()
-        {
-        }
-
-        public void Command_StartPage()
         {
         }
 
@@ -5261,9 +5334,9 @@ namespace WinExplorer
             reload_solution(file);
         }
 
-        private void AddNewProject(bool addproject)
+        private void AddNewProject(bool addproject, string filename = "")
         {
-            npf = new NewProjectForm();
+            npf = new NewProjectForm(filename);
             npf.LoadAddProject();
             if (addproject == true)
                 npf.SetProjectFolder("sln");
@@ -5360,6 +5433,11 @@ namespace WinExplorer
             File.Move(tempfile, projectfile);
 
             reload_solution(file);
+        }
+
+        public void Command_AddNewProject(string filename = "")
+        {
+            AddNewProject(false, filename);
         }
 
         public void Command_AddNewProject(bool addproject, NewProject nw)
@@ -5643,6 +5721,7 @@ namespace WinExplorer
 
         private void viewHelpFilesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
 
             VSSolution vs = GetVSSolution();
             var ex = vs.GetExecutables(VSSolution.OutputType.both).ToArray();
@@ -6802,8 +6881,19 @@ namespace WinExplorer
 
         private void toolStripMenuItem63_Click(object sender, EventArgs e)
         {
-            string web = "Start Page";
-            scr.OpenWebForm(web, "https://www.nuget.org/packages");
+            //string web = "Start Page";
+            //scr.OpenWebForm(web, "https://www.nuget.org/packages");
+
+            DocumentForm df = scr.OpenDocumentForm();
+            df.Text = "Start Page";
+            StartPageForm spf = new StartPageForm();
+            spf.FormBorderStyle = FormBorderStyle.None;
+            spf.TopLevel = false;
+            spf.Dock = DockStyle.Fill;
+            df.Controls.Add(spf);
+            spf.Show();
+            spf.GetFeed();
+
         }
 
         public void OpenNuGetPage()
@@ -7365,6 +7455,22 @@ namespace WinExplorer
         private void _mainTreeView_AfterSelect(object sender, TreeViewEventArgs e)
         {
 
+        }
+
+        private void toolStripMenuItem87_Click(object sender, EventArgs e)
+        {
+            //string web = "Start Page";
+            //scr.OpenWebForm(web, "https://www.nuget.org/packages");
+
+            DocumentForm df = scr.OpenDocumentForm();
+            df.Text = "Start Page";
+            StartPageForm spf = new StartPageForm();
+            spf.FormBorderStyle = FormBorderStyle.None;
+            spf.TopLevel = false;
+            spf.Dock = DockStyle.Fill;
+            df.Controls.Add(spf);
+            spf.Show();
+            spf.GetFeed();
         }
     }
 

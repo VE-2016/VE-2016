@@ -841,6 +841,10 @@ namespace WinExplorer
             gs.ImageKey = "Solution_8308_24";
             gs.SelectedImageKey = "Solution_8308_24";
             gs.Text = pp;
+            CreateView_Solution.ProjectItemInfo p = new CreateView_Solution.ProjectItemInfo();
+            p.vs = msv.Tag as VSSolution;
+            p.SubType = "SolutionNode";
+            gs.Tag = p;
 
             for (int k = 0; k < i; k++)
             {
@@ -1203,6 +1207,7 @@ namespace WinExplorer
                     pr0.vs = vs;
                     pr0.ps = ps;
                     pr0.Guid = ps.ProjectGuid;
+                    pr0.SubType = "SolutionFolder";
 
                     n.Tag = pr0;
 
@@ -1449,12 +1454,11 @@ namespace WinExplorer
 
                         filepath = filepath.Replace(ps.GetProjectFolder() + "\\", "");
 
-                        //string[] cc = pi.Include.Split("\\".ToCharArray());
-
+                        
                         if (pi.Info != null)
                         {
                             filepath = pi.Info;
-                            //pi.Include = pi.Info;
+                            
                         }
 
                         string[] cc = filepath.Split("\\".ToCharArray());
@@ -1503,8 +1507,7 @@ namespace WinExplorer
                                 ppp.Include = cc[0];
                                 ppb.psi = ppp;
                                 ppb.Include = cc[0];
-                                //bbb.Tag = pr3; ;
-
+                        
                                 t.Nodes.Add(bbb);
 
                                 bbb.Tag = ppb;

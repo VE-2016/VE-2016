@@ -15,7 +15,7 @@ namespace WinExplorer
     {
         public static gui gcommands = new gui();
 
-        public NewProjectForm()
+        public NewProjectForm(string filename = "")
         {
             InitializeComponent();
             SuspendLayout();
@@ -24,14 +24,24 @@ namespace WinExplorer
             tv.ShowLines = false;
             lv = listView1;
             LoadProjects();
-            LoadTemplates();
+            LoadTemplates(filename);
             comboBox4.SelectedIndex = 0;
             splitContainer1.Panel2.Resize += Panel2_Resize;
             Panel2_Resize(this, new EventArgs());
             LoadSettings();
+            if(!string.IsNullOrEmpty(filename))
+            SelectTemplate(filename);
             ResumeLayout();
         }
-
+        void SelectTemplate(string filename)
+        {
+            string file = Path.GetFileName(filename);
+            ListViewItem v = lv.FindItemWithText(file);
+            if (v == null)
+                return;
+            v.Selected = true;
+            lv.Select();
+        }
         public NewProject Project(NewProject nw = null)
         {
             if (nw == null)
@@ -215,9 +225,21 @@ namespace WinExplorer
             lv.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
-        public string folders = "TemplateProjects";
+        static public string folders = "TemplateProjects";
 
-        public void LoadTemplates()
+        public static List<string> GetProjectTemplates()
+        {
+            List<string> tmps = new List<string>();
+
+            ArrayList L = GetProjectTemplates(folders);
+
+            foreach (string s in L)
+                tmps.Add(s);
+
+            return tmps;
+        }
+
+        public void LoadTemplates(string filename = "")
         {
             LoadImages();
 
@@ -245,6 +267,8 @@ namespace WinExplorer
                 v.SubItems.Add(s.FullName);
 
                 lv.Items.Add(v);
+
+               
             }
         }
 
@@ -266,7 +290,24 @@ namespace WinExplorer
 
             return L;
         }
+        static public ArrayList GetProjectTemplates(string folder)
+        {
+            ArrayList L = new ArrayList();
 
+            DirectoryInfo d = new DirectoryInfo(folders);
+
+            if (d == null)
+                return L;
+
+            DirectoryInfo[] dd = d.GetDirectories();
+
+            foreach (DirectoryInfo s in dd)
+            {
+                L.Add(s.FullName);
+            }
+
+            return L;
+        }
         public string GetProjectFile()
         {
             int i = GetSelectedIndex(lv);

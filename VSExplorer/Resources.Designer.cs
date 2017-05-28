@@ -19,7 +19,7 @@ namespace WinExplorer {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -1847,6 +1847,16 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap CloseResults_8579_32 {
             get {
                 object obj = ResourceManager.GetObject("CloseResults_8579_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Cloud_256x {
+            get {
+                object obj = ResourceManager.GetObject("Cloud_256x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -8593,6 +8603,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap ShowStartPage_256x {
+            get {
+                object obj = ResourceManager.GetObject("ShowStartPage_256x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap SilverlightApplication_11047_24 {
             get {
                 object obj = ResourceManager.GetObject("SilverlightApplication_11047_24", resourceCulture);
@@ -10263,6 +10283,16 @@ namespace WinExplorer {
         public static System.Drawing.Bitmap WebTestMonitor_32Bit_02_ {
             get {
                 object obj = ResourceManager.GetObject("WebTestMonitor_32Bit_02_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap WebURL_32x {
+            get {
+                object obj = ResourceManager.GetObject("WebURL_32x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

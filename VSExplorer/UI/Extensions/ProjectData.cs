@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Globalization;
+using System.IO;
 using System.Reflection;
 
 namespace WinExplorer
@@ -144,6 +145,141 @@ namespace WinExplorer
         }
     }
 
+
+    public class ProjectFile : object
+    {
+  
+        [CategoryAttribute("Misc")]
+        [DisplayName("Project File")]
+        [Description("Project File")]
+        public string file { get; set; }
+
+        [CategoryAttribute("Misc")]
+        [DisplayName("Project Folder")]
+        [Description("Project Folder")]
+        public string filePath { get; set; }
+        private object m_data;
+
+        [CategoryAttribute("Misc")]
+        [DisplayName("Data")]
+        [Description("Data")]
+        [TypeConverter(typeof(ProjectItemInfoConverter))]
+        public object data
+        {
+            get { return m_data; }
+            set { m_data = value; }
+        }
+        public ProjectFile(object obs)
+        {
+            this.data = obs;
+
+            CreateView_Solution.ProjectItemInfo p = obs as CreateView_Solution.ProjectItemInfo;
+            if (p == null)
+                return;
+            if (p.ps == null)
+                return;
+            file = Path.GetFileName(p.ps.FileName);
+            filePath = Path.GetDirectoryName(p.ps.FileName);
+        }
+    }
+    public class SolutionFolder : object
+    {
+
+        [CategoryAttribute("Misc")]
+        [DisplayName("(Name)")]
+        [Description("(Name)")]
+        public string folderName { get; set; }
+        private object m_data;
+
+        [CategoryAttribute("Misc")]
+        [DisplayName("Data")]
+        [Description("Data")]
+        [TypeConverter(typeof(ProjectItemInfoConverter))]
+        public object data
+        {
+            get { return m_data; }
+            set { m_data = value; }
+        }
+        public SolutionFolder(object obs)
+        {
+            this.data = obs;
+
+            CreateView_Solution.ProjectItemInfo p = obs as CreateView_Solution.ProjectItemInfo;
+            if (p == null)
+                return;
+            if (p.ps == null)
+                return;
+            folderName = Path.GetFileName(p.ps.FileName);
+            
+        }
+    }
+    public class ProjectFolder : object
+    {
+
+        [CategoryAttribute("Misc")]
+        [DisplayName("Folder Name")]
+        [Description("Folder Name")]
+        public string folderName { get; set; }
+        private object m_data;
+
+        [CategoryAttribute("Misc")]
+        [DisplayName("Data")]
+        [Description("Data")]
+        [TypeConverter(typeof(ProjectItemInfoConverter))]
+        public object data
+        {
+            get { return m_data; }
+            set { m_data = value; }
+        }
+        public ProjectFolder(object obs)
+        {
+            this.data = obs;
+
+            CreateView_Solution.ProjectItemInfo p = obs as CreateView_Solution.ProjectItemInfo;
+            if (p == null)
+                return;
+            if (p.ps == null)
+                return;
+            folderName = Path.GetFileName(p.ps.FileName);
+
+        }
+    }
+    public class SolutionFile : object
+    {
+
+        [CategoryAttribute("Misc")]
+        [DisplayName("Solution File")]
+        [Description("Solution File")]
+        public string file { get; set; }
+
+        [CategoryAttribute("Misc")]
+        [DisplayName("Solution Folder")]
+        [Description("Solution Folder")]
+        public string filePath { get; set; }
+        private object m_data;
+
+        [CategoryAttribute("Misc")]
+        [DisplayName("Data")]
+        [Description("Data")]
+        [TypeConverter(typeof(ProjectItemInfoConverter))]
+        public object data
+        {
+            get { return m_data; }
+            set { m_data = value; }
+        }
+        public SolutionFile(object obs)
+        {
+            this.data = obs;
+
+            CreateView_Solution.ProjectItemInfo p = obs as CreateView_Solution.ProjectItemInfo;
+            if (p == null)
+                return;
+            if (p.ps == null)
+                return;
+            file = Path.GetFileName(p.ps.FileName);
+            filePath = Path.GetDirectoryName(p.ps.FileName);
+        }
+    }
     class ProjectItemInfoConverter : TypeConverter
     {
         // Return true if we need to convert from a string.

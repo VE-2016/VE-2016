@@ -239,6 +239,7 @@
       <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.ValueTuple">
       <HintPath>..\packages\Roslyn-all-in-one\System.ValueTuple.dll</HintPath>
@@ -486,10 +487,8 @@
     <Compile Include="Services\NuGet\NuGetPacketInfo.Designer.cs">
       <DependentUpon>NuGetPacketInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Services\NuGet\NuGetPacketShort.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Services\NuGet\NuGetPacketShort.Designer.cs">
+    <Compile Include="Services\NuGet\NuGetPacketShort.cs" />
+    <Compile Include="Services\NuGet\NuGetPacketShort.designer.cs">
       <DependentUpon>NuGetPacketShort.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\ServiceBitmaps.cs" />
@@ -629,11 +628,41 @@
     <Compile Include="UI\Data Sources\RelationSelectionForm.Designer.cs">
       <DependentUpon>RelationSelectionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Explorer Views\DevNewsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Explorer Views\DevNewsPanel.Designer.cs">
+      <DependentUpon>DevNewsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Explorer Views\OpenItemGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Explorer Views\OpenItemGroup.Designer.cs">
+      <DependentUpon>OpenItemGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Explorer Views\OpenProjectShort.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Explorer Views\OpenProjectShort.Designer.cs">
+      <DependentUpon>OpenProjectShort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Explorer Views\OpenItemShort.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Explorer Views\OpenItemShort.Designer.cs">
+      <DependentUpon>OpenItemShort.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Explorer Views\ServerExplorerForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Explorer Views\ServerExplorerForm.Designer.cs">
       <DependentUpon>ServerExplorerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Explorer Views\StartPageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Explorer Views\StartPageForm.Designer.cs">
+      <DependentUpon>StartPageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Extensions\ProjectData.cs" />
     <Compile Include="UI\SQLServerExplorer\AdvancedProperiesForm.cs">
@@ -1053,8 +1082,23 @@
     <EmbeddedResource Include="UI\Data Sources\UniqueConstraintSelectionForm.resx">
       <DependentUpon>UniqueConstraintSelectionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Explorer Views\DevNewsPanel.resx">
+      <DependentUpon>DevNewsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Explorer Views\OpenItemGroup.resx">
+      <DependentUpon>OpenItemGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Explorer Views\OpenProjectShort.resx">
+      <DependentUpon>OpenProjectShort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Explorer Views\OpenItemShort.resx">
+      <DependentUpon>OpenItemShort.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Explorer Views\ServerExplorerForm.resx">
       <DependentUpon>ServerExplorerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Explorer Views\StartPageForm.resx">
+      <DependentUpon>StartPageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SQLServerExplorer\AdvancedProperiesForm.resx">
       <DependentUpon>AdvancedProperiesForm.cs</DependentUpon>
@@ -2434,7 +2478,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
-    <Folder Include="Services\Syntax\" />
+    <Folder Include="Services\NuGet\Syntax\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\reference_16xLG.png" />
@@ -5068,6 +5112,9 @@
     <None Include="Resources\abstr1_32.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\WebURL_32x.png" />
+    <None Include="Resources\Cloud_256x.png" />
+    <None Include="Resources\ShowStartPage_256x.png" />
     <None Include="Resources\StatusOK_cyan_16x.png" />
     <None Include="Resources\StatusInformation_exp_16x.png" />
     <None Include="Resources\RunTestDialog_16x.png" />

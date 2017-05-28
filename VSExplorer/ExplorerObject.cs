@@ -6351,60 +6351,8 @@ namespace WinExplorer
 
             savelinkerfile();
         }
-        //public void loaddefaults()
-        //{
-        //    //pc.tea.Text = s;
-
-        //    //pc.teb.Text = s;
-
-        //    FileInfo info = new FileInfo(filename);
-
-        //    if (info.Exists == false)
-        //    {
-        //        FileStream f = File.Create(filename);
-        //        f.Close();
-
-        //        return;
-        //    }
-
-        //    if (info.Extension != ".lnks")
-        //        return;
-
-        //    string[] c = File.ReadAllLines(info.FullName);
-
-        //    path = info.FullName;
-
-
-        //    ImageList imgs = CreateView_Solution.CreateImageList();
-        //    tv.ImageList = imgs;
-
-        //    tv.Nodes.Clear();
-
-        //    foreach (string g in c)
-        //    {
-        //        if (g.Trim() == "")
-        //            continue;
-
-        //        TreeNode node = new TreeNode();
-        //        string img = VSProject.dc[".csproj"];
-        //        // if(tv.ImageList.Images.ContainsKey(img) == false)
-        //        // MessageBox.Show("image key not found");
-        //        node.ImageKey = img;
-        //        node.SelectedImageKey = img;
-        //        node.StateImageKey = img;
-        //        node.Text = g;
-
-        //        tv.Nodes.Add(g);
-
-        //        L.Add(g);
-        //    }
-        //}
         public void ReloadRecentSolutions()
         {
-            //pc.tea.Text = s;
-
-            //pc.teb.Text = s;
-
             FileInfo info = new FileInfo(filename);
 
             if (info.Exists == false)
@@ -6421,23 +6369,17 @@ namespace WinExplorer
             string[] c = File.ReadAllLines(info.FullName);
 
             path = info.FullName;
-
-
+            
             tv.BeginUpdate();
 
-            ImageList imgs = new ImageList(); ;// CreateView_Solution.CreateImageList();
+            ImageList imgs = new ImageList();
 
             imgs.Images.Add(resource_alls.solution);
 
             tv.ImageList = imgs;
-
-
-
-
-
+            
             tv.Nodes.Clear();
-
-
+            
             foreach (string g in c)
             {
                 if (g.Trim() == "")
@@ -6445,8 +6387,6 @@ namespace WinExplorer
 
                 TreeNode node = new TreeNode();
                 string img = "solution";
-                // if(tv.ImageList.Images.ContainsKey(img) == false)
-                // MessageBox.Show("image key not found");
                 node.ImageKey = img;
                 node.SelectedImageKey = img;
                 node.StateImageKey = img;
@@ -6459,6 +6399,37 @@ namespace WinExplorer
 
             tv.EndUpdate();
         }
+        public List<string> GetRecentSolutions()
+        {
+            List<string> rs = new List<string>();
+
+            FileInfo info = new FileInfo(filename);
+
+            if (info.Exists == false)
+            {
+                FileStream f = File.Create(filename);
+                f.Close();
+
+                return rs;
+            }
+
+            if (info.Extension != ".lnks")
+                return rs;
+
+            string[] c = File.ReadAllLines(info.FullName);
+            
+            foreach (string g in c)
+            {
+                if (g.Trim() == "")
+                    continue;
+
+          
+                rs.Add(g);
+            }
+
+            return rs;
+        }
+
         public void savelinkerfile()
         {
             int N = L.Count;

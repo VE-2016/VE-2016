@@ -4,8 +4,8 @@ REM set PATH="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Comm
 
 set PATH=%~dp0\\VSTestConsole
 
-cd "C:\Users\me\Documents\Visual Studio 2015\Projects\WindowsFormsApplication7-1\UnitTestProject-test\bin\Debug"
+cd "C:\MSBuildProjects-beta\NUNIT\nunit-gui\bin\Debug"
 
-vstest.console /ListTests:"C:\Users\me\Documents\Visual Studio 2015\Projects\WindowsFormsApplication7-1\UnitTestProject-test\\bin\Debug\\UnitTestProject-test.dll"  > results.vs 
+vstest.console /ListTests:"C:\MSBuildProjects-beta\NUNIT\nunit-gui\\bin\Debug\\nunit-gui.exe"  > results.vs 
 
 pause

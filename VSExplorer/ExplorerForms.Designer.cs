@@ -149,6 +149,7 @@ namespace WinExplorer
             this.projectSolutionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem78 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem87 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem66 = new System.Windows.Forms.ToolStripMenuItem();
             this.newProjectToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -205,7 +206,6 @@ namespace WinExplorer
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.errorListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outputWindowToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem63 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem64 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem84 = new System.Windows.Forms.ToolStripMenuItem();
             this.findResultsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -1051,7 +1051,6 @@ namespace WinExplorer
             this.openCMDToolStripMenuItem.Name = "openCMDToolStripMenuItem";
             this.openCMDToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.openCMDToolStripMenuItem.Text = "Open CMD";
-            this.openCMDToolStripMenuItem.Click += OpenCMDToolStripMenuItem_Click;
             // 
             // powerShellToolStripMenuItem
             // 
@@ -1262,6 +1261,7 @@ namespace WinExplorer
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
             this.toolStripMenuItem16,
+            this.toolStripMenuItem87,
             this.toolStripSeparator15,
             this.toolStripMenuItem66,
             this.toolStripSeparator16,
@@ -1332,6 +1332,14 @@ namespace WinExplorer
             this.toolStripMenuItem78.Name = "toolStripMenuItem78";
             this.toolStripMenuItem78.Size = new System.Drawing.Size(166, 22);
             this.toolStripMenuItem78.Text = "Open File";
+            // 
+            // toolStripMenuItem87
+            // 
+            this.toolStripMenuItem87.Image = global::WinExplorer.Resources.ShowStartPage_256x;
+            this.toolStripMenuItem87.Name = "toolStripMenuItem87";
+            this.toolStripMenuItem87.Size = new System.Drawing.Size(230, 22);
+            this.toolStripMenuItem87.Text = "Start Page";
+            this.toolStripMenuItem87.Click += new System.EventHandler(this.toolStripMenuItem87_Click);
             // 
             // toolStripSeparator15
             // 
@@ -1634,7 +1642,6 @@ namespace WinExplorer
             this.toolStripSeparator13,
             this.errorListToolStripMenuItem,
             this.outputWindowToolStripMenuItem1,
-            this.toolStripMenuItem63,
             this.toolStripMenuItem64,
             this.toolStripMenuItem84,
             this.findResultsToolStripMenuItem,
@@ -1753,13 +1760,6 @@ namespace WinExplorer
             this.outputWindowToolStripMenuItem1.Size = new System.Drawing.Size(216, 22);
             this.outputWindowToolStripMenuItem1.Text = "Output window";
             this.outputWindowToolStripMenuItem1.Click += new System.EventHandler(this.outputWindowToolStripMenuItem1_Click);
-            // 
-            // toolStripMenuItem63
-            // 
-            this.toolStripMenuItem63.Name = "toolStripMenuItem63";
-            this.toolStripMenuItem63.Size = new System.Drawing.Size(216, 22);
-            this.toolStripMenuItem63.Text = "Start Page";
-            this.toolStripMenuItem63.Click += new System.EventHandler(this.toolStripMenuItem63_Click);
             // 
             // toolStripMenuItem64
             // 
@@ -3257,7 +3257,6 @@ namespace WinExplorer
         private ToolStripMenuItem toolStripMenuItem61;
         private ToolStripMenuItem toolStripMenuItem62;
         private ToolStripSeparator toolStripSeparator13;
-        private ToolStripMenuItem toolStripMenuItem63;
         private ToolStripMenuItem toolStripMenuItem64;
         private ToolStripMenuItem toolStripMenuItem65;
         private ToolStripSeparator toolStripSeparator15;
@@ -3363,5 +3362,6 @@ namespace WinExplorer
         private ToolStripMenuItem testExplorerToolStripMenuItem;
         private ToolStripMenuItem selectedTestsToolStripMenuItem;
         private ToolStripMenuItem lastRunTestsToolStripMenuItem;
+        private ToolStripMenuItem toolStripMenuItem87;
     }
 }
