@@ -70,7 +70,15 @@ namespace VSProvider
 
             return null;
         }
+        public string GetProjectExec(string name)
+        {
+            VSProject p = GetProjectbyName(name);
+            if(p != null)
+            return p.GetProjectExec();
 
+            
+            return "";
+        }
         public VSProject GetProjectbyFileName(string name)
         {
             foreach (VSProject p in projects)
