@@ -1,0 +1,146 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\Test\1033\BasicUnitTest</RelativePathOnDisk>
+    <TemplateFileName>BasicUnitTest.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="222" />
+        <Description Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="223" />
+        <Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="216" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>80</SortOrder>
+        <DefaultName>UnitTest.cs</DefaultName>
+        <TemplateGroupID>TestProject-V1</TemplateGroupID>
+        <TemplateID>TestProject-V1-BasicUnitTest</TemplateID>
+        <ShowByDefault>false</ShowByDefault>
+        <CustomDataSignature>TestProject-V1</CustomDataSignature>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\Test\1033\GenericTest</RelativePathOnDisk>
+    <TemplateFileName>GenericTest.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="440" />
+        <Description Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="442" />
+        <Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="441" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>80</SortOrder>
+        <DefaultName>GenericTest.GenericTest</DefaultName>
+        <TemplateGroupID>TestProject-V1</TemplateGroupID>
+        <TemplateID>TestProject-V1-GenericTest</TemplateID>
+        <ShowByDefault>false</ShowByDefault>
+        <CustomDataSignature>TestProject-V1</CustomDataSignature>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\Test\1033\OrderedTest</RelativePathOnDisk>
+    <TemplateFileName>OrderedTest.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="313" />
+        <Description Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="318" />
+        <Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="316" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>80</SortOrder>
+        <DefaultName>OrderedTest.orderedtest</DefaultName>
+        <TemplateGroupID>TestProject-V1</TemplateGroupID>
+        <TemplateID>TestProject-V1-OrderedTest</TemplateID>
+        <ShowByDefault>false</ShowByDefault>
+        <CustomDataSignature>TestProject-V1</CustomDataSignature>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\Test\1033\SimpleUnitTest</RelativePathOnDisk>
+    <TemplateFileName>SimpleUnitTest.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="212" />
+        <Description Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="207" />
+        <Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="216" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>80</SortOrder>
+        <DefaultName>UnitTest.cs</DefaultName>
+        <TemplateGroupID>TestProject-V1</TemplateGroupID>
+        <TemplateID>TestProject-V1-SimpleUnitTest</TemplateID>
+        <ShowByDefault>false</ShowByDefault>
+        <CustomDataSignature>TestProject-V1</CustomDataSignature>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Test\1033\BasicUnitTest</RelativePathOnDisk>
+    <TemplateFileName>BasicUnitTest.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="222" />
+        <Description Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="223" />
+        <Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="217" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>80</SortOrder>
+        <DefaultName>UnitTest.vb</DefaultName>
+        <TemplateGroupID>TestProject-V1</TemplateGroupID>
+        <TemplateID>TestProject-V1-BasicUnitTest</TemplateID>
+        <ShowByDefault>false</ShowByDefault>
+        <CustomDataSignature>TestProject-V1</CustomDataSignature>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Test\1033\GenericTest</RelativePathOnDisk>
+    <TemplateFileName>GenericTest.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="440" />
+        <Description Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="442" />
+        <Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="441" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>80</SortOrder>
+        <DefaultName>GenericTest.GenericTest</DefaultName>
+        <TemplateGroupID>TestProject-V1</TemplateGroupID>
+        <TemplateID>TestProject-V1-GenericTest</TemplateID>
+        <ShowByDefault>false</ShowByDefault>
+        <CustomDataSignature>TestProject-V1</CustomDataSignature>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Test\1033\OrderedTest</RelativePathOnDisk>
+    <TemplateFileName>OrderedTest.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="313" />
+        <Description Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="318" />
+        <Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="316" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>80</SortOrder>
+        <DefaultName>OrderedTest.orderedtest</DefaultName>
+        <TemplateGroupID>TestProject-V1</TemplateGroupID>
+        <TemplateID>TestProject-V1-OrderedTest</TemplateID>
+        <ShowByDefault>false</ShowByDefault>
+        <CustomDataSignature>TestProject-V1</CustomDataSignature>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Test\1033\SimpleUnitTest</RelativePathOnDisk>
+    <TemplateFileName>SimpleUnitTest.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="212" />
+        <Description Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="207" />
+        <Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="217" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>80</SortOrder>
+        <DefaultName>UnitTest.vb</DefaultName>
+        <TemplateGroupID>TestProject-V1</TemplateGroupID>
+        <TemplateID>TestProject-V1-SimpleUnitTest</TemplateID>
+        <ShowByDefault>false</ShowByDefault>
+        <CustomDataSignature>TestProject-V1</CustomDataSignature>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

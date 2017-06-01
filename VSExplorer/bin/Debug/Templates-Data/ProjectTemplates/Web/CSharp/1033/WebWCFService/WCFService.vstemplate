@@ -1,0 +1,28 @@
+﻿<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="117" />
+    <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="118" />
+    <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="401" />
+    <TemplateID>Microsoft.Web.CSharp.Wcf</TemplateID>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>CSharp</ProjectSubType>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>WCFService</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <LocationField>Hidden</LocationField>   
+    <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+  </TemplateData>
+  <TemplateContent>
+   <Project File="WCFService.webproj" ReplaceParameters="true">
+      <Folder Name="App_Code">
+        <ProjectItem TargetFileName="Service.cs" OpenInEditor="true" OpenOrder="10" ReplaceParameters="true">Service.cs</ProjectItem>
+	<ProjectItem TargetFileName="IService.cs"  ReplaceParameters="true">IService.cs</ProjectItem>
+      </Folder>
+      <Folder Name="App_Data"/>
+      <ProjectItem TargetFileName="Service.svc">Service.svc</ProjectItem>
+      <ProjectItem TargetFileName="Web.config" ReplaceParameters="true">Web.config</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate> 

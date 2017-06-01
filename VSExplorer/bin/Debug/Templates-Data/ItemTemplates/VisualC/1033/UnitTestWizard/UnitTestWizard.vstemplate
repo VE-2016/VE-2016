@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.microsoft.com/developer/vstemplate/2005">
+	<TemplateData>
+		<Name Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="220"/>
+		<Description Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="221"/>
+		<Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="218"/>
+		<ProjectType>VisualC</ProjectType>
+		<SortOrder>80</SortOrder>
+		<DefaultName>UnitTest.cpp</DefaultName>
+		<TemplateGroupID>TestProject-V1</TemplateGroupID>
+		<TemplateID>TestProject-V1-UnitTestWizard</TemplateID>
+		<ShowByDefault>false</ShowByDefault>
+	</TemplateData>
+	<TemplateContent>
+		<References>
+			<Reference>
+				<Assembly>System</Assembly>
+			</Reference>
+		</References>
+	</TemplateContent>
+	<TestProjectData>
+		<LongDescription Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="209"/>
+		<HelpKeyword Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="213"/>
+		<ShowInOption>false</ShowInOption>
+	</TestProjectData>
+	<WizardExtension>
+        	<Assembly>Microsoft.VisualStudio.QualityTools.Wizard.TestProjectWizards, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+        	<FullClassName>Microsoft.VisualStudio.TestTools.TestProjectWizards.UnitTestGenerationWizardExtension</FullClassName>
+	</WizardExtension>
+</VSTemplate>

@@ -1,0 +1,22 @@
+﻿<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+    <TemplateData>
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3316"/>
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3317"/>
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4518"/>
+        <TemplateID>Microsoft.Web.CSharp.DataSet</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>CSharp</ProjectSubType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <DefaultName>DataSet.xsd</DefaultName>
+    </TemplateData>
+    <TemplateContent>
+        <ProjectItem ReplaceParameters="true">Dataset.xsd</ProjectItem >
+        <CustomParameters>
+            <CustomParameter Name="$XmlConvert_itemname$" Value="" />
+        </CustomParameters>
+    </TemplateContent>
+    <WizardExtension>
+        <Assembly>Microsoft.VisualStudio.Web, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+        <FullClassName>Microsoft.VisualStudio.Web.Wizard.VsDataSetItemTemplateWizard</FullClassName>
+    </WizardExtension>
+</VSTemplate>

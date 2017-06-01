@@ -1,0 +1,6 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateDir>
+    <RelativePath>CSharp\WPF</RelativePath>
+    <SortOrder>1</SortOrder>
+  </VSTemplateDir>
+</VSTemplateManifest>

@@ -1,0 +1,165 @@
+﻿<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name _locID="Cordova_TS_Blank_Name">Blank App (Apache Cordova)</Name>
+    <Description _locID="Cordova_TS_Blank_Desc">A blank project that uses Apache Cordova™ to help you build an app that targets Android, iOS, and the Windows Universal Platform.</Description>
+    <Icon>BlankCordovaTS.ico</Icon>
+    <ProjectType>TypeScript</ProjectType>
+    <TemplateID>Microsoft.JavaScript.CordovaFileMirrorBlankTS</TemplateID>
+    <SortOrder>10</SortOrder>
+    <CreateNewFolder>false</CreateNewFolder>
+    <DefaultName>BlankCordovaApp</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+    <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+    <TargetPlatformName>Windows</TargetPlatformName>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="Application.jsproj" ReplaceParameters="true">
+      <ProjectItem TargetFileName="bower.json" ReplaceParameters="true">bower.json</ProjectItem>
+      <ProjectItem TargetFileName="package.json" ReplaceParameters="true">package.json</ProjectItem>
+      <ProjectItem TargetFileName="build.json" ReplaceParameters="true">build.json</ProjectItem>
+      <ProjectItem TargetFileName="config.xml" ReplaceParameters="true">config.xml</ProjectItem>
+      <ProjectItem TargetFileName=".gitignore" ReplaceParameters="true">.gitignore</ProjectItem>
+      <ProjectItem TargetFileName="tsconfig.json">tsconfig.json</ProjectItem>
+      <Folder Name="scripts">
+        <ProjectItem TargetFileName="application.ts" ReplaceParameters="true">application.ts</ProjectItem>
+        <ProjectItem TargetFileName="startup.ts" ReplaceParameters="true">startup.ts</ProjectItem>
+        <Folder Name="typings">
+          <Folder Name="cordova">
+            <ProjectItem TargetFileName="cordova.d.ts">cordova.d.ts</ProjectItem>
+            <Folder Name="plugins">
+              <ProjectItem TargetFileName="BatteryStatus.d.ts">BatteryStatus.d.ts</ProjectItem>
+              <ProjectItem TargetFileName="Camera.d.ts">Camera.d.ts</ProjectItem>
+              <ProjectItem TargetFileName="Contacts.d.ts">Contacts.d.ts</ProjectItem>
+              <ProjectItem TargetFileName="Device.d.ts">Device.d.ts</ProjectItem>
+              <ProjectItem TargetFileName="DeviceMotion.d.ts">DeviceMotion.d.ts</ProjectItem>
+              <ProjectItem TargetFileName="DeviceOrientation.d.ts">DeviceOrientation.d.ts</ProjectItem>
+              <ProjectItem TargetFileName="Dialogs.d.ts">Dialogs.d.ts</ProjectItem>
+              <ProjectItem TargetFileName="FileSystem.d.ts">FileSystem.d.ts</ProjectItem>
+              <ProjectItem TargetFileName="FileTransfer.d.ts">FileTransfer.d.ts</ProjectItem>
+              <ProjectItem TargetFileName="Globalization.d.ts">Globalization.d.ts</ProjectItem>
+              <ProjectItem TargetFileName="InAppBrowser.d.ts">InAppBrowser.d.ts</ProjectItem>
+              <ProjectItem TargetFileName="Media.d.ts">Media.d.ts</ProjectItem>
+              <ProjectItem TargetFileName="MediaCapture.d.ts">MediaCapture.d.ts</ProjectItem>
+              <ProjectItem TargetFileName="NetworkInformation.d.ts">NetworkInformation.d.ts</ProjectItem>
+              <ProjectItem TargetFileName="Push.d.ts">Push.d.ts</ProjectItem>
+              <ProjectItem TargetFileName="Splashscreen.d.ts">Splashscreen.d.ts</ProjectItem>
+              <ProjectItem TargetFileName="StatusBar.d.ts">StatusBar.d.ts</ProjectItem>
+              <ProjectItem TargetFileName="Vibration.d.ts">Vibration.d.ts</ProjectItem>
+              <ProjectItem TargetFileName="WebSQL.d.ts">WebSQL.d.ts</ProjectItem>
+            </Folder>
+          </Folder>
+        </Folder>
+      </Folder>
+      <Folder Name="www">
+        <ProjectItem TargetFileName="index.html" ReplaceParameters="true">index.html</ProjectItem>
+        <Folder Name="css">
+          <ProjectItem TargetFileName="index.css">index.css</ProjectItem>
+        </Folder>
+        <Folder Name="images">
+          <ProjectItem TargetFileName="cordova.png">cordova.png</ProjectItem>
+        </Folder>
+        <Folder Name="lib">
+          <ProjectItem TargetFileName="require.2.1.8.js">require.2.1.8.js</ProjectItem>    
+        </Folder>
+        <Folder Name="scripts" />
+      </Folder>
+      <Folder Name="merges">
+        <Folder Name="android">
+          <Folder Name="scripts">
+            <ProjectItem TargetFileName="platformOverrides.js">platformOverrides.js</ProjectItem>
+            <ProjectItem TargetFileName="android2.3-jscompat.js">android2.3-jscompat.js</ProjectItem>
+          </Folder>
+        </Folder>
+        <Folder Name="ios"/>
+        <Folder Name="windows">
+          <Folder Name="scripts">
+            <ProjectItem TargetFileName="platformOverrides.js">platformOverrides.js</ProjectItem>
+            <ProjectItem TargetFileName="winstore-jscompat.js">winstore-jscompat.js</ProjectItem>
+          </Folder>
+        </Folder>
+      </Folder>
+      <Folder Name="res">
+        <Folder Name="icons">
+          <Folder Name="android">
+            <ProjectItem TargetFileName="icon-36-ldpi.png">icon-36-ldpi.png</ProjectItem>
+            <ProjectItem TargetFileName="icon-48-mdpi.png">icon-48-mdpi.png</ProjectItem>
+            <ProjectItem TargetFileName="icon-72-hdpi.png">icon-72-hdpi.png</ProjectItem>
+            <ProjectItem TargetFileName="icon-96-xhdpi.png">icon-96-xhdpi.png</ProjectItem>
+          </Folder>
+          <Folder Name="ios">
+            <ProjectItem TargetFileName="icon-40.png">icon-40.png</ProjectItem>
+            <ProjectItem TargetFileName="icon-40-2x.png">icon-40-2x.png</ProjectItem>
+            <ProjectItem TargetFileName="icon-50.png">icon-50.png</ProjectItem>
+            <ProjectItem TargetFileName="icon-50-2x.png">icon-50-2x.png</ProjectItem>
+            <ProjectItem TargetFileName="icon-57.png">icon-57.png</ProjectItem>
+            <ProjectItem TargetFileName="icon-57-2x.png">icon-57-2x.png</ProjectItem>
+            <ProjectItem TargetFileName="icon-60.png">icon-60.png</ProjectItem>
+            <ProjectItem TargetFileName="icon-60-2x.png">icon-60-2x.png</ProjectItem>
+            <ProjectItem TargetFileName="icon-60-3x.png">icon-60-3x.png</ProjectItem>
+            <ProjectItem TargetFileName="icon-72.png">icon-72.png</ProjectItem>
+            <ProjectItem TargetFileName="icon-72-2x.png">icon-72-2x.png</ProjectItem>
+            <ProjectItem TargetFileName="icon-76.png">icon-76.png</ProjectItem>
+            <ProjectItem TargetFileName="icon-76-2x.png">icon-76-2x.png</ProjectItem>
+            <ProjectItem TargetFileName="icon-small.png">icon-small.png</ProjectItem>
+            <ProjectItem TargetFileName="icon-small-2x.png">icon-small-2x.png</ProjectItem>
+          </Folder>
+          <Folder Name="windows">
+            <ProjectItem TargetFileName="Square150x150Logo.scale-100.png">Square150x150Logo.scale-100.png</ProjectItem>
+            <ProjectItem TargetFileName="Square30x30Logo.scale-100.png">Square30x30Logo.scale-100.png</ProjectItem>
+            <ProjectItem TargetFileName="Square310x310Logo.scale-100.png">Square310x310Logo.scale-100.png</ProjectItem>
+            <ProjectItem TargetFileName="Square150x150Logo.scale-240.png">Square150x150Logo.scale-240.png</ProjectItem>
+            <ProjectItem TargetFileName="Square44x44Logo.scale-100.png">Square44x44Logo.scale-100.png</ProjectItem>
+            <ProjectItem TargetFileName="Square44x44Logo.scale-240.png">Square44x44Logo.scale-240.png</ProjectItem>
+            <ProjectItem TargetFileName="Square70x70Logo.scale-100.png">Square70x70Logo.scale-100.png</ProjectItem>
+            <ProjectItem TargetFileName="Square71x71Logo.scale-100.png">Square71x71Logo.scale-100.png</ProjectItem>
+            <ProjectItem TargetFileName="Square71x71Logo.scale-240.png">Square71x71Logo.scale-240.png</ProjectItem>
+            <ProjectItem TargetFileName="StoreLogo.scale-100.png">StoreLogo.scale-100.png</ProjectItem>
+            <ProjectItem TargetFileName="StoreLogo.scale-240.png">StoreLogo.scale-240.png</ProjectItem>
+            <ProjectItem TargetFileName="Wide310x150Logo.scale-240.png">Wide310x150Logo.scale-240.png</ProjectItem>
+            <ProjectItem TargetFileName="Wide310x150Logo.scale-100.png">Wide310x150Logo.scale-100.png</ProjectItem>
+          </Folder>
+        </Folder>
+        <Folder Name="native">
+          <Folder Name="android">
+            <ProjectItem TargetFileName="ant.properties">ant.properties</ProjectItem>
+          </Folder>
+        </Folder>
+        <Folder Name="screens">
+          <Folder Name="android">
+            <ProjectItem TargetFileName="screen-hdpi-landscape.png">screen-hdpi-landscape.png</ProjectItem>
+            <ProjectItem TargetFileName="screen-hdpi-portrait.png">screen-hdpi-portrait.png</ProjectItem>
+            <ProjectItem TargetFileName="screen-ldpi-landscape.png">screen-ldpi-landscape.png</ProjectItem>
+            <ProjectItem TargetFileName="screen-ldpi-portrait.png">screen-ldpi-portrait.png</ProjectItem>
+            <ProjectItem TargetFileName="screen-mdpi-landscape.png">screen-mdpi-landscape.png</ProjectItem>
+            <ProjectItem TargetFileName="screen-mdpi-portrait.png">screen-mdpi-portrait.png</ProjectItem>
+            <ProjectItem TargetFileName="screen-xhdpi-landscape.png">screen-xhdpi-landscape.png</ProjectItem>
+            <ProjectItem TargetFileName="screen-xhdpi-portrait.png">screen-xhdpi-portrait.png</ProjectItem>
+          </Folder>
+          <Folder Name="ios">
+            <ProjectItem TargetFileName="screen-ipad-landscape.png">screen-ipad-landscape.png</ProjectItem>
+            <ProjectItem TargetFileName="screen-ipad-landscape-2x.png">screen-ipad-landscape-2x.png</ProjectItem>
+            <ProjectItem TargetFileName="screen-ipad-portrait.png">screen-ipad-portrait.png</ProjectItem>
+            <ProjectItem TargetFileName="screen-ipad-portrait-2x.png">screen-ipad-portrait-2x.png</ProjectItem>
+            <ProjectItem TargetFileName="screen-iphone-568h-2x.png">screen-iphone-568h-2x.png</ProjectItem>
+            <ProjectItem TargetFileName="screen-iphone-landscape-736h.png">screen-iphone-landscape-736h.png</ProjectItem>
+            <ProjectItem TargetFileName="screen-iphone-portrait.png">screen-iphone-portrait.png</ProjectItem>
+            <ProjectItem TargetFileName="screen-iphone-portrait-2x.png">screen-iphone-portrait-2x.png</ProjectItem>
+            <ProjectItem TargetFileName="screen-iphone-portrait-667h.png">screen-iphone-portrait-667h.png</ProjectItem>
+            <ProjectItem TargetFileName="screen-iphone-portrait-736h.png">screen-iphone-portrait-736h.png</ProjectItem>
+          </Folder>
+          <Folder Name="windows">
+            <ProjectItem TargetFileName="SplashScreen.scale-100.png">SplashScreen.scale-100.png</ProjectItem>
+            <ProjectItem TargetFileName="SplashScreen.scale-240.png">SplashScreen.scale-240.png</ProjectItem>
+            <ProjectItem TargetFileName="SplashScreenPhone.scale-240.png">SplashScreenPhone.scale-240.png</ProjectItem>
+          </Folder>
+        </Folder>
+      </Folder>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VisualStudio.MultiDeviceHybridApps.VSTemplateWizard, Culture=neutral</Assembly>
+    <FullClassName>Microsoft.VisualStudio.MultiDeviceHybridApps.VSTemplateWizard.MultiDeviceApplicationProjectWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

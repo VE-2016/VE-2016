@@ -29,10 +29,26 @@ namespace WinExplorer
         [DllImport("uxtheme.dll", CharSet = CharSet.Unicode)]
         private extern static int SetWindowTheme(IntPtr hWnd, string pszSubAppName,
                                                 string pszSubIdList);
+        bool handlecreated = false;
 
-        protected override void CreateHandle()
+        //protected override void CreateHandle()
+        //{
+        //    if (handlecreated)
+        //        return;
+        //    try
+        //    {
+        //        base.CreateHandle();
+        //        SetWindowTheme(this.Handle, "explorer", null);
+        //        handlecreated = true;
+        //    }
+        //    catch(Exception ex)
+        //    {
+
+        //    }
+        //}
+
+            public TreeViews()
         {
-            base.CreateHandle();
             SetWindowTheme(this.Handle, "explorer", null);
         }
 
@@ -4182,16 +4198,22 @@ namespace WinExplorer
 
                 _SolutionTreeView.Tag = vs;
 
+               // ExplorerForms.ef.Command_StartupProjects();
+
+                ExplorerForms.ef.Command_SetConfigurations();
+                ExplorerForms.ef.Command_SetPlatforms();
+                ExplorerForms.ef.Command_StartupProjects();
+
             }));
 
 
-            ////_SolutionTreeView.Invoke(new Action(() => {
-            //    _ddButton.DropDownItems.Clear();
-            //    if (_SolutionTreeView.Nodes.Count > 0) _SolutionTreeView.Nodes[0].Expand();
-            //    LoadPlatforms(vs);
-            //    if (vs != null) LoadProjects(vs);
-            //    Command.running = false;
-            ////}));
+            //_SolutionTreeView.Invoke(new Action(() => {
+            //_ddButton.DropDownItems.Clear();
+            //if (_SolutionTreeView.Nodes.Count > 0) _SolutionTreeView.Nodes[0].Expand();
+            //LoadPlatforms(vs);
+            //if (vs != null) LoadProjects(vs);
+            //Command.running = false;
+            //}));
 
             //_SolutionTreeView.Tag = vs;
 

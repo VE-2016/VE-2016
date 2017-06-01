@@ -1,0 +1,7 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateDir>
+    <RelativePath>VisualBasic\Web</RelativePath>
+    <LocalizedName Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4609" />
+    <SortOrder>50</SortOrder>
+  </VSTemplateDir>
+</VSTemplateManifest>

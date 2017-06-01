@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" >
+  <TemplateData>
+    <Name Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="116" />
+    <Description Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="115" />
+    <Icon Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="110"/>
+    <TemplateID>Microsoft.VisualBasic.WebRuntimeTextTemplating</TemplateID>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>VisualBasic</ProjectSubType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>RuntimeTextTemplate.tt</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>mscorlib</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem TargetFileName="$fileinputname$.tt" ReplaceParameters="false">PreProspective.WebVisualBasic.tt</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$itemproperties$" Value="CustomTool;CustomToolNamespace" />
+      <CustomParameter Name="$CustomTool$" Value="TextTemplatingFilePreprocessor" />
+      <CustomParameter Name="$CustomToolNamespace$" Value="My.Templates" />
+    </CustomParameters>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VSDesigner, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VSDesigner.ProjectWizard.ItemPropertyWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

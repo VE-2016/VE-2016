@@ -1,0 +1,24 @@
+<VSTemplate Version="2.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3024" />
+    <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3025" />
+    <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4512" />
+    <ProjectType>VisualBasic</ProjectType>
+    <SortOrder>95</SortOrder>
+    <DefaultName>Component.vb</DefaultName>
+    <TemplateID>Microsoft.VisualBasic.Code.Component</TemplateID>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+        <References>
+            <Reference>
+                <Assembly>System</Assembly>
+				<URL>https://www.microsoft.com</URL>
+            </Reference>
+        </References>
+
+    <ProjectItem ReplaceParameters="true" SubType="Component">Component.vb</ProjectItem>
+    <ProjectItem ReplaceParameters="true">Component.Designer.vb</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

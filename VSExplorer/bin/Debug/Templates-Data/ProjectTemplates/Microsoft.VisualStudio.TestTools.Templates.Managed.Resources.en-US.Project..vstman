@@ -1,0 +1,40 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>CSharp\Test\1033\UnitTestProject</RelativePathOnDisk>
+    <TemplateFileName>UnitTestProject.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="510" />
+        <Description Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="511" />
+        <Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="531" />
+        <TemplateID>Microsoft.CSharp.UnitTestProject</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+        <SortOrder>100</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>UnitTestProject</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Test\1033\UnitTestProject</RelativePathOnDisk>
+    <TemplateFileName>UnitTestProject.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="510" />
+        <Description Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="511" />
+        <Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="533" />
+        <TemplateID>Microsoft.VisualBasic.UnitTestProject</TemplateID>
+        <ProjectType>VisualBasic</ProjectType>
+        <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+        <SortOrder>90</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <DefaultName>UnitTestProject</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

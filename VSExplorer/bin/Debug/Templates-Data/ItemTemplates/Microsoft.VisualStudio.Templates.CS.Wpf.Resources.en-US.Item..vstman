@@ -1,0 +1,156 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\WPF\1033\WPFCustomControl</RelativePathOnDisk>
+    <TemplateFileName>WPFCustomControl.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4668" />
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4669" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4599" />
+        <TemplateID>Microsoft.CSharp.WPF.CustomControl</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>CustomControl.cs</DefaultName>
+        <TemplateGroupID>WPF</TemplateGroupID>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\WPF\1033\WPFFlowDocument</RelativePathOnDisk>
+    <TemplateFileName>WPFFlowDocument.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4656" />
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4657" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4598" />
+        <TemplateID>Microsoft.CSharp.WPF.FlowDocument</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>FlowDocument.xaml</DefaultName>
+        <TemplateGroupID>WPF</TemplateGroupID>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\WPF\1033\WPFPage</RelativePathOnDisk>
+    <TemplateFileName>WPFPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4658" />
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4659" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4597" />
+        <TemplateID>Microsoft.CSharp.WPF.Page</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>97</SortOrder>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>Page.xaml</DefaultName>
+        <TemplateGroupID>WPF</TemplateGroupID>
+        <ShowByDefault>false</ShowByDefault>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\WPF\1033\WPFPageFunction</RelativePathOnDisk>
+    <TemplateFileName>WPFPageFunction.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4660" />
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4661" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4596" />
+        <TemplateID>Microsoft.CSharp.WPF.PageFunction</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>PageFunction.xaml</DefaultName>
+        <TemplateGroupID>WPF</TemplateGroupID>
+        <ShowByDefault>false</ShowByDefault>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\WPF\1033\WPFResourceDictionary</RelativePathOnDisk>
+    <TemplateFileName>WPFResourceDictionary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4662" />
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4663" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4595" />
+        <TemplateID>Microsoft.CSharp.WPF.ResourceDictionary</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>99</SortOrder>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>Dictionary.xaml</DefaultName>
+        <TemplateGroupID>WPF</TemplateGroupID>
+        <ShowByDefault>false</ShowByDefault>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\WPF\1033\WPFSplashScreen</RelativePathOnDisk>
+    <TemplateFileName>WPFSplashScreen.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4675" />
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4676" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4605" />
+        <TemplateID>Microsoft.CSharp.WPF.SplashScreen</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>SplashScreen.png</DefaultName>
+        <TemplateGroupID>WPF</TemplateGroupID>
+        <ShowByDefault>false</ShowByDefault>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\WPF\1033\WPFUserControl</RelativePathOnDisk>
+    <TemplateFileName>WPFUserControl.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4664" />
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4665" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4594" />
+        <TemplateID>Microsoft.CSharp.WPF.UserControl</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>98</SortOrder>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>UserControl.xaml</DefaultName>
+        <TemplateGroupID>WPF</TemplateGroupID>
+        <ShowByDefault>true</ShowByDefault>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\WPF\1033\WPFWindow</RelativePathOnDisk>
+    <TemplateFileName>WPFWindow.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4666" />
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4667" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4593" />
+        <TemplateID>Microsoft.CSharp.WPF.Window</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>96</SortOrder>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>Window.xaml</DefaultName>
+        <TemplateGroupID>WPF</TemplateGroupID>
+        <ShowByDefault>false</ShowByDefault>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

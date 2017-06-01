@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1036"/>
+    <Description Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1037"/>
+    <!-- pulled from the asp.net v5 package -->
+    <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="2300"/>
+    <TemplateID>JavaScript.jsxfile</TemplateID>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>file.jsx</DefaultName>
+    <!-- TypeScript project capability is applicable to all JavaScript projects -->
+    <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+    <ProjectType>JavaScript</ProjectType>
+    <ShowByDefault>false</ShowByDefault>
+    <AppliesTo>JavaScript</AppliesTo>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem SubType="Code" ReplaceParameters="true">file.jsx</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

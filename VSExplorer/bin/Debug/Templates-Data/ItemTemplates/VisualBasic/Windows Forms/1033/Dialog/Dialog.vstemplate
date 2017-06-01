@@ -1,0 +1,36 @@
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3157" />
+    <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3158" />
+    <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4582" />
+    <ProjectType>VisualBasic</ProjectType>
+    <SortOrder>100</SortOrder>
+    <DefaultName>Dialog.vb</DefaultName>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>Microsoft.VisualBasic.WindowsForms.Dialog</TemplateID>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+  </TemplateData>
+  <TemplateContent>
+        <References>
+            <Reference>
+                <Assembly>System</Assembly>
+                <URL>https://www.microsoft.com</URL>
+            </Reference>
+            <Reference>
+                <Assembly>System.Drawing</Assembly>
+                <URL>https://www.microsoft.com</URL>
+            </Reference>
+            <Reference>
+                <Assembly>System.Windows.Forms</Assembly>
+                <URL>https://www.microsoft.com</URL>
+            </Reference>
+        </References>
+
+    <ProjectItem ReplaceParameters="true" SubType="Form">Dialog.vb</ProjectItem>
+    <ProjectItem ReplaceParameters="true">Dialog.Designer.vb</ProjectItem>
+    <CustomParameters>
+        <CustomParameter _locID="$IT_DLG_VB_Loc_OK$" Name="$IT_DLG_VB_Loc_OK$" Value="OK"/>
+        <CustomParameter _locID="$IT_DLG_VB_Loc_Cancel$" Name="$IT_DLG_VB_Loc_Cancel$" Value="Cancel"/>
+    </CustomParameters>
+  </TemplateContent>
+</VSTemplate>

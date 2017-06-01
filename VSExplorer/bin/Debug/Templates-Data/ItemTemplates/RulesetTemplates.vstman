@@ -1,0 +1,32 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>CSharp\General\RuleSet.zip</RelativePathOnDisk>
+    <TemplateFileName>RuleSet.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{B20604B0-72BC-4953-BB92-95BF26D30CFA}" ID="160" />
+        <Description Package="{B20604B0-72BC-4953-BB92-95BF26D30CFA}" ID="161" />
+        <Icon Package="{B20604B0-72BC-4953-BB92-95BF26D30CFA}" ID="201" />
+        <TemplateID>CodeAnalysis-v10-RuleSet</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>RuleSet.ruleset</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>VisualBasic\General\RuleSet.zip</RelativePathOnDisk>
+    <TemplateFileName>RuleSet.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{B20604B0-72BC-4953-BB92-95BF26D30CFA}" ID="160" />
+        <Description Package="{B20604B0-72BC-4953-BB92-95BF26D30CFA}" ID="161" />
+        <Icon Package="{B20604B0-72BC-4953-BB92-95BF26D30CFA}" ID="201" />
+        <TemplateID>CodeAnalysis-v10-RuleSet</TemplateID>
+        <ProjectType>VisualBasic</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>RuleSet.ruleset</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

@@ -1,0 +1,11 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateDir>
+    <RelativePath>VisualBasic\Windows Forms</RelativePath>
+    <SortOrder>10</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>VisualBasic\Windows</RelativePath>
+    <LocalizedName Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4610" />
+    <SortOrder>40</SortOrder>
+  </VSTemplateDir>
+</VSTemplateManifest>

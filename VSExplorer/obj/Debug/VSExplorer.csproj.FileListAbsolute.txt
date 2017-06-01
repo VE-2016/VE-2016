@@ -666,7 +666,6 @@ F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\bin\Debug\WeifenLuo.WinFormsUI.
 F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2012.pdb
 F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2013.pdb
 F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2015.pdb
-F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
 F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\bin\Debug\Loggers.pdb
 F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\bin\Debug\nunit-gui.pdb
 F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\bin\Debug\nunit-gui.exe.config
@@ -701,3 +700,4 @@ F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\obj\Debug\WinExplorer.UI.OpenIt
 F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\obj\Debug\WinExplorer.UI.OpenItemGroup.resources
 F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\obj\Debug\WinExplorer.UI.OpenProjectShort.resources
 F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\obj\Debug\WinExplorer.Services.NuGet.NuGetPacketShort.resources
+F:\Windows-Enterprise-VE-2016\VE-2016\VSExplorer\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb

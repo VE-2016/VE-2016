@@ -1,0 +1,36 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name _locID="$templateName$">Visual Basic Project Template</Name>
+    <Description _locID="$templateDescription$">A project for building and packaging a Visual Basic Project Template.</Description>
+    <ProjectType>VisualBasic</ProjectType>
+    <TemplateID>{6C1451EA-2654-435E-8ABE-485FB4B9C918}</TemplateID>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>ProjectTemplate</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>ProjectTemplate.ico</Icon>
+    <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="ProjectTemplate.vbproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="My Project\AssemblyInfo.vb">AssemblyInfo.vb</ProjectItem>
+      <ProjectItem TargetFileName="AssemblyInfo.vb">TemplateContent_AssemblyInfo.vb</ProjectItem>
+      <ProjectItem TargetFileName="Class1.vb">TemplateContent_Class1.vb</ProjectItem>
+      <ProjectItem TargetFileName="MyApplication.Designer.vb">TemplateContent_MyApplication.Designer.vb</ProjectItem>
+      <ProjectItem TargetFileName="MyApplication.myapp">TemplateContent_MyApplication.myapp</ProjectItem>
+      <ProjectItem TargetFileName="$zipprojectname$.ico">TemplateContent_ProjectTemplate.ico</ProjectItem>
+      <ProjectItem TargetFileName="ProjectTemplate.vbproj">TemplateContent_ProjectTemplate.vbproj</ProjectItem>
+      <ProjectItem TargetFileName="$zipprojectname$.vstemplate" ReplaceParameters="true" OpenInEditor="true">TemplateContent_ClassLibrary.vstemplateX</ProjectItem>
+      <ProjectItem TargetFileName="Resources.Designer.vb">TemplateContent_Resources.Designer.vb</ProjectItem>
+      <ProjectItem TargetFileName="Resources.resx">TemplateContent_Resources.resx</ProjectItem>
+      <ProjectItem TargetFileName="Settings.Designer.vb">TemplateContent_Settings.Designer.vb</ProjectItem>
+      <ProjectItem TargetFileName="Settings.settings">TemplateContent_Settings.settings</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VSSDK.TemplateWizard, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VSSDK.TemplateWizard.TemplateTemplateWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

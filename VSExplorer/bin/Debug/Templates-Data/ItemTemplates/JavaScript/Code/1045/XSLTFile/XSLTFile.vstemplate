@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Plik XSLT</Name>
+    <Description>Arkusz stylów używany do transformacji dokumentów XML</Description>
+    <Icon>XSLTFile.ico</Icon>
+    <TemplateID>Microsoft.JavaScript.XSLTFile</TemplateID>
+    <ProjectType>JavaScript</ProjectType>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>xsltfile.xslt</DefaultName>
+
+    <!-- "XSLT"File is applicable to all JavaScript project capability -->
+    <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+    <ProjectType>JavaScript</ProjectType>
+    <ShowByDefault>false</ShowByDefault>
+    <AppliesTo>JavaScript</AppliesTo>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem>XSLTFile.xslt</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

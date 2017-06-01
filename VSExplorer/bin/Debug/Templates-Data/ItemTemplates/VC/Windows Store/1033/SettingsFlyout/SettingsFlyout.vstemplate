@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1051" />
+    <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1052" />
+    <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4031" />
+    <TemplateID>Microsoft.CPP.WinRT.SettingsFlyout</TemplateID>
+    <TemplateGroupID>WinRT-Native-6.3</TemplateGroupID>
+    <ProjectType>VC</ProjectType>
+    <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+    <DefaultName>SettingsFlyout.xaml</DefaultName>
+    <ShowByDefault>false</ShowByDefault>
+    <SortOrder>93</SortOrder>
+    <PreviewImage>SettingsFlyout.png</PreviewImage>
+    <TargetPlatformName>Windows</TargetPlatformName>
+    <RequiredPlatformVersion>6.3.0</RequiredPlatformVersion>
+    <AppIdFilter>blend</AppIdFilter>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="true" OpenInEditor="true" ItemType="Page" SubType="Designer" CustomTool="MSBuild:Compile" TargetFileName="$fileinputname$.xaml">SettingsFlyout.xaml</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$.xaml.h">SettingsFlyout.xaml.h</ProjectItem>
+    <ProjectItem ReplaceParameters="true" OpenInEditor="true" TargetFileName="$fileinputname$.xaml.cpp">SettingsFlyout.xaml.cpp</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

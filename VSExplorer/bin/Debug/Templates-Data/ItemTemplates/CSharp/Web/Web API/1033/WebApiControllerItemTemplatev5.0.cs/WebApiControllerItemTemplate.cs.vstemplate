@@ -1,0 +1,35 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+    <TemplateData>
+        <Name Package="{B54016DB-B3E6-4960-8262-81772C777DE9}" ID="21124"/>
+        <Description Package="{B54016DB-B3E6-4960-8262-81772C777DE9}" ID="21125"/>
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4703"/>
+        <ProjectType>CSharp</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <SortOrder>50</SortOrder>
+        <DefaultName>ValuesController.cs</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+        <TemplateID>WebApiControllerItemTemplate.WAP.cs.vstemplate.v5</TemplateID>
+        <ShowByDefault>false</ShowByDefault>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    </TemplateData>
+    <TemplateContent>
+        <References />
+        <ProjectItem SubType="" TargetFileName="$fileinputname$.cs" ReplaceParameters="true">ValuesController.cs</ProjectItem>
+    </TemplateContent>
+    <WizardExtension>
+        <Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+        <FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
+    </WizardExtension>
+    <WizardData>
+        <packages repository="registry" keyName="WebStackVS15" isPreunzipped="true">
+            <package id="Newtonsoft.Json" version="6.0.4" />
+            <package id="Microsoft.AspNet.WebApi.Client" version="5.2.3" />
+            <package id="Microsoft.AspNet.WebApi.Core" version="5.2.3" />
+            <package id="Microsoft.AspNet.WebApi.WebHost" version="5.2.3" />
+            <package id="Microsoft.AspNet.WebApi" version="5.2.3" />
+          
+        </packages>
+    </WizardData>
+</VSTemplate>

@@ -1,0 +1,30 @@
+﻿<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <TemplateID>Microsoft.VC.InstallWin81</TemplateID>
+    <Name _locID="WinRT_Project_Upgrade_To_8_1_Name">Install Windows 8.1</Name>
+    <Description _locID="WinRT_Project_Upgrade_To_8_1_Description">Windows Store app development is only supported on Windows 8.1 or higher</Description>
+    <ProjectType>VC</ProjectType>
+    <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+    <CreateNewFolder>false</CreateNewFolder>
+    <DefaultName>InstallWindows81</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <Icon>InstallWindows81.ico</Icon>
+    <SortOrder>100</SortOrder>
+    <PromptForSaveOnCreation>false</PromptForSaveOnCreation>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <TargetPlatformName>Windows</TargetPlatformName>
+    <RequiredPlatformVersion>6.2</RequiredPlatformVersion>
+    <MaxOSVersion>6.2</MaxOSVersion>
+    <Hidden>false</Hidden>
+  </TemplateData>
+  <TemplateContent>
+    <CustomParameters>
+      <CustomParameter Name="htmlRelPath" Value="ProjectTemplates\CSharp\Windows Store\$LCID$\InstallWindows81\InstallWindows81.html" />
+    </CustomParameters>
+  </TemplateContent>
+   <WizardExtension> 
+    <Assembly>Microsoft.VisualStudio.VsipSupport.PlaceholderProject, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly> 
+    <FullClassName>Microsoft.VisualStudio.VsipSupport.WizardExtension</FullClassName> 
+  </WizardExtension>
+</VSTemplate>

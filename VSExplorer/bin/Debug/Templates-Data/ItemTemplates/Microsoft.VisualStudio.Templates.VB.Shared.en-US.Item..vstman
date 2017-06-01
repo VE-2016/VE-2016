@@ -1,0 +1,67 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Code\1033\Class</RelativePathOnDisk>
+    <TemplateFileName>Class.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3020" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3021" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4510" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>90</SortOrder>
+        <DefaultName>Class.vb</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.VisualBasic.Code.Class</TemplateID>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Code\1033\CodeFile</RelativePathOnDisk>
+    <TemplateFileName>CodeFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3022" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3023" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4511" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>CodeFile.vb</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.VisualBasic.Code.CodeFile</TemplateID>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Code\1033\Interface</RelativePathOnDisk>
+    <TemplateFileName>Interface.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3146" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3147" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4579" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>92</SortOrder>
+        <DefaultName>Interface.vb</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.VisualBasic.Code.Interface</TemplateID>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Code\1033\Module</RelativePathOnDisk>
+    <TemplateFileName>Module.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3028" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3029" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4514" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>91</SortOrder>
+        <DefaultName>Module.vb</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.VisualBasic.Code.Module</TemplateID>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

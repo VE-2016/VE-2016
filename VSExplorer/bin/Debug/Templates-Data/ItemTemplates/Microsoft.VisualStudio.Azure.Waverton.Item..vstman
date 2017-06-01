@@ -1,0 +1,195 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateDir>
+    <RelativePath>CloudService</RelativePath>
+    <LocalizedName Package="{77a5a151-6a9b-4d08-bc38-340ab29566e2}" ID="516" />
+    <SortOrder>35</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>CloudService\NETFramework4</RelativePath>
+    <LocalizedName Package="{77a5a151-6a9b-4d08-bc38-340ab29566e2}" ID="522" />
+    <SortOrder>40</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>CloudService\NETFramework4\Web Role</RelativePath>
+    <LocalizedName Package="{77a5a151-6a9b-4d08-bc38-340ab29566e2}" ID="515" />
+    <SortOrder>35</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>CloudService\NETFramework4\Worker Role</RelativePath>
+    <LocalizedName Package="{77a5a151-6a9b-4d08-bc38-340ab29566e2}" ID="514" />
+    <SortOrder>35</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>CloudServiceItems</RelativePath>
+    <LocalizedName Package="{77a5a151-6a9b-4d08-bc38-340ab29566e2}" ID="517" />
+    <SortOrder>35</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>CloudServiceItems\Data</RelativePath>
+    <LocalizedName Package="{77a5a151-6a9b-4d08-bc38-340ab29566e2}" ID="520" />
+    <SortOrder>35</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>CloudServiceItems\General</RelativePath>
+    <LocalizedName Package="{77a5a151-6a9b-4d08-bc38-340ab29566e2}" ID="521" />
+    <SortOrder>35</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CloudService\NETFramework4\Web Role\Visual Basic\1033\WebRole_vb40</RelativePathOnDisk>
+    <TemplateFileName>WebApplicationProject.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{BE73B665-4B85-4690-BB3F-9DBE91254BCC}" ID="502" />
+        <Description Package="{BE73B665-4B85-4690-BB3F-9DBE91254BCC}" ID="503" />
+        <Icon>webrole_vb.ico</Icon>
+        <ProjectType>CloudServiceProject</ProjectType>
+        <DefaultName>WebRole</DefaultName>
+        <SortOrder>10</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CloudService\NETFramework4\Web Role\Visual Basic\1033\WebRoleWcf_vb40</RelativePathOnDisk>
+    <TemplateFileName>WcfWebRole.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{BE73B665-4B85-4690-BB3F-9DBE91254BCC}" ID="506" />
+        <Description Package="{BE73B665-4B85-4690-BB3F-9DBE91254BCC}" ID="507" />
+        <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="402" />
+        <ProjectType>CloudServiceProject</ProjectType>
+        <DefaultName>WCFServiceWebRole</DefaultName>
+        <SortOrder>15</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CloudService\NETFramework4\Web Role\Visual C#\1033\WebRole_cs40</RelativePathOnDisk>
+    <TemplateFileName>WebApplicationProject.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{BE73B665-4B85-4690-BB3F-9DBE91254BCC}" ID="502" />
+        <Description Package="{BE73B665-4B85-4690-BB3F-9DBE91254BCC}" ID="503" />
+        <Icon>webrole_cs.ico</Icon>
+        <ProjectType>CloudServiceProject</ProjectType>
+        <DefaultName>WebRole</DefaultName>
+        <SortOrder>10</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CloudService\NETFramework4\Web Role\Visual C#\1033\WebRoleWcf_cs40</RelativePathOnDisk>
+    <TemplateFileName>WcfWebRole.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{BE73B665-4B85-4690-BB3F-9DBE91254BCC}" ID="506" />
+        <Description Package="{BE73B665-4B85-4690-BB3F-9DBE91254BCC}" ID="507" />
+        <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="401" />
+        <ProjectType>CloudServiceProject</ProjectType>
+        <DefaultName>WCFServiceWebRole</DefaultName>
+        <SortOrder>15</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CloudService\NETFramework4\Worker Role\Visual Basic\1033\WorkerRole_vb40</RelativePathOnDisk>
+    <TemplateFileName>WorkerRole.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{BE73B665-4B85-4690-BB3F-9DBE91254BCC}" ID="508" />
+        <Description Package="{BE73B665-4B85-4690-BB3F-9DBE91254BCC}" ID="509" />
+        <Icon>workerrole_vb.ico</Icon>
+        <ProjectType>CloudServiceProject</ProjectType>
+        <DefaultName>WorkerRole</DefaultName>
+        <SortOrder>20</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CloudService\NETFramework4\Worker Role\Visual C#\1033\WorkerRole_cs40</RelativePathOnDisk>
+    <TemplateFileName>WorkerRole.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{BE73B665-4B85-4690-BB3F-9DBE91254BCC}" ID="508" />
+        <Description Package="{BE73B665-4B85-4690-BB3F-9DBE91254BCC}" ID="509" />
+        <Icon>workerrole_cs.ico</Icon>
+        <ProjectType>CloudServiceProject</ProjectType>
+        <DefaultName>WorkerRole</DefaultName>
+        <SortOrder>20</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CloudServiceItems\Data\1033</RelativePathOnDisk>
+    <TemplateFileName>WadcfgFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{BE73B665-4B85-4690-BB3F-9DBE91254BCC}" ID="516" />
+        <Description Package="{BE73B665-4B85-4690-BB3F-9DBE91254BCC}" ID="517" />
+        <Icon Package="{BE73B665-4B85-4690-BB3F-9DBE91254BCC}" ID="503" />
+        <ProjectType>CloudServiceProject</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>Diagnostics.wadcfgx</DefaultName>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CloudServiceItems\Data\1033</RelativePathOnDisk>
+    <TemplateFileName>XMLFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2244" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2279" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4524" />
+        <ProjectType>CloudServiceProject</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>XMLFile.xml</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CloudServiceItems\General\1033</RelativePathOnDisk>
+    <TemplateFileName>TextFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2316" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2317" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4536" />
+        <ProjectType>CloudServiceProject</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>TextFile.txt</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CloudService\NETFramework4\Worker Role\Visual C#\1033\ServiceBus</RelativePathOnDisk>
+    <TemplateFileName>WorkerRoleWithQueue.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Worker Role with Service Bus Queue</Name>
+        <Description>Worker role processing messages from a Service Bus Queue</Description>
+        <Icon>SBWorker_CSharp.ico</Icon>
+        <ProjectType>CloudServiceProject</ProjectType>
+        <DefaultName>WorkerRoleWithSBQueue</DefaultName>
+        <SortOrder>28</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CloudService\NETFramework4\Worker Role\Visual Basic\1033\ServiceBus</RelativePathOnDisk>
+    <TemplateFileName>WorkerRoleWithQueue.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Worker Role with Service Bus Queue</Name>
+        <Description>Worker role processing messages from a Service Bus Queue</Description>
+        <Icon>SBWorker_VB.ico</Icon>
+        <ProjectType>CloudServiceProject</ProjectType>
+        <DefaultName>WorkerRoleWithSBQueue</DefaultName>
+        <SortOrder>28</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

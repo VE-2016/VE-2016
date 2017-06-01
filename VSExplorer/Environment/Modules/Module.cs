@@ -88,10 +88,20 @@ namespace WinExplorer
             d.dict.Add("Solution Platforms", gc);
             d.temp.Add("Solution Platforms");
 
-            gc = new gui.Command_Gui(ExplorerForms.ef);
+            //gc = new gui.Command_Gui(ExplorerForms.ef);
+            //gc.Names = "Startup Projects";
+            //d.dict.Add("Startup Projects", gc);
+            //d.temp.Add("Startup Projects");
+
+            gc = new gui.Command_SolutionRun(ExplorerForms.ef);
             gc.Names = "Startup Projects";
             d.dict.Add("Startup Projects", gc);
             d.temp.Add("Startup Projects");
+
+            c = new gui.Command_RunProject(ExplorerForms.ef);
+            d.dict.Add("Start", c);
+            d.temp.Add("Start");
+
             d.temp.Add("Separator");
 
             gui.Command_Launcher lc = new gui.Command_Launcher(ExplorerForms.ef);
@@ -202,10 +212,15 @@ namespace WinExplorer
             d.dict.Add("Solution Platforms", gc);
             d.temp.Add("Solution Platforms");
 
-            gc = new gui.Command_Gui(ExplorerForms.ef);
+            gc = new gui.Command_SolutionRun(ExplorerForms.ef);
             gc.Names = "Startup Projects";
             d.dict.Add("Startup Projects", gc);
             d.temp.Add("Startup Projects");
+            
+            c = new gui.Command_RunProject(ExplorerForms.ef);
+            d.dict.Add("Start", c);
+            d.temp.Add("Start");
+
             d.temp.Add("Separator");
 
             gui.Command_Launcher lc = new gui.Command_Launcher(ExplorerForms.ef);
@@ -316,10 +331,16 @@ namespace WinExplorer
             d.dict.Add("Solution Platforms", gc);
             d.temp.Add("Solution Platforms");
 
-            gc = new gui.Command_Gui(ExplorerForms.ef);
+            gc = new gui.Command_SolutionRun(ExplorerForms.ef);
             gc.Names = "Startup Projects";
             d.dict.Add("Startup Projects", gc);
             d.temp.Add("Startup Projects");
+            
+
+            c = new gui.Command_RunProject(ExplorerForms.ef);
+            d.dict.Add("Start", c);
+            d.temp.Add("Start");
+
             d.temp.Add("Separator");
 
             c = new gui.Command_FindInFiles(ExplorerForms.ef);

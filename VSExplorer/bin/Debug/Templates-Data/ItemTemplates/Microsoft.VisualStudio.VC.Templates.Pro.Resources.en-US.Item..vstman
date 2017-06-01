@@ -1,0 +1,490 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\HLSL\1033\ComputeShader</RelativePathOnDisk>
+    <TemplateFileName>ComputeShader.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="1290" />
+        <Description Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="1291" />
+        <Icon Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="9044" />
+        <TemplateID>Microsoft.VC.Graphics.ComputeShader</TemplateID>
+        <TemplateGroupID>WinRT-Common</TemplateGroupID>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>ComputeShader.hlsl</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\HLSL\1033\DomainShader</RelativePathOnDisk>
+    <TemplateFileName>DomainShader.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="1294" />
+        <Description Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="1295" />
+        <Icon Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="9044" />
+        <TemplateID>Microsoft.VC.Graphics.DomainShader</TemplateID>
+        <TemplateGroupID>WinRT-Common</TemplateGroupID>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>DomainShader.hlsl</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\HLSL\1033\GeometryShader</RelativePathOnDisk>
+    <TemplateFileName>GeometryShader.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="1288" />
+        <Description Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="1289" />
+        <Icon Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="9044" />
+        <TemplateID>Microsoft.VC.Graphics.GeometryShader</TemplateID>
+        <TemplateGroupID>WinRT-Common</TemplateGroupID>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>GeometryShader.hlsl</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\HLSL\1033\Header</RelativePathOnDisk>
+    <TemplateFileName>Header.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="1296" />
+        <Description Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="1297" />
+        <Icon Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="9044" />
+        <TemplateID>Microsoft.VC.Graphics.Header</TemplateID>
+        <TemplateGroupID>WinRT-Common</TemplateGroupID>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>Header.hlsli</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\HLSL\1033\HullShader</RelativePathOnDisk>
+    <TemplateFileName>HullShader.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="1292" />
+        <Description Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="1293" />
+        <Icon Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="9044" />
+        <TemplateID>Microsoft.VC.Graphics.HullShader</TemplateID>
+        <TemplateGroupID>WinRT-Common</TemplateGroupID>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>HullShader.hlsl</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\HLSL\1033\PixelShader</RelativePathOnDisk>
+    <TemplateFileName>PixelShader.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="1284" />
+        <Description Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="1285" />
+        <Icon Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="9044" />
+        <TemplateID>Microsoft.VC.Graphics.PixelShader</TemplateID>
+        <TemplateGroupID>WinRT-Common</TemplateGroupID>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>PixelShader.hlsl</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\HLSL\1033\VertexShader</RelativePathOnDisk>
+    <TemplateFileName>VertexShader.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="1286" />
+        <Description Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="1287" />
+        <Icon Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="9044" />
+        <TemplateID>Microsoft.VC.Graphics.VertexShader</TemplateID>
+        <TemplateGroupID>WinRT-Common</TemplateGroupID>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>VertexShader.hlsl</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\Resource\1033\Resw</RelativePathOnDisk>
+    <TemplateFileName>Resw.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1009" />
+        <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1010" />
+        <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4006" />
+        <TemplateID>Microsoft.Templates.VC.Shared.Resw</TemplateID>
+        <TemplateGroupID>CodeSharing-Native</TemplateGroupID>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>Resources.resw</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>1000</SortOrder>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.2.0</RequiredPlatformVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\Windows Store\1033\BasicPage</RelativePathOnDisk>
+    <TemplateFileName>BasicPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1016" />
+        <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1017" />
+        <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4025" />
+        <TemplateID>Microsoft.CPP.WinRT.BasicPage</TemplateID>
+        <TemplateGroupID>WinRT-Native-6.3</TemplateGroupID>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>BasicPage.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>41</SortOrder>
+        <PreviewImage>BasicPage.png</PreviewImage>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.2.0</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\Windows Store\1033\BlankPage</RelativePathOnDisk>
+    <TemplateFileName>BlankPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1014" />
+        <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1015" />
+        <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4007" />
+        <TemplateID>Microsoft.CPP.WinRT.BlankPage</TemplateID>
+        <TemplateGroupID>WinRT-Native-6.3</TemplateGroupID>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>BlankPage.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>40</SortOrder>
+        <PreviewImage>BlankPage.png</PreviewImage>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.2.0</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\Windows Store\1033\FileOpenPickerContract</RelativePathOnDisk>
+    <TemplateFileName>FileOpenPickerContract.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1012" />
+        <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1013" />
+        <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4011" />
+        <TemplateID>Microsoft.CPP.WinRT.FileOpenPickerContract</TemplateID>
+        <TemplateGroupID>WinRT-Native-6.3</TemplateGroupID>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>FileOpenPickerPage.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>90</SortOrder>
+        <PreviewImage>FileOpenPickerContract.png</PreviewImage>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.2.0</RequiredPlatformVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\Windows Store\1033\GroupDetailPage</RelativePathOnDisk>
+    <TemplateFileName>GroupDetailPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1020" />
+        <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1021" />
+        <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4013" />
+        <TemplateID>Microsoft.CPP.WinRT.GroupDetailPage</TemplateID>
+        <TemplateGroupID>WinRT-Native-6.3</TemplateGroupID>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>GroupDetailPage.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>54</SortOrder>
+        <PreviewImage>GroupDetailPage.png</PreviewImage>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.2.0</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\Windows Store\1033\GroupedItemsPage</RelativePathOnDisk>
+    <TemplateFileName>GroupedItemsPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1018" />
+        <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1019" />
+        <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4014" />
+        <TemplateID>Microsoft.CPP.WinRT.GroupedItemsPage</TemplateID>
+        <TemplateGroupID>WinRT-Native-6.3</TemplateGroupID>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>GroupedItemsPage.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>53</SortOrder>
+        <PreviewImage>GroupedItemsPage.png</PreviewImage>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.2.0</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\Windows Store\1033\HubPage</RelativePathOnDisk>
+    <TemplateFileName>HubPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1057" />
+        <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1058" />
+        <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4030" />
+        <TemplateID>Microsoft.CPP.WinRT.HubPage</TemplateID>
+        <TemplateGroupID>WinRT-Native-6.3</TemplateGroupID>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>HubPage.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>53</SortOrder>
+        <PreviewImage>HubPage.png</PreviewImage>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.3.0</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\Windows Store\1033\ItemDetailPage</RelativePathOnDisk>
+    <TemplateFileName>ItemDetailPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1022" />
+        <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1023" />
+        <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4015" />
+        <TemplateID>Microsoft.CPP.WinRT.ItemDetailPage</TemplateID>
+        <TemplateGroupID>WinRT-Native-6.3</TemplateGroupID>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>ItemDetailPage.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>52</SortOrder>
+        <PreviewImage>ItemDetailPage.png</PreviewImage>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.2.0</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\Windows Store\1033\ItemsPage</RelativePathOnDisk>
+    <TemplateFileName>ItemsPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1006" />
+        <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1007" />
+        <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4012" />
+        <TemplateID>Microsoft.CPP.WinRT.ItemsPage</TemplateID>
+        <TemplateGroupID>WinRT-Native-6.3</TemplateGroupID>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>ItemsPage.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>51</SortOrder>
+        <PreviewImage>ItemsPage.png</PreviewImage>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.2.0</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\Windows Store\1033\ResourceDictionary</RelativePathOnDisk>
+    <TemplateFileName>ResourceDictionary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1038" />
+        <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1039" />
+        <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4023" />
+        <TemplateID>Microsoft.VC.WinRT.ResourceDictionary</TemplateID>
+        <TemplateGroupID>WinRT-Native-6.3</TemplateGroupID>
+        <AppliesTo>VisualC + WindowsXaml + WindowsXamlResourceDictionary + !WindowsUniversalMultiViews</AppliesTo>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>Dictionary.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>70</SortOrder>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>8</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\Windows Store\1033\Resw</RelativePathOnDisk>
+    <TemplateFileName>Resw.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1009" />
+        <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1010" />
+        <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4006" />
+        <TemplateID>Microsoft.Templates.VC.WinRt.Resw</TemplateID>
+        <TemplateGroupID>WinRT-Native-6.3</TemplateGroupID>
+        <AppliesTo>VC + WindowsXaml</AppliesTo>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>Resources.resw</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>1000</SortOrder>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.3.0</RequiredPlatformVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\Windows Store\1033\SearchContract</RelativePathOnDisk>
+    <TemplateFileName>SearchResultsPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1024" />
+        <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1025" />
+        <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4017" />
+        <TemplateID>Microsoft.CPP.WinRT.SearchResultsPage</TemplateID>
+        <TemplateGroupID>WinRT-Native-6.3</TemplateGroupID>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>SearchResultsPage.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>91</SortOrder>
+        <PreviewImage>SearchContract.png</PreviewImage>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.2.0</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\Windows Store\1033\SettingsFlyout</RelativePathOnDisk>
+    <TemplateFileName>SettingsFlyout.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1051" />
+        <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1052" />
+        <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4031" />
+        <TemplateID>Microsoft.CPP.WinRT.SettingsFlyout</TemplateID>
+        <TemplateGroupID>WinRT-Native-6.3</TemplateGroupID>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>SettingsFlyout.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>93</SortOrder>
+        <PreviewImage>SettingsFlyout.png</PreviewImage>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.3.0</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\Windows Store\1033\ShareTargetContract</RelativePathOnDisk>
+    <TemplateFileName>ShareTargetContract.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1028" />
+        <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1029" />
+        <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4018" />
+        <TemplateID>Microsoft.CPP.WinRT.ShareTargetContract</TemplateID>
+        <TemplateGroupID>WinRT-Native-6.3</TemplateGroupID>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>ShareTargetPage.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>92</SortOrder>
+        <PreviewImage>ShareTargetContract.png</PreviewImage>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.2.0</RequiredPlatformVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\Windows Store\1033\SplitPage</RelativePathOnDisk>
+    <TemplateFileName>SplitPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1030" />
+        <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1031" />
+        <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4016" />
+        <TemplateID>Microsoft.CPP.WinRT.SplitPage</TemplateID>
+        <TemplateGroupID>WinRT-Native-6.3</TemplateGroupID>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>SplitPage.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>50</SortOrder>
+        <PreviewImage>SplitPage.png</PreviewImage>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.2.0</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\Windows Store\1033\TemplatedControl</RelativePathOnDisk>
+    <TemplateFileName>TemplatedControl.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1044" />
+        <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1045" />
+        <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4022" />
+        <TemplateID>Microsoft.CPP.WinRT.TemplatedControl</TemplateID>
+        <TemplateGroupID>WinRT-Native-6.3</TemplateGroupID>
+        <AppliesTo>VisualC + WindowsXaml + WindowsXamlResourceDictionary + WindowsXamlCodeBehind + !SharedAssetsProject + !WindowsUniversalMultiViews</AppliesTo>
+        <ProjectType>VC</ProjectType>
+        <SortOrder>80</SortOrder>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>CustomControl.cpp</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>8</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\Windows Store\1033\UserControl</RelativePathOnDisk>
+    <TemplateFileName>UserControl.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="10041" />
+        <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="10051" />
+        <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4022" />
+        <TemplateID>Microsoft.CPP.WinRT.UserControl</TemplateID>
+        <TemplateGroupID>WinRT-Native-6.3</TemplateGroupID>
+        <AppliesTo>VisualC + WindowsXaml + WindowsXamlUserControl + WindowsXamlCodeBehind + !WindowsUniversalMultiViews</AppliesTo>
+        <ProjectType>VC</ProjectType>
+        <SortOrder>81</SortOrder>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>MyUserControl.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>8</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

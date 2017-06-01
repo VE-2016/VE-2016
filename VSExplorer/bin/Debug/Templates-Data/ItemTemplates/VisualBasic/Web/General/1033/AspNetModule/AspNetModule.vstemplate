@@ -1,0 +1,21 @@
+﻿<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+    <TemplateData>
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3373"/>
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3374"/>
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4722"/>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.WAP.VisualBasic.AspNetModule</TemplateID>
+        <ProjectType>VisualBasic</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <DefaultName>MyModule.vb</DefaultName>
+    </TemplateData>
+    <TemplateContent>
+        <References>
+          <Reference>
+            <Assembly>System.Web</Assembly>
+          </Reference>
+        </References>
+        <ProjectItem ReplaceParameters="true">AspNetModule.vb</ProjectItem>
+    </TemplateContent>
+</VSTemplate>

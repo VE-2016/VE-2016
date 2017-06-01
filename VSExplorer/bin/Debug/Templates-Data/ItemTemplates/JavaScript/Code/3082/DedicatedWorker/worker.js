@@ -1,0 +1,3 @@
+﻿onmessage = function (event) {
+
+};

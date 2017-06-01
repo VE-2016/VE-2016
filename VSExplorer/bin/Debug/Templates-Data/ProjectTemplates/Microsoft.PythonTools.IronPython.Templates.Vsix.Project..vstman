@@ -1,0 +1,71 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>Python\ConsoleProject</RelativePathOnDisk>
+    <TemplateFileName>ConsoleProject.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{af7eaf4b-5af3-3622-b39a-7ae7ed25e7b2}" ID="5002" />
+        <Description Package="{af7eaf4b-5af3-3622-b39a-7ae7ed25e7b2}" ID="5003" />
+        <Icon Package="{af7eaf4b-5af3-3622-b39a-7ae7ed25e7b2}" ID="402" />
+        <ProjectType>Python</ProjectType>
+        <SortOrder>100</SortOrder>
+        <CreateNewFolder>false</CreateNewFolder>
+        <DefaultName>IronPythonApplication</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>Python\SilverlightProject</RelativePathOnDisk>
+    <TemplateFileName>SilverlightProject.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{af7eaf4b-5af3-3622-b39a-7ae7ed25e7b2}" ID="5004" />
+        <Description Package="{af7eaf4b-5af3-3622-b39a-7ae7ed25e7b2}" ID="5005" />
+        <Icon Package="{af7eaf4b-5af3-3622-b39a-7ae7ed25e7b2}" ID="402" />
+        <ProjectType>Python</ProjectType>
+        <CreateNewFolder>false</CreateNewFolder>
+        <SortOrder>150</SortOrder>
+        <DefaultName>SilverlightPage</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>Python\WinformsProject</RelativePathOnDisk>
+    <TemplateFileName>WinformsApp.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{af7eaf4b-5af3-3622-b39a-7ae7ed25e7b2}" ID="5006" />
+        <Description Package="{af7eaf4b-5af3-3622-b39a-7ae7ed25e7b2}" ID="5007" />
+        <Icon Package="{af7eaf4b-5af3-3622-b39a-7ae7ed25e7b2}" ID="403" />
+        <ProjectType>Python</ProjectType>
+        <SortOrder>200</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <CreateNewFolder>false</CreateNewFolder>
+        <DefaultName>WindowsApplication</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>Python\WpfProject</RelativePathOnDisk>
+    <TemplateFileName>WpfApp.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{af7eaf4b-5af3-3622-b39a-7ae7ed25e7b2}" ID="5008" />
+        <Description Package="{af7eaf4b-5af3-3622-b39a-7ae7ed25e7b2}" ID="5009" />
+        <Icon Package="{af7eaf4b-5af3-3622-b39a-7ae7ed25e7b2}" ID="401" />
+        <ProjectType>Python</ProjectType>
+        <ProjectSubType>
+        </ProjectSubType>
+        <SortOrder>120</SortOrder>
+        <CreateNewFolder>false</CreateNewFolder>
+        <DefaultName>WpfApplication</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

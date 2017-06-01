@@ -1,0 +1,53 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualC\1033\BasicUnitTest</RelativePathOnDisk>
+    <TemplateFileName>BasicUnitTest.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="222" />
+        <Description Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="223" />
+        <Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="218" />
+        <ProjectType>VisualC</ProjectType>
+        <SortOrder>80</SortOrder>
+        <DefaultName>UnitTest.cpp</DefaultName>
+        <TemplateGroupID>TestProject-V1</TemplateGroupID>
+        <TemplateID>TestProject-V1-BasicUnitTest</TemplateID>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualC\1033\OrderedTest</RelativePathOnDisk>
+    <TemplateFileName>OrderedTest.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="313" />
+        <Description Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="318" />
+        <Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="316" />
+        <ProjectType>VisualC</ProjectType>
+        <SortOrder>80</SortOrder>
+        <DefaultName>OrderedTest.orderedtest</DefaultName>
+        <TemplateGroupID>TestProject-V1</TemplateGroupID>
+        <TemplateID>TestProject-V1-OrderedTest</TemplateID>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualC\1033\UnitTestWizard</RelativePathOnDisk>
+    <TemplateFileName>UnitTestWizard.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="220" />
+        <Description Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="221" />
+        <Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="218" />
+        <ProjectType>VisualC</ProjectType>
+        <SortOrder>80</SortOrder>
+        <DefaultName>UnitTest.cpp</DefaultName>
+        <TemplateGroupID>TestProject-V1</TemplateGroupID>
+        <TemplateID>TestProject-V1-UnitTestWizard</TemplateID>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

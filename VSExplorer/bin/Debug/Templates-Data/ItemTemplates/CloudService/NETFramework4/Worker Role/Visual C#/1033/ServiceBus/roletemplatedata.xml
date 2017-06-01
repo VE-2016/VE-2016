@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RoleTemplateData RoleProjectTargetFramework="4.5" MinWindowsAzureToolsVersion="2.9" MaxWindowsAzureToolsVersion="2.9" RoleProjectGuid="A0B2A488-318D-4936-B672-9F300C7B158F" >
+  <VsTemplate Name="WorkerRoleWithSBQueueProject.vstemplate" Language="CSharp" TargetFramework="4.5"/>
+  <ServiceModel>
+    <Role Type="Worker">
+      <Settings>
+        <Setting Name="Microsoft.ServiceBus.ConnectionString" Value="Endpoint=sb://[your namespace].servicebus.windows.net;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=[your key]" />
+      </Settings>
+    </Role>
+  </ServiceModel>
+  <Packages>
+    <Package IgnoreDependencies="false" SourceType="WindowsAzureLibraries" Version="2.0.3" Id="Microsoft.WindowsAzure.ConfigurationManager"/>
+    <Package IgnoreDependencies="false" SourceType="WindowsAzureLibraries" Version="3.1.5" Id="WindowsAzure.ServiceBus"/>
+  </Packages>
+</RoleTemplateData>

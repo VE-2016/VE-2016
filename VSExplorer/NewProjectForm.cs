@@ -7,6 +7,7 @@ using System.IO;
 using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
+using System.Xml;
 using VSProvider;
 
 namespace WinExplorer
@@ -24,15 +25,44 @@ namespace WinExplorer
             tv.ShowLines = false;
             lv = listView1;
             LoadProjects();
+            LoadVSTemplates();
             LoadTemplates(filename);
             comboBox4.SelectedIndex = 0;
             splitContainer1.Panel2.Resize += Panel2_Resize;
             Panel2_Resize(this, new EventArgs());
             LoadSettings();
-            if(!string.IsNullOrEmpty(filename))
-            SelectTemplate(filename);
+            if (!string.IsNullOrEmpty(filename))
+                SelectTemplate(filename);
             ResumeLayout();
+            searchTextBox1.Text = "Search Installed Templates (Ctrl + E)";
+            tv.AfterSelect += Tv_AfterSelect;
+            rb = richTextBox1;
         }
+
+        public RichTextBox rb { get; set; }
+
+        private void Tv_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            TreeNode node = e.Node;
+            PreviewInfo p = node.Tag as PreviewInfo;
+            if (p == null)
+                return;
+            lv.Items.Clear();
+
+            lv.Items.AddRange(p.v.ToArray());
+
+            richTextBox1.Text = "Type \n\r " + p.description;
+            SetAsBold("Type ", rb);
+        }
+
+        public void SetAsBold(string s, RichTextBox rb)
+        {
+            rb.Find(s, RichTextBoxFinds.MatchCase);
+
+            rb.SelectionFont = new Font("Verdana", 8.25f, FontStyle.Bold);
+            rb.SelectionColor = SystemColors.HotTrack;
+        }
+
         void SelectTemplate(string filename)
         {
             string file = Path.GetFileName(filename);
@@ -200,6 +230,453 @@ namespace WinExplorer
             TreeNode obs = new TreeNode();
             obs.Text = "Online";
             tv.Nodes.Add(obs);
+
+            TreeNode tmp = new TreeNode();
+            tmp.Text = "Templates";
+            obs.Nodes.Add(tmp);
+
+            TreeNode vsc = new TreeNode();
+            vsc.Text = "Visual C#";
+            tmp.Nodes.Add(vsc);
+
+            vsc = new TreeNode();
+            vsc.Text = "Other";
+            tmp.Nodes.Add(vsc);
+
+            vsc = new TreeNode();
+            vsc.Text = "Visual F#";
+            tmp.Nodes.Add(vsc);
+
+            vsc = new TreeNode();
+            vsc.Text = "Visual C++";
+            tmp.Nodes.Add(vsc);
+
+            vsc = new TreeNode();
+            vsc.Text = "Visual Basic";
+            tmp.Nodes.Add(vsc);
+
+
+        }
+
+        public void LoadVSTemplates()
+        {
+
+            TreeNode node = new TreeNode();
+            node.Text = "Installed-2";
+            tv.Nodes.Add(node);
+
+            TreeNode vsc = new TreeNode();
+            vsc.Text = "Visual C#";
+            node.Nodes.Add(vsc);
+
+            LoadCSharpTemplates(vsc);
+
+            vsc = new TreeNode();
+            vsc.Text = "Visual Basic";
+            node.Nodes.Add(vsc);
+
+            LoadVisualBasicTemplates(vsc);
+
+            //vsc = new TreeNode();
+            //vsc.Text = "Visual C++";
+            //node.Nodes.Add(vsc);
+
+            vsc = new TreeNode();
+            vsc.Text = "Visual F#";
+            node.Nodes.Add(vsc);
+
+            vsc = new TreeNode();
+            vsc.Text = "SQL Server";
+            node.Nodes.Add(vsc);
+
+            vsc = new TreeNode();
+            vsc.Text = "R";
+            node.Nodes.Add(vsc);
+
+            vsc = new TreeNode();
+            vsc.Text = "Azure Data Lake";
+            node.Nodes.Add(vsc);
+
+       
+            vsc = new TreeNode();
+            vsc.Text = "JavaScript";
+            node.Nodes.Add(vsc);
+            LoadJavascriptTemplates(vsc);
+
+            vsc = new TreeNode();
+            vsc.Text = "Python";
+            node.Nodes.Add(vsc);
+
+            vsc = new TreeNode();
+            vsc.Text = "TypeScript";
+            node.Nodes.Add(vsc);
+
+            vsc = new TreeNode();
+            vsc.Text = "Other Project Types";
+            node.Nodes.Add(vsc);
+
+            TreeNode vs = new TreeNode();
+            vs.Text = "Visual Studio Solution";
+            vsc.Nodes.Add(vs);
+
+        }
+
+        public string templates = "Templates-Data";
+
+        public void LoadJavascriptTemplates(TreeNode node)
+        {
+            string folder = AppDomain.CurrentDomain.BaseDirectory + templates + "\\ProjectTemplates\\Javascript";
+
+            string[] d = Directory.GetDirectories(folder);
+
+            PreviewInfo p = new PreviewInfo();
+
+            PreviewInfo pp = new PreviewInfo();
+
+            TreeNode vsc = new TreeNode();
+
+            foreach (string s in d)
+            {
+
+                pp = new PreviewInfo();
+
+                vsc = new TreeNode();
+                vsc.Text = Path.GetFileName(s);
+
+
+                if (s.Contains("Windows 10"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+
+                }
+                else if (s.EndsWith("Mobile Apps"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+                    
+                }
+               else continue;
+
+                node.Nodes.Add(vsc);
+
+                vsc.Tag = pp;
+
+                p.v.AddRange(pp.v);
+            }
+            
+            node.Tag = p;
+        }
+
+        public void LoadCSharpTemplates(TreeNode node)
+        {
+            string folder = AppDomain.CurrentDomain.BaseDirectory + templates + "\\ProjectTemplates\\CSharp";
+
+            string[] d = Directory.GetDirectories(folder);
+
+            PreviewInfo p = new PreviewInfo();
+
+            PreviewInfo pp = new PreviewInfo();
+
+            TreeNode vsc = new TreeNode();
+
+            foreach (string s in d)
+            {
+
+                pp = new PreviewInfo();
+
+                vsc = new TreeNode();
+                vsc.Text = Path.GetFileName(s);
+                
+
+                if (s.Contains("Windows UAP"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+
+                }
+                else if (s.EndsWith("Windows"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+                    vsc.Text = "Windows Classic Desktop";
+                }
+                else if (s.EndsWith("Web"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+
+                }
+                else if (s.EndsWith(".NET Core"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+
+                }
+                else if (s.EndsWith("Cloud"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+
+                }
+                else if (s.EndsWith("Extensibility"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+
+                }
+                else if (s.EndsWith("WCF"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+
+                }
+                else if (s.EndsWith("Test"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+
+                }
+                else continue;
+
+                node.Nodes.Add(vsc);
+
+                vsc.Tag = pp;
+
+                p.v.AddRange(pp.v);
+            }
+
+            pp = new PreviewInfo();
+
+            vsc = new TreeNode();
+            vsc.Text = "Android";
+            node.Nodes.Add(vsc);
+            LoadAndroid(vsc, "", pp);
+            vsc.Tag = pp;
+            p.v.AddRange(pp.v);
+
+            node.Tag = p;
+        }
+
+        public void LoadVisualBasicTemplates(TreeNode node)
+        {
+            string folder = AppDomain.CurrentDomain.BaseDirectory + templates + "\\ProjectTemplates\\VisualBasic";
+
+            string[] d = Directory.GetDirectories(folder);
+
+            PreviewInfo p = new PreviewInfo();
+
+            PreviewInfo pp = new PreviewInfo();
+
+            TreeNode vsc = new TreeNode();
+
+            foreach (string s in d)
+            {
+
+                pp = new PreviewInfo();
+
+                vsc = new TreeNode();
+                vsc.Text = Path.GetFileName(s);
+
+
+                if (s.Contains("Windows UAP"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+
+                }
+                else if (s.EndsWith("Windows"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+                    vsc.Text = "Windows Classic Desktop";
+                }
+                else if (s.EndsWith("Web"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+
+                }
+                //else if (s.EndsWith(".NET Core"))
+                //{
+                //    LoadWindowsUniversal(vsc, s, pp);
+
+                //}
+                else if (s.EndsWith("Cloud"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+
+                }
+                else if (s.EndsWith("Extensibility"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+
+                }
+                else if (s.EndsWith("WCF"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+
+                }
+                else if (s.EndsWith("Test"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+
+                }
+                else continue;
+
+                node.Nodes.Add(vsc);
+
+                vsc.Tag = pp;
+
+                p.v.AddRange(pp.v);
+            }
+
+            //pp = new PreviewInfo();
+
+            //vsc = new TreeNode();
+            //vsc.Text = "Android";
+            //node.Nodes.Add(vsc);
+            //LoadAndroid(vsc, "", pp);
+            //vsc.Tag = pp;
+            //p.v.AddRange(pp.v);
+
+            node.Tag = p;
+        }
+
+
+        public void LoadAndroid(TreeNode node, string folder, PreviewInfo p)
+        {
+            string folders = AppDomain.CurrentDomain.BaseDirectory + templates + "\\Extensions\\Xamarin.VisualStudio\\T\\PT\\CSharp\\Android";
+
+            string[] d = Directory.GetFiles(folders);
+
+
+
+            foreach (string s in d)
+            {
+                TreeNode vsc = new TreeNode();
+                vsc.Text = Path.GetFileName(s);
+                //node.Nodes.Add(vsc);
+
+                PreviewInfo c = LoadTemplateXml(vsc, s);
+
+                ListViewItem v = LoadListViewItems(s, c);
+                
+
+                p.v.Add(v);
+            }
+
+        }
+
+        public void LoadWindowsUniversal(TreeNode node, string folder, PreviewInfo p)
+        {
+            string folders = folder + "\\1033";
+
+            string[] d = Directory.GetDirectories(folders);
+
+
+
+            foreach (string s in d)
+            {
+                TreeNode vsc = new TreeNode();
+                vsc.Text = Path.GetFileName(s);
+                //node.Nodes.Add(vsc);
+
+                PreviewInfo c = LoadTemplateXml(vsc, s);
+
+                ListViewItem v = LoadListViewItems(s, c);
+
+
+
+                p.v.Add(v);
+            }
+
+        }
+        public void LoadWindowsClassic(TreeNode node, string folder, PreviewInfo p)
+        {
+            string folders = folder + "\\1033";
+
+            string[] d = Directory.GetDirectories(folders);
+
+
+
+            foreach (string s in d)
+            {
+                TreeNode vsc = new TreeNode();
+                vsc.Text = Path.GetFileName(s);
+                //node.Nodes.Add(vsc);
+
+                PreviewInfo c = LoadTemplateXml(vsc, s);
+
+                ListViewItem v = LoadListViewItems(s, c);
+
+
+
+                p.v.Add(v);
+            }
+
+        }
+        PreviewInfo LoadTemplateXml(TreeNode node, string folder)
+        {
+
+            PreviewInfo p = new PreviewInfo();
+
+            p.folder = folder;
+
+            string file = new DirectoryInfo(folder).Name;
+
+            string filename = folder + "\\" + file + ".vstemplate";
+
+            if (!File.Exists(filename))
+                return p;
+
+            XmlDocument xmlDocument = new XmlDocument();
+            xmlDocument.Load(filename);
+
+            XmlNode xml = FindNode(xmlDocument.ChildNodes, "TemplateData");
+
+            if (xml != null)
+            {
+
+                XmlNode a = FindNode(xml.ChildNodes, "PreviewImage");
+
+                XmlNode b = FindNode(xml.ChildNodes, "Description");
+                if (a != null)
+                    p.image = a.InnerText;
+                if (b != null)
+                    p.description = b.InnerText;
+
+            }
+
+            node.Tag = p;
+
+            return p;
+        }
+
+        public ListViewItem LoadListViewItems(string file, PreviewInfo p)
+        {
+            ListViewItem v = new ListViewItem();
+            v.Text = Path.GetFileName(file);
+
+            int i = AddImageIfAny(new DirectoryInfo(file));
+
+            if (i < 0)
+                i = 0;
+
+            v.ImageIndex = i;
+
+            v.SubItems.Add(file);
+
+            v.Tag = p;
+
+            return v;
+        }
+
+        public XmlNode FindNode(XmlNodeList list, string nodeName)
+        {
+            if (list.Count > 0)
+            {
+                foreach (XmlNode node in list)
+                {
+                    if (node.Name.Equals(nodeName)) return node;
+                    if (node.HasChildNodes)
+                    {
+
+                        XmlNode nodes = FindNode(node.ChildNodes, nodeName);
+
+                        if (nodes != null)
+                            return nodes;
+                    }
+                }
+            }
+            return null;
         }
 
         public void InitializeListView(ListView lv)
@@ -245,6 +722,8 @@ namespace WinExplorer
 
             InitializeListView(lv);
 
+            lv.SelectedIndexChanged += Lv_SelectedIndexChanged;
+
             DirectoryInfo d = new DirectoryInfo(folders);
 
             if (d == null)
@@ -268,8 +747,22 @@ namespace WinExplorer
 
                 lv.Items.Add(v);
 
-               
+
             }
+        }
+
+        private void Lv_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lv.SelectedItems == null || lv.SelectedItems.Count <= 0)
+                return;
+            ListViewItem b = lv.SelectedItems[0];
+            if (b == null)
+                return;
+            PreviewInfo p = b.Tag as PreviewInfo;
+            if (p == null)
+                return;
+            richTextBox1.Text = p.description;
+         
         }
 
         public ArrayList GetTemplates(string folder)
@@ -400,6 +893,9 @@ namespace WinExplorer
 
         public int AddImageIfAny(DirectoryInfo d)
         {
+            if (!d.Exists)
+                return -1;
+
             FileInfo[] fs = d.GetFiles();
 
             foreach (FileInfo f in fs)
@@ -433,8 +929,16 @@ namespace WinExplorer
 
         private void listView1_SizeChanged(object sender, EventArgs e)
         {
-            if (lv != null)
-                lv.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            try
+            {
+                if (lv != null)
+                    if (lv.Columns.Count >= 1)
+                        lv.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
     }
 
@@ -501,9 +1005,7 @@ namespace WinExplorer
         public static bool running = false;
 
         public static int counter = 0;
-
-        //protected Receiver receiver;
-
+        
         public string Name { get; set; }
 
         public string Names { get; set; }
@@ -517,6 +1019,13 @@ namespace WinExplorer
         public ExplorerForms ef { get; set; }
 
         public string GuiHint = "";
+
+        public bool shouldDisplayText = false;
+
+        public void SetNames(string names)
+        {
+            Names = names;
+        }
 
         static public Command FromName(string name)
         {
@@ -602,6 +1111,8 @@ namespace WinExplorer
                 return new gui.Command_NewWebSite(ef);
             else if (name == "Get Project")
                 return new gui.Command_GetProject(ef);
+            else if (name == "Start")
+                return new gui.Command_SolutionRun(ef);
             else if (name == "Properties")
                 return new gui.Command_PropertyWindow(ef);
             else return null;
@@ -862,6 +1373,16 @@ namespace WinExplorer
                     cb.SelectedIndex = 0;
             }
 
+            public string GetSelectedProject()
+            {
+                string s = "";
+                int i = cb.SelectedIndex;
+                if (i < 0)
+                    return s;
+                s = cb.Items[i].ToString();
+                return s;
+            }
+
             override public object Execute(object obs = null)
             {
                 if (ef == null)
@@ -891,6 +1412,9 @@ namespace WinExplorer
 
             public override object Configure(object obs)
             {
+                if (projects != null)
+                    return obs;
+
                 cb = obs as ToolStripComboBoxes;
 
                 if (cb == null)
@@ -917,21 +1441,67 @@ namespace WinExplorer
                     cb.SelectedIndex = 0;
             }
 
+            public string GetProject()
+            {
+                string s = "";
+                int i = cb.SelectedIndex;
+                if (i < 0)
+                    return s;
+                s = cb.Items[i].ToString();
+                return s;
+            }
+
             override public object Execute(object obs = null)
             {
                 if (ef == null)
                     return obs;
 
-                if (obs == null)
-                    obs = "";
+                //if (obs == null)
+                //    obs = "";
 
-                string dialogs = obs as string;
+                //string dialogs = obs as string;
 
                 ef.BeginInvoke(new Action(() => { cb.Items.Clear(); ArrayList P = ef.Command_LoadStartupProjects(); LoadPlatforms(P); }));
 
                 return obs;
             }
         }
+
+        public class Command_RunProject : Command
+        {
+            public Command_RunProject(ExplorerForms ef) : base(ef)
+            {
+                image = Resources.StartWithoutDebug_16x;
+                shouldDisplayText = true;
+                Name = "Start";
+            }
+
+            override public object Execute(object obs = null)
+            {
+                if (ef == null)
+                    return obs;
+
+                if (Command_SolutionRun.projects == null)
+                    return obs;
+
+                string s = Command_SolutionRun.projects.GetProject();
+
+                if (s == "")
+                    return obs;
+
+                VSSolution vs = ef.GetVSSolution();
+
+                if (vs == null)
+                    return obs;
+
+                string b = vs.GetProjectExec(s);
+
+                ef.BeginInvoke(new Action(() => { ef.Command_RunProgram(b); }));
+
+                return obs;
+            }
+        }
+
 
         public class Command_Customize : Command
         {
@@ -1996,6 +2566,23 @@ namespace WinExplorer
 
                 return obs;
             }
+        }
+    }
+
+    public class PreviewInfo
+    {
+
+        public List<ListViewItem> v { get; set; }
+
+        public string folder { get; set; }
+
+        public string image { get; set; }
+
+        public string description { get; set; }
+
+        public PreviewInfo()
+        {
+            v = new List<ListViewItem>();
         }
     }
 }

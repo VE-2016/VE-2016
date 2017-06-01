@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4670" />
+    <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4671" />
+    <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4587" />
+    <ProjectType>VisualBasic</ProjectType>
+    <TemplateGroupID>WPF</TemplateGroupID>
+    <DefaultName>Application.xaml</DefaultName>
+    <TemplateID>Microsoft.VisualBasic.WPF.InternalApplicationDefinition</TemplateID>
+    <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+    <Hidden>True</Hidden>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>WindowsBase</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>PresentationCore</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>PresentationFramework</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem ReplaceParameters="true" OpenInEditor="false" ItemType="ApplicationDefinition">Application.xaml</ProjectItem>
+    <ProjectItem ReplaceParameters="true" OpenInEditor="false" SubType="Code" TargetFileName="$fileinputname$.xaml.vb">Application.xaml.vb</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

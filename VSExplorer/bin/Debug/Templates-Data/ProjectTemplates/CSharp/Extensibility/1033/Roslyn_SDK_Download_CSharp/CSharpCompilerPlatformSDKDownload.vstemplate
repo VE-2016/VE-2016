@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>Download the .NET Compiler Platform SDK</Name>
+    <Description>To begin creating Analyzers and Codefixes you must download the .NET Compiler Platform SDK</Description>
+    <Icon>CSharpCompilerPlatformSDKDownload.ico</Icon>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <SortOrder>1001</SortOrder>
+    <TemplateID>03aeb93d-0df6-43a1-aa17-5f9ecda652b7</TemplateID>
+    <CreateNewFolder>false</CreateNewFolder>
+    <DefaultName>CSharpCompilerPlatformSDKDownload</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+  </TemplateData>
+  <TemplateContent>
+      <Project TargetFileName="Download the .NET Compiler Platform SDK.csproj" File="CSharpSDKDownload.csproj" ReplaceParameters="true">
+          <Folder Name="css" TargetFolderName="css">
+              <ProjectItem TargetFileName="bootstrap-theme.min.css">bootstrap-theme.min.css</ProjectItem>
+              <ProjectItem TargetFileName="bootstrap.min.css">bootstrap.min.css</ProjectItem>
+          </Folder>
+          <ProjectItem OpenInWebBrowser="true" TargetFileName="index.html">index.html</ProjectItem>
+          <Folder Name="Properties" TargetFolderName="Properties">
+              <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+          </Folder>
+      </Project>
+  </TemplateContent>
+</VSTemplate>

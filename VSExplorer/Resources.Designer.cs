@@ -4861,6 +4861,16 @@ namespace WinExplorer {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap IconView_16x {
+            get {
+                object obj = ResourceManager.GetObject("IconView_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap IFrame_5767_24 {
             get {
                 object obj = ResourceManager.GetObject("IFrame_5767_24", resourceCulture);

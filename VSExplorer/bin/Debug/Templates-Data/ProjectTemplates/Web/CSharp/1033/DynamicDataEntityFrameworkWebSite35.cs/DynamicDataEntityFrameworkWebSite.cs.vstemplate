@@ -1,0 +1,97 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3379"/>
+    <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3380"/>
+    <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4734"/>
+    <TemplateID>Microsoft.Web.CSharp.DynamicDataEntityWebSite35</TemplateID>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>CSharp</ProjectSubType>
+    <SortOrder>55</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>WebSite</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+    <MaxFrameworkVersion>3.5</MaxFrameworkVersion>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$safeprojectname$.webproj" File="DynamicDataEntityFrameworkWebSite.cs.webproj" ReplaceParameters="true">
+      <Folder Name="App_Data" TargetFolderName="App_Data">
+      </Folder>
+      <Folder Name="DynamicData" TargetFolderName="DynamicData">
+        <Folder Name="Content" TargetFolderName="Content">
+          <Folder Name="Images" TargetFolderName="Images">
+            <ProjectItem ReplaceParameters="false" TargetFileName="Back.gif">Back.gif</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="header_back.gif">header_back.gif</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="PgFirst.gif">PgFirst.gif</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="PgLast.gif">PgLast.gif</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="PgNext.gif">PgNext.gif</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="PgPrev.gif">PgPrev.gif</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="plus.gif">plus.gif</ProjectItem>
+          </Folder>
+          <ProjectItem ReplaceParameters="true" TargetFileName="FilterUserControl.ascx">FilterUserControl.ascx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="FilterUserControl.ascx.cs">FilterUserControl.ascx.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="GridViewPager.ascx">GridViewPager.ascx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="GridViewPager.ascx.cs">GridViewPager.ascx.cs</ProjectItem>
+        </Folder>
+        <Folder Name="CustomPages" TargetFolderName="CustomPages">
+        </Folder>
+        <Folder Name="FieldTemplates" TargetFolderName="FieldTemplates">
+          <ProjectItem ReplaceParameters="true" TargetFileName="Boolean.ascx">Boolean.ascx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Boolean.ascx.cs">Boolean.ascx.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Boolean_Edit.ascx">Boolean_Edit.ascx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Boolean_Edit.ascx.cs">Boolean_Edit.ascx.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Children.ascx">Children.ascx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Children.ascx.cs">Children.ascx.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="DateTime.ascx">DateTime.ascx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="DateTime.ascx.cs">DateTime.ascx.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="DateTime_Edit.ascx">DateTime_Edit.ascx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="DateTime_Edit.ascx.cs">DateTime_Edit.ascx.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Decimal_Edit.ascx">Decimal_Edit.ascx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Decimal_Edit.ascx.cs">Decimal_Edit.ascx.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ForeignKey.ascx">ForeignKey.ascx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ForeignKey.ascx.cs">ForeignKey.ascx.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ForeignKey_Edit.ascx">ForeignKey_Edit.ascx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ForeignKey_Edit.ascx.cs">ForeignKey_Edit.ascx.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Integer_Edit.ascx">Integer_Edit.ascx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Integer_Edit.ascx.cs">Integer_Edit.ascx.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="MultilineText_Edit.ascx">MultilineText_Edit.ascx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="MultilineText_Edit.ascx.cs">MultilineText_Edit.ascx.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Text.ascx">Text.ascx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Text.ascx.cs">Text.ascx.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Text_Edit.ascx">Text_Edit.ascx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Text_Edit.ascx.cs">Text_Edit.ascx.cs</ProjectItem>
+        </Folder>
+        <Folder Name="PageTemplates" TargetFolderName="PageTemplates">
+          <ProjectItem ReplaceParameters="true" TargetFileName="Details.aspx">Details.aspx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Details.aspx.cs">Details.aspx.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Edit.aspx">Edit.aspx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Edit.aspx.cs">Edit.aspx.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Insert.aspx">Insert.aspx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Insert.aspx.cs">Insert.aspx.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="List.aspx">List.aspx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="List.aspx.cs">List.aspx.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ListDetails.aspx">ListDetails.aspx</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ListDetails.aspx.cs">ListDetails.aspx.cs</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="web.config">web.config</ProjectItem>
+      </Folder>
+      <Folder Name="Scripts" TargetFolderName="Scripts">
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.7.1.intellisense.js">jquery-1.7.1.intellisense.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.7.1.js">jquery-1.7.1.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.7.1.min.js">jquery-1.7.1.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="jquery-ui-1.8.20.js">jquery-ui-1.8.20.js</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="jquery-ui-1.8.20.min.js">jquery-ui-1.8.20.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="modernizr-2.5.3.js">modernizr-2.5.3.js</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Default.aspx">Default.aspx</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Default.aspx.cs">Default.aspx.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax">Global.asax</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Site.css">Site.css</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Site.master">Site.master</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Site.master.cs">Site.master.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="web.config">web.config</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

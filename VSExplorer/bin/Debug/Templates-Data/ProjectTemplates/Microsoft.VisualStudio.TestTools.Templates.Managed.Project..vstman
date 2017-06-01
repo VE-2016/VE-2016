@@ -1,0 +1,12 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateDir>
+    <RelativePath>CSharp\Test</RelativePath>
+    <LocalizedName Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="507" />
+    <SortOrder>10000</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>VisualBasic\Test</RelativePath>
+    <LocalizedName Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="507" />
+    <SortOrder>10000</SortOrder>
+  </VSTemplateDir>
+</VSTemplateManifest>

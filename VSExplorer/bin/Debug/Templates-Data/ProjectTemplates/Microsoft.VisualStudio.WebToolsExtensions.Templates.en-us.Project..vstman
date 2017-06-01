@@ -1,0 +1,630 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="ProjectGroup" Locale="1033">
+    <RelativePathOnDisk>CSharp\Web\1033\WebTemplate45</RelativePathOnDisk>
+    <TemplateFileName>WebTemplate.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="5000" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="5001" />
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="3" />
+        <ProjectType>CSharp</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <TemplateID>Microsoft.WAP.CSharp.ASPNET</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>16</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebApplication</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup" Locale="1033">
+    <RelativePathOnDisk>CSharp\Web\1033\WebTemplateCloud45</RelativePathOnDisk>
+    <TemplateFileName>WebTemplateCloud.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Hidden>true</Hidden>
+        <ProjectType>CSharp</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <TemplateID>Microsoft.WAP.CSharp.ASPNET.Cloud</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebApplication</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Web\1033\WebTemplate45</RelativePathOnDisk>
+    <TemplateFileName>WebTemplate.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="5000" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="5001" />
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="3" />
+        <ProjectType>VisualBasic</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <TemplateID>Microsoft.WAP.VisualBasic.ASPNET</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>15</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebApplication</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Web\1033\WebTemplateCloud45</RelativePathOnDisk>
+    <TemplateFileName>WebTemplateCloud.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Hidden>true</Hidden>
+        <ProjectType>VisualBasic</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <TemplateID>Microsoft.WAP.VisualBasic.ASPNET.Cloud</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebApplication</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup" Locale="1033">
+    <RelativePathOnDisk>CSharp\Cloud\1033\WebTemplate45</RelativePathOnDisk>
+    <TemplateFileName>WebTemplate.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="5000" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="5001" />
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="3" />
+        <ProjectType>CSharp</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <TemplateID>Microsoft.Cloud.CSharp.ASPNET</TemplateID>
+        <SortOrder>150</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebApplication</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Cloud\1033\WebTemplate45</RelativePathOnDisk>
+    <TemplateFileName>WebTemplate.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="5000" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="5001" />
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="3" />
+        <ProjectType>VisualBasic</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <TemplateID>Microsoft.Cloud.VisualBasic.ASPNET</TemplateID>
+        <SortOrder>150</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebApplication</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>CSharp\Web\1033\WebApplicationProject40</RelativePathOnDisk>
+    <TemplateFileName>EmptyWebApplicationProject40.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{349c5850-65df-11da-9384-00065b846f21}" ID="1013" />
+        <Description Package="{349c5850-65df-11da-9384-00065b846f21}" ID="1014" />
+        <Icon Package="{349c5850-65df-11da-9384-00065b846f21}" ID="9001" />
+        <ProjectType>CSharp</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <TemplateID>Microsoft.WAP.CSharp.EmptyWebApplication40</TemplateID>
+        <SortOrder>5</SortOrder>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <MaxFrameworkVersion>4.1</MaxFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebApplication</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Web\1033\WebApplicationProject40</RelativePathOnDisk>
+    <TemplateFileName>EmptyWebApplicationProject40.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{349c5850-65df-11da-9384-00065b846f21}" ID="1013" />
+        <Description Package="{349c5850-65df-11da-9384-00065b846f21}" ID="1014" />
+        <Icon Package="{349c5850-65df-11da-9384-00065b846f21}" ID="9002" />
+        <ProjectType>VisualBasic</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <TemplateID>Microsoft.WAP.VisualBasic.EmptyWebApplication40</TemplateID>
+        <SortOrder>5</SortOrder>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <MaxFrameworkVersion>4.1</MaxFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebApplication</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\CSharp\1033\DynamicDataEntityFrameworkWebSite.cs</RelativePathOnDisk>
+    <TemplateFileName>DynamicDataEntityFrameworkWebSite.cs.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3379" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3380" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4734" />
+        <TemplateID>Microsoft.Web.CSharp.DynamicDataEntityWebSite</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>CSharp</ProjectSubType>
+        <SortOrder>55</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\CSharp\1033\DynamicDataEntityFrameworkWebSite35.cs</RelativePathOnDisk>
+    <TemplateFileName>DynamicDataEntityFrameworkWebSite.cs.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3379" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3380" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4734" />
+        <TemplateID>Microsoft.Web.CSharp.DynamicDataEntityWebSite35</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>CSharp</ProjectSubType>
+        <SortOrder>55</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+        <MaxFrameworkVersion>3.5</MaxFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\CSharp\1033\DynamicDataLinqToSqlWebSite.cs</RelativePathOnDisk>
+    <TemplateFileName>DynamicDataLinqToSqlWebSite.cs.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3377" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3378" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4734" />
+        <TemplateID>Microsoft.Web.CSharp.DynamicDataLinqToSqlWebSite</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>CSharp</ProjectSubType>
+        <SortOrder>56</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+        <MaxFrameworkVersion>4.0</MaxFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\CSharp\1033\DynamicDataLinqToSqlWebSite35.cs</RelativePathOnDisk>
+    <TemplateFileName>DynamicDataLinqToSqlWebSite.cs.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3377" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3378" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4734" />
+        <TemplateID>Microsoft.Web.CSharp.DynamicDataLinqToSqlWebSite35</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>CSharp</ProjectSubType>
+        <SortOrder>56</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+        <MaxFrameworkVersion>3.5</MaxFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\CSharp\1033\EmptyWeb</RelativePathOnDisk>
+    <TemplateFileName>EmptyWeb.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3006" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3007" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4700" />
+        <TemplateID>Microsoft.Web.CSharp.EmptyWeb</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>CSharp</ProjectSubType>
+        <SortOrder>5</SortOrder>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <MaxFrameworkVersion>4.1</MaxFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <LocationField>Hidden</LocationField>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\CSharp\1033\EmptyWeb45</RelativePathOnDisk>
+    <TemplateFileName>EmptyWeb45.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3006" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3007" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4700" />
+        <TemplateID>Microsoft.Web.CSharp.EmptyWeb45</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>CSharp</ProjectSubType>
+        <SortOrder>5</SortOrder>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <LocationField>Hidden</LocationField>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\CSharp\1033\WebApplication20</RelativePathOnDisk>
+    <TemplateFileName>WebApplication20.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3008" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3009" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4701" />
+        <TemplateID>Microsoft.Web.CSharp.WebApplication20</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>CSharp</ProjectSubType>
+        <SortOrder>10</SortOrder>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <MaxFrameworkVersion>3.5</MaxFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <LocationField>Hidden</LocationField>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\CSharp\1033\WebApplication40</RelativePathOnDisk>
+    <TemplateFileName>WebApplication40.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3008" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3383" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4701" />
+        <TemplateID>Microsoft.Web.CSharp.WebApplication40</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>CSharp</ProjectSubType>
+        <SortOrder>10</SortOrder>
+        <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+        <MaxFrameworkVersion>4.1</MaxFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <LocationField>Hidden</LocationField>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\CSharp\1033\WebApplication45</RelativePathOnDisk>
+    <TemplateFileName>WebApplication45Dev15.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3008" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3383" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4701" />
+        <TemplateID>Microsoft.Web.CSharp.WebApplication45</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>CSharp</ProjectSubType>
+        <SortOrder>10</SortOrder>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <LocationField>Hidden</LocationField>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\CSharp\1033\WebService</RelativePathOnDisk>
+    <TemplateFileName>WebService.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3012" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3013" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4702" />
+        <TemplateID>Microsoft.Web.CSharp.WebServiceSite</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>CSharp</ProjectSubType>
+        <SortOrder>1000</SortOrder>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <MaxFrameworkVersion>3.5</MaxFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <LocationField>Hidden</LocationField>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\VisualBasic\1033\DynamicDataEntityFrameworkWebSite.vb</RelativePathOnDisk>
+    <TemplateFileName>DynamicDataEntityFrameworkWebSite.vb.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3379" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3380" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4733" />
+        <TemplateID>Microsoft.Web.VisualBasic.DynamicDataEntityWebSite</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>VisualBasic</ProjectSubType>
+        <SortOrder>55</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\VisualBasic\1033\DynamicDataEntityFrameworkWebSite35.vb</RelativePathOnDisk>
+    <TemplateFileName>DynamicDataEntityFrameworkWebSite.vb.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3379" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3380" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4733" />
+        <TemplateID>Microsoft.Web.VisualBasic.DynamicDataEntityWebSite35</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>VisualBasic</ProjectSubType>
+        <SortOrder>55</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+        <MaxFrameworkVersion>3.5</MaxFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\VisualBasic\1033\DynamicDataLinqToSqlWebSite.vb</RelativePathOnDisk>
+    <TemplateFileName>DynamicDataLinqToSqlWebSite.vb.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3377" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3378" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4733" />
+        <TemplateID>Microsoft.Web.VisualBasic.DynamicDataLinqToSqlWebSite</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>VisualBasic</ProjectSubType>
+        <SortOrder>56</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+        <MaxFrameworkVersion>4.0</MaxFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\VisualBasic\1033\DynamicDataLinqToSqlWebSite35.vb</RelativePathOnDisk>
+    <TemplateFileName>DynamicDataLinqToSqlWebSite.vb.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3377" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3378" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4733" />
+        <TemplateID>Microsoft.Web.VisualBasic.DynamicDataLinqToSqlWebSite35</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>VisualBasic</ProjectSubType>
+        <SortOrder>56</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+        <MaxFrameworkVersion>3.5</MaxFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\VisualBasic\1033\EmptyWeb</RelativePathOnDisk>
+    <TemplateFileName>EmptyWeb.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3006" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3007" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4503" />
+        <TemplateID>Microsoft.Web.VisualBasic.EmptyWeb</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>VisualBasic</ProjectSubType>
+        <SortOrder>5</SortOrder>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <MaxFrameworkVersion>4.1</MaxFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <LocationField>Hidden</LocationField>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\VisualBasic\1033\EmptyWeb45</RelativePathOnDisk>
+    <TemplateFileName>EmptyWeb45.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3006" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3007" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4503" />
+        <TemplateID>Microsoft.Web.VisualBasic.EmptyWeb45</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>VisualBasic</ProjectSubType>
+        <SortOrder>5</SortOrder>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <LocationField>Hidden</LocationField>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\VisualBasic\1033\WebApplication20</RelativePathOnDisk>
+    <TemplateFileName>WebApplication20.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3008" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3009" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4504" />
+        <TemplateID>Microsoft.Web.VisualBasic.WebApplication20</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>VisualBasic</ProjectSubType>
+        <SortOrder>10</SortOrder>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <MaxFrameworkVersion>3.5</MaxFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <LocationField>Hidden</LocationField>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\VisualBasic\1033\WebApplication40</RelativePathOnDisk>
+    <TemplateFileName>WebApplication40.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3008" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3383" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4504" />
+        <TemplateID>Microsoft.Web.VisualBasic.WebApplication40</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>VisualBasic</ProjectSubType>
+        <SortOrder>10</SortOrder>
+        <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+        <MaxFrameworkVersion>4.1</MaxFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <LocationField>Hidden</LocationField>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\VisualBasic\1033\WebApplication45</RelativePathOnDisk>
+    <TemplateFileName>WebApplication45Dev15.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3008" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3383" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4504" />
+        <TemplateID>Microsoft.Web.VisualBasic.WebApplication45</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>VisualBasic</ProjectSubType>
+        <SortOrder>10</SortOrder>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <LocationField>Hidden</LocationField>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\VisualBasic\1033\WebService</RelativePathOnDisk>
+    <TemplateFileName>WebService.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3012" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3013" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4506" />
+        <TemplateID>Microsoft.Web.VisualBasic.WebServiceSite</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>VisualBasic</ProjectSubType>
+        <SortOrder>1000</SortOrder>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <MaxFrameworkVersion>3.5</MaxFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <LocationField>Hidden</LocationField>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

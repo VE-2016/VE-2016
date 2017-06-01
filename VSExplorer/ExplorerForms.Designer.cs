@@ -369,6 +369,9 @@ namespace WinExplorer
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem40 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.repositoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.websiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.projectFromSourcesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -1284,7 +1287,10 @@ namespace WinExplorer
             // 
             this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.projectToolStripMenuItem2,
-            this.fileToolStripMenuItem});
+            this.websiteToolStripMenuItem,
+            this.repositoryToolStripMenuItem,
+            this.fileToolStripMenuItem,
+            this.projectFromSourcesToolStripMenuItem});
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.newToolStripMenuItem.Text = "New";
@@ -1293,7 +1299,7 @@ namespace WinExplorer
             // 
             this.projectToolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("projectToolStripMenuItem2.Image")));
             this.projectToolStripMenuItem2.Name = "projectToolStripMenuItem2";
-            this.projectToolStripMenuItem2.Size = new System.Drawing.Size(111, 22);
+            this.projectToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.projectToolStripMenuItem2.Text = "Project";
             this.projectToolStripMenuItem2.Click += new System.EventHandler(this.projectToolStripMenuItem2_Click);
             // 
@@ -1301,7 +1307,7 @@ namespace WinExplorer
             // 
             this.fileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fileToolStripMenuItem.Image")));
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // toolStripMenuItem16
@@ -2965,6 +2971,24 @@ namespace WinExplorer
             this.toolStripContainer1.TabIndex = 7;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
+            // repositoryToolStripMenuItem
+            // 
+            this.repositoryToolStripMenuItem.Name = "repositoryToolStripMenuItem";
+            this.repositoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.repositoryToolStripMenuItem.Text = "Repository";
+            // 
+            // websiteToolStripMenuItem
+            // 
+            this.websiteToolStripMenuItem.Name = "websiteToolStripMenuItem";
+            this.websiteToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.websiteToolStripMenuItem.Text = "Website";
+            // 
+            // projectFromSourcesToolStripMenuItem
+            // 
+            this.projectFromSourcesToolStripMenuItem.Name = "projectFromSourcesToolStripMenuItem";
+            this.projectFromSourcesToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.projectFromSourcesToolStripMenuItem.Text = "Project from sources";
+            // 
             // ExplorerForms
             // 
             this.ClientSize = new System.Drawing.Size(1049, 584);
@@ -3363,5 +3387,8 @@ namespace WinExplorer
         private ToolStripMenuItem selectedTestsToolStripMenuItem;
         private ToolStripMenuItem lastRunTestsToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem87;
+        private ToolStripMenuItem repositoryToolStripMenuItem;
+        private ToolStripMenuItem websiteToolStripMenuItem;
+        private ToolStripMenuItem projectFromSourcesToolStripMenuItem;
     }
 }

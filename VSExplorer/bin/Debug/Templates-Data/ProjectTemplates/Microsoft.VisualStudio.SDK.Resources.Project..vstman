@@ -1,0 +1,156 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>CSharp\Extensibility\1033\ItemTemplate</RelativePathOnDisk>
+    <TemplateFileName>ItemTemplate.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name _locID="$templateName$">C# Item Template</Name>
+        <Description _locID="$templateDescription$">A project for building and packaging a C# Item Template.</Description>
+        <ProjectType>CSharp</ProjectType>
+        <TemplateID>{25B1163C-003F-4D04-BE92-D27735944037}</TemplateID>
+        <SortOrder>1000</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>ItemTemplate</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <Icon>ItemTemplate.ico</Icon>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>CSharp\Extensibility\1033\ProjectTemplate</RelativePathOnDisk>
+    <TemplateFileName>ProjectTemplate.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name _locID="$templateName$">C# Project Template</Name>
+        <Description _locID="$templateDescription$">A project for building and packaging a C# Project Template.</Description>
+        <ProjectType>CSharp</ProjectType>
+        <TemplateID>{8BFA2CC8-1F29-47B8-9D53-04930D6FEB94}</TemplateID>
+        <SortOrder>1000</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>ProjectTemplate</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <Icon>ProjectTemplate.ico</Icon>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>CSharp\Extensibility\1033\Roslyn_SDK_Download_CSharp</RelativePathOnDisk>
+    <TemplateFileName>CSharpCompilerPlatformSDKDownload.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Download the .NET Compiler Platform SDK</Name>
+        <Description>To begin creating Analyzers and Codefixes you must download the .NET Compiler Platform SDK</Description>
+        <Icon>CSharpCompilerPlatformSDKDownload.ico</Icon>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <SortOrder>1001</SortOrder>
+        <TemplateID>03aeb93d-0df6-43a1-aa17-5f9ecda652b7</TemplateID>
+        <CreateNewFolder>false</CreateNewFolder>
+        <DefaultName>CSharpCompilerPlatformSDKDownload</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>CSharp\Extensibility\1033\VSIXProject</RelativePathOnDisk>
+    <TemplateFileName>VSIXProject.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name _locID="$templateName$">VSIX Project</Name>
+        <TemplateID>CSharp.VSIXProject</TemplateID>
+        <Description _locID="$templateDescription$">Build Visual Studio extensions using the Visual Studio SDK. Start with this template to extend functionality of Visual Studio by adding editor items, commands and tool windows. Then use the VSIX package to distribute your extension.</Description>
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>1000</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>VSIXProject</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <Icon>VSIXProject.ico</Icon>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Extensibility\1033\ItemTemplate</RelativePathOnDisk>
+    <TemplateFileName>ItemTemplate.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name _locID="$templateName$">Visual Basic Item Template</Name>
+        <Description _locID="$templateDescription$">A project for building and packaging a Visual Basic Item Template.</Description>
+        <ProjectType>VisualBasic</ProjectType>
+        <TemplateID>{094C8CBF-2B11-4D9A-AFD4-6BFBBF27FB63}</TemplateID>
+        <SortOrder>1000</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>ItemTemplate</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <Icon>ItemTemplate.ico</Icon>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Extensibility\1033\ProjectTemplate</RelativePathOnDisk>
+    <TemplateFileName>ProjectTemplate.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name _locID="$templateName$">Visual Basic Project Template</Name>
+        <Description _locID="$templateDescription$">A project for building and packaging a Visual Basic Project Template.</Description>
+        <ProjectType>VisualBasic</ProjectType>
+        <TemplateID>{6C1451EA-2654-435E-8ABE-485FB4B9C918}</TemplateID>
+        <SortOrder>1000</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>ProjectTemplate</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <Icon>ProjectTemplate.ico</Icon>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Extensibility\1033\Roslyn_SDK_Download_VB</RelativePathOnDisk>
+    <TemplateFileName>VisualBasicCompilerPlatformSDKDownload.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Download the .NET Compiler Platform SDK</Name>
+        <Description>To begin creating Analyzers and Codefixes you must download the .NET Compiler Platform SDK</Description>
+        <Icon>VisualBasicCompilerPlatformSDKDownload.ico</Icon>
+        <ProjectType>VisualBasic</ProjectType>
+        <TemplateID>859c5fa2-a5dc-4994-bead-bc9d77c7ca75</TemplateID>
+        <SortOrder>1001</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>VisualBasicCompilerPlatformSDKDownload</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Extensibility\1033\VSIXProjectVB</RelativePathOnDisk>
+    <TemplateFileName>MyTemplate.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name _locID="$templateName$">VSIX Project</Name>
+        <TemplateID>VisualBasic.VSIXProject</TemplateID>
+        <Description _locID="$templateDescription$">Build Visual Studio extensions using the Visual Studio SDK. Start with this template to extend functionality of Visual Studio by adding editor items, commands and tool windows. Then use the VSIX package to distribute your extension.</Description>
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>1000</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>VSIXProject</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <Icon>VSIXProject.ico</Icon>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

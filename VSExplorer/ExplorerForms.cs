@@ -25,6 +25,7 @@ using utils;
 using VSProvider;
 using WeifenLuo.WinFormsUI.Docking;
 using WinExplorer.Environment;
+using WinExplorer.Services.Extensions;
 using WinExplorer.Services.NuGet;
 using WinExplorer.UI;
 using WinExplorer.UI.Views;
@@ -129,9 +130,10 @@ namespace WinExplorer
 
             scr.Dock = DockStyle.Fill;
 
-            if (scr.hst != null && scr.hst.Modules != null)
-                Module.LoadFromString(scr.hst.Modules);
-            else Module.Initialize();
+            //if (scr.hst != null && scr.hst.Modules != null)
+            //    Module.LoadFromString(scr.hst.Modules);
+            //else
+                Module.Initialize();
 
             Module.InitializeTemplates("Standards");
 
@@ -2372,8 +2374,8 @@ namespace WinExplorer
             if (tv == null)
                 return;
 
-            s.BeginInvoke(new Action(() =>
-            {
+            //s.BeginInvoke(new Action(() =>
+            //{
                 s.Nodes.Clear();
 
                 s.BeginUpdate();
@@ -2383,7 +2385,7 @@ namespace WinExplorer
                 s.Tag = tv.Tag;
 
                 s.EndUpdate();
-            }));
+            //}));
 
             if (tv == null)
                 return;
@@ -2473,7 +2475,10 @@ namespace WinExplorer
                         this.Focus();
                         if (appLoadedEvent != null)
                             appLoadedEvent(this, new EventArgs());
-                        if(vs != null)
+                        //Command_SetConfigurations();
+                        //Command_SetPlatforms();
+                        //Command_StartupProjects();
+                        if (vs != null)
                         vs.CompileSolution();
                     }));
                     if (event_SelectedSolutionChanged != null)
@@ -2684,6 +2689,8 @@ namespace WinExplorer
 
             DocumentForm df = scr.OpenDocumentForm();
             df.Text = "Start Page";
+            df.FileName = "Start Page";
+            df.Name = "Start Page";
             StartPageForm spf = new StartPageForm();
             spf.FormBorderStyle = FormBorderStyle.None;
             spf.TopLevel = false;
@@ -2705,6 +2712,7 @@ namespace WinExplorer
 
         public void Command_SetConfigurations()
         {
+           
             if (gui.Command_SolutionConfiguration.configuration == null)
                 return;
             gui.Command_SolutionConfiguration.configuration.Execute();
@@ -2729,6 +2737,13 @@ namespace WinExplorer
                 AddConnectionForm asd = new AddConnectionForm();
                 asd.ShowDialog();
             }
+        }
+
+        public void Command_RunProgram(string d)
+        {
+
+            cmds.RunExternalExes(d, "");
+            
         }
 
         public void Command_TakeSnapshot(string process = "")
@@ -4433,6 +4448,11 @@ namespace WinExplorer
 
         public VSSolution GetVSSolution()
         {
+            CreateView_Solution.ProjectItemInfo pr0 = _sv._SolutionTreeView.Tag as CreateView_Solution.ProjectItemInfo;
+
+            if (pr0 != null)
+                return pr0.vs;
+
             return _sv._SolutionTreeView.Tag as VSSolution;
         }
 
@@ -5204,6 +5224,11 @@ namespace WinExplorer
                 scr.Copy();
         }
 
+        public void Command_RunProject()
+        {
+
+        }
+
         public void Command_SetPropertyGrid(object obs)
         {
             pgp.BeginInvoke(new Action(() => { pgp.SelectedObject = obs; }));
@@ -5305,8 +5330,23 @@ namespace WinExplorer
 
         public void Command_StartupProjects()
         {
-        }
+            if(gui.Command_SolutionRun.projects == null) {
 
+                return;
+
+            }
+            gui.Command_SolutionRun.projects.Execute();
+        }
+        public void Command_StartupProject()
+        {
+            if (gui.Command_SolutionRun.projects == null)
+            {
+
+                return;
+
+            }
+            gui.Command_SolutionRun.projects.Execute();
+        }
         public void DebugTarget()
         {
         }
@@ -5722,6 +5762,11 @@ namespace WinExplorer
         private void viewHelpFilesToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+            ExtensionManager em = new ExtensionManager();
+            RootObject r = em.GetExtensions();
+
+
+            return;
 
             VSSolution vs = GetVSSolution();
             var ex = vs.GetExecutables(VSSolution.OutputType.both).ToArray();
@@ -6800,6 +6845,7 @@ namespace WinExplorer
         }
 
         private int _encounteredViolations = 0;
+        private object ExtensionsManager;
 
         private void OnViolationEncountered(object sender, StyleCop.ViolationEventArgs e)
         {
@@ -7726,7 +7772,7 @@ namespace WinExplorer
 
                     //ToolStripItem dd = null;
 
-                    ToolStripItem r0 = CreateToolSripItem(cmd.Name, cmd.Name, cmd.image, cmd) as ToolStripItem;
+                    ToolStripItem r0 = CreateToolStripItem(cmd.Name, cmd.Name, cmd.image, cmd) as ToolStripItem;
 
                     ToolStripMenuItem r1 = r0 as ToolStripMenuItem;
 
@@ -7761,50 +7807,48 @@ namespace WinExplorer
                     {
                         gui.Command_Module bb = cmd as gui.Command_Module;
                         r0.Text = append(bb.Names);
+                        
                         r0.Name = bb.Names;
-                        r0.Tag = bb;
-                        Module modules = Module.GetModule(cmd.Module);
+                        r0.Tag =  bb;
+                    //    Module modules = Module.GetModule(cmd.Module);
 
-                        if (modules != null)
-                        {
-                            foreach (string cc in modules.dict.Keys)
-                            {
-                                Command cmds = modules.dict[cc] as Command;
-                                //ToolStripMenuItem vv = v.DropDownItems.Add(cmds.Name) as ToolStripMenuItem;
-                                //vv.Image = cmds.image;
-                                //vv.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
+                    //    if (modules != null)
+                    //    {
+                    //        foreach (string cc in modules.dict.Keys)
+                    //        {
+                    //            Command cmds = modules.dict[cc] as Command;
+                    //            //ToolStripMenuItem vv = v.DropDownItems.Add(cmds.Name) as ToolStripMenuItem;
+                    //            //vv.Image = cmds.image;
+                    //            //vv.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
 
-                                if (r1 != null)
-                                {
-                                    if (cmds.keyboard != null)
-                                    {
-                                        Keys k = Keys.None;
-                                        bool first = true;
-                                        foreach (Keys g in cmds.keyboard)
-                                        {
-                                            k |= g;
-                                            string p = g.ToString();
+                    //            if (r1 != null)
+                    //            {
+                    //                if (cmds.keyboard != null)
+                    //                {
+                    //                    Keys k = Keys.None;
+                    //                    bool first = true;
+                    //                    foreach (Keys g in cmds.keyboard)
+                    //                    {
+                    //                        k |= g;
+                    //                        string p = g.ToString();
 
-                                            if (g == Keys.Control)
-                                                p = "Ctrl";
-                                            else if (g == (Keys)109)
-                                                p = "-";
-                                            if (first == false)
-                                                p = "+" + p;
-                                            r1.ShortcutKeyDisplayString += p + " ";
-                                            first = false;
-                                        }
-                                        r1.ShortcutKeys = k;
-                                    }
+                    //                        if (g == Keys.Control)
+                    //                            p = "Ctrl";
+                    //                        else if (g == (Keys)109)
+                    //                            p = "-";
+                    //                        if (first == false)
+                    //                            p = "+" + p;
+                    //                        r1.ShortcutKeyDisplayString += p + " ";
+                    //                        first = false;
+                    //                    }
+                    //                    r1.ShortcutKeys = k;
+                    //                }
 
-                                    r1.Checked = true;
-                                }
+                    //                r1.Checked = true;
+                    //            }
 
-                                //ToolStripItem b0 = CreateToolStripDropDown(r0, cmds);
-
-                                //r0.DropDownItems.Add(b0);
-                            }
-                        }
+                    //        }
+                    //    }
                     }
                     if (cmd.GetType().IsSubclassOf(typeof(gui.Command_Gui)) || cmd.Name == "Gui")
                     {
@@ -7897,16 +7941,18 @@ namespace WinExplorer
             return vv;
         }
 
-        public ToolStripItem CreateToolSripItem(string text, string name, Image image, Command cmd)
+        public ToolStripItem CreateToolStripItem(string text, string name, Image image, Command cmd)
         {
             ToolStripMenuItem r0 = new ToolStripMenuItem();
             if (cmd.GuiHint == "ToolStripDropDownButton")
             {
-                ToolStripSplitButton r1 = new ToolStripSplitButton(cmd.image);
+                ToolStripSplitButton r1 = new ToolStripSplitButton("", cmd.image);
                 r1.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                r1.DropDown = new ToolStripDropDown();
+                r1.DropDown.Items.Add(new ToolStripButton());
                 r1.Text = text;
                 r1.Name = name;
-                //r1.Image = image;
+               // r1.Image = image;
                 r1.Tag = cmd;
                 r1.Click += R0_Click;
                 return r1;
@@ -7977,7 +8023,13 @@ namespace WinExplorer
                                 else if (name.Contains("@"))
                                     b.DisplayStyle = ToolStripItemDisplayStyle.Text;
                                 else b.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                                b.Text = b.Text.Trim();
                                 nr.Items.Add(b);
+                                Command c = b.Tag as Command;
+                                if (c == null)
+                                    continue;
+                                if (c.shouldDisplayText)
+                                    b.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
                             }
                     }
             }

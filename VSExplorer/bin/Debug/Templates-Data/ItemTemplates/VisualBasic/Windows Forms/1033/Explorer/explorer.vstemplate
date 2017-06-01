@@ -1,0 +1,76 @@
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3141" />
+    <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3142" />
+    <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4576" />
+    <ProjectType>VisualBasic</ProjectType>
+    <SortOrder>100</SortOrder>
+    <DefaultName>Explorer.vb</DefaultName>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>Microsoft.VisualBasic.WindowsForms.Explorer</TemplateID>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+  </TemplateData>
+  <TemplateContent>
+        <References>
+            <Reference>
+                <Assembly>System</Assembly>
+                <URL>https://www.microsoft.com</URL>
+            </Reference>
+            <Reference>
+                <Assembly>System.Drawing</Assembly>
+                <URL>https://www.microsoft.com</URL>
+            </Reference>
+            <Reference>
+                <Assembly>System.Windows.Forms</Assembly>
+                <URL>https://www.microsoft.com</URL>
+            </Reference>
+        </References>
+
+    <ProjectItem ReplaceParameters="true" SubType="Form">Explorer.vb</ProjectItem>
+    <ProjectItem ReplaceParameters="true">Explorer.Designer.vb</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$.resx" ReplaceParameters="false">Explorer.resx</ProjectItem>
+    <CustomParameters>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_Status$" Name="$IT_EXP_VB_Loc_Status$" Value="Status"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_Back$" Name="$IT_EXP_VB_Loc_Back$" Value="Back"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_Back_Tooltip$" Name="$IT_EXP_VB_Loc_Back_Tooltip$" Value="Back to the previous item"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_Forward$" Name="$IT_EXP_VB_Loc_Forward$" Value="Forward"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_Forward_Tooltip$" Name="$IT_EXP_VB_Loc_Forward_Tooltip$" Value="Move forward to the next item"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_Folders$" Name="$IT_EXP_VB_Loc_Folders$" Value="Folders"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_Folders_Tooltip$" Name="$IT_EXP_VB_Loc_Folders_Tooltip$" Value="Toggle Folders View"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_Views$" Name="$IT_EXP_VB_Loc_Views$" Value="Views"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_List$" Name="$IT_EXP_VB_Loc_List$" Value="List"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_Details$" Name="$IT_EXP_VB_Loc_Details$" Value="Details"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_LargeIcons$" Name="$IT_EXP_VB_Loc_LargeIcons$" Value="Large Icons"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_SmallIcons$" Name="$IT_EXP_VB_Loc_SmallIcons$" Value="Small Icons"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_Tile$" Name="$IT_EXP_VB_Loc_Tile$" Value="Tile"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_FileTS_Menu$" Name="$IT_EXP_VB_Loc_FileTS_Menu$" Value="&amp;File"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_NewTS_Menu$" Name="$IT_EXP_VB_Loc_NewTS_Menu$" Value="&amp;New"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_OpenTS_Menu$" Name="$IT_EXP_VB_Loc_OpenTS_Menu$" Value="&amp;Open"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_SaveTS_Menu$" Name="$IT_EXP_VB_Loc_SaveTS_Menu$" Value="&amp;Save"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_SaveAsTS_Menu$" Name="$IT_EXP_VB_Loc_SaveAsTS_Menu$" Value="Save &amp;As"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_PrintTS_Menu$" Name="$IT_EXP_VB_Loc_PrintTS_Menu$" Value="&amp;Print"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_PrintPreviewTS_Menu$" Name="$IT_EXP_VB_Loc_PrintPreviewTS_Menu$" Value="Print Pre&amp;view"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_ExitTS_Menu$" Name="$IT_EXP_VB_Loc_ExitTS_Menu$" Value="E&amp;xit"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_EditTS_Menu$" Name="$IT_EXP_VB_Loc_EditTS_Menu$" Value="&amp;Edit"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_UndoTS_Menu$" Name="$IT_EXP_VB_Loc_UndoTS_Menu$" Value="&amp;Undo"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_RedoTS_Menu$" Name="$IT_EXP_VB_Loc_RedoTS_Menu$" Value="&amp;Redo"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_CutTS_Menu$" Name="$IT_EXP_VB_Loc_CutTS_Menu$" Value="Cu&amp;t"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_CopyTS_Menu$" Name="$IT_EXP_VB_Loc_CopyTS_Menu$" Value="&amp;Copy"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_PasteTS_Menu$" Name="$IT_EXP_VB_Loc_PasteTS_Menu$" Value="&amp;Paste"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_SelectAllTS_Menu$" Name="$IT_EXP_VB_Loc_SelectAllTS_Menu$" Value="Select &amp;All"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_ViewTS_Menu$" Name="$IT_EXP_VB_Loc_ViewTS_Menu$" Value="&amp;View"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_ToolbarTS_Menu$" Name="$IT_EXP_VB_Loc_ToolbarTS_Menu$" Value="&amp;Toolbar"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_StatusBarTS_Menu$" Name="$IT_EXP_VB_Loc_StatusBarTS_Menu$" Value="&amp;Status Bar"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_FolderTS_Menu$" Name="$IT_EXP_VB_Loc_FolderTS_Menu$" Value="&amp;Folders"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_ToolsTS_Menu$" Name="$IT_EXP_VB_Loc_ToolsTS_Menu$" Value="&amp;Tools"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_OptionsTS_Menu$" Name="$IT_EXP_VB_Loc_OptionsTS_Menu$" Value="&amp;Options"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_HelpTS_Menu$" Name="$IT_EXP_VB_Loc_HelpTS_Menu$" Value="&amp;Help"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_ContentsTS_Menu$" Name="$IT_EXP_VB_Loc_ContentsTS_Menu$" Value="&amp;Contents"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_IndexTS_Menu$" Name="$IT_EXP_VB_Loc_IndexTS_Menu$" Value="&amp;Index"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_SearchTS_Menu$" Name="$IT_EXP_VB_Loc_SearchTS_Menu$" Value="&amp;Search"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_AboutTS_Menu$" Name="$IT_EXP_VB_Loc_AboutTS_Menu$" Value="&amp;About"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_TextFilter$" Name="$IT_EXP_VB_Loc_TextFilter$" Value="Text Files"/>
+        <CustomParameter _locID="$IT_EXP_VB_Loc_ColumnName$" Name="$IT_EXP_VB_Loc_ColumnName$" Value="Column"/>
+    </CustomParameters>
+  </TemplateContent>
+</VSTemplate>

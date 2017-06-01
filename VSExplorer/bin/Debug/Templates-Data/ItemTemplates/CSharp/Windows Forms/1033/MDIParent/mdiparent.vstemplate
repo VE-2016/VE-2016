@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2426" />
+    <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2427" />
+    <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4591" />
+    <TemplateID>Microsoft.CSharp.MDIParent</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>MDIParent.cs</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+		<References>
+			<Reference>
+				<Assembly>System</Assembly>
+			</Reference>
+			<Reference>
+				<Assembly>System.Data</Assembly>
+			</Reference>
+			<Reference>
+				<Assembly>System.Drawing</Assembly>
+			</Reference>
+			<Reference>
+				<Assembly>System.Windows.Forms</Assembly>
+			</Reference>
+			<Reference>
+				<Assembly>System.Xml</Assembly>
+			</Reference>
+		</References>
+
+
+    <ProjectItem ReplaceParameters="true" SubType="Form">MDIParent.cs</ProjectItem>
+    <ProjectItem ReplaceParameters="true">MDIParent.Designer.cs</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$.resx">MDIParent.resx</ProjectItem>
+
+
+    <CustomParameters>
+        <CustomParameter _locID="$IT_MD_CS_Loc_1$" Name="$IT_MD_CS_Loc_1$" Value="Window "/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_2$" Name="$IT_MD_CS_Loc_2$" Value="Text Files (*.txt)|*.txt|All Files (*.*)|*.*"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_3$" Name="$IT_MD_CS_Loc_3$" Value="Text Files (*.txt)|*.txt|All Files (*.*)|*.*"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_4$" Name="$IT_MD_CS_Loc_4$" Value="&amp;File"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_5$" Name="$IT_MD_CS_Loc_5$" Value="&amp;New"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_6$" Name="$IT_MD_CS_Loc_6$" Value="&amp;Open"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_7$" Name="$IT_MD_CS_Loc_7$" Value="&amp;Save"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_8$" Name="$IT_MD_CS_Loc_8$" Value="Save &amp;As"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_9$" Name="$IT_MD_CS_Loc_9$" Value="&amp;Print"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_10$" Name="$IT_MD_CS_Loc_10$" Value="Print Pre&amp;view"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_11$" Name="$IT_MD_CS_Loc_11$" Value="Print Setup"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_12$" Name="$IT_MD_CS_Loc_12$" Value="E&amp;xit"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_13$" Name="$IT_MD_CS_Loc_13$" Value="&amp;Edit"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_14$" Name="$IT_MD_CS_Loc_14$" Value="&amp;Undo"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_15$" Name="$IT_MD_CS_Loc_15$" Value="&amp;Redo"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_16$" Name="$IT_MD_CS_Loc_16$" Value="Cu&amp;t"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_17$" Name="$IT_MD_CS_Loc_17$" Value="&amp;Copy"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_18$" Name="$IT_MD_CS_Loc_18$" Value="&amp;Paste"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_19$" Name="$IT_MD_CS_Loc_19$" Value="Select &amp;All"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_20$" Name="$IT_MD_CS_Loc_20$" Value="&amp;View"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_21$" Name="$IT_MD_CS_Loc_21$" Value="&amp;Toolbar"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_22$" Name="$IT_MD_CS_Loc_22$" Value="&amp;Status Bar"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_23$" Name="$IT_MD_CS_Loc_23$" Value="&amp;Tools"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_24$" Name="$IT_MD_CS_Loc_24$" Value="&amp;Options"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_25$" Name="$IT_MD_CS_Loc_25$" Value="&amp;Windows"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_26$" Name="$IT_MD_CS_Loc_26$" Value="&amp;New Window"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_27$" Name="$IT_MD_CS_Loc_27$" Value="&amp;Cascade"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_28$" Name="$IT_MD_CS_Loc_28$" Value="Tile &amp;Vertical"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_29$" Name="$IT_MD_CS_Loc_29$" Value="Tile &amp;Horizontal"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_30$" Name="$IT_MD_CS_Loc_30$" Value="C&amp;lose All"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_31$" Name="$IT_MD_CS_Loc_31$" Value="&amp;Arrange Icons"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_32$" Name="$IT_MD_CS_Loc_32$" Value="&amp;Help"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_33$" Name="$IT_MD_CS_Loc_33$" Value="&amp;Contents"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_34$" Name="$IT_MD_CS_Loc_34$" Value="&amp;Index"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_35$" Name="$IT_MD_CS_Loc_35$" Value="&amp;Search"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_36$" Name="$IT_MD_CS_Loc_36$" Value="&amp;About ..."/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_37$" Name="$IT_MD_CS_Loc_37$" Value="New"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_38$" Name="$IT_MD_CS_Loc_38$" Value="Open"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_39$" Name="$IT_MD_CS_Loc_39$" Value="Save"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_40$" Name="$IT_MD_CS_Loc_40$" Value="Print"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_41$" Name="$IT_MD_CS_Loc_41$" Value="Print Preview"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_42$" Name="$IT_MD_CS_Loc_42$" Value="Help"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_43$" Name="$IT_MD_CS_Loc_43$" Value="Status"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_44$" Name="$IT_MD_CS_Loc_44$" Value="ToolStrip"/>
+        <CustomParameter _locID="$IT_MD_CS_Loc_45$" Name="$IT_MD_CS_Loc_45$" Value="StatusStrip"/>        
+    </CustomParameters>
+
+  </TemplateContent>
+
+</VSTemplate>

@@ -1,0 +1,158 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Windows Forms\1033\AboutBox</RelativePathOnDisk>
+    <TemplateFileName>AboutBox.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3135" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3136" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4573" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>AboutBox.vb</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.VisualBasic.WindowsForms.AboutBox</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Windows Forms\1033\CustomControl</RelativePathOnDisk>
+    <TemplateFileName>CustomControl.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3042" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3043" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4523" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>CustomControl.vb</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.VisualBasic.WindowsForms.CustomControl</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Windows Forms\1033\Dialog</RelativePathOnDisk>
+    <TemplateFileName>Dialog.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3157" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3158" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4582" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>Dialog.vb</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.VisualBasic.WindowsForms.Dialog</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Windows Forms\1033\Explorer</RelativePathOnDisk>
+    <TemplateFileName>explorer.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3141" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3142" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4576" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>Explorer.vb</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.VisualBasic.WindowsForms.Explorer</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Windows Forms\1033\Form</RelativePathOnDisk>
+    <TemplateFileName>Form.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3050" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3051" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4527" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>93</SortOrder>
+        <DefaultName>Form.vb</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.VisualBasic.WindowsForms.Form</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Windows Forms\1033\LoginForm</RelativePathOnDisk>
+    <TemplateFileName>LoginForm.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3137" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3138" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4574" />
+        <ProjectType>VisualBasic</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>100</SortOrder>
+        <DefaultName>LoginForm.vb</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.VisualBasic.WindowsForms.LoginForm</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Windows Forms\1033\MDIParent</RelativePathOnDisk>
+    <TemplateFileName>mdiparent.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3133" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3134" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4572" />
+        <ProjectType>VisualBasic</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>100</SortOrder>
+        <DefaultName>MDIParent.vb</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.VisualBasic.WindowsForms.MdiParent</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Windows Forms\1033\SplashScreen</RelativePathOnDisk>
+    <TemplateFileName>splashscreen.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3139" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3140" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4575" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>SplashScreen.vb</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.VisualBasic.WindowsForms.SplashScreen</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Windows Forms\1033\UserControl</RelativePathOnDisk>
+    <TemplateFileName>UserControl.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3048" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3049" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4526" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>94</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>UserControl.vb</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.VisualBasic.WindowsForms.UserControl</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

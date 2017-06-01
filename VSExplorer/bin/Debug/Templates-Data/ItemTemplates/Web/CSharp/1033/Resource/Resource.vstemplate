@@ -1,0 +1,15 @@
+﻿<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+	<TemplateData>
+		<Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3105"/>
+		<Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3106"/>
+		<Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4548"/>
+        <TemplateID>Microsoft.Web.CSharp.Resource</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>CSharp</ProjectSubType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <DefaultName>Resource.resx</DefaultName>
+    </TemplateData>
+	<TemplateContent>
+		<ProjectItem>Resource.resx</ProjectItem>
+	</TemplateContent>
+</VSTemplate>

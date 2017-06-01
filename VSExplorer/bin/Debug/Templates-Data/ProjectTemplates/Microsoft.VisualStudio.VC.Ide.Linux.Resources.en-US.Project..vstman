@@ -1,0 +1,80 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VC\Cross Platform\Linux\1033\LinuxConsoleApplication</RelativePathOnDisk>
+    <TemplateFileName>ConsoleApplication.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Console Application (Linux)</Name>
+        <Description>A project for creating a console application for the Linux platform.</Description>
+        <ProjectType>VC</ProjectType>
+        <TemplateID>Microsoft.VisualStudio.Linux.VC.ConsoleApplication</TemplateID>
+        <SortOrder>1000</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>ConsoleApplication</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <Icon>Icon.ico</Icon>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VC\Cross Platform\Linux\1033\LinuxEmptyProject</RelativePathOnDisk>
+    <TemplateFileName>EmptyProject.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Empty Project (Linux)</Name>
+        <Description>An empty project for creating an application for the Linux platform.</Description>
+        <ProjectType>VC</ProjectType>
+        <TemplateID>Microsoft.VisualStudio.Linux.VC.EmptyProject</TemplateID>
+        <SortOrder>1000</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>Project</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <Icon>Icon.ico</Icon>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VC\Cross Platform\Linux\1033\RaspberryBlink</RelativePathOnDisk>
+    <TemplateFileName>Blink.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Blink (Raspberry)</Name>
+        <Description>A project for creating a blink LED application using wiringPi and for the Raspberry platform.</Description>
+        <ProjectType>VC</ProjectType>
+        <TemplateID>Microsoft.VisualStudio.Linux.VC.Raspberry.Blink</TemplateID>
+        <SortOrder>1000</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>Blink</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <Icon>Icon.ico</Icon>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VC\Cross Platform\Linux\1033\LinuxMakefileProject</RelativePathOnDisk>
+    <TemplateFileName>Project.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Makefile Project (Linux)</Name>
+        <Description>A project for using an external build system for the Linux platform.</Description>
+        <ProjectType>VC</ProjectType>
+        <TemplateID>Microsoft.VisualStudio.Linux.VC.MakefileProject</TemplateID>
+        <SortOrder>1000</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>Project</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <Icon>Icon.ico</Icon>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

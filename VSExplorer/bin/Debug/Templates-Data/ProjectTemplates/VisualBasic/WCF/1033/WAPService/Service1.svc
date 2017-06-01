@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="$safeprojectname$.Service1" CodeBehind="Service1.svc.vb" %>

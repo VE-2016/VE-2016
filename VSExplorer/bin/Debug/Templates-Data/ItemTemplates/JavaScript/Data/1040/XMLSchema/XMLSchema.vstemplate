@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>XML Schema</Name>
+    <Description>Schema utilizzato per la descrizione di documenti XML.</Description>
+    <Icon>XMLSchema.ico</Icon>
+    <TemplateID>Microsoft.JavaScript.XMLSchema</TemplateID>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>schema.xsd</DefaultName>
+
+    <!-- "XML Schema" is applicable to all JavaScript project capability -->
+    <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+    <ProjectType>JavaScript</ProjectType>
+    <ShowByDefault>false</ShowByDefault>
+    <AppliesTo>JavaScript</AppliesTo>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="true">XMLSchema.xsd</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

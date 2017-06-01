@@ -120,6 +120,7 @@ namespace WinExplorer.UI
             button = pictureBox1;
             button.Image = Rotate(Resources.Expander_24x);
             button.Click += Button_Click;
+            button.Visible = false;
             LoadRecent();
             LoadTfs();
             LoadProject();
@@ -180,11 +181,24 @@ namespace WinExplorer.UI
             ExplorerForms.ef.Command_AddNewProject();
         }
 
+        int pw;
+
         private void Button_Click(object sender, EventArgs e)
         {
-            if (sp.Panel2Collapsed)
-                sp.Panel2Collapsed = false;
-            else sp.Panel2Collapsed = true;
+            //if (sp.Panel2.Width > 60)
+            //{
+            //    pw = sp.SplitterDistance;
+            //    sp.SplitterDistance = sp.Width - 60;
+            //    button.Location = new Point(sp.Width - 60, button.Location.Y);
+            //    pd.Visible = false;
+            //}
+            //else
+            //{
+            //    sp.SplitterDistance = pw;
+            //    pd.Visible = true;
+            //    button.Location = new Point(pw, button.Location.Y);
+            //}
+            //Sp_Resize(null, null);
         }
 
         PictureBox button { get; set; }
