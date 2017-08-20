@@ -88,7 +88,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::WinExplorer.Resources.Upload_16x;
+            this.pictureBox4.Image = global::WinExplorer.ve_resource.Upload_16x;
             this.pictureBox4.Location = new System.Drawing.Point(109, 50);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox4.Name = "pictureBox4";
@@ -98,7 +98,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::WinExplorer.Resources.Cancel_16x;
+            this.pictureBox3.Image = global::WinExplorer.ve_resource.Cancel_16x;
             this.pictureBox3.Location = new System.Drawing.Point(109, 16);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox3.Name = "pictureBox3";
@@ -108,7 +108,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::WinExplorer.Resources.Download_16x;
+            this.pictureBox2.Image = global::WinExplorer.ve_resource.Download_16x;
             this.pictureBox2.Location = new System.Drawing.Point(9, 16);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox2.Name = "pictureBox2";

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1123" />
+    <Description Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1124" />
+    <Icon Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="4010" />
+    <TemplateID>Microsoft.VB.UAP.ResourceDictionary</TemplateID>
+    <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+    <AppliesTo>VB + SharedAssetsProject</AppliesTo>
+    <ProjectType>VisualBasic</ProjectType>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>Dictionary.xaml</DefaultName>
+    <ShowByDefault>false</ShowByDefault>
+    <SortOrder>70</SortOrder>
+    <TargetPlatformName>Windows</TargetPlatformName>
+    <RequiredPlatformVersion>6.1.0</RequiredPlatformVersion>
+    <AppIdFilter>blend</AppIdFilter>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ItemType="Page" CopyToOutputDirectory="2" ReplaceParameters="true" OpenInEditor="true">ResourceDictionary.xaml</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

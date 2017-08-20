@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1121" />
+    <Description Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1122" />
+    <Icon Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="4009" />
+    <TemplateID>Microsoft.CS.UAP.UserControl</TemplateID>
+    <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+    <AppliesTo>CSharp + SharedAssetsProject</AppliesTo>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>81</SortOrder>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>MyUserControl.xaml</DefaultName>
+    <ShowByDefault>false</ShowByDefault>
+    <TargetPlatformName>Windows</TargetPlatformName>
+    <RequiredPlatformVersion>6.1.0</RequiredPlatformVersion>
+    <AppIdFilter>blend</AppIdFilter>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="true" OpenInEditor="true" ItemType="Page" SubType="Designer" CustomTool="MSBuild:Compile" TargetFileName="$fileinputname$.xaml">UserControl1.xaml</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$.xaml.cs">UserControl1.xaml.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

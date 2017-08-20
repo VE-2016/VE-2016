@@ -374,8 +374,8 @@ namespace WinExplorer.UI
             editbox.Scrollable = false;
 
             ImageList g = new ImageList();
-            g.Images.Add("breakpoint", Resources.BreakpointEnable_16x);
-            g.Images.Add("notbreakpoint", Resources.BreakpointDisable_16x);
+            g.Images.Add("breakpoint", ve_resource.BreakpointEnable_16x);
+            g.Images.Add("notbreakpoint", ve_resource.BreakpointDisable_16x);
             editbox.ImageList = g;
 
             //int i = 0;

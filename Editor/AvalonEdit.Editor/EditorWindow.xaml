@@ -1,0 +1,75 @@
+﻿<!-- 
+	
+-->
+<ContentControl x:Class="AvalonEdit.Editor.EditorWindow"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+	xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+   	Height="500" Width="700"
+	>
+    <ContentControl.Resources>
+        <DataTemplate x:Key="cmbTemplate">
+            <WrapPanel Margin="0 0 0 0" Height="20">
+                <Image Width="20" Height="20" Stretch="Fill" Source="{Binding image}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0, 0,0"/>
+                <Label Content="{Binding text}" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="9"/>
+            </WrapPanel>
+        </DataTemplate>
+    </ContentControl.Resources>
+    <DockPanel>
+        <UniformGrid x:Name="quickviewer" DockPanel.Dock ="Top" Rows="1" Height="22">
+
+            <ComboBox  x:Name="namespaceComboBox" HorizontalAlignment="Stretch" Background="AliceBlue" IsEditable="True" IsReadOnly="True" ItemTemplate="{StaticResource cmbTemplate}">
+
+                  
+                </ComboBox>
+
+            <ComboBox  x:Name="classComboBox" HorizontalAlignment="Stretch"  IsEditable="True" IsReadOnly="True" ItemTemplate="{StaticResource cmbTemplate}"></ComboBox>
+
+            <ComboBox x:Name="memberComboBox" HorizontalAlignment="Stretch"  IsEditable="True" IsReadOnly="True" ItemTemplate="{StaticResource cmbTemplate}"></ComboBox>
+           
+        </UniformGrid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="20"/>
+                
+            </Grid.RowDefinitions>
+
+            <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0" Margin="0,0,0,0" Grid.Column="0" Grid.ColumnSpan="3" >
+                
+
+                    <ContentControl HorizontalAlignment="Stretch">
+                        <avalonEdit:TextEditor
+				x:Name="textEditor"
+							 HorizontalScrollBarVisibility="Hidden"  VerticalScrollBarVisibility="Auto"
+				SyntaxHighlighting="XML" ShowLineNumbers="False" Visibility="Visible"
+				 HorizontalAlignment="Stretch"
+VerticalAlignment="Stretch" />
+
+                    </ContentControl >
+
+                
+            </DockPanel>
+            <ComboBox x:Name="zoom" VerticalAlignment="Stretch"  Background="White" IsEditable="True" IsReadOnly="True" SelectedIndex="4" IsHitTestVisible="True" Grid.Row="1" Grid.Column="0"  Height="18">
+                <ComboBoxItem Content="800%"/>
+                <ComboBoxItem Content="400%"/>
+                <ComboBoxItem Content="200%"/>
+                <ComboBoxItem Content="150%"/>
+                <ComboBoxItem Content="100%"/>
+                <ComboBoxItem Content="66.67%"/>
+                <ComboBoxItem Content="50%"/>
+                <ComboBoxItem Content="33.333%"/>
+                <ComboBoxItem Content="25%"/>
+                <ComboBoxItem Content="12.5%"/>
+            </ComboBox>
+            <ScrollBar x:Name="hs" Orientation="Horizontal"  IsHitTestVisible="True" Grid.Row="1" Grid.Column="1"/>
+
+        </Grid>
+    </DockPanel>
+</ContentControl>

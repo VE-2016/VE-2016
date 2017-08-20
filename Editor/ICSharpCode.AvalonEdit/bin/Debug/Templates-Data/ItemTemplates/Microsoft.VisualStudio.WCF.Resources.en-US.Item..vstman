@@ -1,0 +1,172 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\1033\WcfService</RelativePathOnDisk>
+    <TemplateFileName>WcfService.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <DefaultName>Service.cs</DefaultName>
+        <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="119" />
+        <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="120" />
+        <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="401" />
+        <TemplateID>Microsoft.CSharp.WcfItem</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\Web\1033\AjaxWcfService</RelativePathOnDisk>
+    <TemplateFileName>AjaxWcfService.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="129" />
+        <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="130" />
+        <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="401" />
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.WAP.CSharp.AjaxWcfServiceItem</TemplateID>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <ProjectType>CSharp</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <ShowByDefault>false</ShowByDefault>
+        <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+        <DefaultName>Service.svc</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\Web\1033\WebWcfService</RelativePathOnDisk>
+    <TemplateFileName>WebWcfService.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="119" />
+        <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="120" />
+        <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="401" />
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.WAP.CSharp.WcfServiceItem</TemplateID>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <ProjectType>CSharp</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <ShowByDefault>false</ShowByDefault>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+        <DefaultName>Service.svc</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\1033\WcfService</RelativePathOnDisk>
+    <TemplateFileName>WcfService.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <DefaultName>Service.vb</DefaultName>
+        <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="119" />
+        <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="120" />
+        <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="402" />
+        <TemplateID>Microsoft.VisualBasic.WcfItem</TemplateID>
+        <ProjectType>VisualBasic</ProjectType>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Web\1033\AjaxWcfService</RelativePathOnDisk>
+    <TemplateFileName>AjaxWcfService.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="129" />
+        <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="130" />
+        <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="402" />
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.WAP.VisualBasic.AjaxWcfServiceItem</TemplateID>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <ProjectType>VisualBasic</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <ShowByDefault>false</ShowByDefault>
+        <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+        <DefaultName>Service.svc</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Web\1033\WebWcfService</RelativePathOnDisk>
+    <TemplateFileName>WebWcfService.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="119" />
+        <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="120" />
+        <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="402" />
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.WAP.VisualBasic.WcfServiceItem</TemplateID>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <ProjectType>VisualBasic</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <ShowByDefault>false</ShowByDefault>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+        <DefaultName>Service.svc</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>Web\CSharp\1033\AjaxWcfService</RelativePathOnDisk>
+    <TemplateFileName>AjaxWcfService.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="129" />
+        <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="130" />
+        <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="401" />
+        <TemplateID>Microsoft.Web.CSharp.AjaxWcfItem</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>CSharp</ProjectSubType>
+        <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+        <DefaultName>Service.svc</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>Web\CSharp\1033\WcfService</RelativePathOnDisk>
+    <TemplateFileName>WcfService.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="119" />
+        <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="120" />
+        <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="401" />
+        <TemplateID>Microsoft.Web.CSharp.WcfItem</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>CSharp</ProjectSubType>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+        <DefaultName>Service.svc</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>Web\VisualBasic\1033\AjaxWcfService</RelativePathOnDisk>
+    <TemplateFileName>AjaxWcfService.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="129" />
+        <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="130" />
+        <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="402" />
+        <TemplateID>Microsoft.Web.VisualBasic.AjaxWcfItem</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>VisualBasic</ProjectSubType>
+        <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+        <DefaultName>Service.svc</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>Web\VisualBasic\1033\WcfService</RelativePathOnDisk>
+    <TemplateFileName>WcfService.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="119" />
+        <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="120" />
+        <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="402" />
+        <TemplateID>Microsoft.Web.VisualBasic.WcfItem</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>VisualBasic</ProjectSubType>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+        <DefaultName>Service.svc</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

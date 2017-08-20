@@ -1,0 +1,46 @@
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3135" />
+    <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3136" />
+    <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4573" />
+    <ProjectType>VisualBasic</ProjectType>
+    <SortOrder>100</SortOrder>
+    <DefaultName>AboutBox.vb</DefaultName>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>Microsoft.VisualBasic.WindowsForms.AboutBox</TemplateID>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+  </TemplateData>
+  <TemplateContent>
+        <References>
+            <Reference>
+                <Assembly>System</Assembly>
+                <URL>https://www.microsoft.com</URL>
+            </Reference>
+            <Reference>
+                <Assembly>System.Drawing</Assembly>
+                <URL>https://www.microsoft.com</URL>
+            </Reference>
+            <Reference>
+                <Assembly>System.Windows.Forms</Assembly>
+                <URL>https://www.microsoft.com</URL>
+            </Reference>
+        </References>
+
+    <ProjectItem ReplaceParameters="true" SubType="Form">AboutBox.vb</ProjectItem>
+    <ProjectItem ReplaceParameters="true">AboutBox.Designer.vb</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$.resx" ReplaceParameters="false">AboutBox.resx</ProjectItem>
+
+    <CustomParameters>
+        <CustomParameter _locID="$IT_AB_VB_Loc_ProdName$" Name="$IT_AB_VB_Loc_ProdName$" Value="Product Name"/>
+        <CustomParameter _locID="$IT_AB_VB_Loc_Version$" Name="$IT_AB_VB_Loc_Version$" Value="Version"/>
+        <CustomParameter _locID="$IT_AB_VB_Loc_Copyright$" Name="$IT_AB_VB_Loc_Copyright$" Value="Copyright"/>
+        <CustomParameter _locID="$IT_AB_VB_Loc_CompName$" Name="$IT_AB_VB_Loc_CompName$" Value="Company Name"/>
+        <CustomParameter _locID="$IT_AB_VB_Loc_Descript$" Name="$IT_AB_VB_Loc_Descript$" Value="Description :"/>
+        <CustomParameter _locID="$IT_AB_VB_Loc_FullDescript$" Name="$IT_AB_VB_Loc_FullDescript$" Value="(At runtime, the labels' text will be replaced with the application's assembly information."/>
+        <CustomParameter _locID="$IT_AB_VB_Loc_FullDescript2$" Name="$IT_AB_VB_Loc_FullDescript2$" Value="Customize the application's assembly information in the Application pane of Project Designer.)"/>
+        <CustomParameter _locID="$IT_AB_VB_Loc_OK$" Name="$IT_AB_VB_Loc_OK$" Value="&amp;OK"/>
+        <CustomParameter _locID="$IT_AB_VB_Loc_About$" Name="$IT_AB_VB_Loc_About$" Value="About"/>
+        <CustomParameter _locID="$IT_AB_VB_Loc_Version2$" Name="$IT_AB_VB_Loc_Version2$" Value="Version"/>
+    </CustomParameters>
+  </TemplateContent>
+</VSTemplate>

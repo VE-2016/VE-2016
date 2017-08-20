@@ -1,0 +1,72 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>Python\EmptyPackage</RelativePathOnDisk>
+    <TemplateFileName>package.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5000" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5001" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="404" />
+        <ProjectType>Python</ProjectType>
+        <DefaultName>package</DefaultName>
+        <SortOrder>30</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>Python\EmptyPyFile</RelativePathOnDisk>
+    <TemplateFileName>empty.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5002" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5003" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="404" />
+        <ProjectType>Python</ProjectType>
+        <DefaultName>module.py</DefaultName>
+        <SortOrder>10</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>Python\PyClass</RelativePathOnDisk>
+    <TemplateFileName>class.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5004" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5005" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="404" />
+        <ProjectType>Python</ProjectType>
+        <DefaultName>class.py</DefaultName>
+        <SortOrder>20</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>Python\TextFile</RelativePathOnDisk>
+    <TemplateFileName>textfile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5006" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5007" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="413" />
+        <ProjectType>Python</ProjectType>
+        <DefaultName>TextFile.txt</DefaultName>
+        <SortOrder>50</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>Python\UnitTestFile</RelativePathOnDisk>
+    <TemplateFileName>test.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5008" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5009" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="404" />
+        <ProjectType>Python</ProjectType>
+        <DefaultName>test.py</DefaultName>
+        <SortOrder>40</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

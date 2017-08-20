@@ -32,9 +32,9 @@ C:\Users\me\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.dll
 C:\Users\me\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.pdb
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
-F:\Windows-Enterprise-VE-2016\VE-2016\Editor\WinFormsUI\obj\Debug\WinFormsUI.csprojResolveAssemblyReference.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.Resources.resources
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.Strings.resources
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\WinFormsUI\obj\Debug\WinFormsUI.csproj.GenerateResource.Cache
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\WinFormsUI\obj\Debug\WinFormsUI.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.pdb

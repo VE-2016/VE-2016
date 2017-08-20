@@ -1660,7 +1660,7 @@ namespace WinExplorer.UI
             // 
             // stringsToolStripMenuItem
             // 
-            this.stringsToolStripMenuItem.Image = global::WinExplorer.resource_alls._string;
+            this.stringsToolStripMenuItem.Image = global::WinExplorer.ve_resource.String_16x;
             this.stringsToolStripMenuItem.Name = "stringsToolStripMenuItem";
             this.stringsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
             this.stringsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
@@ -1669,7 +1669,7 @@ namespace WinExplorer.UI
             // 
             // imagesToolStripMenuItem
             // 
-            this.imagesToolStripMenuItem.Image = global::WinExplorer.resource_alls.icon;
+            this.imagesToolStripMenuItem.Image = global::WinExplorer.ve_resource.IconFile_16x;
             this.imagesToolStripMenuItem.Name = "imagesToolStripMenuItem";
             this.imagesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
             this.imagesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
@@ -1678,7 +1678,7 @@ namespace WinExplorer.UI
             // 
             // iconsToolStripMenuItem
             // 
-            this.iconsToolStripMenuItem.Image = global::WinExplorer.resource_alls.icon;
+            this.iconsToolStripMenuItem.Image = global::WinExplorer.ve_resource.IconFile_16x;
             this.iconsToolStripMenuItem.Name = "iconsToolStripMenuItem";
             this.iconsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D3)));
             this.iconsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
@@ -1687,7 +1687,7 @@ namespace WinExplorer.UI
             // 
             // audioToolStripMenuItem
             // 
-            this.audioToolStripMenuItem.Image = global::WinExplorer.resource_alls.audio;
+            this.audioToolStripMenuItem.Image = global::WinExplorer.ve_resource.Audio_16x;
             this.audioToolStripMenuItem.Name = "audioToolStripMenuItem";
             this.audioToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D4)));
             this.audioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
@@ -1696,7 +1696,7 @@ namespace WinExplorer.UI
             // 
             // filesToolStripMenuItem
             // 
-            this.filesToolStripMenuItem.Image = global::WinExplorer.resource_alls.files;
+            this.filesToolStripMenuItem.Image = global::WinExplorer.ve_resource.FolderOpen_16x;
             this.filesToolStripMenuItem.Name = "filesToolStripMenuItem";
             this.filesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D5)));
             this.filesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
@@ -1813,7 +1813,7 @@ namespace WinExplorer.UI
             this.viewInListToolStripMenuItem,
             this.viewDetailsToolStripMenuItem,
             this.viewAsThumbnailsToolStripMenuItem});
-            this.toolStripDropDownButton3.Image = global::WinExplorer.Resources.views;
+            this.toolStripDropDownButton3.Image = global::WinExplorer.ve_resource.View_16x;
             this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
             this.toolStripDropDownButton3.Size = new System.Drawing.Size(29, 22);

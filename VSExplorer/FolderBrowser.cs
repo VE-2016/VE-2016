@@ -126,7 +126,7 @@ namespace WinExplorer
         {
             ToolStripButton b = new ToolStripButton();
             b.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
-            b.Image = resource_vsc.harddrive;
+            b.Image = ve_resource.HardDrive_16x;
             b.Text = name;
             b.Click += new EventHandler(OnDriveSelect);
             b.Tag = name;
@@ -224,7 +224,7 @@ namespace WinExplorer
                     DestroyIcon(shinfo.hIcon);        // Cleanup
 
                     //lb.SmallImageList.Images.Add(".dir", bmp);
-                    lb.SmallImageList.Images.Add(".dir", resource_alls.Folder);
+                    lb.SmallImageList.Images.Add(".dir", ve_resource.FolderOpen_16x);
                 }
 
                 ListViewItem b = new ListViewItem();

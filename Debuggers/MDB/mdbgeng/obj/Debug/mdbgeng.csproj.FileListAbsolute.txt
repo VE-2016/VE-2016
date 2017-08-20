@@ -79,5 +79,6 @@ F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng\bin\Debug\NativeDebu
 F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng\bin\Debug\NativeDebugWrappers.xml
 F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng\bin\Debug\raw.pdb
 F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng\obj\Debug\mdbgeng.csprojResolveAssemblyReference.cache
+F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng\obj\Debug\mdbgeng.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng\obj\Debug\mdbgeng.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\mdbgeng\obj\Debug\mdbgeng.pdb

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="1296" />
+    <Description Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="1297" />
+    <Icon Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="9044" />
+    <TemplateID>Microsoft.VC.Graphics.Header</TemplateID>
+    <TemplateGroupID>WinRT-Common</TemplateGroupID>
+    <ProjectType>VC</ProjectType>
+    <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+    <DefaultName>Header.hlsli</DefaultName>
+    <ShowByDefault>false</ShowByDefault>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem>Header.hlsli</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

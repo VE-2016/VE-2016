@@ -1,0 +1,147 @@
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\WindowsFormsApp3.exe.config
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\WindowsFormsApp3.exe
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\WindowsFormsApp3.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\Esent.Interop.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\GACManagerApi.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\GACProject.exe
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\ICSharpCode.AvalonEdit.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\ICSharpCode.NRefactory.Cecil.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\ICSharpCode.NRefactory.CSharp.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\ICSharpCode.NRefactory.Xml.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\Microsoft.Build.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\Microsoft.Build.Engine.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\Microsoft.Build.Framework.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\Microsoft.Build.Tasks.Core.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\Microsoft.Build.Utilities.Core.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\Microsoft.Cci.MetadataHelper.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\Microsoft.Cci.MetadataModel.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\Microsoft.Cci.PeReader.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\Microsoft.CodeAnalysis.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\Microsoft.CodeAnalysis.Workspaces.Desktop.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\Newtonsoft.Json.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.Collections.Immutable.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.Composition.AttributedModel.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.Composition.Convention.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.Composition.Hosting.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.Composition.Runtime.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.Composition.TypedParts.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.IO.Compression.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.IO.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.IO.FileSystem.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.Reflection.Metadata.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.Text.Encoding.CodePages.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.Threading.Thread.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.ValueTuple.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.Xml.ReaderWriter.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.Xml.XmlDocument.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.Xml.XPath.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.Xml.XPath.XDocument.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\VE-Resources.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\System.Threading.Tasks.Dataflow.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\ICSharpCode.AvalonEdit.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\ICSharpCode.AvalonEdit.xml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\GACManagerApi.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\GACProject.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\GACProject.exe.config
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\Microsoft.Cci.MetadataHelper.xml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\Microsoft.Cci.MetadataModel.xml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\Microsoft.Cci.PeReader.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\Microsoft.Cci.PeReader.xml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\VE-Resources.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\bin\Debug\VE-Resources.dll.config
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\obj\Debug\VSProvider.csprojResolveAssemblyReference.cache
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\obj\Debug\VSProvider.csproj.WindowsFormsApp3.exe.config
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Properties.Resources.resources
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\obj\Debug\VSProvider.csproj.GenerateResource.Cache
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.exe
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\WindowsFormsApp3.exe.config
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\WindowsFormsApp3.exe
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\WindowsFormsApp3.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\Esent.Interop.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\GACManagerApi.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\GACProject.exe
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\ICSharpCode.AvalonEdit.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\ICSharpCode.NRefactory.Cecil.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\ICSharpCode.NRefactory.CSharp.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\ICSharpCode.NRefactory.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\ICSharpCode.NRefactory.Xml.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\Microsoft.Build.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\Microsoft.Build.Engine.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\Microsoft.Build.Framework.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\Microsoft.Build.Tasks.Core.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\Microsoft.Build.Utilities.Core.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\Microsoft.Cci.MetadataHelper.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\Microsoft.Cci.MetadataModel.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\Microsoft.Cci.PeReader.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\Microsoft.CodeAnalysis.CSharp.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\Microsoft.CodeAnalysis.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\Microsoft.CodeAnalysis.Workspaces.Desktop.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\Microsoft.CodeAnalysis.Workspaces.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\Newtonsoft.Json.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Collections.Immutable.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Composition.AttributedModel.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Composition.Convention.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Composition.Hosting.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Composition.Runtime.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Composition.TypedParts.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.IO.Compression.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.IO.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.IO.FileSystem.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.IO.FileSystem.Primitives.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Reflection.Metadata.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Text.Encoding.CodePages.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Threading.Thread.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.ValueTuple.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Xml.ReaderWriter.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Xml.XmlDocument.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Xml.XPath.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Xml.XPath.XDocument.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\VE-Resources.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\System.Threading.Tasks.Dataflow.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\SQLitePCLRaw.core.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\ICSharpCode.AvalonEdit.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\ICSharpCode.AvalonEdit.xml
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\GACManagerApi.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\GACProject.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\GACProject.exe.config
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\Microsoft.Cci.MetadataHelper.xml
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\Microsoft.Cci.MetadataModel.xml
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\Microsoft.Cci.PeReader.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\Microsoft.Cci.PeReader.xml
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\VE-Resources.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\bin\Debug\VE-Resources.dll.config
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\obj\Debug\VSProvider.csprojResolveAssemblyReference.cache
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\obj\Debug\VSProvider.csproj.WindowsFormsApp3.exe.config
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\obj\Debug\WindowsFormsApp3.Properties.Resources.resources
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\obj\Debug\VSProvider.csproj.GenerateResource.Cache
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\obj\Debug\VSProvider.csproj.CoreCompileInputs.cache
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\obj\Debug\WindowsFormsApp3.exe
+F:\Windows-Enterprise-VE-2016\VE-2016\VSParser\obj\Debug\WindowsFormsApp3.pdb

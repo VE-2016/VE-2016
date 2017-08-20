@@ -1,0 +1,65 @@
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\ICSharpCode.AvalonEdit\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit_MarkupCompile.cache
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit_MarkupCompile.lref
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.csprojResolveAssemblyReference.cache
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\ICSharpCode.AvalonEdit\bin\Debug\ICSharpCode.AvalonEdit.xml
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\ICSharpCode.AvalonEdit\bin\Debug\ICSharpCode.AvalonEdit.dll
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\ICSharpCode.AvalonEdit\bin\Debug\ICSharpCode.AvalonEdit.pdb
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\ICSharpCode.AvalonEdit\obj\Debug\CodeCompletion\CompletionList.baml
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\ICSharpCode.AvalonEdit\obj\Debug\CodeCompletion\InsightWindow.baml
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\ICSharpCode.AvalonEdit\obj\Debug\Search\SearchPanel.baml
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\ICSharpCode.AvalonEdit\obj\Debug\Search\DropDownButton.baml
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\ICSharpCode.AvalonEdit\obj\Debug\TextEditor.baml
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\ICSharpCode.AvalonEdit\obj\Debug\themes\generic.baml
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.g.resources
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.dll
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\ICSharpCode.AvalonEdit\bin\Debug\ICSharpCode.AvalonEdit.xml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\ICSharpCode.AvalonEdit\bin\Debug\ICSharpCode.AvalonEdit.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\ICSharpCode.AvalonEdit\bin\Debug\ICSharpCode.AvalonEdit.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\ICSharpCode.AvalonEdit\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit_MarkupCompile.cache
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit_MarkupCompile.lref
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\ICSharpCode.AvalonEdit\obj\Debug\CodeCompletion\CompletionList.baml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\ICSharpCode.AvalonEdit\obj\Debug\CodeCompletion\InsightWindow.baml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\ICSharpCode.AvalonEdit\obj\Debug\Search\SearchPanel.baml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\ICSharpCode.AvalonEdit\obj\Debug\Search\DropDownButton.baml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\ICSharpCode.AvalonEdit\obj\Debug\TextEditor.baml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\ICSharpCode.AvalonEdit\obj\Debug\themes\generic.baml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.g.resources
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\ICSharpCode.AvalonEdit\bin\Debug\ICSharpCode.AvalonEdit.xml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\ICSharpCode.AvalonEdit\bin\Debug\ICSharpCode.AvalonEdit.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\ICSharpCode.AvalonEdit\bin\Debug\ICSharpCode.AvalonEdit.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\ICSharpCode.AvalonEdit\obj\Debug\CodeCompletion\CompletionList.g.cs
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\ICSharpCode.AvalonEdit\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit_MarkupCompile.cache
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit_MarkupCompile.lref
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\ICSharpCode.AvalonEdit\obj\Debug\CodeCompletion\CompletionList.baml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\ICSharpCode.AvalonEdit\obj\Debug\CodeCompletion\InsightWindow.baml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\ICSharpCode.AvalonEdit\obj\Debug\Search\SearchPanel.baml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\ICSharpCode.AvalonEdit\obj\Debug\Search\DropDownButton.baml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\ICSharpCode.AvalonEdit\obj\Debug\TextEditor.baml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\ICSharpCode.AvalonEdit\obj\Debug\themes\generic.baml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.g.resources
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\ICSharpCode.AvalonEdit\bin\Debug\ICSharpCode.AvalonEdit.xml
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\ICSharpCode.AvalonEdit\bin\Debug\ICSharpCode.AvalonEdit.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\ICSharpCode.AvalonEdit\bin\Debug\ICSharpCode.AvalonEdit.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\CodeCompletion\CompletionList.g.cs
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit_MarkupCompile.cache
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit_MarkupCompile.lref
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\CodeCompletion\CompletionList.baml
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\CodeCompletion\InsightWindow.baml
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\Search\SearchPanel.baml
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\Search\DropDownButton.baml
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\TextEditor.baml
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\themes\generic.baml
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.g.resources
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.csprojResolveAssemblyReference.cache
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.csproj.CoreCompileInputs.cache

@@ -9,7 +9,7 @@ namespace WinExplorer
             InitializeComponent();
             pb = pictureBox1;
             pb.SizeMode = PictureBoxSizeMode.StretchImage;
-            pb.Image = Resources.logo2;
+            pb.Image = ve_resource.WindowsLogo_16x;
         }
 
         private PictureBox pb { get; set; }

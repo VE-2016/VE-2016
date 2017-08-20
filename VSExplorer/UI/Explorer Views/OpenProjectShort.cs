@@ -29,7 +29,7 @@ namespace WinExplorer.UI
 
 
             button.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.Image = Resources.Cloud_256x;
+            pictureBox1.Image = ve_resource.Cloud_256x;
            
             this.AutoScroll = false;
             this.VScroll = false;

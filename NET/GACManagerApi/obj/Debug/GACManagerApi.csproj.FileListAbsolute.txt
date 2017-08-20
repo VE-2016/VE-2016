@@ -56,8 +56,22 @@ C:\Users\me\VE-2016\NET\GACManagerApi\bin\Debug\GACManagerApi.pdb
 C:\Users\me\VE-2016\NET\GACManagerApi\obj\Debug\GACManagerApi.csprojResolveAssemblyReference.cache
 C:\Users\me\VE-2016\NET\GACManagerApi\obj\Debug\GACManagerApi.dll
 C:\Users\me\VE-2016\NET\GACManagerApi\obj\Debug\GACManagerApi.pdb
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\GACManagerApi\bin\Debug\GACManagerApi.dll
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\GACManagerApi\bin\Debug\GACManagerApi.pdb
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\GACManagerApi\obj\Debug\GACManagerApi.dll
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\GACManagerApi\obj\Debug\GACManagerApi.pdb
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\GACManagerApi\obj\Debug\GACManagerApi.csprojResolveAssemblyReference.cache
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\GACManagerApi\bin\Debug\GACManagerApi.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\GACManagerApi\bin\Debug\GACManagerApi.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\GACManagerApi\obj\Debug\GACManagerApi.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\GACManagerApi\obj\Debug\GACManagerApi.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\GACManagerApi\bin\Debug\GACManagerApi.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\GACManagerApi\bin\Debug\GACManagerApi.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\GACManagerApi\obj\Debug\GACManagerApi.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\GACManagerApi\obj\Debug\GACManagerApi.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\GACManagerApi\obj\Debug\GACManagerApi.csprojResolveAssemblyReference.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACManagerApi\bin\Debug\GACManagerApi.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACManagerApi\bin\Debug\GACManagerApi.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACManagerApi\obj\Debug\GACManagerApi.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACManagerApi\obj\Debug\GACManagerApi.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACManagerApi\obj\Debug\GACManagerApi.pdb
-F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACManagerApi\obj\Debug\GACManagerApi.csprojResolveAssemblyReference.cache

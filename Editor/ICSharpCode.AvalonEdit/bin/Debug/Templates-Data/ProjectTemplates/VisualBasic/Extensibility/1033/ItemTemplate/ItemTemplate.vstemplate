@@ -1,0 +1,28 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name _locID="$templateName$">Visual Basic Item Template</Name>
+    <Description _locID="$templateDescription$">A project for building and packaging a Visual Basic Item Template.</Description>
+    <ProjectType>VisualBasic</ProjectType>
+    <TemplateID>{094C8CBF-2B11-4D9A-AFD4-6BFBBF27FB63}</TemplateID>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>ItemTemplate</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>ItemTemplate.ico</Icon>
+    <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="ItemTemplate.vbproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="My Project\AssemblyInfo.vb">AssemblyInfo.vb</ProjectItem>
+      <ProjectItem TargetFileName="Class.vb">TemplateContent_Class.vb</ProjectItem>
+      <ProjectItem TargetFileName="$zipprojectname$.vstemplate" ReplaceParameters="true" OpenInEditor="true">TemplateContent_Class.vstemplateX</ProjectItem>
+      <ProjectItem TargetFileName="$zipprojectname$.ico">TemplateContent_ItemTemplate.ico</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VSSDK.TemplateWizard, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VSSDK.TemplateWizard.TemplateTemplateWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

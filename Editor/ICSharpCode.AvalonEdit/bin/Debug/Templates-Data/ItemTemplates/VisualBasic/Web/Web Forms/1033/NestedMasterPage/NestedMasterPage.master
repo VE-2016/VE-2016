@@ -1,0 +1,2 @@
+﻿<%@ Master Language="VB" MasterPageFile="$MasterPage$" AutoEventWireup="false" CodeBehind="$fileinputname$.master.vb" Inherits="$rootnamespace$.$classname$" %>
+$ContentTags$

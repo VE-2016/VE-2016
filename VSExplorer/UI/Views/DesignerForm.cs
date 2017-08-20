@@ -134,7 +134,7 @@ namespace WinExplorer.UI.Views
             models = new ArrayList();
 
             imageBox1.Image = new Bitmap(6000, 6000);
-            using (TextureBrush brush = new TextureBrush(Resources.designer, WrapMode.Tile))
+            using (TextureBrush brush = new TextureBrush(ve_resource.designer, WrapMode.Tile))
             {
                 using (Graphics g = Graphics.FromImage(imageBox1.Image))
                 {
@@ -143,8 +143,8 @@ namespace WinExplorer.UI.Views
             }
 
             img = new ImageList();
-            img.Images.Add("TableAdapter_16x", Resources.TableAdapter_16x);
-            img.Images.Add("DataTable_256x", Resources.DataTable_256x);
+            img.Images.Add("TableAdapter_16x", ve_resource.TableAdapter_16x);
+            img.Images.Add("DataTable_256x", ve_resource.DataTable_256x);
 
             v = new ViewList();
             v.GridLines = true;

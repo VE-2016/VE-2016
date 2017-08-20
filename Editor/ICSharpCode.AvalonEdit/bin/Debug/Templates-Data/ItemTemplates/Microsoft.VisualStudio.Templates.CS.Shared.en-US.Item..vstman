@@ -1,0 +1,50 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\Code\1033\Class</RelativePathOnDisk>
+    <TemplateFileName>Class.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2245" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2262" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4515" />
+        <TemplateID>Microsoft.CSharp.Class</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>90</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>Class.cs</DefaultName>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\Code\1033\CodeFile</RelativePathOnDisk>
+    <TemplateFileName>CodeFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2261" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2267" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4516" />
+        <TemplateID>Microsoft.CSharp.CodeFile</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>CodeFile.cs</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\Code\1033\Interface</RelativePathOnDisk>
+    <TemplateFileName>Interface.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2413" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2414" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4586" />
+        <TemplateID>Microsoft.CSharp.Interface</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>92</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>Interface.cs</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

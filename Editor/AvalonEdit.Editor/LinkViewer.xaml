@@ -1,0 +1,23 @@
+﻿<Window x:Class="AvalonEdit.Editor.LinkViewer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cc="clr-namespace:AvalonEdit.Editor"
+    Title="Window1" Height="300" Width="300">
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type cc:LinkItem}">
+            <TextBlock>
+        <TextBlock Text="{Binding Text}" Margin="1" />
+        <Hyperlink>
+            <TextBlock Text="{Binding Hyperlink}" Margin="1" />
+        </Hyperlink>
+    </TextBlock>
+        </DataTemplate>
+    </Window.Resources>
+    
+    <Grid>
+       
+        <ListBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding LinkItems}" x:Name="itemsListBox" />
+    </Grid>
+</Window>
+    

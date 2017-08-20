@@ -227,7 +227,7 @@ namespace WinExplorer
             //}
             //else
             //{
-            //    bm = Resources.Refresh_16x;
+            //    bm = ve_resource.Refresh_16x;
             //    Icon ic = Icon.FromHandle(bm.GetHicon());
             //    return ic;
 

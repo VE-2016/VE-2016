@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{BE73B665-4B85-4690-BB3F-9DBE91254BCC}" ID="516" />
+    <Description Package="{BE73B665-4B85-4690-BB3F-9DBE91254BCC}" ID="517" />
+    <Icon Package="{BE73B665-4B85-4690-BB3F-9DBE91254BCC}" ID="503" />
+    <ProjectType>CloudServiceProject</ProjectType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>Diagnostics.wadcfgx</DefaultName>
+    <Hidden>true</Hidden>
+  </TemplateData>
+  <TemplateContent>
+    
+    <ProjectItem OpenInEditor="false">Diagnostics.wadcfgx</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

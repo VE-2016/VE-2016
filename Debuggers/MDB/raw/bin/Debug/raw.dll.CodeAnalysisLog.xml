@@ -6,7 +6,7 @@
    <Modules>
     <Module Name="raw.dll">
      <Messages>
-      <Message TypeName="MarkAssembliesWithAssemblyVersion" Category="Microsoft.Design" CheckId="CA1016" Status="Active" Created="2017-05-24 20:03:58Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkAssembliesWithAssemblyVersion" Category="Microsoft.Design" CheckId="CA1016" Status="Active" Created="2017-08-20 20:34:39Z" FixCategory="NonBreaking">
        <Issue Certainty="95" Level="Error">Add an AssemblyVersion attribute to 'raw.dll'.</Issue>
       </Message>
      </Messages>
@@ -17,14 +17,14 @@
          <Members>
           <Member Name="#hProcess" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:58Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-08-20 20:34:39Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'PROCESS_INFORMATION.hProcess' private.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#hThread" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-05-24 20:03:58Z" FixCategory="Breaking">
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2017-08-20 20:34:39Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="CriticalError">Make 'PROCESS_INFORMATION.hThread' private.</Issue>
             </Message>
            </Messages>

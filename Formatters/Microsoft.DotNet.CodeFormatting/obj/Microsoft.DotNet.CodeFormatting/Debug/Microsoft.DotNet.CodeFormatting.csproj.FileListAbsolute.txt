@@ -108,12 +108,6 @@ F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting
 F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\bin\Microsoft.DotNet.CodeFormatting\Debug\System.Composition.Hosting.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\bin\Microsoft.DotNet.CodeFormatting\Debug\System.Composition.Runtime.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\bin\Microsoft.DotNet.CodeFormatting\Debug\System.Composition.TypedParts.dll
-F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\bin\Microsoft.DotNet.CodeFormatting\Debug\Microsoft.Build.dll
-F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\bin\Microsoft.DotNet.CodeFormatting\Debug\Microsoft.Build.Framework.dll
-F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\bin\Microsoft.DotNet.CodeFormatting\Debug\Microsoft.Build.Tasks.Core.dll
-F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\bin\Microsoft.DotNet.CodeFormatting\Debug\System.Threading.Tasks.Dataflow.dll
-F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\bin\Microsoft.DotNet.CodeFormatting\Debug\Microsoft.Build.Engine.dll
-F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\bin\Microsoft.DotNet.CodeFormatting\Debug\Microsoft.Build.Utilities.Core.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\bin\Microsoft.DotNet.CodeFormatting\Debug\Microsoft.CodeAnalysis.xml
 F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\bin\Microsoft.DotNet.CodeFormatting\Debug\Microsoft.CodeAnalysis.CSharp.xml
 F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\bin\Microsoft.DotNet.CodeFormatting\Debug\Microsoft.CodeAnalysis.VisualBasic.xml
@@ -125,6 +119,6 @@ F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting
 F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\bin\Microsoft.DotNet.CodeFormatting\Debug\System.Composition.Hosting.xml
 F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\bin\Microsoft.DotNet.CodeFormatting\Debug\System.Composition.Runtime.xml
 F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\bin\Microsoft.DotNet.CodeFormatting\Debug\System.Composition.TypedParts.xml
+F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\obj\Microsoft.DotNet.CodeFormatting\Debug\Microsoft.DotNet.CodeFormatting.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\obj\Microsoft.DotNet.CodeFormatting\Debug\Microsoft.DotNet.CodeFormatting.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\obj\Microsoft.DotNet.CodeFormatting\Debug\Microsoft.DotNet.CodeFormatting.pdb
-F:\Windows-Enterprise-VE-2016\VE-2016\Formatters\Microsoft.DotNet.CodeFormatting\obj\Microsoft.DotNet.CodeFormatting\Debug\Microsoft.DotNet.CodeFormatting.csprojResolveAssemblyReference.cache

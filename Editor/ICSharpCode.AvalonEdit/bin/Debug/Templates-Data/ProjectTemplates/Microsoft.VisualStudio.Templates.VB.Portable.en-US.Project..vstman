@@ -1,0 +1,21 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\1033\PortableClassLibrary</RelativePathOnDisk>
+    <TemplateFileName>vbPortableClassLibrary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="2000" />
+        <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="2001" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4500" />
+        <TemplateID>Microsoft.Portable.VisualBasic.ClassLibrary.Windows</TemplateID>
+        <ProjectType>VisualBasic</ProjectType>
+        <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+        <SortOrder>30</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>ClassLibrary</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <CreateInPlace>true</CreateInPlace>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

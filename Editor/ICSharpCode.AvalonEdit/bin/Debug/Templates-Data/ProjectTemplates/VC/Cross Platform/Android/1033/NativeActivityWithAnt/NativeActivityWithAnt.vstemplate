@@ -1,0 +1,31 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
+  <TemplateData>
+    <Name>Native-Activity Application (Android)</Name>
+    <Description>A project for creating a Native-Activity Application.</Description>
+    <ProjectType>VC</ProjectType>
+    <TemplateID>Microsoft.MDD.VC.Android.NativeActivity</TemplateID>
+    <SortOrder>46</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <CreateInPlace>true</CreateInPlace>
+    <DefaultName>Android</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+    <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+    <Icon>CPPPhone.ico</Icon>
+  </TemplateData>
+  <TemplateContent PreferedSolutionConfiguration="Debug|x86">
+  <!-- Note: guid1 and guid2 are used for Packaging and NativeActivity respectively. -->
+    <ProjectCollection>
+      <SolutionFolder Name="$projectname$">
+        <ProjectTemplateLink ProjectName="$projectname$.Packaging" CopyParameters="true">
+          Packaging\Packaging.vstemplate
+        </ProjectTemplateLink>
+        <ProjectTemplateLink ProjectName="$projectname$.NativeActivity" CopyParameters="true">
+          NativeActivity\NativeActivity.vstemplate
+        </ProjectTemplateLink>
+      </SolutionFolder>
+    </ProjectCollection>
+  </TemplateContent>
+</VSTemplate>

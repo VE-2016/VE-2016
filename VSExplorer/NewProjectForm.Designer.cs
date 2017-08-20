@@ -106,7 +106,7 @@ namespace WinExplorer
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::WinExplorer.Resources.IconView_16x;
+            this.pictureBox2.Image = global::WinExplorer.ve_resource.IconView_16x;
             this.pictureBox2.Location = new System.Drawing.Point(486, 6);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 23);
@@ -116,7 +116,7 @@ namespace WinExplorer
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::WinExplorer.Resources.IconView_16x;
+            this.pictureBox1.Image = global::WinExplorer.ve_resource.IconView_16x;
             this.pictureBox1.Location = new System.Drawing.Point(455, 6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 23);

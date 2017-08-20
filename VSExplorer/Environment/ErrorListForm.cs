@@ -38,7 +38,15 @@ namespace WinExplorer
             CodeEditorControl.IntErrors.ContentChanged += IntError_ContentChanged;
             toolStripComboBox1.SelectedIndex = 0;
             toolStripComboBox2.SelectedIndex = 0;
+            VSSolution.Errors += VSSolution_Errors;
             ResumeLayout();
+        }
+
+        private void VSSolution_Errors(object sender, OpenFileEventArgs e)
+        {
+            //MessageBox.Show("Errors found - " + e.Errors.Count);
+
+            LoadIntellisenseResults(e.Errors);
         }
 
         private Dictionary<int, Diagnostic> hc { get; set; }
@@ -213,7 +221,7 @@ namespace WinExplorer
 
             dg.Columns.Add("Show Details", "");
             DataGridViewImageColumn img = new DataGridViewImageColumn();
-            Image image = Resources.Errors;
+            Image image = ve_resource.Breakall_6323;
             img.Image = image;
             dg.Columns.Add(img);
             dg.Columns.Add("Code", "Code");
@@ -396,7 +404,7 @@ namespace WinExplorer
 
             if (b.SelectedIndex == 0 || b.SelectedIndex == 2)
             {
-                LoadIntellisenseResults(hc);
+               // LoadIntellisenseResults(hc);
             }
             if (b.SelectedIndex == 0 || b.SelectedIndex == 1)
             {
@@ -515,7 +523,7 @@ namespace WinExplorer
 
         private Dictionary<int, DataGridViewRow> hcd = new Dictionary<int, DataGridViewRow>();
 
-        public void LoadIntellisenseResults(Dictionary<int, Diagnostic> hc = null)
+        public void LoadIntellisenseResults(List<Diagnostic> hc)
         {
             lock (s_obs)
             {
@@ -539,67 +547,69 @@ namespace WinExplorer
                 vs = ef.GetVSSolution();
 
                 VSProject vp = null;
-                if (vs != null)
-                    vp = vs.MainVSProject;
+                //if (vs != null)
+                //    vp = vs.MainVSProject;
 
-                dg.SuspendLayout();
+                //dg.SuspendLayout();
 
-                LI = new ArrayList();
+                //LI = new ArrayList();
 
-                if (vp != null)
-                    if (i == 2)
-                    {
-                        foreach (IntErrors e in DD)
-                        {
-                            if (vp != null)
-                                if (e.vp != vp)
-                                    continue;
+                //if (vp != null)
+                //    if (i == 2)
+                //    {
+                //        foreach (IntErrors e in DD)
+                //        {
+                //            if (vp != null)
+                //                if (e.vp != vp)
+                //                    continue;
 
-                            int rowId = dg.Rows.Add();
-                            DataGridViewRow row = dg.Rows[rowId];
+                //            int rowId = dg.Rows.Add();
+                //            DataGridViewRow row = dg.Rows[rowId];
 
-                            row.Cells[0].Value = "";
-                            row.Cells[1].Value = Resources.Errors;
-                            row.Cells[2].Value = "e.Code";
-                            row.Cells[3].Value = e.e.Message;
-                            row.Cells[4].Value = Path.GetFileNameWithoutExtension(e.vp.FileName);
-                            row.Cells[5].Value = Path.GetFileName(e.file);
-                            row.Cells[6].Value = e.e.Region.BeginLine.ToString();
-                            row.Cells[7].Value = "project";
+                //            row.Cells[0].Value = "";
+                //            row.Cells[1].Value = ve_resource.Breakall_6323;
+                //            row.Cells[2].Value = "e.Code";
+                //            row.Cells[3].Value = e.e.Message;
+                //            row.Cells[4].Value = Path.GetFileNameWithoutExtension(e.vp.FileName);
+                //            row.Cells[5].Value = Path.GetFileName(e.file);
+                //            row.Cells[6].Value = e.e.Region.BeginLine.ToString();
+                //            row.Cells[7].Value = "project";
 
-                            string message = e.e.Message;
+                //            string message = e.e.Message;
 
-                            //if (message.StartsWith("UnknownIdentifier") == true)
-                            //    MessageBox.Show("Unknown identifier");
+                //            //if (message.StartsWith("UnknownIdentifier") == true)
+                //            //    MessageBox.Show("Unknown identifier");
 
-                            //v.Checked = true;
+                //            //v.Checked = true;
 
-                            row.Tag = e;
+                //            row.Tag = e;
 
-                            //lv.Items.Add(v);
-                        }
-                        dg.ResumeLayout();
-                        return;
-                    }
+                //            //lv.Items.Add(v);
+                //        }
+                //        dg.ResumeLayout();
+                //        return;
+                //    }
 
-                if (i == 3 || i == 0)
+                //if (i == 3 || i == 0)
                 {
                     if (hc != null)
                     {
                     }
                     AIMS.Libraries.Scripting.ScriptControl.Document d = scr.GetActiveDocument();
 
-                    filename = d.FileName;
+                    //filename = d.FileName;
 
-                    foreach (/*IntErrors e in DD*/ int hs in hc.Keys)
+                    foreach (/*IntErrors e in DD*/ Diagnostic hs in hc)
                     {
                         //if (filename != "")
                         //    if (e.file != filename)
                         //        continue;
 
-                        Diagnostic dc = hc[hs];
+                        Diagnostic dc = hs;// hc[hs];
 
-                        if (hcd.ContainsKey(hs))
+                        int hash = dc.GetHashCode();
+
+                        if (hcd.ContainsKey(hash))
                             continue;
 
                         int line = 0;
@@ -622,17 +632,17 @@ namespace WinExplorer
                         row.Cells[0].Value = dc.Descriptor.Category;
                         if (dc.Severity.ToString() == "Error")
                         {
-                            row.Cells[1].Value = new Bitmap(Resources.Errors, 15, 15);
+                            row.Cells[1].Value = new Bitmap(ve_resource.Breakall_6323, 15, 15);
                             Ep.Add(row);
                         }
                         else if (dc.Severity.ToString() == "Warning")
                         {
-                            row.Cells[1].Value = new Bitmap(Resources.StatusWarning_16x, 15, 15);
+                            row.Cells[1].Value = new Bitmap(ve_resource.StatusWarning_16x, 15, 15);
                             Wp.Add(row);
                         }
                         else
                         {
-                            row.Cells[1].Value = new Bitmap(Resources.StatusHelp_256x, 15, 15);
+                            row.Cells[1].Value = new Bitmap(ve_resource.StatusHelp_256x, 15, 15);
                             Mp.Add(row);
                         }
 
@@ -650,7 +660,7 @@ namespace WinExplorer
                         row.Cells[7].Value = "project";
 
                         //row.Cells[0].Value = "";
-                        //row.Cells[1].Value = Resources.Errors;
+                        //row.Cells[1].Value = ve_resource.Errors;
                         //row.Cells[2].Value = "e.Code";
                         //row.Cells[3].Value = e.e.Message;
                         //row.Cells[4].Value = Path.GetFileNameWithoutExtension(e.vp.FileName);
@@ -675,14 +685,14 @@ namespace WinExplorer
                         dg.Rows.Remove(row);
                         dg.Rows.Insert(0, row);
 
-                        hcd.Add(hs, row);
+                        hcd.Add(hash, row);
 
                         //lv.Items.Add(v);
                     }
 
                     dg.ResumeLayout();
 
-                    ef.scr.FocusActiveDocument();
+                    //ef.scr.FocusActiveDocument();
                     return;
                 }
 
@@ -707,7 +717,7 @@ namespace WinExplorer
                     row.InheritedStyle.BackColor = Color.FromKnownColor(KnownColor.Control);
 
                     row.Cells[0].Value = "";
-                    row.Cells[1].Value = Resources.Errors;
+                    row.Cells[1].Value = ve_resource.Errors;
                     row.Cells[2].Value = "e.Code";
                     row.Cells[3].Value = e.e.Message;
                     row.Cells[4].Value = Path.GetFileNameWithoutExtension(e.vp.FileName);
@@ -863,7 +873,7 @@ namespace WinExplorer
                     DataGridViewRow row = dg.Rows[rowId];
 
                     row.Cells[0].Value = "";
-                    row.Cells[1].Value = Resources.Errors;
+                    row.Cells[1].Value = ve_resource.Breakall_6323;
                     row.Cells[2].Value = e.Code;
                     row.Cells[3].Value = e.Message;
                     row.Cells[4].Value = Path.GetFileNameWithoutExtension(e.ProjectFile);
@@ -887,7 +897,7 @@ namespace WinExplorer
 
                     //ListViewItem v = new ListViewItem();
                     row.Cells[0].Value = "";
-                    row.Cells[1].Value = Resources.warnings;
+                    row.Cells[1].Value = ve_resource.Breakall_6323;
                     row.Cells[2].Value = e.Code;
                     row.Cells[3].Value = e.Message;
                     row.Cells[4].Value = Path.GetFileNameWithoutExtension(e.ProjectFile);
@@ -947,7 +957,7 @@ namespace WinExplorer
                     DataGridViewRow row = dg.Rows[rowId];
 
                     row.Cells[0].Value = "";
-                    row.Cells[1].Value = Resources.Errors;
+                    row.Cells[1].Value = ve_resource.Breakall_6323;
                     row.Cells[2].Value = e.Code;
                     row.Cells[3].Value = e.Message;
                     row.Cells[4].Value = Path.GetFileNameWithoutExtension(e.ProjectFile);
@@ -971,7 +981,7 @@ namespace WinExplorer
 
                     //ListViewItem v = new ListViewItem();
                     row.Cells[0].Value = "";
-                    row.Cells[1].Value = Resources.warnings;
+                    row.Cells[1].Value = ve_resource.Breakall_6323;
                     row.Cells[2].Value = e.Code;
                     row.Cells[3].Value = e.Message;
                     row.Cells[4].Value = Path.GetFileNameWithoutExtension(e.ProjectFile);
@@ -1109,13 +1119,13 @@ namespace WinExplorer
                 e.DrawBackground();
                 if (e.Item.Tag.GetType() == typeof(Microsoft.Build.Framework.BuildErrorEventArgs))
                 {
-                    e.Graphics.DrawImage(Resources.Error_6206, e.SubItem.Bounds.Location);
-                    e.Graphics.DrawString(e.SubItem.Text, e.SubItem.Font, new SolidBrush(e.SubItem.ForeColor), (e.SubItem.Bounds.Location.X + Resources.Error_6206.Width), e.SubItem.Bounds.Location.Y);
+                    e.Graphics.DrawImage(ve_resource.Breakall_6323, e.SubItem.Bounds.Location);
+                    e.Graphics.DrawString(e.SubItem.Text, e.SubItem.Font, new SolidBrush(e.SubItem.ForeColor), (e.SubItem.Bounds.Location.X + ve_resource.Breakall_6323.Width), e.SubItem.Bounds.Location.Y);
                 }
                 else
                 {
-                    e.Graphics.DrawImage(Resources.ViewWarning_8934_24, e.SubItem.Bounds.Location);
-                    e.Graphics.DrawString(e.SubItem.Text, e.SubItem.Font, new SolidBrush(e.SubItem.ForeColor), (e.SubItem.Bounds.Location.X + Resources.ViewWarning_8934_24.Width), e.SubItem.Bounds.Location.Y);
+                    e.Graphics.DrawImage(ve_resource.View_16x, e.SubItem.Bounds.Location);
+                    e.Graphics.DrawString(e.SubItem.Text, e.SubItem.Font, new SolidBrush(e.SubItem.ForeColor), (e.SubItem.Bounds.Location.X + ve_resource.Breakall_6323.Width), e.SubItem.Bounds.Location.Y);
                 }
             }
             else

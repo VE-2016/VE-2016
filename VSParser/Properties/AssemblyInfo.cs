@@ -1,15 +1,16 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Onion.SolutionParser.Parser")]
-[assembly: AssemblyDescription("An elegant parser for Visual Studio solution files")]
+[assembly: AssemblyTitle("WindowsFormsApp3")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Open Systems Technologies")]
-[assembly: AssemblyProduct("Onion.SolutionParser.Parser")]
-[assembly: AssemblyCopyright("Copyright \u00A9  2013")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("WindowsFormsApp3")]
+[assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -19,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("14e07209-277c-4a9e-952a-0efc8d0d54fa")]
+[assembly: Guid("161dc477-53af-433a-9f3b-6e43de47bbdd")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -20,8 +20,10 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using utils;
+using VSParsers;
 using VSProvider;
 using WeifenLuo.WinFormsUI.Docking;
 using WinExplorer.Environment;
@@ -450,12 +452,34 @@ namespace WinExplorer
                     CodeEditorControl.AutoListImages = imgs;
                 }
 
-                this.Invoke(new Action(() =>
+
+                AvalonDelegate w = Avalon;
+                IAsyncResult r = w.BeginInvoke(file, null, null);
+
+                this.BeginInvoke(new Action(() =>
                 {
-                    _eo.LoadFile(file, pp);
+                    //_eo.LoadFile(file, pp);
+                    scr.BeginInvoke(new Action(() =>
+                    {
+        //                scr.OpenDocuments(file, null);
+                    }));
                 }));
             }
         }
+
+        public void Avalon(string file)
+        {
+            this.BeginInvoke(new Action(() =>
+            {
+                //_eo.LoadFile(file, pp);
+                scr.BeginInvoke(new Action(() =>
+                {
+                    scr.OpenDocuments(file, null);
+                }));
+            }));
+        }
+
+        
 
         public bool running = false;
 
@@ -1473,19 +1497,18 @@ namespace WinExplorer
                 nav = new Navigator(treeView1);
 
                 ses = new ToolStrip();
-
                 ses.GripStyle = ToolStripGripStyle.Hidden;
 
                 sesb = new ToolStripButton();
                 sesb.DisplayStyle = ToolStripItemDisplayStyle.Image;
-                sesb.Image = resource_alls.NavigateBackwards_62701;
+                sesb.Image = ve_resource.Backward_256x;
                 sesb.ToolTipText = "Backward";
                 sesb.Click += Sest_Click;
                 ses.Items.Add(sesb);
 
                 sesf = new ToolStripButton();
                 sesf.DisplayStyle = ToolStripItemDisplayStyle.Image;
-                sesf.Image = resource_alls.NavigateForward_62711;
+                sesf.Image = ve_resource.Forward_256x;
                 sesf.ToolTipText = "Forward";
                 sesf.Click += Sesf_Click;
                 ses.Items.Add(sesf);
@@ -1496,20 +1519,20 @@ namespace WinExplorer
 
                 sest = new ToolStripButton();
                 sest.DisplayStyle = ToolStripItemDisplayStyle.Image;
-                sest.Image = resource_alls.synchronize;
+                sest.Image = ve_resource.Synchronize_16x;
                 sest.Click += Sest_Click;
                 ses.Items.Add(sest);
 
                 sesc = new ToolStripButton();
                 sesc.DisplayStyle = ToolStripItemDisplayStyle.Image;
-                sesc.Image = resource_alls.collapse;
+                sesc.Image = ve_resource.VSO_CollapseBoard_16x;
                 sesc.ToolTipText = "Collapse";
                 sesc.Click += Sesc_Click;
                 ses.Items.Add(sesc);
 
                 sesa = new ToolStripButton();
                 sesa.DisplayStyle = ToolStripItemDisplayStyle.Image;
-                sesa.Image = resource_alls.showall;
+                sesa.Image = ve_resource.ShowAllCode_16x;
                 sesa.ToolTipText = "Show All";
                 sesa.Click += Sesa_Click;
                 ses.Items.Add(sesa);
@@ -2420,6 +2443,8 @@ namespace WinExplorer
             }
         }
 
+        public delegate void AvalonDelegate(string filent);
+
         public delegate void workerSelectDelegate(TreeNode node);
 
         public delegate void workerBuildDelegate(string recent, msbuilder_alls.MSBuild msbuilds);
@@ -2432,7 +2457,7 @@ namespace WinExplorer
 
         public delegate void workerFunctionTestDelegate(string recent);
 
-        private void workerFunction(string recent)
+        private async void workerFunction(string recent)
         {
             //this.BeginInvoke(new Action(() => { SolutionClose(); }));
 
@@ -2450,43 +2475,114 @@ namespace WinExplorer
 
             ArrayList L = null;
 
-            this.BeginInvoke(new Action(() =>
+            this.BeginInvoke(new Action(async () =>
             {
+
                 Loads2(tv, _sv._SolutionTreeView); this.Text = Path.GetFileName(recent) + " - Visual Explorer";
-                if (scr != null)
+
+                L = scr.LoadSolutionFiles();
+
+                if (splashForm != null)
                 {
-                    vs = GetVSSolution();
-                    scr.BeginInvoke(new Action(() =>
-                    {
-                        L = scr.LoadSolution(vs);
-                        _sv.main_project();
-                        CreateRecentWindows(L);
-
-                        if (splashForm != null)
-                        {
-                            splashForm.Hide();
-                            splashForm = null;
-                        }
-                        this.Show();
-                        Visible = true;
-                        Opacity = 100;
-                        this.Show();
-                        Command.counter--;
-                        this.Focus();
-                        if (appLoadedEvent != null)
-                            appLoadedEvent(this, new EventArgs());
-                        //Command_SetConfigurations();
-                        //Command_SetPlatforms();
-                        //Command_StartupProjects();
-                        if (vs != null)
-                        vs.CompileSolution();
-                    }));
-                    if (event_SelectedSolutionChanged != null)
-                        event_SelectedSolutionChanged(this, vs);
+                    splashForm.Hide();
+                    splashForm = null;
                 }
+                this.Show();
+                Visible = true;
+                Opacity = 100;
+                this.Show();
+                Command.counter--;
+                this.Focus();
 
-                //Command.running = false;
+                if (!File.Exists(recent))
+                    return;
+
+
+                // editorWindow.Dispatcher.BeginInvoke((Action)(() => {
+                //string file = "C:\\MSBuildProjects-beta\\VStudio.sln";
+
+                VSSolutionLoader rw = new VSSolutionLoader();
+
+                vs = null;
+
+                Task vs_task = new Task(delegate
+                {
+
+                    System.Windows.Forms.TreeView vv = rw.LoadProject(recent);
+
+                    vs = vv.Tag as VSSolution;
+
+                });
+
+                vs_task.Start();
+
+                Task rs_task = new Task(delegate
+                {
+
+                    //vs.CompileSolution();
+
+                    rw.CompileSolution(recent);
+                });
+                rs_task.Start();
+                await Task.WhenAll(new Task[] { vs_task, rs_task });
+
+                vs.comp = rw.comp;
+                vs.nts = rw.nts;
+                vs.named = rw.named;
+                vs.workspace = rw.workspace;
+                vs.solution = rw.solution;
+
+
+                scr.LoadFromProject(vs);
+
+                if (appLoadedEvent != null)
+                    appLoadedEvent(this, new EventArgs());
+
+
+                if (event_SelectedSolutionChanged != null)
+                    event_SelectedSolutionChanged(this, vs);
+
+
             }));
+
+
+            //this.BeginInvoke(new Action(() =>
+            //{
+            //    Loads2(tv, _sv._SolutionTreeView); this.Text = Path.GetFileName(recent) + " - Visual Explorer";
+            //    if (scr != null)
+            //    {
+            //        vs = GetVSSolution();
+            //        scr.BeginInvoke(new Action(() =>
+            //        {
+            //            L = scr.LoadSolutionFiles();
+            //            _sv.main_project();
+            //            CreateRecentWindows(L);
+
+            //            if (splashForm != null)
+            //            {
+            //                splashForm.Hide();
+            //                splashForm = null;
+            //            }
+            //            this.Show();
+            //            Visible = true;
+            //            Opacity = 100;
+            //            this.Show();
+            //            Command.counter--;
+            //            this.Focus();
+            //            if (appLoadedEvent != null)
+            //                appLoadedEvent(this, new EventArgs());
+            //            //Command_SetConfigurations();
+            //            //Command_SetPlatforms();
+            //            //Command_StartupProjects();
+            //            if (vs != null)
+            //            vs.CompileSolution();
+            //        }));
+            //        if (event_SelectedSolutionChanged != null)
+            //            event_SelectedSolutionChanged(this, vs);
+            //    }
+
+            //    //Command.running = false;
+            //}));
 
             //            Command.counter--;
         }
@@ -5384,6 +5480,107 @@ namespace WinExplorer
             if (r != System.Windows.Forms.DialogResult.OK)
                 return;
 
+            string bs = AppDomain.CurrentDomain.BaseDirectory + "TemplateProjects";
+
+            string file = npf.GetSolutionFile();
+
+            scr.ClearHistory();
+
+            ClearOutput();
+
+            SolutionClose();
+
+            string recent = file;
+
+            _sv._SolutionTreeView.Nodes.Clear();
+
+            _sv.save_recent_solution(recent);
+
+            workerFunctionDelegate w = workerFunction;
+
+            w.Invoke(recent);
+
+            VSSolution vs = _sv._SolutionTreeView.Tag as VSSolution;
+
+            string sln = vs.SolutionPath;
+
+            // string file = vs.solutionFileName;
+
+            string pn = npf.GetProjectName();
+
+            string pf = npf.GetProjectFolder();
+
+            string pr = npf.GetProjectFile();
+
+            string prf = pr.Replace(bs + "\\", "");
+
+            string prc = pn.Replace(bs + "\\", "");
+
+            string prs = Path.GetFileName(pr);
+
+            string folds = Path.GetDirectoryName(pr);
+
+            string[] dd = folds.Split("\\".ToCharArray());
+
+            string fds = dd[dd.Length - 1];
+
+            //file = file + "s";
+
+            string content = File.ReadAllText(file);
+
+            int p = content.IndexOf("Global");
+
+            string dir = fds;// "LinkerProjectProject";
+
+            dir = pn;
+
+            string proj = prs;// "LinkerProjectProject.csproj";
+
+            string projs = prs;
+
+            proj = pn + ".csproj";
+
+            string pb = Path.GetDirectoryName(dir) + "\\" + Path.GetFileName(proj);
+
+            Guid guid = Guid.NewGuid();
+
+            //string pp = "Project(\"{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}\") = \"" + dir + "\",\"" + pb + "\"," + "\"{" + guid.ToString() + "}\"\nEndProject\n\n\t";
+
+            string pp = "Project(\"{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}\") = \"" + prc + "\",\"" + prf + "\"," + "\"{" + guid.ToString() + "}\"\nEndProject\n\n\t";
+
+            content = content.Insert(p, pp);
+
+            File.WriteAllText(file, content);
+
+            DirectoryInfo project = new DirectoryInfo(folds);
+
+            DirectoryInfo folder = new DirectoryInfo(sln + "\\" + /*pn*/fds);
+
+            pn = fds;
+
+            CopyAll(project, folder);
+
+            string tempfile = sln + "\\" + pn + "\\" + Path.GetFileName(projs);
+
+            string projectfile = sln + "\\" + pn + "\\" + Path.GetFileName(proj);
+
+            File.Move(tempfile, projectfile);
+
+            reload_solution(file);
+        }
+
+        public NewWebSiteForm nwp { get; set; }
+
+        private void AddNewWebSite(bool addproject, string filename = "")
+        {
+            nwp = new NewWebSiteForm(filename);
+            nwp.LoadAddProject();
+            if (addproject == true)
+                nwp.SetProjectFolder("sln");
+            DialogResult r = nwp.ShowDialog();
+            if (r != System.Windows.Forms.DialogResult.OK)
+                return;
+
             //CloseCurrentSolution();
 
             string bs = AppDomain.CurrentDomain.BaseDirectory + "TemplateProjects";
@@ -5475,9 +5672,15 @@ namespace WinExplorer
             reload_solution(file);
         }
 
+
         public void Command_AddNewProject(string filename = "")
         {
             AddNewProject(false, filename);
+        }
+
+        public void Command_AddNewWebSite(string filename = "")
+        {
+            AddNewWebSite(false, filename);
         }
 
         public void Command_AddNewProject(bool addproject, NewProject nw)
@@ -7810,45 +8013,57 @@ namespace WinExplorer
                         
                         r0.Name = bb.Names;
                         r0.Tag =  bb;
-                    //    Module modules = Module.GetModule(cmd.Module);
+                        Module modules = Module.GetModule(cmd.Module);
 
-                    //    if (modules != null)
-                    //    {
-                    //        foreach (string cc in modules.dict.Keys)
-                    //        {
-                    //            Command cmds = modules.dict[cc] as Command;
-                    //            //ToolStripMenuItem vv = v.DropDownItems.Add(cmds.Name) as ToolStripMenuItem;
-                    //            //vv.Image = cmds.image;
-                    //            //vv.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
+                        if (modules != null)
+                        {
+                            ToolStripSplitButton bc = r0 as ToolStripSplitButton;
+                            
+                            if(bc != null)
+                            foreach (string cc in modules.dict.Keys)
+                            {
+                                Command cmds = modules.dict[cc] as Command;
+                                ToolStripMenuItem vv = new ToolStripMenuItem(cmds.Name) as ToolStripMenuItem;
+                                vv.Image = cmds.image;
+                                vv.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
+                                vv.Tag = cmds;
+                                vv.Click += R0_Click;
 
-                    //            if (r1 != null)
-                    //            {
-                    //                if (cmds.keyboard != null)
-                    //                {
-                    //                    Keys k = Keys.None;
-                    //                    bool first = true;
-                    //                    foreach (Keys g in cmds.keyboard)
-                    //                    {
-                    //                        k |= g;
-                    //                        string p = g.ToString();
 
-                    //                        if (g == Keys.Control)
-                    //                            p = "Ctrl";
-                    //                        else if (g == (Keys)109)
-                    //                            p = "-";
-                    //                        if (first == false)
-                    //                            p = "+" + p;
-                    //                        r1.ShortcutKeyDisplayString += p + " ";
-                    //                        first = false;
-                    //                    }
-                    //                    r1.ShortcutKeys = k;
-                    //                }
+                                if (r1 != null)
+                                {
+                                    if (cmds.keyboard != null)
+                                    {
+                                        Keys k = Keys.None;
+                                        bool first = true;
+                                        foreach (Keys g in cmds.keyboard)
+                                        {
+                                            k |= g;
+                                            string p = g.ToString();
 
-                    //                r1.Checked = true;
-                    //            }
+                                            if (g == Keys.Control)
+                                                p = "Ctrl";
+                                            else if (g == (Keys)109)
+                                                p = "-";
+                                            if (first == false)
+                                                p = "+" + p;
+                                            r1.ShortcutKeyDisplayString += p + " ";
+                                            first = false;
+                                        }
+                                        r1.ShortcutKeys = k;
+                                    }
 
-                    //        }
-                    //    }
+                                    r1.Checked = true;
+                                }
+
+                                if (bc == null)
+                                    continue;
+                                bc.DropDown.Items.Add(vv);
+
+                            }
+                            
+                            
+                        }
                     }
                     if (cmd.GetType().IsSubclassOf(typeof(gui.Command_Gui)) || cmd.Name == "Gui")
                     {
@@ -7949,7 +8164,6 @@ namespace WinExplorer
                 ToolStripSplitButton r1 = new ToolStripSplitButton("", cmd.image);
                 r1.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 r1.DropDown = new ToolStripDropDown();
-                r1.DropDown.Items.Add(new ToolStripButton());
                 r1.Text = text;
                 r1.Name = name;
                // r1.Image = image;
@@ -7967,16 +8181,32 @@ namespace WinExplorer
 
         private void R0_Click(object sender, EventArgs e)
         {
+            Command cmd = null;
+
             ToolStripMenuItem b = sender as ToolStripMenuItem;
             if (b == null)
-                return;
-            Command cmd = b.Tag as Command;
+            {
+                ToolStripSplitButton c = sender as ToolStripSplitButton;
+                if(c == null)
+                    return;
+
+                if (c.DropDownButtonPressed)
+                    return;
+
+                if (c.DropDown.Items.Count <= 0)
+                    return;
+                ToolStripItem d = c.DropDown.Items[0];
+                if (d == null)
+                    return;
+
+                cmd = d.Tag as Command;
+            }
+            else 
+                cmd = b.Tag as Command;
 
             if (cmd == null)
                 return;
-
-            //MessageBox.Show("Command will be done " + cmd.Name);
-
+            
             cmd.Execute();
         }
 

@@ -165,6 +165,39 @@ C:\Users\me\VE-2016\NET\GACProject\obj\Debug\GACProject.Properties.Resources.res
 C:\Users\me\VE-2016\NET\GACProject\obj\Debug\GACProject.csproj.GenerateResource.Cache
 C:\Users\me\VE-2016\NET\GACProject\obj\Debug\GACProject.exe
 C:\Users\me\VE-2016\NET\GACProject\obj\Debug\GACProject.pdb
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\GACProject\bin\Debug\GACProject.exe.config
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\GACProject\bin\Debug\GACProject.exe
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\GACProject\bin\Debug\GACProject.pdb
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\GACProject\bin\Debug\GACManagerApi.dll
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\GACProject\bin\Debug\GACManagerApi.pdb
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\GACProject\obj\Debug\GACProject.csprojResolveAssemblyReference.cache
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\GACProject\obj\Debug\GACProject.GACForm.resources
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\GACProject\obj\Debug\GACProject.Properties.Resources.resources
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\GACProject\obj\Debug\GACProject.csproj.GenerateResource.Cache
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\GACProject\obj\Debug\GACProject.exe
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\GACProject\obj\Debug\GACProject.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\GACProject\bin\Debug\GACProject.exe.config
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\GACProject\bin\Debug\GACProject.exe
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\GACProject\bin\Debug\GACProject.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\GACProject\bin\Debug\GACManagerApi.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\GACProject\bin\Debug\GACManagerApi.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\GACProject\obj\Debug\GACProject.csprojResolveAssemblyReference.cache
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\GACProject\obj\Debug\GACProject.GACForm.resources
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\GACProject\obj\Debug\GACProject.Properties.Resources.resources
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\GACProject\obj\Debug\GACProject.csproj.GenerateResource.Cache
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\GACProject\obj\Debug\GACProject.exe
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\GACProject\obj\Debug\GACProject.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\GACProject\bin\Debug\GACProject.exe.config
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\GACProject\bin\Debug\GACProject.exe
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\GACProject\bin\Debug\GACProject.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\GACProject\bin\Debug\GACManagerApi.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\GACProject\bin\Debug\GACManagerApi.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\GACProject\obj\Debug\GACProject.csprojResolveAssemblyReference.cache
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\GACProject\obj\Debug\GACProject.GACForm.resources
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\GACProject\obj\Debug\GACProject.Properties.Resources.resources
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\GACProject\obj\Debug\GACProject.csproj.GenerateResource.Cache
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\GACProject\obj\Debug\GACProject.exe
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\GACProject\obj\Debug\GACProject.pdb
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACProject\bin\Debug\GACProject.exe.config
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACProject\bin\Debug\GACProject.exe
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACProject\bin\Debug\GACProject.pdb
@@ -174,5 +207,6 @@ F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACProject\obj\Debug\GACProject.csproj
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACProject\obj\Debug\GACProject.GACForm.resources
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACProject\obj\Debug\GACProject.Properties.Resources.resources
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACProject\obj\Debug\GACProject.csproj.GenerateResource.Cache
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACProject\obj\Debug\GACProject.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACProject\obj\Debug\GACProject.exe
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACProject\obj\Debug\GACProject.pdb

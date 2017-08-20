@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="10041" />
+    <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="10051" />
+    <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4022" />
+    <TemplateID>Microsoft.CPP.WinRT.UserControl</TemplateID>
+    <TemplateGroupID>WinRT-Native-6.3</TemplateGroupID>
+    <AppliesTo>VisualC + WindowsXaml + WindowsXamlUserControl + WindowsXamlCodeBehind + !WindowsUniversalMultiViews</AppliesTo>
+    <ProjectType>VC</ProjectType>
+    <SortOrder>81</SortOrder>
+    <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+    <DefaultName>MyUserControl.xaml</DefaultName>
+    <ShowByDefault>false</ShowByDefault>
+    <TargetPlatformName>Windows</TargetPlatformName>
+    <RequiredPlatformVersion>8</RequiredPlatformVersion>
+    <AppIdFilter>blend</AppIdFilter>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="true" OpenInEditor="true" ItemType="Page" SubType="Designer" CustomTool="MSBuild:Compile" TargetFileName="$fileinputname$.xaml">UserControl1.xaml</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$.xaml.cpp">UserControl1.xaml.cpp</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$.xaml.h">UserControl1.xaml.h</ProjectItem>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VisualStudio.WinRT.TemplateWizards, Version=15.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VisualStudio.WinRT.TemplateWizards.SmartItem.Wizard</FullClassName>
+  </WizardExtension>
+  <WizardData>
+    <HasWizardSubPath>UserControl1.xaml.h</HasWizardSubPath>
+  </WizardData>
+</VSTemplate>

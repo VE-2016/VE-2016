@@ -581,51 +581,32 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         private void AddClasses(ArrayList items, mappers map)
         {
-            //foreach (IClass c in classes)
-            {
-                //   items.Add(new ComboBoxItem(c, c.FullyQualifiedName, (int)ScriptControl.GetIcon(c), true, "Class"));
-                //   AddClasses(items, c.InnerClasses, map);
-            }
+           
             foreach (TypeDeclaration d in map.Classes)
             {
                 items.Add(new ComboBoxItem(d, d.Name, (int)0, true, "Class"));
-                //AddClasses(items, c.InnerClasses, map);
             }
             foreach (DelegateDeclaration d in map.Delegates)
             {
                 items.Add(new ComboBoxItem(d, d.Name, (int)0, true, "delegate"));
-                //AddClasses(items, c.InnerClasses, map);
             }
         }
 
         private void FillNamespace(ArrayList items)
         {
-            //foreach (IClass c in classes)
-            {
                 if (doc != null)
                     if(doc.vp != null)
                 {
                     string project = Path.GetExtension(doc.vp.FileName);
-
-                    //CodeEditorControl.AutoListImages = doc.bmp;
-                    //CodeEditorControl.AutoListImages.TransparentColor = Color.Fuchsia;
-
                     string name = "";
-
                     if (doc.vp != null)
                         name = doc.vp.Name;
-
+                    if(project != null)
                     if (VSProject.dc.ContainsKey(project) == true)
                         items.Add(new ComboBoxItem(null, name, VSProject.dc[project], true));
-                    //else
-                    //    items.Add(new ComboBoxItem(c, name, VSProject.dc[project], true));
-
                     return;
                 }
-
-                //items.Add(new ComboBoxItem(c, c.Namespace, (int)ScriptControl.GetIcon(c), true));
                 return;
-            }
         }
 
         private void FillClassComboBox(bool isUpdateRequired, mappers map)

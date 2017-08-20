@@ -143,7 +143,7 @@ namespace WinExplorer.UI
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::WinExplorer.Resources.Cancel_256x;
+            this.toolStripButton1.Image = global::WinExplorer.ve_resource.Cancel_256x;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
@@ -159,7 +159,7 @@ namespace WinExplorer.UI
             // toolStripButton2
             // 
             this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::WinExplorer.Resources.EnableAllBreakpoints_16x;
+            this.toolStripButton2.Image = global::WinExplorer.ve_resource.EnableAllBreakpoints_16x;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
@@ -170,7 +170,7 @@ namespace WinExplorer.UI
             // toolStripButton3
             // 
             this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = global::WinExplorer.Resources.DisableAllBreakpoints_16x;
+            this.toolStripButton3.Image = global::WinExplorer.ve_resource.DisableAllBreakpoints_16x;
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
@@ -186,7 +186,7 @@ namespace WinExplorer.UI
             // toolStripButton4
             // 
             this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = global::WinExplorer.Resources.Export_16x;
+            this.toolStripButton4.Image = global::WinExplorer.ve_resource.Export_16x;
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
@@ -196,7 +196,7 @@ namespace WinExplorer.UI
             // toolStripButton5
             // 
             this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = global::WinExplorer.Resources.Import_16x;
+            this.toolStripButton5.Image = global::WinExplorer.ve_resource.Import_16x;
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
@@ -210,7 +210,7 @@ namespace WinExplorer.UI
             // toolStripButton6
             // 
             this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton6.Image = global::WinExplorer.Resources.GoToSourceCode_16x;
+            this.toolStripButton6.Image = global::WinExplorer.ve_resource.GoToSourceCode_16x;
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
             this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
@@ -222,7 +222,7 @@ namespace WinExplorer.UI
             // 
             this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton7.Enabled = false;
-            this.toolStripButton7.Image = global::WinExplorer.Resources.DisassemblyWindow_16x;
+            this.toolStripButton7.Image = global::WinExplorer.ve_resource.DisassemblyWindow_16x;
             this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton7.Name = "toolStripButton7";
             this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
@@ -398,7 +398,7 @@ namespace WinExplorer.UI
             // 
             // deleteToolStripMenuItem
             // 
-            this.deleteToolStripMenuItem.Image = global::WinExplorer.Resources.Cancel_256x;
+            this.deleteToolStripMenuItem.Image = global::WinExplorer.ve_resource.Cancel_256x;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
@@ -411,7 +411,7 @@ namespace WinExplorer.UI
             // 
             // goToSourceCodeToolStripMenuItem
             // 
-            this.goToSourceCodeToolStripMenuItem.Image = global::WinExplorer.Resources.GoToSourceCode_16x;
+            this.goToSourceCodeToolStripMenuItem.Image = global::WinExplorer.ve_resource.GoToSourceCode_16x;
             this.goToSourceCodeToolStripMenuItem.Name = "goToSourceCodeToolStripMenuItem";
             this.goToSourceCodeToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.goToSourceCodeToolStripMenuItem.Text = "Go To Source Code";
@@ -446,7 +446,7 @@ namespace WinExplorer.UI
             // 
             // exportToolStripMenuItem
             // 
-            this.exportToolStripMenuItem.Image = global::WinExplorer.Resources.Export_16x;
+            this.exportToolStripMenuItem.Image = global::WinExplorer.ve_resource.Export_16x;
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
             this.exportToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.exportToolStripMenuItem.Text = "Export Selected";

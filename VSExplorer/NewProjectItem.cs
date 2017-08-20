@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace WinExplorer
 {
@@ -18,6 +19,22 @@ namespace WinExplorer
             lv = listView1;
             LoadProjects();
             LoadTemplates();
+            LoadVSTemplates();
+            tv.AfterSelect += Tv_AfterSelect;
+        }
+
+        private void Tv_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            TreeNode node = e.Node;
+            PreviewInfo p = node.Tag as PreviewInfo;
+            if (p == null)
+                return;
+            lv.Items.Clear();
+
+            lv.Items.AddRange(p.v.ToArray());
+
+            //richTextBox1.Text = "Type \n\r " + p.description;
+            //SetAsBold("Type ", rb);
         }
 
         public string projectname { get; set; }
@@ -64,6 +81,240 @@ namespace WinExplorer
             ns = new TreeNode();
             ns.Text = "C# class";
             nodes.Nodes.Add(ns);
+
+            node = new TreeNode();
+            node.Text = "Installed-2";
+            tv.Nodes.Add(node);
+
+
+        }
+
+        public void LoadVSTemplates()
+        {
+
+            TreeNode node = new TreeNode();
+            node.Text = "Installed-2";
+            tv.Nodes.Add(node);
+
+            TreeNode vsc = new TreeNode();
+            vsc.Text = "Visual C#";
+            node.Nodes.Add(vsc);
+
+            LoadCSharpTemplates(vsc);
+
+        }
+
+        public string templates = "Templates-Data";
+
+        public void LoadCSharpTemplates(TreeNode node)
+        {
+            string folder = AppDomain.CurrentDomain.BaseDirectory + templates + "\\ItemTemplates\\CSharp";
+
+            string[] d = Directory.GetDirectories(folder);
+
+            PreviewInfo p = new PreviewInfo();
+
+            PreviewInfo pp = new PreviewInfo();
+
+            TreeNode vsc = new TreeNode();
+
+            foreach (string s in d)
+            {
+
+                pp = new PreviewInfo();
+
+                vsc = new TreeNode();
+                vsc.Text = Path.GetFileName(s);
+
+
+                if (s.Contains("Code"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+
+                }
+                else if (s.EndsWith("Data"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+                    
+                }
+                else if (s.EndsWith("General"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+
+                }
+                else if (s.EndsWith("SQL Server"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+
+                }
+                else if (s.EndsWith("Test"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+
+                }
+                else if (s.EndsWith("Web"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+
+                }
+                else if (s.EndsWith("Windows Forms"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+
+                }
+                else if (s.EndsWith("WPF"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+
+                }
+                else if (s.EndsWith("XAML"))
+                {
+                    LoadWindowsUniversal(vsc, s, pp);
+
+                }
+                else continue;
+
+                node.Nodes.Add(vsc);
+
+                vsc.Tag = pp;
+
+                p.v.AddRange(pp.v);
+            }
+
+            //pp = new PreviewInfo();
+            //vsc = new TreeNode();
+            //vsc.Text = "Android";
+            //node.Nodes.Add(vsc);
+            //LoadAndroid(vsc, "", pp);
+            //vsc.Tag = pp;
+            //p.v.AddRange(pp.v);
+            
+            node.Tag = p;
+        }
+
+        public void LoadWindowsUniversal(TreeNode node, string folder, PreviewInfo p)
+        {
+            string folders = folder + "\\1033";
+
+            string[] d = Directory.GetDirectories(folders);
+
+
+
+            foreach (string s in d)
+            {
+                TreeNode vsc = new TreeNode();
+                vsc.Text = Path.GetFileName(s);
+                //node.Nodes.Add(vsc);
+
+                PreviewInfo c = LoadTemplateXml(vsc, s);
+
+                ListViewItem v = LoadListViewItems(s, c);
+
+
+
+                p.v.Add(v);
+            }
+
+        }
+
+        PreviewInfo LoadTemplateXml(TreeNode node, string folder)
+        {
+
+            PreviewInfo p = new PreviewInfo();
+
+            p.folder = folder;
+
+            string file = new DirectoryInfo(folder).Name;
+
+            string filename = folder + "\\" + file + ".vstemplate";
+
+            if (!File.Exists(filename))
+                return p;
+
+            XmlDocument xmlDocument = new XmlDocument();
+            xmlDocument.Load(filename);
+
+            XmlNode xml = FindNode(xmlDocument.ChildNodes, "TemplateData");
+
+            if (xml != null)
+            {
+
+                XmlNode a = FindNode(xml.ChildNodes, "PreviewImage");
+
+                XmlNode b = FindNode(xml.ChildNodes, "Description");
+                if (a != null)
+                    p.image = a.InnerText;
+                if (b != null)
+                    p.description = b.InnerText;
+
+            }
+
+            node.Tag = p;
+
+            return p;
+        }
+
+        public XmlNode FindNode(XmlNodeList list, string nodeName)
+        {
+            if (list.Count > 0)
+            {
+                foreach (XmlNode node in list)
+                {
+                    if (node.Name.Equals(nodeName)) return node;
+                    if (node.HasChildNodes)
+                    {
+
+                        XmlNode nodes = FindNode(node.ChildNodes, nodeName);
+
+                        if (nodes != null)
+                            return nodes;
+                    }
+                }
+            }
+            return null;
+        }
+
+        public ListViewItem LoadListViewItems(string file, PreviewInfo p)
+        {
+            ListViewItem v = new ListViewItem();
+            v.Text = Path.GetFileName(file);
+
+            //int i = AddImageIfAny(new DirectoryInfo(file));
+
+            //if (i < 0)
+            //    i = 0;
+
+            //v.ImageIndex = i;
+
+            v.SubItems.Add(file);
+
+            v.Tag = p;
+
+            return v;
+        }
+
+        public int AddImageIfAny(DirectoryInfo d)
+        {
+            if (!d.Exists)
+                return -1;
+
+            FileInfo[] fs = d.GetFiles();
+
+            foreach (FileInfo f in fs)
+            {
+                if (f.Name == "image.bmp")
+                {
+                    Image image = new Bitmap(f.FullName);
+
+                    this.imgs.Images.Add(d.Name, image);
+
+                    int i = this.imgs.Images.IndexOfKey(d.Name);
+
+                    return i;
+                }
+            }
+
+            return -1;
         }
 
         private ImageList imgs { get; set; }
@@ -73,7 +324,7 @@ namespace WinExplorer
             lv.Clear();
 
             imgs = new ImageList();
-            imgs.Images.Add("Form_Win32", resource_vsc.Formtag_5766_32);
+            imgs.Images.Add("Form_Win32", ve_resource.WindowsForm_256x);
 
             listView1.View = View.Details;
             this.imgs.ImageSize = new Size(32, 32);
@@ -366,7 +617,17 @@ namespace WinExplorer
 
         private void listView1_SizeChanged(object sender, EventArgs e)
         {
-            lv.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            //try
+            //{
+            //    if (lv != null)
+            //        if (lv.Columns.Count >= 1)
+            //            lv.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            //}
+            //catch (Exception ex)
+            //{
+
+            //}
+            
         }
     }
 }

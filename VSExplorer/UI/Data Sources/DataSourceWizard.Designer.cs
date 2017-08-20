@@ -279,7 +279,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::WinExplorer.Resources.Database_256x;
+            this.pictureBox1.Image = global::WinExplorer.ve_resource.Database_256x;
             this.pictureBox1.Location = new System.Drawing.Point(4, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(57, 46);
@@ -429,7 +429,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::WinExplorer.Resources.Database_256x;
+            this.pictureBox2.Image = global::WinExplorer.ve_resource.Database_256x;
             this.pictureBox2.Location = new System.Drawing.Point(4, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(57, 46);
@@ -543,7 +543,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::WinExplorer.Resources.Database_256x;
+            this.pictureBox3.Image = global::WinExplorer.ve_resource.Database_256x;
             this.pictureBox3.Location = new System.Drawing.Point(4, 4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(57, 46);
@@ -600,7 +600,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::WinExplorer.Resources.Database_256x;
+            this.pictureBox4.Image = global::WinExplorer.ve_resource.Database_256x;
             this.pictureBox4.Location = new System.Drawing.Point(4, 4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(57, 46);
@@ -787,7 +787,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::WinExplorer.Resources.Database_256x;
+            this.pictureBox5.Image = global::WinExplorer.ve_resource.Database_256x;
             this.pictureBox5.Location = new System.Drawing.Point(4, 4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(57, 46);

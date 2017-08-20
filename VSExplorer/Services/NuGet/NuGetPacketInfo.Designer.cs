@@ -325,7 +325,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::WinExplorer.Resources.Expander_24x;
+            this.pictureBox2.Image = global::WinExplorer.ve_resource.Expander_24x;
             this.pictureBox2.Location = new System.Drawing.Point(22, 162);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(15, 15);

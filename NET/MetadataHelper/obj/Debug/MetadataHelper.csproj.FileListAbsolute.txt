@@ -88,6 +88,33 @@ C:\Users\me\VE-2016\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataModel.xml
 C:\Users\me\VE-2016\NET\MetadataHelper\obj\Debug\MetadataHelper.csprojResolveAssemblyReference.cache
 C:\Users\me\VE-2016\NET\MetadataHelper\obj\Debug\Microsoft.Cci.MetadataHelper.dll
 C:\Users\me\VE-2016\NET\MetadataHelper\obj\Debug\Microsoft.Cci.MetadataHelper.pdb
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.XML
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.dll
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataModel.dll
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataModel.xml
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\MetadataHelper\obj\Debug\MetadataHelper.csprojResolveAssemblyReference.cache
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\MetadataHelper\obj\Debug\Microsoft.Cci.MetadataHelper.dll
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\MetadataHelper\obj\Debug\Microsoft.Cci.MetadataHelper.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.XML
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataModel.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataModel.xml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\MetadataHelper\obj\Debug\MetadataHelper.csprojResolveAssemblyReference.cache
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\MetadataHelper\obj\Debug\Microsoft.Cci.MetadataHelper.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\MetadataHelper\obj\Debug\Microsoft.Cci.MetadataHelper.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.XML
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataModel.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataModel.xml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\MetadataHelper\obj\Debug\MetadataHelper.csprojResolveAssemblyReference.cache
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\MetadataHelper\obj\Debug\Microsoft.Cci.MetadataHelper.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\MetadataHelper\obj\Debug\Microsoft.Cci.MetadataHelper.pdb
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.XML
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
@@ -95,5 +122,6 @@ F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataHelper\bin\Debug\Microsoft.Cci
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataModel.pdb
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataModel.xml
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataHelper\obj\Debug\MetadataHelper.csprojResolveAssemblyReference.cache
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataHelper\obj\Debug\MetadataHelper.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataHelper\obj\Debug\Microsoft.Cci.MetadataHelper.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataHelper\obj\Debug\Microsoft.Cci.MetadataHelper.pdb

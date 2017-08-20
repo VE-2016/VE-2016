@@ -83,7 +83,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::WinExplorer.Resources.DataSourceView_16x;
+            this.pictureBox1.Image = global::WinExplorer.ve_resource.DataSourceView_16x;
             this.pictureBox1.Location = new System.Drawing.Point(591, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(78, 69);

@@ -293,7 +293,7 @@ namespace WinExplorer.UI.Views
             if (e.Header.ListView.LargeImageList != null)
                 e.Graphics.DrawImage(new Bitmap(e.Header.ListView.LargeImageList.Images[e.Header.ImageKey], new Size(17, 17)), 0, 0);
 
-            //e.Graphics.DrawImage(new Bitmap(Properties.Resources.ExpandArrow_16x, new Size(15, 15)), e.Bounds.X + e.Bounds.Width - 20, 0);
+            //e.Graphics.DrawImage(new Bitmap(Properties.ve_resource.ExpandArrow_16x, new Size(15, 15)), e.Bounds.X + e.Bounds.Width - 20, 0);
         }
 
         private void MyListView_DrawItem(object sender, DrawListViewItemEventArgs e)

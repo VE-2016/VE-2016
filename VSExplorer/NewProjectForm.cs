@@ -297,7 +297,7 @@ namespace WinExplorer
             vsc.Text = "Azure Data Lake";
             node.Nodes.Add(vsc);
 
-       
+
             vsc = new TreeNode();
             vsc.Text = "JavaScript";
             node.Nodes.Add(vsc);
@@ -352,9 +352,9 @@ namespace WinExplorer
                 else if (s.EndsWith("Mobile Apps"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-                    
+
                 }
-               else continue;
+                else continue;
 
                 node.Nodes.Add(vsc);
 
@@ -362,7 +362,7 @@ namespace WinExplorer
 
                 p.v.AddRange(pp.v);
             }
-            
+
             node.Tag = p;
         }
 
@@ -385,7 +385,7 @@ namespace WinExplorer
 
                 vsc = new TreeNode();
                 vsc.Text = Path.GetFileName(s);
-                
+
 
                 if (s.Contains("Windows UAP"))
                 {
@@ -548,7 +548,7 @@ namespace WinExplorer
                 PreviewInfo c = LoadTemplateXml(vsc, s);
 
                 ListViewItem v = LoadListViewItems(s, c);
-                
+
 
                 p.v.Add(v);
             }
@@ -684,7 +684,7 @@ namespace WinExplorer
             lv.Clear();
 
             imgs = new ImageList();
-            imgs.Images.Add("Form_Win32", resource_vsc.Formtag_5766_32);
+            imgs.Images.Add("Form_Win32", ve_resource.AddForm_16x);
 
             listView1.View = View.Details;
             this.imgs.ImageSize = new Size(32, 32);
@@ -706,9 +706,11 @@ namespace WinExplorer
 
         public static List<string> GetProjectTemplates()
         {
+            string c = AppDomain.CurrentDomain.BaseDirectory;
+
             List<string> tmps = new List<string>();
 
-            ArrayList L = GetProjectTemplates(folders);
+            ArrayList L = GetProjectTemplates(c + folders);
 
             foreach (string s in L)
                 tmps.Add(s);
@@ -718,13 +720,15 @@ namespace WinExplorer
 
         public void LoadTemplates(string filename = "")
         {
+            string c = AppDomain.CurrentDomain.BaseDirectory;
+
             LoadImages();
 
             InitializeListView(lv);
 
             lv.SelectedIndexChanged += Lv_SelectedIndexChanged;
 
-            DirectoryInfo d = new DirectoryInfo(folders);
+            DirectoryInfo d = new DirectoryInfo(c + folders);
 
             if (d == null)
                 return;
@@ -762,7 +766,7 @@ namespace WinExplorer
             if (p == null)
                 return;
             richTextBox1.Text = p.description;
-         
+
         }
 
         public ArrayList GetTemplates(string folder)
@@ -935,7 +939,7 @@ namespace WinExplorer
                     if (lv.Columns.Count >= 1)
                         lv.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
 
             }
@@ -944,6 +948,11 @@ namespace WinExplorer
 
     public class NewProject
     {
+
+        public string projectName { get; set; }
+
+        public string projectFolder { get; set; }
+        
         public string ProjectName { get; set; }
 
         public string Location { get; set; }
@@ -953,6 +962,8 @@ namespace WinExplorer
         public string SolutionFile { get; set; }
 
         public ArrayList TemplateProjects { get; set; }
+
+        public bool createNewSolution = true;
 
         public string GetProjectFile()
         {
@@ -1005,7 +1016,7 @@ namespace WinExplorer
         public static bool running = false;
 
         public static int counter = 0;
-        
+
         public string Name { get; set; }
 
         public string Names { get; set; }
@@ -1388,10 +1399,6 @@ namespace WinExplorer
                 if (ef == null)
                     return obs;
 
-                if (obs == null)
-                    obs = "";
-
-                string dialogs = obs as string;
 
                 ef.BeginInvoke(new Action(() => { cb.Items.Clear(); ArrayList P = ef.Command_LoadConfigurations(); LoadPlatforms(P); }));
 
@@ -1471,7 +1478,7 @@ namespace WinExplorer
         {
             public Command_RunProject(ExplorerForms ef) : base(ef)
             {
-                image = Resources.StartWithoutDebug_16x;
+                image = ve_resource.StartWithoutDebug_16x;
                 shouldDisplayText = true;
                 Name = "Start";
             }
@@ -1832,7 +1839,7 @@ namespace WinExplorer
             public Command_NavigateForward(ExplorerForms ef) : base(ef)
             {
                 Name = "Navigate Forward";
-                image = Resources.Forward_256x;
+                image = ve_resource.Forward_256x;
                 keyboard = new Keys[3];
 
                 keyboard[0] = Keys.Control;
@@ -1858,7 +1865,7 @@ namespace WinExplorer
             public Command_NavigateBackward(ExplorerForms ef) : base(ef)
             {
                 Name = "Navigate Backward";
-                image = Resources.Backward_256x;
+                image = ve_resource.Backward_256x;
                 GuiHint = "ToolStripDropDownButton";
             }
 
@@ -1880,7 +1887,7 @@ namespace WinExplorer
             public Command_NewProject(ExplorerForms ef) : base(ef)
             {
                 Name = "New Project";
-                image = Resources.NewItem_16x;
+                image = ve_resource.NewItem_16x;
                 keyboard = new Keys[2];
 
                 keyboard[0] = Keys.Control;
@@ -1894,7 +1901,7 @@ namespace WinExplorer
                 if (ef == null)
                     return ef;
 
-                //ef.BeginInvoke(new Action(() => { ef.Command_AddNewProject(); }));
+                ef.BeginInvoke(new Action(() => { ef.Command_AddNewProject(); }));
 
                 return obs;
             }
@@ -1905,7 +1912,7 @@ namespace WinExplorer
             public Command_NewWebSite(ExplorerForms ef) : base(ef)
             {
                 Name = "New Web Site";
-                image = Resources.OpenWeb_16x;
+                image = ve_resource.OpenWeb_16x;
             }
 
             private NewProjectForm npf { get; set; }
@@ -1915,7 +1922,7 @@ namespace WinExplorer
                 if (ef == null)
                     return ef;
 
-                //ef.BeginInvoke(new Action(() => { ef.Command_AddNewProject(); }));
+                ef.BeginInvoke(new Action(() => { ef.Command_AddNewWebSite(); }));
 
                 return obs;
             }
@@ -1926,7 +1933,7 @@ namespace WinExplorer
             public Command_OpenProject(ExplorerForms ef) : base(ef)
             {
                 Name = "Open Project";
-                image = Resources.NewFile_6276_32;
+                image = ve_resource.NewItem_16x;
                 keyboard = new Keys[2];
 
                 keyboard[0] = Keys.Control;
@@ -1951,7 +1958,7 @@ namespace WinExplorer
             public Command_Save(ExplorerForms ef) : base(ef)
             {
                 Name = "Save";
-                image = Resources.Save_256x;
+                image = ve_resource.Save_256x;
                 keyboard = new Keys[2];
 
                 keyboard[0] = Keys.Control;
@@ -1976,7 +1983,7 @@ namespace WinExplorer
             public Command_SaveAll(ExplorerForms ef) : base(ef)
             {
                 Name = "Save All";
-                image = Resources.SaveAll_256x;
+                image = ve_resource.SaveAll_256x;
                 keyboard = new Keys[3];
 
                 keyboard[0] = Keys.Control;
@@ -2002,7 +2009,7 @@ namespace WinExplorer
             public Command_StartupPage(ExplorerForms ef) : base(ef)
             {
                 Name = "Start Page";
-                image = Resources.SaveAll_256x;
+                image = ve_resource.SaveAll_256x;
                 keyboard = new Keys[3];
 
                 keyboard[0] = Keys.Control;
@@ -2028,7 +2035,7 @@ namespace WinExplorer
             public Command_Cut(ExplorerForms ef) : base(ef)
             {
                 Name = "Cut";
-                image = Resources.Cut_24x;
+                image = ve_resource.Cut_24x;
                 keyboard = new Keys[2];
 
                 keyboard[0] = Keys.Control;
@@ -2053,7 +2060,7 @@ namespace WinExplorer
             public Command_Copy(ExplorerForms ef) : base(ef)
             {
                 Name = "Copy";
-                image = Resources.Copy_32x;
+                image = ve_resource.Copy_32x;
                 keyboard = new Keys[2];
 
                 keyboard[0] = Keys.Control;
@@ -2078,7 +2085,7 @@ namespace WinExplorer
             public Command_Paste(ExplorerForms ef) : base(ef)
             {
                 Name = "Paste";
-                image = Resources.Paste_16x;
+                image = ve_resource.Paste_16x;
                 keyboard = new Keys[2];
 
                 keyboard[0] = Keys.Control;
@@ -2101,7 +2108,7 @@ namespace WinExplorer
             public Command_Undo(ExplorerForms ef) : base(ef)
             {
                 Name = "Undo";
-                image = Resources.Undo_16x;
+                image = ve_resource.Undo_16x;
                 keyboard = new Keys[2];
 
                 keyboard[0] = Keys.Control;
@@ -2126,7 +2133,7 @@ namespace WinExplorer
             public Command_Redo(ExplorerForms ef) : base(ef)
             {
                 Name = "Redo";
-                image = Resources.Redo_16x;
+                image = ve_resource.Redo_16x;
                 keyboard = new Keys[2];
 
                 keyboard[0] = Keys.Control;
@@ -2151,7 +2158,7 @@ namespace WinExplorer
             public Command_FindInFiles(ExplorerForms ef) : base(ef)
             {
                 Name = "Find In Files";
-                image = Resources.FindinFiles_16x;
+                image = ve_resource.FindinFiles_16x;
                 keyboard = new Keys[3];
 
                 keyboard[0] = Keys.Control;
@@ -2253,7 +2260,7 @@ namespace WinExplorer
 
                 GuiHint = "ToolStripDropDownButton";
 
-                image = Resources.Backward_256x;
+                image = ve_resource.Backward_256x;
             }
 
             //NewProjectForm npf { get; set; }
@@ -2364,7 +2371,7 @@ namespace WinExplorer
             {
                 Name = "Solution Explorer";
 
-                image = Resources.VisualStudioSolution;
+                image = ve_resource.VisualStudioSolution_256x;
                 keyboard = new Keys[3];
 
                 keyboard[0] = Keys.Control;
@@ -2399,7 +2406,7 @@ namespace WinExplorer
             {
                 Name = "Properties";
 
-                image = Resources.Property_256x;
+                image = ve_resource.Property_256x;
                 keyboard = new Keys[3];
 
                 keyboard[0] = Keys.Control;
@@ -2426,7 +2433,7 @@ namespace WinExplorer
             {
                 Name = "Add Item";
 
-                image = Resources.NewItem_16x;
+                image = ve_resource.NewItem_16x;
             }
 
             override public object Execute(object obs = null)
@@ -2512,7 +2519,7 @@ namespace WinExplorer
             {
                 Name = "Open File";
                 keyboard = new Keys[2];
-                image = Resources.Open_6529_24;
+                image = ve_resource.FolderOpen_16x;
 
                 keyboard[0] = Keys.Control;
                 keyboard[1] = Keys.O;
@@ -2585,4 +2592,6 @@ namespace WinExplorer
             v = new List<ListViewItem>();
         }
     }
+
+   
 }

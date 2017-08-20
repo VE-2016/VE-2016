@@ -42,7 +42,7 @@ namespace WinExplorer.UI
 
             //rb.RightMargin = rb.Width - 5;
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.Image = Resources.VisualStudioSolution;
+            pictureBox1.Image = ve_resource.VisualStudioSolution_256x;
 
             rb.MouseDoubleClick += Rb_MouseDoubleClick;
 

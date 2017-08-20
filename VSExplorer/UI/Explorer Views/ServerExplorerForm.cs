@@ -127,14 +127,14 @@ namespace WinExplorer.UI
             ts.GripStyle = ToolStripGripStyle.Hidden;
 
             g = new ImageList();
-            g.Images.Add("servers", Resources.ServerSettings_16x);
-            g.Images.Add("server", Resources.ServerSettings_16x);
-            g.Images.Add("events", Resources.EventLog_32x);
-            g.Images.Add("messages", Resources.MessageQueue_32x);
-            g.Images.Add("performance", Resources.PerformanceReport_16x);
-            g.Images.Add("services", Resources.Services_16x);
-            g.Images.Add("datasource", Resources.AddDataSource_16x);
-            g.Images.Add("stopped", Resources.Stop_grey_16x);
+            g.Images.Add("servers", ve_resource.ServerSettings_16x);
+            g.Images.Add("server", ve_resource.ServerSettings_16x);
+            g.Images.Add("events", ve_resource.EventLog_32x);
+            g.Images.Add("messages", ve_resource.MessageQueue_32x);
+            g.Images.Add("performance", ve_resource.PerformanceReport_16x);
+            g.Images.Add("services", ve_resource.Services_16x);
+            g.Images.Add("datasource", ve_resource.AddDataSource_16x);
+            g.Images.Add("stopped", ve_resource.Stop_grey_16x);
 
             v.ImageList = g;
 

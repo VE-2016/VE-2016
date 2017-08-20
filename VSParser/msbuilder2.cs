@@ -4,6 +4,7 @@ using GACManagerApi;
 using ICSharpCode.NRefactory.TypeSystem;
 using Microsoft.Build.Construction;
 using Microsoft.Build.Evaluation;
+using Microsoft.CodeAnalysis;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -258,6 +259,17 @@ namespace VSProvider
             s_ProjectRootElement_Items = s_ProjectRootElement.GetProperty("Items", BindingFlags.Public | BindingFlags.Instance);
 
             s_ProjectRootElement_OutputType = s_ProjectRootElement.GetProperty("Properties", BindingFlags.Public | BindingFlags.Instance);
+        }
+
+        public Microsoft.CodeAnalysis.Project Project { get; set; }
+
+
+        public Document GetDocument(string filename)
+        {
+
+            Document d = vs.GetDocument(FileName, filename);
+
+            return d;
         }
 
         public string IsPortable { get; set; }

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1125" />
+    <Description Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1126" />
+    <Icon Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="4009" />
+    <TemplateID>Microsoft.VB.UAP.TemplatedControl</TemplateID>
+    <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+    <AppliesTo>VB + SharedAssetsProject</AppliesTo>
+    <ProjectType>VisualBasic</ProjectType>
+    <SortOrder>80</SortOrder>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>CustomControl.vb</DefaultName>
+    <ShowByDefault>false</ShowByDefault>
+    <TargetPlatformName>Windows</TargetPlatformName>
+    <RequiredPlatformVersion>6.1.0</RequiredPlatformVersion>
+    <AppIdFilter>blend</AppIdFilter>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$.vb">CustomControl.vb</ProjectItem>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VisualStudio.WinRT.TemplateWizards, Version=15.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VisualStudio.WinRT.TemplateWizards.TemplatedControl.Wizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

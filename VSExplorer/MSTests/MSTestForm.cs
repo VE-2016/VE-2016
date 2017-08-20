@@ -30,8 +30,8 @@ namespace WinExplorer
             st.Parent = null;
 
             ImageList g = new ImageList();
-            g.Images.Add(Resources.StatusInformation_exp_16x);
-            g.Images.Add(Resources.StatusOK_cyan_16x);
+            g.Images.Add(ve_resource.StatusInformation_exp_16x);
+            g.Images.Add(ve_resource.StatusOK_cyan_16x);
             v.ImageList = g;
 
             v.Parent = ps;

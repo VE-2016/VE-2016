@@ -1,0 +1,40 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="129" />
+    <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="130" />
+    <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="401" />
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>Microsoft.WAP.CSharp.AjaxWcfServiceItem</TemplateID>
+    <TemplateGroupID>Web</TemplateGroupID>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>Web</ProjectSubType>
+    <ShowByDefault>false</ShowByDefault>
+    <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+    <DefaultName>Service.svc</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>mscorlib</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>System.Runtime.Serialization</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>System.ServiceModel</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>System.ServiceModel.Web</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem TargetFileName="$fileinputname$.svc" ReplaceParameters="true" OpenInEditor="false">Service.svc</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$.svc.cs" ReplaceParameters="true" OpenInEditor="true">Service.svc.cs</ProjectItem>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VisualStudio.ServiceModel.Core, Version=15.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35, processorArchitecture=MSIL</Assembly>
+    <FullClassName>Microsoft.VisualStudio.ServiceModel.AddAjaxServiceItemWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

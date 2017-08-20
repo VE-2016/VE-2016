@@ -2870,7 +2870,7 @@ namespace AIMS.Libraries.CodeEditor
 
             }
 
-            string c = csd.TypeToString(d);
+            string c = "";// csd.TypeToString(d);
 
             string file = d.Name;
 
@@ -2924,18 +2924,18 @@ namespace AIMS.Libraries.CodeEditor
 
             //foreach (IMember m in d.Members)
             //{
-                //Console.WriteLine(m.ToString());
+            //Console.WriteLine(m.ToString());
 
-                //if(m.Documentation != null)
-                //Console.WriteLine(m.Documentation.ToString());
+            //if(m.Documentation != null)
+            //Console.WriteLine(m.Documentation.ToString());
 
-                //Console.WriteLine(m.MemberDefinition.ToString());
+            //Console.WriteLine(m.MemberDefinition.ToString());
 
-                //Console.WriteLine(m.ToReference().ToString());
+            //Console.WriteLine(m.ToReference().ToString());
 
             //}
 
-            string c = csd.TypeToString(d);
+            string c = "";// csd.TypeToString(d);
 
             string file = d.Name;
 
@@ -5762,6 +5762,7 @@ namespace AIMS.Libraries.CodeEditor
             {
                 handler(this, e);
             }
+            
         }
 
 

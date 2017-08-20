@@ -1,0 +1,30 @@
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3148" />
+    <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3149" />
+    <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4578" />
+    <ProjectType>VisualBasic</ProjectType>
+    <SortOrder>100</SortOrder>
+    <DefaultName>Settings.settings</DefaultName>
+    <TemplateID>Microsoft.VisualBasic.General.Settings</TemplateID>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+  </TemplateData>
+  <TemplateContent>
+		<References>
+			<Reference>
+				<Assembly>System</Assembly>
+				<URL>https://www.microsoft.com</URL>
+			</Reference>
+		</References>
+
+    <ProjectItem ReplaceParameters="false">Settings.settings</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$itemproperties$" Value="CustomTool" />
+      <CustomParameter Name="$CustomTool$" Value="SettingsSingleFileGenerator" />
+    </CustomParameters>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VSDesigner, Version=15.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VSDesigner.ProjectWizard.ItemPropertyWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

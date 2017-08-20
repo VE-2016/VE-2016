@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{1AD387FC-B1E8-4023-91FE-F22260B661DB}" ID="5005"/>
+    <Description Package="{1AD387FC-B1E8-4023-91FE-F22260B661DB}" ID="5006"/>
+    <Icon Package="{1AD387FC-B1E8-4023-91FE-F22260B661DB}" ID="2000"/>
+    <ProjectType>VisualBasic</ProjectType>
+    <TemplateID>Microsoft.Cloud.VisualBasic.WebJob.Continuous</TemplateID>
+    <SortOrder>175</SortOrder>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>WebJob</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+    <CreateInPlace>false</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="WebJobApplication.vbproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true" OpenOrder="10">Module1.vb</ProjectItem>
+      <ProjectItem ReplaceParameters="true">Functions.vb</ProjectItem>
+      <Folder Name="My Project" TargetFolderName="My Project">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.vb">AssemblyInfo.vb</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="Application.myapp">Application.myapp</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Application.Designer.vb">Application.Designer.vb</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="Resources.resx">Resources.resx</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Resources.Designer.vb">Resources.Designer.vb</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="Settings.settings">Settings.settings</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Settings.Designer.vb">Settings.Designer.vb</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true">App.config</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
+  </WizardExtension>
+  <WizardData>
+      <packages repository="registry" keyName="WTAWebFormsVS15" isPreunzipped="true">
+      <package id="Newtonsoft.Json" version="6.0.8" skipAssemblyReferences="true" />
+      <package id="System.Spatial" version="5.7.0" skipAssemblyReferences="true" />
+      <package id="Microsoft.Data.Edm" version="5.7.0" skipAssemblyReferences="true" />
+      <package id="Microsoft.Data.OData" version="5.7.0" skipAssemblyReferences="true" />
+      <package id="Microsoft.Data.Services.Client" version="5.7.0" skipAssemblyReferences="true" />
+      <package id="Microsoft.WindowsAzure.ConfigurationManager" version="3.2.1" skipAssemblyReferences="true" />
+      <package id="WindowsAzure.Storage" version="7.0.0" skipAssemblyReferences="true" />
+      <package id="Microsoft.Azure.WebJobs.Core" version="1.1.2" skipAssemblyReferences="true" />
+      <package id="Microsoft.Azure.WebJobs" version="1.1.2" skipAssemblyReferences="true" />
+	    <package id="Microsoft.Azure.KeyVault.Core" version="1.0.0" skipAssemblyReferences="true" />
+    </packages>
+  </WizardData>  
+</VSTemplate>

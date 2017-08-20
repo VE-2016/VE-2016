@@ -259,5 +259,6 @@ F:\Windows-Enterprise-VE-2016\VE-2016\NUNIT\nunit-gui\obj\Debug\NUnit.Gui.Views.
 F:\Windows-Enterprise-VE-2016\VE-2016\NUNIT\nunit-gui\obj\Debug\NUnit.Gui.Views.SettingsPages.TreeSettingsPage.resources
 F:\Windows-Enterprise-VE-2016\VE-2016\NUNIT\nunit-gui\obj\Debug\NUnit.Gui.Views.XmlView.resources
 F:\Windows-Enterprise-VE-2016\VE-2016\NUNIT\nunit-gui\obj\Debug\nunit-gui.csproj.GenerateResource.Cache
+F:\Windows-Enterprise-VE-2016\VE-2016\NUNIT\nunit-gui\obj\Debug\nunit-gui.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\NUNIT\nunit-gui\obj\Debug\nunit-gui.exe
 F:\Windows-Enterprise-VE-2016\VE-2016\NUNIT\nunit-gui\obj\Debug\nunit-gui.pdb

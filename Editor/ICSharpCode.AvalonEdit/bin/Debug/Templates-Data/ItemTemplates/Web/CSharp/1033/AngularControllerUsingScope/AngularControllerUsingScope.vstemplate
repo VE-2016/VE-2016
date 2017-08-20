@@ -1,0 +1,16 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1110"/>
+    <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1111"/>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>CSharp</ProjectSubType>
+    <DefaultName>controller.js</DefaultName>
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <SortOrder>150</SortOrder>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true">controller.js</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

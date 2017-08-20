@@ -1,0 +1,10 @@
+C:\Users\user\Desktop\QuickSharpProjects\Extensions\ApplicationProjects\SilverLight\TemplateProject\TemplateProject\bin\Debug\TemplateProject.exe.config
+C:\MSBuildProjects-beta\VSExplorer\bin\Debug\TemplateProject\TemplateProject\bin\Debug\TemplateProject.exe.config
+C:\MSBuildProjects-beta\VSExplorer\bin\Debug\TemplateProject\TemplateProject\bin\Debug\TemplateProject.exe
+C:\MSBuildProjects-beta\VSExplorer\bin\Debug\TemplateProject\TemplateProject\bin\Debug\TemplateProject.pdb
+C:\MSBuildProjects-beta\VSExplorer\bin\Debug\TemplateProject\TemplateProject\obj\Debug\TemplateProject.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\VSExplorer\bin\Debug\TemplateProject\TemplateProject\obj\Debug\TemplateProject.Form1.resources
+C:\MSBuildProjects-beta\VSExplorer\bin\Debug\TemplateProject\TemplateProject\obj\Debug\TemplateProject.Properties.Resources.resources
+C:\MSBuildProjects-beta\VSExplorer\bin\Debug\TemplateProject\TemplateProject\obj\Debug\TemplateProject.csproj.GenerateResource.Cache
+C:\MSBuildProjects-beta\VSExplorer\bin\Debug\TemplateProject\TemplateProject\obj\Debug\TemplateProject.exe
+C:\MSBuildProjects-beta\VSExplorer\bin\Debug\TemplateProject\TemplateProject\obj\Debug\TemplateProject.pdb

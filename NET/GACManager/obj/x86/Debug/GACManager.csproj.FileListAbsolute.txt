@@ -1,1 +1,4 @@
 C:\Users\user\Desktop\QuickSharpProjects\FeatureFormProject\GACManager\GACManager\GACManager\bin\Debug\GACManager.exe.config
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\GACManager\obj\x86\Debug\GACManager.csprojResolveAssemblyReference.cache
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\GACManager\obj\x86\Debug\App.g.cs
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\GACManager\obj\x86\Debug\GACManager_MarkupCompile.cache

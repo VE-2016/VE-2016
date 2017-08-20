@@ -39,5 +39,6 @@ F:\Windows-Enterprise-VE-2016\VE-2016\MSBuild\TCPLogger\bin\Debug\GACProject.pdb
 F:\Windows-Enterprise-VE-2016\VE-2016\MSBuild\TCPLogger\bin\Debug\GACProject.exe.config
 F:\Windows-Enterprise-VE-2016\VE-2016\MSBuild\TCPLogger\bin\Debug\GACManagerApi.pdb
 F:\Windows-Enterprise-VE-2016\VE-2016\MSBuild\TCPLogger\obj\Debug\Loggers.csprojResolveAssemblyReference.cache
+F:\Windows-Enterprise-VE-2016\VE-2016\MSBuild\TCPLogger\obj\Debug\Loggers.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\MSBuild\TCPLogger\obj\Debug\Loggers.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\MSBuild\TCPLogger\obj\Debug\Loggers.pdb

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1038" />
+    <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1039" />
+    <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4023" />
+    <TemplateID>Microsoft.VC.WinRT.ResourceDictionary</TemplateID>
+    <TemplateGroupID>WinRT-Native-6.3</TemplateGroupID>
+    <AppliesTo>VisualC + WindowsXaml + WindowsXamlResourceDictionary + !WindowsUniversalMultiViews</AppliesTo>
+    <ProjectType>VC</ProjectType>
+    <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+    <DefaultName>Dictionary.xaml</DefaultName>
+    <ShowByDefault>false</ShowByDefault>
+    <SortOrder>70</SortOrder>
+    <TargetPlatformName>Windows</TargetPlatformName>
+    <RequiredPlatformVersion>8</RequiredPlatformVersion>
+    <AppIdFilter>blend</AppIdFilter>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ItemType="XAML Page" FileType="Document" DeploymentContent="true" ReplaceParameters="true" OpenInEditor="true">ResourceDictionary.xaml</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

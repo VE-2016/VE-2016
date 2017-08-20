@@ -93,7 +93,7 @@
             this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.executeToolStripMenuItem,
             this.executeWithDebuggerToolStripMenuItem});
-            this.toolStripSplitButton1.Image = global::WinExplorer.Resources.Run_256x;
+            this.toolStripSplitButton1.Image = global::WinExplorer.ve_resource.Run_256x;
             this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton1.Name = "toolStripSplitButton1";
             this.toolStripSplitButton1.Size = new System.Drawing.Size(32, 22);
@@ -114,7 +114,7 @@
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::WinExplorer.Resources.Stop_grey_16x;
+            this.toolStripButton1.Image = global::WinExplorer.ve_resource.Stop_grey_16x;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
@@ -123,7 +123,7 @@
             // toolStripButton2
             // 
             this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::WinExplorer.Resources.CheckBox_16x;
+            this.toolStripButton2.Image = global::WinExplorer.ve_resource.CheckBox_16x;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
@@ -132,7 +132,7 @@
             // toolStripButton3
             // 
             this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = global::WinExplorer.Resources.ExecutionPlan_16x;
+            this.toolStripButton3.Image = global::WinExplorer.ve_resource.ExecutionPlan_16x;
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
@@ -146,7 +146,7 @@
             // toolStripButton4
             // 
             this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = global::WinExplorer.Resources.ConnectEnvironment_16x;
+            this.toolStripButton4.Image = global::WinExplorer.ve_resource.ConnectEnvironment_16x;
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
@@ -155,7 +155,7 @@
             // toolStripButton5
             // 
             this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = global::WinExplorer.Resources.ConnectEnvironment_16x;
+            this.toolStripButton5.Image = global::WinExplorer.ve_resource.ConnectEnvironment_16x;
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
@@ -164,7 +164,7 @@
             // toolStripButton6
             // 
             this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton6.Image = global::WinExplorer.Resources.ConnectEnvironment_16x;
+            this.toolStripButton6.Image = global::WinExplorer.ve_resource.ConnectEnvironment_16x;
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
             this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
@@ -178,7 +178,7 @@
             // toolStripButton7
             // 
             this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton7.Image = global::WinExplorer.Resources.NewQuery_16x;
+            this.toolStripButton7.Image = global::WinExplorer.ve_resource.NewQuery_16x;
             this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton7.Name = "toolStripButton7";
             this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
@@ -192,7 +192,7 @@
             // toolStripButton8
             // 
             this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton8.Image = global::WinExplorer.Resources.ResultToDataGrid_16x;
+            this.toolStripButton8.Image = global::WinExplorer.ve_resource.ResultToDataGrid_16x;
             this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton8.Name = "toolStripButton8";
             this.toolStripButton8.Size = new System.Drawing.Size(23, 22);
@@ -201,7 +201,7 @@
             // toolStripButton9
             // 
             this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton9.Image = global::WinExplorer.Resources.ExecutionPlan_16x;
+            this.toolStripButton9.Image = global::WinExplorer.ve_resource.ExecutionPlan_16x;
             this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton9.Name = "toolStripButton9";
             this.toolStripButton9.Size = new System.Drawing.Size(23, 22);
@@ -215,7 +215,7 @@
             // toolStripButton10
             // 
             this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton10.Image = global::WinExplorer.Resources.SQLCEDest_16x;
+            this.toolStripButton10.Image = global::WinExplorer.ve_resource.SQLCEDest_16x;
             this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton10.Name = "toolStripButton10";
             this.toolStripButton10.Size = new System.Drawing.Size(23, 22);
@@ -223,7 +223,7 @@
             // 
             // toolStripButton11
             // 
-            this.toolStripButton11.Image = global::WinExplorer.Resources.ConnectEnvironment_16x;
+            this.toolStripButton11.Image = global::WinExplorer.ve_resource.ConnectEnvironment_16x;
             this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton11.Name = "toolStripButton11";
             this.toolStripButton11.Size = new System.Drawing.Size(124, 22);

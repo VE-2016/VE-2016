@@ -6,7 +6,7 @@
    <Modules>
     <Module Name="ildasm.dll">
      <Messages>
-      <Message TypeName="MarkAssembliesWithAssemblyVersion" Category="Microsoft.Design" CheckId="CA1016" Status="Active" Created="2017-05-24 20:04:40Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkAssembliesWithAssemblyVersion" Category="Microsoft.Design" CheckId="CA1016" Status="Active" Created="2017-08-20 20:35:02Z" FixCategory="NonBreaking">
        <Issue Certainty="95" Level="Error">Add an AssemblyVersion attribute to 'ildasm.dll'.</Issue>
       </Message>
      </Messages>

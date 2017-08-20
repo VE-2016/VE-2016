@@ -1,0 +1,19 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualC\1033\SimpleUnitTest</RelativePathOnDisk>
+    <TemplateFileName>SimpleUnitTest.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="212" />
+        <Description Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="207" />
+        <Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="218" />
+        <ProjectType>VisualC</ProjectType>
+        <SortOrder>80</SortOrder>
+        <DefaultName>UnitTest.cpp</DefaultName>
+        <TemplateGroupID>TestProject-V1</TemplateGroupID>
+        <TemplateID>TestProject-V1-SimpleUnitTest</TemplateID>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

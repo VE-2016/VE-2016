@@ -1,0 +1,901 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">
+    </Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">
+    </Platform>
+    <ProjectGuid>{07D991F6-4F4E-48B0-9833-59288AC9868C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WinExplorers</RootNamespace>
+    <AssemblyName>VE-Resources</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <Configuration />
+    <Platform />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ve.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ve.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ve.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ve.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2Columns_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddComponent_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddDatabase_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddDataSource_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddForm_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apple_logo_PNG19687.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apple-clip-art-free.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AzureServiceFabric_color_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Backward_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bookmark_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BorderElement_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BorderElement_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Borders_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Breakall_6323.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointDisable_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointDisable_16xp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointEnable_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BreakpointWindow_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BuildSolution_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BulletPanel_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BulletPanel_exp_20x12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonClick_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendar_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CancelBuild_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheckAdd_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheckBox_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheckBox_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Class_yellow_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Class_yellow_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClassFriend_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClassPrivate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClassProtected_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClassSealed_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CloseDocument_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CloseDocumentGroup_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cloud_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Column_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ComboBox_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ConnectEnvironment_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ConnectToDatabase_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ConnectWeb_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Copy_32x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cut_24x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Database_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Database_64x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Database_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataField_64x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataGrid_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DatasetReference_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataSourceView_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataSourceView_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataTable_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataViewHH_32x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DatePicker_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteDatabase_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\designer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DisableAllBreakpoints_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DisassemblyWindow_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Disconnect_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Download_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnableAllBreakpoints_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EventLog_32x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExceptionSettings_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExecutionPlan_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expand_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExpandArrow_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExpandChevronRight_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expander_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expander_24x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expander_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Export_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\F12_BreakpointEnable_28x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\F12_BreakpointEnable_28xp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f12_SortDownArrowBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f12_SortDownArrowGrey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Field_blue_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FieldFriend_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FieldPrivate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FieldProtect_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FieldSealed_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FindinFiles_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FolderOpen_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Font_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ForeignKey_32x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forward_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GoToSourceCode_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GridSplitter_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GroupBox_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GroupClause_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\i_delete-all-breakpointsGrey_F12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconView_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImageGroup_18x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImmediateWindow_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Import_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InkCanvasControl_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Internet-chrome-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Key_32x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Label_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ListBox_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ListView_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loading_Blue_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuItem_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MessageQueue_32x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MessageQueue_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Namespace_16xSM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewItem_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewQuery_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewRow_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NugetLogo_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NugetPackage.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Object_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Sharepoint_Application_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OpenWeb_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Output_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OverlayStatic_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ParallelExecution_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PasswordBox_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Paste_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PerformanceReport_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pictures-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PopupControl_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProgressBar_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Property_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Property_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PropertyFriend_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PropertyPrivate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PropertyProtect_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PropertySealed_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RadioButton_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Redo_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Redo_grey_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ResizeGrip_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Restart_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ResultToDataGrid_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RichTextBox_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Run_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RunTestDialog_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RunThread_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveAll_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Schema_32xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Script_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScrollBox_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ServerSettings_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Services_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShowAllCode_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShowStartPage_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Slider_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SortAscendingFilter_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SortDescendingFilter_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SQLCEDest_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SQLServerObjectExplorer_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SQLServerProject_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StartupProject_32x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StartWithoutDebug_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusHelp_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusInformation_exp_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusOK_cyan_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusWarning_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StepIn_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StepIn_16x_32.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StepOut_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StepOut_16x_32.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StepOver_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StepOver_16x_32.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop_16x_32.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop_disabled_16x_32.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop_grey_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StoredPackage_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StoredProcedureChecked_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table_64x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TableAdapter_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TableFunction_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TableKeyColumn_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TableViewKey_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TableWizard_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TableWizard_32x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TextBlock_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TextBox_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TextContentControl_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thread_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ToggleButton_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ToolBar_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TreeView_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Triangle_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TriggerAction_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ubuntu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Undo_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Undo_grey_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UniformGridElement_12x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UniformGridElement_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upload_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\View_64x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ViewBox_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VisualStudioSolution_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VSO_Folder_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VSO_FolderOpen_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VSO_NugetLogo_52x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WebService_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WebURL_32x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WindowsForm_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZoomIn_256x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Audio_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClearCollection_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CommentCode_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExpandAll_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Filter_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GroupBy_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HardDrive_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconFile_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rename_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ResourceType_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\String_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Synchronize_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Template_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UncommentCode_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\View_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VSO_CollapseBoard_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WindowsLogo_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reflection\Delegate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reflection\Delegate_purple_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reflection\DelegateFriend_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reflection\DelegatePrivate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reflection\Event_orange_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reflection\EventFriend_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reflection\EventPrivate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reflection\EventProtect_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reflection\Interface_blue_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reflection\KeywordSnippet_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reflection\LocalVariable_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reflection\Method_purple_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reflection\Snippet_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reflection\Structure_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reflection\Enumerator_orange_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DelegateFriend_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DelegatePrivate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DelegateProtected_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DelegateSealed_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InterfaceFriend_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InterfacePrivate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InterfaceProtect_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InterfaceSealed_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MethodFriend_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MethodPrivate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MethodProtect_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MethodSealed_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Namespace_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NamespaceFriend_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NamespacePrivate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NamespaceProtect_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NamespaceSealed_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Structure_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StructureFriend_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StructurePrivate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StructureProtect_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StructureSealed_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnumFriend_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnumPrivate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnumProtect_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnumSealed_16x.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

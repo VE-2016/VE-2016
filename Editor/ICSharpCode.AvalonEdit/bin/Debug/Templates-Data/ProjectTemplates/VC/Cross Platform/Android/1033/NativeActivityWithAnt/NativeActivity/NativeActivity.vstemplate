@@ -1,0 +1,31 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>NativeActivity</Name>
+    <Description>
+    </Description>
+    <ProjectType>VC</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>NativeActivity</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+    <Hidden>true</Hidden>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$projectname$.vcxproj" File="NativeActivity.vcxproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.vcxproj.filters">NativeActivity.vcxproj.filters</ProjectItem>
+      <ProjectItem ReplaceParameters="true">pch.h</ProjectItem>
+      <ProjectItem ReplaceParameters="true">main.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="true">android_native_app_glue.c</ProjectItem>
+      <ProjectItem ReplaceParameters="true">android_native_app_glue.h</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VisualStudio.Android.Project,Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VisualStudio.Android.Wizard.NativeTemplateWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

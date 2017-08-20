@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1102" />
+    <Description> Project for creating managed type library.</Description>
+    <Icon Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="4005" />
+    <TemplateID>Microsoft.CS.WinRT.UAP.ClassLibrary</TemplateID>
+    <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>48</SortOrder>
+    <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>ClassLibrary</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <TargetPlatformName>Windows</TargetPlatformName>
+    <RequiredPlatformVersion>6.1.0</RequiredPlatformVersion>
+    <CreateInPlace>true</CreateInPlace>
+    <AppIdFilter>blend</AppIdFilter>
+    <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+  </TemplateData>
+  <TemplateContent PreferedSolutionConfiguration="Debug|AnyCPU">
+    <Project File="ClassLibrary.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Properties\$safeprojectname$.rd.xml">Library.rd.xml</ProjectItem>
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true">Class1.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="false">project.json</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
+  </WizardExtension>
+  <WizardExtension>
+    <Assembly>Microsoft.VisualStudio.Universal.TemplateWizards, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VisualStudio.Universal.TemplateWizards.PlatformVersion.Wizard</FullClassName>
+  </WizardExtension>
+  <WizardData>
+    <packages repository="registry" keyName="NETCoreSDK" isPreunzipped="true">
+      <package id="Microsoft.NETCore.UniversalWindowsPlatform" version="5.2.3" skipAssemblyReferences="false" />
+    </packages>
+  </WizardData>
+</VSTemplate>

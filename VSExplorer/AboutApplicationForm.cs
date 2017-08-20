@@ -7,7 +7,7 @@ namespace WinExplorer
         public AboutApplicationForm()
         {
             InitializeComponent();
-            pictureBox1.Image = resource_vsc.image.ToBitmap();
+            pictureBox1.Image = ve_resource.Image_16x;
             lbs = listBox2;
             lbt = listBox1;
             LoadOpenSource();

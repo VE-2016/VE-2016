@@ -54,9 +54,25 @@ C:\Users\me\VE-2016\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.pdb
 C:\Users\me\VE-2016\NET\MetadataModel\obj\Debug\MetadataModel.csprojResolveAssemblyReference.cache
 C:\Users\me\VE-2016\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.dll
 C:\Users\me\VE-2016\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.xml
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.dll
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.dll
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.xml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.xml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\MetadataModel\obj\Debug\MetadataModel.csprojResolveAssemblyReference.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.xml
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataModel\obj\Debug\MetadataModel.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.pdb
-F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataModel\obj\Debug\MetadataModel.csprojResolveAssemblyReference.cache

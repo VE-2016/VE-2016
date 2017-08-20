@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="2000" />
+    <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="2001" />
+    <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4500" />
+    <TemplateID>Microsoft.Portable.VisualBasic.ClassLibrary.Windows</TemplateID>
+    <ProjectType>VisualBasic</ProjectType>
+    <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+    <SortOrder>30</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>ClassLibrary</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="PortableClassLibrary.vbproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="My Project\AssemblyInfo.vb">AssemblyInfo.vb</ProjectItem>
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true">Class1.vb</ProjectItem>
+    </Project>
+    <CustomParameters>
+      <CustomParameter Name="$projectlanguage$" Value="VisualBasic"/>
+    </CustomParameters>
+  </TemplateContent>
+  <WizardExtension>
+	<Assembly>Microsoft.VisualStudio.PortableLibrary, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+	<FullClassName>Microsoft.VisualStudio.PortableLibrary.ProjectFlavoring.Templating.NewProjectTemplateWizardFactory</FullClassName>
+  </WizardExtension>
+</VSTemplate>

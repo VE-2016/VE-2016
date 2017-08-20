@@ -65,7 +65,7 @@ namespace WinExplorer
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::WinExplorer.resource_vsc._2cols;
+            this.toolStripButton1.Image = global::WinExplorer.ve_resource._2Columns_16x1;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
@@ -75,7 +75,7 @@ namespace WinExplorer
             // toolStripButton2
             // 
             this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::WinExplorer.resource_vsc.Rename_6779;
+            this.toolStripButton2.Image = global::WinExplorer.ve_resource.Rename_16x;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(23, 22);

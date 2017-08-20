@@ -1,0 +1,81 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>CSharp\Windows\1033\ClassLibrary</RelativePathOnDisk>
+    <TemplateFileName>csClassLibrary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2322" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2323" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4547" />
+        <TemplateID>Microsoft.CSharp.ClassLibrary</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <SortOrder>15</SortOrder>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>ClassLibrary</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <CreateInPlace>true</CreateInPlace>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>CSharp\Windows\1033\ConsoleApplication</RelativePathOnDisk>
+    <TemplateFileName>csConsoleApplication.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2320" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2321" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4548" />
+        <TemplateID>Microsoft.CSharp.ConsoleApplication</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <SortOrder>13</SortOrder>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>ConsoleApp</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <CreateInPlace>false</CreateInPlace>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>CSharp\Windows\1033\EmptyProject</RelativePathOnDisk>
+    <TemplateFileName>csEmptyProject.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2330" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2331" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4549" />
+        <TemplateID>Microsoft.CSharp.EmptyProject</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>Project</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <CreateInPlace>false</CreateInPlace>
+        <SortOrder>19</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>CSharp\Windows\1033\SharedProject</RelativePathOnDisk>
+    <TemplateFileName>SharedProject.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1096" />
+        <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1097" />
+        <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4027" />
+        <DefaultName>SharedProject</DefaultName>
+        <TemplateID>Microsoft.CS.SharedProject</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <CreateInPlace>true</CreateInPlace>
+        <CreateNewFolder>true</CreateNewFolder>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <SortOrder>17</SortOrder>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

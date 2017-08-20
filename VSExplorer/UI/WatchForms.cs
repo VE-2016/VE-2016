@@ -29,7 +29,7 @@ namespace WinExplorer.UI
         {
             TreeNode nodes = new TreeNode();
             ListViewItem listViewItem1 = new ListViewItem(new string[] { "editor", "editor", "editor", "-" }, -1);
-            Tuple<int, object, object, TreeNode, Image> T = new Tuple<int, object, object, TreeNode, Image>(0, editor, editor.GetType(), nodes, Resources.Property_16x);
+            Tuple<int, object, object, TreeNode, Image> T = new Tuple<int, object, object, TreeNode, Image>(0, editor, editor.GetType(), nodes, ve_resource.Property_16x);
             listViewItem1.Tag = T;
             G.Add(listViewItem1);
             GV.Add(listViewItem1);
@@ -50,7 +50,7 @@ namespace WinExplorer.UI
 
             if (type != null)
             {
-                Tuple<int, object, object, TreeNode, Image> T = new Tuple<int, object, object, TreeNode, Image>(TT.Item1, type, type, TT.Item4, Resources.Class_yellow_16x);
+                Tuple<int, object, object, TreeNode, Image> T = new Tuple<int, object, object, TreeNode, Image>(TT.Item1, type, type, TT.Item4, ve_resource.Class_yellow_16x);
                 T.Item4.Nodes.Add(new TreeNode("placeholder"));
                 T.Item4.Tag = v;
                 T.Item4.Text = "f";
@@ -60,7 +60,7 @@ namespace WinExplorer.UI
             }
             else
             {
-                Tuple<int, object, object, TreeNode, Image> T = new Tuple<int, object, object, TreeNode, Image>(TT.Item1, TT.Item2, TT.Item3, TT.Item4, Resources.Errors);
+                Tuple<int, object, object, TreeNode, Image> T = new Tuple<int, object, object, TreeNode, Image>(TT.Item1, TT.Item2, TT.Item3, TT.Item4, ve_resource.Cancel_16x);
                 T.Item4.Nodes.Add(new TreeNode("placeholder"));
                 T.Item4.Tag = v;
                 T.Item4.Text = "f";
@@ -90,7 +90,7 @@ namespace WinExplorer.UI
             node.Tag = false;
             // Create items and add them to the ListView control.
             ListViewItem listViewItem1 = new ListViewItem(new string[] { "", "this", "this", "-" }, -1);
-            Tuple<int, object, object, TreeNode, Image> T = new Tuple<int, object, object, TreeNode, Image>(0, this, this.GetType(), node, Resources.Property_16x);
+            Tuple<int, object, object, TreeNode, Image> T = new Tuple<int, object, object, TreeNode, Image>(0, this, this.GetType(), node, ve_resource.Property_16x);
             listViewItem1.Tag = T;
             node.Tag = listViewItem1;
 
@@ -101,7 +101,7 @@ namespace WinExplorer.UI
             TreeNode nodes = new TreeNode();
             nodes.Tag = false;
             listViewItem1 = new ListViewItem(new string[] { "editor", "editor", "editor", "-" }, -1);
-            T = new Tuple<int, object, object, TreeNode, Image>(0, editor, editor.GetType(), nodes, Resources.Property_16x);
+            T = new Tuple<int, object, object, TreeNode, Image>(0, editor, editor.GetType(), nodes, ve_resource.Property_16x);
             listViewItem1.Tag = T;
             G.Add(listViewItem1);
             GV.Add(listViewItem1);
@@ -385,11 +385,11 @@ namespace WinExplorer.UI
         {
             //TextFormatFlags flags = TextFormatFlags.Left;
 
-            int w = resource_vsc.PropertyIcon_24.Width + Resources.Expand.Width + 3 - 5;
+            int w = ve_resource.PropertyFriend_16x.Width + ve_resource.ExpandAll_16x.Width + 3 - 5;
 
             ListViewItem v = e.Item;
 
-            int we = Resources.Expand.Width;
+            int we = ve_resource.ExpandAll_16x.Width;
 
             Tuple<int, object, object, TreeNode, Image> T = v.Tag as Tuple<int, object, object, TreeNode, Image>;
 
@@ -432,25 +432,25 @@ namespace WinExplorer.UI
                     //   e.DrawDefault = false;
                     //    e.DrawBackground();
                     if (node.Text == "c")
-                        e.Graphics.DrawImage(Resources.Expand, bb.Location);
+                        e.Graphics.DrawImage(ve_resource.ExpandAll_16x, bb.Location);
 
                     Image image = T.Item5 as Image;
 
                     if (image == null)
-                        image = Resources.PropertySealed_16x;
+                        image = ve_resource.PropertySealed_16x;
 
                     e.Graphics.DrawImage(image, cc.Location);
 
                     //if (e.SubItem.Text == "Static members")
-                    //    e.Graphics.DrawImage(Resources._class, cc.Location);
+                    //    e.Graphics.DrawImage(ve_resource._class, cc.Location);
                     //else if (e.SubItem.Text == "Non-Public members")
-                    //    e.Graphics.DrawImage(Resources._class, cc.Location);
+                    //    e.Graphics.DrawImage(ve_resource._class, cc.Location);
                     //else if(node.Text == "f")
-                    //    e.Graphics.DrawImage(Resources.Field_blue_16x, cc.Location/*e.SubItem.Bounds.Location*/);
+                    //    e.Graphics.DrawImage(ve_resource.Field_blue_16x, cc.Location/*e.SubItem.Bounds.Location*/);
 
-                    //else e.Graphics.DrawImage(resource_vsc.PropertyIcon_24, cc.Location/*e.SubItem.Bounds.Location*/);
+                    //else e.Graphics.DrawImage(ve_resource.PropertyIcon_24, cc.Location/*e.SubItem.Bounds.Location*/);
 
-                    //e.Graphics.DrawString(e.SubItem.Text, e.SubItem.Font, new SolidBrush(e.SubItem.ForeColor), (e.SubItem.Bounds.Location.X + Resources.Aspx.Width), e.SubItem.Bounds.Location.Y);
+                    //e.Graphics.DrawString(e.SubItem.Text, e.SubItem.Font, new SolidBrush(e.SubItem.ForeColor), (e.SubItem.Bounds.Location.X + ve_resource.Aspx.Width), e.SubItem.Bounds.Location.Y);
 
                     e.Graphics.DrawString(e.SubItem.Text, _listView1.Font, Brushes.Black, bc/*e.Bounds*/, sf);
                 }
@@ -813,7 +813,7 @@ namespace WinExplorer.UI
                 vs.SubItems.Add("Static members" + " for " + c.SubItems[1].Text);
                 vs.SubItems.Add(" ");
                 vs.SubItems.Add(" ");
-                Tuple<int, object, object, TreeNode, Image> tc = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 1, T.Item2, T.Item3, node_vs, Resources.Class_yellow_16x);
+                Tuple<int, object, object, TreeNode, Image> tc = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 1, T.Item2, T.Item3, node_vs, ve_resource.Class_yellow_16x);
                 vs.Tag = tc;
                 node_vs.Tag = vs;
                 node_vs.Text = "uc";
@@ -825,7 +825,7 @@ namespace WinExplorer.UI
                 vp.SubItems.Add("Non-Public members");
                 vp.SubItems.Add(" ");
                 vp.SubItems.Add(" ");
-                tc = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 1, T.Item2, T.Item3, node_vp, Resources.Class_yellow_16x);
+                tc = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 1, T.Item2, T.Item3, node_vp, ve_resource.Class_yellow_16x);
                 vp.Tag = tc;
                 node_vp.Tag = vp;
                 node_vp.Text = "uc";
@@ -838,7 +838,7 @@ namespace WinExplorer.UI
                     bs.SubItems.Add("Base");
                     bs.SubItems.Add(" ");
                     bs.SubItems.Add(baseType.FullName);
-                    tc = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 1, baseType, T.Item3, node_bs, Resources.Class_yellow_16x);
+                    tc = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 1, baseType, T.Item3, node_bs, ve_resource.Class_yellow_16x);
                     bs.Tag = tc;
                     node_bs.Tag = bs;
                     node_bs.Text = "nc";
@@ -914,7 +914,7 @@ namespace WinExplorer.UI
                             v.SubItems.Add(dd.ToString());
                         else v.SubItems.Add("");
                         v.SubItems.Add(s.FieldType.ToString());
-                        Tuple<int, object, object, TreeNode, Image> t = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 1, dd, s, node, Resources.Field_blue_16x);
+                        Tuple<int, object, object, TreeNode, Image> t = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 1, dd, s, node, ve_resource.Field_blue_16x);
                         v.Tag = t;
                         node.Tag = v;
                         // node.ImageKey = service.GetKeyForField(s);
@@ -931,7 +931,7 @@ namespace WinExplorer.UI
                         else if (s.IsPrivate == true)
                         {
                             node_vp.Nodes.Add(node);
-                            Tuple<int, object, object, TreeNode, Image> tt = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 2, dd, s, node, Resources.FieldPrivate_16x);
+                            Tuple<int, object, object, TreeNode, Image> tt = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 2, dd, s, node, ve_resource.FieldPrivate_16x);
                             v.Tag = tt;
                             //node.Text = "ce";
                             P.Add(v);
@@ -939,7 +939,7 @@ namespace WinExplorer.UI
                         else if (s.IsPublic == false)
                         {
                             node_vp.Nodes.Add(node);
-                            Tuple<int, object, object, TreeNode, Image> tt = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 2, dd, s, node, Resources.FieldProtect_16x);
+                            Tuple<int, object, object, TreeNode, Image> tt = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 2, dd, s, node, ve_resource.FieldProtect_16x);
                             v.Tag = tt;
                             //node.Text = "ce";
                             P.Add(v);
@@ -1003,7 +1003,7 @@ namespace WinExplorer.UI
                             v.SubItems.Add(dd.ToString());
                         else v.SubItems.Add("");
                         v.SubItems.Add(s.PropertyType.ToString());
-                        Tuple<int, object, object, TreeNode, Image> t = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 1, dd, s, node, Resources.Property_16x);
+                        Tuple<int, object, object, TreeNode, Image> t = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 1, dd, s, node, ve_resource.Property_16x);
                         v.Tag = t;
                         node.Tag = v;
                         //node.ImageKey = service.GetKeyForProperty(s);
@@ -1017,12 +1017,12 @@ namespace WinExplorer.UI
 
                         if (s.GetGetMethod(true) != null || s.GetSetMethod(true) != null)
                         {
-                            t = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 1, dd, s, node, Resources.PropertyPrivate_16x);
+                            t = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 1, dd, s, node, ve_resource.PropertyPrivate_16x);
                             v.Tag = t;
 
                             if (mf != null && mf.IsPrivate == false)
                             {
-                                t = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 1, dd, s, node, Resources.PropertyProtect_16x);
+                                t = new Tuple<int, object, object, TreeNode, Image>(T.Item1 + 1, dd, s, node, ve_resource.PropertyProtect_16x);
                                 v.Tag = t;
                             }
                         }

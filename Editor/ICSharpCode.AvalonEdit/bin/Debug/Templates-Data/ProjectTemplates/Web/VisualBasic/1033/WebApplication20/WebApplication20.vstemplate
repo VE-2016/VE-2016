@@ -1,0 +1,33 @@
+﻿<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+    <TemplateData>
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3008" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3009"/>
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4504"/>
+        <TemplateID>Microsoft.Web.VisualBasic.WebApplication20</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>VisualBasic</ProjectSubType>
+        <SortOrder>10</SortOrder>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <MaxFrameworkVersion>3.5</MaxFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <LocationField>Hidden</LocationField>
+    </TemplateData>
+    <TemplateContent>
+        <Project File="WebApplication.webproj" ReplaceParameters="true">
+            <Folder Name="App_Data">
+            </Folder>
+            <ProjectItem OpenInEditor="true" OpenOrder="10">Default.aspx</ProjectItem>
+            <ProjectItem>Default.aspx.vb</ProjectItem>
+            <Folder Name="Scripts">
+                <ProjectItem ReplaceParameters="false">jquery-1.7.1.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false">jquery-1.7.1.min.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false">jquery-1.7.1.intellisense.js</ProjectItem>
+            </Folder>
+            <ProjectItem ReplaceParameters="true">Web.config</ProjectItem>
+        </Project>
+    </TemplateContent>
+</VSTemplate>

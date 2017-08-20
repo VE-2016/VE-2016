@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1096" />
+    <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1097" />
+    <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4028" />
+    <DefaultName>SharedProject</DefaultName>
+    <TemplateID>Microsoft.VB.SharedProject</TemplateID>
+    <ProjectType>VisualBasic</ProjectType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <CreateInPlace>true</CreateInPlace>
+    <CreateNewFolder>true</CreateNewFolder>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <SortOrder>17</SortOrder>
+    <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+  </TemplateData>
+  <TemplateContent>
+      <Project File="SharedProject.shproj" ReplaceParameters="true">
+        <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.projitems">SharedProject.projitems</ProjectItem>
+      </Project>
+  </TemplateContent>
+</VSTemplate>

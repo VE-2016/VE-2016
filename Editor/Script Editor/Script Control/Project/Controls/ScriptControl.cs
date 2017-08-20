@@ -34,6 +34,7 @@ using VSProvider;
 using System.Xml.Serialization;
 using VSParsers;
 using System.Threading.Tasks;
+using AIMS.Libraries.Scripting.ScriptControl.Properties;
 
 namespace AIMS.Libraries.Scripting.ScriptControl
 {
@@ -326,7 +327,10 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
             this.BackColor = Color.White;
 
+            VSSolution.OpenFile += VSSolution_OpenFile;
 
+
+            //VSSolution.Errors += VSSolution_Errors;
 
             //MouseMoveTimer = new System.Threading.Timer(new TimerCallback(TimerProc), null, 1000, 1000);
 
@@ -334,7 +338,15 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         }
 
+        //private void VSSolution_Errors(object sender, OpenFileEventArgs e)
+        //{
+        //    //MessageBox.Show(" Errors found - " +  e.Errors.Count));
+        //}
 
+        private void VSSolution_OpenFile(object sender, OpenFileEventArgs e)
+        {
+            MessageBox.Show("Open content for " + e.content);
+        }
 
         System.Threading.Timer MouseMoveTimer { get; set; }
         public void Proxy_OpenFile(object sender, Proxy.OpenFileEventArgs e)
@@ -396,14 +408,14 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             return null;
         }
 
-        public Document ShowFile(string FileName)
+        public AvalonDocument ShowFile(string FileName)
         {
-            Document doc = null;
+            AvalonDocument doc = null;
             foreach (DockContent docWin in dockContainer1.Contents)
             {
-                if (docWin is Document)
+                if (docWin is AvalonDocument)
                 {
-                    doc = docWin as Document;
+                    doc = docWin as AvalonDocument;
                     if (doc.FileName == FileName)
                     {
                         doc.Show(dockContainer1, DockState.Document);
@@ -414,6 +426,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // Not Found
 
             doc = OpenDocuments(FileName, (VSProject)null);
+
             if (doc != null)
             {
                 doc.Activate();
@@ -681,7 +694,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         public ParseInformation parse { get; set; }
 
 
-        public Document OpenDocuments(string Name, VSProvider.VSProject pp, AutoResetEvent autoEvent = null)
+        public AvalonDocument OpenDocuments(string Name, VSProvider.VSProject pp, AutoResetEvent autoEvent = null)
         {
             if (FileOpened(Name) != null)
                 return null;
@@ -690,7 +703,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                 vs = pp.vs;
 
             this.SuspendLayout();
-
+            /*
             string contents = "";
 
             try
@@ -759,9 +772,15 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
                 doc.ParseContentsNow();
             }
+            */
+
+
+            AvalonDocument doc = new AvalonDocument(Name);
+            doc.Text = Path.GetFileNameWithoutExtension(Name);
+            doc.Show(dockContainer1, DockState.Document);
+
 
             this.ResumeLayout();
-
 
 
             return doc;
@@ -1929,8 +1948,14 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                         hst.acts.Add("@" + d.FileName + "@" + d.resource);
                     else hst.acts.Add("@" + d.FileName);
                 }
-            }
+                else if (doc.GetType() == typeof(AvalonDocument))
+                {
+                    AvalonDocument d = doc as AvalonDocument;
 
+                    hst.acts.Add(d.FileName);
+
+                }
+            }
             hst.Theme = CodeEditorControl.settings.Theme;
             if (vs != null)
                 if (vs.MainVSProject != null)
@@ -1938,6 +1963,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
             hst.Serialize("settings.suo");
         }
+
         public string GetTheme()
         {
             hst = History.Deserialize("settings.suo");
@@ -1966,7 +1992,97 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                     CodeEditorControl.settings = hst.settings;
         }
 
+        public void LoadFromProject(VSSolution vs)
+        {
+            foreach (DockContent doc in dockContainer1.Documents)
+            {
+                if (doc.GetType() == typeof(AvalonDocument))
+                {
+                    AvalonDocument d = doc as AvalonDocument;
+                    d.Editor.dv.LoadFromProject(vs);
+                }
+            }
+        }
 
+        public ArrayList LoadSolutionFiles()
+        {
+            ArrayList L = new ArrayList();
+
+            hst = History.Deserialize("settings.suo");
+
+            if (hst != null)
+                if (hst.settings != null)
+
+                    CodeEditorControl.settings = hst.settings;
+
+            if (hst == null)
+            {
+                hst = new History();
+                this.hst = hst;
+            }
+
+            if (hst.acts == null)
+                return L;
+
+            Breakpointer b = Breakpointer.Deserialize(hst.breakpointer);
+
+            br.Load(b);
+
+            br.sc = this;
+
+            this.SuspendLayout();
+
+            int i = 0;
+
+            foreach (string s in hst.acts)
+            {
+                try
+                {
+                    if (s.StartsWith("@") == true)
+                    {
+                        if (GetOpenDocumentForm(s.Replace("@", "")) != null)
+                            continue;
+                        string sa = s.Substring(1);
+                        //VSProject p = vs.GetVSProject(sa);
+                        //DocumentForm df = OpenDocumentForm();
+                        //df.TabText = Path.GetFileName(sa);
+                        //df.FileName = sa;
+                        //df.Show();
+
+                        //ProjectProperties(df, null);
+                    }
+                    else
+                    if (s.StartsWith("@") == false)
+                    {
+                        //VSProject p = vs.GetVSProject(s);
+                        AvalonDocument doc = new AvalonDocument(s);
+                        doc.Text = Path.GetFileName(s);
+                        doc.Show(dockContainer1, DockState.Document);
+                        dockContainer1.Refresh();
+                    }
+
+                    L.Add(s);
+                }
+                catch (Exception e) { }
+
+                this.BeginInvoke(new Action(() =>
+                {
+                    //if (vs != null)
+                    //    if (hst.MainProjectFile != null)
+                    //        vs.MainVSProject = vs.GetProjectbyFileName(hst.MainProjectFile);
+                }));
+
+                //this.vs = vs;
+            }
+
+            br.LoadBreakpoints();
+
+            hst.acts.Clear();
+
+            this.ResumeLayout();
+
+            return L;
+        }
         public ArrayList LoadSolution(VSSolution vs)
         {
             ArrayList L = new ArrayList();
@@ -2003,6 +2119,8 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                 {
                     if (s.StartsWith("@") == true)
                     {
+                        if (GetOpenDocumentForm(s.Replace("@", "")) != null)
+                            continue;
                         string sa = s.Substring(1);
                         VSProject p = vs.GetVSProject(sa);
                         DocumentForm df = OpenDocumentForm();
@@ -2016,7 +2134,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                     if (s.StartsWith("@") == false)
                     {
                         VSProject p = vs.GetVSProject(s);
-                        Document doc = OpenDocuments(s, p);
+                        AvalonDocument doc = OpenDocuments(s, p);
                         dockContainer1.Refresh();
                     }
 
@@ -2170,6 +2288,19 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             }
 
             return L;
+        }
+        public DocumentForm GetOpenDocumentForm(string name)
+        {
+            
+
+            foreach (DockContent doc in dockContainer1.Documents)
+            {
+                if (doc.GetType() == typeof(DocumentForm))
+                    if(doc.Name == name)
+                    return (DocumentForm)doc;
+            }
+
+            return null;
         }
         public void LoadErrors(ArrayList DD)
         {

@@ -1,0 +1,178 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>CSharp\WCF\1033\RssService</RelativePathOnDisk>
+    <TemplateFileName>RssServiceLibrary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="109" />
+        <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="110" />
+        <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="401" />
+        <SortOrder>2000</SortOrder>
+        <TemplateID>Microsoft.CSharp.WCF</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <ProjectSubType>
+        </ProjectSubType>
+        <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>SyndicationServiceLibrary</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>CSharp\WCF\1033\WAPService</RelativePathOnDisk>
+    <TemplateFileName>WCFServiceProject.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="115" />
+        <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="116" />
+        <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="401" />
+        <ProjectType>CSharp</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <TemplateID>Microsoft.Wap.CSharp.Wcf</TemplateID>
+        <SortOrder>50</SortOrder>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WcfService</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>CSharp\WCF\1033\WcfServiceLibrary</RelativePathOnDisk>
+    <TemplateFileName>WcfServiceLibrary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="107" />
+        <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="108" />
+        <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="401" />
+        <SortOrder>10</SortOrder>
+        <TemplateID>Microsoft.CSharp.Wcf</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WcfServiceLibrary</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\WCF\1033\RssService</RelativePathOnDisk>
+    <TemplateFileName>RssServiceLibrary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="109" />
+        <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="110" />
+        <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="402" />
+        <SortOrder>2000</SortOrder>
+        <TemplateID>Microsoft.VisualBasic.RssService</TemplateID>
+        <ProjectType>VisualBasic</ProjectType>
+        <ProjectSubType>
+        </ProjectSubType>
+        <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>SyndicationServiceLibrary</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\WCF\1033\WAPService</RelativePathOnDisk>
+    <TemplateFileName>WCFServiceProject.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="115" />
+        <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="116" />
+        <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="402" />
+        <ProjectType>VisualBasic</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <TemplateID>Microsoft.Wap.VisualBasic.Wcf</TemplateID>
+        <SortOrder>50</SortOrder>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WcfService</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\WCF\1033\WcfServiceLibrary</RelativePathOnDisk>
+    <TemplateFileName>WcfServiceLibrary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="107" />
+        <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="108" />
+        <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="402" />
+        <SortOrder>10</SortOrder>
+        <TemplateID>Microsoft.VisualBasic.Wcf</TemplateID>
+        <ProjectType>VisualBasic</ProjectType>
+        <ProjectSubType>
+        </ProjectSubType>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WcfServiceLibrary</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\CSharp\1033\WebWCFService</RelativePathOnDisk>
+    <TemplateFileName>WCFService.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="117" />
+        <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="118" />
+        <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="401" />
+        <TemplateID>Microsoft.Web.CSharp.Wcf</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>CSharp</ProjectSubType>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WCFService</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <LocationField>Hidden</LocationField>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\VisualBasic\1033\WebWCFService</RelativePathOnDisk>
+    <TemplateFileName>WCFService.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="117" />
+        <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="118" />
+        <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="402" />
+        <TemplateID>Microsoft.Web.VisualBasic.Wcf</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>VisualBasic</ProjectSubType>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WCFService</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <LocationField>Hidden</LocationField>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

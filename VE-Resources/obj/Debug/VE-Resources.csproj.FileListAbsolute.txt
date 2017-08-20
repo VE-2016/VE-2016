@@ -1,0 +1,35 @@
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\VE-Resources\bin\Debug\VE-Resources.dll.config
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\VE-Resources\bin\Debug\VE-Resources.dll
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\VE-Resources\bin\Debug\VE-Resources.pdb
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\VE-Resources\obj\Debug\WinExplorers.Properties.Resources.resources
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\VE-Resources\obj\Debug\WinExplorers.ve.resources
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\VE-Resources\obj\Debug\VE-Resources.csproj.GenerateResource.Cache
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\VE-Resources\obj\Debug\VE-Resources.dll
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\VE-Resources\obj\Debug\VE-Resources.pdb
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\VE-Resources\obj\Debug\VE-Resources.csprojResolveAssemblyReference.cache
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\VE-Resources\bin\Debug\VE-Resources.dll.config
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\VE-Resources\bin\Debug\VE-Resources.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\VE-Resources\bin\Debug\VE-Resources.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\VE-Resources\obj\Debug\WinExplorers.Properties.Resources.resources
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\VE-Resources\obj\Debug\WinExplorers.ve.resources
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\VE-Resources\obj\Debug\VE-Resources.csproj.GenerateResource.Cache
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\VE-Resources\obj\Debug\VE-Resources.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\VE-Resources\obj\Debug\VE-Resources.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\VE-Resources\bin\Debug\VE-Resources.dll.config
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\VE-Resources\bin\Debug\VE-Resources.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\VE-Resources\bin\Debug\VE-Resources.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\VE-Resources\obj\Debug\WinExplorers.Properties.Resources.resources
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\VE-Resources\obj\Debug\WinExplorers.ve.resources
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\VE-Resources\obj\Debug\VE-Resources.csproj.GenerateResource.Cache
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\VE-Resources\obj\Debug\VE-Resources.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\VE-Resources\obj\Debug\VE-Resources.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\VE-Resources\obj\Debug\VE-Resources.csprojResolveAssemblyReference.cache
+F:\Windows-Enterprise-VE-2016\VE-2016\VE-Resources\bin\Debug\VE-Resources.dll.config
+F:\Windows-Enterprise-VE-2016\VE-2016\VE-Resources\bin\Debug\VE-Resources.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VE-Resources\bin\Debug\VE-Resources.pdb
+F:\Windows-Enterprise-VE-2016\VE-2016\VE-Resources\obj\Debug\WinExplorers.Properties.Resources.resources
+F:\Windows-Enterprise-VE-2016\VE-2016\VE-Resources\obj\Debug\WinExplorers.ve.resources
+F:\Windows-Enterprise-VE-2016\VE-2016\VE-Resources\obj\Debug\VE-Resources.csproj.GenerateResource.Cache
+F:\Windows-Enterprise-VE-2016\VE-2016\VE-Resources\obj\Debug\VE-Resources.csproj.CoreCompileInputs.cache
+F:\Windows-Enterprise-VE-2016\VE-2016\VE-Resources\obj\Debug\VE-Resources.dll
+F:\Windows-Enterprise-VE-2016\VE-2016\VE-Resources\obj\Debug\VE-Resources.pdb

@@ -248,10 +248,10 @@ namespace WinExplorer
             //_parentButton.Click += new System.EventHandler(OpenLinksToolStripButton_Click);
 
             //_moveButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            //_moveButton.Image = Resources.OpenFolder;
+            //_moveButton.Image = ve_resource.OpenFolder;
             //_moveButton.ImageTransparentColor = Color.Magenta;
             //_moveButton.Name = Constants.UI_TOOLBAR_MOVE_NEW;
-            //_moveButton.Text = Resources.ToolbarMoveRoot;
+            //_moveButton.Text = ve_resource.ToolbarMoveRoot;
             //_moveButton.Click += new System.EventHandler(MoveToolStripButton_Click);
 
             _LinksTreeView.AfterSelect +=
@@ -521,7 +521,7 @@ namespace WinExplorer
         private void load_links(object sender, EventArgs e)
         {
             //FolderBrowserDialog fbd = new FolderBrowserDialog();
-            //fbd.Description = Resources.BrowseFolderDialogText;
+            //fbd.Description = ve_resource.BrowseFolderDialogText;
 
             //if (fbd.ShowDialog() == DialogResult.OK)
             //    eo.tw.MoveToSelectedFolder(fbd.SelectedPath);
@@ -630,10 +630,10 @@ namespace WinExplorer
             //_parentButton.Click += new System.EventHandler(OpenLinksToolStripButton_Click);
 
             //_moveButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            //_moveButton.Image = Resources.OpenFolder;
+            //_moveButton.Image = ve_resource.OpenFolder;
             //_moveButton.ImageTransparentColor = Color.Magenta;
             //_moveButton.Name = Constants.UI_TOOLBAR_MOVE_NEW;
-            //_moveButton.Text = Resources.ToolbarMoveRoot;
+            //_moveButton.Text = ve_resource.ToolbarMoveRoot;
             //_moveButton.Click += new System.EventHandler(MoveToolStripButton_Click);
 
             _LoggerTreeView.AfterSelect +=
@@ -2425,7 +2425,7 @@ namespace WinExplorer
 
 
             _ddButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            _ddButton.Image = resource_vsc.NavigateBackwards_6270;
+            _ddButton.Image = ve_resource.Backward_256x;
             _ddButton.Name = "Navigate Backward";
             _ddButton.ImageTransparentColor = Color.Magenta;
             _ddButton.Click += new EventHandler(HistoryNavigateButtonClick);
@@ -2433,7 +2433,7 @@ namespace WinExplorer
 
             _nextButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
             _nextButton.Name = "Navigate Forward";
-            _nextButton.Image = Resources.Forward_256x;
+            _nextButton.Image = ve_resource.Forward_256x;
             _nextButton.ImageTransparentColor = Color.Magenta;
             _nextButton.Click += new EventHandler(HistoryNavigateBackwardClick);
             _nextButton.MouseHover += _nextButton_MouseHover;
@@ -2442,42 +2442,42 @@ namespace WinExplorer
 
             _newButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
             _newButton.Name = "Add Item";
-            _newButton.Image = resource_vsc.AddNewItem_6273;
+            _newButton.Image = ve_resource.NewItem_16x;
             _newButton.ImageTransparentColor = Color.Magenta;
 
 
             _refreshButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            _refreshButton.Image = resource_vsc.Open_6529;
+            _refreshButton.Image = ve_resource.FolderOpen_16x;
             _refreshButton.ImageTransparentColor = Color.Magenta;
             _refreshButton.Name = "Open File";
             _refreshButton.Click += new System.EventHandler(open_file);
 
             _saveButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
             _saveButton.Name = "Save";
-            _saveButton.Image = resource_vsc.Save_6530;
+            _saveButton.Image = ve_resource.Save_256x;
             _saveButton.ImageTransparentColor = Color.Magenta;
             _saveButton.Click += new System.EventHandler(save_active);
 
             _saveallButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
             _saveallButton.Name = "Save All";
-            _saveallButton.Image = resource_vsc.Saveall_6518;
+            _saveallButton.Image = ve_resource.SaveAll_256x;
             _saveallButton.ImageTransparentColor = Color.Magenta;
             _saveallButton.Click += new System.EventHandler(save_all);
 
             _undoButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
             _undoButton.Name = "Undo";
-            _undoButton.Image = resource_vsc.Undo_16x;
+            _undoButton.Image = ve_resource.Undo_16x;
             _undoButton.ImageTransparentColor = Color.Magenta;
             _undoButton.Click += new System.EventHandler(undo);
 
             _redoButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
             _redoButton.Name = "Redo";
-            _redoButton.Image = resource_vsc.redo;
+            _redoButton.Image = ve_resource.Redo_16x;
             _redoButton.ImageTransparentColor = Color.Magenta;
             _redoButton.Click += new System.EventHandler(redo);
 
             _opensolutionButton.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
-            _opensolutionButton.Image = resource_vsc.StartWithoutDebug_16x;
+            _opensolutionButton.Image = ve_resource.StartWithoutDebug_16x;
             _opensolutionButton.ImageTransparentColor = Color.Magenta;
             _opensolutionButton.Name = "Start";
             _opensolutionButton.Text = "Start";
@@ -2490,7 +2490,7 @@ namespace WinExplorer
 
 
             _findinfiles.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            _findinfiles.Image = Resources.FindinFiles_6299;
+            _findinfiles.Image = ve_resource.FindinFiles_16x;
             _findinfiles.ImageTransparentColor = Color.Magenta;
             _findinfiles.Name = "Find";
 
@@ -2730,12 +2730,12 @@ namespace WinExplorer
            
 
             _commentButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            _commentButton.Image = Resources.comment;
+            _commentButton.Image = ve_resource.CommentCode_16x;
             _commentButton.ImageTransparentColor = Color.Magenta;
             _commentButton.Click += new System.EventHandler(comment);
 
             _uncommentButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            _uncommentButton.Image = Resources.uncomment;
+            _uncommentButton.Image = ve_resource.UncommentCode_16x;
             _uncommentButton.ImageTransparentColor = Color.Magenta;
             _uncommentButton.Click += new System.EventHandler(uncomment);
 
@@ -4408,7 +4408,7 @@ namespace WinExplorer
             dict = null;
             if (dict == null)
             {
-                dict = Load(s + "\\" + "WinExplorer.exe", "WinExplorer.resources-vs.resources");
+                dict = Load(s + "\\" + "WinExplorer.exe", "WinExplorer.ve-resource.resources");
 
                 foreach (string str in dict.Keys)
                 {
@@ -4419,82 +4419,66 @@ namespace WinExplorer
             }
 
             dict2 = null;
-            if (dict2 == null)
-            {
-                dict2 = Load(s + "\\" + "WinExplorer.exe", "WinExplorer.resource-vsc.resources");
-
-                foreach (string str in dict2.Keys)
-                {
-                    if (dict2[str].GetType() == typeof(Bitmap))
-
-                        addImage((Bitmap)dict2[str], str, imageList1);
-                }
-            }
+ 
             dict3 = null;
             if (dict3 == null)
             {
-                dict3 = Load(s + "\\" + "WinExplorer.exe", "WinExplorer.Resources_refs.resources");
+ 
+                addImage(ve_resource.FolderOpen_16x, "Folder", imageList1);
+                addImage(ve_resource.FolderOpen_16x, "FolderOpen", imageList1);
+                addImage(ve_resource.DataSourceView_16x, "DataSourceView_16x", imageList1);
+                
 
-                foreach (string str in dict3.Keys)
-                {
-                    if (dict3[str].GetType() == typeof(Bitmap))
 
-                        addImage((Bitmap)dict3[str], str, imageList1);
-                }
-
-                addImage(resource_alls.Folder, "Folder", imageList1);
-                addImage(resource_alls.FolderOpen, "FolderOpen", imageList1);
-                addImage(Resources.DataSourceView_16x, "DataSourceView_16x", imageList1);
-
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.AssemblyImage, resource_vsc.Assembly_6212_24);
-                imageList1.Images.Add("Class", Resources._class);
-                imageList1.Images.Add("ImageClass", Resources.Class_yellow_256x);
-                imageList1.Images.Add("ClassImage", Resources.Class_yellow_256x);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ClassInternalImage, Resources._class);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ClassPrivateImage, Resources._class);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ClassProtectedImage, Resources._class);
-                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ConstantImage, resource_vsc.Constant_495_24);
-                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ConstantInternalImage, resource_vsc.Constant_495_24);
-                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ConstantPrivateImage, resource_vsc.Constant_Private_519_24);
-                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ConstantProtectedImage, resource_vsc.Constant_Protected_508_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.DelegateImage, resource_vsc.Delegate_540_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.DelegateInternalImage, resource_vsc.Delegate_540_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.DelegatePrivateImage, resource_vsc.Delegate_Private_580_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.DelegateProtectedImage, resource_vsc.Delegate_Protected_573_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EnumImage, resource_vsc.Enum_582_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EnumInternalImage, resource_vsc.Enum_582_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EnumItemImage, resource_vsc.EnumItem_588_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EnumPrivateImage, resource_vsc.EnumItem_Private_592_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EnumProtectedImage, resource_vsc.EnumItem_Protected_591_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ErrorImage, resource_vsc.Error_6206_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EventImage, resource_vsc.Event_594_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EventInternalImage, resource_vsc.Event_594_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EventPrivateImage, resource_vsc.Event_Private_598_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EventProtectedImage, resource_vsc.Event_Protected_597_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.FieldImage, resource_vsc.FieldIcon_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.FieldInternalImage, resource_vsc.FieldIcon_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.FieldPrivateImage, resource_vsc.Field_Private_545_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.FieldProtectedImage, resource_vsc.Field_Protected_544_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.FolderImage, resource_vsc.Folder_6221_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.GrayFolderImage, resource_vsc.Folder_6221_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.InterfaceImage, resource_vsc.Interface_612_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.InterfaceInternalImage, resource_vsc.Interface_612_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.InterfacePrivateImage, resource_vsc.Interface_Private_616_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.InterfaceProtectedImage, resource_vsc.Interface_Protected_615_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.MethodImage, resource_vsc.Method_636);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.MethodInternalImage, resource_vsc.Method_636);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.MethodPrivateImage, resource_vsc.Method_Private_640_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.MethodProtectedImage, resource_vsc.Method_Protected_639_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ModuleImage, resource_vsc.Module_Protected_651_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.NamespaceImage, resource_vsc.Namespace_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.PropertyImage, resource_vsc.PropertyIcon_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.PropertyInternalImage, resource_vsc.PropertyIcon_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.PropertyPrivateImage, resource_vsc.PropertyIcon_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.PropertyProtectedImage, resource_vsc.ComplexProperty_12904_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.StructureImage, resource_vsc.Structure_8338_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.StructureInternalImage, resource_vsc.Structure_8338_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.StructurePrivateImage, resource_vsc.Structure_Private_512_24);
-                imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.StructureProtectedImage, resource_vsc.Structure_Protected_511_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.AssemblyImage, ve_resourceAssembly_6212_24);
+                //imageList1.Images.Add("Class", ve_resource._class);
+                //imageList1.Images.Add("ImageClass", ve_resource.Class_yellow_256x);
+                //imageList1.Images.Add("ClassImage", ve_resource.Class_yellow_256x);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ClassInternalImage, ve_resource._class);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ClassPrivateImage, ve_resource._class);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ClassProtectedImage, ve_resource._class);
+                ////imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ConstantImage, ve_resource.Constant_495_24);
+                ////imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ConstantInternalImage, ve_resource.Constant_495_24);
+                ////imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ConstantPrivateImage, ve_resource.Constant_Private_519_24);
+                ////imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ConstantProtectedImage, ve_resource.Constant_Protected_508_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.DelegateImage, ve_resource.Delegate_540_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.DelegateInternalImage, ve_resource.Delegate_540_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.DelegatePrivateImage, ve_resource.Delegate_Private_580_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.DelegateProtectedImage, ve_resource.Delegate_Protected_573_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EnumImage, ve_resource.Enum_582_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EnumInternalImage, ve_resource.Enum_582_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EnumItemImage, ve_resource.EnumItem_588_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EnumPrivateImage, ve_resource.EnumItem_Private_592_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EnumProtectedImage, ve_resource.EnumItem_Protected_591_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ErrorImage, ve_resource.Error_6206_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EventImage, ve_resource.Event_594_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EventInternalImage, ve_resource.Event_594_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EventPrivateImage, ve_resource.Event_Private_598_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EventProtectedImage, ve_resource.Event_Protected_597_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.FieldImage, ve_resource.FieldIcon_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.FieldInternalImage, ve_resource.FieldIcon_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.FieldPrivateImage, ve_resource.Field_Private_545_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.FieldProtectedImage, ve_resource.Field_Protected_544_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.FolderImage, ve_resource.Folder_6221_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.GrayFolderImage, ve_resource.Folder_6221_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.InterfaceImage, ve_resource.Interface_612_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.InterfaceInternalImage, ve_resource.Interface_612_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.InterfacePrivateImage, ve_resource.Interface_Private_616_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.InterfaceProtectedImage, ve_resource.Interface_Protected_615_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.MethodImage, ve_resource.Method_636);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.MethodInternalImage, ve_resource.Method_636);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.MethodPrivateImage, ve_resource.Method_Private_640_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.MethodProtectedImage, ve_resource.Method_Protected_639_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ModuleImage, ve_resource.Module_Protected_651_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.NamespaceImage, ve_resource.Namespace_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.PropertyImage, ve_resource.PropertyIcon_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.PropertyInternalImage, ve_resource.PropertyIcon_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.PropertyPrivateImage, ve_resource.PropertyIcon_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.PropertyProtectedImage, ve_resource.ComplexProperty_12904_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.StructureImage, ve_resource.Structure_8338_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.StructureInternalImage, ve_resource.Structure_8338_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.StructurePrivateImage, ve_resource.Structure_Private_512_24);
+                //imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.StructureProtectedImage, ve_resource.Structure_Protected_511_24);
             }
 
             return imageList1;
@@ -4733,7 +4717,7 @@ namespace WinExplorer
             d.Add(".ruleset", "rule");
             d.Add(".pfx", "certificate");
             d.Add(".datasource", "datasource");
-            d.Add(".cs", "CSharpFile_SolutionExplorerNode");
+            d.Add(".cs", "CSFile_16x");
             d.Add(".vb", "vb");
 
 
@@ -4846,7 +4830,7 @@ namespace WinExplorer
             d.Add(".ruleset", "rule");
             d.Add(".pfx", "certificate");
             d.Add(".datasource", "datasource");
-            d.Add(".cs", "CSharpFile_SolutionExplorerNode");
+            d.Add(".cs", "CSFile_16x");
             d.Add(".vb", "vb");
 
             //d.Add("ASSEMBLY", "ASSEMBLY");
@@ -5550,7 +5534,7 @@ namespace WinExplorer
 
                 //eo._applicationManager.NotifyImageFolderMessage(Path.GetFullPath(file).Replace(Path.GetFileName(file), ""));
 
-                //eo.LoadFile(file, pr0.ps.Name, new Bitmap(resource_vsc.CSharpFile_SolutionExplorerNode_24), pr0.ps);
+                //eo.LoadFile(file, pr0.ps.Name, new Bitmap(ve_resource.CSharpFile_SolutionExplorerNode_24), pr0.ps);
 
                 //eo._applicationManager.MainForm.LoadDocumentIntoWindow(file, true);
             }
@@ -6060,7 +6044,7 @@ namespace WinExplorer
 
         //        FolderBrowserDialog fbd = new FolderBrowserDialog();
         //        fbd.SelectedPath = userHome;
-        //        fbd.Description = Resources.BackupFolderMessage;
+        //        fbd.Description = ve_resource.BackupFolderMessage;
 
         //        if (fbd.ShowDialog() == DialogResult.Cancel)
         //            return null;
@@ -6396,7 +6380,7 @@ namespace WinExplorer
 
             ImageList imgs = new ImageList();
 
-            imgs.Images.Add(resource_alls.solution);
+            imgs.Images.Add(ve_resource.VisualStudioSolution_256x);
 
             tv.ImageList = imgs;
             

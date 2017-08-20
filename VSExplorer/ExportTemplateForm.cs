@@ -10,7 +10,7 @@ namespace WinExplorer
         public ExportTemplateForm()
         {
             InitializeComponent();
-            pictureBox1.Image = resource_vsc.template;
+            pictureBox1.Image = ve_resource.Template_16x;
 
             panel = panel1;
 

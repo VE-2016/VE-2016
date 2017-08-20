@@ -1,0 +1,84 @@
+﻿<?xml version="1.0"?>
+<SyntaxDefinition name="Custom Highlighting" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+	<Color name="Comment" foreground="Green" />
+	<Color name="String" foreground="Maroon" />
+	
+	<!-- This is the main ruleset. -->
+	<RuleSet>
+		<Span color="Comment" begin="//" />
+		<Span color="Comment" multiline="true" begin="/\*" end="\*/" />
+		
+		<Span color="String">
+			<Begin>"</Begin>
+			<End>"</End>
+			<RuleSet>
+				<!-- nested span for escape sequences -->
+				<Span begin="\\" end="." />
+			</RuleSet>
+		</Span>
+		
+		<Keywords fontWeight="normal" foreground="Blue">
+			<Word>if</Word>
+			<Word>else</Word>
+      <Word>while</Word>
+      <Word>using</Word>
+      <Word>namespace</Word>
+      <Word>class</Word>
+      <Word>public</Word>
+      <Word>private</Word>
+      <Word>protected</Word>
+      <Word>override</Word>
+      <Word>void</Word>
+      <Word>object</Word>
+      <Word>string</Word>
+      <Word>true</Word>
+      <Word>false</Word>
+      <Word>foreach</Word>
+      <Word>static</Word>
+      <Word>new</Word>
+      <Word>partial</Word>
+      <Word>get</Word>
+      <Word>set</Word>
+      <Word>return</Word>
+      <Word>null</Word>
+      <Word>static</Word>
+      <Word>bool</Word>
+      <Word>int</Word>
+      <Word>delegate</Word>
+      <Word>event</Word>
+      <Word>readonly</Word>
+      <Word>var</Word>
+      <Word>char</Word>
+      <Word>internal</Word>
+      <Word>IntPtr</Word>
+      <Word>params</Word>
+      <Word>typeof</Word>
+      <Word>value</Word>
+      <Word>float</Word>
+      <Word>double</Word>
+      <Word>short</Word>
+      <Word>this</Word>
+      <Word>in</Word>
+      <Word>as</Word>
+      <Word>base</Word>
+			<!-- ... -->
+		</Keywords>
+		
+		<Keywords fontWeight="normal" fontStyle="normal" foreground="Gray">
+			<Word>#region</Word>
+      <Word>#endregion</Word>
+	    <Word>#if</Word>
+      <Word>#end</Word>
+		</Keywords>
+		
+		<!-- Digits -->
+		<Rule foreground="DarkBlue">
+            \b0[xX][0-9a-fA-F]+  # hex number
+        |    \b
+            (    \d+(\.[0-9]+)?   #number with optional floating point
+            |    \.[0-9]+         #or just starting with floating point
+            )
+            ([eE][+-]?[0-9]+)? # optional exponent
+        </Rule>
+	</RuleSet>
+</SyntaxDefinition>

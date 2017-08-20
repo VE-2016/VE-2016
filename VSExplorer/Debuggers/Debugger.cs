@@ -47,19 +47,19 @@ namespace WinExplorers
 
             breakall = new ToolStripButton();
             breakall.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            breakall.Image = Resources.Breakall;
+            breakall.Image = ve_resource.Breakall_6323;
             breakall.ImageTransparentColor = Color.Magenta;
             breakall.Click += new System.EventHandler(BreakAllHandler);
 
             stop = new ToolStripButton();
             stop.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            stop.Image = Resources.Stop;
+            stop.Image = ve_resource.Stop_16x;
             stop.ImageTransparentColor = Color.Magenta;
             stop.Click += new System.EventHandler(BreakAllHandler);
 
             restart = new ToolStripButton();
             restart.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            restart.Image = Resources.Restart_16x;
+            restart.Image = ve_resource.Restart_16x;
             restart.ImageTransparentColor = Color.Magenta;
             restart.Click += new System.EventHandler(RestartHandler);
 
@@ -67,7 +67,7 @@ namespace WinExplorers
 
             refresh = new ToolStripButton();
             refresh.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            refresh.Image = Resources.Refresh_16x;
+            refresh.Image = ve_resource.Refresh_16x;
             refresh.ImageTransparentColor = Color.Magenta;
             refresh.Click += new System.EventHandler(BreakAllHandler);
 
@@ -75,19 +75,19 @@ namespace WinExplorers
 
             stepin = new ToolStripButton();
             stepin.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            stepin.Image = Resources.StepIn_16x;
+            stepin.Image = ve_resource.StepIn_16x;
             stepin.ImageTransparentColor = Color.Magenta;
             stepin.Click += new System.EventHandler(BreakAllHandler);
 
             stepover = new ToolStripButton();
             stepover.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            stepover.Image = Resources.StepOver_16x;
+            stepover.Image = ve_resource.StepOver_16x;
             stepover.ImageTransparentColor = Color.Magenta;
             stepover.Click += new System.EventHandler(BreakAllHandler);
 
             stepout = new ToolStripButton();
             stepout.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            stepout.Image = Resources.StepOut_16x;
+            stepout.Image = ve_resource.StepOut_16x;
             stepout.ImageTransparentColor = Color.Magenta;
             stepout.Click += new System.EventHandler(BreakAllHandler);
 
@@ -95,13 +95,13 @@ namespace WinExplorers
 
             thread = new ToolStripButton();
             thread.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            thread.Image = Resources.Thread_256x;
+            thread.Image = ve_resource.Thread_256x;
             thread.ImageTransparentColor = Color.Magenta;
             thread.Click += new System.EventHandler(BreakAllHandler);
 
             dd = new ToolStripDropDownButton();
             //dd.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            //dd.Image = Resources.Thread_256x;
+            //dd.Image = ve_resource.Thread_256x;
             dd.ImageTransparentColor = Color.Magenta;
             dd.Click += new System.EventHandler(BreakAllHandler);
 
@@ -110,7 +110,7 @@ namespace WinExplorers
             b.DropDownItems.Add("       Debugger 2");
             v.Checked = true;
             v.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
-            v.Image = Resources.StepOver_16x;
+            v.Image = ve_resource.StepOver_16x;
 
             t.Items.Add(breakall);
             t.Items.Add(stop);
@@ -163,7 +163,7 @@ namespace WinExplorers
                 //if (!e.Item.Selected) base.OnRenderItemCheck(e);
                 //else
                 {
-                    e.Graphics.DrawImage(Resources.CheckBox_256x, 3, 1, 18, 18);
+                    e.Graphics.DrawImage(ve_resource.CheckBox_256x, 3, 1, 18, 18);
 
                     if (e.Item.Selected == true)
                         e.Graphics.FillRectangle(brush, 3, 1, 18, 18);

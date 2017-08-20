@@ -79,7 +79,7 @@ namespace WinExplorer.Services
 
         public static ImageList BitmapResourceToImageList()
         {
-            var resourceSet = Resources.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, false, false);
+            var resourceSet = ve_resource.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, false, false);
 
             ImageList g = new ImageList();
 

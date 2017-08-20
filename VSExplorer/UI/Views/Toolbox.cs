@@ -35,7 +35,7 @@ namespace WinExplorer.UI.Views
         {
             if (vs == null)
                 return;
-            this.BeginInvoke(new Action(() => { LoadComponents(); }));
+            this.BeginInvoke(new Action(() => { /*LoadComponents();*/ }));
         }
 
         private TreeView v { get; set; }

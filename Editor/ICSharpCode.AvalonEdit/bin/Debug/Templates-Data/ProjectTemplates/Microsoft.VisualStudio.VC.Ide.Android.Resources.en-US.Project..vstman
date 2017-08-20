@@ -1,0 +1,190 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VC\Cross Platform\Android\1033\Android_Makefile</RelativePathOnDisk>
+    <TemplateFileName>Makefile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Makefile Project (Android)</Name>
+        <Description>An Android project for using an external build system.</Description>
+        <ProjectType>VC</ProjectType>
+        <TemplateID>Microsoft.MDD.VC.Android.MakeFile</TemplateID>
+        <SortOrder>3000</SortOrder>
+        <DefaultName>Project</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <Icon>CPPPhone.ico</Icon>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VC\Cross Platform\Android\1033\AndroidJavaLibrary</RelativePathOnDisk>
+    <TemplateFileName>AndroidJavaLibrary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Basic Library (Android, Ant)</Name>
+        <Description>An Android library with a sample activity that displays ‘Hello World’ on the screen</Description>
+        <TemplateID>Microsoft.MDD.VC.AndroidJavaLibrary</TemplateID>
+        <ProjectType>VC</ProjectType>
+        <ProjectSubType>
+        </ProjectSubType>
+        <SortOrder>1000</SortOrder>
+        <DefaultName>Android</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <Icon>androidproj.ico</Icon>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VC\Cross Platform\Android\1033\AndroidJavaPackaging</RelativePathOnDisk>
+    <TemplateFileName>AndroidJavaPackaging.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Basic Application (Android, Ant)</Name>
+        <Description>An Android application with a sample activity that displays ‘Hello World’ on the screen</Description>
+        <TemplateID>Microsoft.MDD.VC.AndroidJavaPackaging</TemplateID>
+        <ProjectType>VC</ProjectType>
+        <ProjectSubType>
+        </ProjectSubType>
+        <SortOrder>1000</SortOrder>
+        <DefaultName>Android</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <Icon>androidproj.ico</Icon>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VC\Cross Platform\Android\1033\DynamicLibrary</RelativePathOnDisk>
+    <TemplateFileName>DynamicLibrary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Dynamic Shared Library (Android)</Name>
+        <Description>A project for creating a dynamic shared library for the Android Platform.</Description>
+        <ProjectType>VC</ProjectType>
+        <TemplateID>Microsoft.MDD.VC.Android.Dll</TemplateID>
+        <SortOrder>1000</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>SharedObject</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <Icon>CPPPhoneDynamic.ico</Icon>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VC\Cross Platform\Android\1033\GradleApplication</RelativePathOnDisk>
+    <TemplateFileName>GradleApplication.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Basic Application (Android, Gradle)</Name>
+        <Description>An Android application with a sample activity that displays ‘Hello World’ on the screen</Description>
+        <TemplateID>Microsoft.MDD.VC.GradleApplication</TemplateID>
+        <ProjectType>VC</ProjectType>
+        <CreateInPlace>true</CreateInPlace>
+        <SortOrder>1100</SortOrder>
+        <DefaultName>Android</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <Icon>androidproj.ico</Icon>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VC\Cross Platform\Android\1033\GradleLibrary</RelativePathOnDisk>
+    <TemplateFileName>GradleLibrary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Basic Library (Android, Gradle)</Name>
+        <Description>An Android library with a sample activity that displays ‘Hello World’ on the screen</Description>
+        <TemplateID>Microsoft.MDD.VC.GradleLibrary</TemplateID>
+        <ProjectType>VC</ProjectType>
+        <CreateInPlace>true</CreateInPlace>
+        <SortOrder>1100</SortOrder>
+        <DefaultName>Android</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <Icon>androidproj.ico</Icon>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup" Locale="1033">
+    <RelativePathOnDisk>VC\Cross Platform\Android\1033\NativeActivityWithAnt</RelativePathOnDisk>
+    <TemplateFileName>NativeActivityWithAnt.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Native-Activity Application (Android)</Name>
+        <Description>A project for creating a Native-Activity Application.</Description>
+        <ProjectType>VC</ProjectType>
+        <TemplateID>Microsoft.MDD.VC.Android.NativeActivity</TemplateID>
+        <SortOrder>46</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>Android</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <Icon>CPPPhone.ico</Icon>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VC\Cross Platform\Android\1033\NativeActivityWithAnt\NativeActivity</RelativePathOnDisk>
+    <TemplateFileName>NativeActivity.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>NativeActivity</Name>
+        <Description>
+        </Description>
+        <ProjectType>VC</ProjectType>
+        <ProjectSubType>
+        </ProjectSubType>
+        <SortOrder>1000</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>NativeActivity</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <Icon>__TemplateIcon.ico</Icon>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VC\Cross Platform\Android\1033\NativeActivityWithAnt\Packaging</RelativePathOnDisk>
+    <TemplateFileName>Packaging.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Ant</Name>
+        <Description>&lt;No description available&gt;</Description>lx
+    <ProjectType>VC</ProjectType><ProjectSubType></ProjectSubType><SortOrder>1000</SortOrder><CreateNewFolder>true</CreateNewFolder><DefaultName>Xaml</DefaultName><ProvideDefaultName>true</ProvideDefaultName><LocationField>Enabled</LocationField><EnableLocationBrowseButton>true</EnableLocationBrowseButton><Icon>__TemplateIcon.ico</Icon><Hidden>true</Hidden></TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VC\Cross Platform\Android\1033\StaticLibrary</RelativePathOnDisk>
+    <TemplateFileName>staticlibrary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Static Library (Android)</Name>
+        <Description>A project for creating a static library for the Android platform.</Description>
+        <ProjectType>VC</ProjectType>
+        <TemplateID>Microsoft.MDD.VC.Android.StaticLibrary</TemplateID>
+        <SortOrder>1000</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>StaticLibrary</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <Icon>CPPPhoneLibrary.ico</Icon>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

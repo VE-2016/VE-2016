@@ -131,7 +131,7 @@ namespace Commandlets
             if (!File.Exists(file))
                 throw new FileNotFoundException("File does not exist.", file);
 
-            TreeView b = VSExplorer.LoadProject(file, Name);
+            TreeView b = VSParsers.VSExplorer.LoadProject(file, Name);
 
             if (b != null)
                 WriteObject("Project contains " + b.Nodes[0].Nodes.Count + " nodes");
@@ -181,7 +181,7 @@ namespace Commandlets
             if (!File.Exists(file))
                 throw new FileNotFoundException("File does not exist.", file);
 
-            TreeView b = VSExplorer.LoadProject(file, Folder);
+            TreeView b = VSParsers.VSExplorer.LoadProject(file, Folder);
             if (b != null)
                 WriteObject("Project contains " + b.Nodes[0].Nodes.Count + " nodes");
             else

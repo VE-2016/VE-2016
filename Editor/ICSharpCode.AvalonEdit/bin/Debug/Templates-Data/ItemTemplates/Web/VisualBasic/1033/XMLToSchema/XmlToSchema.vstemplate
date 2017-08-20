@@ -1,0 +1,24 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3169" />
+    <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3170" />
+    <Icon>XmlToSchema.ico</Icon>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>VisualBasic</ProjectSubType>
+    <DefaultName>XmlToSchema.xsd</DefaultName>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>Microsoft.Web.VisualBasic.XmlToSchema</TemplateID>
+  </TemplateData>
+
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="true">XmlToSchema.xsd</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$fileinputname$" Value="" />
+    </CustomParameters>
+  </TemplateContent>
+
+  <WizardExtension>
+    <Assembly>Microsoft.VisualStudio.Editors, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VisualStudio.Editors.XmlToSchema.Wizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

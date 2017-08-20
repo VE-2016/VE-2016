@@ -42,6 +42,6 @@ F:\Windows-Enterprise-VE-2016\VE-2016\NUNIT\nunit.uikit\bin\Debug\nunit.uikit.dl
 F:\Windows-Enterprise-VE-2016\VE-2016\NUNIT\nunit.uikit\bin\Debug\nunit.uikit.pdb
 F:\Windows-Enterprise-VE-2016\VE-2016\NUNIT\nunit.uikit\obj\Debug\NUnit.UiKit.Controls.TipWindow.resources
 F:\Windows-Enterprise-VE-2016\VE-2016\NUNIT\nunit.uikit\obj\Debug\nunit.uikit.csproj.GenerateResource.Cache
+F:\Windows-Enterprise-VE-2016\VE-2016\NUNIT\nunit.uikit\obj\Debug\nunit.uikit.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\NUNIT\nunit.uikit\obj\Debug\nunit.uikit.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\NUNIT\nunit.uikit\obj\Debug\nunit.uikit.pdb
-F:\Windows-Enterprise-VE-2016\VE-2016\NUNIT\nunit.uikit\obj\Debug\nunit.uikit.csprojResolveAssemblyReference.cache

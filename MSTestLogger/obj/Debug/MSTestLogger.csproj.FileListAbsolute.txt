@@ -5,11 +5,3 @@ C:\Users\me\VE-2016\MSTestLogger\obj\Debug\MSTestLogger.dll
 C:\Users\me\VE-2016\MSTestLogger\obj\Debug\MSTestLogger.pdb
 C:\Users\me\VE-2016\MSTestLogger\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 C:\Users\me\VE-2016\MSTestLogger\obj\Debug\MSTestLogger.csprojResolveAssemblyReference.cache
-F:\Windows-Enterprise-VE-2016\VE-2016\MSTestLogger\bin\Debug\MSTestLogger.dll
-F:\Windows-Enterprise-VE-2016\VE-2016\MSTestLogger\bin\Debug\MSTestLogger.pdb
-F:\Windows-Enterprise-VE-2016\VE-2016\MSTestLogger\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-F:\Windows-Enterprise-VE-2016\VE-2016\MSTestLogger\bin\Debug\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
-F:\Windows-Enterprise-VE-2016\VE-2016\MSTestLogger\obj\Debug\MSTestLogger.csprojResolveAssemblyReference.cache
-F:\Windows-Enterprise-VE-2016\VE-2016\MSTestLogger\obj\Debug\MSTestLogger.csproj.CoreCompileInputs.cache
-F:\Windows-Enterprise-VE-2016\VE-2016\MSTestLogger\obj\Debug\MSTestLogger.dll
-F:\Windows-Enterprise-VE-2016\VE-2016\MSTestLogger\obj\Debug\MSTestLogger.pdb

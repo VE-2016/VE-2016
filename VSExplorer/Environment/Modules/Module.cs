@@ -43,7 +43,7 @@ namespace WinExplorer
 
             gui.Command_Module cc = new gui.Command_Module(ExplorerForms.ef);
             cc.Names = "Add Item";
-            cc.image = Resources.NewItem_16x;
+            cc.image = ve_resource.NewItem_16x;
 
             d.dict.Add("Add Item", cc);
             d.temp.Add("Add Item");
@@ -167,7 +167,7 @@ namespace WinExplorer
 
             gui.Command_Module cc = new gui.Command_Module(ExplorerForms.ef);
             cc.Names = "Add Item";
-            //cc.image = Resources.NewItem_16x;
+            //cc.image = ve_resource.NewItem_16x;
 
             d.dict.Add("Add Item", cc);
             d.temp.Add("Add Item");
@@ -202,7 +202,7 @@ namespace WinExplorer
             d.temp.Add("Undo");
             d.temp.Add("Separator");
 
-            gui.Command_Gui gc = new gui.Command_Gui(ExplorerForms.ef);
+            gui.Command_Gui gc = new gui.Command_SolutionConfiguration(ExplorerForms.ef);
             gc.Names = "Solution Configurations";
             d.dict.Add("Solution Configurations", gc);
             d.temp.Add("Solution Configurations");
@@ -286,7 +286,7 @@ namespace WinExplorer
 
             gui.Command_Module cc = new gui.Command_Module(ExplorerForms.ef);
             cc.Names = "Add Item";
-            cc.image = Resources.NewItem_16x;
+            cc.image = ve_resource.NewItem_16x;
 
             d.dict.Add("Add Item", cc);
             d.temp.Add("Add Item");
@@ -321,7 +321,7 @@ namespace WinExplorer
             d.temp.Add("Undo");
             d.temp.Add("Separator");
 
-            gui.Command_Gui gc = new gui.Command_Gui(ExplorerForms.ef);
+            gui.Command_Gui gc = new gui.Command_SolutionConfiguration(ExplorerForms.ef);
             gc.Names = "Solution Configurations";
             d.dict.Add("Solution Configurations", gc);
             d.temp.Add("Solution Configurations");

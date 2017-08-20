@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <TemplateID>Microsoft.Cloud.CSharp.WebJob.Triggered</TemplateID>
+    <Hidden>true</Hidden>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+    <SortOrder>175</SortOrder>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>WebJob</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <CreateInPlace>false</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="WebJobApplication.csproj" ReplaceParameters="true">
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true">Program.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true">Functions.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true">App.config</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
+  </WizardExtension>
+  <WizardData>
+      <packages repository="registry" keyName="WTAWebFormsVS15" isPreunzipped="true">
+      <package id="Newtonsoft.Json" version="6.0.8" skipAssemblyReferences="true" />
+      <package id="System.Spatial" version="5.7.0" skipAssemblyReferences="true" />
+      <package id="Microsoft.Data.Edm" version="5.7.0" skipAssemblyReferences="true" />
+      <package id="Microsoft.Data.OData" version="5.7.0" skipAssemblyReferences="true" />
+      <package id="Microsoft.Data.Services.Client" version="5.7.0" skipAssemblyReferences="true" />
+      <package id="Microsoft.WindowsAzure.ConfigurationManager" version="3.2.1" skipAssemblyReferences="true" />
+      <package id="WindowsAzure.Storage" version="7.0.0" skipAssemblyReferences="true" />
+      <package id="Microsoft.Azure.WebJobs.Core" version="1.1.2" skipAssemblyReferences="true" />
+      <package id="Microsoft.Azure.WebJobs" version="1.1.2" skipAssemblyReferences="true" />
+	    <package id="Microsoft.Azure.KeyVault.Core" version="1.0.0" skipAssemblyReferences="true" />
+    </packages>
+  </WizardData>  
+</VSTemplate>

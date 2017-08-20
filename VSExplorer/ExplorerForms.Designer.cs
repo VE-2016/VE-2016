@@ -1,20 +1,4 @@
 /*
- * QuickSharp Copyright (C) 2008-2012 Steve Walker.
- *
- * This file is part of QuickSharp.
- *
- * QuickSharp is free software: you can redistribute it and/or modify it under
- * the terms of the GNU Lesser General Public License as published by the Free
- * Software Foundation, either version 3 of the License, or (at your option)
- * any later version.
- *
- * QuickSharp is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- * FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License
- * for more details.
- *
- * You should have received a copy of the GNU Lesser General Public License
- * along with QuickSharp. If not, see <http://www.gnu.org/licenses/>.
  *
  */
 
@@ -22,14 +6,12 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.ComponentModel;
 using System.IO;
-//using QuickSharp.Core;
 
 namespace WinExplorer
 {
     partial class ExplorerForms
     {
         private IContainer _components = null;
-        //private ToolStrip _mainToolStrip;
         protected override void Dispose(bool disposing)
         {
             if (disposing && (_components != null))
@@ -463,7 +445,7 @@ namespace WinExplorer
             // toolStripButton11
             // 
             this.toolStripButton11.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton11.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton11.Image")));
+            //this.toolStripButton11.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton11.Image")));
             this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton11.Name = "toolStripButton11";
             this.toolStripButton11.Size = new System.Drawing.Size(87, 22);
@@ -538,7 +520,7 @@ namespace WinExplorer
             // toolStripButton13
             // 
             this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton13.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton13.Image")));
+            //this.toolStripButton13.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton13.Image")));
             this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.toolStripButton13.Name = "toolStripButton13";
             this.toolStripButton13.Size = new System.Drawing.Size(23, 22);
@@ -549,7 +531,7 @@ namespace WinExplorer
             // toolStripButton14
             // 
             this.toolStripButton14.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton14.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton14.Image")));
+            //this.toolStripButton14.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton14.Image")));
             this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton14.Name = "toolStripButton14";
             this.toolStripButton14.Size = new System.Drawing.Size(33, 22);
@@ -672,7 +654,7 @@ namespace WinExplorer
             // toolStripButton3
             // 
             this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            //this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(35, 22);
@@ -726,7 +708,7 @@ namespace WinExplorer
             // 
             // toolStripButton5
             // 
-            this.toolStripButton5.Image = global::WinExplorer.Resources.Open_6529_24;
+            this.toolStripButton5.Image = global::WinExplorer.ve_resource.FolderOpen_16x;
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(56, 22);
@@ -735,7 +717,7 @@ namespace WinExplorer
             // 
             // toolStripButton6
             // 
-            this.toolStripButton6.Image = global::WinExplorer.Environment.Resources.clearall;
+            this.toolStripButton6.Image = global::WinExplorer.ve_resource.Refresh_16x;
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
             this.toolStripButton6.Size = new System.Drawing.Size(60, 22);
@@ -744,7 +726,7 @@ namespace WinExplorer
             // 
             // toolStripButton2
             // 
-            this.toolStripButton2.Image = global::WinExplorer.Environment.Resources.clearitems;
+            this.toolStripButton2.Image = global::WinExplorer.ve_resource.ClearCollection_16x;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(71, 22);
@@ -891,7 +873,7 @@ namespace WinExplorer
             // 
             // newItemToolStripMenuItem
             // 
-            this.newItemToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newItemToolStripMenuItem.Image")));
+            //this.newItemToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newItemToolStripMenuItem.Image")));
             this.newItemToolStripMenuItem.Name = "newItemToolStripMenuItem";
             this.newItemToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.newItemToolStripMenuItem.Text = "New Item";
@@ -899,7 +881,7 @@ namespace WinExplorer
             // 
             // existingItemToolStripMenuItem
             // 
-            this.existingItemToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("existingItemToolStripMenuItem.Image")));
+            //this.existingItemToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("existingItemToolStripMenuItem.Image")));
             this.existingItemToolStripMenuItem.Name = "existingItemToolStripMenuItem";
             this.existingItemToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.existingItemToolStripMenuItem.Text = "Existing Item";
@@ -907,7 +889,7 @@ namespace WinExplorer
             // 
             // toolStripMenuItem20
             // 
-            this.toolStripMenuItem20.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem20.Image")));
+            //this.toolStripMenuItem20.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem20.Image")));
             this.toolStripMenuItem20.Name = "toolStripMenuItem20";
             this.toolStripMenuItem20.Size = new System.Drawing.Size(157, 22);
             this.toolStripMenuItem20.Text = "New Folder";
@@ -952,7 +934,7 @@ namespace WinExplorer
             // 
             // setAsMainProjectToolStripMenuItem
             // 
-            this.setAsMainProjectToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("setAsMainProjectToolStripMenuItem.Image")));
+            //this.setAsMainProjectToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("setAsMainProjectToolStripMenuItem.Image")));
             this.setAsMainProjectToolStripMenuItem.Name = "setAsMainProjectToolStripMenuItem";
             this.setAsMainProjectToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.setAsMainProjectToolStripMenuItem.Text = "Set as StartUp Project";
@@ -1036,7 +1018,7 @@ namespace WinExplorer
             // 
             // projectPropertiesToolStripMenuItem
             // 
-            this.projectPropertiesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("projectPropertiesToolStripMenuItem.Image")));
+            //this.projectPropertiesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("projectPropertiesToolStripMenuItem.Image")));
             this.projectPropertiesToolStripMenuItem.Name = "projectPropertiesToolStripMenuItem";
             this.projectPropertiesToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.projectPropertiesToolStripMenuItem.Text = "Project properties";
@@ -1177,7 +1159,7 @@ namespace WinExplorer
             // 
             // existingItemToolStripMenuItem1
             // 
-            this.existingItemToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("existingItemToolStripMenuItem1.Image")));
+            //this.existingItemToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("existingItemToolStripMenuItem1.Image")));
             this.existingItemToolStripMenuItem1.Name = "existingItemToolStripMenuItem1";
             this.existingItemToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
             this.existingItemToolStripMenuItem1.Text = "Existing Item";
@@ -1227,7 +1209,7 @@ namespace WinExplorer
             // 
             // propertiesToolStripMenuItem
             // 
-            this.propertiesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("propertiesToolStripMenuItem.Image")));
+            //this.propertiesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("propertiesToolStripMenuItem.Image")));
             this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
             this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.propertiesToolStripMenuItem.Text = "Properties";
@@ -1297,7 +1279,7 @@ namespace WinExplorer
             // 
             // projectToolStripMenuItem2
             // 
-            this.projectToolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("projectToolStripMenuItem2.Image")));
+            //this.projectToolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("projectToolStripMenuItem2.Image")));
             this.projectToolStripMenuItem2.Name = "projectToolStripMenuItem2";
             this.projectToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.projectToolStripMenuItem2.Text = "Project";
@@ -1305,7 +1287,7 @@ namespace WinExplorer
             // 
             // fileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fileToolStripMenuItem.Image")));
+            //this.fileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fileToolStripMenuItem.Image")));
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.fileToolStripMenuItem.Text = "File";
@@ -1334,14 +1316,14 @@ namespace WinExplorer
             // 
             // toolStripMenuItem78
             // 
-            this.toolStripMenuItem78.Image = global::WinExplorer.resource_alls.openfolder;
+            this.toolStripMenuItem78.Image = global::WinExplorer.ve_resource.FolderOpen_16x;
             this.toolStripMenuItem78.Name = "toolStripMenuItem78";
             this.toolStripMenuItem78.Size = new System.Drawing.Size(166, 22);
             this.toolStripMenuItem78.Text = "Open File";
             // 
             // toolStripMenuItem87
             // 
-            this.toolStripMenuItem87.Image = global::WinExplorer.Resources.ShowStartPage_256x;
+            this.toolStripMenuItem87.Image = global::WinExplorer.ve_resource.ShowStartPage_256x;
             this.toolStripMenuItem87.Name = "toolStripMenuItem87";
             this.toolStripMenuItem87.Size = new System.Drawing.Size(230, 22);
             this.toolStripMenuItem87.Text = "Start Page";
@@ -1400,7 +1382,7 @@ namespace WinExplorer
             // 
             // toolStripMenuItem14
             // 
-            this.toolStripMenuItem14.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem14.Image")));
+            //this.toolStripMenuItem14.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem14.Image")));
             this.toolStripMenuItem14.Name = "toolStripMenuItem14";
             this.toolStripMenuItem14.Size = new System.Drawing.Size(230, 22);
             this.toolStripMenuItem14.Text = "Close Solution";
@@ -1420,7 +1402,7 @@ namespace WinExplorer
             // 
             // toolStripMenuItem76
             // 
-            this.toolStripMenuItem76.Image = global::WinExplorer.Resources.SaveAll_256x;
+            this.toolStripMenuItem76.Image = global::WinExplorer.ve_resource.SaveAll_256x;
             this.toolStripMenuItem76.Name = "toolStripMenuItem76";
             this.toolStripMenuItem76.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.S)));
@@ -1458,7 +1440,7 @@ namespace WinExplorer
             // 
             // exitToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
+            //this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F3)));
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
@@ -1489,7 +1471,7 @@ namespace WinExplorer
             // 
             // toolStripMenuItem10
             // 
-            this.toolStripMenuItem10.Image = global::WinExplorer.Resources.Undo_16x;
+            this.toolStripMenuItem10.Image = global::WinExplorer.ve_resource.Undo_16x;
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
             this.toolStripMenuItem10.Size = new System.Drawing.Size(199, 22);
             this.toolStripMenuItem10.Text = "Undo";
@@ -1497,7 +1479,7 @@ namespace WinExplorer
             // 
             // toolStripMenuItem9
             // 
-            this.toolStripMenuItem9.Image = global::WinExplorer.Resources.Redo_16x;
+            this.toolStripMenuItem9.Image = global::WinExplorer.ve_resource.Redo_16x;
             this.toolStripMenuItem9.Name = "toolStripMenuItem9";
             this.toolStripMenuItem9.Size = new System.Drawing.Size(199, 22);
             this.toolStripMenuItem9.Text = "Redo";
@@ -1523,7 +1505,7 @@ namespace WinExplorer
             // 
             // toolStripMenuItem72
             // 
-            this.toolStripMenuItem72.Image = global::WinExplorer.Resources.Cut_24x;
+            this.toolStripMenuItem72.Image = global::WinExplorer.ve_resource.Cut_24x;
             this.toolStripMenuItem72.Name = "toolStripMenuItem72";
             this.toolStripMenuItem72.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
             this.toolStripMenuItem72.Size = new System.Drawing.Size(199, 22);
@@ -1532,7 +1514,7 @@ namespace WinExplorer
             // 
             // toolStripMenuItem73
             // 
-            this.toolStripMenuItem73.Image = global::WinExplorer.Resources.Copy_32x;
+            this.toolStripMenuItem73.Image = global::WinExplorer.ve_resource.Copy_32x;
             this.toolStripMenuItem73.Name = "toolStripMenuItem73";
             this.toolStripMenuItem73.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
             this.toolStripMenuItem73.Size = new System.Drawing.Size(199, 22);
@@ -1541,7 +1523,7 @@ namespace WinExplorer
             // 
             // toolStripMenuItem74
             // 
-            this.toolStripMenuItem74.Image = global::WinExplorer.Resources.Paste_16x;
+            this.toolStripMenuItem74.Image = global::WinExplorer.ve_resource.Paste_16x;
             this.toolStripMenuItem74.Name = "toolStripMenuItem74";
             this.toolStripMenuItem74.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
             this.toolStripMenuItem74.Size = new System.Drawing.Size(199, 22);
@@ -1555,7 +1537,7 @@ namespace WinExplorer
             // 
             // toolStripMenuItem75
             // 
-            this.toolStripMenuItem75.Image = global::WinExplorer.Resources.Cancel_256x;
+            this.toolStripMenuItem75.Image = global::WinExplorer.ve_resource.Cancel_256x;
             this.toolStripMenuItem75.Name = "toolStripMenuItem75";
             this.toolStripMenuItem75.Size = new System.Drawing.Size(199, 22);
             this.toolStripMenuItem75.Text = "Delete";
@@ -1697,7 +1679,7 @@ namespace WinExplorer
             // 
             // solutionExplorerToolStripMenuItem
             // 
-            this.solutionExplorerToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("solutionExplorerToolStripMenuItem.Image")));
+            //this.solutionExplorerToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("solutionExplorerToolStripMenuItem.Image")));
             this.solutionExplorerToolStripMenuItem.Name = "solutionExplorerToolStripMenuItem";
             this.solutionExplorerToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.solutionExplorerToolStripMenuItem.Text = "Solution Explorer";
@@ -1832,7 +1814,7 @@ namespace WinExplorer
             // 
             // dataSourcesToolStripMenuItem
             // 
-            this.dataSourcesToolStripMenuItem.Image = global::WinExplorer.Resources.DataSourceView_16x;
+            this.dataSourcesToolStripMenuItem.Image = global::WinExplorer.ve_resource.DataSourceView_16x;
             this.dataSourcesToolStripMenuItem.Name = "dataSourcesToolStripMenuItem";
             this.dataSourcesToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.dataSourcesToolStripMenuItem.Text = "Data Sources";
@@ -1921,7 +1903,7 @@ namespace WinExplorer
             // 
             // propertyGridToolStripMenuItem
             // 
-            this.propertyGridToolStripMenuItem.Image = global::WinExplorer.Resources.Property_256x;
+            this.propertyGridToolStripMenuItem.Image = global::WinExplorer.ve_resource.Property_256x;
             this.propertyGridToolStripMenuItem.Name = "propertyGridToolStripMenuItem";
             this.propertyGridToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4;
             this.propertyGridToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
@@ -1984,7 +1966,7 @@ namespace WinExplorer
             // 
             // addWindowsFormToolStripMenuItem
             // 
-            this.addWindowsFormToolStripMenuItem.Image = global::WinExplorer.Resources.AddForm_16x;
+            this.addWindowsFormToolStripMenuItem.Image = global::WinExplorer.ve_resource.AddForm_16x;
             this.addWindowsFormToolStripMenuItem.Name = "addWindowsFormToolStripMenuItem";
             this.addWindowsFormToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.addWindowsFormToolStripMenuItem.Text = "Add Windows Form";
@@ -1997,7 +1979,7 @@ namespace WinExplorer
             // 
             // addComponentToolStripMenuItem
             // 
-            this.addComponentToolStripMenuItem.Image = global::WinExplorer.Resources.AddComponent_16x;
+            this.addComponentToolStripMenuItem.Image = global::WinExplorer.ve_resource.AddComponent_16x;
             this.addComponentToolStripMenuItem.Name = "addComponentToolStripMenuItem";
             this.addComponentToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.addComponentToolStripMenuItem.Text = "Add Component";
@@ -2015,7 +1997,7 @@ namespace WinExplorer
             // 
             // addNewItemToolStripMenuItem
             // 
-            this.addNewItemToolStripMenuItem.Image = global::WinExplorer.Resources.NewItem_16x;
+            this.addNewItemToolStripMenuItem.Image = global::WinExplorer.ve_resource.NewItem_16x;
             this.addNewItemToolStripMenuItem.Name = "addNewItemToolStripMenuItem";
             this.addNewItemToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.A)));
@@ -2070,7 +2052,7 @@ namespace WinExplorer
             // 
             // setAsStartupProjectToolStripMenuItem
             // 
-            this.setAsStartupProjectToolStripMenuItem.Image = global::WinExplorer.Resources.StartupProject_32x;
+            this.setAsStartupProjectToolStripMenuItem.Image = global::WinExplorer.ve_resource.StartupProject_32x;
             this.setAsStartupProjectToolStripMenuItem.Name = "setAsStartupProjectToolStripMenuItem";
             this.setAsStartupProjectToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.setAsStartupProjectToolStripMenuItem.Text = "Set as Startup Project";
@@ -2119,7 +2101,7 @@ namespace WinExplorer
             // 
             // buildSolutionToolStripMenuItem
             // 
-            this.buildSolutionToolStripMenuItem.Image = global::WinExplorer.Resources.BuildSolution_256x;
+            this.buildSolutionToolStripMenuItem.Image = global::WinExplorer.ve_resource.BuildSolution_256x;
             this.buildSolutionToolStripMenuItem.Name = "buildSolutionToolStripMenuItem";
             this.buildSolutionToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
             this.buildSolutionToolStripMenuItem.Text = "Build solution";
@@ -2223,7 +2205,7 @@ namespace WinExplorer
             // 
             // breakpointsToolStripMenuItem
             // 
-            this.breakpointsToolStripMenuItem.Image = global::WinExplorer.Resources.BreakpointWindow_16x;
+            this.breakpointsToolStripMenuItem.Image = global::WinExplorer.ve_resource.BreakpointWindow_16x;
             this.breakpointsToolStripMenuItem.Name = "breakpointsToolStripMenuItem";
             this.breakpointsToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.breakpointsToolStripMenuItem.Text = "Breakpoints";
@@ -2231,14 +2213,14 @@ namespace WinExplorer
             // 
             // exceptionSettingsToolStripMenuItem
             // 
-            this.exceptionSettingsToolStripMenuItem.Image = global::WinExplorer.Resources.ExceptionSettings_16x;
+            this.exceptionSettingsToolStripMenuItem.Image = global::WinExplorer.ve_resource.ExceptionSettings_16x;
             this.exceptionSettingsToolStripMenuItem.Name = "exceptionSettingsToolStripMenuItem";
             this.exceptionSettingsToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.exceptionSettingsToolStripMenuItem.Text = "Exception Settings";
             // 
             // outputToolStripMenuItem
             // 
-            this.outputToolStripMenuItem.Image = global::WinExplorer.Resources.Output_256x;
+            this.outputToolStripMenuItem.Image = global::WinExplorer.ve_resource.Output_256x;
             this.outputToolStripMenuItem.Name = "outputToolStripMenuItem";
             this.outputToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.outputToolStripMenuItem.Text = "Output";
@@ -2256,7 +2238,7 @@ namespace WinExplorer
             // 
             // immediateToolStripMenuItem
             // 
-            this.immediateToolStripMenuItem.Image = global::WinExplorer.Resources.ImmediateWindow_16x;
+            this.immediateToolStripMenuItem.Image = global::WinExplorer.ve_resource.ImmediateWindow_16x;
             this.immediateToolStripMenuItem.Name = "immediateToolStripMenuItem";
             this.immediateToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.immediateToolStripMenuItem.Text = "Immediate";
@@ -2281,14 +2263,14 @@ namespace WinExplorer
             // 
             // startDebuggingToolStripMenuItem
             // 
-            this.startDebuggingToolStripMenuItem.Image = global::WinExplorer.Resources.Run_256x;
+            this.startDebuggingToolStripMenuItem.Image = global::WinExplorer.ve_resource.Run_256x;
             this.startDebuggingToolStripMenuItem.Name = "startDebuggingToolStripMenuItem";
             this.startDebuggingToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.startDebuggingToolStripMenuItem.Text = "Start Debugging";
             // 
             // startWithoutDebuggingToolStripMenuItem
             // 
-            this.startWithoutDebuggingToolStripMenuItem.Image = global::WinExplorer.Resources.StartWithoutDebug_16x;
+            this.startWithoutDebuggingToolStripMenuItem.Image = global::WinExplorer.ve_resource.StartWithoutDebug_16x;
             this.startWithoutDebuggingToolStripMenuItem.Name = "startWithoutDebuggingToolStripMenuItem";
             this.startWithoutDebuggingToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.startWithoutDebuggingToolStripMenuItem.Text = "Start without debugging";
@@ -2446,7 +2428,7 @@ namespace WinExplorer
             // 
             // closeAllDocumentsToolStripMenuItem
             // 
-            this.closeAllDocumentsToolStripMenuItem.Image = global::WinExplorer.Resources.CloseDocumentGroup_16x;
+            this.closeAllDocumentsToolStripMenuItem.Image = global::WinExplorer.ve_resource.CloseDocumentGroup_16x;
             this.closeAllDocumentsToolStripMenuItem.Name = "closeAllDocumentsToolStripMenuItem";
             this.closeAllDocumentsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
             this.closeAllDocumentsToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
@@ -2472,7 +2454,7 @@ namespace WinExplorer
             // 
             // viewHelpFilesToolStripMenuItem
             // 
-            this.viewHelpFilesToolStripMenuItem.Image = global::WinExplorer.Resources.StatusHelp_256x;
+            this.viewHelpFilesToolStripMenuItem.Image = global::WinExplorer.ve_resource.StatusHelp_256x;
             this.viewHelpFilesToolStripMenuItem.Name = "viewHelpFilesToolStripMenuItem";
             this.viewHelpFilesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F1)));
             this.viewHelpFilesToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
@@ -2651,7 +2633,7 @@ namespace WinExplorer
             // 
             // managedNuGetPackagesToolStripMenuItem
             // 
-            this.managedNuGetPackagesToolStripMenuItem.Image = global::WinExplorer.Resources.NugetPackage;
+            this.managedNuGetPackagesToolStripMenuItem.Image = global::WinExplorer.ve_resource.NugetPackage;
             this.managedNuGetPackagesToolStripMenuItem.Name = "managedNuGetPackagesToolStripMenuItem";
             this.managedNuGetPackagesToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
             this.managedNuGetPackagesToolStripMenuItem.Text = "Managed NuGet Packages...";
@@ -2724,14 +2706,14 @@ namespace WinExplorer
             // 
             // cutToolStripMenuItem
             // 
-            this.cutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripMenuItem.Image")));
+            //this.cutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripMenuItem.Image")));
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.cutToolStripMenuItem.Text = "Cut";
             // 
             // copyToolStripMenuItem
             // 
-            this.copyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripMenuItem.Image")));
+            //this.copyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripMenuItem.Image")));
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.copyToolStripMenuItem.Text = "Copy";
@@ -2746,7 +2728,7 @@ namespace WinExplorer
             // 
             // pasteToolStripMenuItem
             // 
-            this.pasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripMenuItem.Image")));
+            //this.pasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripMenuItem.Image")));
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.pasteToolStripMenuItem.Text = "Delete";
@@ -2826,7 +2808,7 @@ namespace WinExplorer
             // 
             // newItemToolStripMenuItem2
             // 
-            this.newItemToolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("newItemToolStripMenuItem2.Image")));
+            //this.newItemToolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("newItemToolStripMenuItem2.Image")));
             this.newItemToolStripMenuItem2.Name = "newItemToolStripMenuItem2";
             this.newItemToolStripMenuItem2.Size = new System.Drawing.Size(154, 22);
             this.newItemToolStripMenuItem2.Text = "New Item";
@@ -2834,14 +2816,14 @@ namespace WinExplorer
             // 
             // exisitngItemToolStripMenuItem
             // 
-            this.exisitngItemToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exisitngItemToolStripMenuItem.Image")));
+            //this.exisitngItemToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exisitngItemToolStripMenuItem.Image")));
             this.exisitngItemToolStripMenuItem.Name = "exisitngItemToolStripMenuItem";
             this.exisitngItemToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.exisitngItemToolStripMenuItem.Text = "Exisitng Item";
             // 
             // newFolderToolStripMenuItem2
             // 
-            this.newFolderToolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("newFolderToolStripMenuItem2.Image")));
+            //this.newFolderToolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("newFolderToolStripMenuItem2.Image")));
             this.newFolderToolStripMenuItem2.Name = "newFolderToolStripMenuItem2";
             this.newFolderToolStripMenuItem2.Size = new System.Drawing.Size(154, 22);
             this.newFolderToolStripMenuItem2.Text = "New Folder";
@@ -2900,14 +2882,14 @@ namespace WinExplorer
             // 
             // toolStripMenuItem36
             // 
-            this.toolStripMenuItem36.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem36.Image")));
+            //this.toolStripMenuItem36.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem36.Image")));
             this.toolStripMenuItem36.Name = "toolStripMenuItem36";
             this.toolStripMenuItem36.Size = new System.Drawing.Size(218, 22);
             this.toolStripMenuItem36.Text = "Cut";
             // 
             // toolStripMenuItem37
             // 
-            this.toolStripMenuItem37.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem37.Image")));
+            //this.toolStripMenuItem37.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem37.Image")));
             this.toolStripMenuItem37.Name = "toolStripMenuItem37";
             this.toolStripMenuItem37.Size = new System.Drawing.Size(218, 22);
             this.toolStripMenuItem37.Text = "Copy";
@@ -2915,7 +2897,7 @@ namespace WinExplorer
             // 
             // toolStripMenuItem38
             // 
-            this.toolStripMenuItem38.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem38.Image")));
+           // this.toolStripMenuItem38.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem38.Image")));
             this.toolStripMenuItem38.Name = "toolStripMenuItem38";
             this.toolStripMenuItem38.Size = new System.Drawing.Size(218, 22);
             this.toolStripMenuItem38.Text = "Delete";
@@ -2996,7 +2978,7 @@ namespace WinExplorer
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.helpProvider1.SetHelpKeyword(this, "Explorer");
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            //this.Icon = ve_resource.WindowsLogo_16x;// ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ExplorerForms";
             this.helpProvider1.SetShowHelp(this, true);

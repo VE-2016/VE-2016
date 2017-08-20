@@ -16,7 +16,7 @@
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -307,9 +307,9 @@
       <Project>{5df52008-1897-488c-8aff-c764447de35c}</Project>
       <Name>GACProject</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\VSParser\VSParsers.csproj">
-      <Project>{91fef9d7-5376-4ea4-be09-cfb0ebb083fd}</Project>
-      <Name>VSParsers</Name>
+    <ProjectReference Include="..\..\VSParser\VSProvider.csproj">
+      <Project>{161dc477-53af-433a-9f3b-6e43de47bbdd}</Project>
+      <Name>VSProvider</Name>
     </ProjectReference>
     <ProjectReference Include="..\SyntaxDocument\CodeEditor.SyntaxDocument.csproj">
       <Project>{3f43bab0-22b4-4fd6-9655-8ba214a093a5}</Project>

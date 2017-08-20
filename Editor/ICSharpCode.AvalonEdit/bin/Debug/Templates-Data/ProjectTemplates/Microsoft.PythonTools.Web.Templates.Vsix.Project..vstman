@@ -1,0 +1,264 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>Python\Web\CloudService</RelativePathOnDisk>
+    <TemplateFileName>CloudService.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5052" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5053" />
+        <ProjectType>Python</ProjectType>
+        <TemplateGroupID>CloudServiceProject</TemplateGroupID>
+        <TemplateID>Microsoft.CloudServiceProject.CloudService_py</TemplateID>
+        <SortOrder>30</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>AzureCloudService</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <Icon>cloudservice.ico</Icon>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>Python\Web\PollsBottle</RelativePathOnDisk>
+    <TemplateFileName>PollsBottle.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5054" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5055" />
+        <ProjectType>Python</ProjectType>
+        <ProjectSubType>
+        </ProjectSubType>
+        <SortOrder>1000</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>BottleWebProject</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="406" />
+        <PreviewImage>PollsBottle.png</PreviewImage>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>Python\Web\PollsFlask</RelativePathOnDisk>
+    <TemplateFileName>PollsFlask.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5056" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5057" />
+        <ProjectType>Python</ProjectType>
+        <ProjectSubType>
+        </ProjectSubType>
+        <SortOrder>1020</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>FlaskWebProject</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="406" />
+        <PreviewImage>PollsFlask.png</PreviewImage>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>Python\Web\PollsFlaskJade</RelativePathOnDisk>
+    <TemplateFileName>PollsFlaskJade.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5058" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5059" />
+        <ProjectType>Python</ProjectType>
+        <ProjectSubType>
+        </ProjectSubType>
+        <SortOrder>1021</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>FlaskWebProject</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="406" />
+        <PreviewImage>PollsFlaskJade.png</PreviewImage>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>Python\Web\StarterBottleProject</RelativePathOnDisk>
+    <TemplateFileName>StarterBottleProject.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5060" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5061" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="406" />
+        <ProjectType>Python</ProjectType>
+        <SortOrder>41</SortOrder>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>BottleWebProject</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PreviewImage>StarterBottleProject.png</PreviewImage>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>Python\Web\StarterFlaskJadeProject</RelativePathOnDisk>
+    <TemplateFileName>StarterFlaskJadeProject.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5062" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5063" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="406" />
+        <ProjectType>Python</ProjectType>
+        <SortOrder>41</SortOrder>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>FlaskWebProject</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PreviewImage>StarterFlaskJadeProject.png</PreviewImage>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>Python\Web\StarterFlaskProject</RelativePathOnDisk>
+    <TemplateFileName>StarterFlaskProject.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5064" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5065" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="406" />
+        <ProjectType>Python</ProjectType>
+        <SortOrder>41</SortOrder>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>FlaskWebProject</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PreviewImage>StarterFlaskProject.png</PreviewImage>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>Python\Web\WebProjectBottle</RelativePathOnDisk>
+    <TemplateFileName>WebProjectBottle.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5066" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5067" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="406" />
+        <ProjectType>Python</ProjectType>
+        <SortOrder>71</SortOrder>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>BottleWebProject</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>Python\Web\WebProjectEmpty</RelativePathOnDisk>
+    <TemplateFileName>EmptyWebProject.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5068" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5069" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="406" />
+        <ProjectType>Python</ProjectType>
+        <SortOrder>40</SortOrder>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebProject</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>Python\Web\WebProjectFlask</RelativePathOnDisk>
+    <TemplateFileName>WebProjectFlask.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5070" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5071" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="406" />
+        <ProjectType>Python</ProjectType>
+        <SortOrder>71</SortOrder>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>FlaskWebProject</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>Python\Web\WebRoleBottle</RelativePathOnDisk>
+    <TemplateFileName>WebRoleBottle.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5072" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5073" />
+        <Hidden>true</Hidden>
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="406" />
+        <ProjectType>Python</ProjectType>
+        <SortOrder>71</SortOrder>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>BottleWebProject</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>Python\Web\WebRoleEmpty</RelativePathOnDisk>
+    <TemplateFileName>WebRoleEmpty.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5074" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5075" />
+        <Hidden>true</Hidden>
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="406" />
+        <ProjectType>Python</ProjectType>
+        <SortOrder>60</SortOrder>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebProject</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>Python\Web\WebRoleFlask</RelativePathOnDisk>
+    <TemplateFileName>WebRoleFlask.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5076" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5077" />
+        <Hidden>true</Hidden>
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="406" />
+        <ProjectType>Python</ProjectType>
+        <SortOrder>71</SortOrder>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>FlaskWebProject</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>Python\Web\WorkerRoleProject</RelativePathOnDisk>
+    <TemplateFileName>WorkerRoleProject.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5078" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5079" />
+        <Hidden>true</Hidden>
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="408" />
+        <ProjectType>Python</ProjectType>
+        <SortOrder>60</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WorkerProject</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

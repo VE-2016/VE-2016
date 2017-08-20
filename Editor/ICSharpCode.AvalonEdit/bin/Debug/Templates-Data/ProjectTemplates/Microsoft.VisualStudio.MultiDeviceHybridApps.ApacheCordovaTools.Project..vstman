@@ -1,0 +1,12 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateDir>
+    <RelativePath>JavaScript\Mobile Apps</RelativePath>
+    <LocalizedName Package="{317a330d-8757-4084-8526-e8a1d165433d}" ID="2000" />
+    <SortOrder>1</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>TypeScript\Mobile Apps</RelativePath>
+    <LocalizedName Package="{317a330d-8757-4084-8526-e8a1d165433d}" ID="2000" />
+    <SortOrder>1</SortOrder>
+  </VSTemplateDir>
+</VSTemplateManifest>

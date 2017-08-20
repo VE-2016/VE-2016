@@ -11,7 +11,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AIMS.Libraries.Scripting.ScriptControl</RootNamespace>
     <AssemblyName>ScriptControl</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -66,6 +66,8 @@
     <Reference Include="Mono.Cecil.Rocks">
       <HintPath>..\..\..\..\packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.Rocks.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -73,8 +75,11 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AvalonEditHost.cs" />
     <Compile Include="Converter\CodeCompiler.cs" />
     <Compile Include="Converter\CodeConverter.cs" />
     <Compile Include="Converter\TlbImp.cs" />
@@ -255,6 +260,9 @@
     <None Include="Properties\DataSources\AIMS.Libraries.CodeEditor.TypeExplorer.datasource" />
     <None Include="Properties\DataSources\AIMS.Libraries.CodeEditor.TypeForm.datasource" />
     <None Include="Resources\Default_Program.cs" />
+    <Compile Include="Properties\AvalonDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Windows\FileForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -372,6 +380,9 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\AvalonDocument.resx">
+      <DependentUpon>AvalonDocument.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReferenceDialog\AddWebReferenceDialog.resx">
       <SubType>Designer</SubType>
       <DependentUpon>AddWebReferenceDialog.cs</DependentUpon>
@@ -541,9 +552,14 @@
     <Content Include="NRefactory\Parser\Frames\SharpCoco.exe" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\VSParser\VSParsers.csproj">
-      <Project>{91fef9d7-5376-4ea4-be09-cfb0ebb083fd}</Project>
-      <Name>VSParsers</Name>
+    <ProjectReference Include="..\..\..\..\VSParser\VSProvider.csproj">
+      <Project>{161dc477-53af-433a-9f3b-6e43de47bbdd}</Project>
+      <Name>VSProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\AvalonEdit.Editor\AvalonEdit.Editor.csproj">
+      <Project>{ee9713d5-cd63-4836-88ff-75c3809ff1db}</Project>
+      <Name>AvalonEdit.Editor</Name>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\..\CodeEditor\CodeEditor.csproj">
       <Project>{94bfa44a-f4d0-4605-88e6-3add498f5e16}</Project>

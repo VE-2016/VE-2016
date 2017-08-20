@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{77a5a151-6a9b-4d08-bc38-340ab29566e2}" ID="500" />
+    <Description Package="{77a5a151-6a9b-4d08-bc38-340ab29566e2}" ID="501" />
+    <ProjectType>CSharp</ProjectType>
+    <TemplateGroupID>CloudServiceProject</TemplateGroupID>
+    <TemplateID>Microsoft.CloudServiceProject.CloudService_cs</TemplateID>
+    <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+    <SortOrder>90</SortOrder>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>AzureCloudService</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <Icon>cloudservice.ico</Icon>
+    <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="CloudService.ccproj" ReplaceParameters="true">
+      <ProjectItem OpenInEditor="false" ReplaceParameters="true">ServiceDefinition.csdef</ProjectItem>
+      <ProjectItem OpenInEditor="false" ReplaceParameters="true">ServiceConfiguration.Local.cscfg</ProjectItem>
+      <ProjectItem OpenInEditor="false" ReplaceParameters="true">ServiceConfiguration.Cloud.cscfg</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VisualStudio.CloudService.Wizard,Version=1.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VisualStudio.CloudService.Wizard.CloudServiceWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

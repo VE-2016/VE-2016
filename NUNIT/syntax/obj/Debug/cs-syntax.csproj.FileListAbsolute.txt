@@ -524,5 +524,3 @@ C:\Users\me\VE-2016\NUNIT\syntax\bin\Debug\Images\Tree\Default\Inconclusive.png
 C:\Users\me\VE-2016\NUNIT\syntax\bin\Debug\Images\Tree\Default\Skipped.png
 C:\Users\me\VE-2016\NUNIT\syntax\bin\Debug\Images\Tree\Default\Success.png
 C:\Users\me\VE-2016\NUNIT\syntax\bin\Debug\nunit.engine.addins
-F:\Windows-Enterprise-VE-2016\VE-2016\NUNIT\syntax\obj\Debug\cs-syntax.csprojResolveAssemblyReference.cache
-F:\Windows-Enterprise-VE-2016\VE-2016\NUNIT\syntax\obj\Debug\cs-syntax.csproj.CoreCompileInputs.cache

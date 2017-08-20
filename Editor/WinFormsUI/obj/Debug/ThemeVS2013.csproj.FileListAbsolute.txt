@@ -47,5 +47,6 @@ F:\Windows-Enterprise-VE-2016\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinF
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2012.Strings.resources
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2013.Resources.resources
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\WinFormsUI\obj\Debug\ThemeVS2013.csproj.GenerateResource.Cache
+F:\Windows-Enterprise-VE-2016\VE-2016\Editor\WinFormsUI\obj\Debug\ThemeVS2013.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2013.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2013.pdb

@@ -1,0 +1,19 @@
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3161" />
+    <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3162" />
+    <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4559" />
+    <TemplateID>Microsoft.VisualBasic.General.AppManifestInternal</TemplateID>
+    <ProjectType>VisualBasic</ProjectType>
+    <SortOrder>256</SortOrder>
+    <DefaultName>app.manifest</DefaultName>
+    <Hidden>true</Hidden>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="false" OpenInEditor="false">app.manifest</ProjectItem>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VSDesigner, Version=15.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VSDesigner.ProjectWizard.AppManifestTemplateWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

@@ -1,0 +1,6 @@
+F:\Application\MSBuildProjects2\VSExplorer\bin\Debug\TemplateSolution\ConsoleApplication\bin\Debug\ConsoleApplication1.exe.config
+F:\Application\MSBuildProjects2\VSExplorer\bin\Debug\TemplateSolution\ConsoleApplication\bin\Debug\ConsoleApplication1.exe
+F:\Application\MSBuildProjects2\VSExplorer\bin\Debug\TemplateSolution\ConsoleApplication\bin\Debug\ConsoleApplication1.pdb
+F:\Application\MSBuildProjects2\VSExplorer\bin\Debug\TemplateSolution\ConsoleApplication\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+F:\Application\MSBuildProjects2\VSExplorer\bin\Debug\TemplateSolution\ConsoleApplication\obj\Debug\ConsoleApplication1.exe
+F:\Application\MSBuildProjects2\VSExplorer\bin\Debug\TemplateSolution\ConsoleApplication\obj\Debug\ConsoleApplication1.pdb

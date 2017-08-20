@@ -1,0 +1,17 @@
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5038" />
+    <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5039" />
+    <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="412" />
+    <ProjectType>Python</ProjectType>
+    <DefaultName>web.debug.config</DefaultName>
+    <SortOrder>330</SortOrder>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="true" TargetFileName="web.debug.config" ItemType="Content">web.debug.config</ProjectItem>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.PythonTools.ProjectWizards, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.PythonTools.ProjectWizards.AzureDebugWebConfigWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

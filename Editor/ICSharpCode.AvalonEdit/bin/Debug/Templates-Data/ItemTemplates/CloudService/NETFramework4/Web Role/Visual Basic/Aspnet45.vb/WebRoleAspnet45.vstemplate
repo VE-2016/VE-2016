@@ -1,0 +1,16 @@
+﻿<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="5003"/>
+    <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="5004"/>
+    <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="4" />
+    <ProjectType>CloudServiceProject</ProjectType>
+    <DefaultName>WebRole</DefaultName>
+    <SortOrder>1</SortOrder>
+    <TemplateID>2F44965C-0C6F-4337-B1B1-60A979F33E27</TemplateID>
+  </TemplateData>
+  <TemplateContent />
+  <WizardExtension>
+    <Assembly>Microsoft.VisualStudio.CloudService.Wizard,Version=1.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VisualStudio.CloudService.Wizard.AddItemWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

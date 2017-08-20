@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4652" />
+    <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4653" />
+    <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4584" />
+    <ProjectType>VisualBasic</ProjectType>
+    <TemplateID>Microsoft.VisualBasic.Windows.WpfBrowserApplication</TemplateID>
+    <SortOrder>20</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>WpfBrowserApp</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <PromptForSaveOnCreation>false</PromptForSaveOnCreation>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="WPFBrowserApplication.vbproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="My Project\AssemblyInfo.vb">AssemblyInfo.vb</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="My Project\Resources.resx">Resources.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="My Project\Resources.Designer.vb">Resources.Designer.vb</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="My Project\Settings.settings">Settings.settings</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="My Project\Settings.Designer.vb">Settings.Designer.vb</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="My Project\MyExtensions\MyWpfExtension.vb">MyWpfExtension.vb</ProjectItem>
+      <ProjectItem TargetFileName="My Project\app.manifest">app.manifest</ProjectItem>
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true" SubType="Code" OpenOrder="20">Page1.xaml.vb</ProjectItem>
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true" OpenOrder="10">Page1.xaml</ProjectItem>
+      <ProjectItem ReplaceParameters="true">Application.xaml</ProjectItem>
+      <ProjectItem ReplaceParameters="true" SubType="Code">Application.xaml.vb</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>WinFxBrowserApplicationTemplateWizard, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VisualStudio.FidalgoTemplates.WinFxBrowserApplicationTemplateWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

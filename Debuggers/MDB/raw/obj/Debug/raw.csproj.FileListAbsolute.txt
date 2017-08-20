@@ -62,5 +62,6 @@ F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\raw\bin\Debug\NativeDebugWra
 F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\raw\bin\Debug\NativeDebugWrappers.pdb
 F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\raw\bin\Debug\NativeDebugWrappers.xml
 F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\raw\obj\Debug\raw.csprojResolveAssemblyReference.cache
+F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\raw\obj\Debug\raw.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\raw\obj\Debug\raw.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\raw\obj\Debug\raw.pdb

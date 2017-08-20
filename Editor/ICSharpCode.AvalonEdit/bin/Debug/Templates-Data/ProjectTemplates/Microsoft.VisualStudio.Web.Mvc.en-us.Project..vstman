@@ -1,0 +1,46 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\CSharp\1033\Razor3StarterSiteProjectTemplate.cshtml</RelativePathOnDisk>
+    <TemplateFileName>RazorStarterSiteProjectTemplate.15.cshtml.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>ASP.NET Web Site (Razor v3)</Name>
+        <Description>A project for creating a web site using Razor syntax (CSHTML)</Description>
+        <Icon>cswebsitetemplate.11.ico</Icon>
+        <TemplateID>Razor3StarterSiteProjectTemplate.cshtml</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>CSharp</ProjectSubType>
+        <SortOrder>11</SortOrder>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <LocationField>Hidden</LocationField>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>Web\VisualBasic\1033\Razor3StarterSiteProjectTemplate.vbhtml</RelativePathOnDisk>
+    <TemplateFileName>RazorStarterSiteProjectTemplate.15.vbhtml.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>ASP.NET Web Site (Razor v3)</Name>
+        <Description>A project for creating a web site using Razor syntax (VBHTML)</Description>
+        <Icon>vbwebsitetemplate.11.ico</Icon>
+        <TemplateID>Razor3StarterSiteProjectTemplate.vbhtml</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>VisualBasic</ProjectSubType>
+        <SortOrder>11</SortOrder>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebSite</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <LocationField>Hidden</LocationField>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

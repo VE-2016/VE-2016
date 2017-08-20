@@ -56,7 +56,7 @@ namespace WinExplorer
             // 
             // toolStripButton1
             // 
-            this.toolStripButton1.Image = global::WinExplorer.resource_vsc.openfile;
+            this.toolStripButton1.Image = global::WinExplorer.ve_resource.FolderOpen_16x;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(56, 22);

@@ -118,7 +118,7 @@ namespace WinExplorer.UI
  
             ResumeLayout();
             button = pictureBox1;
-            button.Image = Rotate(Resources.Expander_24x);
+            button.Image = Rotate(ve_resource.Expander_24x);
             button.Click += Button_Click;
             button.Visible = false;
             LoadRecent();
@@ -223,7 +223,7 @@ namespace WinExplorer.UI
         Panel ptfs { get; set; }
 
         string[] d = { "Open Project / Solution", "Open Folder", "Open Website" };
-        Bitmap[] bmps = { Resources.VisualStudioSolution, Resources.FolderOpen_16x, Resources.WebURL_32x };
+        Bitmap[] bmps = { ve_resource.VisualStudioSolution_256x, ve_resource.FolderOpen_16x, ve_resource.WebURL_32x };
 
         public void LoadRecent()
         {

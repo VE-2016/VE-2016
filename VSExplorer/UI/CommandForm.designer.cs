@@ -87,7 +87,7 @@ namespace WinExplorer
             // toolStripButton9
             // 
             this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton9.Image = global::WinExplorer.resource_alls.resource_32xMD1;
+            this.toolStripButton9.Image = global::WinExplorer.ve_resource.ResourceType_16x;
             this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton9.Name = "toolStripButton9";
             this.toolStripButton9.Size = new System.Drawing.Size(23, 22);

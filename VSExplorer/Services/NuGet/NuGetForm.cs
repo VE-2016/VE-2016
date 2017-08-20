@@ -260,7 +260,7 @@ namespace WinExplorer.Services.NuGet
                 {
                     Bitmap icon = NuGets.GetIcon(package.IconUrl);//NuGets.NuGetUrl(package.IconUrl);
                     if (icon == null || icon.Width == 0)
-                        icon = Resources.VSO_NugetLogo_52x;
+                        icon = ve_resource.VSO_NugetLogo_52x;
                     s.SetIcon(icon);
                 }
                 catch (Exception ex)
@@ -269,7 +269,7 @@ namespace WinExplorer.Services.NuGet
             }
             else
             {
-                Bitmap icon = Resources.VSO_NugetLogo_52x;
+                Bitmap icon = ve_resource.VSO_NugetLogo_52x;
                 s.SetIcon(icon);
             }
             if (package.Version != null)

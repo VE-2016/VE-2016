@@ -253,7 +253,7 @@ namespace WinExplorer.UI
 
             pb = new PictureBox();
             pb.Bounds = new Rectangle(1, 1, 15, 15);
-            pb.Image = Resources.Search_16x;
+            pb.Image = ve_resource.Search_16x;
             pb.Anchor = AnchorStyles.Left | AnchorStyles.Top;
             pb.BorderStyle = BorderStyle.None;
             this.Controls.Add(pb);

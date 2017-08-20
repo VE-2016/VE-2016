@@ -15,7 +15,7 @@
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -110,6 +110,12 @@
     <Compile Include="Syntax\Parser\DefaultParser.cs" />
     <Compile Include="Syntax\Parser\IParser.cs" />
     <Compile Include="Syntax\Parser\ParseTools.cs" />
+    <Compile Include="TypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TypeForm.Designer.cs">
+      <DependentUpon>TypeForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Syntax\Document\SyntaxDocument.resx">
       <DependentUpon>SyntaxDocument.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -118,11 +124,14 @@
       <DependentUpon>TextStyleDesignerDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="TypeForm.resx">
+      <DependentUpon>TypeForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\VSParser\VSParsers.csproj">
-      <Project>{91fef9d7-5376-4ea4-be09-cfb0ebb083fd}</Project>
-      <Name>VSParsers</Name>
+    <ProjectReference Include="..\..\VSParser\VSProvider.csproj">
+      <Project>{161dc477-53af-433a-9f3b-6e43de47bbdd}</Project>
+      <Name>VSProvider</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -55,7 +55,7 @@
             // 
             // toolStripButton10
             // 
-            this.toolStripButton10.Image = global::WinExplorer.Resources.SQLCEDest_16x;
+            this.toolStripButton10.Image = global::WinExplorer.ve_resource.SQLCEDest_16x;
             this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton10.Name = "toolStripButton10";
             this.toolStripButton10.Size = new System.Drawing.Size(65, 22);
@@ -74,7 +74,7 @@
             // 
             // toolStripButton11
             // 
-            this.toolStripButton11.Image = global::WinExplorer.Resources.ConnectEnvironment_16x;
+            this.toolStripButton11.Image = global::WinExplorer.ve_resource.ConnectEnvironment_16x;
             this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton11.Name = "toolStripButton11";
             this.toolStripButton11.Size = new System.Drawing.Size(124, 22);

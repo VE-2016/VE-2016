@@ -1,0 +1,65 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\Web\Web Forms\1033\WebCustomControl</RelativePathOnDisk>
+    <TemplateFileName>WebCustomControl.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2297" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2298" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4533" />
+        <TemplateID>Microsoft.CSharp.WebCustomControl</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <DefaultName>WebCustomControl.cs</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\Web\1033\HTMLPage</RelativePathOnDisk>
+    <TemplateFileName>HTMLPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2042" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2280" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4528" />
+        <TemplateID>Microsoft.CSharp.HTMLPage</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>HTMLPage.html</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\Web\1033\JScript</RelativePathOnDisk>
+    <TemplateFileName>JScript.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2306" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2307" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4557" />
+        <TemplateID>Microsoft.CSharp.JScript</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>JavaScript.js</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\Web\1033\StyleSheet</RelativePathOnDisk>
+    <TemplateFileName>Stylesheet.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2314" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2315" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4544" />
+        <TemplateID>Microsoft.CSharp.StyleSheet</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>Stylesheet.css</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

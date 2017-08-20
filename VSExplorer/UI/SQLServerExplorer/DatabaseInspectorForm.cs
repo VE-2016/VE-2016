@@ -114,13 +114,13 @@ namespace WinExplorer.UI
         public void CreateImageList()
         {
             g = new ImageList();
-            g.Images.Add("folder", Resources.FolderOpen_16x);
-            g.Images.Add("column", Resources.Column_16x);
-            g.Images.Add("database", Resources.Database_16x);
-            g.Images.Add("table", Resources.Table_16x);
-            g.Images.Add("server", Resources.ServerSettings_16x);
-            g.Images.Add("PK", Resources.Key_32x);
-            g.Images.Add("FK", Resources.ForeignKey_32x);
+            g.Images.Add("folder", ve_resource.FolderOpen_16x);
+            g.Images.Add("column", ve_resource.Column_16x);
+            g.Images.Add("database", ve_resource.Database_16x);
+            g.Images.Add("table", ve_resource.Table_16x);
+            g.Images.Add("server", ve_resource.ServerSettings_16x);
+            g.Images.Add("PK", ve_resource.Key_32x);
+            g.Images.Add("FK", ve_resource.ForeignKey_32x);
 
             v.ImageList = g;
         }
@@ -406,18 +406,18 @@ namespace WinExplorer.UI
         /// <returns></returns>
         private TreeNode CreateRootNodes()
         {
-            TreeNode root = new TreeNode("Resources.Database");
+            TreeNode root = new TreeNode("ve_resource.Database");
             root.ImageKey = "Database";
             root.SelectedImageKey = "Database";
             root.ContextMenuStrip = InspectorContextMenuStrip;
             root.Tag = RootTag;
 
-            _tablesNode = new TreeNode("Resources.Tables");
+            _tablesNode = new TreeNode("ve_resource.Tables");
             _tablesNode.ImageKey = "Tables";
             _tablesNode.SelectedImageKey = "Tables";
             _tablesNode.Tag = TablesTag;
 
-            _viewsNode = new TreeNode("Resources.Views");
+            _viewsNode = new TreeNode("ve_resource.Views");
             _viewsNode.ImageKey = "Views";
             _viewsNode.SelectedImageKey = "Views";
             _viewsNode.Tag = ViewsTag;

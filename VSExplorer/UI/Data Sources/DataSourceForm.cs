@@ -55,13 +55,13 @@ namespace WinExplorer.UI
         public void Init()
         {
             img = new ImageList();
-            img.Images.Add("database", Resources.Database_256x);
-            img.Images.Add("data", Resources.DataSourceView_16x);
-            img.Images.Add("class", Resources.Class_yellow_16x);
-            img.Images.Add("namespace", Resources.Namespace_16x);
-            img.Images.Add("string", Resources.String_16x);
-            img.Images.Add("checked", Resources.CheckBox_16x);
-            img.Images.Add("content", Resources.TextContentControl_16x);
+            img.Images.Add("database", ve_resource.Database_256x);
+            img.Images.Add("data", ve_resource.DataSourceView_16x);
+            img.Images.Add("class", ve_resource.Class_yellow_16x);
+            img.Images.Add("namespace", ve_resource.Namespace_16x);
+            img.Images.Add("string", ve_resource.String_16x);
+            img.Images.Add("checked", ve_resource.CheckBox_16x);
+            img.Images.Add("content", ve_resource.TextContentControl_16x);
             g.ImageList = img;
         }
 

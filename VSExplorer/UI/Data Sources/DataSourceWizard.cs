@@ -73,8 +73,8 @@ namespace WinExplorer.UI
 
             g.ImageSize = new Size(32, 32);
 
-            g.Images.Add("database", Resources.Database_256x);
-            g.Images.Add("data", Resources.DataSourceView_16x);
+            g.Images.Add("database", ve_resource.Database_256x);
+            g.Images.Add("data", ve_resource.DataSourceView_16x);
 
             v = listView1;
 
@@ -116,8 +116,8 @@ namespace WinExplorer.UI
 
             g.ImageSize = new Size(32, 32);
 
-            g.Images.Add("database", Resources.Database_256x);
-            g.Images.Add("web", Resources.ConnectWeb_16x);
+            g.Images.Add("database", ve_resource.Database_256x);
+            g.Images.Add("web", ve_resource.ConnectWeb_16x);
 
             v.LargeImageList = g;
 
@@ -136,8 +136,8 @@ namespace WinExplorer.UI
             db.CheckBoxes = true;
 
             ImageList gd = new ImageList();
-            gd.Images.Add("database", Resources.Database_256x);
-            gd.Images.Add("web", Resources.ConnectWeb_16x);
+            gd.Images.Add("database", ve_resource.Database_256x);
+            gd.Images.Add("web", ve_resource.ConnectWeb_16x);
             db.ImageList = gd;
         }
 
@@ -268,11 +268,11 @@ namespace WinExplorer.UI
             g.CheckBoxes = true;
 
             img = new ImageList();
-            img.Images.Add("class", Resources.Class_yellow_16x);
-            img.Images.Add("namespace", Resources.Namespace_16x);
-            img.Images.Add("string", Resources.String_16x);
-            img.Images.Add("checked", Resources.CheckBox_16x);
-            img.Images.Add("content", Resources.TextContentControl_16x);
+            img.Images.Add("class", ve_resource.Class_yellow_16x);
+            img.Images.Add("namespace", ve_resource.Namespace_16x);
+            img.Images.Add("string", ve_resource.String_16x);
+            img.Images.Add("checked", ve_resource.CheckBox_16x);
+            img.Images.Add("content", ve_resource.TextContentControl_16x);
 
             g.ImageList = img;
 

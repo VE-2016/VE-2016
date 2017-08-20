@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RoleTemplateData RoleProjectTargetFramework="4.0" MinWindowsAzureToolsVersion="2.9" MaxWindowsAzureToolsVersion="2.9" RoleProjectGuid="6078DA15-2BFC-472C-91B3-CE7E1F732341">
+  <VsTemplate Name="ClassLibrary_WorkerRole.vstemplate" Language="CSharp" TargetFramework="4.0" />
+  <ServiceModel>
+    <Role Type="Worker" />
+  </ServiceModel>
+  <ProjectItems>
+    <ProjectItem OpenInEditor="true" CustomReplaceableParameters="true">WorkerRole.cs</ProjectItem>
+  </ProjectItems>
+</RoleTemplateData>

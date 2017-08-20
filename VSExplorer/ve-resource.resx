@@ -1,0 +1,850 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\a.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="AddComponent_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\AddComponent_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddDatabase_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\AddDatabase_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddDataSource_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\AddDataSource_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddForm_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\AddForm_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="apple" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\apple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="apple_clip_art_free" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\apple-clip-art-free.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="apple_logo_PNG19687" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\apple_logo_PNG19687.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AzureServiceFabric_color_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\AzureServiceFabric_color_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Backward_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Backward_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bookmark_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Bookmark_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BorderElement_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\BorderElement_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BorderElement_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\BorderElement_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Borders_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Borders_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Breakall_6323" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Breakall_6323.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BreakpointDisable_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\BreakpointDisable_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BreakpointDisable_16xp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\BreakpointDisable_16xp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BreakpointEnable_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\BreakpointEnable_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BreakpointWindow_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\BreakpointWindow_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BuildSolution_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\BuildSolution_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BulletPanel_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\BulletPanel_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BulletPanel_exp_20x12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\BulletPanel_exp_20x12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ButtonClick_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ButtonClick_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Calendar_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Calendar_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CancelBuild_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\CancelBuild_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cancel_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Cancel_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cancel_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Cancel_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CheckAdd_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\CheckAdd_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CheckBox_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\CheckBox_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CheckBox_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\CheckBox_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClassFriend_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ClassFriend_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClassPrivate_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ClassPrivate_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClassProtected_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ClassProtected_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClassSealed_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ClassSealed_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Class_yellow_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Class_yellow_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Class_yellow_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Class_yellow_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloseDocumentGroup_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\CloseDocumentGroup_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloseDocument_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\CloseDocument_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cloud_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Cloud_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Column_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Column_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ComboBox_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ComboBox_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ConnectEnvironment_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ConnectEnvironment_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ConnectToDatabase_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ConnectToDatabase_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ConnectWeb_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ConnectWeb_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Copy_32x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Copy_32x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cut_24x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Cut_24x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Database_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Database_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Database_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Database_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Database_64x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Database_64x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DataField_64x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\DataField_64x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DataGrid_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\DataGrid_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DatasetReference_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\DatasetReference_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DataSourceView_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\DataSourceView_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DataSourceView_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\DataSourceView_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DataTable_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\DataTable_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DataViewHH_32x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\DataViewHH_32x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DatePicker_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\DatePicker_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeleteDatabase_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\DeleteDatabase_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="designer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\designer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DisableAllBreakpoints_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\DisableAllBreakpoints_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DisassemblyWindow_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\DisassemblyWindow_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Disconnect_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Disconnect_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Download_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Download_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnableAllBreakpoints_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\EnableAllBreakpoints_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EventLog_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\EventLog_256x.xaml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EventLog_32x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\EventLog_32x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExceptionSettings_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ExceptionSettings_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExecutionPlan_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ExecutionPlan_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExpandArrow_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ExpandArrow_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExpandChevronRight_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ExpandChevronRight_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Expander_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Expander_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Expander_24x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Expander_24x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Expander_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Expander_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Expand_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Expand_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Export_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Export_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F12_BreakpointEnable_28x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\F12_BreakpointEnable_28x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F12_BreakpointEnable_28xp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\F12_BreakpointEnable_28xp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="f12_SortDownArrowBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\f12_SortDownArrowBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="f12_SortDownArrowGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\f12_SortDownArrowGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FieldFriend_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\FieldFriend_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FieldPrivate_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\FieldPrivate_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FieldProtect_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\FieldProtect_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FieldSealed_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\FieldSealed_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Field_blue_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Field_blue_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FindinFiles_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\FindinFiles_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FolderOpen_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\FolderOpen_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Font_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Font_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ForeignKey_32x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ForeignKey_32x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Forward_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Forward_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GoToSourceCode_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\GoToSourceCode_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GridSplitter_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\GridSplitter_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GroupBox_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\GroupBox_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GroupClause_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\GroupClause_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconView_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\IconView_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImageGroup_18x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ImageGroup_18x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImmediateWindow_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ImmediateWindow_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Import_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Import_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InkCanvasControl_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\InkCanvasControl_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Internet_chrome_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Internet-chrome-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="i_delete_all_breakpointsGrey_F12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\i_delete-all-breakpointsGrey_F12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Key_32x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Key_32x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Label_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Label_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ListBox_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ListBox_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ListView_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ListView_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Loading_Blue_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Loading_Blue_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuItem_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\MenuItem_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MessageQueue_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\MessageQueue_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MessageQueue_32x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\MessageQueue_32x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Minimize_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Minimize_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Namespace_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Namespace_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Namespace_16xSM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Namespace_16xSM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewItem_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\NewItem_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewQuery_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\NewQuery_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewRow_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\NewRow_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NugetLogo_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\NugetLogo_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NugetPackage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\NugetPackage.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Object_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Object_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Office_Sharepoint_Application_16xLG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Office_Sharepoint_Application_16xLG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OpenWeb_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\OpenWeb_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Output_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Output_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OverlayStatic_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\OverlayStatic_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ParallelExecution_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ParallelExecution_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PasswordBox_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\PasswordBox_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Paste_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Paste_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PerformanceReport_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\PerformanceReport_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pictures_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Pictures-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PopupControl_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\PopupControl_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ProgressBar_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ProgressBar_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PropertyFriend_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\PropertyFriend_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PropertyPrivate_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\PropertyPrivate_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PropertyProtect_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\PropertyProtect_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PropertySealed_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\PropertySealed_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Property_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Property_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Property_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Property_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RadioButton_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\RadioButton_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Redo_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Redo_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Redo_grey_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Redo_grey_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Refresh_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Refresh_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ResizeGrip_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ResizeGrip_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Restart_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Restart_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ResultToDataGrid_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ResultToDataGrid_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RichTextBox_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\RichTextBox_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RunTestDialog_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\RunTestDialog_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RunThread_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\RunThread_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Run_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Run_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SaveAll_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\SaveAll_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Save_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Save_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Schema_32xLG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Schema_32xLG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Script_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Script_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ScrollBox_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ScrollBox_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Search_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ServerSettings_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ServerSettings_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Services_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Services_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShowAllCode_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ShowAllCode_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShowStartPage_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ShowStartPage_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Slider_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Slider_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SortAscendingFilter_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\SortAscendingFilter_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SortDescendingFilter_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\SortDescendingFilter_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SQLCEDest_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\SQLCEDest_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SQLServerObjectExplorer_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\SQLServerObjectExplorer_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SQLServerProject_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\SQLServerProject_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StartupProject_32x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\StartupProject_32x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StartWithoutDebug_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\StartWithoutDebug_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StatusHelp_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\StatusHelp_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StatusInformation_exp_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\StatusInformation_exp_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StatusOK_cyan_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\StatusOK_cyan_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StatusWarning_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\StatusWarning_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StepIn_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\StepIn_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StepIn_16x_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\StepIn_16x_32.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StepOut_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\StepOut_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StepOut_16x_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\StepOut_16x_32.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StepOver_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\StepOver_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StepOver_16x_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\StepOver_16x_32.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stop_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Stop_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stop_16x_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Stop_16x_32.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stop_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Stop_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stop_disabled_16x_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Stop_disabled_16x_32.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stop_grey_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Stop_grey_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StoredPackage_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\StoredPackage_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StoredProcedureChecked_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\StoredProcedureChecked_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="String_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\String_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TableAdapter_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\TableAdapter_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TableFunction_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\TableFunction_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TableKeyColumn_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\TableKeyColumn_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TableViewKey_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\TableViewKey_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TableWizard_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\TableWizard_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TableWizard_32x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\TableWizard_32x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Table_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Table_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Table_64x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Table_64x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextBlock_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\TextBlock_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextBox_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\TextBox_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextContentControl_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\TextContentControl_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Thread_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Thread_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ToggleButton_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ToggleButton_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ToolBar_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ToolBar_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TreeView_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\TreeView_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Triangle_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Triangle_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TriggerAction_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\TriggerAction_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ubuntu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ubuntu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Undo_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Undo_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Undo_grey_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Undo_grey_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UniformGridElement_12x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\UniformGridElement_12x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UniformGridElement_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\UniformGridElement_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Upload_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Upload_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ViewBox_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ViewBox_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="View_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\View_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="View_64x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\View_64x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VisualStudioSolution_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\VisualStudioSolution_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VSO_FolderOpen_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\VSO_FolderOpen_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VSO_Folder_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\VSO_Folder_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VSO_NugetLogo_52x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\VSO_NugetLogo_52x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WebService_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\WebService_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WebURL_32x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\WebURL_32x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WindowsForm_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\WindowsForm_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ZoomIn_256x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\ZoomIn_256x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Audio_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\Audio_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClearCollection_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\ClearCollection_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CommentCode_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\CommentCode_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExpandAll_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\ExpandAll_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconFile_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\IconFile_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UncommentCode_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\UncommentCode_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="View_16x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\View_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Audio_16x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\Audio_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClearCollection_16x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\ClearCollection_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CommentCode_16x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\CommentCode_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExpandAll_16x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\ExpandAll_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconFile_16x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\IconFile_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ResourceType_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\ResourceType_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShowAllCode_16x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\ShowAllCode_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="String_16x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\String_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UncommentCode_16x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\UncommentCode_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="View_16x2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\View_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2Columns_16x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\2Columns_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rename_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\Rename_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Synchronize_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\Synchronize_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GroupBy_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\GroupBy_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Template_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\Template_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HardDrive_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\HardDrive_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VSO_CollapseBoard_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\VSO_CollapseBoard_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WindowsLogo_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\WindowsLogo_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Filter_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\Filter_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Image_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>VE-Resources\Files\Image_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CSFile_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\CSFile_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

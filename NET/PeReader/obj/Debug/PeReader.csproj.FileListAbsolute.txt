@@ -138,9 +138,48 @@ C:\Users\me\VE-2016\NET\PeReader\obj\Debug\Microsoft.Cci.PeReaderErrorMessages.r
 C:\Users\me\VE-2016\NET\PeReader\obj\Debug\PeReader.csproj.GenerateResource.Cache
 C:\Users\me\VE-2016\NET\PeReader\obj\Debug\Microsoft.Cci.PeReader.dll
 C:\Users\me\VE-2016\NET\PeReader\obj\Debug\Microsoft.Cci.PeReader.pdb
-F:\Windows-Enterprise-VE-2016\VE-2016\NET\PeReader\obj\Debug\PeReader.csprojResolveAssemblyReference.cache
-F:\Windows-Enterprise-VE-2016\VE-2016\NET\PeReader\obj\Debug\Microsoft.Cci.PeReaderErrorMessages.resources
-F:\Windows-Enterprise-VE-2016\VE-2016\NET\PeReader\obj\Debug\PeReader.csproj.GenerateResource.Cache
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\PeReader\bin\Debug\Microsoft.Cci.PeReader.xml
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\PeReader\bin\Debug\Microsoft.Cci.PeReader.dll
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\PeReader\bin\Debug\Microsoft.Cci.PeReader.pdb
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.dll
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.dll
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.xml
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.xml
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\PeReader\obj\Debug\PeReader.csprojResolveAssemblyReference.cache
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\PeReader\obj\Debug\Microsoft.Cci.PeReaderErrorMessages.resources
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\PeReader\obj\Debug\PeReader.csproj.GenerateResource.Cache
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\PeReader\obj\Debug\Microsoft.Cci.PeReader.dll
+C:\Users\you\Downloads\AvalonEdit-master (1)\AvalonEdit-master\NET\PeReader\obj\Debug\Microsoft.Cci.PeReader.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\PeReader\bin\Debug\Microsoft.Cci.PeReader.xml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\PeReader\bin\Debug\Microsoft.Cci.PeReader.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\PeReader\bin\Debug\Microsoft.Cci.PeReader.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.xml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.xml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\PeReader\obj\Debug\PeReader.csprojResolveAssemblyReference.cache
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\PeReader\obj\Debug\Microsoft.Cci.PeReaderErrorMessages.resources
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\PeReader\obj\Debug\PeReader.csproj.GenerateResource.Cache
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\PeReader\obj\Debug\Microsoft.Cci.PeReader.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApp3\NET\PeReader\obj\Debug\Microsoft.Cci.PeReader.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\PeReader\bin\Debug\Microsoft.Cci.PeReader.xml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\PeReader\bin\Debug\Microsoft.Cci.PeReader.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\PeReader\bin\Debug\Microsoft.Cci.PeReader.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.xml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.xml
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\PeReader\obj\Debug\PeReader.csprojResolveAssemblyReference.cache
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\PeReader\obj\Debug\Microsoft.Cci.PeReaderErrorMessages.resources
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\PeReader\obj\Debug\PeReader.csproj.GenerateResource.Cache
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\PeReader\obj\Debug\Microsoft.Cci.PeReader.dll
+C:\Users\you\Documents\Visual Studio 2017\Projects\WindowsFormsApplication7-5\NET\PeReader\obj\Debug\Microsoft.Cci.PeReader.pdb
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.PeReader.xml
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.PeReader.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.PeReader.pdb
@@ -150,5 +189,9 @@ F:\Windows-Enterprise-VE-2016\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.Metad
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.xml
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.pdb
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.xml
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\PeReader\obj\Debug\PeReader.csprojResolveAssemblyReference.cache
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\PeReader\obj\Debug\Microsoft.Cci.PeReaderErrorMessages.resources
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\PeReader\obj\Debug\PeReader.csproj.GenerateResource.Cache
+F:\Windows-Enterprise-VE-2016\VE-2016\NET\PeReader\obj\Debug\PeReader.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\PeReader\obj\Debug\Microsoft.Cci.PeReader.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\PeReader\obj\Debug\Microsoft.Cci.PeReader.pdb

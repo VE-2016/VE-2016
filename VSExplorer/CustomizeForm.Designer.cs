@@ -186,7 +186,7 @@ namespace WinExplorer
             // button11
             // 
             this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button11.Image = global::WinExplorer.Resources.f12_SortDownArrowGrey;
+            this.button11.Image = global::WinExplorer.ve_resource.f12_SortDownArrowGrey;
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button11.Location = new System.Drawing.Point(310, 279);
             this.button11.Name = "button11";

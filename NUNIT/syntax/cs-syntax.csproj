@@ -19,7 +19,7 @@
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>0.0</OldToolsVersion>
@@ -126,9 +126,9 @@
       <Project>{8f760944-16e1-404e-8353-288e38b9a19d}</Project>
       <Name>VSExplorer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\VSParser\VSParsers.csproj">
-      <Project>{91fef9d7-5376-4ea4-be09-cfb0ebb083fd}</Project>
-      <Name>VSParsers</Name>
+    <ProjectReference Include="..\..\VSParser\VSProvider.csproj">
+      <Project>{161dc477-53af-433a-9f3b-6e43de47bbdd}</Project>
+      <Name>VSProvider</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -262,13 +262,13 @@ namespace WinExplorer
                 e.DrawBackground();
                 if (e.Item.Tag.GetType() == typeof(Microsoft.Build.Framework.BuildErrorEventArgs))
                 {
-                    e.Graphics.DrawImage(Resources.Error_6206, e.SubItem.Bounds.Location);
-                    e.Graphics.DrawString(e.SubItem.Text, e.SubItem.Font, new SolidBrush(e.SubItem.ForeColor), (e.SubItem.Bounds.Location.X + Resources.Error_6206.Width), e.SubItem.Bounds.Location.Y);
+                    e.Graphics.DrawImage(ve_resource.Cancel_16x, e.SubItem.Bounds.Location);
+                    e.Graphics.DrawString(e.SubItem.Text, e.SubItem.Font, new SolidBrush(e.SubItem.ForeColor), (e.SubItem.Bounds.Location.X + ve_resource.ExpandAll_16x.Width), e.SubItem.Bounds.Location.Y);
                 }
                 else
                 {
-                    e.Graphics.DrawImage(Resources.warnings, e.SubItem.Bounds.Location);
-                    e.Graphics.DrawString(e.SubItem.Text, e.SubItem.Font, new SolidBrush(e.SubItem.ForeColor), (e.SubItem.Bounds.Location.X + Resources.warnings.Width), e.SubItem.Bounds.Location.Y);
+                    e.Graphics.DrawImage(ve_resource.StatusWarning_16x, e.SubItem.Bounds.Location);
+                    e.Graphics.DrawString(e.SubItem.Text, e.SubItem.Font, new SolidBrush(e.SubItem.ForeColor), (e.SubItem.Bounds.Location.X + ve_resource.StatusWarning_16x.Width), e.SubItem.Bounds.Location.Y);
                 }
             }
             else

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="1290" />
+    <Description Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="1291" />
+    <Icon Package="{1B027A40-8F43-11D0-8D11-00A0C91BC942}" ID="9044" />
+    <TemplateID>Microsoft.VC.Graphics.ComputeShader</TemplateID>
+    <TemplateGroupID>WinRT-Common</TemplateGroupID>
+    <ProjectType>VC</ProjectType>
+    <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+    <DefaultName>ComputeShader.hlsl</DefaultName>
+    <ShowByDefault>false</ShowByDefault>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem>ComputeShader.hlsl</ProjectItem>
+    <CustomParameters>
+        <CustomParameter Name="$ShaderType$" Value="Compute"/>
+        <CustomParameter Name="$ShaderModel$" Value="4.0"/>
+    </CustomParameters>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>VCGraphicsWizard, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VisualStudio.VisualC.Wizards.AddHLSLItemWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

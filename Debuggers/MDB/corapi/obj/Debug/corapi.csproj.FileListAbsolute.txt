@@ -68,5 +68,6 @@ F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\corapi\bin\Debug\NativeDebug
 F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\corapi\bin\Debug\NativeDebugWrappers.xml
 F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\corapi\bin\Debug\raw.pdb
 F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\corapi\obj\Debug\corapi.csprojResolveAssemblyReference.cache
+F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\corapi\obj\Debug\corapi.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\corapi\obj\Debug\corapi.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\Debuggers\MDB\corapi\obj\Debug\corapi.pdb

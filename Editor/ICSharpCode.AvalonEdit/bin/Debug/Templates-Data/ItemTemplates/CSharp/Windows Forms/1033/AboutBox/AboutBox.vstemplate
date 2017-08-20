@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2415" />
+    <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2416" />
+    <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4587" />
+    <TemplateID>Microsoft.CSharp.AboutBox</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>AboutBox.cs</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+        <References>
+            <Reference>
+                <Assembly>System</Assembly>
+            </Reference>
+            <Reference>
+                <Assembly>System.Data</Assembly>
+            </Reference>
+            <Reference>
+                <Assembly>System.Drawing</Assembly>
+            </Reference>
+            <Reference>
+                <Assembly>System.Windows.Forms</Assembly>
+            </Reference>
+        </References>
+
+    <ProjectItem ReplaceParameters="true" SubType="Form">AboutBox.cs</ProjectItem>
+    <ProjectItem ReplaceParameters="true">AboutBox.Designer.cs</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$.resx">AboutBox.resx</ProjectItem>
+
+    <CustomParameters>
+        <CustomParameter _locID="$IT_AB_CS_Loc_1$" Name="$IT_AB_CS_Loc_1$" Value="Product Name"/>
+        <CustomParameter _locID="$IT_AB_CS_Loc_2$" Name="$IT_AB_CS_Loc_2$" Value="Version"/>
+        <CustomParameter _locID="$IT_AB_CS_Loc_3$" Name="$IT_AB_CS_Loc_3$" Value="Company Name"/>
+        <CustomParameter _locID="$IT_AB_CS_Loc_4$" Name="$IT_AB_CS_Loc_4$" Value="Description"/>
+        <CustomParameter _locID="$IT_AB_CS_Loc_5$" Name="$IT_AB_CS_Loc_5$" Value="&amp;OK"/>
+        <CustomParameter _locID="$IT_AB_CS_Loc_6$" Name="$IT_AB_CS_Loc_6$" Value="About {0}"/>
+        <CustomParameter _locID="$IT_AB_CS_Loc_7$" Name="$IT_AB_CS_Loc_7$" Value="Version {0}"/>
+        <CustomParameter _locID="$IT_AB_CS_Loc_8$" Name="$IT_AB_CS_Loc_8$" Value="Copyright"/>
+    </CustomParameters>
+
+
+  </TemplateContent>
+
+  
+</VSTemplate>

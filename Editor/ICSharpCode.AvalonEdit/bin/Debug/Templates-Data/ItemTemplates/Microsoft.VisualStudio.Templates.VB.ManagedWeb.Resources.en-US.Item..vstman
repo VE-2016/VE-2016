@@ -1,0 +1,34 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Web\1033\HTMLPage</RelativePathOnDisk>
+    <TemplateFileName>HTMLPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3070" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3071" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4537" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>HTMLPage.html</DefaultName>
+        <TemplateID>Microsoft.VisualBasic.Web.HtmlPage</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Web\Web Forms\1033\WebControl</RelativePathOnDisk>
+    <TemplateFileName>WebControl.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3060" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3061" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4532" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>WebCustomControl.vb</DefaultName>
+        <TemplateID>Microsoft.VisualBasic.Web.CustomControl</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

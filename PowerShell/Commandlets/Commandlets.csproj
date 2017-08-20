@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Commandlets</RootNamespace>
     <AssemblyName>Commandlets</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Platform />
     <Configuration />
@@ -60,9 +60,9 @@
       <Project>{8f760944-16e1-404e-8353-288e38b9a19d}</Project>
       <Name>VSExplorer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\VSParser\VSParsers.csproj">
-      <Project>{91fef9d7-5376-4ea4-be09-cfb0ebb083fd}</Project>
-      <Name>VSParsers</Name>
+    <ProjectReference Include="..\..\VSParser\VSProvider.csproj">
+      <Project>{161dc477-53af-433a-9f3b-6e43de47bbdd}</Project>
+      <Name>VSProvider</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

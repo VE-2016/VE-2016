@@ -506,5 +506,3 @@ C:\Users\me\VE-2016\PowerShell\Commandlets\bin\Debug\zh-Hans\Microsoft.Build.Tas
 C:\Users\me\VE-2016\PowerShell\Commandlets\bin\Debug\zh-Hant\Microsoft.Build.Tasks.Core.resources.dll
 C:\Users\me\VE-2016\PowerShell\Commandlets\obj\Debug\Commandlets.dll
 C:\Users\me\VE-2016\PowerShell\Commandlets\obj\Debug\Commandlets.pdb
-F:\Windows-Enterprise-VE-2016\VE-2016\PowerShell\Commandlets\obj\Debug\Commandlets.csprojResolveAssemblyReference.cache
-F:\Windows-Enterprise-VE-2016\VE-2016\PowerShell\Commandlets\obj\Debug\Commandlets.csproj.CoreCompileInputs.cache

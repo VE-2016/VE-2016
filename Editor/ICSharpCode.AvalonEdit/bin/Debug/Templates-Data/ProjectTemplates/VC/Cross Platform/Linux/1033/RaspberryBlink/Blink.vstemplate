@@ -1,0 +1,31 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Blink (Raspberry)</Name>
+    <Description>A project for creating a blink LED application using wiringPi and for the Raspberry platform.</Description>
+    <ProjectType>VC</ProjectType>
+    <TemplateID>Microsoft.VisualStudio.Linux.VC.Raspberry.Blink</TemplateID>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <CreateInPlace>true</CreateInPlace>
+    <DefaultName>Blink</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>Icon.ico</Icon>
+  </TemplateData>
+  <TemplateContent PreferedSolutionConfiguration="Debug|ARM">
+    <Project TargetFileName="$projectname$.vcxproj" File="Blink.vcxproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="main.cpp" OpenInEditor="true">main.cpp</ProjectItem>
+      <ProjectItem OpenInWebBrowser="true">readme\readme.html</ProjectItem>
+      <ProjectItem>readme\stylesheet.css</ProjectItem>
+      <ProjectItem>readme\images\ArchOptions.gif</ProjectItem>
+      <ProjectItem>readme\images\ChangeRemote.gif</ProjectItem>
+      <ProjectItem>readme\images\debuggerexport.png</ProjectItem>
+      <ProjectItem>readme\images\firstconnection.png</ProjectItem>
+      <ProjectItem>readme\images\linker.png</ProjectItem>
+      <ProjectItem>readme\images\ManageConnections.gif</ProjectItem>
+      <ProjectItem>readme\images\OutputTypes.gif</ProjectItem>
+      <ProjectItem>readme\images\postbuild.png</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RoleTemplateData RoleProjectTargetFramework="4.0" MinWindowsAzureToolsVersion="2.9" MaxWindowsAzureToolsVersion="2.9" RoleProjectGuid="EB0A32CA-26BD-4F3F-8E63-BDCFA96247ED">
+  <VsTemplate Name="WCFServiceProject.vstemplate" Language="CSharp" TargetFramework="4.0" />
+  <ProjectItems>
+    <ProjectItem Action="Replace" CustomReplaceableParameters="true">Web.config</ProjectItem>
+    <ProjectItem CustomReplaceableParameters="true">WebRole.cs</ProjectItem>
+  </ProjectItems>
+</RoleTemplateData>

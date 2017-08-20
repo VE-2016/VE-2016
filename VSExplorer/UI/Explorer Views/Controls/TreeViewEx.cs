@@ -27,7 +27,7 @@ namespace WinExplorer.UI
         void Init()
         {
             
-            g.Images.Add("forms", new Bitmap(Resources.WindowsForm_256x, new Size(25, 25)));
+            g.Images.Add("forms", new Bitmap(ve_resource.WindowsForm_256x, new Size(25, 25)));
             this.ImageList = g;
 
             arrowpen = new Pen(Color.Black, 1);
