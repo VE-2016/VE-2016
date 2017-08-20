@@ -19,6 +19,7 @@ Application for creating, editing, building Visual Studio C# Windows Form projec
 
 ## Technologies:
 - Roslyn
+- AvalonEdit
 - DockPanel Suite
 - NRefactory
 - NUNIT
@@ -26,6 +27,8 @@ Application for creating, editing, building Visual Studio C# Windows Form projec
 - Windows Forms
 - C# .NET Framework
 - Reflection
+
+Source code files edited in AvalonEdit component, intelisense completion and parse messages are taken from Roslyn CodeAnalysis module.
 
 Binary installer availible at Visual Studio Marketplace
 
