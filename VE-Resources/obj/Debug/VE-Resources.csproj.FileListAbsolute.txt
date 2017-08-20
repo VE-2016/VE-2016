@@ -33,3 +33,12 @@ F:\Windows-Enterprise-VE-2016\VE-2016\VE-Resources\obj\Debug\VE-Resources.csproj
 F:\Windows-Enterprise-VE-2016\VE-2016\VE-Resources\obj\Debug\VE-Resources.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\VE-Resources\obj\Debug\VE-Resources.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\VE-Resources\obj\Debug\VE-Resources.pdb
+F:\ve\VE-2016\VE-Resources\bin\Debug\VE-Resources.dll.config
+F:\ve\VE-2016\VE-Resources\bin\Debug\VE-Resources.dll
+F:\ve\VE-2016\VE-Resources\bin\Debug\VE-Resources.pdb
+F:\ve\VE-2016\VE-Resources\obj\Debug\WinExplorers.Properties.Resources.resources
+F:\ve\VE-2016\VE-Resources\obj\Debug\WinExplorers.ve.resources
+F:\ve\VE-2016\VE-Resources\obj\Debug\VE-Resources.csproj.GenerateResource.Cache
+F:\ve\VE-2016\VE-Resources\obj\Debug\VE-Resources.csproj.CoreCompileInputs.cache
+F:\ve\VE-2016\VE-Resources\obj\Debug\VE-Resources.dll
+F:\ve\VE-2016\VE-Resources\obj\Debug\VE-Resources.pdb

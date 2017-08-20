@@ -75,3 +75,8 @@ F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACManagerApi\bin\Debug\GACManagerApi.
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACManagerApi\obj\Debug\GACManagerApi.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACManagerApi\obj\Debug\GACManagerApi.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\GACManagerApi\obj\Debug\GACManagerApi.pdb
+F:\ve\VE-2016\NET\GACManagerApi\bin\Debug\GACManagerApi.dll
+F:\ve\VE-2016\NET\GACManagerApi\bin\Debug\GACManagerApi.pdb
+F:\ve\VE-2016\NET\GACManagerApi\obj\Debug\GACManagerApi.csproj.CoreCompileInputs.cache
+F:\ve\VE-2016\NET\GACManagerApi\obj\Debug\GACManagerApi.dll
+F:\ve\VE-2016\NET\GACManagerApi\obj\Debug\GACManagerApi.pdb
