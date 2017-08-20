@@ -42,3 +42,4 @@ F:\ve\VE-2016\VE-Resources\obj\Debug\VE-Resources.csproj.GenerateResource.Cache
 F:\ve\VE-2016\VE-Resources\obj\Debug\VE-Resources.csproj.CoreCompileInputs.cache
 F:\ve\VE-2016\VE-Resources\obj\Debug\VE-Resources.dll
 F:\ve\VE-2016\VE-Resources\obj\Debug\VE-Resources.pdb
+f:\ve\VE-2016\VE-Resources\obj\Debug\VE-Resources.csprojResolveAssemblyReference.cache

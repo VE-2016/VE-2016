@@ -4,7 +4,7 @@
 library
 C#
 .cs
-F:\ve\VE-2016\Editor\AvalonEdit.Editor\obj\Debug\
+f:\ve\VE-2016\Editor\AvalonEdit.Editor\obj\Debug\
 AvalonEdit.Editor
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 3723114220
 
 19-1859750385
-86-1568937136
+861067205665
 CompletionControls.xaml;EditorWindow.xaml;LinkViewer.xaml;
 
 True
