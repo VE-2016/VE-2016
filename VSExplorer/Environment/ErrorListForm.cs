@@ -2,6 +2,7 @@ using AIMS.Libraries.CodeEditor;
 
 //using AIMS.Libraries.CodeEditor.Syntax;
 using AIMS.Libraries.Scripting.ScriptControl;
+using AIMS.Libraries.Scripting.ScriptControl.Properties;
 using Microsoft.CodeAnalysis;
 using System;
 using System.Collections;
@@ -282,7 +283,7 @@ namespace WinExplorer
 
                 AsyncCallback callBack = new AsyncCallback(ProcessInformation);
                 workerDisplayLine wde = DisplayLine;
-                wde.BeginInvoke(file, c.ToString(), p.ToString(), 100, callBack, "null");
+                wde.BeginInvoke(file, c, p, 100, callBack, "null");
 
                 // ef.OpenFileLine(file, c.ToString(), p);
             }
@@ -299,7 +300,7 @@ namespace WinExplorer
 
                 AsyncCallback callBack = new AsyncCallback(ProcessInformation);
                 workerDisplayLine wde = DisplayLine;
-                wde.BeginInvoke(file, c.ToString(), p.ToString(), 100, callBack, "null");
+                wde.BeginInvoke(file, c, p, 100, callBack, "null");
 
                 //ef.OpenFileLine(file, c.ToString(), p);
             }
@@ -321,20 +322,23 @@ namespace WinExplorer
                     int cs = 0;
                     int es = c.StartLinePosition.Character;
 
+                    int start = b.Location.SourceSpan.Start;
+                    int length = b.Location.SourceSpan.Length;
+
                     AsyncCallback callBack = new AsyncCallback(ProcessInformation);
                     workerDisplayLine wde = DisplayLine;
-                    wde.BeginInvoke(file, ps.ToString(), cs.ToString(), 100, callBack, "null");
+                    wde.BeginInvoke(file, start, length, 100, callBack, "null");
 
                     //ef.OpenFileLine(file, c.ToString(), p);
                 }
             }
         }
 
-        public delegate void workerDisplayLine(string file, string line, string c, int g);
+        public delegate void workerDisplayLine(string file, int start, int length, int g);
 
-        private void DisplayLine(string file, string line, string c, int g)
+        private void DisplayLine(string file, int start, int length, int g)
         {
-            ef.BeginInvoke(new Action(() => { ef.OpenFileXY(file, line, c, g); }));
+            ef.BeginInvoke(new Action(() => { ef.OpenFileXY(file, start, length, g); }));
         }
 
         private void Dg_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
@@ -595,7 +599,7 @@ namespace WinExplorer
                     if (hc != null)
                     {
                     }
-                    AIMS.Libraries.Scripting.ScriptControl.Document d = scr.GetActiveDocument();
+                    
 
                     //filename = d.FileName;
 
@@ -607,7 +611,12 @@ namespace WinExplorer
 
                         Diagnostic dc = hs;// hc[hs];
 
-                        int hash = dc.GetHashCode();
+                        filename = dc.Location.SourceTree.FilePath;
+
+                        AvalonDocument d = scr.FileOpened(filename);
+
+
+                        int hash = dc.GetMessage().GetHashCode();
 
                         if (hcd.ContainsKey(hash))
                             continue;
@@ -656,7 +665,7 @@ namespace WinExplorer
                                 if (dc.Location.SourceTree != null)
                                     row.Cells[4].Value = Path.GetFileNameWithoutExtension(dc.Location.SourceTree.FilePath);
                         row.Cells[5].Value = Path.GetFileName(file);
-                        row.Cells[6].Value = line;
+                        row.Cells[6].Value = d.GetLineExtended(line) + 1;
                         row.Cells[7].Value = "project";
 
                         //row.Cells[0].Value = "";

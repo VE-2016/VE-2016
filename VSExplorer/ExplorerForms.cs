@@ -1,5 +1,6 @@
 using AIMS.Libraries.CodeEditor;
 using AIMS.Libraries.Scripting.ScriptControl;
+using AIMS.Libraries.Scripting.ScriptControl.Properties;
 using DockProject;
 using GACProject;
 using Microsoft.Diagnostics.Runtime;
@@ -474,7 +475,7 @@ namespace WinExplorer
                 //_eo.LoadFile(file, pp);
                 scr.BeginInvoke(new Action(() =>
                 {
-                    scr.OpenDocuments(file, null);
+                    scr.OpenDocuments(file, GetVSSolution());
                 }));
             }));
         }
@@ -2461,7 +2462,7 @@ namespace WinExplorer
         {
             //this.BeginInvoke(new Action(() => { SolutionClose(); }));
 
-            TreeView tv = _sv.load_recent_solution(recent);
+            TreeView vv = _sv.load_recent_solution(recent);
 
             VSSolution vs = _sv._SolutionTreeView.Tag as VSSolution;
 
@@ -2478,7 +2479,7 @@ namespace WinExplorer
             this.BeginInvoke(new Action(async () =>
             {
 
-                Loads2(tv, _sv._SolutionTreeView); this.Text = Path.GetFileName(recent) + " - Visual Explorer";
+                 this.Invoke(new Action(() => { Loads2(vv, _sv._SolutionTreeView); this.Text = Path.GetFileName(recent) + " - Visual Explorer"; }));
 
                 L = scr.LoadSolutionFiles();
 
@@ -2508,7 +2509,9 @@ namespace WinExplorer
                 Task vs_task = new Task(delegate
                 {
 
-                    System.Windows.Forms.TreeView vv = rw.LoadProject(recent);
+                    //vv = rw.LoadProject(recent);
+
+                    //this.Invoke(new Action(() => { Loads2(vv, _sv._SolutionTreeView); this.Text = Path.GetFileName(recent) + " - Visual Explorer"; }));
 
                     vs = vv.Tag as VSSolution;
 
@@ -2531,7 +2534,6 @@ namespace WinExplorer
                 vs.named = rw.named;
                 vs.workspace = rw.workspace;
                 vs.solution = rw.solution;
-
 
                 scr.LoadFromProject(vs);
 
@@ -4107,7 +4109,7 @@ namespace WinExplorer
 
             VSProject pp = vs.GetVSProject(file);
 
-            _eo.LoadFile(file, pp, autoEvent);
+            _eo.LoadFile(file, vs, autoEvent);
         }
 
         public void Command_OpenFileAndGotoLine(string file, string line)
@@ -4118,27 +4120,27 @@ namespace WinExplorer
 
             //MessageBox.Show("File " + file + " at line " + line);
 
-            _eo.LoadFile(file, pp);
+            _eo.LoadFile(file, vs);
 
             int s = Convert.ToInt32(line);
 
             scr.SelectText(s, 0);
         }
 
-        public void OpenFile(string file, string line)
-        {
-            VSSolution vs = GetVSSolution();
+        //public void OpenFile(string file, string line)
+        //{
+        //    VSSolution vs = GetVSSolution();
 
-            VSProject pp = vs.GetVSProject(file);
+        //    VSProject pp = vs.GetVSProject(file);
 
-            MessageBox.Show("File " + file + " at line " + line);
+        //    MessageBox.Show("File " + file + " at line " + line);
 
-            _eo.LoadFile(file, pp);
+        //    _eo.LoadFile(file, pp);
 
-            int s = Convert.ToInt32(line);
+        //    int s = Convert.ToInt32(line);
 
-            scr.SelectText(s, 0);
-        }
+        //    scr.SelectText(s, 0);
+        //}
 
         public void OpenFile(string file, string line, int length)
         {
@@ -4148,14 +4150,14 @@ namespace WinExplorer
 
             MessageBox.Show("File " + file + " at line " + line);
 
-            _eo.LoadFile(file, pp);
+            _eo.LoadFile(file, vs);
 
             int s = Convert.ToInt32(line);
 
             scr.SelectText(s, length);
         }
 
-        public void OpenFileXY(string file, string X, string Y, int length)
+        public void OpenFileXY(string file, int X, int Y, int length)
         {
             VSSolution vs = GetVSSolution();
 
@@ -4163,13 +4165,15 @@ namespace WinExplorer
 
             // MessageBox.Show("File " + file + " at line " + line);
 
-            _eo.LoadFile(file, pp);
+            _eo.LoadFile(file, vs);
 
-            int x = Convert.ToInt32(X);
+           AvalonDocument doc =  scr.OpenDocuments(file, vs);
 
-            int y = Convert.ToInt32(Y);
+           // int x = Convert.ToInt32(X);
 
-            scr.SelectTextXY(x, y, length);
+           // int y = Convert.ToInt32(Y);
+
+            scr.SelectTextXY(doc, X, Y);
         }
 
         public void OpenFileLine(string file, string line, int length)
@@ -4183,7 +4187,7 @@ namespace WinExplorer
             if (File.Exists(file) == false)
                 return;
 
-            _eo.LoadFile(file, pp);
+            _eo.LoadFile(file, vs);
 
             int s = Convert.ToInt32(line);
 
@@ -4201,7 +4205,7 @@ namespace WinExplorer
             if (File.Exists(file) == false)
                 return;
 
-            _eo.LoadFile(file, pp);
+            _eo.LoadFile(file, vs);
 
             int s = Convert.ToInt32(line);
 
@@ -4228,7 +4232,7 @@ namespace WinExplorer
                 ImageList img = CreateView_Solution.CreateImageList();
                 Dictionary<string, string> dc = CreateView_Solution.GetDC();
 
-                _eo.LoadFile(files, dc, img, pr0.ps);
+                //_eo.LoadFile(files, dc, img, vs);
             }
         }
 

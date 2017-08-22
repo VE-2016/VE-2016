@@ -123,12 +123,12 @@ namespace WinExplorer
 
             AsyncCallback callBack = new AsyncCallback(ProcessInformation);
             workerDisplayLine wde = DisplayLine;
-            wde.BeginInvoke(d[0], d[1], d[2], text.Length, callBack, "null");
+            wde.BeginInvoke(d[0], 1, 2, text.Length, callBack, "null");
         }
 
-        public delegate void workerDisplayLine(string file, string line, string c, int g);
+        public delegate void workerDisplayLine(string file, int line, int c, int g);
 
-        private void DisplayLine(string file, string line, string c, int g)
+        private void DisplayLine(string file, int line, int c, int g)
         {
             ef.BeginInvoke(new Action(() => { ef.OpenFileXY(file, line, c, g); }));
         }

@@ -297,7 +297,7 @@ namespace AvalonEdit.Editor
         }
 
 
-        public string GetType(TextEditor textEditor)
+        public Tuple<string, string> GetType(TextEditor textEditor)
         {
             string word = GetWordUnderMouse(textEditor.Document, textEditor.TextArea.Caret.Position);
 
@@ -316,15 +316,21 @@ namespace AvalonEdit.Editor
                 {
                     if (b.IsType)
                     {
-
-                        string cs = CSParsers.TypeToString(b);
-                        return cs;
+                        if (b.Locations != null)
+                            if (b.Locations[0] != null)
+                                if(b.Locations[0].IsInSource )
+                            {
+                                    return new Tuple<string, string>("", b.Locations[0].SourceTree.FilePath);
+                                
+                            }
+                        return new Tuple<string, string>(CSParsers.TypeToString(b), "");
+                        
 
                     }
                     
                 }
             }
-            return "";
+            return new Tuple<string, string>("","");
         }
 
         public TextEditor textEditor { get; set; }

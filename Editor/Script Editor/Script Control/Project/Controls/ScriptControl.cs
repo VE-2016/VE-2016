@@ -345,7 +345,15 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         private void VSSolution_OpenFile(object sender, OpenFileEventArgs e)
         {
-            MessageBox.Show("Open content for " + e.content);
+            //MessageBox.Show("Open content for " + e.content);
+            if (!string.IsNullOrEmpty(e.filename))
+            {
+                OpenDocuments(e.filename, vs);
+            }
+            else
+            {
+                OpenDocumentsWithContent(e.content, vs);
+            }
         }
 
         System.Threading.Timer MouseMoveTimer { get; set; }
@@ -425,7 +433,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             }
             // Not Found
 
-            doc = OpenDocuments(FileName, (VSProject)null);
+            doc = OpenDocuments(FileName, (VSSolution)null);
 
             if (doc != null)
             {
@@ -435,14 +443,14 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             return doc;
         }
 
-        public Document FileOpened(string FileName)
+        public AvalonDocument FileOpened(string FileName)
         {
-            Document doc = null;
+            AvalonDocument doc = null;
             foreach (DockContent docWin in dockContainer1.Contents)
             {
-                if (docWin is Document)
+                if (docWin is AvalonDocument)
                 {
-                    doc = docWin as Document;
+                    doc = docWin as AvalonDocument;
                     if (doc.FileName == FileName)
                     {
                         doc.Show(dockContainer1, DockState.Document);
@@ -475,6 +483,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         }
     
 
+        
 
         public Document GetActiveDocument(bool focused = false)
         {
@@ -650,6 +659,8 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             if (dockContainer1.ActiveDocumentPane == null)
                 return;
 
+            
+
             // this.dockContainer1.ActiveDocumentPane.Size = new Size(this.Size.Width, this.Size.Height);
 
             // this.dockContainer1.ActiveDocumentPane.master = this;
@@ -694,13 +705,21 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         public ParseInformation parse { get; set; }
 
 
-        public AvalonDocument OpenDocuments(string Name, VSProvider.VSProject pp, AutoResetEvent autoEvent = null)
+        public AvalonDocument OpenDocuments(string Name, VSProvider.VSSolution vs, AutoResetEvent autoEvent = null)
         {
-            if (FileOpened(Name) != null)
-                return null;
 
-            if (pp != null)
-                vs = pp.vs;
+            var d = FileOpened(Name);
+
+
+            if (d != null)
+            {
+                d.Activate();
+
+                return d;
+
+            }
+
+                         
 
             this.SuspendLayout();
             /*
@@ -778,11 +797,40 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             AvalonDocument doc = new AvalonDocument(Name);
             doc.Text = Path.GetFileNameWithoutExtension(Name);
             doc.Show(dockContainer1, DockState.Document);
-
+            doc.Activate();
+            if(vs != null)
+            doc.Editor.dv.LoadFromProject(vs);
 
             this.ResumeLayout();
 
 
+            return doc;
+        }
+        public AvalonDocument OpenDocumentsWithContent(string content, VSProvider.VSSolution vs, AutoResetEvent autoEvent = null)
+        {
+
+            //var d = FileOpened(Name);
+
+
+            //if (d != null)
+            //{
+            //    d.Activate();
+
+            //    return d;
+
+            //}
+            this.SuspendLayout();
+            
+            AvalonDocument doc = new AvalonDocument();
+            doc.LoadText(content);
+            //doc.Text = Path.GetFileNameWithoutExtension(Name);
+            doc.Show(dockContainer1, DockState.Document);
+            doc.Activate();
+            //if (vs != null)
+            //    doc.Editor.dv.LoadFromProject(vs);
+
+            this.ResumeLayout();
+            
             return doc;
         }
 
@@ -871,45 +919,45 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         }
 
 
-        public Document OpenDocuments2(string Name, VSProvider.VSProject pp, ICSharpCode.NRefactory.TypeSystem.DomRegion dr, bool selectable)
+        public AvalonDocument OpenDocuments2(string Name, VSProvider.VSProject pp, ICSharpCode.NRefactory.TypeSystem.DomRegion dr, bool selectable)
         {
-            Document doc = null;
+            AvalonDocument doc = null;
 
             doc = FileOpened(Name);
 
-            if (doc == null)
-            {
-                string contents = "";
+            //if (doc == null)
+            //{
+            //    string contents = "";
 
-                contents = File.ReadAllText(Name);
+            //    contents = File.ReadAllText(Name);
 
-                if (contents == string.Empty)
-                    return null;
-                doc = new Document(form);
-                doc.FileName = Name;
-                doc.Text = Path.GetFileNameWithoutExtension(Name);
-                doc.Tag = "USERDOCUMENT";
-                doc.HideOnClose = false;
-                doc.ScriptLanguage = _scriptLanguage;
-                doc.vp = pp;
-                doc.Contents = contents;
-                doc.LoadVSProject(pp, Name);
-                LoadKeywordsAsync(doc);
-                DocumentEvents(doc, true);
-                doc.Show(dockContainer1, DockState.Document);
+            //    if (contents == string.Empty)
+            //        return null;
+            //    doc = new Document(form);
+            //    doc.FileName = Name;
+            //    doc.Text = Path.GetFileNameWithoutExtension(Name);
+            //    doc.Tag = "USERDOCUMENT";
+            //    doc.HideOnClose = false;
+            //    doc.ScriptLanguage = _scriptLanguage;
+            //    doc.vp = pp;
+            //    doc.Contents = contents;
+            //    doc.LoadVSProject(pp, Name);
+            //    LoadKeywordsAsync(doc);
+            //    DocumentEvents(doc, true);
+            //    doc.Show(dockContainer1, DockState.Document);
 
 
 
-                doc.ParseContentsNow();
-            }
+            //    doc.ParseContentsNow();
+            //}
 
-            doc.Editor.GotoLine(dr.BeginLine);
-            if (selectable)
-            {
-                int offset = doc.Editor.Caret.GetOffset(dr.BeginColumn, dr.BeginLine);
-                doc.Editor.GotoLine(dr.BeginColumn); //doc.Editor.Caret.Position = new TextPoint(dr.BeginColumn, dr.BeginLine);
-                SelectText(offset, dr.EndColumn - dr.BeginColumn);
-            }
+            //doc.Editor.GotoLine(dr.BeginLine);
+            //if (selectable)
+            //{
+            //    int offset = doc.Editor.Caret.GetOffset(dr.BeginColumn, dr.BeginLine);
+            //    doc.Editor.GotoLine(dr.BeginColumn); //doc.Editor.Caret.Position = new TextPoint(dr.BeginColumn, dr.BeginLine);
+            //    SelectText(offset, dr.EndColumn - dr.BeginColumn);
+            //}
 
 
 
@@ -918,43 +966,43 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         }
 
 
-        public Document BookmarkAll(string Name, VSProvider.VSProject pp, ArrayList B)
+        public AvalonDocument BookmarkAll(string Name, VSProvider.VSProject pp, ArrayList B)
         {
-            Document doc = null;
+            AvalonDocument doc = null;
 
             doc = FileOpened(Name);
 
-            if (doc == null)
-            {
-                string contents = "";
+            //if (doc == null)
+            //{
+            //    string contents = "";
 
-                contents = File.ReadAllText(Name);
+            //    contents = File.ReadAllText(Name);
 
-                if (contents == string.Empty)
-                    return null;
-                doc = new Document(form);
-                doc.FileName = Name;
-                doc.Text = Path.GetFileNameWithoutExtension(Name);
-                doc.Tag = "USERDOCUMENT";
-                doc.HideOnClose = false;
-                doc.ScriptLanguage = _scriptLanguage;
-                doc.vp = pp;
-                doc.Contents = contents;
-                doc.LoadVSProject(pp, Name);
-                LoadKeywordsAsync(doc);
-                DocumentEvents(doc, true);
-                doc.Show(dockContainer1, DockState.Document);
-
-
-
-                doc.ParseContentsNow();
-            }
+            //    if (contents == string.Empty)
+            //        return null;
+            //    doc = new Document(form);
+            //    doc.FileName = Name;
+            //    doc.Text = Path.GetFileNameWithoutExtension(Name);
+            //    doc.Tag = "USERDOCUMENT";
+            //    doc.HideOnClose = false;
+            //    doc.ScriptLanguage = _scriptLanguage;
+            //    doc.vp = pp;
+            //    doc.Contents = contents;
+            //    doc.LoadVSProject(pp, Name);
+            //    LoadKeywordsAsync(doc);
+            //    DocumentEvents(doc, true);
+            //    doc.Show(dockContainer1, DockState.Document);
 
 
-            foreach (Tuple<string, int, int> r in B)
-            {
-                doc.syntaxDocument1[r.Item3].Bookmarked = true;
-            }
+
+            //    doc.ParseContentsNow();
+            //}
+
+
+            //foreach (Tuple<string, int, int> r in B)
+            //{
+            //    doc.syntaxDocument1[r.Item3].Bookmarked = true;
+            //}
 
 
 
@@ -1029,51 +1077,42 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             }
         }
 
-        public Document Bookmark(string Name, VSProvider.VSProject pp, int l2)
+        public AvalonDocument Bookmark(string Name, VSProvider.VSProject pp, int l2)
         {
-            Document doc = null;
+            AvalonDocument doc = null;
 
             doc = FileOpened(Name);
 
-            if (doc == null)
-            {
-                string contents = "";
+            //if (doc == null)
+            //{
+            //    string contents = "";
 
-                contents = File.ReadAllText(Name);
+            //    contents = File.ReadAllText(Name);
 
-                if (contents == string.Empty)
-                    return null;
-                doc = new Document(form);
-                doc.FileName = Name;
-                doc.Text = Path.GetFileNameWithoutExtension(Name);
-                doc.Tag = "USERDOCUMENT";
-                doc.HideOnClose = false;
-                doc.ScriptLanguage = _scriptLanguage;
-                doc.vp = pp;
-                doc.Contents = contents;
-                doc.LoadVSProject(pp, Name);
-                doc.LoadKeywords(doc);
-                DocumentEvents(doc, true);
-                doc.Show(dockContainer1, DockState.Document);
-
-
-
-                doc.ParseContentsNow();
-            }
+            //    if (contents == string.Empty)
+            //        return null;
+            //    doc = new Document(form);
+            //    doc.FileName = Name;
+            //    doc.Text = Path.GetFileNameWithoutExtension(Name);
+            //    doc.Tag = "USERDOCUMENT";
+            //    doc.HideOnClose = false;
+            //    doc.ScriptLanguage = _scriptLanguage;
+            //    doc.vp = pp;
+            //    doc.Contents = contents;
+            //    doc.LoadVSProject(pp, Name);
+            //    doc.LoadKeywords(doc);
+            //    DocumentEvents(doc, true);
+            //    doc.Show(dockContainer1, DockState.Document);
 
 
 
+            //    doc.ParseContentsNow();
+            //}
 
-            doc.syntaxDocument1[l2].Bookmarked = true;
-
-
-
-
-
+            //doc.syntaxDocument1[l2].Bookmarked = true;
 
             return doc;
         }
-
 
         public Document OpenDocument(string contents, VSProvider.VSProject pp)
         {
@@ -1392,7 +1431,43 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                 view.Selection.SelLength = length;
             }
         }
+        public void SelectTextXY(AvalonDocument doc, int X, int Y)
+        {
+            //CodeEditor.WinForms.EditViewControl view = GetCurrentView();
+            //if (view != null)
+            {
+                doc.Editor.dv.SetAllFoldings();
 
+                int p = Y - 10;
+                if (p < 0)
+                    p = 0;
+
+                doc.Editor.dv.SelectText(X, Y);
+                
+
+                //doc.Editor.dv.  ExpandAll();
+
+                //view.Refresh();
+
+                //view.ScrollIntoView(p);
+
+                //if (view.Document.Count <= Y)
+                //    Task.Delay(1000);
+
+                //if (view.Document.Count <= Y)
+                //    return;
+
+                //length = view.Document[Y].Text.Length - X;
+
+                //int offset = view.Caret.GetOffset(X, Y);
+                ////int s = view.GetLineIndex(start);
+                //view.Selection.SelStart = offset;
+                //view.Selection.SelLength = length;
+
+
+
+            }
+        }
         public void SelectTextXY(int X, int Y, int length)
         {
             CodeEditor.WinForms.EditViewControl view = GetCurrentView();
@@ -2134,7 +2209,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                     if (s.StartsWith("@") == false)
                     {
                         VSProject p = vs.GetVSProject(s);
-                        AvalonDocument doc = OpenDocuments(s, p);
+                        AvalonDocument doc = OpenDocuments(s, vs);
                         dockContainer1.Refresh();
                     }
 

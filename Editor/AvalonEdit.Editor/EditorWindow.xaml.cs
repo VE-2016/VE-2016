@@ -132,7 +132,7 @@ namespace AvalonEdit.Editor
 
 
 
-
+           
 
             //string file = "C:\\MSBuildProjects-beta\\VStudio.sln";
             //VSSolutionLoader rw = new VSSolutionLoader();
@@ -246,8 +246,9 @@ namespace AvalonEdit.Editor
             textEditor.TextArea.IndentationStrategy = new ICSharpCode.AvalonEdit.Indentation.CSharp.CSharpIndentationStrategy(textEditor.Options);
             foldingStrategy = new BraceFoldingStrategy();
 
-
-            textEditor.TextArea.TextView.LineTransformers.Add(new Colorizer());
+            Colorizer colorizer = new Colorizer();
+            colorizer.editorWindow = this;
+            textEditor.TextArea.TextView.LineTransformers.Add(colorizer);
 
             //textEditor.TextArea.TextView.ElementGenerators.Add(new FormatterGenerator());
 
@@ -268,6 +269,12 @@ namespace AvalonEdit.Editor
 
         }
         bool Handled = false;
+
+        public void LoadContent(string content)
+        {
+            textEditor.Document.Text = content;
+        }
+
 
         public void LoadFile(string filename)
         {
@@ -359,11 +366,16 @@ namespace AvalonEdit.Editor
 
             //Document c = Formatter.FormatAsync(d).Result;
 
-            string s = editor.GetType(textEditor);
+            Tuple<string, string> t = editor.GetType(textEditor);
+
+            string file = "";
 
             if (vs == null)
                 return;
-            vs.LoadFileFromContent(s, null, "");
+
+            
+
+            vs.LoadFileFromContent(t.Item1, null, t.Item2);
 
 
         }
@@ -383,11 +395,14 @@ namespace AvalonEdit.Editor
         }
 
 
+        public SortedSet<int> sc = new SortedSet<int>();
 
-
+        public Dictionary<int, string> dc = new Dictionary<int, string>();
 
         public void LoadProjectTypes(List<INamespaceOrTypeSymbol> symbols)
         {
+           
+            
             var currentLine = textEditor.Document.GetLineByOffset(textEditor.CaretOffset);
             List<string> ns = new List<string>();
             StringBuilder b = new StringBuilder();
@@ -399,7 +414,15 @@ namespace AvalonEdit.Editor
                 if (cs.IsNamespace)
                     continue;
                 if (cs.IsType)
-                    b.Append("|" + cs.Name);
+                {
+                   // b.Append("|" + cs.Name);
+                    int hash = cs.Name.GetHashCode();
+                    sc.Add(hash);
+                    if(!dc.ContainsKey(hash))
+                    dc.Add(hash, cs.Name);
+
+
+                }
                 if (!ns.Contains(cs.ContainingNamespace.Name))
                 {
                     n.Append("|" + cs.ContainingNamespace.Name + ".");
@@ -443,7 +466,7 @@ namespace AvalonEdit.Editor
 
 
 
-            textEditor.SyntaxHighlighting.MainRuleSet.Rules.Add(hs);
+           // textEditor.SyntaxHighlighting.MainRuleSet.Rules.Add(hs);
 
 
 
@@ -1220,6 +1243,29 @@ namespace AvalonEdit.Editor
             }
         }
 
+        public int GetLineExtended(int line)
+        {
+            return textEditor.Document.GetLineByNumber(line).LineNumberExtended;
+        }
+
+        public void SelectText(int start, int length)
+        {
+
+
+            textEditor.CaretOffset = start;
+
+            textEditor.TextArea.Caret.BringCaretToView();
+
+            textEditor.SelectionStart = start;
+            textEditor.SelectionLength = length;
+        }
+
+        public void SetAllFoldings(bool folded = false)
+        {
+            
+            foreach (var s in foldingManager.AllFoldings)
+                s.IsFolded = folded;
+        }
         void UpdateFoldings()
         {
             if (foldingStrategy is BraceFoldingStrategy)
@@ -1342,7 +1388,7 @@ namespace AvalonEdit.Editor
 
         public VSSolution vs { get; set; }
 
-        public async void LoadFromProject(VSSolution vs)
+       public async void LoadFromProject(VSSolution vs)
         {
 
             this.vs = vs;
@@ -1352,6 +1398,8 @@ namespace AvalonEdit.Editor
 
                 var vp = vs.GetProjectbyCompileItem(FileToLoad);
 
+                if (vp == null)
+                    return;
                 
                 ProjectToLoad = vp.FileName;
                 SolutionToLoad = vs.solutionFileName;

@@ -79,7 +79,7 @@ namespace WinExplorer
         {
             string text = se.Text;
             string[] dd = text.Split(" ".ToCharArray());
-            ExplorerForms.ef.OpenFileXY(filename, "0", line.ToString(), 0);
+            ExplorerForms.ef.OpenFileXY(filename, 0, line, 0);
         }
 
         RichTextBox rb { get; set; }

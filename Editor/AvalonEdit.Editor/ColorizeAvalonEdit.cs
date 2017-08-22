@@ -22,32 +22,74 @@ using System.Windows.Media;
 
 using ICSharpCode.AvalonEdit.Document;
 using ICSharpCode.AvalonEdit.Rendering;
+using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 namespace AvalonEdit.Editor
 {
-	/// <summary>
-	/// Finds the references line and makes it gray.
-	/// </summary>
-	public class Colorizer : DocumentColorizingTransformer
-	{
-       
+    /// <summary>
+    /// Finds the references line and makes it gray.
+    /// </summary>
+    public class Colorizer : DocumentColorizingTransformer
+    {
+
         public EditorWindow editorWindow { get; set; }
+
+        public static System.Windows.Media.Brush brush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(111, 196, 220));
 
         protected override void ColorizeLine(ICSharpCode.AvalonEdit.Document.DocumentLine line)
         {
-            if (line.obs == null)
-                return;
-            //editorWindow.Errors[0].Location.SourceSpan.Start
             if (!line.IsDeleted)
             {
-                ChangeLinePart(line.Offset, line.EndOffset, ApplyChanges);
-            }
-        }
+                if (line.obs != null)
 
-        void ApplyChanges(VisualLineElement element)
-        {
-            
-            element.TextRunProperties.SetForegroundBrush(Brushes.Gray);
+                //editorWindow.Errors[0].Location.SourceSpan.Start
+
+                {
+                    ChangeLinePart(line.Offset, line.EndOffset, ApplyChanges);
+                }
+                else
+                {
+                    SortedSet<int> sc = editorWindow.sc;
+
+                    Dictionary<int, string> dc = editorWindow.dc;
+
+                    if (sc.Count <= 0)
+                        return;
+
+                    string text = editorWindow.textEditor.Document.Text.Substring(line.Offset, line.EndOffset - line.Offset);
+
+                    var testusing = text.Trim();
+
+                    if (testusing.StartsWith("using"))
+                        return;
+
+                    var matches = Regex.Matches(text, @"\b[a-zA-Z]{2,}\b");
+
+                    foreach (Match s in matches)
+                    {
+                        
+
+                        if (sc.Contains(s.Value.GetHashCode()))
+                        {
+
+
+                            ChangeLinePart(line.Offset + s.Index, line.Offset + s.Index + s.Length, ApplyChangesForType);
+                        }
+                    }
+                }
+            }
+
+            void ApplyChanges(VisualLineElement element)
+            {
+
+                element.TextRunProperties.SetForegroundBrush(Brushes.Gray);
+            }
+            void ApplyChangesForType(VisualLineElement element)
+            {
+
+                element.TextRunProperties.SetForegroundBrush(brush);
+            }
         }
     }
 }

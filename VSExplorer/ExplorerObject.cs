@@ -5635,11 +5635,11 @@ namespace WinExplorer
             W.Add(tv);
         }
 
-        public void LoadFile(string file, Dictionary<string, string> dc, ImageList bmp, VSProject vp)
+        public void LoadFile(string file, Dictionary<string, string> dc, ImageList bmp, VSSolution vs)
         {
             if (script == null)
                 return;
-            script.OpenDocuments(file, vp);
+            script.OpenDocuments(file, vs);
         }
 
         public void LoadListTabs(Form f, string r)
@@ -5694,27 +5694,27 @@ namespace WinExplorer
             ppf.LoadResourcesView(r);
         }
 
-        public void LoadFile(string file, VSProject vp,  AutoResetEvent autoEvent = null  )
+        public void LoadFile(string file, VSSolution vs,  AutoResetEvent autoEvent = null  )
         {
             if (script == null)
                 return;
 
 
-            if(vp != null)
-            if (vp.IsResourceEmbedded(file) == true)
-            {
-                DocumentForm df = OpenDocumentForm(file);
+            //if(vs != null)
+            //if (vp.IsResourceEmbedded(file) == true)
+            //{
+            //    DocumentForm df = OpenDocumentForm(file);
 
-                df.FileName = vp.FileName;
+            //    df.FileName = vp.FileName;
 
-                df.resource = file;
+            //    df.resource = file;
 
-                LoadListTabs(df, file);
+            //    LoadListTabs(df, file);
 
-                return;
-            }
+            //    return;
+            //}
 
-            script.BeginInvoke(new Action(() => { script.OpenDocuments(file, vp, autoEvent);
+            script.BeginInvoke(new Action(() => { script.OpenDocuments(file, vs, autoEvent);
 
                 //if (autoEvent != null)
                 //    autoEvent.Set();

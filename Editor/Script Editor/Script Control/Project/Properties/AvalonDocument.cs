@@ -16,7 +16,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl.Properties
 
         public string FileName { get; set; }
 
-        public AvalonDocument(string FileName)
+        public AvalonDocument(string FileName = "")
         {
            
 
@@ -24,11 +24,19 @@ namespace AIMS.Libraries.Scripting.ScriptControl.Properties
             Editor = new AvalonEdit.Host.Editor_WinformsHost();
             Editor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Controls.Add(Editor);
+            if(!string.IsNullOrEmpty(FileName))
             Editor.Load(FileName);
             Editor.Show();
             
         }
-
+        public int GetLineExtended(int line)
+        {
+            return Editor.dv.GetLineExtended(line);
+        }
+        public void LoadText(string content)
+        {
+            Editor.dv.LoadContent(content);
+        }
         private void InitializeComponent()
         {
             this.SuspendLayout();
