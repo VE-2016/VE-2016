@@ -68,7 +68,7 @@ namespace AvalonEdit.Editor
 
                     foreach (Match s in matches)
                     {
-                        
+
 
                         if (sc.Contains(s.Value.GetHashCode()))
                         {
@@ -79,17 +79,18 @@ namespace AvalonEdit.Editor
                     }
                 }
             }
+        }
+        void ApplyChanges(VisualLineElement element)
+        {
 
-            void ApplyChanges(VisualLineElement element)
-            {
+            element.TextRunProperties.SetForegroundBrush(Brushes.Gray);
+        }
+        void ApplyChangesForType(VisualLineElement element)
+        {
 
-                element.TextRunProperties.SetForegroundBrush(Brushes.Gray);
-            }
-            void ApplyChangesForType(VisualLineElement element)
-            {
-
-                element.TextRunProperties.SetForegroundBrush(brush);
-            }
+            element.TextRunProperties.SetForegroundBrush(brush);
         }
     }
 }
+
+
