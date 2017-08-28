@@ -140,6 +140,9 @@ namespace AvalonEdit.Editor
         public void DoUpdate(List<ISymbol> symbols)
         {
 
+            if (symbols == null)
+                return;
+
             this.symbols = symbols;
 
             classItems = new List<EntityItem>();

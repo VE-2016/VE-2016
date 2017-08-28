@@ -41,11 +41,17 @@ namespace AvalonEdit.Editor
         {
             if (!line.IsDeleted)
             {
-                if (line.obs != null)
+
+                string text = editorWindow.textEditor.Document.Text.Substring(line.Offset, line.EndOffset - line.Offset);
+
+                var testusing = text.Trim();
+
+                if (line.obs != null && testusing.StartsWith("Reference"))
 
                 //editorWindow.Errors[0].Location.SourceSpan.Start
 
                 {
+
                     ChangeLinePart(line.Offset, line.EndOffset, ApplyChanges);
                 }
                 else
@@ -57,11 +63,12 @@ namespace AvalonEdit.Editor
                     if (sc.Count <= 0)
                         return;
 
-                    string text = editorWindow.textEditor.Document.Text.Substring(line.Offset, line.EndOffset - line.Offset);
+                 
 
-                    var testusing = text.Trim();
 
                     if (testusing.StartsWith("using"))
+                        return;
+                    if (testusing.StartsWith("//"))
                         return;
 
                     var matches = Regex.Matches(text, @"\b[a-zA-Z]{2,}\b");

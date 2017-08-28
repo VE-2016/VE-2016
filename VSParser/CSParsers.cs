@@ -522,11 +522,30 @@ namespace VSParsers
         //    return c;
         //}
 
+
+            public static string TypeNameConverter(string name)
+        {
+            if (name == "Int32")
+                return "int";
+            if (name == "Boolean")
+                return "bool";
+            if (name == "Char")
+                return "char";
+            return name;
+        }
+
         public static string TypeToString(INamespaceOrTypeSymbol names)
         {
                        
             
             INamedTypeSymbol name = names as INamedTypeSymbol;
+
+            //INamedTypeSymbol bp = name.ConstructUnboundGenericType();
+
+            //if(name.GetHashCode() == bp.GetHashCode())
+            //{
+            //    string gg = "ok";
+            //}
 
             string c = "";
 
@@ -536,6 +555,8 @@ namespace VSParsers
 
             if (tt != null)
             {
+            //    var v = tt.Assembly.GetReferencedAssemblies();
+
                 c = "// " + tt.Assembly.GetName() + "\n\n";
 
                 foreach (AssemblyName a in tt.Assembly.GetReferencedAssemblies())
@@ -543,8 +564,10 @@ namespace VSParsers
                     c += "using " + a.Name + "\n";
                 }
             }
-
+            
             c += "\nnamespace " + name.ContainingNamespace.Name + "\n{\n";
+
+            c += "\t";
 
             if (name.DeclaredAccessibility == Microsoft.CodeAnalysis.Accessibility.Public)
                 c += "public";
@@ -555,6 +578,9 @@ namespace VSParsers
 
             if (name.IsAbstract)
                 c += " abstract ";
+
+            if (name.IsSealed)
+                c += " sealed ";
 
             if (name.TypeKind == Microsoft.CodeAnalysis.TypeKind.Class)
                 c += " " + "class ";
@@ -572,9 +598,9 @@ namespace VSParsers
                 c += " " + "Structure ";
             else c += " " + "";
 
-            c += (name.ContainingNamespace + "." + name.Name);
+            c += (/*name.ContainingNamespace + "." + */name.Name);
 
-
+        
             var bt = WindowsFormsApp3.ISymbolExtensions.BaseTypes(name);
 
             if (bt.Count > 0)
@@ -590,8 +616,44 @@ namespace VSParsers
                     i++;
                 }
             }
+            var it = name.AllInterfaces.ToList();
+            
+            if (it.Count > 0)
+            {
+                c += " , ";
 
-            c += " \n{\n\n";
+                int i = 0;
+                foreach (INamedTypeSymbol t in it)
+                {
+
+                    
+
+                    if (i > 0)
+                        c += ", ";
+                    c += " " + t.Name;
+                    if(t.TypeArguments != null && t.TypeArguments.Count() > 0)
+                    {
+                        int j = 0;
+                        c += "<";
+
+                        foreach(ITypeSymbol e in t.TypeArguments)
+                        {
+                            if (j > 0)
+                                c += ", ";
+                            c += e.Name;
+
+                            j++;
+                        }
+
+
+                        c += ">";
+                    }
+                    i++;
+                }
+            }
+            c += " \n\t{\n\n";
+
+            
 
             //foreach (IMember m in name.Members)
             //{
@@ -605,11 +667,61 @@ namespace VSParsers
             //    c += m.Name + "\n";
             //}
 
-            c += "\t";
+            //c += "\t";
 
-            //foreach(ITypeDefinition dd in name.GetAllBaseTypeDefinitions()){
+            
             foreach (Microsoft.CodeAnalysis.ISymbol m in name.GetMembers())
             {
+                {
+
+
+                    if (m.DeclaredAccessibility != Microsoft.CodeAnalysis.Accessibility.Public && m.DeclaredAccessibility != Microsoft.CodeAnalysis.Accessibility.Protected)
+                        continue;
+
+                   IMethodSymbol me = m as IMethodSymbol;
+                    if (me != null)
+                        if (me.AssociatedSymbol != null)
+                            continue;
+                    
+                }
+                {
+                    var dcc = m.GetDocumentationCommentXml();
+                    //dcc = dcc.Replace("<summary>", "");
+                    //dcc = dcc.Replace("</summary>", "");
+                    string []dd = dcc.Split("\n".ToCharArray());
+                    foreach(string bv in dd)
+                    c += "\t\t" + "//" + bv + "\n";
+                    var attrs = m.GetAttributes();
+                    if(attrs.Count() > 0)
+                    {
+
+                        c += "\t\t[";
+
+                        int i = 0;
+                        while(i < attrs.Count())
+                        {
+                            if(i > 0)
+                            {
+                                c += ",";
+                            }
+                            c += attrs[i].AttributeClass.Name;
+                            if (attrs[i].ConstructorArguments != null && attrs[i].ConstructorArguments.Count() > 0)
+                            {
+                                c += "(";
+                                c += attrs[i].ConstructorArguments[0].Type.Name;
+                                c += ")";
+                            }
+                            i++;
+                        }
+
+                        c += "]\n";
+                    }
+                }
+
+                
+
+                c += "\t\t\t";
+                
                 if (m.IsAbstract)
                     c += "abstract ";
 
@@ -619,7 +731,7 @@ namespace VSParsers
                 if (m.IsStatic)
                     c += "static ";
                 
-
+                
 
                 if(m.DeclaredAccessibility == Microsoft.CodeAnalysis.Accessibility.Internal)
                    c += "internal ";
@@ -635,7 +747,7 @@ namespace VSParsers
 
                 if (m.IsVirtual)
                     c += "virtual ";
-
+                
                 if(m is IEventSymbol)
 
                 //if ((Type)m.GetType() == typeof(DefaultResolvedEvent))
@@ -647,32 +759,108 @@ namespace VSParsers
                 if (m is IPropertySymbol)
                     //if ((Type)m.GetType() == typeof(DefaultResolvedProperty))
                 {
-                    c += ((IPropertySymbol)m).Type.Name + " ";
+                    IPropertySymbol fs = m as IPropertySymbol;
+                    if (fs.IsReadOnly)
+                        c += "readonly ";
+                    if(fs.GetMethod != null)
+                    {
+                        //c += fs.GetMethod.ReturnType.Name + " ";
+
+                    if(fs.GetMethod.ReturnType is IArrayTypeSymbol)
+                        {
+                            IArrayTypeSymbol tg = fs.GetMethod.ReturnType as IArrayTypeSymbol;
+
+                            c += tg.ElementType.Name + "[] ";
+
+                        }
+
+                    }
+                    
+                    c += TypeNameConverter(((IPropertySymbol)m).Type.Name) + " ";
                 }
                 else 
                 if(m is IFieldSymbol)
                 //if ((Type)m.GetType() == typeof(DefaultResolvedField))
                 {
+                    IFieldSymbol fs = m as IFieldSymbol;
+                    if (fs.IsReadOnly)
+                        c += "readonly ";
                     c += ((IFieldSymbol)m).Type.Name + " ";
                 }
-                 if (m is IMethodSymbol)
+                if (m is IMethodSymbol)
                 //if ((Type)m.GetType() == typeof(DefaultResolvedMethod))
                 {
                     if (((IMethodSymbol)m).MethodKind == MethodKind.Constructor)
                     {
+                        //if (((IMethodSymbol)m).ReturnsVoid == true)
+
+                        //    c += ((IMethodSymbol)m).ReturnType.Name.ToLower() + " ";
+                        //else
+                        //    c += ((IMethodSymbol)m).ReturnType.Name + " ";
+
+                        c += name.Name;
+                    }
+                    else
+                    {
+                        IMethodSymbol me = m as IMethodSymbol;
+
                         if (((IMethodSymbol)m).ReturnsVoid == true)
 
                             c += ((IMethodSymbol)m).ReturnType.Name.ToLower() + " ";
                         else
-                            c += ((IMethodSymbol)m).ReturnType.Name + " ";
+                        {
 
-                        c += m.Name;
+                            IMethodSymbol vb = m as IMethodSymbol;
+
+                            if (vb.ReturnType.TypeKind == Microsoft.CodeAnalysis.TypeKind.Array)
+                            {
+
+                                if (vb.ReturnType is IArrayTypeSymbol)
+                                {
+
+                                    IArrayTypeSymbol es = vb.ReturnType as IArrayTypeSymbol;
+
+                                    //c += " " + es.BaseType.Name;
+
+                                    c += es.ElementType + "[] ";
+                                }
+                            }
+                            else
+                            {
+                                string ts = TypeNameConverter(((IMethodSymbol)m).ReturnType.Name);
+                                c += ts + " ";
+                            }
+                        }
+
+                        if (me.AssociatedSymbol == null)
+                            c += m.Name;
+                        
                     }
-                    else c += name.Name;
                 }
                 else
+                {
+                    if(m is IPropertySymbol)
+                    {
+                        IPropertySymbol p = m as IPropertySymbol;
+                        if (p.IsIndexer)
+                        {
+                            if(p.Parameters != null && p.Parameters.Count() > 0)
+                            {
+                                c += "this[ ";
+                                c += TypeNameConverter( p.Parameters[0].Type.Name) + " ";
+                                c += p.Parameters[0].Name;
+                                c += " ] ";
+                            }
 
+                        }
+                        else
+                        c += m.Name;
+                    }
+                    else 
                     c += m.Name;
+
+
+                }
                  if(m is IEventSymbol)
                 //if ((Type)m.GetType() == typeof(DefaultResolvedEvent))
                 {
@@ -703,8 +891,11 @@ namespace VSParsers
 
                     IMethodSymbol me = m as IMethodSymbol;
 
-                    if (me.AssociatedSymbol != null)
-                        if (me.AssociatedSymbol is IPropertySymbol)
+                    
+
+                    if (me.AssociatedSymbol != null &&
+                    
+                        me.AssociatedSymbol is IPropertySymbol)
                         {
 
                             IPropertySymbol ps = me.AssociatedSymbol as IPropertySymbol;
@@ -715,32 +906,126 @@ namespace VSParsers
                             }
 
                         }
-                        else
+                    
+                    else
+                    {
+                        if (me.IsGenericMethod == true)
                         {
-                            c += "(";
+                            c += "<";
+                            int i = 0;
+                            if (me.TypeArguments != null)
+                                foreach (ITypeSymbol e in me.TypeArguments)
+                                {
+                                    if (i > 0)
+                                        c += ", ";
+                                    c += e.Name;
+                                    i++;
+                                }
+                            else c += "T";
+                            
+                            c += ">";
+                        }
+                        c += "(";
 
-                            IMethodSymbol b = (IMethodSymbol)m;
+                        IMethodSymbol b = (IMethodSymbol)m;
 
-                            foreach (IParameterSymbol p in b.Parameters)
+
+                        
+                        foreach (IParameterSymbol p in b.Parameters)
+                        {
+                            if(p.RefKind == RefKind.Out)
                             {
-                                c += p.Type.Name;
-                                c += " ";
-                                c += p.Name;
-                                c += ",";
+                                c += "out ";
+                            }
+                            else if (p.RefKind == RefKind.Ref)
+                            {
+                                c += "ref ";
                             }
 
-                            if (c.EndsWith(","))
-                                c = c.Remove(c.Length - 1);
+                            if (p.IsParams)
+                                c += "params ";
+                        
+                        
+                            if(p.Type is IArrayTypeSymbol)
+                            {
 
-                            c += ");";
+                                IArrayTypeSymbol es = p.Type as IArrayTypeSymbol;
+
+                                //c += " " + es.BaseType.Name;
+
+                                c += es.ElementType + " ";
+
+                            }
+
+                            
+                            if(p.Type.TypeKind == Microsoft.CodeAnalysis.TypeKind.Array)
+                            {
+
+                               // c += " " + p.Type.OriginalDefinition.GetType().Name + " ";
+
+                                c += "[]";
+                            }
+
+                            if(p.Type is IPointerTypeSymbol)
+                            {
+
+                                IPointerTypeSymbol ps = p.Type as IPointerTypeSymbol;
+                                c += ps.PointedAtType.Name + "* ";
+
+
+                            }
+
+                            if (p.Type.Name == "string")
+                                c += "String";
+                            else c += p.Type.Name;
+
+                            if (p.Type is INamedTypeSymbol)
+                            {
+
+                                INamedTypeSymbol es = p.Type as INamedTypeSymbol;
+
+                                                                
+                                if (es.IsGenericType)
+                                {
+                                    c += "<";
+
+                                    if (es.TypeArguments != null)
+                                    {
+                                        int i = 0;
+                                        foreach(ITypeSymbol e in es.TypeArguments)
+                                        {
+                                            if (i > 0)
+                                                c += ",";
+                                            c += e.Name;
+                                            i++;
+                                        }
+
+                                    }
+                                    else c += "T";
+
+                                    c += ">";
+
+                                }
+                            }
+
+
+                            c += " ";
+                            c += p.Name;
+                            c += ", ";
                         }
+
+                        if (c.EndsWith(", "))
+                            c = c.Remove(c.Length - 2);
+
+                        c += ");";
+                    }
                 }
-                c += "\n\t";
+                c += "\n";
             }
 
             //}
 
-            c += "\n}\n\n}\n";
+            c += "\n\t}\n\n}\n";
 
             return c;
         }

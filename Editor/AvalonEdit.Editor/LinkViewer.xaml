@@ -6,10 +6,10 @@
 
     <Window.Resources>
         <DataTemplate DataType="{x:Type cc:LinkItem}">
-            <TextBlock>
-        <TextBlock Text="{Binding Text}" Margin="1" />
+            <TextBlock >
+        <TextBlock Text="{Binding Text}" Tag="Binding cc:LinkItem"  Margin="1" />
         <Hyperlink>
-            <TextBlock Text="{Binding Hyperlink}" Margin="1" />
+            <TextBlock Text="{Binding Hyperlink}" Margin="1" MouseDown="MouseDownOverLinkItem" FontSize="11px"/>
         </Hyperlink>
     </TextBlock>
         </DataTemplate>

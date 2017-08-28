@@ -205,7 +205,7 @@ namespace AvalonEdit.Editor
 
                 textAtOffset = document.GetText(offset, 1);
 
-                if (textAtOffset == "(" || textAtOffset == ")")
+                if (textAtOffset == "(" || textAtOffset == ")" || textAtOffset == "<" || textAtOffset == ">" || textAtOffset == ",")
                     break;
             }
 
@@ -228,7 +228,7 @@ namespace AvalonEdit.Editor
 
                     textAtOffset = document.GetText(offset, 1);
 
-                    if (textAtOffset == "(" || textAtOffset == ")")
+                    if (textAtOffset == "(" || textAtOffset == ")" || textAtOffset == "<" || textAtOffset == ">" || textAtOffset == ",")
                         break;
                 }
             }
@@ -269,7 +269,7 @@ namespace AvalonEdit.Editor
 
         public string FileToLoad { get; set; }
 
-        public void GetMembers(string text = null)
+        public void GetMembers(string text = null, bool addProperties = false)
         {
             string FileName = SolutionToLoad;// "C:\\MSBuildProjects-beta\\VSExplorer\\VSExplorer.csproj";
 
@@ -277,10 +277,18 @@ namespace AvalonEdit.Editor
 
             string content = text;
 
-            if (string.IsNullOrEmpty(text))
-                content = File.ReadAllText(filename);
+            if ((!string.IsNullOrEmpty(filename)))
+            {
 
-            vp = vs.GetProjectbyCompileItem(filename);
+                if (string.IsNullOrEmpty(text))
+                    content = File.ReadAllText(filename);
+
+                vp = vs.GetProjectbyCompileItem(filename);
+            }
+
+            if (vp == null)
+                symbols = vs.GetMembers(text, addProperties);
+            else
 
             symbols = vp.vs.GetMembers(vp, filename, content);
         }
@@ -293,26 +301,44 @@ namespace AvalonEdit.Editor
 
             vp = vs.GetProjectbyCompileItem(filename);
 
+            if (vp == null)
+                return vs.GetAllTypes("");
+
             return vp.vs.GetAllTypes(FileName);
         }
 
 
-        public Tuple<string, string> GetType(TextEditor textEditor)
+        public Tuple<string, string, ISymbol> GetType(TextEditor textEditor)
         {
             string word = GetWordUnderMouse(textEditor.Document, textEditor.TextArea.Caret.Position);
+
+            if (string.IsNullOrEmpty(word))
+                return new Tuple<string, string, ISymbol>(null,null,null);
 
             string FileName = SolutionToLoad;// "C:\\MSBuildProjects-beta\\VSExplorer\\VSExplorer.csproj";
 
             string filename = FileToLoad;// "C:\\MSBuildProjects-beta\\VSExplorer\\ExplorerForms.cs";
-
-
+            
             vp = vs.GetProjectbyCompileItem(FileToLoad);
 
-            List<INamespaceOrTypeSymbol> s = vp.vs.GetAllTypes(vp.FileName);
+            string file = null;
 
-            foreach(INamespaceOrTypeSymbol b in s)
+            if (vp != null)
+                file = vp.FileName;
+
+             List<INamespaceOrTypeSymbol> s = /*vp.*/vs.GetAllTypes(file);
+
+            word = word.ToLower();
+
+           // var data = s.Select(bc => bc).Where(cd => cd.Name.ToLower().Contains(word)).ToList();
+
+            foreach (INamespaceOrTypeSymbol b in s)
             {
-                if(b.Name.EndsWith(word))
+                if (word.Contains("."))
+                {
+
+                }
+                else if(b.Name.ToLower() ==  word)
                 {
                     if (b.IsType)
                     {
@@ -320,17 +346,16 @@ namespace AvalonEdit.Editor
                             if (b.Locations[0] != null)
                                 if(b.Locations[0].IsInSource )
                             {
-                                    return new Tuple<string, string>("", b.Locations[0].SourceTree.FilePath);
+                                    return new Tuple<string, string, ISymbol>("", b.Locations[0].SourceTree.FilePath, b);
                                 
                             }
-                        return new Tuple<string, string>(CSParsers.TypeToString(b), "");
+                        return new Tuple<string, string, ISymbol>(CSParsers.TypeToString(b), "", b);
                         
-
                     }
                     
                 }
             }
-            return new Tuple<string, string>("","");
+            return new Tuple<string, string, ISymbol>("","", null);
         }
 
         public TextEditor textEditor { get; set; }
@@ -387,6 +412,9 @@ namespace AvalonEdit.Editor
                 //
                 //Row r = Document[p.Y];
                 //
+
+                if (vp == null)
+                    return;
 
                 shouldUpdate = false;
 
@@ -999,6 +1027,9 @@ namespace AvalonEdit.Editor
 
     public class LineNumberMarginExtended : LineNumberMargin
     {
+
+        public bool enableLineExtended = true;
+
         /// <inheritdoc/>
 		protected override void OnRender(DrawingContext drawingContext)
         {
@@ -1009,11 +1040,18 @@ namespace AvalonEdit.Editor
                 var foreground = (System.Windows.Media.Brush)GetValue(Control.ForegroundProperty);
                 foreach (VisualLine line in textView.VisualLines)
                 {
+                    if (enableLineExtended == true)
+                    
                     if (line.FirstDocumentLine.obs != null)
                         continue;
                        
                     int lineNumber = line.FirstDocumentLine.LineNumberExtended;
-                   
+
+                    if (enableLineExtended == false)
+                    {
+                        lineNumber = line.FirstDocumentLine.LineNumber;
+                    }
+
                         FormattedText text = TextFormatterFactory.CreateFormattedText(
                         this,
                         lineNumber.ToString(CultureInfo.CurrentCulture),

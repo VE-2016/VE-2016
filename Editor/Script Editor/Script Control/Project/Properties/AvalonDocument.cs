@@ -24,11 +24,31 @@ namespace AIMS.Libraries.Scripting.ScriptControl.Properties
             Editor = new AvalonEdit.Host.Editor_WinformsHost();
             Editor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Controls.Add(Editor);
-            if(!string.IsNullOrEmpty(FileName))
-            Editor.Load(FileName);
+            if (!string.IsNullOrEmpty(FileName))
+                Editor.Load(FileName);
+            else Editor.Show();
             Editor.Show();
-            
+            //this.Deactivate += AvalonDocument_Deactivate;
+            this.Resize += AvalonDocument_Resize;
         }
+
+        private void AvalonDocument_Deactivate(object sender, EventArgs e)
+        {
+            Editor.dv.Deactivate();
+        }
+
+        private void AvalonDocument_Resize(object sender, EventArgs e)
+        {
+            Editor.Size = this.Size;
+            if (Editor.dv == null)
+                return;
+           // if (dv.Width != this.ClientSize.Width || dv.Height != this.ClientSize.Height)
+            {
+                Editor.dv.Width = this.ClientSize.Width;
+                Editor.dv.Height = this.ClientSize.Height;
+            }
+        }
+
         public int GetLineExtended(int line)
         {
             return Editor.dv.GetLineExtended(line);
@@ -36,6 +56,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl.Properties
         public void LoadText(string content)
         {
             Editor.dv.LoadContent(content);
+            
         }
         private void InitializeComponent()
         {

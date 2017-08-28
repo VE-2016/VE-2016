@@ -24,6 +24,9 @@
       <Word>using</Word>
       <Word>namespace</Word>
       <Word>class</Word>
+      <Word>sealed</Word>
+      <Word>abstract</Word>
+      <Word>virtual</Word>
       <Word>public</Word>
       <Word>private</Word>
       <Word>protected</Word>
@@ -60,6 +63,8 @@
       <Word>this</Word>
       <Word>in</Word>
       <Word>as</Word>
+      <Word>ref</Word>
+      <Word>out</Word>
       <Word>base</Word>
 			<!-- ... -->
 		</Keywords>

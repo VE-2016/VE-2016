@@ -135,13 +135,13 @@ namespace ICSharpCode.AvalonEdit.Folding
 				} while (foundOverlappingFolding);
 				
 				string title = foldingSection.Title;
-				if (string.IsNullOrEmpty(title))
-					title = "...";
+				//if (string.IsNullOrEmpty(title))
+					title = " . . . ";
 				var p = new VisualLineElementTextRunProperties(CurrentContext.GlobalTextRunProperties);
 				p.SetForegroundBrush(textBrush);
 				var textFormatter = TextFormatterFactory.Create(CurrentContext.TextView);
 				var text = FormattedTextElement.PrepareText(textFormatter, title, p);
-				return new FoldingLineElement(foldingSection, text, foldedUntil - offset) { textBrush = textBrush };
+				return new FoldingLineElement(foldingSection, text, foldedUntil - offset + 5) { textBrush = textBrush };
 			} else {
 				return null;
 			}
@@ -187,7 +187,7 @@ namespace ICSharpCode.AvalonEdit.Folding
 			{
 				var metrics = Format(double.PositiveInfinity);
 				Rect r = new Rect(origin.X, origin.Y - metrics.Baseline, metrics.Width, metrics.Height);
-				drawingContext.DrawRectangle(null, new Pen(textBrush, 1), r);
+				drawingContext.DrawRectangle(null, new Pen(textBrush, 0.5), r);
 				base.Draw(drawingContext, origin, rightToLeft, sideways);
 			}
 		}
@@ -195,7 +195,7 @@ namespace ICSharpCode.AvalonEdit.Folding
 		/// <summary>
 		/// Default brush for folding element text. Value: Brushes.Gray
 		/// </summary>
-		public static readonly Brush DefaultTextBrush = Brushes.Gray;
+		public static readonly Brush DefaultTextBrush = Brushes.Black;
 		
 		static Brush textBrush = DefaultTextBrush;
 		

@@ -312,6 +312,7 @@ namespace WeifenLuo.WinFormsUI.Docking
                 if (m_countSuspendFocusTracking++ == 0)
                 {
                     if (!Win32Helper.IsRunningOnMono)
+                        if(sm_localWindowsHook != null)
                         sm_localWindowsHook.HookInvoked -= m_hookEventHandler;
                 }
             }

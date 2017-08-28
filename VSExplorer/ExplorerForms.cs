@@ -2535,6 +2535,8 @@ namespace WinExplorer
                 vs.workspace = rw.workspace;
                 vs.solution = rw.solution;
 
+                scr.vs = vs;
+
                 scr.LoadFromProject(vs);
 
                 if (appLoadedEvent != null)

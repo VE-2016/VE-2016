@@ -81,24 +81,27 @@ namespace VSProvider
 
         public static event EventHandler<OpenFileEventArgs> OpenFile;
 
-        public void LoadFileFromContent(string content, VSProject vp, string name)
+        public void LoadFileFromContent(string content, VSProject vp, string name, ISymbol symbol = null)
         {
             OpenFileEventArgs args = new OpenFileEventArgs();
             args.Threshold = 10;
             args.filename = name;
             args.content = content;
             args.vp = vp;
+            args.symbol = symbol;
 
             if(OpenFile != null)
                 OpenFile(null, args);
         }
-        public void LoadFileFromProject(string content, VSProject vp, string name)
+        public void LoadFileFromProject(string content, VSProject vp, string name, ISymbol symbol = null, ReferenceLocation? Location = null)
         {
             OpenFileEventArgs args = new OpenFileEventArgs();
             args.Threshold = 10;
             args.filename = name;
             args.content = content;
             args.vp = vp;
+            args.symbol = symbol;
+            args.Location = Location;
             
             if(OpenFile != null)
                  OpenFile(null,args);
@@ -291,8 +294,25 @@ namespace VSProvider
 
         public List<INamespaceOrTypeSymbol> GetAllTypes(string FileName)
         {
+            if (string.IsNullOrEmpty(FileName))
+            {
+                List<INamespaceOrTypeSymbol> bs = new List<INamespaceOrTypeSymbol>();
+                foreach(string s in nts.Keys)
+                {
+                    bs.AddRange(nts[s]);
+                }
+            
+                return bs;
+            }
+
             if (nts.ContainsKey(FileName))
                 return nts[FileName];
+
+            if (comp == null)
+                return new List<INamespaceOrTypeSymbol>();
+
+            if (!comp.ContainsKey(FileName))
+                return new List<INamespaceOrTypeSymbol>();
 
             Compilation cc = comp[FileName];
             List<INamespaceOrTypeSymbol> b = GetAllTypes(cc);
@@ -301,6 +321,22 @@ namespace VSProvider
             //var d = b.Select(s => s).Where(t => t.GetAttributes() != null).ToList();
 
             return b;
+        }
+
+        public ISymbol GetSymbol(ISymbol symbol)
+        {
+
+            foreach (Compilation c in comp.Values)
+            {
+                List<INamespaceOrTypeSymbol> d = GetAllTypes(c);
+                //foreach (INamespaceOrTypeSymbol p in d)
+                {
+                    if (d.Select(s => s).Any(s => s.Equals(symbol)))
+                        return d.Select(s => s).Where(p => p.Equals(symbol)).FirstOrDefault();
+                            
+                }
+            }
+            return null;
         }
 
         public Dictionary<string, Compilation> comp { get; set; }
@@ -675,10 +711,106 @@ namespace VSProvider
             return new List<ISymbol>();
         }
 
+        public List<ISymbol> GetMembers(string content, bool addProperties = false)
+        {
+            List<ISymbol> b = new List<ISymbol>();
+            SyntaxTree syntaxTree = CSharpSyntaxTree.ParseText(content, CSharpParseOptions.Default, "content");
+            if (syntaxTree == null)
+                return b;
+            var root = (CompilationUnitSyntax)syntaxTree.GetRoot();
+            var compilation = CSharpCompilation.Create("content")
+                              .AddReferences(
+                                 MetadataReference.CreateFromFile(
+                                   typeof(object).Assembly.Location))
+                              .AddSyntaxTrees(syntaxTree);
+
+           // var compilation = comp.Values.First();
+
+           // compilation = compilation.AddSyntaxTrees(syntaxTree);
+
+            var model = compilation.GetSemanticModel(syntaxTree);
+            IEnumerable<MethodDeclarationSyntax> methods = root.DescendantNodes()
+            .OfType<MethodDeclarationSyntax>().ToList();
+            
+            IEnumerable<ConstructorDeclarationSyntax> constructors = root.DescendantNodes()
+            .OfType<ConstructorDeclarationSyntax>().ToList();
+            IEnumerable<PropertyDeclarationSyntax> properties = root.DescendantNodes()
+           .OfType<PropertyDeclarationSyntax>().ToList();
+            IEnumerable<OperatorDeclarationSyntax> operators = root.DescendantNodes()
+         .OfType<OperatorDeclarationSyntax>().ToList();
+            IEnumerable<IndexerDeclarationSyntax> indexers = root.DescendantNodes()
+        .OfType<IndexerDeclarationSyntax>().ToList();
+            IEnumerable<EventFieldDeclarationSyntax> events = root.DescendantNodes() 
+       .OfType<EventFieldDeclarationSyntax>().ToList();
+
+            
+
+            foreach (var p in constructors)
+
+                b.Add(model.GetDeclaredSymbol(p));
+
+            foreach (var p in methods)
+
+                b.Add(model.GetDeclaredSymbol(p));
+
+            if (addProperties)
+            {
+                foreach (var p in properties)
+                    b.Add(model.GetDeclaredSymbol(p));
+                foreach (var p in operators)
+                    b.Add(model.GetDeclaredSymbol(p));
+                foreach (var p in indexers)
+                    b.Add(model.GetDeclaredSymbol(p));
+                foreach (var p in events)
+                {
+                    EventFieldDeclarationSyntax ev = p;
+                    TypeSyntax type = ev.Declaration.Type;
+                    SyntaxToken identifier = ev.Declaration.Variables[0].Identifier;
+                    
+                 
+                    EventDeclarationSyntax evt = SyntaxFactory.EventDeclaration(type, identifier);
+                    var df = model.LookupSymbols(p.GetLocation().SourceSpan.Start, null,identifier.Text).FirstOrDefault();
+                    
+                    
+                    b.Add(/*model.GetDeclaredSymbol(p)*/ df);
+                }
+            }
+            //var cs = root.DescendantNodes().OfType<ClassDeclarationSyntax>().ToList();
+
+
+            //foreach (var c in cs)
+            //{
+
+            //    var createCommandList = new List<ISymbol>();
+
+
+            //    {
+            //        b.Add(model.GetDeclaredSymbol(c));
+            //    }
+
+            //}
+            //var ns = root.DescendantNodes().OfType<NamespaceDeclarationSyntax>().ToList();
+
+
+            //foreach (var c in ns)
+            //{
+
+
+            //    {
+            //        b.Add(model.GetDeclaredSymbol(c));
+            //    }
+
+            //}
+            return b;
+        }
+
         public List<ISymbol> GetMembers(VSProject vp, string filename, string content)
         {
 
             List<ISymbol> b = new List<ISymbol>();
+
+            if (comp == null)
+                return b;
 
             Compilation cc = comp[vp.FileName];
 
@@ -748,59 +880,81 @@ namespace VSProvider
 
         }
 
-        public IEnumerable<ReferencedSymbol> GetAllSymbolReferences(ISymbol symbol, string filename, VSProject vp)
+        public IEnumerable<ReferencedSymbol> GetAllSymbolReferences(ISymbol symbol, string filename, VSProject vp, string content)
         {
-            Compilation cc = comp[vp.FileName];
-
-            SyntaxTree syntaxTree = cc.SyntaxTrees.Select(s => s).Where(t => t.FilePath == filename).First();
-
-          
-
-            syntaxTree = cc.SyntaxTrees.Select(s => s).Where(t => t.FilePath == filename).First();
-
-            var model = cc.GetSemanticModel(syntaxTree);
-
             IEnumerable<ReferencedSymbol> references = null;
 
-            IEnumerable<SyntaxNode> methodInvocations = null;
+            List<ReferencedSymbol> referenced = new List<ReferencedSymbol>();
 
-            ISymbol methodSymbol = null;
+            if (comp == null)
+                return references;
 
-            SyntaxNode methodInvocation = null;
-
-            if (symbol is IMethodSymbol)
+        
             {
+                Compilation cc = null;
+                SyntaxTree syntaxTree = null;
+                SemanticModel model = null;
 
-                IMethodSymbol m = symbol as IMethodSymbol;
-
-                if(m.Name == ".ctor")
+                if (comp == null || vp == null || string.IsNullOrEmpty(vp.FileName))
                 {
-                    methodInvocations = syntaxTree.GetRootAsync().Result.DescendantNodes().OfType<ConstructorDeclarationSyntax>().Where(s => s.Identifier.Text == symbol.ContainingType.Name);
-                    methodInvocation = methodInvocations.First();
-                    methodSymbol = model.GetDeclaredSymbol(methodInvocation);
-                    
-                    references = SymbolFinder.FindReferencesAsync(methodSymbol, this.solution).Result;
+                }
+                else {
+                    cc = comp[this.projects[0].FileName];
+                    syntaxTree = null;
+                    model = null;
 
-                    return references;
+                    cc = comp[vp.FileName];
+                    syntaxTree = cc.SyntaxTrees.Select(s => s).Where(t => t.FilePath == filename).First();
+                    model = cc.GetSemanticModel(syntaxTree);
+
+            }
+                
+                IEnumerable<SyntaxNode> methodInvocations = null;
+
+                ISymbol methodSymbol = null;
+
+                SyntaxNode methodInvocation = null;
+
+                if (symbol is IMethodSymbol)
+                {
+
+                    IMethodSymbol m = symbol as IMethodSymbol;
+
+                    if (m.Name == ".ctor")
+                    {
+                        if (comp == null || vp == null || string.IsNullOrEmpty(vp.FileName))
+                            methodSymbol = symbol;
+                        else
+                        {
+                            methodInvocations = syntaxTree.GetRootAsync().Result.DescendantNodes().OfType<ConstructorDeclarationSyntax>().Where(s => s.Identifier.Text == symbol.ContainingType.Name);
+                            methodInvocation = methodInvocations.First();
+                            methodSymbol = model.GetDeclaredSymbol(methodInvocation);
+                        }
+                        references = SymbolFinder.FindReferencesAsync(methodSymbol, this.solution).Result;
+                        referenced.AddRange(references);
+
+                    }
+                    else
+                    {
+                        if (comp == null || vp == null || string.IsNullOrEmpty(vp.FileName))
+                            methodSymbol = symbol;
+                        else
+                        {
+                            methodInvocations = syntaxTree.GetRootAsync().Result.DescendantNodes().OfType<MethodDeclarationSyntax>().Where(s => s.Identifier.Text == symbol.Name);
+                            methodInvocation = methodInvocations.First();
+                            methodSymbol = model.GetDeclaredSymbol(methodInvocation);
+                        }
+                        references = SymbolFinder.FindReferencesAsync(methodSymbol, this.solution).Result;
+                        referenced.AddRange(references);
+                    }
+
+
                 }
                 else
                 {
-                    methodInvocations = syntaxTree.GetRootAsync().Result.DescendantNodes().OfType<MethodDeclarationSyntax>().Where(s => s.Identifier.Text == symbol.Name);
-                    methodInvocation = methodInvocations.First();
-                    methodSymbol = model.GetDeclaredSymbol(methodInvocation);
-
-                    references = SymbolFinder.FindReferencesAsync(methodSymbol, this.solution).Result;
-
-                    return references;
                 }
-                
-
             }
-            else
-            {
-                return references;
-            }
-            
+            return referenced;
             
         }
 
@@ -1414,7 +1568,9 @@ namespace VSProvider
         public string filename { get; set; }
         public string content { get; set; }
         public VSProject vp { get; set; }
+        public ISymbol symbol { get; set; }
         public List<Diagnostic> Errors { get; set; }
+        public ReferenceLocation? Location { get; set; }
         
     }
 }

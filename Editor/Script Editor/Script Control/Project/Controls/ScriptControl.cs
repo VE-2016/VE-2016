@@ -35,6 +35,8 @@ using System.Xml.Serialization;
 using VSParsers;
 using System.Threading.Tasks;
 using AIMS.Libraries.Scripting.ScriptControl.Properties;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.FindSymbols;
 
 namespace AIMS.Libraries.Scripting.ScriptControl
 {
@@ -329,6 +331,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
             VSSolution.OpenFile += VSSolution_OpenFile;
 
+            
 
             //VSSolution.Errors += VSSolution_Errors;
 
@@ -348,11 +351,12 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             //MessageBox.Show("Open content for " + e.content);
             if (!string.IsNullOrEmpty(e.filename))
             {
-                OpenDocuments(e.filename, vs);
+                OpenDocuments(e.filename, vs, null, e.Location);
             }
             else
             {
-                OpenDocumentsWithContent(e.content, vs);
+                if(e.symbol != null)
+                OpenDocumentsWithContent(e.content, vs, null, e.symbol);
             }
         }
 
@@ -443,7 +447,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             return doc;
         }
 
-        public AvalonDocument FileOpened(string FileName)
+        public AvalonDocument FileOpened(string FileName, bool shouldactivate = true)
         {
             AvalonDocument doc = null;
             foreach (DockContent docWin in dockContainer1.Contents)
@@ -453,9 +457,12 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                     doc = docWin as AvalonDocument;
                     if (doc.FileName == FileName)
                     {
-                        doc.Show(dockContainer1, DockState.Document);
-                        doc.Activate();
-                        doc.Focus();
+                        if (shouldactivate)
+                        {
+                            doc.Show(dockContainer1, DockState.Document);
+                            doc.Activate();
+                            doc.Focus();
+                        }
                         return doc;
                     }
                 }
@@ -705,7 +712,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         public ParseInformation parse { get; set; }
 
 
-        public AvalonDocument OpenDocuments(string Name, VSProvider.VSSolution vs, AutoResetEvent autoEvent = null)
+        public AvalonDocument OpenDocuments(string Name, VSProvider.VSSolution vs, AutoResetEvent autoEvent = null, ReferenceLocation? Location = null)
         {
 
             var d = FileOpened(Name);
@@ -722,77 +729,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                          
 
             this.SuspendLayout();
-            /*
-            string contents = "";
-
-            try
-            {
-                contents = File.ReadAllText(Name);
-            }
-            catch (Exception e) { };
-
-            if (contents == string.Empty)
-                return null;
-            Document doc = new Document(form);
-
-            doc.FileName = Name;
-            doc.Text = Path.GetFileNameWithoutExtension(Name);
-            doc.Tag = "USERDOCUMENT";
-            doc.HideOnClose = false;
-            doc.ScriptLanguage = _scriptLanguage;
-            doc.vp = pp;
-            doc.LoadVSProject(pp, Name);
-
-
-
-            doc.TabPageContextMenu = new ContextMenu();
-            doc.TabPageContextMenu.MenuItems.Add(new MenuItem("test for context menu"));
-
-            if (Name.EndsWith(".cs"))
-            {
-                doc.Contents = contents;
-                doc.ExpandAll();
-                doc.ToolTipText = Name;
-                DocumentEvents(doc, true);
-                dockContainer1.SuspendLayout();
-                doc.Show(dockContainer1, DockState.Document);
-                dockContainer1.ResumeLayout();
-
-                doc.autoEvent = autoEvent;
-
-
-
-                LoadKeywordsAsync(doc);
-            }
-            else
-            if (Name.EndsWith(".vb"))
-            {
-                doc.Contents = contents;
-                doc.ScriptLanguage = ScriptLanguage.VBNET;
-                doc.ExpandAll();
-                doc.ToolTipText = Name;
-                DocumentEvents(doc, true);
-                dockContainer1.SuspendLayout();
-                doc.Show(dockContainer1, DockState.Document);
-                dockContainer1.ResumeLayout();
-
-                doc.ParseContentsNow();
-            }
-            else
-            {
-                doc.ScriptLanguage = ScriptLanguage.XML;
-                doc.Contents = contents;
-                doc.ExpandAll();
-                doc.ToolTipText = Name;
-                DocumentEvents(doc, true);
-                dockContainer1.SuspendLayout();
-                doc.Show(dockContainer1, DockState.Document);
-                dockContainer1.ResumeLayout();
-
-                doc.ParseContentsNow();
-            }
-            */
-
+                        
 
             AvalonDocument doc = new AvalonDocument(Name);
             doc.Text = Path.GetFileNameWithoutExtension(Name);
@@ -803,34 +740,50 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
             this.ResumeLayout();
 
+            if (Location != null)
+            {
+                int start = Location.Value.Location.SourceSpan.Start;
+                int length = Location.Value.Location.SourceSpan.Length;
+
+                
+                doc.Editor.dv.SelectText(start, length);
+            }
+
+            
+
+           
+              
 
             return doc;
         }
-        public AvalonDocument OpenDocumentsWithContent(string content, VSProvider.VSSolution vs, AutoResetEvent autoEvent = null)
+
+        
+
+        public AvalonDocument OpenDocumentsWithContent(string content, VSProvider.VSSolution vs, AutoResetEvent autoEvent = null, ISymbol symbol = null)
         {
-
-            //var d = FileOpened(Name);
-
-
-            //if (d != null)
-            //{
-            //    d.Activate();
-
-            //    return d;
-
-            //}
-            this.SuspendLayout();
             
+            var d = FileOpened(Name);
+            if (d != null)
+            {
+                d.Activate();
+                return d;
+            }
+            this.SuspendLayout();
             AvalonDocument doc = new AvalonDocument();
             doc.LoadText(content);
-            //doc.Text = Path.GetFileNameWithoutExtension(Name);
-            doc.Show(dockContainer1, DockState.Document);
+            doc.Text = symbol.Name;
+            doc.FileName = symbol.Name;
             doc.Activate();
-            //if (vs != null)
-            //    doc.Editor.dv.LoadFromProject(vs);
-
+            doc.Show(dockContainer1, DockState.Document);
             this.ResumeLayout();
-            
+            if (vs != null)
+                doc.Editor.dv.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    doc.Editor.dv.LoadFromProject(vs, symbol);
+                    doc.Activate();
+                    doc.Editor.Focus();
+                    doc.Editor.dv.Focus();
+                }));
             return doc;
         }
 

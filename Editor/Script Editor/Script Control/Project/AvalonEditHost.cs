@@ -28,7 +28,7 @@ namespace AvalonEdit.Host
     {
         public EditorWindow dv;// = new EditorWindow();
 
-        
+
 
         public Editor_WinformsHost()
         {
@@ -41,25 +41,28 @@ namespace AvalonEdit.Host
 
             dv.EditorWindows();//// dv = d[0] as EditorWindow;
 
-           // dv = Activator.CreateInstance(typeof(EditorWindow)) as EditorWindow;
+            // dv = Activator.CreateInstance(typeof(EditorWindow)) as EditorWindow;
             base.Child = dv;
-           // dv.Width = 800;
+            // dv.Width = 800;
             //dv.Height = 800;
             //dv.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
             //dv.VerticalAlignment = VerticalAlignment.Stretch;
             //this.Dock = DockStyle.Fill;
             //this.Size = new System.Drawing.Size(800, 800);
-            this.Resize += Editor_WinformsHost_Resize; 
+            //this.Resize += Editor_WinformsHost_Resize;
         }
-
+        Size size = new System.Windows.Size();
         private void Editor_WinformsHost_Resize(object sender, EventArgs e)
         {
             if (dv == null)
                 return;
-            dv.Width = this.Width;
-            dv.Height = this.Height;
+            if (dv.Width != this.ClientSize.Width || dv.Height != this.ClientSize.Height)
+            {
+                dv.Width = this.ClientSize.Width;
+                dv.Height = this.ClientSize.Height;
+            }
         }
-
+       
         public void Load(string file)
         {
             this.Show();

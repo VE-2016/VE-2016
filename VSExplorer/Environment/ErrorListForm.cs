@@ -613,7 +613,7 @@ namespace WinExplorer
 
                         filename = dc.Location.SourceTree.FilePath;
 
-                        AvalonDocument d = scr.FileOpened(filename);
+                        AvalonDocument d = scr.FileOpened(filename, false);
 
 
                         int hash = dc.GetMessage().GetHashCode();

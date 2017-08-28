@@ -16,6 +16,7 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+using Microsoft.CodeAnalysis.FindSymbols;
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -31,6 +32,7 @@ namespace AvalonEdit.Editor
     {
         public string Text { get; set; }
         public string Hyperlink { get; set; }
+        public ReferenceLocation Location { get; set; }
 
         public LinkItem(string text, string hyperlink)
         {
@@ -46,6 +48,34 @@ namespace AvalonEdit.Editor
             InitializeComponent();
             this.WindowStyle = WindowStyle.None;
             this.AllowsTransparency = true;
+            this.KeyDown += LinkViewer_KeyDown;
+            
+        }
+        public string SelectedLinkItem { get; set; }
+        public ReferenceLocation Location { get; set; }
+        private void MouseDownOverLinkItem(object sender, MouseButtonEventArgs e)
+        {
+            TextBlock b = sender as TextBlock;
+
+            if (b == null)
+                return;
+
+            LinkItem linkItem = b.Tag as LinkItem;
+
+            SelectedLinkItem = b.Text;
+  
+            this.DialogResult = true;
+
+            this.Close();
+        }
+
+        private void LinkViewer_KeyDown(object sender, KeyEventArgs e)
+        {
+            //if(e.Key == Key.Escape)
+            {
+                this.DialogResult = false;
+                this.Close();
+            }
         }
 
         public List<LinkItem> LinkItems { get; set; }
@@ -54,8 +84,19 @@ namespace AvalonEdit.Editor
         {
             LinkItems = v;
             itemsListBox.ItemsSource = v;
-        }
 
+        }
+        public ReferenceLocation? GetLocation(string FilePath)
+        {
+                 foreach (LinkItem linkItem in LinkItems)
+                {
+                    ReferenceLocation? Location = linkItem.Location;
+
+                    if (Location.Value.Location.SourceTree.FilePath == FilePath)
+                        return Location;
+                }
+                return null;
+        }
     }
     public class StringReplace
     {
