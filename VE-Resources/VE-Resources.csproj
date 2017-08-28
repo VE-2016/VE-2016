@@ -897,5 +897,8 @@
   <ItemGroup>
     <None Include="Resources\EnumSealed_16x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folding.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
