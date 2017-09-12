@@ -15,9 +15,9 @@ using System.IO;
 
 namespace WinExplorer
 {
-    public partial class MSTestForm : Form
+    public partial class TreeViewer_WinformsHost : Form
     {
-        public MSTestForm()
+        public TreeViewer_WinformsHost()
         {
             InitializeComponent();
             v = treeView1;
