@@ -313,6 +313,16 @@ namespace WinExplorers {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap CallHierarchyView_16x {
+            get {
+                object obj = ResourceManager.GetObject("CallHierarchyView_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Cancel_16x {
             get {
                 object obj = ResourceManager.GetObject("Cancel_16x", resourceCulture);
@@ -436,6 +446,16 @@ namespace WinExplorers {
         public static System.Drawing.Bitmap ClearCollection_16x {
             get {
                 object obj = ResourceManager.GetObject("ClearCollection_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Close_16x {
+            get {
+                object obj = ResourceManager.GetObject("Close_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1183,6 +1203,16 @@ namespace WinExplorers {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap GoToDefinition_16x {
+            get {
+                object obj = ResourceManager.GetObject("GoToDefinition_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap GoToSourceCode_16x {
             get {
                 object obj = ResourceManager.GetObject("GoToSourceCode_16x", resourceCulture);
@@ -1423,6 +1453,16 @@ namespace WinExplorers {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap ListMembers_16x {
+            get {
+                object obj = ResourceManager.GetObject("ListMembers_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap ListView_16x {
             get {
                 object obj = ResourceManager.GetObject("ListView_16x", resourceCulture);
@@ -1633,6 +1673,16 @@ namespace WinExplorers {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Next_16x {
+            get {
+                object obj = ResourceManager.GetObject("Next_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap NugetLogo_16x {
             get {
                 object obj = ResourceManager.GetObject("NugetLogo_16x", resourceCulture);
@@ -1773,6 +1823,16 @@ namespace WinExplorers {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap PromoteTab_16x {
+            get {
+                object obj = ResourceManager.GetObject("PromoteTab_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Property_16x {
             get {
                 object obj = ResourceManager.GetObject("Property_16x", resourceCulture);
@@ -1873,9 +1933,29 @@ namespace WinExplorers {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap RegularExpression_16x {
+            get {
+                object obj = ResourceManager.GetObject("RegularExpression_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Rename_16x {
             get {
                 object obj = ResourceManager.GetObject("Rename_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ReplaceAll_16x {
+            get {
+                object obj = ResourceManager.GetObject("ReplaceAll_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2493,6 +2573,16 @@ namespace WinExplorers {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Textarea_16x {
+            get {
+                object obj = ResourceManager.GetObject("Textarea_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap TextBlock_16x {
             get {
                 object obj = ResourceManager.GetObject("TextBlock_16x", resourceCulture);
@@ -2676,6 +2766,16 @@ namespace WinExplorers {
         public static System.Drawing.Bitmap ViewBox_16x {
             get {
                 object obj = ResourceManager.GetObject("ViewBox_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ViewDefinition_16x {
+            get {
+                object obj = ResourceManager.GetObject("ViewDefinition_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

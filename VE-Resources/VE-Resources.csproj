@@ -646,9 +646,6 @@
     <None Include="Resources\TableWizard_32x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\TextBlock_16x.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\TextBox_16x.png" />
   </ItemGroup>
   <ItemGroup>
@@ -731,9 +728,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ExpandAll_16x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Filter_16x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\GroupBy_16x.png" />
@@ -899,6 +893,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\folding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CallHierarchyView_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GoToDefinition_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ViewDefinition_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Filter_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ListMembers_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Next_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PromoteTab_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RegularExpression_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReplaceAll_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Textarea_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TextBlock_16x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
