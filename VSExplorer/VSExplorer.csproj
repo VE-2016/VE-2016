@@ -299,7 +299,6 @@
     <Compile Include="AddCommandForm.Designer.cs">
       <DependentUpon>AddCommandForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Avalon\Host.cs" />
     <Compile Include="ClipboardForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1325,6 +1324,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Avalon\" />
     <Folder Include="Services\NuGet\Syntax\" />
     <Folder Include="WpfDesigner\" />
   </ItemGroup>
