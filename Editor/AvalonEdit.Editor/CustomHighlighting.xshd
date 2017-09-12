@@ -53,6 +53,7 @@
       <Word>var</Word>
       <Word>char</Word>
       <Word>internal</Word>
+      <Word>interface</Word>
       <Word>IntPtr</Word>
       <Word>params</Word>
       <Word>typeof</Word>
@@ -66,6 +67,11 @@
       <Word>ref</Word>
       <Word>out</Word>
       <Word>base</Word>
+      <Word>try</Word>
+      <Word>catch</Word>
+      <Word>finally</Word>
+      <Word>nameof</Word>
+      <Word>typeof</Word>
 			<!-- ... -->
 		</Keywords>
 		

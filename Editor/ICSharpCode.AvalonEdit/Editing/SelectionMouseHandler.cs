@@ -438,8 +438,18 @@ namespace ICSharpCode.AvalonEdit.Editing
 				
 				var oldPosition = textArea.Caret.Position;
 				SetCaretOffsetToMousePosition(e);
-				
-				
+                {
+                    int visualColumn;
+                    bool isAtEndOfLine;
+                    int offset = GetOffsetFromMousePosition(e, out visualColumn, out isAtEndOfLine);
+                    var documentLine = textArea.Document.GetLineByOffset(offset);
+
+                    if (documentLine.obs != null)
+                    {
+                        e.Handled = true;
+                        return;
+                    }
+                }
 				if (!shift) {
 					textArea.ClearSelection();
 				}

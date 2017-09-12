@@ -37,9 +37,13 @@ namespace AvalonEdit.Host
 
             string s = AppDomain.CurrentDomain.BaseDirectory + "AvalonEdit.Editor.dll";
 
-            dv = EditorWindow.LoadXaml(s) as EditorWindow;
+            dv = new EditorWindow();
 
-            dv.EditorWindows();//// dv = d[0] as EditorWindow;
+            this.BackColorTransparent = true;
+
+            //dv = EditorWindow.LoadXaml(s) as EditorWindow;
+
+            //dv.EditorWindows();//// dv = d[0] as EditorWindow;
 
             // dv = Activator.CreateInstance(typeof(EditorWindow)) as EditorWindow;
             base.Child = dv;

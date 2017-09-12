@@ -32,9 +32,9 @@ namespace AIMS.Libraries.Scripting.ScriptControl.Properties
             this.Resize += AvalonDocument_Resize;
         }
 
-        private void AvalonDocument_Deactivate(object sender, EventArgs e)
+        public void OnActivated(bool activated)
         {
-            Editor.dv.Deactivate();
+            Editor.dv.Activated(activated);
         }
 
         private void AvalonDocument_Resize(object sender, EventArgs e)

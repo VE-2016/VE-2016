@@ -451,7 +451,7 @@ namespace ICSharpCode.AvalonEdit.Editing
 			BringCaretToView(MinimumDistanceToViewBorder);
 		}
 		
-		internal void BringCaretToView(double border)
+		public void BringCaretToView(double border)
 		{
 			Rect caretRectangle = CalculateCaretRectangle();
 			if (!caretRectangle.IsEmpty) {

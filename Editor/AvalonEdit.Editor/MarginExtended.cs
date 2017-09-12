@@ -63,16 +63,20 @@ namespace AvalonEdit.Editor
 
 			base.OnRender(drawingContext);
 		}
+        //protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        //{
 
-		//public Line line {get; set;}
+        //}
 
-		//public void LoadLine(Line ls)
-		//{
-		//	line = ls;
-		//	line.Margin = new Thickness(45, 0, 0, 0);
-		//	this.AddVisualChild(line);
-		//}
-	}
+        //public Line line {get; set;}
+
+        //public void LoadLine(Line ls)
+        //{
+        //	line = ls;
+        //	line.Margin = new Thickness(45, 0, 0, 0);
+        //	this.AddVisualChild(line);
+        //}
+    }
 	public class Editor
 	{
 
@@ -310,6 +314,8 @@ namespace AvalonEdit.Editor
 
         public Tuple<string, string, ISymbol> GetType(TextEditor textEditor)
         {
+            int position = textEditor.TextArea.Caret.Offset;
+
             string word = GetWordUnderMouse(textEditor.Document, textEditor.TextArea.Caret.Position);
 
             if (string.IsNullOrEmpty(word))
@@ -318,7 +324,9 @@ namespace AvalonEdit.Editor
             string FileName = SolutionToLoad;// "C:\\MSBuildProjects-beta\\VSExplorer\\VSExplorer.csproj";
 
             string filename = FileToLoad;// "C:\\MSBuildProjects-beta\\VSExplorer\\ExplorerForms.cs";
-            
+
+            string content = StringReplace.Replace(textEditor.Document.Text);
+
             vp = vs.GetProjectbyCompileItem(FileToLoad);
 
             string file = null;
@@ -326,6 +334,42 @@ namespace AvalonEdit.Editor
             if (vp != null)
                 file = vp.FileName;
 
+            ISymbol r = vs.GetSymbolAtLocation(vp, FileToLoad, position, content);
+
+            if (word.Contains("."))
+            {
+
+                
+
+                if(r != null)
+                    if(r.Kind == SymbolKind.Method)
+                {
+                        return new Tuple<string, string, ISymbol>(CSParsers.TypeToString(r.ContainingType), "", r);
+                }
+
+            }
+            else
+            {
+                if (r != null)
+                    if (r.Kind == SymbolKind.Method)
+                    {
+                        ISymbol containigType = r.ContainingType;
+
+                        if (containigType != null)
+                        {
+
+                            if (containigType.Locations != null)
+                                if (containigType.Locations[0] != null)
+                                    if (containigType.Locations[0].IsInSource)
+                                    {
+                                        return new Tuple<string, string, ISymbol>("", containigType.Locations[0].SourceTree.FilePath, r);
+
+                                    }
+
+
+                        }
+                    }
+            }
              List<INamespaceOrTypeSymbol> s = /*vp.*/vs.GetAllTypes(file);
 
             word = word.ToLower();
@@ -1030,11 +1074,19 @@ namespace AvalonEdit.Editor
 
         public bool enableLineExtended = true;
 
+        public System.Windows.Media.Brush background = System.Windows.Media.Brushes.White;
+
         /// <inheritdoc/>
 		protected override void OnRender(DrawingContext drawingContext)
         {
+            System.Windows.Size renderSize = new System.Windows.Size(((FrameworkElement)this).Width, ((FrameworkElement)this).RenderSize.Height);
+            drawingContext.DrawRectangle(background, null,
+                                         new Rect(0, 0, renderSize.Width, renderSize.Height));
+            
+            //base.OnRender(drawingContext);
+
             TextView textView = this.TextView;
-            System.Windows.Size renderSize = this.RenderSize;
+            renderSize = this.RenderSize;
             if (textView != null && textView.VisualLinesValid)
             {
                 var foreground = (System.Windows.Media.Brush)GetValue(Control.ForegroundProperty);
@@ -1063,6 +1115,83 @@ namespace AvalonEdit.Editor
                     drawingContext.DrawText(text, new System.Windows.Point(renderSize.Width - text.Width, y - textView.VerticalOffset));
                 }
             }
+        }
+        
+        protected void OnMouseLeftButtonDowns(MouseButtonEventArgs e)
+        {
+
+           
+           // var position = Mouse.GetPosition(this);
+
+            //if (position.X > 50)
+            //    return;
+
+            //base.OnMouseLeftButtonDown(e);
+
+           // e.Handled = false;
+
+
+
+
+            //if (!e.Handled && TextView != null && textArea != null)
+            //{
+            //    e.Handled = true;
+            //    textArea.Focus();
+
+            //    SimpleSegment currentSeg = GetTextLineSegment(e);
+            //    if (currentSeg == SimpleSegment.Invalid)
+            //        return;
+            //    textArea.Caret.Offset = currentSeg.Offset + currentSeg.Length;
+            //    if (CaptureMouse())
+            //    {
+            //        selecting = true;
+            //        selectionStart = new AnchorSegment(Document, currentSeg.Offset, currentSeg.Length);
+            //        if ((Keyboard.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift)
+            //        {
+            //            SimpleSelection simpleSelection = textArea.Selection as SimpleSelection;
+            //            if (simpleSelection != null)
+            //                selectionStart = new AnchorSegment(Document, simpleSelection.SurroundingSegment);
+            //        }
+            //        textArea.Selection = Selection.Create(textArea, selectionStart);
+            //        if ((Keyboard.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift)
+            //        {
+            //            ExtendSelection(currentSeg);
+            //        }
+            //        textArea.Caret.BringCaretToView(5.0);
+            //    }
+            //}
+        }
+        void ExtendSelection(SimpleSegment currentSeg)
+        {
+            if (currentSeg.Offset < selectionStart.Offset)
+            {
+                textArea.Caret.Offset = currentSeg.Offset;
+                textArea.Selection = Selection.Create(textArea, currentSeg.Offset, selectionStart.Offset + selectionStart.Length);
+            }
+            else
+            {
+                textArea.Caret.Offset = currentSeg.Offset + currentSeg.Length;
+                textArea.Selection = Selection.Create(textArea, selectionStart.Offset, currentSeg.Offset + currentSeg.Length);
+            }
+        }
+        SimpleSegment GetTextLineSegment(MouseEventArgs e)
+        {
+            System.Windows.Point pos = e.GetPosition(TextView);
+            pos.X = 0;
+            pos.Y = pos.Y.CoerceValue(0, TextView.ActualHeight);
+            pos.Y += TextView.VerticalOffset;
+            VisualLine vl = TextView.GetVisualLineFromVisualTop(pos.Y);
+            if (vl == null)
+                return SimpleSegment.Invalid;
+            TextLine tl = vl.GetTextLineByVisualYPosition(pos.Y);
+            int visualStartColumn = vl.GetTextLineVisualStartColumn(tl);
+            int visualEndColumn = visualStartColumn + tl.Length;
+            int relStart = vl.FirstDocumentLine.Offset;
+            int startOffset = vl.GetRelativeOffset(visualStartColumn) + relStart;
+            int endOffset = vl.GetRelativeOffset(visualEndColumn) + relStart;
+            if (endOffset == vl.LastDocumentLine.Offset + vl.LastDocumentLine.Length)
+                endOffset += vl.LastDocumentLine.DelimiterLength;
+            return new SimpleSegment(startOffset, endOffset - startOffset);
         }
     }
     

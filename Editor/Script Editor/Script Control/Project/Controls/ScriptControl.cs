@@ -276,6 +276,9 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             doc.Editor.ShowReplace();
         }
         Form form { get; set; }
+
+        public AvalonDocument LastActiveAvalonDocument = null;
+
         public ScriptControl(Form form, DockPanel dockPanel = null)
         {
 
@@ -331,14 +334,33 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
             VSSolution.OpenFile += VSSolution_OpenFile;
 
-            
+
+
+            dockContainer1.ActiveDocumentChanged += DockContainer1_ActiveDocumentChanged;
 
             //VSSolution.Errors += VSSolution_Errors;
 
-            //MouseMoveTimer = new System.Threading.Timer(new TimerCallback(TimerProc), null, 1000, 1000);
+            //MouseMoveTimer = new System.Threa ding.Timer(new TimerCallback(TimerProc), null, 1000, 1000);
 
 
 
+        }
+
+        private void DockContainer1_ActiveDocumentChanged(object sender, EventArgs e)
+        {
+            if(LastActiveAvalonDocument != null)
+            {
+                LastActiveAvalonDocument.OnActivated(false);
+            }
+
+            if (!(dockContainer1.ActiveDocument is AvalonDocument))
+                return;
+
+            LastActiveAvalonDocument = dockContainer1.ActiveDocument as AvalonDocument;
+
+            LastActiveAvalonDocument.OnActivated(true);
+
+            
         }
 
         //private void VSSolution_Errors(object sender, OpenFileEventArgs e)
@@ -681,10 +703,16 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             //DocumentEvents(doc, true);
             doc.Show(dockContainer1, DockState.Document);
 
-
+                       
 
             return doc;
         }
+
+        private void ActivePane_IsActivatedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
         public WebForm OpenWebForm(string web, string url)
         {
             WebForm doc = new WebForm(this);
@@ -726,7 +754,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
             }
 
-                         
+                       
 
             this.SuspendLayout();
                         
@@ -735,6 +763,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             doc.Text = Path.GetFileNameWithoutExtension(Name);
             doc.Show(dockContainer1, DockState.Document);
             doc.Activate();
+           
             if(vs != null)
             doc.Editor.dv.LoadFromProject(vs);
 
@@ -757,8 +786,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             return doc;
         }
 
-        
-
+     
         public AvalonDocument OpenDocumentsWithContent(string content, VSProvider.VSSolution vs, AutoResetEvent autoEvent = null, ISymbol symbol = null)
         {
             

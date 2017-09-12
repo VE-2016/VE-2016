@@ -33,20 +33,68 @@ namespace AvalonEdit.Editor
     public class Colorizer : DocumentColorizingTransformer
     {
 
+        MatchCollection matches = null;
+
+        List<int> lines  { get; set;}
+
+        public TextView textView { get; set; }
+
+        public void Comments()
+        {
+            var blockComments = @"/\\*.*?\\*/";
+
+            matches = Regex.Matches(editorWindow.textEditor.Document.Text, blockComments, RegexOptions.Multiline);
+
+            lines = new List<int>();
+
+            foreach(Match match in matches)
+            {
+                int start = match.Index;
+                int end = match.Index + match.Length;
+                int starts = editorWindow.textEditor.Document.GetLineByOffset(start).LineNumber;
+                int ends = editorWindow.textEditor.Document.GetLineByOffset(end).LineNumber;
+                for (int i = starts; i <= ends; i++)
+                    if (!lines.Contains(i))
+                        lines.Add(i);
+
+            }
+            lines.Sort();
+        }
+
+
+
+        public Colorizer(EditorWindow editorWindow)
+        {
+            this.editorWindow = editorWindow;
+            this.textView = editorWindow.textEditor.TextArea.TextView;
+           // textView.VisualLineConstructionStarting += TextView_VisualLineConstructionStarting; 
+            //textView.Document.TextChanged += TextView_VisualLineConstructionStarting;
+        }
+
+        private void TextView_VisualLineConstructionStarting(object sender, VisualLineConstructionStartEventArgs e)
+        {
+           // Comments();
+        }
+
         public EditorWindow editorWindow { get; set; }
 
         public static System.Windows.Media.Brush brush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(111, 196, 220));
 
         protected override void ColorizeLine(ICSharpCode.AvalonEdit.Document.DocumentLine line)
         {
+            
             if (!line.IsDeleted)
             {
+                if(lines != null)
+                    if(lines.Count > 0)
+                if (lines.BinarySearch(line.LineNumber) >= 0)
+                    return;
 
                 string text = editorWindow.textEditor.Document.Text.Substring(line.Offset, line.EndOffset - line.Offset);
 
                 var testusing = text.Trim();
 
-                if (line.obs != null && testusing.StartsWith("Reference"))
+                if (line.obs != null && testusing.StartsWith("  Reference"))
 
                 //editorWindow.Errors[0].Location.SourceSpan.Start
 
@@ -89,13 +137,13 @@ namespace AvalonEdit.Editor
         }
         void ApplyChanges(VisualLineElement element)
         {
-
+            
             element.TextRunProperties.SetForegroundBrush(Brushes.Gray);
         }
         void ApplyChangesForType(VisualLineElement element)
         {
-
-            element.TextRunProperties.SetForegroundBrush(brush);
+            if(((SolidColorBrush)element.TextRunProperties.ForegroundBrush).Color != Colors.Green)
+                element.TextRunProperties.SetForegroundBrush(brush);
         }
     }
 }

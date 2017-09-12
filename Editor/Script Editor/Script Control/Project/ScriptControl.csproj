@@ -81,6 +81,8 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CallHierarchyViewHost.cs" />
+    <Compile Include="TreeViewHost.cs" />
     <Compile Include="AvalonEditHost.cs" />
     <Compile Include="Converter\CodeCompiler.cs" />
     <Compile Include="Converter\CodeConverter.cs" />

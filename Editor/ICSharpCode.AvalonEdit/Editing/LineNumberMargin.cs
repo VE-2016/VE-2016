@@ -40,9 +40,10 @@ namespace ICSharpCode.AvalonEdit.Editing
 		{
 			DefaultStyleKeyProperty.OverrideMetadata(typeof(LineNumberMargin),
 			                                         new FrameworkPropertyMetadata(typeof(LineNumberMargin)));
+            
 		}
-		
-		TextArea textArea;
+        
+        public TextArea textArea;
 		
 		/// <summary>
 		/// The typeface used for rendering the line number margin.
@@ -71,26 +72,52 @@ namespace ICSharpCode.AvalonEdit.Editing
 			);
 			return new Size(text.Width, 0);
 		}
-		
-		/// <inheritdoc/>
-		protected override void OnRender(DrawingContext drawingContext)
+
+        public bool enableLineExtended = true;
+
+        public System.Windows.Media.Brush background = System.Windows.Media.Brushes.White;
+
+        /// <inheritdoc/>
+        protected override void OnRender(DrawingContext drawingContext)
 		{
-			TextView textView = this.TextView;
-			Size renderSize = this.RenderSize;
-			if (textView != null && textView.VisualLinesValid) {
-				var foreground = (Brush)GetValue(Control.ForegroundProperty);
-				foreach (VisualLine line in textView.VisualLines) {
-					int lineNumber = line.FirstDocumentLine.LineNumber;
-					FormattedText text = TextFormatterFactory.CreateFormattedText(
-						this,
-						lineNumber.ToString(CultureInfo.CurrentCulture),
-						typeface, emSize, foreground
-					);
-					double y = line.GetTextLineVisualYPosition(line.TextLines[0], VisualYPosition.TextTop);
-					drawingContext.DrawText(text, new Point(renderSize.Width - text.Width, y - textView.VerticalOffset));
-				}
-			}
-		}
+            TextView textView = this.TextView;
+
+            System.Windows.Size renderSize = this.RenderSize;// new System.Windows.Size(((FrameworkElement)this).Width, ((FrameworkElement)this).RenderSize.Height);
+            drawingContext.DrawRectangle(background, null,
+                                         new Rect(0, 0, renderSize.Width, renderSize.Height));
+
+            renderSize = this.RenderSize;
+            
+            renderSize = this.RenderSize;
+            if (textView != null && textView.VisualLinesValid)
+            {
+                var foreground = (System.Windows.Media.Brush)GetValue(Control.ForegroundProperty);
+                foreach (VisualLine line in textView.VisualLines)
+                {
+                    if (enableLineExtended == true)
+
+                        if (line.FirstDocumentLine.obs != null)
+                            continue;
+
+                    int lineNumber = line.FirstDocumentLine.LineNumberExtended;
+
+                    if (enableLineExtended == false)
+                    {
+                        lineNumber = line.FirstDocumentLine.LineNumber;
+                    }
+
+                    FormattedText text = TextFormatterFactory.CreateFormattedText(
+                    this,
+                    lineNumber.ToString(CultureInfo.CurrentCulture),
+                    typeface, emSize, foreground
+                );
+                    double y = line.GetTextLineVisualYPosition(line.TextLines[0], VisualYPosition.TextTop);
+
+
+                    drawingContext.DrawText(text, new System.Windows.Point(renderSize.Width - text.Width, y - textView.VerticalOffset));
+                }
+            }
+        }
 		
 		/// <inheritdoc/>
 		protected override void OnTextViewChanged(TextView oldTextView, TextView newTextView)
@@ -164,11 +191,11 @@ namespace ICSharpCode.AvalonEdit.Editing
 			InvalidateVisual();
 		}
 		
-		AnchorSegment selectionStart;
-		bool selecting;
+		public AnchorSegment selectionStart;
+		public bool selecting;
 		
 		/// <inheritdoc/>
-		protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+		protected void OnMouseLeftButtonDowns(MouseButtonEventArgs e)
 		{
 			base.OnMouseLeftButtonDown(e);
 			if (!e.Handled && TextView != null && textArea != null) {
@@ -179,9 +206,15 @@ namespace ICSharpCode.AvalonEdit.Editing
 				if (currentSeg == SimpleSegment.Invalid)
 					return;
 				textArea.Caret.Offset = currentSeg.Offset + currentSeg.Length;
+                
+                    int i = 0;
+                    while (Char.IsWhiteSpace(textArea.Document.Text[currentSeg.Offset + i]) && i < currentSeg.Length)
+                        i++;
+                    
+
 				if (CaptureMouse()) {
 					selecting = true;
-					selectionStart = new AnchorSegment(Document, currentSeg.Offset, currentSeg.Length);
+					selectionStart = new AnchorSegment(Document, currentSeg.Offset + i, currentSeg.Length -i);
 					if ((Keyboard.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift) {
 						SimpleSelection simpleSelection = textArea.Selection as SimpleSelection;
 						if (simpleSelection != null)
@@ -191,7 +224,7 @@ namespace ICSharpCode.AvalonEdit.Editing
 					if ((Keyboard.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift) {
 						ExtendSelection(currentSeg);
 					}
-					textArea.Caret.BringCaretToView(5.0);
+					textArea.Caret.BringCaretToView(0.0);
 				}
 			}
 		}

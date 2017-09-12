@@ -107,7 +107,34 @@ namespace VSProvider
                  OpenFile(null,args);
 
         }
+        public static event EventHandler<OpenReferenceEventArgs> OpenReferences;
 
+        public void OpenReferencesTool(string content, VSProject vp, string name, ISymbol symbol = null)
+        {
+            OpenReferenceEventArgs args = new OpenReferenceEventArgs();
+            
+            args.filename = name;
+            args.content = content;
+            args.vp = vp;
+            args.symbol = symbol;
+
+            if (OpenReferences != null)
+                OpenReferences(null, args);
+        }
+        public static event EventHandler<OpenReferenceEventArgs> OpenCallHierarchy;
+
+        public void OpenCallHierarchyTool(string content, VSProject vp, string name, ISymbol symbol = null)
+        {
+            OpenReferenceEventArgs args = new OpenReferenceEventArgs();
+
+            args.filename = name;
+            args.content = content;
+            args.vp = vp;
+            args.symbol = symbol;
+
+            if (OpenCallHierarchy != null)
+                OpenCallHierarchy(null, args);
+        }
         public void LoadErrors(VSProject vp, List<Diagnostic> errors)
         {
             OpenFileEventArgs args = new OpenFileEventArgs();
@@ -464,6 +491,8 @@ namespace VSProvider
 
         EventHandler OnSolutionCompiled;
 
+
+        public Dictionary<DocumentId, Document> documents { get; set; }
        
         /// <summary>
         /// 
@@ -471,6 +500,9 @@ namespace VSProvider
         /// <param name="solutionFileName"></param>
         public async void CompileSolution(string solutionFileName)
         {
+
+
+            documents = new Dictionary<DocumentId, Document>();
 
             Stopwatch sw = Stopwatch.StartNew();
 
@@ -536,7 +568,7 @@ namespace VSProvider
 
                 Microsoft.CodeAnalysis.Project project = solution.GetProject(projectId);
 
-
+               
 
 
                 //VSProject vv = this.GetProjectbyFileName(project.FilePath);
@@ -880,6 +912,117 @@ namespace VSProvider
 
         }
 
+        public ISymbol GetSymbolAtLocation(VSProject vp, string filename, int position, string content = "")
+        {
+            if (comp == null)
+                return null;
+
+
+            
+                Compilation cc = null;
+                SyntaxTree syntaxTree = null;
+                SemanticModel model = null;
+
+            if (comp == null || vp == null || string.IsNullOrEmpty(vp.FileName))
+            {
+            }
+            else
+            {
+                cc = comp[this.projects[0].FileName];
+                syntaxTree = null;
+                model = null;
+
+
+
+                cc = comp[vp.FileName];
+                syntaxTree = cc.SyntaxTrees.Select(s => s).Where(t => t.FilePath == filename).First();
+
+                if (!string.IsNullOrEmpty(content))
+                {
+                    SyntaxTree newSyntaxTree = CSharpSyntaxTree.ParseText(content, null, filename);
+                    
+                    cc = cc.ReplaceSyntaxTree(syntaxTree, newSyntaxTree);
+                    syntaxTree = cc.SyntaxTrees.Select(s => s).Where(t => t.FilePath == filename).First();
+                }
+
+                model = cc.GetSemanticModel(syntaxTree);
+
+                var d = SymbolFinder.FindSymbolAtPositionAsync(model, position, solution.Workspace).Result;
+
+                return d;
+             
+
+            }
+            
+
+            return null;
+        }
+        object obsc = new object();
+        public void UpdateSyntaxTree(string FileToLoad, string content)
+        {
+            lock (obsc)
+            {
+                Compilation cc = null;
+                SyntaxTree syntaxTree = null;
+                SemanticModel model = null;
+
+                VSProject vp = GetProjectbyCompileItem(FileToLoad);
+
+                if (comp == null || vp == null)
+                {
+                    return;
+                }
+                else
+                {
+
+                    cc = comp[vp.FileName];
+                    syntaxTree = null;
+                    model = null;
+
+                    cc = comp[vp.FileName];
+                    syntaxTree = cc.SyntaxTrees.Select(s => s).Where(t => t.FilePath == FileToLoad).First();
+
+                    SyntaxTree newSyntaxTree = CSharpSyntaxTree.ParseText(content, CSharpParseOptions.Default, FileToLoad);
+
+                    
+                    Document d = solution.GetDocument(syntaxTree);
+                   // if(solution.ContainsDocument(d.Id))
+                   // solution = solution.RemoveDocument(d.Id);
+                    solution = solution.WithDocumentSyntaxRoot(d.Id, newSyntaxTree.GetRoot());
+
+                    var st = solution.GetDocument(d.Id).GetSyntaxTreeAsync().Result;
+
+                    cc = cc.ReplaceSyntaxTree(syntaxTree, st);
+
+                    d = solution.GetDocument(d.Id);
+
+                    cc = d.Project.GetCompilationAsync().Result;
+                    comp[vp.FileName] = cc;
+                }
+            }
+        }
+
+        public string GetSyntaxTreeText(string filename)
+        {
+            string content = "";
+
+            VSProject vp = GetProjectbyCompileItem(filename);
+
+            if (vp == null)
+                return content;
+
+            if(!comp.ContainsKey(vp.FileName))
+            return content;
+
+            Compilation c = comp[vp.FileName];
+
+            SyntaxTree s = c.SyntaxTrees.Select(b => b).Where(d => d.FilePath == filename).FirstOrDefault();
+
+            if (s == null)
+                return content;
+            return s.GetText().ToString();
+        }
+
         public IEnumerable<ReferencedSymbol> GetAllSymbolReferences(ISymbol symbol, string filename, VSProject vp, string content)
         {
             IEnumerable<ReferencedSymbol> references = null;
@@ -899,7 +1042,7 @@ namespace VSProvider
                 {
                 }
                 else {
-                    cc = comp[this.projects[0].FileName];
+                    cc = comp[vp.FileName];
                     syntaxTree = null;
                     model = null;
 
@@ -927,7 +1070,9 @@ namespace VSProvider
                         else
                         {
                             methodInvocations = syntaxTree.GetRootAsync().Result.DescendantNodes().OfType<ConstructorDeclarationSyntax>().Where(s => s.Identifier.Text == symbol.ContainingType.Name);
-                            methodInvocation = methodInvocations.First();
+                            methodInvocation = methodInvocations.FirstOrDefault();
+                            if (methodInvocation == null)
+                                return references;
                             methodSymbol = model.GetDeclaredSymbol(methodInvocation);
                         }
                         references = SymbolFinder.FindReferencesAsync(methodSymbol, this.solution).Result;
@@ -941,7 +1086,9 @@ namespace VSProvider
                         else
                         {
                             methodInvocations = syntaxTree.GetRootAsync().Result.DescendantNodes().OfType<MethodDeclarationSyntax>().Where(s => s.Identifier.Text == symbol.Name);
-                            methodInvocation = methodInvocations.First();
+                            methodInvocation = methodInvocations.FirstOrDefault();
+                            if (methodInvocation == null)
+                                return references;
                             methodSymbol = model.GetDeclaredSymbol(methodInvocation);
                         }
                         references = SymbolFinder.FindReferencesAsync(methodSymbol, this.solution).Result;
@@ -1480,6 +1627,8 @@ namespace VSProvider
 
             File.WriteAllText(file, content);
         }
+
+        
     }
 
     public class vsproject
@@ -1572,5 +1721,16 @@ namespace VSProvider
         public List<Diagnostic> Errors { get; set; }
         public ReferenceLocation? Location { get; set; }
         
+    }
+    public class OpenReferenceEventArgs : EventArgs
+    {
+        
+        public string filename { get; set; }
+        public string content { get; set; }
+        public VSProject vp { get; set; }
+        public ISymbol symbol { get; set; }
+        public List<Diagnostic> Errors { get; set; }
+        public ReferenceLocation? Location { get; set; }
+
     }
 }

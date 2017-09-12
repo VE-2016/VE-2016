@@ -115,5 +115,22 @@ namespace AvalonEdit.Editor
             return reg.Replace(source, eval);
             
         }
+        public static int FindExtended(string source, int offset)
+        {
+            Regex exp = new Regex(@"\//References\s+.*", RegexOptions.IgnoreCase | RegexOptions.Multiline);
+            MatchCollection matchCollection = exp.Matches(source);
+
+            int i = 0;
+            foreach (Match m in matchCollection)
+            {
+                if (m.Index > offset)
+                    if (i > 0)
+                        return i - 1;
+                else
+                    return i;
+                i++;
+            }
+            return i;
+        }
     }
 }

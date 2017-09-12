@@ -50,8 +50,6 @@ F:\Windows-Enterprise-VE-2016\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinF
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2010.pdb
 F:\ve\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2010.dll
 F:\ve\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2010.pdb
-F:\ve\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
-F:\ve\VE-2016\Editor\WinFormsUI\obj\Debug\ThemeVS2010.csprojResolveAssemblyReference.cache
 F:\ve\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2010.Resources.resources
 F:\ve\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2012.Resources.resources
 F:\ve\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2012.Strings.resources

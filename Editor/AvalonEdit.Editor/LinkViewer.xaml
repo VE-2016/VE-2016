@@ -18,6 +18,8 @@
     <Grid>
        
         <ListBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding LinkItems}" x:Name="itemsListBox" />
+        
     </Grid>
+    
 </Window>
     

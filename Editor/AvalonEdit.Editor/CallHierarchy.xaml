@@ -1,0 +1,103 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	    xmlns:s='clr-namespace:System;assembly=mscorlib' 
+	    xmlns:l='clr-namespace:AvalonEdit.Editor' 
+		x:Class="AvalonEdit.Editor.CallHierarchyViewer"
+        Background="AliceBlue">
+
+
+<DockPanel >
+        <StackPanel DockPanel.Dock="Top" VerticalAlignment="Stretch" HorizontalAlignment="Left" Orientation="Horizontal" Margin="0,0,0,0" Width="6320" Height="20"  Background="Gainsboro">
+            
+            <ComboBox IsReadOnly="True" IsEditable="True" SelectedIndex="0" Background="White" Width="150">
+                <ComboBoxItem Background="White">Entire Solution</ComboBoxItem>
+                <ComboBoxItem Background="White">Current Project</ComboBoxItem>
+                <ComboBoxItem Background="White">Current Document</ComboBoxItem>
+                
+            </ComboBox>
+            <Rectangle VerticalAlignment="Stretch" Width="3" Margin="2" Stroke="Transparent" />
+            <StackPanel Orientation="Horizontal">
+                <Image Width="16" Height="16" VerticalAlignment="Stretch" x:Name="RefreshButton">
+                    <Image.ToolTip>
+                        <ToolTip Content="Refresh" />
+                    </Image.ToolTip>
+                </Image>
+            </StackPanel>
+            <Rectangle VerticalAlignment="Stretch" Width="3" Margin="1" Stroke="Transparent" />
+            <StackPanel Orientation="Horizontal">
+                <Image Width="16" Height="16" VerticalAlignment="Stretch" x:Name="CancelButton">
+                    <Image.ToolTip>
+                        <ToolTip Content="Remove Root" />
+                    </Image.ToolTip>
+                </Image>
+
+            </StackPanel>
+            <Rectangle VerticalAlignment="Stretch" Width="3" Margin="1" Stroke="Transparent" />
+            <StackPanel Orientation="Horizontal">
+                <Image Width="16" Height="16" VerticalAlignment="Stretch" x:Name="ButtonPanel">
+                    <Image.ToolTip>
+                        <ToolTip Content="Toggle Details Pan" />
+                    </Image.ToolTip>
+                </Image>
+            </StackPanel>
+
+         
+           
+        </StackPanel>
+        <Grid HorizontalAlignment="Stretch" x:Name="grid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*" SharedSizeGroup="a" />
+                <ColumnDefinition Width="3" SharedSizeGroup="b" />
+                <ColumnDefinition Width="6*" SharedSizeGroup="b" />
+            </Grid.ColumnDefinitions>
+            <TreeView x:Name="treeListView" Background="AliceBlue" Margin="0,0,0,-17"  Grid.Column="0">
+                <TreeViewItem IsExpanded="False">
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image x:Name="MethodButton" />
+                            <TextBlock Text="Method name" />
+                        </StackPanel>
+                    </TreeViewItem.Header>
+                    
+                    <TreeViewItem IsExpanded="False">
+                        <TreeViewItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <Image x:Name="FolderButton" />
+                                <TextBlock Text="Folder name" Foreground="Blue" />
+                            </StackPanel>
+                        </TreeViewItem.Header>
+                        <TreeViewItem IsEnabled="False">
+                            <TreeViewItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <Image x:Name="MethodButtons" />
+                                <TextBlock Text="Method name-2" />
+                            </StackPanel>
+                                </TreeViewItem.Header>
+                        </TreeViewItem>
+                        </TreeViewItem>
+                </TreeViewItem>
+
+            </TreeView>
+            <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
+            <ListView HorizontalAlignment = "Stretch" Margin = "0,0,0,0" 
+         VerticalAlignment = "Stretch" Name = "LocationsListView" Grid.Column="2">
+
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header = "Call Sites"  
+                  Width = "200"/>
+
+                        <GridViewColumn Header = "Location" 
+                  Width = "Auto"/>
+
+                    </GridView>
+                </ListView.View>
+
+            </ListView>
+        </Grid>
+        
+   
+        
+    </DockPanel>
+</UserControl>
+

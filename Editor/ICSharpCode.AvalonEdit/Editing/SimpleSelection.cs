@@ -29,7 +29,7 @@ namespace ICSharpCode.AvalonEdit.Editing
 	/// <summary>
 	/// A simple selection.
 	/// </summary>
-	sealed class SimpleSelection : Selection
+	public class SimpleSelection : Selection
 	{
 		readonly TextViewPosition start, end;
 		readonly int startOffset, endOffset;

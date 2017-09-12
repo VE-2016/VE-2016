@@ -9,12 +9,14 @@ using ICSharpCode.AvalonEdit.Snippets;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.FindSymbols;
 //using Microsoft.CodeAnalysis.Formatting;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Design;
+using System.Globalization;
 using System.IO;
 using System.IO.Packaging;
 using System.Linq;
@@ -27,6 +29,7 @@ using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -39,6 +42,7 @@ using System.Windows.Threading;
 using System.Xml;
 using VSParsers;
 using VSProvider;
+using static AvalonEdit.Editor.CompletionControls;
 
 namespace AvalonEdit.Editor
 {
@@ -58,6 +62,8 @@ namespace AvalonEdit.Editor
 
         public string SolutionToLoad { get; set; }
 
+        public bool IsQuickClassBrowser { get; set; }
+
 
         static public object LoadXaml(String Assemblypath)
         {
@@ -75,21 +81,24 @@ namespace AvalonEdit.Editor
                 {
                     Uri uri = new Uri("/" + assembly.GetName().Name + ";component/" + resource.Key.ToString().Replace(".baml", ".xaml"), UriKind.Relative);
                     return Application.LoadComponent(uri);
-                   // ResourceDictionary obs = Application.LoadComponent(uri) as ResourceDictionary;
-                   // return obs;
-               //     this.Resources.MergedDictionaries.Add(skin);
+                    // ResourceDictionary obs = Application.LoadComponent(uri) as ResourceDictionary;
+                    // return obs;
+                    //     this.Resources.MergedDictionaries.Add(skin);
                 }
             }
             return null;
         }
 
-        public EditorWindow()
+        public void EditorWindows2()
         {
 
         }
 
-        public void EditorWindows()
+        public EditorWindow()
         {
+            InitializeComponent();
+
+            IsQuickClassBrowser = true;
 
             //var sa = AppDomain.CurrentDomain.BaseDirectory + "AvalonEdit.Editor.dll";
 
@@ -109,7 +118,7 @@ namespace AvalonEdit.Editor
             //        Uri uri = new Uri("/" + assembly.GetName().Name + ";component/" + resource.Key.ToString().Replace(".baml", ".xaml"), UriKind.Relative);
             //        ResourceDictionary skin = Application.LoadComponent(uri) as ResourceDictionary;
 
-                    
+
             ////        this.Resources.MergedDictionaries.Add(skin);
             //    }
             //}
@@ -120,9 +129,9 @@ namespace AvalonEdit.Editor
 
 
 
-//            InitializeComponent();
+            //            InitializeComponent();
 
-           // this.LoadViewFromUri("/AvalonEdit.Editor;component/EditorWindow.xml");
+            // this.LoadViewFromUri("/AvalonEdit.Editor;component/EditorWindow.xml");
 
 
             // textEditor = new TextEditor();
@@ -131,10 +140,6 @@ namespace AvalonEdit.Editor
             textEditor.FontFamily = new FontFamily(FontFamily.BaseUri, FontFamily.Source);
             textEditor.FontSize = this.FontSize;
             textEditor.HorizontalAlignment = HorizontalAlignment.Stretch;
-
-
-
-           
 
             //string file = "C:\\MSBuildProjects-beta\\VStudio.sln";
             //VSSolutionLoader rw = new VSSolutionLoader();
@@ -149,16 +154,16 @@ namespace AvalonEdit.Editor
 
             //editor.vs = vs;
 
-           // FileToLoad = "C:\\MSBuildProjects-betas\\AvalonEdit.Editor\\EditorWindow.xaml.cs";
+            // FileToLoad = "C:\\MSBuildProjects-betas\\AvalonEdit.Editor\\EditorWindow.xaml.cs";
 
-           // ProjectToLoad = "C:\\MSBuildProjects-betas\\AvalonEdit.Editor\\AvalonEdit.Editor.csproj";
+            // ProjectToLoad = "C:\\MSBuildProjects-betas\\AvalonEdit.Editor\\AvalonEdit.Editor.csproj";
 
-           // SolutionToLoad = "C:\\MSBuildProjects-betas\\av.sln";
+            // SolutionToLoad = "C:\\MSBuildProjects-betas\\av.sln";
 
-           // editor.SolutionToLoad = SolutionToLoad;
-           // editor.ProjectToLoad = ProjectToLoad;
-           // editor.FileToLoad = FileToLoad;
-            
+            // editor.SolutionToLoad = SolutionToLoad;
+            // editor.ProjectToLoad = ProjectToLoad;
+            // editor.FileToLoad = FileToLoad;
+
 
             //MemoryStream m = new MemoryStream();
             //var se = System.Text.Encoding.UTF8.GetBytes("a\nb\nc\nda\nb\nc\nda\nb\nc\nda\nb\nc\nda\nb\nc\nda\nb\nc\nda\nb\nc\nda\nb\nc\nda\nb\nc\nda\nb\nc\nda\nb\nc\nd");
@@ -168,9 +173,9 @@ namespace AvalonEdit.Editor
 
             //var g = textEditor.Document.GetLineByNumber(2).Offset;
             //textEditor.Document.Insert(g, "References - \n", new object());
-            
-            
-            
+
+
+
             //g = textEditor.Document.GetLineByNumber(10).Offset;
             //textEditor.Document.Insert(g, "\nReferences - \n", new object());
 
@@ -189,11 +194,7 @@ namespace AvalonEdit.Editor
 
             qcb.AttachEvents();
 
-
-            
             //StartCompilation();
-                      
-
 
             LoadMargins();
 
@@ -210,7 +211,6 @@ namespace AvalonEdit.Editor
             }
             // and register it in the HighlightingManager
             HighlightingManager.Instance.RegisterHighlighting("Custom Highlighting", new string[] { ".cool" }, customHighlighting);
-
 
 
             textEditor.SyntaxHighlighting = customHighlighting;
@@ -230,6 +230,8 @@ namespace AvalonEdit.Editor
 
             textEditor.TextArea.TextView.MouseDown += TextView_MouseDown;
 
+
+
             textEditor.TextArea.Caret.PositionChanged += Caret_PositionChanged;
 
 
@@ -243,13 +245,15 @@ namespace AvalonEdit.Editor
             foldingUpdateTimer.Interval = TimeSpan.FromSeconds(2);
             foldingUpdateTimer.Tick += delegate { UpdateFoldings(); };
             foldingUpdateTimer.Start();
+
             if (foldingManager == null)
                 foldingManager = FoldingManager.Install(textEditor.TextArea);
             textEditor.TextArea.IndentationStrategy = new ICSharpCode.AvalonEdit.Indentation.CSharp.CSharpIndentationStrategy(textEditor.Options);
+
             foldingStrategy = new BraceFoldingStrategy();
 
-            Colorizer colorizer = new Colorizer();
-            colorizer.editorWindow = this;
+            Colorizer colorizer = new Colorizer(this);
+            //colorizer.editorWindow = this;
             textEditor.TextArea.TextView.LineTransformers.Add(colorizer);
 
             //textEditor.TextArea.TextView.ElementGenerators.Add(new FormatterGenerator());
@@ -267,8 +271,127 @@ namespace AvalonEdit.Editor
             eTimer.Interval = new TimeSpan(0, 0, 1);
             eTimer.Start();
 
+
+
             InitializeTextMarkerService();
 
+            ContextMenu = CreateContextMenu(this, this.textEditor);
+
+            //this.IsVisibleChanged += EditorWindow_IsVisibleChanged;
+
+            Mouse.OverrideCursor = Cursors.Arrow;
+
+            textEditor.TextArea.SelectionChanged += TextArea_SelectionChanged;
+
+            // this.IsKeyboardFocusedChanged += EditorWindow_IsKeyboardFocusedChanged;
+
+            zoom.SelectionChanged += Zoom_SelectionChanged;
+
+
+
+
+        }
+
+        public double zoomScaleFactor = 1.0;
+
+        private void Zoom_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems == null || e.AddedItems.Count <= 0)
+                return;
+            ComboBoxItem b = (ComboBoxItem)e.AddedItems[0];
+            var s = b.Content.ToString().Replace("%", "");
+            double scale = Convert.ToDouble(s) / 100.0;
+            Transform c = new ScaleTransform(scale, scale);
+            textEditor.TextArea.LayoutTransform = c;
+            textEditor.InvalidateVisual();
+            // double p = zoomScaleFactor;
+            zoomScaleFactor = scale;
+            if (popup != null)
+            {
+
+
+                shouldPopupUpdate = true;
+
+            }
+        }
+        bool shouldPopupUpdate = false;
+        void PopupUpdate()
+        {
+            if (embedEditorWindow != null)
+            {
+                this.Dispatcher.BeginInvoke(new Action(() =>
+                {
+
+
+
+                    var d = GetWidthAfterTransform();
+
+
+                    embedEditorWindow.Width = d.Item1;
+                    popup.Width = d.Item1;
+                    popup.HorizontalOffset = d.Item2;
+                    embedEditorWindow.textEditor.TextArea.LayoutTransform = textEditor.TextArea.LayoutTransform;
+                    shouldPopupUpdate = false;
+                }));
+            }
+        }
+
+        private void TextArea_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void Activated(bool isActive)
+        {
+            if ((bool)isActive)
+            {
+                if (popup != null)
+                    if (!popup.IsOpen)
+                    {
+                        popup.IsOpen = true;
+                        popup.ReloadIfNeeded();
+                    }
+            }
+            else
+            {
+                if (popup != null)
+                    if (popup.IsOpen)
+                        popup.IsOpen = false;
+            }
+        }
+
+        //private void EditorWindow_IsKeyboardFocusedChanged(object sender, DependencyPropertyChangedEventArgs e)
+        //{
+        //    if (!this.IsFocused)
+        //        if (embedEditorWindow != null)
+        //            if (!embedEditorWindow.IsFocused)
+        //                if (popup != null)
+        //                    popup.IsOpen = false;
+        //}
+
+        public void HideQuickClassBrowser()
+        {
+            IsQuickClassBrowser = false;
+
+            dockPanel.Children.Remove(quickviewer);
+            this.InvalidateVisual();
+        }
+        bool IsZoom = true;
+
+        public void HideZoom()
+        {
+            IsZoom = false;
+
+            dockPanel.Children.Remove(quickviewer);
+
+            editorGrid.Children.Remove(zoom);
+
+            Grid.SetColumn(hs, 0);
+            Grid.SetColumnSpan(hs, 2);
+
+            hs.Opacity = 1;
+
+            this.InvalidateVisual();
         }
         bool Handled = false;
 
@@ -277,21 +400,17 @@ namespace AvalonEdit.Editor
         public void LoadContent(string content)
         {
 
-         
+
             textEditor.Document.Text = content;
 
             textEditor.IsReadOnly = true;
 
             EnableCaretMoveOverObject = true;
 
-            //EnableLineNumberExtended(false);
-
             imageElementGenerator.editorWindow = this;
 
-            //textEditor.TextArea.TextView.ElementGenerators.Add(imageElementGenerator);
-
             foldingStrategy = new CommentAndMethodFoldingStrategy();
-            
+
             textEditor.SetCurrentValue(TextEditor.IsModifiedProperty, false);
 
             textEditor.TextArea.TextView.MouseDown += TextEditor_MouseDown;
@@ -299,16 +418,16 @@ namespace AvalonEdit.Editor
 
         private void TextEditor_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            
+
             var v = textEditor.TextArea.TextView;
             TextViewPosition? pos = textEditor.GetPositionFromPoint(e.GetPosition(textEditor));
             if (pos != null)
             {
                 var line = pos.Value.Line;
                 var column = pos.Value.Column;
-                
 
-                
+
+
                 //string wordHover = string.Empty;
                 //var offset = textEditor.Document.GetOffset(line, column);
                 //if (offset >= textEditor.Document.TextLength) offset--;
@@ -349,56 +468,1029 @@ namespace AvalonEdit.Editor
                     DocumentLine gv = textEditor.Document.GetLineByNumber(line);
                     if (gv.obs != null)
                         if (gv.obs is ISymbol)
-                            if(column > 0 && column < 15)
-                        {
-                            string FileName = ProjectToLoad;// "C:\\MSBuildProjects-beta\\VSExplorer\\VSExplorer.csproj";
-
-                            string filename = FileToLoad;// "C:\\MSBuildProjects-beta\\VSExplorer\\ExplorerForms.cs";
-
-                            editor.vp = editor.vs.GetProjectbyFileName(FileName);
-
-                            ISymbol s = gv.obs as ISymbol;
-                            var r = editor.vs.GetAllSymbolReferences(s, filename, editor.vp, StringReplace.Replace(textEditor.Document.Text));
-                            if (r != null)
+                            if (column > 0 && column < 15)
                             {
-                                StringBuilder b = new StringBuilder();
+                                string FileName = ProjectToLoad;// "C:\\MSBuildProjects-beta\\VSExplorer\\VSExplorer.csproj";
 
-                                List<LinkItem> bc = new List<LinkItem>();
+                                string filename = FileToLoad;// "C:\\MSBuildProjects-beta\\VSExplorer\\ExplorerForms.cs";
 
-                                foreach (var rs in r)
+                                editor.vp = editor.vs.GetProjectbyFileName(FileName);
+
+                                ISymbol s = gv.obs as ISymbol;
+                                var r = editor.vs.GetAllSymbolReferences(s, filename, editor.vp, StringReplace.Replace(textEditor.Document.Text));
+                                if (r != null)
                                 {
-                                    foreach (var ls in rs.Locations)
+                                    StringBuilder b = new StringBuilder();
+
+                                    List<LinkItem> bc = new List<LinkItem>();
+
+                                    foreach (var rs in r)
                                     {
-                                        var d = ls;// rs.Locations.FirstOrDefault();
-                                        LinkItem bw = new LinkItem(d.Document.Name, d.Document.FilePath);
+                                        foreach (var ls in rs.Locations)
+                                        {
+                                            var d = ls;// rs.Locations.FirstOrDefault();
+                                            LinkItem bw = new LinkItem(d.Document.Name, d.Document.FilePath);
                                             bw.Location = ls;
-                                        bc.Add(bw);
+                                            bc.Add(bw);
 
+                                        }
                                     }
+                                    //MessageBox.Show("Symbol name " + s.Name + "\n" + b.ToString());
+                                    LinkViewer vs = new LinkViewer();
+                                    vs.Load(bc);
+
+                                    if (toolTip != null)
+                                        toolTip.IsOpen = false;
+
+                                    //vs.Left = gv.LineNumbertextEditor.TextArea.Caret.Location.Column;
+
+                                    bool? result = vs.ShowDialog();
+
+                                    if (result == null || result == false)
+                                        return;
+
+                                    //MessageBox.Show(vs.SelectedLinkItem);
+
+                                    editor.vs.LoadFileFromProject("", null, vs.SelectedLinkItem, null, vs.GetLocation(vs.SelectedLinkItem));
                                 }
-                                //MessageBox.Show("Symbol name " + s.Name + "\n" + b.ToString());
-                                LinkViewer vs = new LinkViewer();
-                                vs.Load(bc);
-
-                                if (toolTip != null)
-                                    toolTip.IsOpen = false;
-
-                                //vs.Left = gv.LineNumbertextEditor.TextArea.Caret.Location.Column;
-
-                                bool? result = vs.ShowDialog();
-
-                                if (result == null || result == false)
-                                    return;
-
-                                //MessageBox.Show(vs.SelectedLinkItem);
-
-                                editor.vs.LoadFileFromProject("", null, vs.SelectedLinkItem, null, vs.GetLocation(vs.SelectedLinkItem));
-
                             }
-                        }
+                }
+            }
+            textEditor.SelectedText = "";
+        }
+        public class CommandViewDesigner : ICommand
+        {
+            public bool CanExecute(object parameter)
+            {
+                return true;
+            }
+
+            public void Execute(object parameter)
+            {
+                TextEditor textEditor = (TextEditor)Context;
+                MessageBox.Show("It Worked - Shift+F7 for " + textEditor.Document.FileName);
+                EventHandler invoker = AvalonEditorCommands.ViewDesignerCommand;
+                if (invoker != null)
+                    invoker(null, null);
+            }
+
+            public event EventHandler CanExecuteChanged;
+
+            public TextEditor Context { get; set; }
+
+            public CommandViewDesigner(TextEditor Context)
+            {
+                this.Context = Context;
+            }
+        }
+        public class CommandQuickActionsAndRefactorings : ICommand
+        {
+            public bool CanExecute(object parameter)
+            {
+                return true;
+            }
+
+            public void Execute(object parameter)
+            {
+                MessageBox.Show("It Worked - Ctrl++");
+
+            }
+
+            public event EventHandler CanExecuteChanged;
+
+
+            public CommandQuickActionsAndRefactorings()
+            {
+
+            }
+        }
+        public class CommandRename : ICommand
+        {
+            public bool CanExecute(object parameter)
+            {
+                return true;
+            }
+
+            public void Execute(object parameter)
+            {
+                MessageBox.Show("It Worked - Ctrl+R,Ctrl+R");
+
+            }
+
+            public event EventHandler CanExecuteChanged;
+
+
+            public CommandRename()
+            {
+
+            }
+        }
+        public class CommandRemoveAndSortUsings : ICommand
+        {
+            public bool CanExecute(object parameter)
+            {
+                return true;
+            }
+
+            public void Execute(object parameter)
+            {
+                MessageBox.Show("It Worked - Ctrl+r, Ctrl+G");
+
+            }
+
+            public event EventHandler CanExecuteChanged;
+
+
+            public CommandRemoveAndSortUsings()
+            {
+
+            }
+        }
+        public class CommandPeekDefinition : ICommand
+        {
+            public bool CanExecute(object parameter)
+            {
+                return true;
+            }
+
+            public void Execute(object parameter)
+            {
+                MessageBox.Show("It Worked - Alt+F12");
+
+            }
+
+            public event EventHandler CanExecuteChanged;
+
+
+            public CommandPeekDefinition()
+            {
+
+            }
+        }
+        public class CommandGoToDefinition : ICommand
+        {
+
+            public EditorWindow editorWindow { get; set; }
+
+            public bool CanExecute(object parameter)
+            {
+                return true;
+            }
+
+            public void Execute(object parameter)
+            {
+
+                if (editorWindow != null)
+                    editorWindow.Dispatcher.BeginInvoke(new Action(() => { editorWindow.GetMemberOverCaret(); }));
+            }
+
+            public event EventHandler CanExecuteChanged;
+
+
+            public CommandGoToDefinition(EditorWindow editorWindow)
+            {
+                this.editorWindow = editorWindow;
+            }
+        }
+        public class CommandGoToImplementation : ICommand
+        {
+            public bool CanExecute(object parameter)
+            {
+                return true;
+            }
+
+            public void Execute(object parameter)
+            {
+                MessageBox.Show("It Worked - Ctrl+F12");
+
+            }
+
+            public event EventHandler CanExecuteChanged;
+
+
+            public CommandGoToImplementation()
+            {
+
+            }
+        }
+        public class CommandFindAllReferences : ICommand
+        {
+            public bool CanExecute(object parameter)
+            {
+                return true;
+            }
+
+            public void Execute(object parameter)
+            {
+                MessageBox.Show("It Worked - Shift+F12");
+            }
+
+            public event EventHandler CanExecuteChanged;
+
+
+            public CommandFindAllReferences()
+            {
+
+            }
+        }
+        public class CommandViewCallHierarchy : ICommand
+        {
+            public bool CanExecute(object parameter)
+            {
+                return true;
+            }
+
+            public void Execute(object parameter)
+            {
+                MessageBox.Show("It Worked - Ctrl+K, Ctrl+T");
+            }
+
+            public event EventHandler CanExecuteChanged;
+
+
+            public CommandViewCallHierarchy()
+            {
+
+            }
+        }
+        public class CommandRunToCursor : ICommand
+        {
+            public bool CanExecute(object parameter)
+            {
+                return true;
+            }
+
+            public void Execute(object parameter)
+            {
+                MessageBox.Show("It Worked - Ctrl+F10");
+            }
+
+            public event EventHandler CanExecuteChanged;
+
+
+            public CommandRunToCursor()
+            {
+
+            }
+        }
+        public class CommandExecuteInInteractive : ICommand
+        {
+            public bool CanExecute(object parameter)
+            {
+                return true;
+            }
+
+            public void Execute(object parameter)
+            {
+                MessageBox.Show("It Worked - Ctrl+E, Ctrl+E");
+            }
+
+            public event EventHandler CanExecuteChanged;
+
+
+            public CommandExecuteInInteractive()
+            {
+
+            }
+        }
+        public class CommandCut : ICommand
+        {
+            public bool CanExecute(object parameter)
+            {
+                return true;
+            }
+
+            public void Execute(object parameter)
+            {
+                MessageBox.Show("It Worked - Ctrl+X");
+            }
+
+            public event EventHandler CanExecuteChanged;
+
+
+            public CommandCut()
+            {
+
+            }
+        }
+        public class CommandCopy : ICommand
+        {
+            public bool CanExecute(object parameter)
+            {
+                return true;
+            }
+
+            public void Execute(object parameter)
+            {
+                MessageBox.Show("It Worked - Ctrl+C");
+            }
+
+            public event EventHandler CanExecuteChanged;
+
+
+            public CommandCopy()
+            {
+
+            }
+        }
+        public class CommandPaste : ICommand
+        {
+            public bool CanExecute(object parameter)
+            {
+                return true;
+            }
+
+            public void Execute(object parameter)
+            {
+                MessageBox.Show("It Worked - Ctrl+V");
+            }
+
+            public event EventHandler CanExecuteChanged;
+
+
+            public CommandPaste()
+            {
+
+            }
+        }
+        public class ShowCommandGesture : KeyGesture
+        {
+            private readonly Key _key;
+            private bool _gotFirstGesture;
+            private InputGesture _ctrlWGesture { get; set; }
+
+            public ShowCommandGesture(Key fkey, ModifierKeys fmodifiersKeys, Key key, ModifierKeys modifierKeys) : base(key, modifierKeys)
+            {
+                _ctrlWGesture = new KeyGesture(fkey, fmodifiersKeys);
+                _key = key;
+            }
+
+            public override bool Matches(object obj, InputEventArgs inputEventArgs)
+            {
+                KeyEventArgs keyArgs = inputEventArgs as KeyEventArgs;
+                if (keyArgs == null || keyArgs.IsRepeat)
+                    return false;
+
+                if (_gotFirstGesture)
+                {
+                    _gotFirstGesture = false;
+
+                    if (keyArgs.Key == _key)
+                    {
+                        inputEventArgs.Handled = true;
+                    }
+
+                    return keyArgs.Key == _key;
+                }
+                else
+                {
+                    _gotFirstGesture = _ctrlWGesture.Matches(null, inputEventArgs);
+                    if (_gotFirstGesture)
+                    {
+                        inputEventArgs.Handled = true;
+                    }
+
+                    return false;
                 }
             }
         }
+
+        public static ContextMenu ContextMenus { get; set; }
+
+        static public ContextMenu CreateContextMenu(EditorWindow editorWindow, TextEditor textEditor)
+        {
+
+            ContextMenu contextMenu = new ContextMenu();
+
+            if (ContextMenus != null)
+                ContextMenus = contextMenu;
+            else
+            {
+                MenuItem item = new MenuItem();
+                item.Header = "View Designer";
+                item.Click += Item_Click;
+                Image image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Copy_32x);
+                item.Icon = image;
+
+
+                item.InputGestureText = "Shift+F7";
+
+                contextMenu.Items.Add(item);
+                //textEditor.InputBindings.Add(new InputBinding(new CommandViewDesigner(), new KeyGesture(Key.F7, ModifierKeys.Shift)));
+
+                item = new MenuItem();
+                item.Header = "Quick Actions And Refactorings";
+                item.Click += Item_Click;
+                image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Copy_32x);
+                item.Icon = image;
+
+                item.InputGestureText = "Ctrl+";
+                // item.InputBindings.Add(b);
+                contextMenu.Items.Add(item);
+                //textEditor.InputBindings.Add(new InputBinding(new CommandQuickActionsAndRefactorings(), new KeyGesture(Key.OemPlus, ModifierKeys.Control)));
+
+                item = new MenuItem();
+                item.Header = "Rename";
+                item.Click += Item_Click;
+                image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Rename_16x);
+                item.Icon = image;
+
+                //CommandRename CommandRename = new CommandRename();
+                item.InputGestureText = "Ctrl+R, Ctrl+R";
+                contextMenu.Items.Add(item);
+                //textEditor.InputBindings.Add(new InputBinding(new CommandRename(), new ShowCommandGesture(Key.R, ModifierKeys.Control, Key.R, ModifierKeys.Control)));
+
+                item = new MenuItem();
+                item.Header = "Remove And Sort Usings";
+                item.Click += Item_Click;
+                image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Copy_32x);
+                item.Icon = image;
+
+                //CommandRemoveAndSortUsings CommandRemoveAndSortUsings = new CommandRemoveAndSortUsings();
+                item.InputGestureText = "Ctrl+R, Ctrl+G";
+                contextMenu.Items.Add(item);
+                //textEditor.InputBindings.Add(new InputBinding(CommandRemoveAndSortUsings, new ShowCommandGesture(Key.R, ModifierKeys.Control, Key.G, ModifierKeys.Control)));
+
+                Separator separator = new Separator();
+                contextMenu.Items.Add(separator);
+
+                item = new MenuItem();
+                item.Header = "Peek Definition";
+                item.Click += editorWindow.Item_Click_PeekDefinition;
+                image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.ViewDefinition_16x);
+                item.Icon = image;
+                item.InputGestureText = "Alt+F12";
+                contextMenu.Items.Add(item);
+                //textEditor.InputBindings.Add(new InputBinding(new CommandPeekDefinition(), new KeyGesture(Key.F12, ModifierKeys.Alt)));
+
+                item = new MenuItem();
+                item.Header = "Go To Definition";
+                image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.GoToDefinition_16x);
+                item.Icon = image;
+                item.InputGestureText = "F12";
+                item.Click += editorWindow.Item_Click_GoToDefinition;
+                contextMenu.Items.Add(item);
+
+                //textEditor.InputBindings.Add(new InputBinding(new CommandGoToDefinition(), new KeyGesture(Key.F12, ModifierKeys.None)));
+
+
+                item = new MenuItem();
+                item.Header = "Go To Implementation";
+                item.Click += Item_Click;
+                image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Copy_32x);
+                item.Icon = image;
+                item.InputGestureText = "Ctrl+F12";
+                contextMenu.Items.Add(item);
+                //textEditor.InputBindings.Add(new InputBinding(new CommandGoToImplementation(), new KeyGesture(Key.F12, ModifierKeys.Control)));
+
+                item = new MenuItem();
+                item.Header = "Find All References";
+                item.Click += editorWindow.Item_Click_FindReferences;
+                image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Copy_32x);
+                item.Icon = image;
+                item.InputGestureText = "Shift+F12";
+                contextMenu.Items.Add(item);
+                //textEditor.InputBindings.Add(new InputBinding(new CommandFindAllReferences(), new KeyGesture(Key.F12, ModifierKeys.Shift)));
+
+                item = new MenuItem();
+                item.Header = "View Call Hierarchy";
+                item.Click += editorWindow.Item_Click_CallHierarchy;
+                image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.CallHierarchyView_16x);
+                item.Icon = image;
+                item.InputGestureText = "Ctrl+K, Ctrl+T";
+                contextMenu.Items.Add(item);
+                //textEditor.InputBindings.Add(new InputBinding(new CommandViewCallHierarchy(), new ShowCommandGesture(Key.K, ModifierKeys.Control, Key.T, ModifierKeys.Control)));
+
+                separator = new Separator();
+                contextMenu.Items.Add(separator);
+
+                item = new MenuItem();
+                item.Header = "Create Unit Tests";
+                item.Click += Item_Click;
+                contextMenu.Items.Add(item);
+
+                separator = new Separator();
+                contextMenu.Items.Add(separator);
+
+                item = new MenuItem();
+                item.Header = "Breakpoint";
+                item.Click += Item_Click;
+                contextMenu.Items.Add(item);
+
+                MenuItem subitem = new MenuItem();
+                subitem.Header = "Insert Breakpoint";
+                subitem.Click += Item_Click;
+                image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Copy_32x);
+                subitem.Icon = image;
+                item.Items.Add(subitem);
+
+                subitem = new MenuItem();
+                subitem.Header = "Insert Tracepoint";
+                subitem.Click += Item_Click;
+                image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Copy_32x);
+                subitem.Icon = image;
+                item.Items.Add(subitem);
+
+                separator = new Separator();
+                contextMenu.Items.Add(separator);
+
+                item = new MenuItem();
+                item.Header = "Run To Cursor";
+                item.Click += Item_Click;
+                image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Copy_32x);
+                item.Icon = image;
+                contextMenu.Items.Add(item);
+                //textEditor.InputBindings.Add(new InputBinding(new CommandRunToCursor(), new KeyGesture(Key.F10, ModifierKeys.Control)));
+
+                separator = new Separator();
+                contextMenu.Items.Add(separator);
+
+                item = new MenuItem();
+                item.Header = "Execute In Interactive";
+                item.Click += Item_Click;
+                image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Copy_32x);
+                item.Icon = image;
+                contextMenu.Items.Add(item);
+                //textEditor.InputBindings.Add(new InputBinding(new CommandExecuteInInteractive(), new ShowCommandGesture(Key.E, ModifierKeys.Control, Key.E, ModifierKeys.Control)));
+
+
+                separator = new Separator();
+                contextMenu.Items.Add(separator);
+
+                item = new MenuItem();
+                item.Header = "Snippet";
+                contextMenu.Items.Add(item);
+
+                subitem = new MenuItem();
+                subitem.Header = "Surround With";
+                subitem.Click += Item_Click;
+                image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Snippet_16x);
+                subitem.Icon = image;
+                item.Items.Add(subitem);
+
+                subitem = new MenuItem();
+                subitem.Header = "Insert Snippet";
+                subitem.Click += Item_Click;
+                image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Snippet_16x);
+                subitem.Icon = image;
+                item.Items.Add(subitem);
+
+                separator = new Separator();
+                contextMenu.Items.Add(separator);
+
+                item = new MenuItem();
+                item.Header = "Cut";
+                item.Click += editorWindow.Item_Click_Cut;
+                image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Cut_24x);
+                item.Icon = image;
+                item.InputGestureText = "Ctrl+X";
+                contextMenu.Items.Add(item);
+                //textEditor.InputBindings.Add(new InputBinding(new CommandCut(), new KeyGesture(Key.X, ModifierKeys.Control)));
+
+                item = new MenuItem();
+                item.Header = "Copy";
+                item.Click += editorWindow.Item_Click_Copy;
+                image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Copy_32x);
+                item.Icon = image;
+                item.InputGestureText = "Ctrl+C";
+                contextMenu.Items.Add(item);
+                //textEditor.InputBindings.Add(new InputBinding(new CommandCopy(), new KeyGesture(Key.C, ModifierKeys.Control)));
+
+                item = new MenuItem();
+                item.Header = "Paste";
+                item.Click += editorWindow.Item_Click_Paste;
+                image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Paste_16x);
+                item.Icon = image;
+                item.InputGestureText = "Ctrl+V";
+                //item.IsEnabled = false;
+                contextMenu.Items.Add(item);
+                //textEditor.InputBindings.Add(new InputBinding(new CommandPaste(), new KeyGesture(Key.V, ModifierKeys.Control)));
+
+                separator = new Separator();
+                contextMenu.Items.Add(separator);
+
+                item = new MenuItem();
+                item.Header = "Annotation";
+                contextMenu.Items.Add(item);
+
+                subitem = new MenuItem();
+                subitem.Header = "Show Line Annotations";
+                subitem.Click += Item_Click;
+                image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Copy_32x);
+                subitem.Icon = image;
+                item.Items.Add(subitem);
+
+                separator = new Separator();
+                contextMenu.Items.Add(separator);
+
+                item = new MenuItem();
+                item.Header = "Outlining";
+                contextMenu.Items.Add(item);
+
+                subitem = new MenuItem();
+                subitem.Header = "Toggle Outlining Expansion";
+                subitem.Click += Item_Click;
+                image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Copy_32x);
+                subitem.Icon = image;
+                item.Items.Add(subitem);
+
+                subitem = new MenuItem();
+                subitem.Header = "Toggle All Outlining";
+                subitem.Click += Item_Click;
+                image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Copy_32x);
+                subitem.Icon = image;
+                item.Items.Add(subitem);
+
+
+                separator = new Separator();
+                contextMenu.Items.Add(separator);
+
+                item = new MenuItem();
+                item.Header = "Source Control";
+                contextMenu.Items.Add(item);
+
+                subitem = new MenuItem();
+                subitem.Header = "Undo";
+                subitem.Click += Item_Click;
+                image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Copy_32x);
+                subitem.Icon = image;
+                item.Items.Add(subitem);
+            }
+
+            textEditor.InputBindings.Add(new InputBinding(new CommandViewDesigner(textEditor), new KeyGesture(Key.F7, ModifierKeys.Shift)));
+            textEditor.InputBindings.Add(new InputBinding(new CommandQuickActionsAndRefactorings(), new KeyGesture(Key.OemPlus, ModifierKeys.Control)));
+            textEditor.InputBindings.Add(new InputBinding(new CommandRename(), new ShowCommandGesture(Key.R, ModifierKeys.Control, Key.R, ModifierKeys.Control)));
+            textEditor.InputBindings.Add(new InputBinding(new CommandRemoveAndSortUsings(), new ShowCommandGesture(Key.R, ModifierKeys.Control, Key.G, ModifierKeys.Control)));
+            textEditor.InputBindings.Add(new InputBinding(new CommandPeekDefinition(), new KeyGesture(Key.F12, ModifierKeys.Alt)));
+            textEditor.InputBindings.Add(new InputBinding(new CommandGoToDefinition(editorWindow), new KeyGesture(Key.F12, ModifierKeys.None)));
+            textEditor.InputBindings.Add(new InputBinding(new CommandGoToImplementation(), new KeyGesture(Key.F12, ModifierKeys.Control)));
+            textEditor.InputBindings.Add(new InputBinding(new CommandFindAllReferences(), new KeyGesture(Key.F12, ModifierKeys.Shift)));
+            textEditor.InputBindings.Add(new InputBinding(new CommandViewCallHierarchy(), new ShowCommandGesture(Key.K, ModifierKeys.Control, Key.T, ModifierKeys.Control)));
+            textEditor.InputBindings.Add(new InputBinding(new CommandRunToCursor(), new KeyGesture(Key.F10, ModifierKeys.Control)));
+            textEditor.InputBindings.Add(new InputBinding(new CommandExecuteInInteractive(), new ShowCommandGesture(Key.E, ModifierKeys.Control, Key.E, ModifierKeys.Control)));
+            textEditor.InputBindings.Add(new InputBinding(new CommandCut(), new KeyGesture(Key.X, ModifierKeys.Control)));
+            textEditor.InputBindings.Add(new InputBinding(new CommandCopy(), new KeyGesture(Key.C, ModifierKeys.Control)));
+            textEditor.InputBindings.Add(new InputBinding(new CommandPaste(), new KeyGesture(Key.V, ModifierKeys.Control)));
+
+            return contextMenu;
+
+        }
+
+        public static TreeViewer treeViewer { get; set; }
+
+        public static CallHierarchyViewer hierarchyViewer { get; set; }
+
+        private void Item_Click_GoToDefinition(object sender, RoutedEventArgs e)
+        {
+            this.Dispatcher.BeginInvoke(new Action(() => { GetMemberOverCaret(); }));
+        }
+        private void Item_Click_CallHierarchy(object sender, RoutedEventArgs e)
+        {
+            this.Dispatcher.BeginInvoke(new Action(() =>
+            {
+
+                vs.OpenCallHierarchyTool("", null, "", null);
+
+                hierarchyViewer.editorWindow = this;
+            }));
+            }
+        private void Item_Click_FindReferences(object sender, RoutedEventArgs e)
+        {
+            this.Dispatcher.BeginInvoke(new Action(() =>
+            {
+                
+                vs.OpenReferencesTool("", null, "", null);
+
+                treeViewer.editorWindow = this;
+
+                string word = Editor.GetWordUnderMouse(textEditor.Document, textEditor.TextArea.Caret.Position);
+
+                if (string.IsNullOrEmpty(word))
+                    return;
+
+            var vp = editor.vs.GetProjectbyCompileItem(FileToLoad);
+
+            Tuple<string, string, ISymbol> t = editor.GetType(textEditor);
+
+         
+            ISymbol s = t.Item3 as ISymbol;
+
+            if (s == null)
+                return;
+
+            var r = editor.vs.GetAllSymbolReferences(s, FileToLoad, vp, StringReplace.Replace(textEditor.Document.Text));
+
+                if (r != null)
+                {
+                    List<ReferencedSymbol> list = r.ToList();
+
+                    treeViewer.LoadData(s, list, vs);
+                }    
+
+            }));
+        }
+        public void OpenFile(SourceData data)
+        {
+            var vp = vs.GetProjectbyCompileItem(FileToLoad);
+            vs.LoadFileFromProject("", vp, data.File, null, data.refs);
+        }
+        static private void Item_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("item clicked");
+        }
+
+        private void Item_Click_Copy(object sender, RoutedEventArgs e)
+        {
+            textEditor.Copy();
+        }
+        private void Item_Click_Paste(object sender, RoutedEventArgs e)
+        {
+            textEditor.Paste();
+        }
+        private void Item_Click_Cut(object sender, RoutedEventArgs e)
+        {
+            textEditor.Cut();
+        }
+        EditorWindow embedEditorWindow { get; set; }
+
+        StackPanel stackPanel { get; set; }
+
+        StackPanel buttonPanel { get; set; }
+
+        Button filenameButton { get; set; }
+
+        double prevWidth = 0;
+
+        Tuple<int, int> GetWidthAfterTransform()
+        {
+            int left = 0;
+
+            int allmargins = 0;
+
+            var v = this.textEditor.TextArea.LeftMargins.OfType<FoldingMargin>().FirstOrDefault();
+
+            if (v != null)
+                left = (int)v.ActualWidth;
+
+            foreach (FrameworkElement cc in this.textEditor.TextArea.LeftMargins)
+            {
+                allmargins += (int)cc.ActualWidth;
+            }
+            int margins = (int)((zoomScaleFactor) * (double)(allmargins - left));
+
+            int width = (int)( zoomScaleFactor * ((double)(textEditor.TextArea.ActualWidth - allmargins + left)));
+
+            return new Tuple<int,int>(width, margins);
+        }
+
+        private void Item_Click_PeekDefinition(object sender, RoutedEventArgs e)
+        {
+            double w = this.textEditor.TextArea.TextView.ActualWidth;
+            double h = this.ActualHeight;
+
+            prevWidth = textEditor.TextArea.ActualWidth;
+
+            if (sender != null)
+            {
+                embedEditorWindow = new EditorWindow();
+                embedEditorWindow.HideQuickClassBrowser();
+                embedEditorWindow.HideLeftMargin();
+                embedEditorWindow.HideZoom();
+                embedEditorWindow.Width = w;
+                embedEditorWindow.Height = h - 240;
+                embedEditorWindow.Visibility = Visibility.Visible;
+                embedEditorWindow.textEditor.IsReadOnly = true;
+                embedEditorWindow.Margin = new Thickness(0, 1, 0, 0);
+                embedEditorWindow.BorderThickness = new Thickness(0, 1, 0, 1);
+                embedEditorWindow.BorderBrush = Brushes.Gray;
+                embedEditorWindow.textEditor.Background = Brushes.LemonChiffon;
+                embedEditorWindow.Opacity = 1;
+                if (embedEditorWindow.breakPointMargin != null)
+                    embedEditorWindow.breakPointMargin.pen = new Pen(Brushes.LightBlue, 4);
+                embedEditorWindow.lineNumberMarginExtended.background = Brushes.LemonChiffon;
+
+                embedEditorWindow.textEditor.KeyDown += TextEditor_KeyDown1;
+
+                stackPanel = new StackPanel();
+                stackPanel.Orientation = Orientation.Vertical;
+                stackPanel.Background = Brushes.Transparent;
+                stackPanel.Opacity = 1;
+
+                StackPanel b = new StackPanel();
+                b.Orientation = Orientation.Horizontal;
+                b.Background = Brushes.White;
+                b.Height = 18;
+                b.Opacity = 1;
+                b.HorizontalAlignment = HorizontalAlignment.Right;
+
+                StackPanel button = new StackPanel();
+                button.Orientation = Orientation.Horizontal;
+                button.Background = Brushes.Gold;
+                button.HorizontalAlignment = HorizontalAlignment.Left;
+                button.Height = 18;
+                Button lb = new Button();
+                lb.Height = 16;
+                lb.FontSize = 11.5;
+                lb.Content = "File";
+                lb.HorizontalAlignment = HorizontalAlignment.Left;
+                lb.MinWidth = 100;
+                lb.Background = Brushes.Gold;
+                button.Children.Add(lb);
+                filenameButton = lb;
+                Image image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.PromoteTab_16x);
+                image.Height = 16;
+                image.Width = 16;
+                button.Children.Add(image);
+                image = new Image();
+                image.Source = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Close_16x);
+                image.Height = 16;
+                image.Width = 16;
+                image.MouseDown += PeekDefinition_Close_MouseDown;
+                button.Children.Add(image);
+
+
+                buttonPanel = button;
+
+                b.Children.Add(button);
+                stackPanel.Children.Add(b);
+                stackPanel.Children.Add(embedEditorWindow);
+            }
+
+            int left = 0;
+
+            int allmargins = 0;
+
+            var v = this.textEditor.TextArea.LeftMargins.OfType<FoldingMargin>().FirstOrDefault();
+
+            if (v != null)
+                left = (int)v.ActualWidth;
+
+            foreach(FrameworkElement cc in this.textEditor.TextArea.LeftMargins)
+            {
+                allmargins += (int)cc.ActualWidth;
+            }
+            Point point = new Point(allmargins - left, 0);
+            point = this.textEditor.TextArea.LayoutTransform.Transform(point);
+            int margins = (int)(( zoomScaleFactor) * (double) (allmargins - left));
+            int width = (int)((zoomScaleFactor) * (double)(textEditor.TextArea.ActualWidth - allmargins + left));
+            if (sender != null)
+            {
+                popup = new Popups();
+                embedEditorWindow.textEditor.TextArea.LayoutTransform = this.textEditor.TextArea.LayoutTransform;
+                popup.AllowsTransparency = true;
+                popup.Child = stackPanel;
+                popup.PlacementTarget = textEditor;
+                popup.Placement = PlacementMode.Relative;
+                popup.KeyDown += Popup_KeyDown;
+            }
+
+            popup.HorizontalOffset = margins;// point.X;// allmargins - left;
+            popup.VerticalOffset = 30;
+            
+            
+            popup.Height = /*this.ActualHeight + popupHeightPoint.X;// */h - 200 + 2;
+            popup.Width = width;// textEditor.TextArea.ActualWidth - margins; /*- allmargins + left*/;
+            popup.editorWindow = this;
+            popup.LoadHandlers();
+
+            embedEditorWindow.Width = width;// textEditor.TextArea.ActualWidth - margins;// - allmargins + left;
+
+
+            if (sender != null)
+            {
+                embedEditorWindow.textEditor.IsKeyboardFocusWithinChanged += TextEditor_IsKeyboardFocusWithinChanged;
+                embedEditorWindow.breakPointMargin.background = Brushes.LightGoldenrodYellow;
+                ((FrameworkElement)embedEditorWindow.breakPointMargin).InvalidateVisual();
+                PeekDefinition_GetMemberOverCaret();
+            }
+        }
+
+       public Size GetPopupSize()
+        {
+            Size size = new Size();
+
+
+
+            int left = 0;
+
+            int allmargins = 0;
+
+            double h = this.ActualHeight;
+
+            var v = this.textEditor.TextArea.LeftMargins.OfType<FoldingMargin>().FirstOrDefault();
+
+            if (v != null)
+                left = (int)v.ActualWidth;
+
+            foreach (FrameworkElement cc in this.textEditor.TextArea.LeftMargins)
+            {
+                allmargins += (int)cc.ActualWidth;
+            }
+
+            size.Height = h - 200 + 2;
+            size.Width = textEditor.TextArea.ActualWidth - allmargins + left;
+
+            embedEditorWindow.Width = textEditor.TextArea.ActualWidth - allmargins + left;
+
+            return size;
+        }
+
+        private void PeekDefinition_Close_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (popup == null)
+                return;
+            
+                popup.IsOpen = false;
+                popup.StaysOpen = false;
+                popup.Visibility = Visibility.Collapsed;
+                embedEditorWindow.Visibility = Visibility.Collapsed;
+                popup = null;
+            
+        }
+
+        private void TextEditor_IsKeyboardFocusWithinChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+           
+            if((bool)e.NewValue == false)
+            {
+                embedEditorWindow.textEditor.Background = Brushes.LightGray;
+                embedEditorWindow.breakPointMargin.background = Brushes.LightGray;
+                ((FrameworkElement)embedEditorWindow.breakPointMargin).InvalidateVisual();
+                embedEditorWindow.lineNumberMarginExtended.background = Brushes.LightGray;
+                buttonPanel.Background = Brushes.LightGray;
+                filenameButton.Background = Brushes.LightGray;
+                embedEditorWindow.lineNumberMarginExtended.InvalidateVisual();
+
+
+            }
+            else
+            {
+                if (popup != null)
+                    if (!popup.IsOpen)
+                        popup.IsOpen = true;
+                embedEditorWindow.textEditor.Background = Brushes.LemonChiffon;
+                embedEditorWindow.breakPointMargin.background = Brushes.LemonChiffon;
+                ((FrameworkElement)embedEditorWindow.breakPointMargin).InvalidateVisual();
+                embedEditorWindow.lineNumberMarginExtended.background = Brushes.LemonChiffon;
+                buttonPanel.Background = Brushes.Gold;
+                filenameButton.Background = Brushes.Gold;
+                embedEditorWindow.lineNumberMarginExtended.InvalidateVisual();
+            }
+            textEditor.InvalidateVisual();
+        }
+
+        private void TextEditor_KeyDown1(object sender, KeyEventArgs e)
+        {
+            if (popup == null)
+                return;
+            if (e.Key == Key.Escape)
+            {
+                popup.IsOpen = false;
+                popup.StaysOpen = false;
+                popup.Visibility = Visibility.Collapsed;
+                embedEditorWindow.Visibility = Visibility.Collapsed;
+                popup = null;
+            }
+        }
+
+        Popups popup = null;
+        private void Popup_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (popup == null)
+                return;
+            if (e.Key == Key.Escape)
+            {
+                popup.IsOpen = false;
+                popup.StaysOpen = false;
+                popup.Visibility = Visibility.Collapsed;
+                embedEditorWindow.Visibility = Visibility.Collapsed;
+                popup = null;
+            }
+        }
+
         public void LoadFile(string filename)
         {
             // FileToLoad = "C:\\MSBuildProjects-betas\\AvalonEdit.Editor\\EditorWindow.xaml.cs";
@@ -414,11 +1506,13 @@ namespace AvalonEdit.Editor
 
             textEditor.Load(filename);
 
+            textEditor.Document.FileName = filename;
+
         }
         System.Windows.Threading.DispatcherTimer eTimer =  new System.Windows.Threading.DispatcherTimer();// new System.Timers.Timer(1000);
         private void OnTimedEvent(object source, /*Elapsed*/EventArgs e)
         {
-            if (!textEditor.TextArea.TextView.IsFocused)
+            if (!textEditor.TextArea.IsFocused)
             {
                 if (toolTip != null)
                     toolTip.IsOpen = false;
@@ -473,8 +1567,19 @@ namespace AvalonEdit.Editor
         private void TextEditor_KeyDown(object sender, KeyEventArgs e)
         {
             Handled = true;
-
-            if (e.Key == Key.F8)
+           
+            if (e.Key == Key.Escape)
+            {
+                if (popup == null)
+                    return;
+               
+                {
+                    popup.IsOpen = false;
+                    if(embedEditorWindow != null)
+                    embedEditorWindow.Visibility = Visibility.Hidden;
+                }
+            }
+            else if (e.Key == Key.F8)
                 AddMarkerFromSelectionClick(null, null);
             else
             if (e.Key == Key.F12)
@@ -493,44 +1598,146 @@ namespace AvalonEdit.Editor
 
         public void GetMemberOverCaret()
         {
-            //string FileName = "C:\\MSBuildProjects-beta\\VSExplorer\\VSExplorer.csproj";
-
-            //string filename = "C:\\MSBuildProjects-beta\\VSExplorer\\ExplorerForms.cs";
-
-            //VSSolution vs = editor.vs;
-
-            //Document d = vs.GetDocument(FileName, filename);
-
-            //Document c = Formatter.FormatAsync(d).Result;
-
+   
             Tuple<string, string, ISymbol> t = editor.GetType(textEditor);
-
-            string file = "";
-
+            
             if (vs == null)
                 return;
-
-            
-
+   
             Thread newWindowThread = new Thread(new ThreadStart(() =>
             {
-                this.Dispatcher.BeginInvoke(new Action(() => { vs.LoadFileFromContent(t.Item1, null, t.Item2, t.Item3); }));
+                object obs = new object();
+
+                this.Dispatcher.BeginInvoke(new Action(() => {
+                    vs.LoadFileFromContent(t.Item1, null, t.Item2, t.Item3);
+                    //Task.Factory.StartNew(() =>
+                   // {
+                        
+                        //this.Dispatcher.BeginInvoke(new Action(() =>
+
+                       // {
+                         
+
+                            if (this.foldingStrategy is CommentAndMethodFoldingStrategy)
+                            {
+                        Thread.Sleep(2000);
+                        lock (obs)
+                        {
+                            this.SetAllFoldings(true);
+                            ((CommentAndMethodFoldingStrategy)this.foldingStrategy).UpdateFoldings(this.foldingManager, this.textEditor.Document);
+                            //else if (this.foldingStrategy is BraceFoldingStrategy)
+                            //    ((BraceFoldingStrategy)this.foldingStrategy).UpdateFoldings(this.foldingManager, this.textEditor.Document);
+                            this.InvalidateVisual();
+
+                        }
+                            }
+                       // }));
+
+                   // });
+                }));
             }));
-
-            // set the apartment state  
+            
             newWindowThread.SetApartmentState(ApartmentState.STA);
-
-            // make the thread a background thread  
+            
             newWindowThread.IsBackground = false;
-
-            // start the thread  
+            
             newWindowThread.Start();
 
         }
 
-       
+        string PeekDefinition_Content { get; set; }
 
-      
+        string PeekDefinition_FileName { get; set; }
+
+        Tuple<string, string, ISymbol> PeekDefinition_Tuple { get; set; }
+
+
+        public void PeekDefinition_GetMemberOverCaret()
+        {
+            
+            Tuple<string, string, ISymbol> t = editor.GetType(textEditor);
+
+            PeekDefinition_Tuple = t;
+
+            if (vs == null)
+                return;
+
+            if (!string.IsNullOrEmpty(t.Item1))
+            {
+                popup.IsOpen = true;
+                PeekDefinition_Content = t.Item1;
+                embedEditorWindow.LoadContent(PeekDefinition_Content);
+                embedEditorWindow.vs = vs;
+                embedEditorWindow.LoadFromProject(vs, t.Item3);
+                
+                Task.Factory.StartNew(() =>
+                {
+                    Thread.Sleep(2000);
+                    embedEditorWindow.Dispatcher.BeginInvoke(new Action(() =>
+
+                    {
+                        embedEditorWindow.SetAllFoldings(true);
+                        ((CommentAndMethodFoldingStrategy)embedEditorWindow.foldingStrategy).UpdateFoldings(embedEditorWindow.foldingManager, embedEditorWindow.textEditor.Document);
+                        embedEditorWindow.InvalidateVisual();
+                    }));
+
+                });
+                string name = "";
+                if (t.Item3 != null)
+                    name = t.Item3.Name;
+                filenameButton.Content = name + " [from metadata]";
+            }
+            else if (!string.IsNullOrEmpty(t.Item2))
+            {
+                popup.IsOpen = true;
+                PeekDefinition_FileName = t.Item2;
+                embedEditorWindow.LoadFile(PeekDefinition_FileName);
+                embedEditorWindow.vs = vs;
+                embedEditorWindow.LoadFromProject(vs, t.Item3);
+                Task.Factory.StartNew(() =>
+                {
+                    Thread.Sleep(2000);
+                    embedEditorWindow.Dispatcher.BeginInvoke(new Action(() =>
+
+                    {
+                        //embedEditorWindow.SetAllFoldings(true);
+                        //((BraceFoldingStrategy)embedEditorWindow.foldingStrategy).UpdateFoldings(embedEditorWindow.foldingManager, embedEditorWindow.textEditor.Document);
+                        //embedEditorWindow.InvalidateVisual();
+                    }));
+
+                });
+                filenameButton.Content = System.IO.Path.GetFileName(PeekDefinition_FileName);
+            }
+            else
+            {
+                if (popup == null)
+                    return;
+                
+                    popup.IsOpen = false;
+                    popup.StaysOpen = false;
+                    popup.Visibility = Visibility.Collapsed;
+                    embedEditorWindow.Visibility = Visibility.Collapsed;
+                    popup = null;
+                
+
+            }
+
+            // Thread newWindowThread = new Thread(new ThreadStart(() =>
+            // {
+            //     this.Dispatcher.BeginInvoke(new Action(() => { vs.LoadFileFromContent(t.Item1, null, t.Item2, t.Item3); }));
+            //  }));
+
+
+            //newWindowThread.SetApartmentState(ApartmentState.STA);
+
+            //newWindowThread.IsBackground = false;
+
+            //newWindowThread.Start();
+
+        }
+
+
+
         public void FormatDocument()
         {
             string FileName = "C:\\MSBuildProjects-beta\\VSExplorer\\VSExplorer.csproj";
@@ -706,17 +1913,27 @@ namespace AvalonEdit.Editor
                 lineNumberMarginExtended.enableLineExtended = enable;
         }
 
-        public LineNumberMarginExtended lineNumberMarginExtended { get; set; }
+        public LineNumberMargin lineNumberMarginExtended { get; set; }
+
+        public BreakPointMargin breakPointMargin { get; set; }
+
+        BreakPointMargin bl { get; set; }
+
+        public void HideLeftMargin()
+        {
+            textEditor.TextArea.LeftMargins.Remove(bl);
+            textEditor.InvalidateVisual();
+        }
 
         public void LoadMargins()
         {
-            BreakPointMargin bl = new BreakPointMargin();
+            bl = new BreakPointMargin();
             bl.Margin = new Thickness(0, 0, 0, 0);
             bl.background = System.Windows.Media.Brushes.LightGray;
             bl.MouseDown += Bl_MouseDown;
 
 
-            LineNumberMarginExtended b = new LineNumberMarginExtended();
+            LineNumberMargin b = new LineNumberMargin();
             b.Margin = new Thickness(5, 0, 0, 0);
             b.SetValue(Control.ForegroundProperty, new SolidColorBrush(Color.FromArgb(200, 111, 196, 220)));
             lineNumberMarginExtended = b;
@@ -725,23 +1942,13 @@ namespace AvalonEdit.Editor
             br.Margin = new Thickness(0, 0, 0, 0);
             br.pen = new System.Windows.Media.Pen(System.Windows.Media.Brushes.LightGreen, 3);
             br.margin = 25;
-            //Line ls = DottedLineMargin.Create() as Line;
-            //ls.Margin = new Thickness(5, 0, 0, 0);
-            //br.LoadLine(ls);
-
+            breakPointMargin = br;
+            
             textEditor.TextArea.LeftMargins.Add(bl);
             textEditor.TextArea.LeftMargins.Add(b);
             textEditor.TextArea.LeftMargins.Add(br);
             textEditor.TextArea.TextView.Margin = new Thickness(15, 0, 0, 0);
-            //textEditor.TextArea.LeftMargins.Add(ls);
-
-            //textEditor.ShowLineNumbers = true;
-
-            //textEditor.TextArea.SelectionBorder = null;
-
-            //textEditor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinition("C#");
-            //textEditor.SyntaxHighlighting = customHighlighting;
-            // initial highlighting now set by XAML
+            
         }
 
         private void Bl_MouseDown(object sender, MouseButtonEventArgs e)
@@ -768,8 +1975,13 @@ namespace AvalonEdit.Editor
                 var line = pos.Value.Line;
                 var column = pos.Value.Column;
                 string wordHover = string.Empty;
+
                 var offset = textEditor.Document.GetOffset(line, column);
+                if (offset < 0)
+                    return;
                 if (offset >= textEditor.Document.TextLength) offset = textEditor.Document.TextLength - 1;
+                if (offset < 0)
+                    return;
                 var textAtOffset = textEditor.Document.GetText(offset, 1);
 
                 while (!string.IsNullOrWhiteSpace(textAtOffset))
@@ -836,6 +2048,7 @@ namespace AvalonEdit.Editor
 
         private void Caret_PositionChanged(object sender, EventArgs e)
         {
+            
             var v = textEditor.TextArea.TextView;
             var pos = textEditor.TextArea.Caret.Position;
             if (pos != null)
@@ -867,7 +2080,11 @@ namespace AvalonEdit.Editor
                         return;
                     }
 
-                    if (offset >= textEditor.Document.TextLength) offset = textEditor.Document.TextLength - 1;
+                    if (offset <= 0)
+                        return;
+                    if (offset >= textEditor.Document.TextLength)
+                        
+                        offset = textEditor.Document.TextLength - 1;
                     var textAtOffset = textEditor.Document.GetText(offset, 1);
 
                     while (!string.IsNullOrWhiteSpace(textAtOffset))
@@ -913,6 +2130,17 @@ namespace AvalonEdit.Editor
 
         private void TextView_MouseDown(object sender, MouseButtonEventArgs e)
         {
+
+            
+
+            if(e.RightButton == MouseButtonState.Pressed)
+            {
+
+                ContextMenu.PlacementTarget = textEditor.TextArea.TextView;
+                ContextMenu.IsOpen = true;
+                return;
+            }
+
             var v = textEditor.TextArea.TextView;
             TextViewPosition? pos = textEditor.GetPositionFromPoint(e.GetPosition(textEditor));
             if (pos != null)
@@ -1031,6 +2259,42 @@ namespace AvalonEdit.Editor
 
         }
 
+        public int GetReferenceNumber(int line)
+        {
+            
+            {
+                DocumentLine gv = textEditor.Document.GetLineByNumber(line);
+                if (gv.obs != null)
+                    if (gv.obs is ISymbol)
+                    {
+                        string FileName = ProjectToLoad;
+
+                        string filename = FileToLoad;
+
+                        editor.vp = editor.vs.GetProjectbyFileName(FileName);
+
+                        ISymbol s = gv.obs as ISymbol;
+                        var r = editor.vs.GetAllSymbolReferences(s, filename, editor.vp, StringReplace.Replace(textEditor.Document.Text));
+
+                        if (r == null)
+                            return 0;
+
+                        int n = 0;
+                        foreach(ReferencedSymbol b in r)
+                        {
+                            int cc = b.Locations.Count();
+                            if (cc == 0)
+                                n += 0;
+                            else n += cc;
+                        }
+
+                        return n;
+                        
+                    }
+                return 0;
+            }
+        }
+
         BackgroundRenderer r { get; set; }
 
         private void TextView_MouseMove(object sender, MouseEventArgs e)
@@ -1101,7 +2365,7 @@ namespace AvalonEdit.Editor
                 //   if (s.Trim().StartsWith("string"))
                 //       MessageBox.Show("c");
 
-                textEditor.Document.Insert(g, "\n  References - \n", objects[v]);
+                textEditor.Document.Insert(g, "  References -          \n", objects[v]);
 
                 ns.Add(textEditor.Document.GetLineByOffset(g));
 
@@ -1110,12 +2374,77 @@ namespace AvalonEdit.Editor
 
             foreach (var b in ns)
             {
-             
+                 textEditor.Document.Update(b);
+            }
+            
+            vs.UpdateSyntaxTree(FileToLoad, StringReplace.Replace(textEditor.Document.Text));
+
+            
+
+            this.Dispatcher.BeginInvoke(new Action(() => {
+
+
+                List<int> offsets = new List<int>();
+
+                Dictionary<int,int> data = new Dictionary<int,int>();
+
+                
+                for(int j = 1; j <= textEditor.Document.Lines.Count; j++)
+                {
+                    var c = textEditor.Document.GetLineByNumber(j);
+
+                    int line = c.LineNumber;
+
+                    int g = c.Offset;
+
+                    if (c.obs == null)
+                        continue;
+
+                    int n = GetReferenceNumber(line);
+
+                    offsets.Add(line);
+                    data.Add(line, n);
+
+                    //textEditor.Document.Text = textEditor.Document.Text.Remove(g + 15, 5).Insert(g + 15, n.ToString().PadRight(5));
+
+                    //vs.UpdateSyntaxTree(FileToLoad, textEditor.Document.Text);
+                }
+
+                offsets.Sort();
+
+                offsets.Reverse();
+
+                string content = textEditor.Document.Text;
+
+                foreach(int v in offsets)
+                {
+
+                    var c = textEditor.Document.GetLineByNumber(v);
+
+                    var obs = c.obs;
+
+                    int n = data[v];
+
+                    int g = c.Offset;
+
+                    //content = content.Remove(g + 15, 5).Insert(g + 15, n.ToString().PadRight(5));
+
+                    textEditor.Document.Remove(g + 15, 5);
+
+                    textEditor.Document.Insert(g + 15, n.ToString().PadRight(5));
+
+                    var cc = textEditor.Document.GetLineByNumber(v);
+
+                    cc.obs = obs;
+                }
+
+                //textEditor.Document.Text = content;
+
+                vs.UpdateSyntaxTree(FileToLoad, textEditor.Document.Text);
+
                
 
-                textEditor.Document.Update(b);
-
-            }
+            }));
         }
 
         public void UpdateReferencesForContent(List<int> mb, Dictionary<int, ISymbol> objects)
@@ -1154,6 +2483,21 @@ namespace AvalonEdit.Editor
                 textEditor.Document.Update(dd); // b
 
             }
+
+            var t = Task.Run(async delegate
+            {
+                foreach(int v in objects.Keys)
+                {
+                    int g = textEditor.Document.GetLineByOffset(v).Offset;
+
+                    int line = textEditor.Document.GetLineByOffset(v).LineNumber;
+                    
+                    int n = GetReferenceNumber(line);
+
+                    textEditor.Document.Text = textEditor.Document.Text.Remove(g + 10, 5).Insert(g + 10, n.ToString().PadRight(5));
+                    
+                }
+            });
         }
 
         public bool shouldUpdate = false;
@@ -1202,9 +2546,13 @@ namespace AvalonEdit.Editor
             return 0;
         }
 
-
+        
         void textEditor_TextArea_TextEntered(object sender, TextCompositionEventArgs e)
         {
+
+            if (textEditor.IsReadOnly)
+                return;
+
             shouldUpdate = true;
 
             if (string.IsNullOrEmpty(e.Text))
@@ -1487,9 +2835,13 @@ namespace AvalonEdit.Editor
             
             foreach (var s in foldingManager.AllFoldings)
                 s.IsFolded = folded;
+            
         }
         void UpdateFoldings()
         {
+            if (shouldPopupUpdate)
+                PopupUpdate();
+
             if (foldingStrategy is BraceFoldingStrategy)
             {
                 ((BraceFoldingStrategy)foldingStrategy).UpdateFoldings(foldingManager, textEditor.Document);
@@ -1606,36 +2958,30 @@ namespace AvalonEdit.Editor
 
             textEditor.IsReadOnly = false;
         }
-        public void UpdateSourceDocumentForContent(ISymbol symbol = null)
+        public List<ISymbol> UpdateSourceDocumentForContent(ISymbol symbol = null)
         {
+
+            List<ISymbol> list = new List<ISymbol>();
 
             textEditor.IsReadOnly = true;
 
             if (symbol == null)
-                return;
+                return list;
 
             editor.GetMembers(textEditor.Document.Text, true);
 
             INamedTypeSymbol cc = symbol as INamedTypeSymbol;
+
+            if (cc == null)
+                cc = symbol.ContainingType as INamedTypeSymbol;
             
             if(cc == null)
-                return;
-
-           // ISymbol symbolToLoad = vs.GetSymbol(symbol);
-
-           
-
-
+                return list;
+            
             List<ISymbol> symbols = cc.GetMembers().ToList();
-
-
-
             
-            
-
             allMembers = new List<ISymbol>();
-
-
+            
             mb = new List<int>();
             
             foreach (ISymbol item in symbols)
@@ -1688,8 +3034,6 @@ namespace AvalonEdit.Editor
 
             foreach (ISymbol s in allMembers)
             {
-
-            
                 
                 if(s is IEventSymbol)
                 {
@@ -1957,6 +3301,8 @@ namespace AvalonEdit.Editor
             SetAllFoldings(true);
 
             textEditor.IsReadOnly = false;
+
+            return cs;
         }
 
         public VSSolution vs { get; set; }
@@ -1986,23 +3332,48 @@ namespace AvalonEdit.Editor
                 
                 this.qcb.editorWindow = this;
 
+                List<ISymbol> cs = null;
+
                 this.Dispatcher.Invoke((Action)(() =>
                 {
                     if (vp == null)
-                        this.UpdateSourceDocumentForContent(symbol);
+                    {
+                        cs = this.UpdateSourceDocumentForContent(symbol);
+
+                    }
                     else this.UpdateSourceDocument();
 
                     this.qcb.DoUpdate(editor.symbols);
 
                     this.LoadProjectTypes(editor.GetTypes());
 
+                    ISymbol s = symbol;
+
+                    if (cs == null)
+                     
+                    if (cs != null || symbol != null)
+                    {
+                            if(cs != null && cs.Count > 0)
+                        s = cs.Select(x => x).Where(y => y.Name == s.Name).FirstOrDefault();
+
+                        if (s != null)
+                        {
+                            if (s.Locations != null && s.Locations.Count() > 0 && s.Locations[0].IsInSource)
+                            {
+                                int line = this.textEditor.Document.GetLineByOffset(s.Locations[0].SourceSpan.Start).LineNumber;
+                                this.textEditor.ScrollToLine(line);
+                                    this.textEditor.TextArea.Caret.Line = line;
+                                    this.textEditor.TextArea.TextView.Focus();
+                            }
+                        }
+                    }
                     Task task = Task.Run(async () =>
                     {
                         await this.CodeCompletionPreview();
                     });
 
 
-
+                    
 
                 }));
             });
@@ -2356,8 +3727,65 @@ namespace AvalonEdit.Editor
         }
 
     }
+
+    public class Popups : Popup
+    {
+
+        public Popups(): base()
+        {
+
+            
+
+        }
+
+        public EditorWindow editorWindow { get; set; }
+
+        public void LoadHandlers()
+        {
+            if(this.PlacementTarget != null)
+            {
+                if(this.PlacementTarget is FrameworkElement)
+                {
+                    FrameworkElement element = this.PlacementTarget as FrameworkElement;
+
+                    element.SizeChanged += Element_SizeChanged;
+
+                }
+            }
+        }
+
+        private void Element_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (editorWindow == null)
+                return;
+            Size size = editorWindow.GetPopupSize();
+            this.Width = size.Width;
+            this.Height = size.Height;
+            //editorWindow.embedEditorWindow.Width = textEditor.TextArea.ActualWidth - allmargins + left;
+            this.InvalidateVisual();
+        }
+
+        public void ReloadIfNeeded()
+        {
+            Element_SizeChanged(null, null);
+        }
+    }
+
 }
 
    
 
 
+//<!--<avalonEdit:TextEditor.Resources>
+//                            <Style TargetType = "ScrollBar" >
+//                                < Style.Triggers >
+//                                    < Trigger Property="Orientation" Value="Vertical">
+//                                        <Setter Property = "Width" Value="14"/>
+                                        
+//                                    </Trigger>
+                                
+//                                </Style.Triggers>
+                               
+                               
+//                            </Style>-->
+//                        </avalonEdit:TextEditor.Resources>

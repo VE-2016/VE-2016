@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="AvalonEdit.Editor.FindForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AvalonEdit.Editor"
+             Background="Lavender"
+             mc:Ignorable="d" Height="69" Width="297.736">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="22" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="22" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Expander Background="LightGray" Width="25" ToolTip="Toggle to switch between find and replace mode"></Expander>
+            <ComboBox Width="239" IsEditable="True" IsEnabled="True" IsReadOnly="False"></ComboBox>
+            <StackPanel Orientation="Horizontal">
+                <Image Width="16" Height="16" x:Name="FindNext"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image Width="16" Height="16" x:Name="ButtonClose"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <ComboBox Width="239" Margin="25,0,0,0" IsEditable="True"></ComboBox>
+            <StackPanel Orientation="Horizontal">
+                <Image Width="16" Height="16" x:Name="ButtonReplaceNext"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image Width="16" Height="16" x:Name="ButtonReplaceAll"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="16" Height="16" x:Name="ButtonMatchCase"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image Width="16" Height="16" x:Name="ButtonMatchWord"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image Width="16" Height="16" x:Name="ButtonRegularExpression"/>
+            </StackPanel>
+            <ComboBox Width="244" SelectedIndex="0"  IsEditable="True" IsEnabled="True" IsReadOnly="True">
+                <ComboBoxItem>Entire Solution</ComboBoxItem>
+                <ComboBoxItem>Current Document</ComboBoxItem>
+                <ComboBoxItem>Current Blockt</ComboBoxItem>
+                <ComboBoxItem>All Open Documents</ComboBoxItem>
+            </ComboBox>
+           
+        </StackPanel>
+    </Grid>
+</UserControl>

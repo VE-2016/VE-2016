@@ -109,10 +109,16 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AvalonEditorCommands.cs" />
+    <Compile Include="Converters.cs" />
+    <Compile Include="FindForm.xaml.cs" />
     <Compile Include="QuickClassBrowser.cs" />
     <Compile Include="LinkViewer.cs" />
     <Compile Include="ServiceContainer.cs" />
     <Compile Include="TextMarkerService.cs" />
+    <Compile Include="TreeListView.cs" />
+    <Compile Include="TreeViewer.xaml.cs" />
+    <Compile Include="CallHierarchy.xaml.cs" />
     <Page Include="CompletionControls.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -130,7 +136,19 @@
     <Compile Include="EditorWindow.xaml.cs">
       <DependentUpon>EditorWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="FindForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="LinkViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TreeViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CallHierarchy.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -156,7 +174,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomHighlighting.xshd" />
+    <EmbeddedResource Include="CustomHighlighting.xshd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

@@ -284,6 +284,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Roslyn-all-in-one\System.Xml.XmlDocument.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutApplicationForm.cs">
@@ -298,6 +299,7 @@
     <Compile Include="AddCommandForm.Designer.cs">
       <DependentUpon>AddCommandForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Avalon\Host.cs" />
     <Compile Include="ClipboardForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1240,6 +1242,10 @@
     <ProjectReference Include="..\DockProjects\DockProjects.csproj">
       <Project>{103edc9b-ffa0-4752-a905-fcc7a0724213}</Project>
       <Name>DockProjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Editor\AvalonEdit.Editor\AvalonEdit.Editor.csproj">
+      <Project>{EE9713D5-CD63-4836-88FF-75C3809FF1DB}</Project>
+      <Name>AvalonEdit.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="..\Editor\CodeEditor\CodeEditor.csproj">
       <Project>{94bfa44a-f4d0-4605-88e6-3add498f5e16}</Project>

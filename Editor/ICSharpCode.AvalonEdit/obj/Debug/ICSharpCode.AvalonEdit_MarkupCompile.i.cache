@@ -16,5 +16,5 @@ DEBUG;
 18-937462455
 CodeCompletion\CompletionList.xaml;CodeCompletion\InsightWindow.xaml;Search\SearchPanel.xaml;Search\DropDownButton.xaml;TextEditor.xaml;themes\generic.xaml;
 
-True
+False
 

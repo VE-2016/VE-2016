@@ -1,6 +1,7 @@
 using AIMS.Libraries.CodeEditor;
 using AIMS.Libraries.Scripting.ScriptControl;
 using AIMS.Libraries.Scripting.ScriptControl.Properties;
+using AvalonEdit.Editor;
 using DockProject;
 using GACProject;
 using Microsoft.Diagnostics.Runtime;
@@ -77,9 +78,7 @@ namespace WinExplorer
             _components = new System.ComponentModel.Container();
 
             #endregion Form Setup
-
-
-           
+            
             Application.EnableVisualStyles();
 
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
@@ -186,6 +185,8 @@ namespace WinExplorer
             LoadDT("Data Sources", false);
             LoadQE("SQL Server Explorer", false);
             LoadTE("Test Explorer", false);
+            LoadHW("References", false);
+            LoadHC("Call Hierarchy", false);
 
             ResumeLayout();
 
@@ -313,7 +314,28 @@ namespace WinExplorer
 
             appLoadedEvent += LoadBreakpoints;
 
-            
+            VSSolution.OpenReferences += VSSolution_OpenReferences;
+
+            VSSolution.OpenCallHierarchy += VSSolution_OpenCallHierarchy;
+
+        }
+
+        private void VSSolution_OpenCallHierarchy(object sender, OpenReferenceEventArgs e)
+        {
+            if (hc == null)
+                return;
+            hc.Show(dock, DockState.DockBottom);
+
+            EditorWindow.hierarchyViewer = hcc.dv;
+        }
+
+        private void VSSolution_OpenReferences(object sender, OpenReferenceEventArgs e)
+        {
+            if (hw == null)
+                return;
+            hw.Show(dock, DockState.DockBottom);
+
+            EditorWindow.treeViewer = hwf.dv;
         }
 
         //protected override void WndProc(ref Message m)
@@ -399,9 +421,7 @@ namespace WinExplorer
                 if (pr0.mapper != null)
                 {
                     file = _sv.mapper.classname;
-
                     _sv.projectmapper(file, node, false);
-
                     return;
                 }
 
@@ -1079,7 +1099,7 @@ namespace WinExplorer
                 qe.Show(dock, DockState.DockLeft);
         }
         public ToolWindow te { get; set; }
-        public MSTestForm tef { get; set; }
+        public TreeViewer_WinformsHost tef { get; set; }
 
         public void LoadTE(string name, bool load)
         {
@@ -1092,7 +1112,7 @@ namespace WinExplorer
 
             if (tef == null)
             {
-                tef = new MSTestForm();
+                tef = new TreeViewer_WinformsHost();
                 tef.TopLevel = false;
                 tef.FormBorderStyle = FormBorderStyle.None;
                 tef.Dock = DockStyle.Fill;
@@ -1191,6 +1211,52 @@ namespace WinExplorer
 
             if (load)
                 tx.Show(dock, DockState.DockLeft);
+        }
+        public ToolWindow hw { get; set; }
+        public AvalonEdit.Host.TreeViewer_WinformsHost hwf { get; set; }
+
+        public void LoadHW(string name, bool load)
+        {
+            hw = new ToolWindow();
+            hw.Text = name;
+            hw.HideOnClose = true;
+            hw.FormBorderStyle = FormBorderStyle.None;
+            hw.TabText = name;
+            hw.TopLevel = false;
+            if (hwf == null)
+            {
+                hwf = new AvalonEdit.Host.TreeViewer_WinformsHost();
+                
+                hwf.Dock = DockStyle.Fill;
+                hwf.Show();
+            }
+            hw.Controls.Add(hwf);
+            hw.types = "hw";
+            if (load)
+                hw.Show(dock, DockState.DockBottom);
+        }
+        public ToolWindow hc { get; set; }
+        public AvalonEdit.Host.CallHierarchyViewer_WinformsHost hcc { get; set; }
+
+        public void LoadHC(string name, bool load)
+        {
+            hc = new ToolWindow();
+            hc.Text = name;
+            hc.HideOnClose = true;
+            hc.FormBorderStyle = FormBorderStyle.None;
+            hc.TabText = name;
+            hc.TopLevel = false;
+            if (hcc == null)
+            {
+                hcc = new AvalonEdit.Host.CallHierarchyViewer_WinformsHost();
+
+                hcc.Dock = DockStyle.Fill;
+                hcc.Show();
+            }
+            hc.Controls.Add(hcc);
+            hc.types = "hc";
+            if (load)
+                hc.Show(dock, DockState.DockBottom);
         }
 
         public ToolWindow nt { get; set; }
@@ -1777,6 +1843,10 @@ namespace WinExplorer
                     return tx;
                 else if (parsedStrings[1] == "te")
                     return te;
+                else if (parsedStrings[1] == "hw")
+                    return hw;
+                else if (parsedStrings[1] == "hc")
+                    return hc;
                 return null;
             }
         }
