@@ -29,6 +29,8 @@ Application for creating, editing, building Visual Studio C# Windows Form projec
 - Reflection
 
 Source code files edited in AvalonEdit component, intelisense completion and parse messages are taken from Roslyn CodeAnalysis module.
+Roslyn stack based member type searching.
+
 
 Binary installer availible at Visual Studio Marketplace
 
