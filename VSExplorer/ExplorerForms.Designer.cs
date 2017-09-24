@@ -25,7 +25,6 @@ namespace WinExplorer
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExplorerForms));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -126,7 +125,10 @@ namespace WinExplorer
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.projectToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.websiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.repositoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.projectFromSourcesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem16 = new System.Windows.Forms.ToolStripMenuItem();
             this.projectSolutionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
@@ -351,9 +353,6 @@ namespace WinExplorer
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem40 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.repositoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.websiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.projectFromSourcesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -445,7 +444,6 @@ namespace WinExplorer
             // toolStripButton11
             // 
             this.toolStripButton11.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            //this.toolStripButton11.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton11.Image")));
             this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton11.Name = "toolStripButton11";
             this.toolStripButton11.Size = new System.Drawing.Size(87, 22);
@@ -520,7 +518,6 @@ namespace WinExplorer
             // toolStripButton13
             // 
             this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            //this.toolStripButton13.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton13.Image")));
             this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.toolStripButton13.Name = "toolStripButton13";
             this.toolStripButton13.Size = new System.Drawing.Size(23, 22);
@@ -531,7 +528,6 @@ namespace WinExplorer
             // toolStripButton14
             // 
             this.toolStripButton14.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            //this.toolStripButton14.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton14.Image")));
             this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton14.Name = "toolStripButton14";
             this.toolStripButton14.Size = new System.Drawing.Size(33, 22);
@@ -654,7 +650,6 @@ namespace WinExplorer
             // toolStripButton3
             // 
             this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            //this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(35, 22);
@@ -873,7 +868,6 @@ namespace WinExplorer
             // 
             // newItemToolStripMenuItem
             // 
-            //this.newItemToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newItemToolStripMenuItem.Image")));
             this.newItemToolStripMenuItem.Name = "newItemToolStripMenuItem";
             this.newItemToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.newItemToolStripMenuItem.Text = "New Item";
@@ -881,7 +875,6 @@ namespace WinExplorer
             // 
             // existingItemToolStripMenuItem
             // 
-            //this.existingItemToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("existingItemToolStripMenuItem.Image")));
             this.existingItemToolStripMenuItem.Name = "existingItemToolStripMenuItem";
             this.existingItemToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.existingItemToolStripMenuItem.Text = "Existing Item";
@@ -889,7 +882,6 @@ namespace WinExplorer
             // 
             // toolStripMenuItem20
             // 
-            //this.toolStripMenuItem20.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem20.Image")));
             this.toolStripMenuItem20.Name = "toolStripMenuItem20";
             this.toolStripMenuItem20.Size = new System.Drawing.Size(157, 22);
             this.toolStripMenuItem20.Text = "New Folder";
@@ -934,7 +926,6 @@ namespace WinExplorer
             // 
             // setAsMainProjectToolStripMenuItem
             // 
-            //this.setAsMainProjectToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("setAsMainProjectToolStripMenuItem.Image")));
             this.setAsMainProjectToolStripMenuItem.Name = "setAsMainProjectToolStripMenuItem";
             this.setAsMainProjectToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.setAsMainProjectToolStripMenuItem.Text = "Set as StartUp Project";
@@ -1018,7 +1009,6 @@ namespace WinExplorer
             // 
             // projectPropertiesToolStripMenuItem
             // 
-            //this.projectPropertiesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("projectPropertiesToolStripMenuItem.Image")));
             this.projectPropertiesToolStripMenuItem.Name = "projectPropertiesToolStripMenuItem";
             this.projectPropertiesToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.projectPropertiesToolStripMenuItem.Text = "Project properties";
@@ -1159,7 +1149,6 @@ namespace WinExplorer
             // 
             // existingItemToolStripMenuItem1
             // 
-            //this.existingItemToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("existingItemToolStripMenuItem1.Image")));
             this.existingItemToolStripMenuItem1.Name = "existingItemToolStripMenuItem1";
             this.existingItemToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
             this.existingItemToolStripMenuItem1.Text = "Existing Item";
@@ -1209,7 +1198,6 @@ namespace WinExplorer
             // 
             // propertiesToolStripMenuItem
             // 
-            //this.propertiesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("propertiesToolStripMenuItem.Image")));
             this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
             this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.propertiesToolStripMenuItem.Text = "Properties";
@@ -1279,18 +1267,37 @@ namespace WinExplorer
             // 
             // projectToolStripMenuItem2
             // 
-            //this.projectToolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("projectToolStripMenuItem2.Image")));
+            this.projectToolStripMenuItem2.Image = global::WinExplorer.ve_resource.WebURL_32x;
             this.projectToolStripMenuItem2.Name = "projectToolStripMenuItem2";
-            this.projectToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.projectToolStripMenuItem2.Size = new System.Drawing.Size(183, 22);
             this.projectToolStripMenuItem2.Text = "Project";
             this.projectToolStripMenuItem2.Click += new System.EventHandler(this.projectToolStripMenuItem2_Click);
             // 
+            // websiteToolStripMenuItem
+            // 
+            this.websiteToolStripMenuItem.Image = global::WinExplorer.ve_resource.WebURL_32x;
+            this.websiteToolStripMenuItem.Name = "websiteToolStripMenuItem";
+            this.websiteToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.websiteToolStripMenuItem.Text = "Website";
+            // 
+            // repositoryToolStripMenuItem
+            // 
+            this.repositoryToolStripMenuItem.Name = "repositoryToolStripMenuItem";
+            this.repositoryToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.repositoryToolStripMenuItem.Text = "Repository";
+            // 
             // fileToolStripMenuItem
             // 
-            //this.fileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fileToolStripMenuItem.Image")));
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
+            // 
+            // projectFromSourcesToolStripMenuItem
+            // 
+            this.projectFromSourcesToolStripMenuItem.Name = "projectFromSourcesToolStripMenuItem";
+            this.projectFromSourcesToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.projectFromSourcesToolStripMenuItem.Text = "Project from sources";
             // 
             // toolStripMenuItem16
             // 
@@ -1382,7 +1389,6 @@ namespace WinExplorer
             // 
             // toolStripMenuItem14
             // 
-            //this.toolStripMenuItem14.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem14.Image")));
             this.toolStripMenuItem14.Name = "toolStripMenuItem14";
             this.toolStripMenuItem14.Size = new System.Drawing.Size(230, 22);
             this.toolStripMenuItem14.Text = "Close Solution";
@@ -1440,7 +1446,6 @@ namespace WinExplorer
             // 
             // exitToolStripMenuItem
             // 
-            //this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F3)));
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
@@ -1679,7 +1684,6 @@ namespace WinExplorer
             // 
             // solutionExplorerToolStripMenuItem
             // 
-            //this.solutionExplorerToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("solutionExplorerToolStripMenuItem.Image")));
             this.solutionExplorerToolStripMenuItem.Name = "solutionExplorerToolStripMenuItem";
             this.solutionExplorerToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.solutionExplorerToolStripMenuItem.Text = "Solution Explorer";
@@ -2706,14 +2710,12 @@ namespace WinExplorer
             // 
             // cutToolStripMenuItem
             // 
-            //this.cutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripMenuItem.Image")));
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.cutToolStripMenuItem.Text = "Cut";
             // 
             // copyToolStripMenuItem
             // 
-            //this.copyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripMenuItem.Image")));
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.copyToolStripMenuItem.Text = "Copy";
@@ -2728,7 +2730,6 @@ namespace WinExplorer
             // 
             // pasteToolStripMenuItem
             // 
-            //this.pasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripMenuItem.Image")));
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.pasteToolStripMenuItem.Text = "Delete";
@@ -2808,7 +2809,6 @@ namespace WinExplorer
             // 
             // newItemToolStripMenuItem2
             // 
-            //this.newItemToolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("newItemToolStripMenuItem2.Image")));
             this.newItemToolStripMenuItem2.Name = "newItemToolStripMenuItem2";
             this.newItemToolStripMenuItem2.Size = new System.Drawing.Size(154, 22);
             this.newItemToolStripMenuItem2.Text = "New Item";
@@ -2816,14 +2816,12 @@ namespace WinExplorer
             // 
             // exisitngItemToolStripMenuItem
             // 
-            //this.exisitngItemToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exisitngItemToolStripMenuItem.Image")));
             this.exisitngItemToolStripMenuItem.Name = "exisitngItemToolStripMenuItem";
             this.exisitngItemToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.exisitngItemToolStripMenuItem.Text = "Exisitng Item";
             // 
             // newFolderToolStripMenuItem2
             // 
-            //this.newFolderToolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("newFolderToolStripMenuItem2.Image")));
             this.newFolderToolStripMenuItem2.Name = "newFolderToolStripMenuItem2";
             this.newFolderToolStripMenuItem2.Size = new System.Drawing.Size(154, 22);
             this.newFolderToolStripMenuItem2.Text = "New Folder";
@@ -2882,14 +2880,12 @@ namespace WinExplorer
             // 
             // toolStripMenuItem36
             // 
-            //this.toolStripMenuItem36.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem36.Image")));
             this.toolStripMenuItem36.Name = "toolStripMenuItem36";
             this.toolStripMenuItem36.Size = new System.Drawing.Size(218, 22);
             this.toolStripMenuItem36.Text = "Cut";
             // 
             // toolStripMenuItem37
             // 
-            //this.toolStripMenuItem37.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem37.Image")));
             this.toolStripMenuItem37.Name = "toolStripMenuItem37";
             this.toolStripMenuItem37.Size = new System.Drawing.Size(218, 22);
             this.toolStripMenuItem37.Text = "Copy";
@@ -2897,7 +2893,6 @@ namespace WinExplorer
             // 
             // toolStripMenuItem38
             // 
-           // this.toolStripMenuItem38.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem38.Image")));
             this.toolStripMenuItem38.Name = "toolStripMenuItem38";
             this.toolStripMenuItem38.Size = new System.Drawing.Size(218, 22);
             this.toolStripMenuItem38.Text = "Delete";
@@ -2953,24 +2948,6 @@ namespace WinExplorer
             this.toolStripContainer1.TabIndex = 7;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
-            // repositoryToolStripMenuItem
-            // 
-            this.repositoryToolStripMenuItem.Name = "repositoryToolStripMenuItem";
-            this.repositoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.repositoryToolStripMenuItem.Text = "Repository";
-            // 
-            // websiteToolStripMenuItem
-            // 
-            this.websiteToolStripMenuItem.Name = "websiteToolStripMenuItem";
-            this.websiteToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.websiteToolStripMenuItem.Text = "Website";
-            // 
-            // projectFromSourcesToolStripMenuItem
-            // 
-            this.projectFromSourcesToolStripMenuItem.Name = "projectFromSourcesToolStripMenuItem";
-            this.projectFromSourcesToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.projectFromSourcesToolStripMenuItem.Text = "Project from sources";
-            // 
             // ExplorerForms
             // 
             this.ClientSize = new System.Drawing.Size(1049, 584);
@@ -2978,7 +2955,6 @@ namespace WinExplorer
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.helpProvider1.SetHelpKeyword(this, "Explorer");
-            //this.Icon = ve_resource.WindowsLogo_16x;// ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ExplorerForms";
             this.helpProvider1.SetShowHelp(this, true);

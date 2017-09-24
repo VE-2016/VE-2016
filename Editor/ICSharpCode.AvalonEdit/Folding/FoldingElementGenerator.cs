@@ -141,7 +141,7 @@ namespace ICSharpCode.AvalonEdit.Folding
 				p.SetForegroundBrush(textBrush);
 				var textFormatter = TextFormatterFactory.Create(CurrentContext.TextView);
 				var text = FormattedTextElement.PrepareText(textFormatter, title, p);
-				return new FoldingLineElement(foldingSection, text, foldedUntil - offset + 5) { textBrush = textBrush };
+				return new FoldingLineElement(foldingSection, text, foldedUntil - offset) { textBrush = textBrush };
 			} else {
 				return null;
 			}

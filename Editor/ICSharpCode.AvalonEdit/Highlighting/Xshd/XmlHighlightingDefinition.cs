@@ -145,6 +145,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting.Xshd
 				foreach (var pair in ruleSetDict) {
 					reverseRuleSetDict.Add(pair.Value, pair.Key);
 				}
+          
 			}
 			
 			public object VisitRuleSet(XshdRuleSet ruleSet)

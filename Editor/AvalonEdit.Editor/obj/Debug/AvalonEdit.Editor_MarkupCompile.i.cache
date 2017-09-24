@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-3723114220
+6-1666488155
 
-19-1859750385
+25616069802
 861128568316
-CompletionControls.xaml;EditorWindow.xaml;LinkViewer.xaml;
+CompletionControls.xaml;EditorWindow.xaml;FindForm.xaml;LinkViewer.xaml;TreeViewer.xaml;CallHierarchy.xaml;
 
 True
 

@@ -117,7 +117,16 @@ namespace ICSharpCode.AvalonEdit.Document
 			undoStack = new UndoStack();
 			FireChangeEvents();
 		}
-		
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+		public string GetTreeAsString()
+        {
+            if (lineTree == null)
+                return "no document line";
+            return lineTree.GetTreeAsString();
+        }
 		/// <summary>
 		/// Create a new text document with the specified initial text.
 		/// </summary>
@@ -891,8 +900,8 @@ namespace ICSharpCode.AvalonEdit.Document
 					else
 						rope.InsertText(offset, newText.Text);
 					lineManager.Insert(offset, newText, obs);
-                    var d = GetLineByOffset(offset + 2);
-                    var e = GetLineByOffset(offset + 2).NextLine;
+                    var d = GetLineByOffset(offset + 1);
+                    var e = GetLineByOffset(offset + 1).NextLine;
 
                     d.obs = obs;
                     if (obs != null)
@@ -900,11 +909,13 @@ namespace ICSharpCode.AvalonEdit.Document
                         string se = Text.Substring(e.Offset, e.Length);
                         string s = Text.Substring(d.Offset, d.Length);
                     }
+                    if(d != null)
                     DocumentLineTree.UpdateAfterChildrenChange(d);
+                    if(e != null)
                     DocumentLineTree.UpdateAfterChildrenChange(e);
-                   
-                    #if DEBUG
-					lineTree.CheckProperties();
+
+#if DEBUG
+                    lineTree.CheckProperties();
 					#endif
 				}
 			}

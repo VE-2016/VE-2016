@@ -565,7 +565,7 @@ namespace VSParsers
                 }
             }
             
-            c += "\nnamespace " + name.ContainingNamespace.Name + "\n{\n";
+            c += "\n\t   namespace " + name.ContainingNamespace.Name + "\n{\n";
 
             c += "\t";
 
@@ -720,7 +720,7 @@ namespace VSParsers
 
                 
 
-                c += "\t\t\t";
+                c += "\t\t\t\t   ";
                 
                 if (m.IsAbstract)
                     c += "abstract ";

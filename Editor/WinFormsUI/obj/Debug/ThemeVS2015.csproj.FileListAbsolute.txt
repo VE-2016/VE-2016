@@ -61,3 +61,6 @@ F:\ve\VE-2016\Editor\WinFormsUI\obj\Debug\ThemeVS2015.csproj.GenerateResource.Ca
 F:\ve\VE-2016\Editor\WinFormsUI\obj\Debug\ThemeVS2015.csproj.CoreCompileInputs.cache
 F:\ve\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2015.dll
 F:\ve\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2015.pdb
+F:\ve\VE-2016\Editor\WinFormsUI\bin\Debug\VE-Resources.dll
+F:\ve\VE-2016\Editor\WinFormsUI\bin\Debug\VE-Resources.pdb
+F:\ve\VE-2016\Editor\WinFormsUI\bin\Debug\VE-Resources.dll.config

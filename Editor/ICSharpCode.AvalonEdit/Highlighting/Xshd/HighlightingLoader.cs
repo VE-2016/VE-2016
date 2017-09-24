@@ -27,7 +27,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting.Xshd
 	/// </summary>
 	public static class HighlightingLoader
 	{
-		#region XSHD loading
+		
 		/// <summary>
 		/// Lodas a syntax definition from the xml reader.
 		/// </summary>
@@ -35,8 +35,8 @@ namespace ICSharpCode.AvalonEdit.Highlighting.Xshd
 		{
 			return LoadXshd(reader, false);
 		}
-		
-		internal static XshdSyntaxDefinition LoadXshd(XmlReader reader, bool skipValidation)
+        
+        internal static XshdSyntaxDefinition LoadXshd(XmlReader reader, bool skipValidation)
 		{
 			if (reader == null)
 				throw new ArgumentNullException("reader");
@@ -89,9 +89,9 @@ namespace ICSharpCode.AvalonEdit.Highlighting.Xshd
 			};
 			return schemaSet;
 		}
-		#endregion
 		
-		#region Load Highlighting from XSHD
+		
+		
 		/// <summary>
 		/// Creates a highlighting definition from the XSHD file.
 		/// </summary>
@@ -101,14 +101,19 @@ namespace ICSharpCode.AvalonEdit.Highlighting.Xshd
 				throw new ArgumentNullException("syntaxDefinition");
 			return new XmlHighlightingDefinition(syntaxDefinition, resolver);
 		}
-		
-		/// <summary>
-		/// Creates a highlighting definition from the XSHD file.
-		/// </summary>
-		public static IHighlightingDefinition Load(XmlReader reader, IHighlightingDefinitionReferenceResolver resolver)
+
+       
+        /// <summary>
+        /// Creates a highlighting definition from the XSHD file.
+        /// </summary>
+        public static Tuple<IHighlightingDefinition, XshdSyntaxDefinition> Load(XmlReader reader, IHighlightingDefinitionReferenceResolver resolver)
 		{
-			return Load(LoadXshd(reader), resolver);
-		}
-		#endregion
-	}
+            XshdSyntaxDefinition def = LoadXshd(reader);
+            IHighlightingDefinition highlightDef = Load(def, resolver);
+
+            return new Tuple<IHighlightingDefinition, XshdSyntaxDefinition>(highlightDef, def);
+        }
+        
+
+    }
 }

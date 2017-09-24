@@ -50,48 +50,35 @@
                 <ColumnDefinition Width="3" SharedSizeGroup="b" />
                 <ColumnDefinition Width="6*" SharedSizeGroup="b" />
             </Grid.ColumnDefinitions>
-            <TreeView x:Name="treeListView" Background="AliceBlue" Margin="0,0,0,-17"  Grid.Column="0">
-                <TreeViewItem IsExpanded="False">
-                    <TreeViewItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <Image x:Name="MethodButton" />
-                            <TextBlock Text="Method name" />
-                        </StackPanel>
-                    </TreeViewItem.Header>
-                    
-                    <TreeViewItem IsExpanded="False">
-                        <TreeViewItem.Header>
-                            <StackPanel Orientation="Horizontal">
-                                <Image x:Name="FolderButton" />
-                                <TextBlock Text="Folder name" Foreground="Blue" />
-                            </StackPanel>
-                        </TreeViewItem.Header>
-                        <TreeViewItem IsEnabled="False">
-                            <TreeViewItem.Header>
-                            <StackPanel Orientation="Horizontal">
-                                <Image x:Name="MethodButtons" />
-                                <TextBlock Text="Method name-2" />
-                            </StackPanel>
-                                </TreeViewItem.Header>
-                        </TreeViewItem>
-                        </TreeViewItem>
-                </TreeViewItem>
+         
+                <TreeView x:Name="treeListView" Background="AliceBlue" Margin="0,0,0,0"  Grid.Column="0">
 
-            </TreeView>
+                </TreeView>
+         
             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
-            <ListView HorizontalAlignment = "Stretch" Margin = "0,0,0,0" 
+            <ListView  HorizontalAlignment = "Stretch" Margin = "0,0,0,0" 
          VerticalAlignment = "Stretch" Name = "LocationsListView" Grid.Column="2">
-
+                <ListView.DataContext>
+                    <l:SourceRefData></l:SourceRefData>
+                </ListView.DataContext>
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header = "Call Sites"  
-                  Width = "200"/>
+                  Width = "200"  DisplayMemberBinding="{Binding Name}">
+
+                           
+                        </GridViewColumn>
 
                         <GridViewColumn Header = "Location" 
-                  Width = "Auto"/>
+                  Width = "Auto"  DisplayMemberBinding="{Binding FileName}">
+                          
+                        </GridViewColumn>
 
+                        
                     </GridView>
+                    
                 </ListView.View>
+                
 
             </ListView>
         </Grid>

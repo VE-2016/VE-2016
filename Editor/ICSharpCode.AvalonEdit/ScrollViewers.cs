@@ -39,6 +39,8 @@ namespace ICSharpCode.AvalonEdit
             }
         }
 
+        public event EventHandler<ScrollChangedEventArgs> handler;
+
         ScrollChangedEventArgs cs = null;
 
         DispatcherTimer timer = new DispatcherTimer();
@@ -64,6 +66,8 @@ namespace ICSharpCode.AvalonEdit
 
                 e.Handled = false;
             }
+            if (handler != null)
+                handler(this,e);
         }
     }
 }

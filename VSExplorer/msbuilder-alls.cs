@@ -841,7 +841,7 @@ namespace WinExplorer
             gs.ImageKey = "Solution_8308_24";
             gs.SelectedImageKey = "Solution_8308_24";
             gs.Text = pp;
-            CreateView_Solution.ProjectItemInfo p = new CreateView_Solution.ProjectItemInfo();
+            VSParsers.ProjectItemInfo p = new VSParsers.ProjectItemInfo();
             p.vs = msv.Tag as VSSolution;
             p.SubType = "SolutionNode";
             gs.Tag = p;
@@ -1103,7 +1103,7 @@ namespace WinExplorer
                 {
                 }
 
-                CreateView_Solution.ProjectItemInfo prs = new CreateView_Solution.ProjectItemInfo();
+                VSParsers.ProjectItemInfo prs = new VSParsers.ProjectItemInfo();
 
                 prs.vs = vs;
 
@@ -1184,7 +1184,7 @@ namespace WinExplorer
                         n.ImageKey = "shared";
                         n.SelectedImageKey = "shared";
 
-                        CreateView_Solution.ProjectItemInfo pr0 = new CreateView_Solution.ProjectItemInfo();
+                        VSParsers.ProjectItemInfo pr0 = new VSParsers.ProjectItemInfo();
                         pr0.vs = vs;
                         pr0.ps = ps;
                         pr0.IsProjectNode = true;
@@ -1203,7 +1203,7 @@ namespace WinExplorer
                     TreeNode n = t;
                     n.Text = ps.Name;
 
-                    CreateView_Solution.ProjectItemInfo pr0 = new CreateView_Solution.ProjectItemInfo();
+                    VSParsers.ProjectItemInfo pr0 = new VSParsers.ProjectItemInfo();
                     pr0.vs = vs;
                     pr0.ps = ps;
                     pr0.Guid = ps.ProjectGuid;
@@ -1239,7 +1239,7 @@ namespace WinExplorer
                                         me.ImageKey = "resource_32xMD";
                                         me.SelectedImageKey = "resource_32xMD";
 
-                                        CreateView_Solution.ProjectItemInfo pr2 = new CreateView_Solution.ProjectItemInfo();
+                                        VSParsers.ProjectItemInfo pr2 = new VSParsers.ProjectItemInfo();
                                         pr2.vs = vs;
                                         pr2.ps = ps;
                                         pr2.psi = new VSProjectItem();
@@ -1273,7 +1273,7 @@ namespace WinExplorer
                     //if (pi.Include.Contains("C:\\Program Files (x86)\\MSBuild\\14.0\\bin\\amd64\\CSharp.ProjectItemsSchema.xaml"))
                     //    MessageBox.Show("found");
 
-                    CreateView_Solution.ProjectItemInfo pr3 = new CreateView_Solution.ProjectItemInfo();
+                    VSParsers.ProjectItemInfo pr3 = new VSParsers.ProjectItemInfo();
                     pr3.vs = vs;
                     pr3.ps = ps;
                     pr3.psi = pi;
@@ -1317,7 +1317,7 @@ namespace WinExplorer
 
                             if (dependentupon != pi.Include/*dependsupon*/)
                             {
-                                CreateView_Solution.ProjectItemInfo pr4 = new CreateView_Solution.ProjectItemInfo();
+                                VSParsers.ProjectItemInfo pr4 = new VSParsers.ProjectItemInfo();
                                 pr4.vs = vs;
                                 pr4.ps = ps;
                                 pr4.psi = pi;
@@ -1497,7 +1497,7 @@ namespace WinExplorer
                                 TreeNode bbb = new TreeNode(folder);
                                 bbb.ImageKey = "Folder";
                                 bbb.SelectedImageKey = "FolderOpen";
-                                CreateView_Solution.ProjectItemInfo ppb = new CreateView_Solution.ProjectItemInfo();
+                                VSParsers.ProjectItemInfo ppb = new VSParsers.ProjectItemInfo();
                                 ppb.vs = pr3.vs;
                                 ppb.ps = pr3.ps;
                                 VSProjectItem ppp = new VSProjectItem();
@@ -1632,7 +1632,7 @@ namespace WinExplorer
                                     ns2.ImageKey = "Folder";
                                     ns2.SelectedImageKey = "FolderOpen";
 
-                                    CreateView_Solution.ProjectItemInfo pps = new CreateView_Solution.ProjectItemInfo();
+                                    VSParsers.ProjectItemInfo pps = new VSParsers.ProjectItemInfo();
 
                                     prs.vs = vs;
                                     prs.ps = ps;
@@ -1890,7 +1890,7 @@ namespace WinExplorer
 
             foreach (TreeNode node in PD)
             {
-                CreateView_Solution.ProjectItemInfo p = node.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo p = node.Tag as VSParsers.ProjectItemInfo;
                 if (p != null)
                 {
                     VSProject vp = p.ps;
@@ -1930,7 +1930,7 @@ namespace WinExplorer
 
         public bool IsFolder(TreeNode node)
         {
-            CreateView_Solution.ProjectItemInfo p = node.Tag as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo p = node.Tag as VSParsers.ProjectItemInfo;
             if (p == null)
                 return false;
             if (p.psi == null)
@@ -1942,7 +1942,7 @@ namespace WinExplorer
 
         public string GetFileName(TreeNode node)
         {
-            CreateView_Solution.ProjectItemInfo p = node.Tag as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo p = node.Tag as VSParsers.ProjectItemInfo;
             if (p == null)
                 return "";
             if (p.ps == null)
@@ -1987,7 +1987,7 @@ namespace WinExplorer
                         nodes.ImageKey = "Folder";
                         nodes.SelectedImageKey = "FolderOpen";
 
-                        CreateView_Solution.ProjectItemInfo p = new CreateView_Solution.ProjectItemInfo();
+                        VSParsers.ProjectItemInfo p = new VSParsers.ProjectItemInfo();
                         p.vs = vs;
                         p.ps = pp;
                         p.psi = new VSProjectItem();
@@ -2050,7 +2050,7 @@ namespace WinExplorer
 
                 foreach (TreeNode ng in N)
                 {
-                    CreateView_Solution.ProjectItemInfo pc = ng.Tag as CreateView_Solution.ProjectItemInfo;
+                    VSParsers.ProjectItemInfo pc = ng.Tag as VSParsers.ProjectItemInfo;
                     if (pc != null)
                     {
                         //            if (pc.psi == null)
@@ -2088,7 +2088,7 @@ namespace WinExplorer
 
                 foreach (TreeNode ng in N)
                 {
-                    CreateView_Solution.ProjectItemInfo pc = ng.Tag as CreateView_Solution.ProjectItemInfo;
+                    VSParsers.ProjectItemInfo pc = ng.Tag as VSParsers.ProjectItemInfo;
                     if (pc != null)
                     {
                         //            if (pc.psi == null)
@@ -2211,7 +2211,7 @@ namespace WinExplorer
 
             foreach (TreeNode ns in nodes.Nodes)
             {
-                CreateView_Solution.ProjectItemInfo p = ns.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo p = ns.Tag as VSParsers.ProjectItemInfo;
 
                 if (node.Equals(ns))
                     nested = true;
@@ -2296,11 +2296,11 @@ namespace WinExplorer
 
                 TreeNode nodes = FindNodesIncludeExact(master, Include);
 
-                CreateView_Solution.ProjectItemInfo p = null;
+                VSParsers.ProjectItemInfo p = null;
 
                 if (nodes != null)
                 {
-                    p = nodes.Tag as CreateView_Solution.ProjectItemInfo;
+                    p = nodes.Tag as VSParsers.ProjectItemInfo;
 
                     if (p != null)
                     {
@@ -2334,7 +2334,7 @@ namespace WinExplorer
                     {
                         ns = new TreeNode();
                         ns.Text = s;
-                        CreateView_Solution.ProjectItemInfo pp = new CreateView_Solution.ProjectItemInfo();
+                        VSParsers.ProjectItemInfo pp = new VSParsers.ProjectItemInfo();
                         pp.ps = new VSProject();
                         pp.psi = new VSProjectItem();
                         pp.psi.Include = d;
@@ -2379,7 +2379,7 @@ namespace WinExplorer
             {
                 //master.Nodes.Add(D[cs]);
                 TreeNode ng = D[cs];
-                CreateView_Solution.ProjectItemInfo pc = ng.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo pc = ng.Tag as VSParsers.ProjectItemInfo;
                 VSProjectItem pi = pc.psi;
 
                 string Include = pc.Include;// pi.Include;
@@ -2398,11 +2398,11 @@ namespace WinExplorer
 
                 TreeNode nodes = FindNodesIncludeExact(master, Include);
 
-                CreateView_Solution.ProjectItemInfo p = null;
+                VSParsers.ProjectItemInfo p = null;
 
                 if (nodes != null)
                 {
-                    p = nodes.Tag as CreateView_Solution.ProjectItemInfo;
+                    p = nodes.Tag as VSParsers.ProjectItemInfo;
 
                     if (p != null)
                     {
@@ -2439,7 +2439,7 @@ namespace WinExplorer
                     {
                         ns = new TreeNode();
                         ns.Text = s;
-                        CreateView_Solution.ProjectItemInfo pp = new CreateView_Solution.ProjectItemInfo();
+                        VSParsers.ProjectItemInfo pp = new VSParsers.ProjectItemInfo();
                         pp.ps = new VSProject();
                         pp.psi = new VSProjectItem();
                         pp.psi.Include = d;
@@ -2495,7 +2495,7 @@ namespace WinExplorer
                 //    continue;
                 //}
 
-                CreateView_Solution.ProjectItemInfo p = ng.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo p = ng.Tag as VSParsers.ProjectItemInfo;
 
                 if (p == null)
                     continue;
@@ -2535,7 +2535,7 @@ namespace WinExplorer
                     {
                         ns = new TreeNode();
                         ns.Text = s;
-                        CreateView_Solution.ProjectItemInfo pp = new CreateView_Solution.ProjectItemInfo();
+                        VSParsers.ProjectItemInfo pp = new VSParsers.ProjectItemInfo();
                         pp.Guid = guid;
                         pp.ps = new VSProject();
                         pp.psi = new VSProjectItem();
@@ -2592,7 +2592,7 @@ namespace WinExplorer
                 
                 if (node == null)
                     continue;
-                CreateView_Solution.ProjectItemInfo p = node.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo p = node.Tag as VSParsers.ProjectItemInfo;
                 if (p == null)
                     continue;
                 if(p.psi.ItemType == "None" || p.psi.ItemType == "EmbeddedResource")
@@ -2614,7 +2614,7 @@ namespace WinExplorer
                         {
                             ns = new TreeNode();
                             ns.Text = d;
-                            CreateView_Solution.ProjectItemInfo pp = new CreateView_Solution.ProjectItemInfo();
+                            VSParsers.ProjectItemInfo pp = new VSParsers.ProjectItemInfo();
                             pp.ps = new VSProject();
                             pp.psi = new VSProjectItem();
                             pp.psi.Include = name;
@@ -2673,7 +2673,7 @@ namespace WinExplorer
 
         //        //string Include = c;
 
-        //        CreateView_Solution.ProjectItemInfo p = ng.Tag as CreateView_Solution.ProjectItemInfo;
+        //        VSParsers.ProjectItemInfo p = ng.Tag as VSParsers.ProjectItemInfo;
 
         //        if (p != null)
         //        {
@@ -2708,7 +2708,7 @@ namespace WinExplorer
         //                        {
         //                            ns = new TreeNode();
         //                            ns.Text = s;
-        //                            CreateView_Solution.ProjectItemInfo pp = new CreateView_Solution.ProjectItemInfo();
+        //                            VSParsers.ProjectItemInfo pp = new VSParsers.ProjectItemInfo();
         //                            pp.ps = new VSProject();
         //                            pp.psi = new VSProjectItem();
         //                            pp.psi.Include = d;
@@ -2792,7 +2792,7 @@ namespace WinExplorer
 
                 TreeNode node = new TreeNode();
                 node.Text = c;
-                CreateView_Solution.ProjectItemInfo p = new CreateView_Solution.ProjectItemInfo();
+                VSParsers.ProjectItemInfo p = new VSParsers.ProjectItemInfo();
 
                 p.psi = new VSProjectItem();
                 p.psi.Include = s;
@@ -2897,7 +2897,7 @@ namespace WinExplorer
             {
                 TreeNode node = NL[i++] as TreeNode;
 
-                CreateView_Solution.ProjectItemInfo p = node.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo p = node.Tag as VSParsers.ProjectItemInfo;
 
                 if (p == null)
                     continue;
@@ -2930,11 +2930,11 @@ namespace WinExplorer
 
         public TreeNode FindResource(ArrayList EMB, TreeNode node)
         {
-            CreateView_Solution.ProjectItemInfo pp = node.Tag as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo pp = node.Tag as VSParsers.ProjectItemInfo;
 
-            CreateView_Solution.ProjectItemInfo pnp = null;
+            VSParsers.ProjectItemInfo pnp = null;
 
-            CreateView_Solution.ProjectItemInfo pc = null;
+            VSParsers.ProjectItemInfo pc = null;
 
             foreach (string b in EMB)
             {
@@ -2948,7 +2948,7 @@ namespace WinExplorer
 
                 if (name == file)
                 {
-                    pc = new CreateView_Solution.ProjectItemInfo();
+                    pc = new VSParsers.ProjectItemInfo();
                     pc.vs = pp.vs;
                     pc.ps = pp.ps;
                     pc.psi = new VSProjectItem();
@@ -2985,7 +2985,7 @@ namespace WinExplorer
             {
                 TreeNode node = NL[i++] as TreeNode;
 
-                CreateView_Solution.ProjectItemInfo p = node.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo p = node.Tag as VSParsers.ProjectItemInfo;
 
                 if (p == null)
                     continue;
@@ -3122,7 +3122,7 @@ namespace WinExplorer
 
             foreach (TreeNode node in L)
             {
-                CreateView_Solution.ProjectItemInfo p = node.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo p = node.Tag as VSParsers.ProjectItemInfo;
                 //if (p != null)
                 //   // if (p.psi != null)
                 //        if (p.IsProjectNode == true)
@@ -3148,7 +3148,7 @@ namespace WinExplorer
                 master.Nodes.Remove(node);
                 master.Nodes.Insert(0, node);
 
-                CreateView_Solution.ProjectItemInfo p = node.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo p = node.Tag as VSParsers.ProjectItemInfo;
                 if (p != null)
 
                     if (p.psi != null)
@@ -3218,7 +3218,7 @@ namespace WinExplorer
                         ns.Text = Path.GetFileName(text);
                     }
 
-                    CreateView_Solution.ProjectItemInfo p = ns.Tag as CreateView_Solution.ProjectItemInfo;
+                    VSParsers.ProjectItemInfo p = ns.Tag as VSParsers.ProjectItemInfo;
                     if (p != null)
                     {
                         if (p.psi != null)
@@ -3290,7 +3290,7 @@ namespace WinExplorer
 
                     TreeNode ns = FindNodeExact(node, "Reference");
 
-                    CreateView_Solution.ProjectItemInfo p = null;
+                    VSParsers.ProjectItemInfo p = null;
 
                     ArrayList L = vp.GetItems("_ExplicitReference", false);
 
@@ -3299,7 +3299,7 @@ namespace WinExplorer
                         if (ns == null)
                         {
                             ns = new TreeNode("Reference");
-                            p = new CreateView_Solution.ProjectItemInfo();
+                            p = new VSParsers.ProjectItemInfo();
                             p.vs = vs;
                             p.ps = vp;
                             p.psi = new VSProjectItem();
@@ -3313,7 +3313,7 @@ namespace WinExplorer
                         foreach (string c in L)
                         {
                             TreeNode ng = new TreeNode(c);
-                            p = new CreateView_Solution.ProjectItemInfo();
+                            p = new VSParsers.ProjectItemInfo();
                             p.vs = vs;
                             p.ps = vp;
                             p.psi = new VSProjectItem();
@@ -3351,7 +3351,7 @@ namespace WinExplorer
                             {
                                 ns = new TreeNode("Reference");
 
-                                p = new CreateView_Solution.ProjectItemInfo();
+                                p = new VSParsers.ProjectItemInfo();
                                 {
                                     p.vs = vs;
                                     p.ps = vp;
@@ -3365,7 +3365,7 @@ namespace WinExplorer
                             }
 
                             TreeNode ng = new TreeNode(s);
-                            p = new CreateView_Solution.ProjectItemInfo();
+                            p = new VSParsers.ProjectItemInfo();
                             p.vs = vs;
                             p.ps = vp;
                             p.psi = new VSProjectItem();
@@ -3572,7 +3572,7 @@ namespace WinExplorer
 
                     exts = exts.ToLower();
 
-                    CreateView_Solution.ProjectItemInfo p = node.Tag as CreateView_Solution.ProjectItemInfo;
+                    VSParsers.ProjectItemInfo p = node.Tag as VSParsers.ProjectItemInfo;
 
                     if (exts != ".resx")
 
@@ -3739,14 +3739,14 @@ namespace WinExplorer
             {
                 TreeNode ns = L[i] as TreeNode;
 
-                CreateView_Solution.ProjectItemInfo p0 = ns.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo p0 = ns.Tag as VSParsers.ProjectItemInfo;
 
                 int j = i + 1;
                 while (j < L.Count)
                 {
                     TreeNode ng = L[j] as TreeNode;
 
-                    CreateView_Solution.ProjectItemInfo p1 = ng.Tag as CreateView_Solution.ProjectItemInfo;
+                    VSParsers.ProjectItemInfo p1 = ng.Tag as VSParsers.ProjectItemInfo;
 
                     if (p0.Include == p1.Include)
                     {
@@ -3831,11 +3831,11 @@ namespace WinExplorer
                 return;
 
             string guid = "";
-            CreateView_Solution.ProjectItemInfo p = master.Tag as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo p = master.Tag as VSParsers.ProjectItemInfo;
             if (p != null)
                 guid = p.Guid;
             string guids = "";
-            CreateView_Solution.ProjectItemInfo pp = node.Tag as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo pp = node.Tag as VSParsers.ProjectItemInfo;
             if (pp != null)
                 guids = pp.Guid;
             if (guid != "" && guids != "")
@@ -3876,7 +3876,7 @@ namespace WinExplorer
             {
                 TreeNode node = L[i] as TreeNode;
 
-                CreateView_Solution.ProjectItemInfo nc = node.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo nc = node.Tag as VSParsers.ProjectItemInfo;
 
                 if (node.ImageKey == "Folder")
                 {
@@ -3894,16 +3894,16 @@ namespace WinExplorer
                 //    continue;
                 //}
 
-                CreateView_Solution.ProjectItemInfo nsc = ns.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo nsc = ns.Tag as VSParsers.ProjectItemInfo;
 
                 TreeNode ems = null;
 
                 //if (nodes != null)
                 //    ems = FindNode(nodes, s[0]);
 
-                CreateView_Solution.ProjectItemInfo pp = node.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo pp = node.Tag as VSParsers.ProjectItemInfo;
 
-                CreateView_Solution.ProjectItemInfo pc = null;
+                VSParsers.ProjectItemInfo pc = null;
 
                 foreach (string b in EMB)
                 {
@@ -3912,7 +3912,7 @@ namespace WinExplorer
 
                     if (name == file)
                     {
-                        pc = new CreateView_Solution.ProjectItemInfo();
+                        pc = new VSParsers.ProjectItemInfo();
                         pc.vs = pp.vs;
                         pc.ps = pp.ps;
                         pc.psi = new VSProjectItem();
@@ -3932,7 +3932,7 @@ namespace WinExplorer
 
                 TreeNode ng = new TreeNode();
 
-                CreateView_Solution.ProjectItemInfo prs = new CreateView_Solution.ProjectItemInfo();
+                VSParsers.ProjectItemInfo prs = new VSParsers.ProjectItemInfo();
                 prs.psi = new VSProjectItem();
                 prs.psi.SubTypes = pp.psi.SubTypes;
                 prs.psi.Include = pp.psi.Include;
@@ -3978,9 +3978,9 @@ namespace WinExplorer
 
                 //}
 
-                if (ns.Tag.GetType() == typeof(CreateView_Solution.ProjectItemInfo))
+                if (ns.Tag.GetType() == typeof(VSParsers.ProjectItemInfo))
                 {
-                    CreateView_Solution.ProjectItemInfo psi = ns.Tag as CreateView_Solution.ProjectItemInfo;
+                    VSParsers.ProjectItemInfo psi = ns.Tag as VSParsers.ProjectItemInfo;
 
                     if (psi.psi.ItemType == "Folder")
                         ns = null;
@@ -4119,14 +4119,14 @@ namespace WinExplorer
                 //if (nodes != null)
                 //    ems = FindNode(nodes, s[0]);
 
-                CreateView_Solution.ProjectItemInfo pp = node.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo pp = node.Tag as VSParsers.ProjectItemInfo;
 
-                CreateView_Solution.ProjectItemInfo pnp = null;
+                VSParsers.ProjectItemInfo pnp = null;
 
                 if (ns != null)
-                    pnp = ns.Tag as CreateView_Solution.ProjectItemInfo;
+                    pnp = ns.Tag as VSParsers.ProjectItemInfo;
 
-                CreateView_Solution.ProjectItemInfo pc = null;
+                VSParsers.ProjectItemInfo pc = null;
 
                 foreach (string b in EMB)
                 {
@@ -4140,7 +4140,7 @@ namespace WinExplorer
 
                     if (name == file)
                     {
-                        pc = new CreateView_Solution.ProjectItemInfo();
+                        pc = new VSParsers.ProjectItemInfo();
                         pc.Include = b;
                         pc.vs = pp.vs;
                         pc.ps = pp.ps;
@@ -4186,7 +4186,7 @@ namespace WinExplorer
                 named = named.Replace(".Designer", "");
                 named = named.Replace(".designer", "");
 
-                CreateView_Solution.ProjectItemInfo pcc = new CreateView_Solution.ProjectItemInfo();
+                VSParsers.ProjectItemInfo pcc = new VSParsers.ProjectItemInfo();
                 pcc.vs = pp.vs;
                 pcc.ps = pp.ps;
                 pcc.psi = new VSProjectItem();
@@ -4409,7 +4409,7 @@ namespace WinExplorer
         {
             foreach (TreeNode ns in n.Nodes)
             {
-                CreateView_Solution.ProjectItemInfo p = ns.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo p = ns.Tag as VSParsers.ProjectItemInfo;
 
                 if (p != null)
                 {
@@ -4433,7 +4433,7 @@ namespace WinExplorer
         {
             foreach (TreeNode ns in v.Nodes)
             {
-                CreateView_Solution.ProjectItemInfo p = ns.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo p = ns.Tag as VSParsers.ProjectItemInfo;
 
                 if (p != null)
                 {
@@ -4483,7 +4483,7 @@ namespace WinExplorer
         {
             Include = Include.ToUpper().Trim();
 
-            CreateView_Solution.ProjectItemInfo p = master.Tag as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo p = master.Tag as VSParsers.ProjectItemInfo;
 
             if (p != null)
             {
@@ -4499,7 +4499,7 @@ namespace WinExplorer
                 foreach (TreeNode ns in master.Nodes)
             {
 
-                p = ns.Tag as CreateView_Solution.ProjectItemInfo;
+                p = ns.Tag as VSParsers.ProjectItemInfo;
 
                 if (p != null)
                 {
@@ -4538,7 +4538,7 @@ namespace WinExplorer
         {
             name = name.ToUpper();
 
-            CreateView_Solution.ProjectItemInfo p0 = master.Tag as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo p0 = master.Tag as VSParsers.ProjectItemInfo;
 
             if (!string.IsNullOrEmpty(p0.Include))
                 if (p0.Include.ToUpper() == name)
@@ -4549,7 +4549,7 @@ namespace WinExplorer
                 // if (node.Text.ToUpper().Contains(name) == true)
                 //     L.Add(node);
 
-                CreateView_Solution.ProjectItemInfo p1 = node.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo p1 = node.Tag as VSParsers.ProjectItemInfo;
                 if (!string.IsNullOrEmpty(p1.Include))
                     if (p1.Include.ToUpper() == name)
                     L.Add(master);
@@ -4563,7 +4563,7 @@ namespace WinExplorer
         {
             name = name.ToUpper();
 
-            CreateView_Solution.ProjectItemInfo p0 = master.Tag as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo p0 = master.Tag as VSParsers.ProjectItemInfo;
 
             if(!string.IsNullOrEmpty(p0.Include))
             if (p0.Include.ToUpper().Contains(name))
@@ -4574,7 +4574,7 @@ namespace WinExplorer
                // if (node.Text.ToUpper().Contains(name) == true)
                //     L.Add(node);
 
-                CreateView_Solution.ProjectItemInfo p1= node.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo p1= node.Tag as VSParsers.ProjectItemInfo;
 
                 if (!string.IsNullOrEmpty(p1.Include))
                     if (p1.Include.ToUpper().Contains(name))
@@ -4669,7 +4669,7 @@ namespace WinExplorer
                 if (node.Tag == null)
                     continue;
 
-                CreateView_Solution.ProjectItemInfo p = node.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo p = node.Tag as VSParsers.ProjectItemInfo;
 
                 if (p.psi == null)
                     L.Add(node);
@@ -4727,7 +4727,7 @@ namespace WinExplorer
                     }
                     //else
                     //{
-                    //    CreateView_Solution.ProjectItemInfo p = node.Tag as CreateView_Solution.ProjectItemInfo;
+                    //    VSParsers.ProjectItemInfo p = node.Tag as VSParsers.ProjectItemInfo;
 
                     //    if (p == null)
                     //        continue;
@@ -4762,7 +4762,7 @@ namespace WinExplorer
                 if (d == true)
                     continue;
 
-                CreateView_Solution.ProjectItemInfo p = node.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo p = node.Tag as VSParsers.ProjectItemInfo;
 
                 if (p == null)
                     continue;
@@ -5097,9 +5097,9 @@ namespace WinExplorer
                 nods.ImageKey = "Folder";
                 nods.SelectedImageKey = "FolderOpen";
 
-                CreateView_Solution.ProjectItemInfo prs = node.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo prs = node.Tag as VSParsers.ProjectItemInfo;
 
-                CreateView_Solution.ProjectItemInfo pc = new CreateView_Solution.ProjectItemInfo();
+                VSParsers.ProjectItemInfo pc = new VSParsers.ProjectItemInfo();
 
                 string name = "";
 
@@ -5172,7 +5172,7 @@ namespace WinExplorer
 
         public TreeNode LoadSubfolders(TreeNode ng, TreeNode nods, string key, TreeNode nodes)
         {
-            CreateView_Solution.ProjectItemInfo prs = ng.Tag as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo prs = ng.Tag as VSParsers.ProjectItemInfo;
 
             if (prs == null)
                 return ng;
@@ -5182,7 +5182,7 @@ namespace WinExplorer
 
             string Include = prs.psi.Include;
 
-            CreateView_Solution.ProjectItemInfo pp = nods.Tag as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo pp = nods.Tag as VSParsers.ProjectItemInfo;
 
             string bb = pp.psi.Include;
 
@@ -5221,7 +5221,7 @@ namespace WinExplorer
                 {
                     first.Nodes.Add(b);
 
-                    CreateView_Solution.ProjectItemInfo pc = new CreateView_Solution.ProjectItemInfo();
+                    VSParsers.ProjectItemInfo pc = new VSParsers.ProjectItemInfo();
                     pc.psi = new VSProjectItem();
                     pc.psi.SubType = "Folder";
                     pc.psi.ItemType = "Folder";
@@ -5676,7 +5676,7 @@ namespace WinExplorer
             if (ms.PL == null)
                 return msv;
 
-            foreach (CreateView_Solution.ProjectItemInfo prs in ms.PL)
+            foreach (VSParsers.ProjectItemInfo prs in ms.PL)
             {
                 TreeNode nodes = new TreeNode();
                 nodes.Text = prs.ps.Name;

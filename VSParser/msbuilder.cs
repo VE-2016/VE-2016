@@ -6,6 +6,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.FindSymbols;
 using Microsoft.CodeAnalysis.MSBuild;
+using Microsoft.CodeAnalysis.Text;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -93,7 +94,7 @@ namespace VSProvider
             if(OpenFile != null)
                 OpenFile(null, args);
         }
-        public void LoadFileFromProject(string content, VSProject vp, string name, ISymbol symbol = null, ReferenceLocation? Location = null)
+        public void LoadFileFromProject(string content, VSProject vp, string name, ISymbol symbol = null, ReferenceLocation? Location = null, TextSpan? Span = null)
         {
             OpenFileEventArgs args = new OpenFileEventArgs();
             args.Threshold = 10;
@@ -102,6 +103,7 @@ namespace VSProvider
             args.vp = vp;
             args.symbol = symbol;
             args.Location = Location;
+            args.Span = Span;
             
             if(OpenFile != null)
                  OpenFile(null,args);
@@ -178,15 +180,21 @@ namespace VSProvider
 
         public VSProject GetProjectbyCompileItem(string name)
         {
+            if (name == null)
+                return null;
             lock (obs)
             {
+                name = Path.GetFullPath(name);
                 foreach (VSProject p in projects)
                 {
                     ArrayList C = p.GetCompileItems();
 
                     foreach (string file in C)
                         if (file == name)
+                        {
+
                             return p;
+                        }
                 }
             }
             return null;
@@ -348,6 +356,21 @@ namespace VSProvider
             //var d = b.Select(s => s).Where(t => t.GetAttributes() != null).ToList();
 
             return b;
+        }
+
+        public List<string> TypesNames(string FileName)
+        {
+            List<string> names = new List<string>();
+            VSProject vp = this.GetProjectbyCompileItem(FileName);
+            if (vp == null)
+                return names;
+            string file = vp.FileName;
+            var b = GetAllTypes(file);
+            
+            foreach (var name in b)
+                if (!names.Contains(name.Name))
+                    names.Add(name.Name);
+            return names;
         }
 
         public ISymbol GetSymbol(ISymbol symbol)
@@ -928,7 +951,7 @@ namespace VSProvider
             }
             else
             {
-                cc = comp[this.projects[0].FileName];
+                cc = comp[vp.FileName];
                 syntaxTree = null;
                 model = null;
 
@@ -1022,8 +1045,24 @@ namespace VSProvider
                 return content;
             return s.GetText().ToString();
         }
+        public IEnumerable<ReferencedSymbol> FindReferences(int offset, string FileToLoad)
+        {
+            VSProject vp = GetProjectbyCompileItem(FileToLoad);
 
-        public IEnumerable<ReferencedSymbol> GetAllSymbolReferences(ISymbol symbol, string filename, VSProject vp, string content)
+            ISymbol s = GetSymbolAtLocation(vp, FileToLoad, offset);
+            if (s == null)
+                return null;
+
+            IEnumerable<ReferencedSymbol> r = GetAllSymbolReferences(s, FileToLoad, vp);
+
+            if (r != null)
+            {
+                List<ReferencedSymbol> list = r.ToList();
+                
+            }
+            return r;
+        }
+        public IEnumerable<ReferencedSymbol> GetAllSymbolReferences(ISymbol symbol, string filename, VSProject vp)
         {
             IEnumerable<ReferencedSymbol> references = null;
 
@@ -1099,6 +1138,8 @@ namespace VSProvider
                 }
                 else
                 {
+                    references = SymbolFinder.FindReferencesAsync(symbol, this.solution).Result;
+                    referenced.AddRange(references);
                 }
             }
             return referenced;
@@ -1720,6 +1761,7 @@ namespace VSProvider
         public ISymbol symbol { get; set; }
         public List<Diagnostic> Errors { get; set; }
         public ReferenceLocation? Location { get; set; }
+        public TextSpan? Span { get; set; }
         
     }
     public class OpenReferenceEventArgs : EventArgs
@@ -1731,6 +1773,6 @@ namespace VSProvider
         public ISymbol symbol { get; set; }
         public List<Diagnostic> Errors { get; set; }
         public ReferenceLocation? Location { get; set; }
-
+        public int Line { get; set; }
     }
 }

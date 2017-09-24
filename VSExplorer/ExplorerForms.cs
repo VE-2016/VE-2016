@@ -68,6 +68,8 @@ namespace WinExplorer
             _components = new System.ComponentModel.Container();
 
             InitializeComponent();
+            IntPtr Hicon = WinExplorers.ve.WindowsLogo_16x.GetHicon();
+            this.Icon = Icon.FromHandle(Hicon);
             context1 = contextMenuStrip1;
             context2 = contextMenuStrip2;
             context3 = contextMenuStrip3;
@@ -272,7 +274,7 @@ namespace WinExplorer
 
             scr.Dock = DockStyle.Fill;
 
-            CodeEditorControl.ParserDataChanged += CodeEditorControl_ParserDataChanged;
+            //CodeEditorControl.ParserDataChanged += CodeEditorControl_ParserDataChanged;
 
             update_z_order(this);
 
@@ -336,6 +338,8 @@ namespace WinExplorer
             hw.Show(dock, DockState.DockBottom);
 
             EditorWindow.treeViewer = hwf.dv;
+
+            TreeViewer.vs = GetVSSolution();
         }
 
         //protected override void WndProc(ref Message m)
@@ -410,12 +414,12 @@ namespace WinExplorer
             if (node.Tag == null)
                 return;
 
-            CreateView_Solution.ProjectItemInfo pr0 = null;
+            VSParsers.ProjectItemInfo pr0 = null;
 
-            if (node.Tag.GetType() != typeof(CreateView_Solution.ProjectItemInfo))
+            if (node.Tag.GetType() != typeof(VSParsers.ProjectItemInfo))
                 return;
 
-            pr0 = node.Tag as CreateView_Solution.ProjectItemInfo;
+            pr0 = node.Tag as VSParsers.ProjectItemInfo;
 
             if (pr0.psi == null)
                 if (pr0.mapper != null)
@@ -452,7 +456,7 @@ namespace WinExplorer
             }
             else
             {
-                CreateView_Solution.ProjectItemInfo pr = pr0;
+                VSParsers.ProjectItemInfo pr = pr0;
 
                 return;
             }
@@ -2037,7 +2041,7 @@ namespace WinExplorer
 
             ppf.Show();
 
-            WinExplorer.CreateView_Solution.ProjectItemInfo prs = _eo.cvs.getactiveproject();
+            VSParsers.ProjectItemInfo prs = _eo.cvs.getactiveproject();
 
             ppf.Text = Path.GetFileNameWithoutExtension(prs.filepath);
 
@@ -2087,7 +2091,7 @@ namespace WinExplorer
 
             string[] d = f.FileName.Split("@".ToCharArray());
 
-            WinExplorer.CreateView_Solution.ProjectItemInfo prs = _eo.cvs.getactiveproject();
+            VSParsers.ProjectItemInfo prs = _eo.cvs.getactiveproject();
 
             ppf.Text = Path.GetFileNameWithoutExtension(Path.GetFileName(d[0]));
 
@@ -2461,7 +2465,8 @@ namespace WinExplorer
 
         public void Loads2(TreeView tv, TreeView s)
         {
-            //sv._SolutionTreeView.ImageList = tv.ImageList;
+            //s.ImageKey = tv.ImageKey;
+            //s.SelectedImageKey = tv.SelectedImageKey;
 
             font = new Font(s.Font, FontStyle.Bold);
 
@@ -2504,7 +2509,7 @@ namespace WinExplorer
                 obs[0] = s;
                 obs[1] = tv;
                 obs[2] = ns;
-                this.BeginInvoke(new PopulateTreeNodes(populateTreeNode), obs);
+                this.Invoke(new PopulateTreeNodes(populateTreeNode), obs);
 
                 //ns.NodeFont = font;
                 //tv.Nodes.Remove(ns);
@@ -2546,12 +2551,16 @@ namespace WinExplorer
 
             ArrayList L = null;
 
+            this.Invoke(new Action(() => { Loads2(vv, _sv._SolutionTreeView); this.Text = Path.GetFileName(recent) + " - Visual Explorer"; }));
+
             this.BeginInvoke(new Action(async () =>
             {
 
-                 this.Invoke(new Action(() => { Loads2(vv, _sv._SolutionTreeView); this.Text = Path.GetFileName(recent) + " - Visual Explorer"; }));
+                 //this.Invoke(new Action(() => { Loads2(vv, _sv._SolutionTreeView); this.Text = Path.GetFileName(recent) + " - Visual Explorer"; }));
 
                 L = scr.LoadSolutionFiles();
+
+                int index = _sv._SolutionTreeView.ImageList.Images.Keys.IndexOf("VSSolutionFile");
 
                 if (splashForm != null)
                 {
@@ -2777,7 +2786,7 @@ namespace WinExplorer
 
         private void populateTreeNode(TreeView s, TreeView tv, TreeNode ns)
         {
-            s.BeginInvoke(new Action(() =>
+            s.Invoke(new Action(() =>
             {
                 s.BeginUpdate();
                 tv.Nodes.Remove(ns);
@@ -3319,7 +3328,7 @@ namespace WinExplorer
             //OpenStyleAnalysisCode();
             //return;
 
-            WinExplorer.CreateView_Solution.ProjectItemInfo prs = _eo.cvs.getactiveproject();
+            VSParsers.ProjectItemInfo prs = _eo.cvs.getactiveproject();
 
             if (prs == null)
             {
@@ -3372,7 +3381,7 @@ namespace WinExplorer
 
         private void toolStripButton12_Click(object sender, EventArgs e)
         {
-            WinExplorer.CreateView_Solution.ProjectItemInfo prs = _eo.cvs.getactiveproject();
+            VSParsers.ProjectItemInfo prs = _eo.cvs.getactiveproject();
 
             if (prs == null)
             {
@@ -3404,7 +3413,7 @@ namespace WinExplorer
 
         private void addReferenceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            WinExplorer.CreateView_Solution.ProjectItemInfo prs = _eo.cvs.getactiveproject();
+            VSParsers.ProjectItemInfo prs = _eo.cvs.getactiveproject();
 
             if (prs == null)
             {
@@ -3611,7 +3620,7 @@ namespace WinExplorer
 
         private void viewProjectFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            WinExplorer.CreateView_Solution.ProjectItemInfo prs = _eo.cvs.getactiveproject();
+            VSParsers.ProjectItemInfo prs = _eo.cvs.getactiveproject();
 
             if (prs == null)
             {
@@ -3711,7 +3720,7 @@ namespace WinExplorer
                     // The node appears selected until the menu is displayed on the screen.
                     TreeNode oldselectednode = treeView.SelectedNode;
 
-                    CreateView_Solution.ProjectItemInfo pp = node.Tag as CreateView_Solution.ProjectItemInfo;
+                    VSParsers.ProjectItemInfo pp = node.Tag as VSParsers.ProjectItemInfo;
 
                     VSSolution vs = GetVSSolution();
                     if (vs != null)
@@ -3802,7 +3811,7 @@ namespace WinExplorer
 
             string file = vs.solutionFileName;
 
-            WinExplorer.CreateView_Solution.ProjectItemInfo prs = _eo.cvs.getactiveproject();
+            VSParsers.ProjectItemInfo prs = _eo.cvs.getactiveproject();
 
             if (prs == null)
             {
@@ -3849,7 +3858,7 @@ namespace WinExplorer
 
             string file = vs.solutionFileName;
 
-            WinExplorer.CreateView_Solution.ProjectItemInfo prs = _eo.cvs.getactiveproject();
+            VSParsers.ProjectItemInfo prs = _eo.cvs.getactiveproject();
 
             if (prs == null)
             {
@@ -3877,7 +3886,7 @@ namespace WinExplorer
 
             string file = vs.solutionFileName;
 
-            WinExplorer.CreateView_Solution.ProjectItemInfo prs = _eo.cvs.getactiveproject();
+            VSParsers.ProjectItemInfo prs = _eo.cvs.getactiveproject();
 
             if (prs == null)
             {
@@ -3915,7 +3924,7 @@ namespace WinExplorer
 
             string file = vs.solutionFileName;
 
-            WinExplorer.CreateView_Solution.ProjectItemInfo prs = _eo.cvs.getactiveproject();
+            VSParsers.ProjectItemInfo prs = _eo.cvs.getactiveproject();
 
             if (prs == null)
             {
@@ -3961,7 +3970,7 @@ namespace WinExplorer
 
             string file = vs.solutionFileName;
 
-            WinExplorer.CreateView_Solution.ProjectItemInfo prs = _eo.cvs.getactiveproject();
+            VSParsers.ProjectItemInfo prs = _eo.cvs.getactiveproject();
 
             if (prs == null)
             {
@@ -3989,7 +3998,7 @@ namespace WinExplorer
 
             string file = vs.solutionFileName;
 
-            WinExplorer.CreateView_Solution.ProjectItemInfo prs = _eo.cvs.getactiveproject();
+            VSParsers.ProjectItemInfo prs = _eo.cvs.getactiveproject();
 
             if (prs == null)
             {
@@ -4022,7 +4031,7 @@ namespace WinExplorer
 
             string file = vs.solutionFileName;
 
-            WinExplorer.CreateView_Solution.ProjectItemInfo prs = _eo.cvs.getactiveproject();
+            VSParsers.ProjectItemInfo prs = _eo.cvs.getactiveproject();
 
             if (prs == null)
             {
@@ -4086,7 +4095,7 @@ namespace WinExplorer
 
             //string file = vs.solutionFileName;
 
-            //WinExplorer.CreateView_Solution.ProjectItemInfo prs = eo.cvs.getactiveproject();
+            //VSParsers.ProjectItemInfo prs = eo.cvs.getactiveproject();
 
             //if (prs == null)
             //{
@@ -4299,7 +4308,7 @@ namespace WinExplorer
 
                 _sv._SolutionTreeView.SelectedNode = nodes;
 
-                CreateView_Solution.ProjectItemInfo pr0 = nodes.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo pr0 = nodes.Tag as VSParsers.ProjectItemInfo;
 
                 ImageList img = CreateView_Solution.CreateImageList();
                 Dictionary<string, string> dc = CreateView_Solution.GetDC();
@@ -4391,7 +4400,7 @@ namespace WinExplorer
             if (node == null)
                 return;
 
-            CreateView_Solution.ProjectItemInfo prs = node.Tag as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo prs = node.Tag as VSParsers.ProjectItemInfo;
 
             if (prs == null)
                 return;
@@ -4466,12 +4475,12 @@ namespace WinExplorer
                 return;
             }
 
-            CreateView_Solution.ProjectItemInfo pr0 = null;
+            VSParsers.ProjectItemInfo pr0 = null;
 
-            if (node.Tag.GetType() != typeof(CreateView_Solution.ProjectItemInfo))
+            if (node.Tag.GetType() != typeof(VSParsers.ProjectItemInfo))
                 return;
 
-            pr0 = node.Tag as CreateView_Solution.ProjectItemInfo;
+            pr0 = node.Tag as VSParsers.ProjectItemInfo;
 
             //if (pgp != null)
             this.BeginInvoke(new Action(() =>
@@ -4536,7 +4545,7 @@ namespace WinExplorer
             }
             else
             {
-                CreateView_Solution.ProjectItemInfo pr = pr0;
+                VSParsers.ProjectItemInfo pr = pr0;
 
                 return;
             }
@@ -4574,7 +4583,7 @@ namespace WinExplorer
             if (node == null)
                 return;
 
-            CreateView_Solution.ProjectItemInfo prs = node.Tag as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo prs = node.Tag as VSParsers.ProjectItemInfo;
 
             if (prs == null)
                 return;
@@ -4620,7 +4629,7 @@ namespace WinExplorer
 
         public VSSolution GetVSSolution()
         {
-            CreateView_Solution.ProjectItemInfo pr0 = _sv._SolutionTreeView.Tag as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo pr0 = _sv._SolutionTreeView.Tag as VSParsers.ProjectItemInfo;
 
             if (pr0 != null)
                 return pr0.vs;
@@ -4637,7 +4646,7 @@ namespace WinExplorer
             TreeNode node = _sv._SolutionTreeView.SelectedNode;
             if (node == null)
                 return null;
-            CreateView_Solution.ProjectItemInfo s = node.Tag as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo s = node.Tag as VSParsers.ProjectItemInfo;
             if (s == null)
                 return null; ;
             return s.ps;
@@ -5185,7 +5194,7 @@ namespace WinExplorer
 
             string file = vs.solutionFileName;
 
-            WinExplorer.CreateView_Solution.ProjectItemInfo prs = _eo.cvs.getactiveproject();
+            VSParsers.ProjectItemInfo prs = _eo.cvs.getactiveproject();
 
             if (prs == null)
             {
@@ -5852,7 +5861,7 @@ namespace WinExplorer
             //         thread1.Join();
         }
 
-        public CreateView_Solution.ProjectItemInfo GetProjectInfo()
+        public VSParsers.ProjectItemInfo GetProjectInfo()
         {
             TreeNode node = treeView1.SelectedNode;
 
@@ -5862,7 +5871,7 @@ namespace WinExplorer
             if (node.Tag == null)
                 return null;
 
-            CreateView_Solution.ProjectItemInfo prs = node.Tag as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo prs = node.Tag as VSParsers.ProjectItemInfo;
 
             return prs;
         }
@@ -5930,7 +5939,7 @@ namespace WinExplorer
         {
             VSProject p = GetVSProject();
 
-            CreateView_Solution.ProjectItemInfo prs = GetProjectInfo();
+            VSParsers.ProjectItemInfo prs = GetProjectInfo();
 
             if (prs == null)
                 return;
@@ -6018,7 +6027,7 @@ namespace WinExplorer
 
             foreach (TreeNode nodes in node.Nodes)
             {
-                CreateView_Solution.ProjectItemInfo p = nodes.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo p = nodes.Tag as VSParsers.ProjectItemInfo;
 
                 if (p != null)
                     L.Add(p);
@@ -6173,7 +6182,7 @@ namespace WinExplorer
             if (node == null)
                 return;
 
-            CreateView_Solution.ProjectItemInfo prs = node.Tag as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo prs = node.Tag as VSParsers.ProjectItemInfo;
 
             if (prs == null)
                 return;
@@ -6286,7 +6295,7 @@ namespace WinExplorer
 
             string file = vs.solutionFileName;
 
-            WinExplorer.CreateView_Solution.ProjectItemInfo prs = _eo.cvs.getactiveproject();
+            VSParsers.ProjectItemInfo prs = _eo.cvs.getactiveproject();
 
             if (prs == null)
             {
@@ -6357,7 +6366,7 @@ namespace WinExplorer
 
             string file = vs.solutionFileName;
 
-            WinExplorer.CreateView_Solution.ProjectItemInfo prs = _eo.cvs.getactiveproject();
+            VSParsers.ProjectItemInfo prs = _eo.cvs.getactiveproject();
 
             if (prs == null)
             {
@@ -6404,7 +6413,7 @@ namespace WinExplorer
 
             string file = vs.solutionFileName;
 
-            WinExplorer.CreateView_Solution.ProjectItemInfo prs = _eo.cvs.getactiveproject();
+            VSParsers.ProjectItemInfo prs = _eo.cvs.getactiveproject();
 
             if (prs == null)
             {
@@ -6497,7 +6506,7 @@ namespace WinExplorer
         //{
         //    VSProject p = GetVSProject();
 
-        //    CreateView_Solution.ProjectItemInfo prs = GetProjectInfo();
+        //    VSParsers.ProjectItemInfo prs = GetProjectInfo();
 
         //    if (prs == null)
         //        return;
@@ -6546,7 +6555,7 @@ namespace WinExplorer
         {
             VSProject p = GetVSProject();
 
-            CreateView_Solution.ProjectItemInfo prs = GetProjectInfo();
+            VSParsers.ProjectItemInfo prs = GetProjectInfo();
 
             if (prs == null)
                 return;
@@ -6593,7 +6602,7 @@ namespace WinExplorer
 
             string file = vs.solutionFileName;
 
-            WinExplorer.CreateView_Solution.ProjectItemInfo prs = _eo.cvs.getactiveproject();
+            VSParsers.ProjectItemInfo prs = _eo.cvs.getactiveproject();
 
             if (prs == null)
             {
@@ -6663,7 +6672,7 @@ namespace WinExplorer
 
             string file = vs.solutionFileName;
 
-            WinExplorer.CreateView_Solution.ProjectItemInfo prs = _eo.cvs.getactiveproject();
+            VSParsers.ProjectItemInfo prs = _eo.cvs.getactiveproject();
 
             if (prs == null)
             {
@@ -6833,7 +6842,7 @@ namespace WinExplorer
 
             string file = vs.solutionFileName;
 
-            WinExplorer.CreateView_Solution.ProjectItemInfo prs = _eo.cvs.getactiveproject();
+            VSParsers.ProjectItemInfo prs = _eo.cvs.getactiveproject();
 
             if (prs == null)
             {
@@ -7345,7 +7354,7 @@ namespace WinExplorer
 
         private void openCMD()
         {
-            WinExplorer.CreateView_Solution.ProjectItemInfo prs = _eo.cvs.getactiveproject();
+            VSParsers.ProjectItemInfo prs = _eo.cvs.getactiveproject();
 
             if (prs == null)
             {
@@ -7796,6 +7805,17 @@ namespace WinExplorer
             df.Controls.Add(spf);
             spf.Show();
             spf.GetFeed();
+        }
+
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VSSolution vs = GetVSSolution();
+            VSProject vp = GetVSProject();
+
+            if (vp == null)
+                return;
+
+            scr.OpenDocumentsWithContent("", vs);
         }
     }
 

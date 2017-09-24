@@ -46,10 +46,14 @@ F:\Windows-Enterprise-VE-2016\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinF
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2012.pdb
 F:\ve\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2012.dll
 F:\ve\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2012.pdb
-F:\ve\VE-2016\Editor\WinFormsUI\obj\Debug\ThemeVS2012.csprojResolveAssemblyReference.cache
+F:\ve\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
 F:\ve\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2012.Resources.resources
 F:\ve\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2012.Strings.resources
 F:\ve\VE-2016\Editor\WinFormsUI\obj\Debug\ThemeVS2012.csproj.GenerateResource.Cache
 F:\ve\VE-2016\Editor\WinFormsUI\obj\Debug\ThemeVS2012.csproj.CoreCompileInputs.cache
 F:\ve\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2012.dll
 F:\ve\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2012.pdb
+F:\ve\VE-2016\Editor\WinFormsUI\obj\Debug\ThemeVS2012.csprojResolveAssemblyReference.cache
+F:\ve\VE-2016\Editor\WinFormsUI\bin\Debug\VE-Resources.dll
+F:\ve\VE-2016\Editor\WinFormsUI\bin\Debug\VE-Resources.pdb
+F:\ve\VE-2016\Editor\WinFormsUI\bin\Debug\VE-Resources.dll.config

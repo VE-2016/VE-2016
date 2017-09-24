@@ -293,6 +293,11 @@ namespace WeifenLuo.WinFormsUI.Docking
             set { Form.Icon = value; }
         }
 
+        public Bitmap GetBitmap(string file)
+        {
+            return ves.Service.GetBitmapFromExtension(file);
+        }
+
         public DockPane Pane
         {
             get

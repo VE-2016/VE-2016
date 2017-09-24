@@ -195,8 +195,8 @@ namespace ICSharpCode.AvalonEdit.Document
             LineNode ns = node;
             //if(node.parent != null && node.parent.left == node)
             {
-                if(node.obs == null)
-                index++;
+                //if(node.obs == null)
+                //index++;
             }
             while (node.parent != null)
             {
@@ -204,19 +204,25 @@ namespace ICSharpCode.AvalonEdit.Document
                 {
                     if (node.parent.left != null)
                     {
-                        
+
                         index += node.parent.left.nodeTotalCountExtended;
                         if (node.parent.obs == null)
                             index++;
+                   
                     }
+                   
+                    //if (node.parent.obs == null)
+                    //    index++;
+                   
                     //if (node != ns && node.obs == null)
                     //    index++;
-                    if (node.obs == null)
-                    {
+                    //if (node.obs == null)
+                    //{
                     //    index++;
-                    }
+                    //}
                 }
-               
+                //if (node.parent.obs == null)
+                //    index++;
                 node = node.parent;
             }
             return index;

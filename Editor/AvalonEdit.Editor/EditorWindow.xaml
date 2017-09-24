@@ -1,14 +1,15 @@
 ﻿<!-- 
 	
 -->
-<ContentControl x:Class="AvalonEdit.Editor.EditorWindow"
+<UserControl x:Class="AvalonEdit.Editor.EditorWindow"
                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
 	xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
-   	Height="500" Width="700"
+             xmlns:editor="clr-namespace:AvalonEdit.Editor"
+             Height="500" Width="700"
 	>
-    <ContentControl.Resources>
+    <UserControl.Resources>
         
         <DataTemplate x:Key="cmbTemplate">
             <WrapPanel Margin="0 0 0 0" Height="20">
@@ -16,7 +17,7 @@
                 <Label Content="{Binding text}" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="9"/>
             </WrapPanel>
         </DataTemplate>
-    </ContentControl.Resources>
+    </UserControl.Resources>
     <DockPanel x:Name="dockPanel">
         <UniformGrid x:Name="quickviewer" DockPanel.Dock ="Top" Rows="1" Height="22">
 
@@ -69,8 +70,8 @@ VerticalAlignment="Stretch">
                 <ComboBoxItem Content="25%"/>
                 <ComboBoxItem Content="12.5%"/>
             </ComboBox>
-            <ScrollBar x:Name="hs" Orientation="Horizontal"  HorizontalAlignment="Stretch"   IsHitTestVisible="True" Grid.Row="1" Grid.Column="1" Opacity="0" Height="18"/>
+            <editor:ScrollBoundScrollBar x:Name="hs" Orientation="Horizontal"  HorizontalAlignment="Stretch"   IsHitTestVisible="True" Grid.Row="1" Grid.Column="1" Height="18"/>
 
         </Grid>
     </DockPanel>
-</ContentControl>
+</UserControl>

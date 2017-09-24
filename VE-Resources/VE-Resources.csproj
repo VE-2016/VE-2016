@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service.cs" />
     <Compile Include="ve.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -736,9 +737,6 @@
     <None Include="Resources\HardDrive_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\IconFile_16x.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Image_16x.png" />
   </ItemGroup>
   <ItemGroup>
@@ -929,6 +927,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\TextBlock_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CS_ProjectSENode_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reference_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CS_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\XMLFile_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ConfigurationFile_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FileSource_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Certificate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconFile_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cursor_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VisualStudioSolution_16x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

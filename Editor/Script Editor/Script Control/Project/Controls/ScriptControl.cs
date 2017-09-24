@@ -37,6 +37,7 @@ using System.Threading.Tasks;
 using AIMS.Libraries.Scripting.ScriptControl.Properties;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.FindSymbols;
+using Microsoft.CodeAnalysis.Text;
 
 namespace AIMS.Libraries.Scripting.ScriptControl
 {
@@ -294,12 +295,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                 dockContainer1 = dockPanel;
                 dockPanel1 = dockPanel;
             }
-            //if (dockPanel == null)
-            //    toolStripContainer1.ContentPanel.Controls.Add(this.dockContainer1);
-            //this.dockContainer1.DocumentStyle = WeifenLuo.WinFormsUI.Docking.DocumentStyle.DockingWindow;
-            //this.dockContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-
-
+         
             string Theme = GetTheme();
 
 
@@ -312,7 +308,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             }
 
 
-
+           
             InitilizeDocks();
 
             Parser.ProjectParser.Initilize(SupportedLanguage.CSharp);
@@ -373,7 +369,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             //MessageBox.Show("Open content for " + e.content);
             if (!string.IsNullOrEmpty(e.filename))
             {
-                OpenDocuments(e.filename, vs, null, e.Location);
+                OpenDocuments(e.filename, vs, null, e);
             }
             else
             {
@@ -740,7 +736,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         public ParseInformation parse { get; set; }
 
 
-        public AvalonDocument OpenDocuments(string Name, VSProvider.VSSolution vs, AutoResetEvent autoEvent = null, ReferenceLocation? Location = null)
+        public AvalonDocument OpenDocuments(string Name, VSProvider.VSSolution vs, AutoResetEvent autoEvent = null, OpenFileEventArgs ofa = null/*ReferenceLocation? Location = null*/)
         {
 
             var d = FileOpened(Name);
@@ -769,15 +765,22 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
             this.ResumeLayout();
 
-            if (Location != null)
-            {
-                int start = Location.Value.Location.SourceSpan.Start;
-                int length = Location.Value.Location.SourceSpan.Length;
+            if (ofa == null)
+                return doc;
 
-                
+            if (ofa.Location != null)
+            {
+                int start = ofa.Location.Value.Location.SourceSpan.Start;
+                int length = ofa.Location.Value.Location.SourceSpan.Length;
                 doc.Editor.dv.SelectText(start, length);
             }
-
+            else if(ofa.Span != null)
+            {
+                TextSpan? Span = ofa.Span;
+                int start = Span.Value.Start;
+                int length = ofa.Span.Value.Length;
+                doc.Editor.dv.SelectText(start, length);
+            }
             
 
            
@@ -799,8 +802,11 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             this.SuspendLayout();
             AvalonDocument doc = new AvalonDocument();
             doc.LoadText(content);
-            doc.Text = symbol.Name;
-            doc.FileName = symbol.Name;
+            if (symbol != null)
+            {
+                doc.Text = symbol.Name;
+                doc.FileName = symbol.Name;
+            }
             doc.Activate();
             doc.Show(dockContainer1, DockState.Document);
             this.ResumeLayout();

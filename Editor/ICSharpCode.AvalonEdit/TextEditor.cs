@@ -278,7 +278,7 @@ namespace ICSharpCode.AvalonEdit
 		
 		#region TextArea / ScrollViewer properties
 		readonly TextArea textArea;
-		ScrollViewers scrollViewer;
+		public ScrollViewers scrollViewer;
 		
 		/// <summary>
 		/// Is called after the template was applied.

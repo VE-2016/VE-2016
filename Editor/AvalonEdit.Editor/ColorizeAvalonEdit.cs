@@ -111,11 +111,14 @@ namespace AvalonEdit.Editor
                     if (sc.Count <= 0)
                         return;
 
-                 
+
 
 
                     if (testusing.StartsWith("using"))
+                    {
+                        ChangeLinePart(line.Offset + 5, line.EndOffset, ApplyChangesForUsing);
                         return;
+                    }
                     if (testusing.StartsWith("//"))
                         return;
 
@@ -140,9 +143,14 @@ namespace AvalonEdit.Editor
             
             element.TextRunProperties.SetForegroundBrush(Brushes.Gray);
         }
+        void ApplyChangesForUsing(VisualLineElement element)
+        {
+
+            element.TextRunProperties.SetForegroundBrush(Brushes.Black);
+        }
         void ApplyChangesForType(VisualLineElement element)
         {
-            if(((SolidColorBrush)element.TextRunProperties.ForegroundBrush).Color != Colors.Green)
+            if(((SolidColorBrush)element.TextRunProperties.ForegroundBrush).Color != Colors.Green && ((SolidColorBrush)element.TextRunProperties.ForegroundBrush).Color != Colors.Maroon)
                 element.TextRunProperties.SetForegroundBrush(brush);
         }
     }

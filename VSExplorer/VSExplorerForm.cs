@@ -431,7 +431,7 @@ namespace WinExplorer
             TreeNode node = b.SelectedNode;
             if (node == null)
                 return null;
-            CreateView_Solution.ProjectItemInfo s = node.Tag as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo s = node.Tag as VSParsers.ProjectItemInfo;
             if (s == null)
                 return null;
 
@@ -444,7 +444,7 @@ namespace WinExplorer
         {
             foreach (TreeNode node in b.Nodes)
             {
-                CreateView_Solution.ProjectItemInfo s = node.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo s = node.Tag as VSParsers.ProjectItemInfo;
                 if (s == null)
                     continue;
 
@@ -458,7 +458,7 @@ namespace WinExplorer
         {
             foreach (TreeNode node in b.Nodes)
             {
-                CreateView_Solution.ProjectItemInfo s = node.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo s = node.Tag as VSParsers.ProjectItemInfo;
                 if (s != null)
 
                     return s.ps.vs;
@@ -490,13 +490,13 @@ namespace WinExplorer
         {
             VSProject p0 = GetVSProject(ns);
 
-            //CreateView_Solution.ProjectItemInfo p0 = ns.Tag as CreateView_Solution.ProjectItemInfo;
+            //VSParsers.ProjectItemInfo p0 = ns.Tag as VSParsers.ProjectItemInfo;
 
             string projectfile = p0.FileName;
 
             VSProject p1 = GetVSProject(np);
 
-            //CreateView_Solution.ProjectItemInfo pm = np.Tag as CreateView_Solution.ProjectItemInfo;
+            //VSParsers.ProjectItemInfo pm = np.Tag as VSParsers.ProjectItemInfo;
 
             string projectmerge = p1.FileName;
 
@@ -717,7 +717,7 @@ namespace WinExplorer
 
                 row.Cells[0].Value = ns.Text;
 
-                CreateView_Solution.ProjectItemInfo p = node.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo p = node.Tag as VSParsers.ProjectItemInfo;
 
                 if (p != null)
                 {
@@ -745,7 +745,7 @@ namespace WinExplorer
 
                 row.Cells[0].Value = ns.Text;
 
-                CreateView_Solution.ProjectItemInfo p = ns.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo p = ns.Tag as VSParsers.ProjectItemInfo;
 
                 if (p != null)
                 {

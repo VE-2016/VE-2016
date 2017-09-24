@@ -209,7 +209,7 @@ namespace AvalonEdit.Editor
 
                 textAtOffset = document.GetText(offset, 1);
 
-                if (textAtOffset == "(" || textAtOffset == ")" || textAtOffset == "<" || textAtOffset == ">" || textAtOffset == ",")
+                if (textAtOffset == "(" || textAtOffset == ")" || textAtOffset == "<" || textAtOffset == ">" || textAtOffset == "," || textAtOffset == ";")
                     break;
             }
 
@@ -232,7 +232,7 @@ namespace AvalonEdit.Editor
 
                     textAtOffset = document.GetText(offset, 1);
 
-                    if (textAtOffset == "(" || textAtOffset == ")" || textAtOffset == "<" || textAtOffset == ">" || textAtOffset == ",")
+                    if (textAtOffset == "(" || textAtOffset == ")" || textAtOffset == "<" || textAtOffset == ">" || textAtOffset == "," || textAtOffset == ";")
                         break;
                 }
             }

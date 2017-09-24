@@ -66,7 +66,11 @@ namespace AvalonEdit.Editor
 			string relevantText = document.GetText(startOffset, endOffset - startOffset);
 			return imageRegex.Match(relevantText);
 		}
-		
+
+        public int LineOfInterest = 0;
+
+        public FrameworkElement frameworkElement { get; set; }
+
 		/// <summary>
 		/// Gets the first offset >= startOffset where the generator wants to construct
 		/// an element.
@@ -74,12 +78,16 @@ namespace AvalonEdit.Editor
 		/// </summary>
 		public override int GetFirstInterestedOffset(int startOffset)
 		{
+            if (LineOfInterest <= 0)
+                return -1;
             ICSharpCode.AvalonEdit.Document.TextDocument document = CurrentContext.Document;
-            int start = document.GetLineByOffset(startOffset).Offset;
-            int length = document.GetLineByOffset(startOffset).Length;
-            string text = document.Text.Substring(start, length);
-                        
-            if (start  == startOffset && length > 18 && !text.Contains("//") && !text.Contains("using"))
+            int start = document.GetLineByNumber(LineOfInterest).Offset;
+//            int length = document.GetLineByOffset(startOffset).Length;
+//            string text = document.Text.Substring(start, length);
+                
+            
+
+            if (start  == startOffset )
                 return start;
             else
             {
@@ -110,29 +118,32 @@ namespace AvalonEdit.Editor
             ICSharpCode.AvalonEdit.Document.TextDocument document = CurrentContext.Document;
             int start = document.GetLineByOffset(offset).Offset;
 
+            if (frameworkElement == null)
+                return null;
+
             if (start  == offset )
             {
                 DocumentLine documentLine = document.GetLineByOffset(offset);
 
            
-                int height = 16;// (int)CurrentContext.VisualLine.Height;
+                int height = (int)frameworkElement.Height;// (int)CurrentContext.VisualLine.Height;
                 
-                BitmapImage bitmap = bitmapImage;// LoadBitmap(m.Groups[1].Value);
-				//if (bitmap != null) {
-					Image image = new Image();
-					image.Source = bitmap;
-					image.Width = bitmap.PixelWidth;
-                image.Height = height;// bitmap.PixelHeight;
-                                  // Pass the length of the match to the 'documentLength' parameter
-                                  // of InlineObjectElement.
+    //            BitmapImage bitmap = bitmapImage;// LoadBitmap(m.Groups[1].Value);
+				////if (bitmap != null) {
+				//	Image image = new Image();
+				//	image.Source = bitmap;
+				//	image.Width = bitmap.PixelWidth;
+    //            image.Height = height;// bitmap.PixelHeight;
+    //                              // Pass the length of the match to the 'documentLength' parameter
+    //                              // of InlineObjectElement.
                                   
-                var es = new InlineObjectElementExtended(1/*m.Length*/, image);
+                var es = new InlineObjectElementExtended(1/*m.Length*/, frameworkElement);
 
-                es.obs = documentLine.obs;
+                //es.obs = documentLine.obs;
 
-                image.Tag = es;
+                //image.Tag = es;
 
-                es.Element.MouseDown += Element_MouseDown;
+                //es.Element.MouseDown += Element_MouseDown;
                 
 
                     return es;
@@ -168,7 +179,7 @@ namespace AvalonEdit.Editor
                     if (vs == null)
                         return;
 
-                    var r = vs.GetAllSymbolReferences(symbol, null, null,null);
+                    var r = vs.GetAllSymbolReferences(symbol, null, null);
 
                     List<ReferencedSymbol> b = new List<ReferencedSymbol>();
                     foreach (var c in r)

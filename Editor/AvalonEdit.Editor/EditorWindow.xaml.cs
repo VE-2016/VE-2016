@@ -4,6 +4,7 @@ using ICSharpCode.AvalonEdit.Document;
 using ICSharpCode.AvalonEdit.Editing;
 using ICSharpCode.AvalonEdit.Folding;
 using ICSharpCode.AvalonEdit.Highlighting;
+using ICSharpCode.AvalonEdit.Highlighting.Xshd;
 using ICSharpCode.AvalonEdit.Rendering;
 using ICSharpCode.AvalonEdit.Snippets;
 using Microsoft.CodeAnalysis;
@@ -22,6 +23,7 @@ using System.IO.Packaging;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -33,6 +35,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -49,7 +52,7 @@ namespace AvalonEdit.Editor
     /// <summary>
     /// Interaction logic for EditorWindow.xaml
     /// </summary>
-    public partial class EditorWindow : ContentControl
+    public partial class EditorWindow : UserControl
     {
 
         //TextEditor textEditor { get; set; }
@@ -65,6 +68,37 @@ namespace AvalonEdit.Editor
         public bool IsQuickClassBrowser { get; set; }
 
 
+        public static EditorWindow staticEditorWindow { get; set; }
+
+
+        static EditorWindow()
+        {
+           
+            staticEditorWindow = new EditorWindow();
+            staticEditorWindow.HideQuickClassBrowser();
+            staticEditorWindow.HideAllMargin();
+            staticEditorWindow.HideBottom();
+            staticEditorWindow.Width = 250;
+            staticEditorWindow.Height = 110;
+            staticEditorWindow.textEditor.TextArea.FontSize = 9.6;
+            staticEditorWindow.textEditor.TextArea.Background = Brushes.White;
+            staticEditorWindow.Visibility = Visibility.Visible;
+            staticEditorWindow.textEditor.IsReadOnly = true;
+            //staticEditorWindow.Margin = new Thickness(1, 1, 1, 1);
+            staticEditorWindow.BorderThickness = new Thickness(1, 1, 1, 1);
+            staticEditorWindow.BorderBrush = Brushes.LightGray;
+            
+            staticEditorWindow.Opacity = 1;
+            
+        }
+
+        static public void LoadStaticContent(string content, VSSolution vs)
+        {
+                      
+            staticEditorWindow.LoadContent(content);
+            staticEditorWindow.vs = vs;
+            staticEditorWindow.LoadFromProject(vs);
+        }
         static public object LoadXaml(String Assemblypath)
         {
 
@@ -99,89 +133,11 @@ namespace AvalonEdit.Editor
             InitializeComponent();
 
             IsQuickClassBrowser = true;
-
-            //var sa = AppDomain.CurrentDomain.BaseDirectory + "AvalonEdit.Editor.dll";
-
-            //LoadXaml(sa);
-
-            // System.Uri resourceLocater = new System.Uri("AvalonEdit.Editor;component/editorwindow.xaml", System.UriKind.Relative);//
-
-
-            // var assembly = Assembly.LoadFile(sa);
-            //var stream = assembly.GetManifestResourceStream(assembly.GetName().Name + ".g.resources");
-            //var resourceReader = new ResourceReader(stream);
-
-            //foreach (DictionaryEntry resource in resourceReader)
-            //{
-            //    if (new FileInfo(resource.Key.ToString()).FullName.ToLower().Contains("editorwindow"))
-            //    {
-            //        Uri uri = new Uri("/" + assembly.GetName().Name + ";component/" + resource.Key.ToString().Replace(".baml", ".xaml"), UriKind.Relative);
-            //        ResourceDictionary skin = Application.LoadComponent(uri) as ResourceDictionary;
-
-
-            ////        this.Resources.MergedDictionaries.Add(skin);
-            //    }
-            //}
-
-            //System.Uri resourceLocater = new System.Uri("/AvalonEdit.Editor;component/editorwindow.baml", System.UriKind.Relative);
-
-            //System.Windows.Application.LoadComponent(this, resourceLocater);
-
-
-
-            //            InitializeComponent();
-
-            // this.LoadViewFromUri("/AvalonEdit.Editor;component/EditorWindow.xml");
-
-
-            // textEditor = new TextEditor();
-            //  textEditor.VerticalScrollBarVisibility = ScrollBarVisibility.Hidden;
-            //  textEditor.HorizontalScrollBarVisibility = ScrollBarVisibility.Hidden;
+            
             textEditor.FontFamily = new FontFamily(FontFamily.BaseUri, FontFamily.Source);
             textEditor.FontSize = this.FontSize;
             textEditor.HorizontalAlignment = HorizontalAlignment.Stretch;
-
-            //string file = "C:\\MSBuildProjects-beta\\VStudio.sln";
-            //VSSolutionLoader rw = new VSSolutionLoader();
-            //System.Windows.Forms.TreeView vv = rw.LoadProject(file);
-
-            //VSSolution vs = vv.Tag as VSSolution;
-
-            //MessageBox.Show("VSolution loaded.." + vs.Name);
-
-
-            //vs.CompileSolution();
-
-            //editor.vs = vs;
-
-            // FileToLoad = "C:\\MSBuildProjects-betas\\AvalonEdit.Editor\\EditorWindow.xaml.cs";
-
-            // ProjectToLoad = "C:\\MSBuildProjects-betas\\AvalonEdit.Editor\\AvalonEdit.Editor.csproj";
-
-            // SolutionToLoad = "C:\\MSBuildProjects-betas\\av.sln";
-
-            // editor.SolutionToLoad = SolutionToLoad;
-            // editor.ProjectToLoad = ProjectToLoad;
-            // editor.FileToLoad = FileToLoad;
-
-
-            //MemoryStream m = new MemoryStream();
-            //var se = System.Text.Encoding.UTF8.GetBytes("a\nb\nc\nda\nb\nc\nda\nb\nc\nda\nb\nc\nda\nb\nc\nda\nb\nc\nda\nb\nc\nda\nb\nc\nda\nb\nc\nda\nb\nc\nda\nb\nc\nd");
-            //m.Write(se, 0, se.Length);
-            //m.Seek(0, SeekOrigin.Begin);
-            //textEditor.Load(m);
-
-            //var g = textEditor.Document.GetLineByNumber(2).Offset;
-            //textEditor.Document.Insert(g, "References - \n", new object());
-
-
-
-            //g = textEditor.Document.GetLineByNumber(10).Offset;
-            //textEditor.Document.Insert(g, "\nReferences - \n", new object());
-
-            //textEditor.Load(FileToLoad);
-
-
+            
             qcb = new QuickClassBrowser();
 
             qcb.namespaceComboBox = namespaceComboBox;
@@ -205,16 +161,29 @@ namespace AvalonEdit.Editor
                     throw new InvalidOperationException("Could not find embedded resource");
                 using (XmlReader reader = new XmlTextReader(s))
                 {
-                    customHighlighting = ICSharpCode.AvalonEdit.Highlighting.Xshd.
-                        HighlightingLoader.Load(reader, HighlightingManager.Instance);
+                    Tuple<IHighlightingDefinition, XshdSyntaxDefinition> Highlighters = (Tuple<IHighlightingDefinition, XshdSyntaxDefinition>)ICSharpCode.AvalonEdit.Highlighting.Xshd.HighlightingLoader.Load(reader, HighlightingManager.Instance);
+                    customHighlighting = Highlighters.Item1;
+                    var xshd = Highlighters.Item2;
+                    foreach(var c in xshd.Elements)
+                    {
+
+                        if (c is ICSharpCode.AvalonEdit.Highlighting.Xshd.XshdRuleSet)
+                        {
+                            ICSharpCode.AvalonEdit.Highlighting.Xshd.XshdRuleSet rs = c as ICSharpCode.AvalonEdit.Highlighting.Xshd.XshdRuleSet;
+                            foreach (var d in rs.Elements)
+                            if (d is ICSharpCode.AvalonEdit.Highlighting.Xshd.XshdKeywords)
+                            {
+                                ICSharpCode.AvalonEdit.Highlighting.Xshd.XshdKeywords keywords = d as ICSharpCode.AvalonEdit.Highlighting.Xshd.XshdKeywords;
+                                Words = keywords.Words.ToList();
+                                break;
+                            }
+                        }
+                    }
                 }
             }
-            // and register it in the HighlightingManager
+            
             HighlightingManager.Instance.RegisterHighlighting("Custom Highlighting", new string[] { ".cool" }, customHighlighting);
-
-
             textEditor.SyntaxHighlighting = customHighlighting;
-
 
             textEditor.TextArea.TextEntering += textEditor_TextArea_TextEntering;
             textEditor.TextArea.TextEntered += textEditor_TextArea_TextEntered;
@@ -225,19 +194,14 @@ namespace AvalonEdit.Editor
             r.textEditor = textEditor;
 
             textEditor.TextArea.TextView.BackgroundRenderers.Add(r);
-
             textEditor.TextArea.TextView.MouseMove += TextView_MouseMove;
-
             textEditor.TextArea.TextView.MouseDown += TextView_MouseDown;
-
-
-
             textEditor.TextArea.Caret.PositionChanged += Caret_PositionChanged;
-
-
             textEditor.TextArea.TextView.MouseHover += TextView_MouseHover;
+            textEditor.KeyDown += TextEditor_KeyDown;
+            this.SizeChanged += EditorWindow_SizeChanged;
 
-            textEditor.KeyDown += TextEditor_KeyDown; ;
+            this.textEditor.TextArea.TextView.ScrollOffsetChanged += TextView_ScrollOffsetChanged;
 
             //textEditor.PreviewKeyUp += TextEditor_PreviewKeyUp;  
 
@@ -253,46 +217,73 @@ namespace AvalonEdit.Editor
             foldingStrategy = new BraceFoldingStrategy();
 
             Colorizer colorizer = new Colorizer(this);
-            //colorizer.editorWindow = this;
+            
             textEditor.TextArea.TextView.LineTransformers.Add(colorizer);
 
             //textEditor.TextArea.TextView.ElementGenerators.Add(new FormatterGenerator());
 
+            elementGenerator = new ImageElementGenerator("");
+
+            textEditor.TextArea.TextView.ElementGenerators.Add(elementGenerator);
+
             completionWindow = null;
 
             GetKeywords();
-
-
-            //eTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            //eTimer.Interval = 1000;
-            //eTimer.Enabled = true;
-
+            
             eTimer.Tick += new EventHandler(OnTimedEvent);
             eTimer.Interval = new TimeSpan(0, 0, 1);
             eTimer.Start();
-
-
-
+            
             InitializeTextMarkerService();
 
             ContextMenu = CreateContextMenu(this, this.textEditor);
-
-            //this.IsVisibleChanged += EditorWindow_IsVisibleChanged;
-
+            
             Mouse.OverrideCursor = Cursors.Arrow;
 
             textEditor.TextArea.SelectionChanged += TextArea_SelectionChanged;
 
-            // this.IsKeyboardFocusedChanged += EditorWindow_IsKeyboardFocusedChanged;
-
             zoom.SelectionChanged += Zoom_SelectionChanged;
 
-
-
+            hs._scrollViewer = this.textEditor;
+            hs.Orientation = Orientation.Horizontal;
+           hs.LoadEvents();
 
         }
 
+        private void EditorWindow_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if(popup != null)
+            {
+                popup.Element_SizeChanged();
+                textEditor.TextArea.TextView.Redraw();
+            }
+        }
+
+        ImageElementGenerator elementGenerator { get; set; }
+        private void TextView_ScrollOffsetChanged(object sender, EventArgs e)
+        {
+            if (popup == null)
+                return;
+            var location = this.PointToScreen(new Point(0, 0));
+            
+           // popup.Top = 30 - textEditor.TextArea.TextView.VerticalOffset;
+           // popup.InvalidateVisual();
+        }
+
+        public List<string> Words { get; set; }
+
         public double zoomScaleFactor = 1.0;
+
+        public List<string> typeNames { get; set; }
+
+        public List<string> GetTypesNames()
+        {
+            
+            if (vs == null || string.IsNullOrEmpty(FileToLoad))
+                return new List<string>();
+            typeNames = vs.TypesNames(FileToLoad);
+            return typeNames;
+        }
 
         private void Zoom_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -311,7 +302,8 @@ namespace AvalonEdit.Editor
 
 
                 shouldPopupUpdate = true;
-
+                popup.Element_SizeChanged();
+                textEditor.TextArea.TextView.Redraw();
             }
         }
         bool shouldPopupUpdate = false;
@@ -329,7 +321,8 @@ namespace AvalonEdit.Editor
 
                     embedEditorWindow.Width = d.Item1;
                     popup.Width = d.Item1;
-                    popup.HorizontalOffset = d.Item2;
+                    //popup.Top = d.Item2;
+                    popup.LayoutTransform = new ScaleTransform(1.0 / zoomScaleFactor, 1.0 / zoomScaleFactor);
                     embedEditorWindow.textEditor.TextArea.LayoutTransform = textEditor.TextArea.LayoutTransform;
                     shouldPopupUpdate = false;
                 }));
@@ -346,17 +339,18 @@ namespace AvalonEdit.Editor
             if ((bool)isActive)
             {
                 if (popup != null)
-                    if (!popup.IsOpen)
+                    if (popup.Visibility != Visibility.Visible)
                     {
-                        popup.IsOpen = true;
-                        popup.ReloadIfNeeded();
+                        Size sz = GetPopupSize();
+                        popup.Visibility = Visibility.Visible;
+                        popup.ReloadIfNeeded(sz);
                     }
             }
             else
             {
                 if (popup != null)
-                    if (popup.IsOpen)
-                        popup.IsOpen = false;
+                    if (popup.Visibility != Visibility.Hidden)
+                        popup.Visibility = Visibility.Hidden;
             }
         }
 
@@ -393,14 +387,30 @@ namespace AvalonEdit.Editor
 
             this.InvalidateVisual();
         }
+        public void HideBottom()
+        {
+            IsZoom = false;
+
+            dockPanel.Children.Remove(quickviewer);
+
+            editorGrid.Children.Remove(zoom);
+
+            editorGrid.Children.Remove(hs);
+
+            editorGrid.RowDefinitions[1].Height = new GridLength(0);
+
+            hs.Opacity = 1;
+
+            this.InvalidateVisual();
+        }
         bool Handled = false;
 
         ImageElementGenerator imageElementGenerator = new ImageElementGenerator("");
 
         public void LoadContent(string content)
         {
-
-
+            
+            
             textEditor.Document.Text = content;
 
             textEditor.IsReadOnly = true;
@@ -473,11 +483,12 @@ namespace AvalonEdit.Editor
                                 string FileName = ProjectToLoad;// "C:\\MSBuildProjects-beta\\VSExplorer\\VSExplorer.csproj";
 
                                 string filename = FileToLoad;// "C:\\MSBuildProjects-beta\\VSExplorer\\ExplorerForms.cs";
-
+                                
+                               
                                 editor.vp = editor.vs.GetProjectbyFileName(FileName);
 
                                 ISymbol s = gv.obs as ISymbol;
-                                var r = editor.vs.GetAllSymbolReferences(s, filename, editor.vp, StringReplace.Replace(textEditor.Document.Text));
+                                var r = editor.vs.GetAllSymbolReferences(s, filename, editor.vp);
                                 if (r != null)
                                 {
                                     StringBuilder b = new StringBuilder();
@@ -1168,20 +1179,84 @@ namespace AvalonEdit.Editor
         }
         private void Item_Click_CallHierarchy(object sender, RoutedEventArgs e)
         {
+
+            ContextMenu.Visibility = Visibility.Collapsed;
+            if (toolTip != null)
+                toolTip.IsOpen = false;
+
+            _worker = new BackgroundWorker();
+            _worker.DoWork += CallHierarchy;
+
+            _worker.RunWorkerAsync();
+
+         
+            }
+        private BackgroundWorker _worker;
+        private void Item_Click_FindReferences(object sender, RoutedEventArgs e)
+        {
+            ContextMenu.Visibility = Visibility.Collapsed;
+            if (toolTip != null)
+                toolTip.IsOpen = false;
+
+            _worker = new BackgroundWorker();
+            _worker.DoWork += FindReferences;
+
+            _worker.RunWorkerAsync();
+            
+        }
+        private void CallHierarchy(object sender, DoWorkEventArgs e)
+        {
+
             this.Dispatcher.BeginInvoke(new Action(() =>
             {
 
                 vs.OpenCallHierarchyTool("", null, "", null);
 
                 hierarchyViewer.editorWindow = this;
+
+                string word = Editor.GetWordUnderMouse(textEditor.Document, textEditor.TextArea.Caret.Position);
+
+                if (string.IsNullOrEmpty(word))
+                    return;
+
+                var vp = editor.vs.GetProjectbyCompileItem(FileToLoad);
+
+                Tuple<string, string, ISymbol> t = editor.GetType(textEditor);
+
+
+                ISymbol s = t.Item3 as ISymbol;
+
+                if (s == null)
+                {
+                    s = vs.GetSymbolAtLocation(vp, FileToLoad, textEditor.TextArea.Caret.Offset);
+                    if (s == null)
+                        return;
+                }
+
+                var r = editor.vs.GetAllSymbolReferences(s, FileToLoad, vp/* StringReplace.Replace(textEditor.Document.Text)*/);
+
+                if (r != null)
+                {
+                    List<ReferencedSymbol> list = r.ToList();
+
+                    hierarchyViewer.LoadData(s, list, vs);
+                }
+
             }));
-            }
-        private void Item_Click_FindReferences(object sender, RoutedEventArgs e)
+        }
+
+        private void FindReferences(object sender, DoWorkEventArgs e)
         {
+            
+            //ContextMenu.Visibility = Visibility.Hidden;
+            //ContextMenu.InvalidateVisual();
+
             this.Dispatcher.BeginInvoke(new Action(() =>
             {
-                
+
                 vs.OpenReferencesTool("", null, "", null);
+
+
 
                 treeViewer.editorWindow = this;
 
@@ -1190,31 +1265,59 @@ namespace AvalonEdit.Editor
                 if (string.IsNullOrEmpty(word))
                     return;
 
-            var vp = editor.vs.GetProjectbyCompileItem(FileToLoad);
+                var vp = editor.vs.GetProjectbyCompileItem(FileToLoad);
 
-            Tuple<string, string, ISymbol> t = editor.GetType(textEditor);
+                Tuple<string, string, ISymbol> t = editor.GetType(textEditor);
 
-         
-            ISymbol s = t.Item3 as ISymbol;
 
-            if (s == null)
-                return;
+                ISymbol s = t.Item3 as ISymbol;
 
-            var r = editor.vs.GetAllSymbolReferences(s, FileToLoad, vp, StringReplace.Replace(textEditor.Document.Text));
+                if (s == null)
+                {
+                    s = vs.GetSymbolAtLocation(vp, FileToLoad, textEditor.TextArea.Caret.Offset);
+                    if (s == null)
+                        return;
+                }
+
+
+
+
+                var r = editor.vs.GetAllSymbolReferences(s, FileToLoad, vp/*, StringReplace.Replace(textEditor.Document.Text)*/);
 
                 if (r != null)
                 {
                     List<ReferencedSymbol> list = r.ToList();
 
                     treeViewer.LoadData(s, list, vs);
-                }    
+                }
 
             }));
         }
-        public void OpenFile(SourceData data)
+        public static IEnumerable<ReferencedSymbol> FindReferences(int offset, string FileToLoad, VSSolution vs)
+        {
+
+            VSProject vp = vs.GetProjectbyCompileItem(FileToLoad);
+
+            ISymbol s = vs.GetSymbolAtLocation(vp, FileToLoad, offset);
+                    if (s == null)
+                        return null;
+
+            IEnumerable<ReferencedSymbol> r = vs.GetAllSymbolReferences(s, FileToLoad, vp);
+
+                if (r != null)
+                {
+                    List<ReferencedSymbol> list = r.ToList();
+
+                    treeViewer.LoadData(s, list, vs);
+                }
+
+            return r;
+         
+        }
+        public void OpenFile(SourceRefData data)
         {
             var vp = vs.GetProjectbyCompileItem(FileToLoad);
-            vs.LoadFileFromProject("", vp, data.File, null, data.refs);
+            vs.LoadFileFromProject("", vp, data.FileName, null, data.refs);
         }
         static private void Item_Click(object sender, RoutedEventArgs e)
         {
@@ -1275,6 +1378,7 @@ namespace AvalonEdit.Editor
             if (sender != null)
             {
                 embedEditorWindow = new EditorWindow();
+                embedEditorWindow.sourceEditor = this;
                 embedEditorWindow.HideQuickClassBrowser();
                 embedEditorWindow.HideLeftMargin();
                 embedEditorWindow.HideZoom();
@@ -1287,6 +1391,8 @@ namespace AvalonEdit.Editor
                 embedEditorWindow.BorderBrush = Brushes.Gray;
                 embedEditorWindow.textEditor.Background = Brushes.LemonChiffon;
                 embedEditorWindow.Opacity = 1;
+                embedEditorWindow.HorizontalAlignment = HorizontalAlignment.Stretch;
+                embedEditorWindow.VerticalAlignment = VerticalAlignment.Stretch;
                 if (embedEditorWindow.breakPointMargin != null)
                     embedEditorWindow.breakPointMargin.pen = new Pen(Brushes.LightBlue, 4);
                 embedEditorWindow.lineNumberMarginExtended.background = Brushes.LemonChiffon;
@@ -1359,21 +1465,21 @@ namespace AvalonEdit.Editor
             if (sender != null)
             {
                 popup = new Popups();
-                embedEditorWindow.textEditor.TextArea.LayoutTransform = this.textEditor.TextArea.LayoutTransform;
-                popup.AllowsTransparency = true;
-                popup.Child = stackPanel;
-                popup.PlacementTarget = textEditor;
-                popup.Placement = PlacementMode.Relative;
+                popup.Content = stackPanel;
+                popup.LayoutTransform = new ScaleTransform(1.0 / zoomScaleFactor, 1.0 / zoomScaleFactor);
+                embedEditorWindow.textEditor.TextArea.LayoutTransform = textEditor.TextArea.LayoutTransform;
+                popup.Element_SizeChanged();
                 popup.KeyDown += Popup_KeyDown;
-            }
+                elementGenerator.frameworkElement = popup;
 
-            popup.HorizontalOffset = margins;// point.X;// allmargins - left;
-            popup.VerticalOffset = 30;
-            
-            
-            popup.Height = /*this.ActualHeight + popupHeightPoint.X;// */h - 200 + 2;
-            popup.Width = width;// textEditor.TextArea.ActualWidth - margins; /*- allmargins + left*/;
-            popup.editorWindow = this;
+            }
+            else
+            {
+
+                popup.Height = /*this.ActualHeight + popupHeightPoint.X;// */h - 200 + 2;
+                popup.Width = width - 15;// textEditor.TextArea.ActualWidth - margins; /*- allmargins + left*/;
+            }
+                popup.editorWindow = this;
             popup.LoadHandlers();
 
             embedEditorWindow.Width = width;// textEditor.TextArea.ActualWidth - margins;// - allmargins + left;
@@ -1391,9 +1497,7 @@ namespace AvalonEdit.Editor
        public Size GetPopupSize()
         {
             Size size = new Size();
-
-
-
+            
             int left = 0;
 
             int allmargins = 0;
@@ -1409,11 +1513,12 @@ namespace AvalonEdit.Editor
             {
                 allmargins += (int)cc.ActualWidth;
             }
-
+            if (h <= 0)
+                return size;
             size.Height = h - 200 + 2;
-            size.Width = textEditor.TextArea.ActualWidth - allmargins + left;
+            size.Width = (int)(zoomScaleFactor * (textEditor.TextArea.ActualWidth - allmargins + left));
 
-            embedEditorWindow.Width = textEditor.TextArea.ActualWidth - allmargins + left;
+            embedEditorWindow.Width = zoomScaleFactor * (textEditor.TextArea.ActualWidth - allmargins + left) - 35;
 
             return size;
         }
@@ -1423,8 +1528,8 @@ namespace AvalonEdit.Editor
             if (popup == null)
                 return;
             
-                popup.IsOpen = false;
-                popup.StaysOpen = false;
+                popup.Visibility = Visibility.Hidden;
+                
                 popup.Visibility = Visibility.Collapsed;
                 embedEditorWindow.Visibility = Visibility.Collapsed;
                 popup = null;
@@ -1449,8 +1554,8 @@ namespace AvalonEdit.Editor
             else
             {
                 if (popup != null)
-                    if (!popup.IsOpen)
-                        popup.IsOpen = true;
+                    if (popup.Visibility != Visibility.Visible)
+                        popup.Visibility = Visibility.Visible;
                 embedEditorWindow.textEditor.Background = Brushes.LemonChiffon;
                 embedEditorWindow.breakPointMargin.background = Brushes.LemonChiffon;
                 ((FrameworkElement)embedEditorWindow.breakPointMargin).InvalidateVisual();
@@ -1468,11 +1573,14 @@ namespace AvalonEdit.Editor
                 return;
             if (e.Key == Key.Escape)
             {
-                popup.IsOpen = false;
-                popup.StaysOpen = false;
+                RemoveVirtualLines();
+                popup.Visibility = Visibility.Hidden;
+                //popup.StaysOpen = false;
                 popup.Visibility = Visibility.Collapsed;
                 embedEditorWindow.Visibility = Visibility.Collapsed;
                 popup = null;
+                elementGenerator.LineOfInterest = 0;
+                textEditor.TextArea.TextView.Redraw();
             }
         }
 
@@ -1483,8 +1591,9 @@ namespace AvalonEdit.Editor
                 return;
             if (e.Key == Key.Escape)
             {
-                popup.IsOpen = false;
-                popup.StaysOpen = false;
+                RemoveVirtualLines();
+                popup.Visibility = Visibility.Hidden;
+                //popup.StaysOpen = false;
                 popup.Visibility = Visibility.Collapsed;
                 embedEditorWindow.Visibility = Visibility.Collapsed;
                 popup = null;
@@ -1568,15 +1677,24 @@ namespace AvalonEdit.Editor
         {
             Handled = true;
            
+            if(e.Key == Key.F2)
+            {
+               
+                textEditor.Document.Insert(textEditor.Document.Text.Length, textEditor.Document.GetTreeAsString());
+            }
+            else 
             if (e.Key == Key.Escape)
             {
                 if (popup == null)
                     return;
                
                 {
-                    popup.IsOpen = false;
+                    RemoveVirtualLines();
+                    popup.Visibility = Visibility.Hidden;
                     if(embedEditorWindow != null)
                     embedEditorWindow.Visibility = Visibility.Hidden;
+                    elementGenerator.LineOfInterest = 0;
+                    textEditor.TextArea.TextView.Redraw();
                 }
             }
             else if (e.Key == Key.F8)
@@ -1658,18 +1776,20 @@ namespace AvalonEdit.Editor
             Tuple<string, string, ISymbol> t = editor.GetType(textEditor);
 
             PeekDefinition_Tuple = t;
-
+            
             if (vs == null)
                 return;
 
             if (!string.IsNullOrEmpty(t.Item1))
             {
-                popup.IsOpen = true;
+                popup.Visibility = Visibility.Visible;
                 PeekDefinition_Content = t.Item1;
                 embedEditorWindow.LoadContent(PeekDefinition_Content);
                 embedEditorWindow.vs = vs;
                 embedEditorWindow.LoadFromProject(vs, t.Item3);
+
                 
+
                 Task.Factory.StartNew(() =>
                 {
                     Thread.Sleep(2000);
@@ -1689,7 +1809,8 @@ namespace AvalonEdit.Editor
             }
             else if (!string.IsNullOrEmpty(t.Item2))
             {
-                popup.IsOpen = true;
+                popup.Visibility = Visibility.Visible;
+                
                 PeekDefinition_FileName = t.Item2;
                 embedEditorWindow.LoadFile(PeekDefinition_FileName);
                 embedEditorWindow.vs = vs;
@@ -1700,6 +1821,7 @@ namespace AvalonEdit.Editor
                     embedEditorWindow.Dispatcher.BeginInvoke(new Action(() =>
 
                     {
+                        
                         //embedEditorWindow.SetAllFoldings(true);
                         //((BraceFoldingStrategy)embedEditorWindow.foldingStrategy).UpdateFoldings(embedEditorWindow.foldingManager, embedEditorWindow.textEditor.Document);
                         //embedEditorWindow.InvalidateVisual();
@@ -1707,36 +1829,50 @@ namespace AvalonEdit.Editor
 
                 });
                 filenameButton.Content = System.IO.Path.GetFileName(PeekDefinition_FileName);
+                popup.InvalidateVisual();
             }
             else
             {
                 if (popup == null)
                     return;
-                
-                    popup.IsOpen = false;
-                    popup.StaysOpen = false;
+
+                popup.Visibility = Visibility.Hidden;
+                    //popup.StaysOpen = false;
                     popup.Visibility = Visibility.Collapsed;
                     embedEditorWindow.Visibility = Visibility.Collapsed;
                     popup = null;
-                
-
             }
-
-            // Thread newWindowThread = new Thread(new ThreadStart(() =>
-            // {
-            //     this.Dispatcher.BeginInvoke(new Action(() => { vs.LoadFileFromContent(t.Item1, null, t.Item2, t.Item3); }));
-            //  }));
-
-
-            //newWindowThread.SetApartmentState(ApartmentState.STA);
-
-            //newWindowThread.IsBackground = false;
-
-            //newWindowThread.Start();
-
+            int Line = this.textEditor.TextArea.Caret.Line;
+            if (Line < textEditor.Document.Lines.Count - 2)
+                Line++;
+            int c = 1;
+            int offset = textEditor.Document.GetLineByNumber(Line).Offset;
+            int i = 0;
+            while (i < c)
+            {
+                    textEditor.Document.Insert(offset, " \n", "");
+                    i++;
+            }
+            elementGenerator.LineOfInterest = Line;
+            if(popup != null)
+                popup.Visibility = Visibility.Visible;
+            textEditor.TextArea.TextView.Redraw();
         }
 
+        public EditorWindow sourceEditor = null;
 
+        void RemoveVirtualLines()
+        {
+            if (embedEditorWindow.sourceEditor == null)
+                return;
+            List<DocumentLine> Lines = embedEditorWindow.sourceEditor.textEditor.Document.Lines.ToList();
+            Lines.Reverse();
+           
+            foreach (DocumentLine d in Lines)
+                if (d.obs is string)
+                    embedEditorWindow.sourceEditor.textEditor.Document.Remove(d.Offset, d.Length + d.DelimiterLength);
+            embedEditorWindow.sourceEditor.InvalidateVisual();
+        }
 
         public void FormatDocument()
         {
@@ -1760,7 +1896,7 @@ namespace AvalonEdit.Editor
 
         public void LoadProjectTypes(List<INamespaceOrTypeSymbol> symbols)
         {
-           
+            
             
             var currentLine = textEditor.Document.GetLineByOffset(textEditor.CaretOffset);
             List<string> ns = new List<string>();
@@ -1844,6 +1980,8 @@ namespace AvalonEdit.Editor
             textEditor.TextArea.Caret.BringCaretToView();
 
 
+            GetTypesNames();
+
             //if (currentLine.LineNumber > 2)
             //    textEditor.ScrollTo(currentLine.LineNumber - 2, textEditor.TextArea.Caret.Column);
             //else
@@ -1924,7 +2062,11 @@ namespace AvalonEdit.Editor
             textEditor.TextArea.LeftMargins.Remove(bl);
             textEditor.InvalidateVisual();
         }
-
+        public void HideAllMargin()
+        {
+            textEditor.TextArea.LeftMargins.Clear();
+            textEditor.InvalidateVisual();
+        }
         public void LoadMargins()
         {
             bl = new BreakPointMargin();
@@ -1947,7 +2089,7 @@ namespace AvalonEdit.Editor
             textEditor.TextArea.LeftMargins.Add(bl);
             textEditor.TextArea.LeftMargins.Add(b);
             textEditor.TextArea.LeftMargins.Add(br);
-            textEditor.TextArea.TextView.Margin = new Thickness(15, 0, 0, 0);
+            textEditor.TextArea.TextView.Margin = new Thickness(1, 0, 0, 0);
             
         }
 
@@ -1965,10 +2107,11 @@ namespace AvalonEdit.Editor
             textEditor.CaretOffset = offset;
             textEditor.TextArea.Caret.BringCaretToView();
         }
-
+        
         private void TextView_MouseHover(object sender, MouseEventArgs e)
         {
             var v = textEditor.TextArea.TextView;
+           
             var pos = textEditor.GetPositionFromPoint(e.GetPosition(textEditor));
             if (pos != null)
             {
@@ -1995,6 +2138,7 @@ namespace AvalonEdit.Editor
                     if (textAtOffset == "." || textAtOffset == "(" || textAtOffset == ")")
                         break;
                 }
+                
                 offset = textEditor.Document.GetOffset(line, column);
                 if (offset < textEditor.Document.TextLength - 1)
                 {
@@ -2130,12 +2274,11 @@ namespace AvalonEdit.Editor
 
         private void TextView_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
-            
-
             if(e.RightButton == MouseButtonState.Pressed)
             {
-
+                if (toolTip != null)
+                    toolTip.IsOpen = false;
+                ContextMenu.Visibility = Visibility.Visible;
                 ContextMenu.PlacementTarget = textEditor.TextArea.TextView;
                 ContextMenu.IsOpen = true;
                 return;
@@ -2195,7 +2338,7 @@ namespace AvalonEdit.Editor
                             editor.vp = editor.vs.GetProjectbyFileName(FileName);
 
                             ISymbol s = gv.obs as ISymbol;
-                            var r = editor.vs.GetAllSymbolReferences(s, filename, editor.vp, StringReplace.Replace(textEditor.Document.Text));
+                            var r = editor.vs.GetAllSymbolReferences(s, filename, editor.vp/*, StringReplace.Replace(textEditor.Document.Text)*/);
                             if (r != null)
                             {
                                 StringBuilder b = new StringBuilder();
@@ -2274,7 +2417,7 @@ namespace AvalonEdit.Editor
                         editor.vp = editor.vs.GetProjectbyFileName(FileName);
 
                         ISymbol s = gv.obs as ISymbol;
-                        var r = editor.vs.GetAllSymbolReferences(s, filename, editor.vp, StringReplace.Replace(textEditor.Document.Text));
+                        var r = editor.vs.GetAllSymbolReferences(s, filename, editor.vp/*, StringReplace.Replace(textEditor.Document.Text)*/);
 
                         if (r == null)
                             return 0;
@@ -2362,14 +2505,12 @@ namespace AvalonEdit.Editor
 
                 string s = textEditor.Document.Text.Substring(c.Offset, c.Length);
 
-                //   if (s.Trim().StartsWith("string"))
-                //       MessageBox.Show("c");
-
+               
                 textEditor.Document.Insert(g, "  References -          \n", objects[v]);
 
                 ns.Add(textEditor.Document.GetLineByOffset(g));
 
-                //i+= 0;
+               
             }
 
             foreach (var b in ns)
@@ -2429,13 +2570,22 @@ namespace AvalonEdit.Editor
 
                     //content = content.Remove(g + 15, 5).Insert(g + 15, n.ToString().PadRight(5));
 
-                    textEditor.Document.Remove(g + 15, 5);
-
-                    textEditor.Document.Insert(g + 15, n.ToString().PadRight(5));
-
                     var cc = textEditor.Document.GetLineByNumber(v);
 
-                    cc.obs = obs;
+                    string cs = textEditor.Document.Text.Substring(cc.Offset, cc.Length);
+
+                    cs = cs.Insert(15, n.ToString().PadRight(5));
+
+                    textEditor.Document.Remove(g, cc.Length);
+                    textEditor.Document.Insert(g, cs, cc.obs);
+
+
+                    //                    textEditor.Document.Remove(g + 15, 5);
+                    //                    textEditor.Document.Insert(g + 15, n.ToString().PadRight(5), cc.obs);
+
+
+
+                    //cc.obs = obs;
                 }
 
                 //textEditor.Document.Text = content;
@@ -2832,7 +2982,7 @@ namespace AvalonEdit.Editor
 
         public void SetAllFoldings(bool folded = false)
         {
-            
+         
             foreach (var s in foldingManager.AllFoldings)
                 s.IsFolded = folded;
             
@@ -2845,12 +2995,12 @@ namespace AvalonEdit.Editor
             if (foldingStrategy is BraceFoldingStrategy)
             {
                 ((BraceFoldingStrategy)foldingStrategy).UpdateFoldings(foldingManager, textEditor.Document);
-            }
+            }else
             if (foldingStrategy is XmlFoldingStrategy)
             {
                 ((XmlFoldingStrategy)foldingStrategy).UpdateFoldings(foldingManager, textEditor.Document);
-            }
-            if (foldingStrategy is CommentAndMethodFoldingStrategy)
+            } else
+            if ( foldingStrategy is CommentAndMethodFoldingStrategy)
             {
                 ((CommentAndMethodFoldingStrategy)foldingStrategy).UpdateFoldings(foldingManager, textEditor.Document);
             }
@@ -2863,7 +3013,7 @@ namespace AvalonEdit.Editor
 
         public void UpdateSourceDocument()
         {
-
+          
             textEditor.IsReadOnly = true;
 
             editor.GetMembers(textEditor.Document.Text);
@@ -3312,10 +3462,14 @@ namespace AvalonEdit.Editor
             
             this.vs = vs;
 
-            await Task.Run(() =>
+              await Task.Run(() =>
             {
 
-                var vp = vs.GetProjectbyCompileItem(FileToLoad);
+                VSProject vp = null;
+
+                if (FileToLoad != null)
+                    
+                    vp = vs.GetProjectbyCompileItem(FileToLoad);
 
                 if (vp != null)
                 {
@@ -3339,12 +3493,15 @@ namespace AvalonEdit.Editor
                     if (vp == null)
                     {
                         cs = this.UpdateSourceDocumentForContent(symbol);
-
+                        this.qcb.DoUpdateForContent(symbol, editor.symbols);
                     }
-                    else this.UpdateSourceDocument();
+                    else
+                    {
 
-                    this.qcb.DoUpdate(editor.symbols);
+                        this.UpdateSourceDocument();
 
+                        this.qcb.DoUpdate(editor.symbols);
+                    }
                     this.LoadProjectTypes(editor.GetTypes());
 
                     ISymbol s = symbol;
@@ -3728,30 +3885,44 @@ namespace AvalonEdit.Editor
 
     }
 
-    public class Popups : Popup
+    public class Popups : ContentControl
     {
 
-        public Popups(): base()
+        public Popups()
         {
+//            this.Loaded += Popups_Loaded;
+//            this.SourceUpdated += Popups_SourceUpdated;
+        }
 
+        private void Popups_SourceUpdated(object sender, DataTransferEventArgs e)
+        {
             
+        }
 
+        private void Popups_Loaded(object sender, RoutedEventArgs e)
+        {
+           
         }
 
         public EditorWindow editorWindow { get; set; }
 
         public void LoadHandlers()
         {
-            if(this.PlacementTarget != null)
+            //if(this.PlacementTarget != null)
             {
-                if(this.PlacementTarget is FrameworkElement)
+                //if(this.PlacementTarget is FrameworkElement)
                 {
-                    FrameworkElement element = this.PlacementTarget as FrameworkElement;
-
+                    //FrameworkElement element = this.Content as FrameworkElement;
+                    FrameworkElement element = this as FrameworkElement;
                     element.SizeChanged += Element_SizeChanged;
 
                 }
             }
+        }
+
+        public void Element_SizeChanged()
+        {
+            Element_SizeChanged(null, null);
         }
 
         private void Element_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -3759,18 +3930,143 @@ namespace AvalonEdit.Editor
             if (editorWindow == null)
                 return;
             Size size = editorWindow.GetPopupSize();
-            this.Width = size.Width;
+            if (size.Width <= 0 || size.Height <= 0)
+                return;
+            this.Width = size.Width - 25;
             this.Height = size.Height;
-            //editorWindow.embedEditorWindow.Width = textEditor.TextArea.ActualWidth - allmargins + left;
+            
             this.InvalidateVisual();
         }
 
-        public void ReloadIfNeeded()
+        public void ReloadIfNeeded(Size sz)
         {
-            Element_SizeChanged(null, null);
+            if (editorWindow == null)
+                return;
+            Size size = editorWindow.GetPopupSize();
+            this.Width = sz.Width;
+            this.Height = sz.Height;
+
+            this.InvalidateVisual();
+        }
+        //public static DependencyProperty TopmostProperty = Window.TopmostProperty.AddOwner(typeof(Popups), new FrameworkPropertyMetadata(false, OnTopmostChanged));
+        //public bool Topmost
+        //{
+        //    get { return (bool)GetValue(TopmostProperty); }
+        //    set { SetValue(TopmostProperty, value); }
+        //}
+        private static void OnTopmostChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
+        {
+            (obj as Popups).UpdateWindow();
+        }
+        
+        protected override void OnRender(DrawingContext drawingContext)
+        {
+            base.OnRender(drawingContext);
+            
+        }
+        private void UpdateWindow()
+        {
+
+            if (((HwndSource)PresentationSource.FromVisual(this)) == null)
+                return;
+            var hwnd = ((HwndSource)PresentationSource.FromVisual(this as UIElement)).Handle;
+            RECT rect;
+            if (GetWindowRect(hwnd, out rect))
+            {
+               // SetWindowPos(hwnd, Topmost ? -1 : -2, rect.Left, rect.Top, (int)this.Width, (int)this.Height, 0);
+            }
+        }
+        #region imports definitions
+        [StructLayout(LayoutKind.Sequential)]
+        public struct RECT
+        {
+            public int Left;
+            public int Top;
+            public int Right;
+            public int Bottom;
+        }
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool GetWindowRect(IntPtr hWnd, out RECT lpRect);
+        [DllImport("user32", EntryPoint = "SetWindowPos")]
+        private static extern int SetWindowPos(IntPtr hWnd, int hwndInsertAfter, int x, int y, int cx, int cy, int wFlags);
+        #endregion
+    }
+    public class ScrollBoundScrollBar : ScrollBar
+    {
+        public TextEditor _scrollViewer;
+        public TextEditor BoundScrollViewer { get { return _scrollViewer; } set { _scrollViewer = value; /*_scrollViewer.TextArea.TextView.UpdateBindings(); */} }
+
+        
+        public ScrollBoundScrollBar(TextEditor scrollViewer, Orientation o) : base()
+        {
+
+            this.Orientation = o;
+            BoundScrollViewer = _scrollViewer;
+        }
+
+        public ScrollBoundScrollBar() : base()
+        {
+
+        }
+        public void LoadEvents()
+        {
+            _scrollViewer.Loaded += _scrollViewer_Initialized;
+        }
+
+        private void _scrollViewer_Initialized(object sender, EventArgs e)
+        {
+            UpdateBindings();
+        }
+
+      
+
+
+
+        public void UpdateBindings()
+        {
+           
+            this.AddHandler(ScrollBar.ScrollEvent, new ScrollEventHandler(OnScroll));
+            if(_scrollViewer.scrollViewer != null)
+            _scrollViewer.scrollViewer.handler += BoundScrollChanged;
+            this.Minimum = 0;
+          
+        }
+
+        public void BoundScrollChanged(object sender, ScrollChangedEventArgs e)
+        {
+            
+            this.Maximum = e.ExtentWidth;
+            
+            switch (this.Orientation)
+            {
+                case Orientation.Horizontal:
+                    this.Value = e.HorizontalOffset;
+                    break;
+                case Orientation.Vertical:
+                    this.Value = e.VerticalOffset;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public void OnScroll(object sender, ScrollEventArgs e)
+        {
+            switch (this.Orientation)
+            {
+                case Orientation.Horizontal:
+                    this.BoundScrollViewer.ScrollToHorizontalOffset(e.NewValue);
+                    break;
+                case Orientation.Vertical:
+                    this.BoundScrollViewer.ScrollToVerticalOffset(e.NewValue);
+                    break;
+                default:
+                    break;
+            }
         }
     }
-
+    
 }
 
    

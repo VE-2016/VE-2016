@@ -402,7 +402,7 @@ namespace WinExplorer
 
         public VSProject GetVSProject(TreeNode node)
         {
-            CreateView_Solution.ProjectItemInfo p = node.Tag as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo p = node.Tag as VSParsers.ProjectItemInfo;
             if (p == null)
                 return null;
             VSProject pp = p.ps;
@@ -412,7 +412,7 @@ namespace WinExplorer
 
         public VSProjectItem GetVSProjectItem(TreeNode node)
         {
-            CreateView_Solution.ProjectItemInfo p = node.Tag as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo p = node.Tag as VSParsers.ProjectItemInfo;
             if (p == null)
                 return null;
             VSProjectItem pp = p.psi;
@@ -481,7 +481,7 @@ namespace WinExplorer
 
                 foreach (TreeNode node in ns.Nodes)
                 {
-                    CreateView_Solution.ProjectItemInfo ps = node.Tag as CreateView_Solution.ProjectItemInfo;
+                    VSParsers.ProjectItemInfo ps = node.Tag as VSParsers.ProjectItemInfo;
 
                     if (ps == null)
                         continue;
@@ -509,11 +509,11 @@ namespace WinExplorer
         {
             ArrayList N = new ArrayList();
 
-            CreateView_Solution.ProjectItemInfo pp = L[0] as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo pp = L[0] as VSParsers.ProjectItemInfo;
 
             VSProjectItem b = pp.psi;
 
-            foreach (CreateView_Solution.ProjectItemInfo p in L)
+            foreach (VSParsers.ProjectItemInfo p in L)
             {
             }
 
@@ -524,7 +524,7 @@ namespace WinExplorer
         {
             foreach (TreeNode node in ns.Nodes)
             {
-                CreateView_Solution.ProjectItemInfo ps = node.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo ps = node.Tag as VSParsers.ProjectItemInfo;
 
                 if (ps == null)
                     continue;
@@ -547,9 +547,9 @@ namespace WinExplorer
         {
             foreach (TreeNode node in ns.Nodes)
             {
-                CreateView_Solution.ProjectItemInfo ps = node.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo ps = node.Tag as VSParsers.ProjectItemInfo;
 
-                CreateView_Solution.ProjectItemInfo bb = new CreateView_Solution.ProjectItemInfo();
+                VSParsers.ProjectItemInfo bb = new VSParsers.ProjectItemInfo();
                 bb.vs = ps.vs;
                 bb.ps = ps.ps;
                 VSProjectItem pc = new VSProjectItem();
@@ -587,7 +587,7 @@ namespace WinExplorer
             TreeNode node = tv.SelectedNode;
             if (node == null)
                 return;
-            CreateView_Solution.ProjectItemInfo p = node.Tag as CreateView_Solution.ProjectItemInfo; ;
+            VSParsers.ProjectItemInfo p = node.Tag as VSParsers.ProjectItemInfo; ;
 
             if (p == null)
                 return;
@@ -647,14 +647,14 @@ namespace WinExplorer
         {
             foreach (TreeNode node in nc.Nodes)
             {
-                CreateView_Solution.ProjectItemInfo ps = node.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo ps = node.Tag as VSParsers.ProjectItemInfo;
 
                 VSProjectItem pp = null;
 
                 if (ps != null)
                     pp = ps.psi;
 
-                CreateView_Solution.ProjectItemInfo bb = new CreateView_Solution.ProjectItemInfo();
+                VSParsers.ProjectItemInfo bb = new VSParsers.ProjectItemInfo();
                 bb.vs = ps.vs;
                 bb.ps = ps.ps;
 
@@ -718,7 +718,7 @@ namespace WinExplorer
             ncc.SelectedImageKey = nc.SelectedImageKey;
             ncc.ImageKey = nc.ImageKey;
 
-            CreateView_Solution.ProjectItemInfo p = nc.Tag as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo p = nc.Tag as VSParsers.ProjectItemInfo;
 
             string folder = p.psi.Include;
 
@@ -751,14 +751,14 @@ namespace WinExplorer
 
             foreach (TreeNode node in nc.Nodes)
             {
-                CreateView_Solution.ProjectItemInfo ps = node.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo ps = node.Tag as VSParsers.ProjectItemInfo;
 
                 VSProjectItem pp = null;
 
                 if (ps != null)
                     pp = ps.psi;
 
-                CreateView_Solution.ProjectItemInfo bb = new CreateView_Solution.ProjectItemInfo();
+                VSParsers.ProjectItemInfo bb = new VSParsers.ProjectItemInfo();
                 bb.vs = ps.vs;
                 bb.ps = ps.ps;
 
@@ -826,9 +826,9 @@ namespace WinExplorer
             if (project_node != null)
                 project_node.Text = name;
 
-            CreateView_Solution.ProjectItemInfo p = nc.Tag as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo p = nc.Tag as VSParsers.ProjectItemInfo;
 
-            //CreateView_Solution.ProjectItemInfo psp = new CreateView_Solution.ProjectItemInfo();
+            //VSParsers.ProjectItemInfo psp = new VSParsers.ProjectItemInfo();
 
             if (p.psi != null)
                 if (p.psi.ItemType == "Folder")
@@ -842,7 +842,7 @@ namespace WinExplorer
             if (p != null)
                 ppp = p.psi;
 
-            CreateView_Solution.ProjectItemInfo bbb = new CreateView_Solution.ProjectItemInfo();
+            VSParsers.ProjectItemInfo bbb = new VSParsers.ProjectItemInfo();
             bbb.vs = p.vs;
             bbb.ps = p.ps;
 
@@ -866,7 +866,7 @@ namespace WinExplorer
 
             // master = cc[cc.Length - 2];
 
-            CreateView_Solution.ProjectItemInfo psp = nc.Tag as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo psp = nc.Tag as VSParsers.ProjectItemInfo;
 
             string newname = name;
 
@@ -895,14 +895,14 @@ namespace WinExplorer
 
             foreach (TreeNode node in nc.Nodes)
             {
-                CreateView_Solution.ProjectItemInfo ps = node.Tag as CreateView_Solution.ProjectItemInfo;
+                VSParsers.ProjectItemInfo ps = node.Tag as VSParsers.ProjectItemInfo;
 
                 VSProjectItem pp = null;
 
                 if (ps != null)
                     pp = ps.psi;
 
-                CreateView_Solution.ProjectItemInfo bb = new CreateView_Solution.ProjectItemInfo();
+                VSParsers.ProjectItemInfo bb = new VSParsers.ProjectItemInfo();
                 bb.vs = ps.vs;
                 bb.ps = ps.ps;
 

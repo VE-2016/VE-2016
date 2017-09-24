@@ -702,8 +702,8 @@ namespace VSParsers
 			TreeNodeCollection tnc = msv.Nodes;
 
 			TreeNode gs = new TreeNode();
-			gs.ImageKey = "Solution_8308_24";
-			gs.SelectedImageKey = "Solution_8308_24";
+			gs.ImageKey = "VSSolutionFile";
+			gs.SelectedImageKey = "VSSolutionFile";
 			gs.Text = pp;
 			ProjectItemInfo p = new ProjectItemInfo();
 			p.vs = msv.Tag as VSSolution;
@@ -875,24 +875,12 @@ namespace VSParsers
 			Dictionary<string, object> d = new Dictionary<string, object>();
 
 			tv.Tag = vs;
-			//tv.Tag = d;
 			tv.Nodes.Clear();
 
 			ArrayList nodes = new ArrayList();
 
 			TreeNode REF = null;
 
-			try
-			{
-				if (pgs != null)
-				{
-					//pgs.Invoke(new Action(() => { pgs.Maximum = 100 * vs.Projects.Count(); pgs.Maximum = 100 * vs.Projects.Count(); pgs.Value = 0; }));
-				}
-			}
-			catch (Exception e)
-			{
-				Console.WriteLine(e.Message);
-			};
 			Dictionary<string, TreeNode> DSN;
 			foreach (VSProject ps in vs.Projects)
 			{
@@ -1133,8 +1121,7 @@ namespace VSParsers
 				foreach (VSProjectItem pi in ps.Items)
 				{
 
-
-					//if (pi.Include.Contains("C:\\Program Files (x86)\\MSBuild\\14.0\\bin\\amd64\\CSharp.ProjectItemsSchema.xaml"))
+                    //if (pi.Include.Contains("C:\\Program Files (x86)\\MSBuild\\14.0\\bin\\amd64\\CSharp.ProjectItemsSchema.xaml"))
 					//    MessageBox.Show("found");
 
 					ProjectItemInfo pr3 = new ProjectItemInfo();
@@ -1264,12 +1251,17 @@ namespace VSParsers
 						if (Path.GetExtension(pi.Include) == ".datasource")
 							DDD.Add(pi);
 
+                        if (pi.ItemType == "Resource")
+                            CDD.Add(pi);
+                        else
+                        {
 
-						TreeNode ns = new TreeNode();
-						ns.Text = pi.Include;
-						ns.Tag = pr3;
-						//ns.ImageKey = "new";
-						t.Nodes.Add(ns);
+                            TreeNode ns = new TreeNode();
+                            ns.Text = pi.Include;
+                            ns.Tag = pr3;
+                            //ns.ImageKey = "new";
+                            t.Nodes.Add(ns);
+                        }
 					}
 					else
 					if (pi.ItemType == "file")
@@ -1580,10 +1572,10 @@ namespace VSParsers
 
 							if (pi.ItemType.ToString() == "Reference" || pi.ItemType.ToString() == "ProjectReference")
 							{
-								t4.ImageKey = "reference_16xLG";
-								t4.SelectedImageKey = "reference_16xLG";
+								t4.ImageKey = "reference_16x";
+								t4.SelectedImageKey = "reference_16x";
 							}
-
+                           
 							t3.Nodes.Add(t4);
 							if (g != null)
 							{
@@ -1616,8 +1608,8 @@ namespace VSParsers
 							{
 								REF = ts;
 
-								ts.ImageKey = "reference_16xLG";
-								ts.SelectedImageKey = "reference_16xLG";
+								ts.ImageKey = "reference_16x";
+								ts.SelectedImageKey = "reference_16x";
 							}
 							else
 							{
@@ -1655,8 +1647,8 @@ namespace VSParsers
 
 							if (pi.ItemType.ToString() == "Reference" || pi.ItemType.ToString() == "ProjectReference")
 							{
-								tp.ImageKey = "reference_16xLG";
-								tp.SelectedImageKey = "reference_16xLG";
+								tp.ImageKey = "reference_16x";
+								tp.SelectedImageKey = "reference_16x";
 							}
 
 							ts.Nodes.Add(tp);
@@ -1718,11 +1710,11 @@ namespace VSParsers
 				//if (ps.Name == "VSExplorer")
 				//    MessageBox.Show("ve");
 				MoveContentTo(t);
-				ArrayList G = new ArrayList();
-				FindNodesByInclude(t, "Formatting\\XmlLiterals.resx", G);
+			//	ArrayList G = new ArrayList();
+			//	FindNodesByInclude(t, "Formatting\\XmlLiterals.resx", G);
 				RemoveDuplicates(t);
-				G = new ArrayList();
-				FindNodesByInclude(t, "Formatting\\XmlLiterals.resx", G);
+				//G = new ArrayList();
+			//	FindNodesByInclude(t, "Formatting\\XmlLiterals.resx", G);
 				SortFolderNodes(t);
 
 				tv.EndUpdate();
@@ -1766,7 +1758,11 @@ namespace VSParsers
 				}
 			}
 
-			tv.ResumeLayout();
+            tv.ImageKey = dc[".sln"];
+            tv.SelectedImageKey = dc[".sln"];
+
+
+            tv.ResumeLayout();
 
 			return vs;
 		}
@@ -3107,8 +3103,8 @@ namespace VSParsers
 									{
 										string s = b.OutputName;
 										ns.Text = Path.GetFileName(s);
-										ns.ImageKey = "reference_16xLG";
-										ns.SelectedImageKey = "reference_16xLG";
+										ns.ImageKey = "reference_16x";
+										ns.SelectedImageKey = "reference_16x";
 									}
 								}
 							}
@@ -3167,8 +3163,8 @@ namespace VSParsers
 							p.vs = vs;
 							p.ps = vp;
 							p.psi = new VSProjectItem();
-							ns.ImageKey = "reference_16xLG";
-							ns.SelectedImageKey = "reference_16xLG";
+							ns.ImageKey = "reference_16xF";
+							ns.SelectedImageKey = "reference_16x";
 
 							ns.Tag = p;
 							node.Nodes.Add(ns);
@@ -3184,8 +3180,8 @@ namespace VSParsers
 							p.psi.ItemType = "Reference";
 							p.psi.Include = c;
 
-							ng.ImageKey = "reference_16xLG";
-							ng.SelectedImageKey = "reference_16xLG";
+							ng.ImageKey = "reference_16x";
+							ng.SelectedImageKey = "reference_16x";
 							ng.Tag = p;
 							ns.Nodes.Add(ng);
 						}
@@ -3220,8 +3216,8 @@ namespace VSParsers
 									p.vs = vs;
 									p.ps = vp;
 									p.psi = new VSProjectItem();
-									ns.ImageKey = "reference_16xLG";
-									ns.SelectedImageKey = "reference_16xLG";
+									ns.ImageKey = "reference_16x";
+									ns.SelectedImageKey = "reference_16x";
 
 									ns.Tag = p;
 									node.Nodes.Add(ns);
@@ -3425,7 +3421,11 @@ namespace VSParsers
 			if (gg.Length > 0)
 				node.Text = gg[gg.Length - 1];
 
-			if (dc != null)
+            ProjectItemInfo p = node.Tag as ProjectItemInfo;
+            if (p.psi.ItemType == "Reference")
+                return;
+
+                if (dc != null)
 			{
 				string[] s = node.Text.Split(".".ToCharArray());
 				if (s.Count() > 1)
@@ -3436,7 +3436,7 @@ namespace VSParsers
 
 					exts = exts.ToLower();
 
-					ProjectItemInfo p = node.Tag as ProjectItemInfo;
+					
 
 					if (exts != ".resx")
 
@@ -3446,9 +3446,21 @@ namespace VSParsers
 							string dd = (string)dc[exts];
 							if (dd != "")
 							{
-								if (p != null)
-									if (p.psi.ItemType == "Reference")
-										return;
+                                if (p != null)
+                                    if (p.psi.ItemType == "Reference")
+                                    {
+                                        if(exts == ".csproj")
+                                        {
+                                            node.ImageKey = dd;
+                                            node.SelectedImageKey = dd;
+                                        }
+                                        else
+                                        {
+                                            node.ImageKey = "reference_16x";
+                                            node.SelectedImageKey = "reference_16x";
+                                        }
+                                        return;
+                                    }
 
 								if (exts == ".cs")
 								{
@@ -3488,7 +3500,17 @@ namespace VSParsers
 									node.SelectedImageKey = dd;
 								}
 							}
+                            else
+                            {
+                            //    node.ImageKey = "filesource";
+                            //    node.SelectedImageKey = "filesource";
+                            }
 						}
+                        else
+                        {
+                            node.ImageKey = "filesource";
+                            node.SelectedImageKey = "filesource";
+                        }
 					}
 					else
 					{
@@ -3504,29 +3526,6 @@ namespace VSParsers
 						}
 					}
 				}
-				//else
-				//{
-				//    string filename = GetFileName(node);
-				//    if (filename == "")
-				//        return;
-				//    string exts = Path.GetExtension(filename);
-				//    if (exts == "")
-				//        return;
-				//    if (exts == null)
-				//        return;
-
-				//    if (dc.ContainsKey(exts))
-				//    {
-				//        string dd = (string)dc[exts];
-				//        if (dd != "")
-				//        {
-				//            node.ImageKey = dd;
-				//            node.SelectedImageKey = dd;
-				//        }
-				//    }
-				//    //node.ImageKey = "Folder";
-				//    //node.SelectedImageKey = "Folder";
-				//}
 			}
 
 			foreach (TreeNode nodes in node.Nodes)
@@ -3556,8 +3555,6 @@ namespace VSParsers
 						node.SelectedImageKey = dd;
 					}
 				}
-				//node.ImageKey = "Folder";
-				//node.SelectedImageKey = "Folder";
 			}
 		}
 
@@ -3567,8 +3564,8 @@ namespace VSParsers
 
 			if (ns != null)
 			{
-				ns.ImageKey = "properties_16xLG";
-				ns.SelectedImageKey = "properties_16xLG";
+				ns.ImageKey = "property_16x";
+				ns.SelectedImageKey = "property_16x";
 			}
 
 			TreeNode nodes = FindNode(master, "Resources");
@@ -4664,8 +4661,8 @@ namespace VSParsers
 
 				if (node.Text == "Properties")
 				{
-					node.ImageKey = "properties_16xLG";
-					node.SelectedImageKey = "properties_16xLG";
+					node.ImageKey = "property_16x";
+					node.SelectedImageKey = "property_16x";
 
 					master.Nodes.Remove(node);
 
@@ -4704,8 +4701,7 @@ namespace VSParsers
 
 				TreeNode nodes = FindNode(master, node.Text);
 
-				//TreeNode nodes = FindNodeExact(master, node.Text);
-
+				
 				if (nodes != null && node.Text == nodes.Text)
 				{
 					if (nodes != null)
@@ -4732,7 +4728,7 @@ namespace VSParsers
 							}
 						}
 
-						//master.Nodes.Remove(node);
+						
 					}
 				}
 				else master.Nodes.Insert(c + 1, node);
@@ -4741,8 +4737,7 @@ namespace VSParsers
 
 				if (nodes != null)
 					ExtractSubFolders(master, nodes, nodes.Text);
-				//              else
-				//                  ExtractSubFolders(master, node, node.Text);
+				
 			}
 		}
 
@@ -5328,6 +5323,7 @@ namespace VSParsers
 
 				addImage(ve.FolderOpen_16x, "Folder", imageList1);
 				addImage(ve.FolderOpen_16x, "FolderOpen", imageList1);
+                addImage(ve.CS_ProjectSENode_16x, "CSProject", imageList1);
 
 				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.AssemblyImage, ve_resource.Assembly_6212_24);
 				//imageList1.Images.Add("Class", ve_resource._class);
@@ -5391,10 +5387,10 @@ namespace VSParsers
 
 			d.Add(".vcproj", "CPPProject_SolutionExplorerNode_24");
 			d.Add(".vcxproj", "CPPProject_SolutionExplorerNode_24");
-			d.Add(".csproj", "CSharpProject_SolutionExplorerNode_24");
-			d.Add(".shfbproj", "CSharpProject_SolutionExplorerNode_24");
-			d.Add(".wxs", "CSharpProject_SolutionExplorerNode_24");
-			d.Add(".wixproj", "CSharpProject_SolutionExplorerNode_24");
+			d.Add(".csproj", "CSProject");
+			d.Add(".shfbproj", "CSProject");
+			d.Add(".wxs", "CSProject");
+			d.Add(".wixproj", "CSProject");
 			d.Add(".cpp", "CPPFile_SolutionExplorerNode_24");
 			//d.Add(".h", "Include_13490_24");
 			//d.Add(".txt", "resource_32xMD");
@@ -5420,11 +5416,11 @@ namespace VSParsers
 
 			d.Add(".vcproj", "CPPProject_SolutionExplorerNode_24");
 			d.Add(".vcxproj", "CPPProject_SolutionExplorerNode_24");
-			d.Add(".csproj", "CSharpProject_SolutionExplorerNode_24");
-			d.Add(".shfbproj", "CSharpProject_SolutionExplorerNode_24");
-			d.Add(".wxs", "CSharpProject_SolutionExplorerNode_24");
-			d.Add(".wixproj", "CSharpProject_SolutionExplorerNode_24");
-			d.Add(".cpp", "CPPFile_SolutionExplorerNode_24");
+            d.Add(".csproj", "CSProject");
+            d.Add(".shfbproj", "CSProject");
+            d.Add(".wxs", "CSProject");
+            d.Add(".wixproj", "CSProject");
+            d.Add(".cpp", "CPPFile_SolutionExplorerNode_24");
 			d.Add(".h", "Include_13490_24");
 			d.Add(".txt", "resource_32xMD");
 			d.Add(".rtf", "resource_32xMD");
@@ -5639,12 +5635,13 @@ namespace VSParsers
 			d.Add(".xsd", "DataSourceView_16x");
 			d.Add(".xsc", "filesource");
 			d.Add(".xss", "filesource");
-			d.Add(".vcproj", "CPPProject_SolutionExplorerNode_24");
-			d.Add(".vcxproj", "CPPProject_SolutionExplorerNode_24");
-			d.Add(".csproj", "CSharpProject_SolutionExplorerNode_24");
-			d.Add(".shfbproj", "CSharpProject_SolutionExplorerNode_24");
-			d.Add(".wxs", "CSharpProject_SolutionExplorerNode_24");
-			d.Add(".wixproj", "CSharpProject_SolutionExplorerNode_24");
+            d.Add(".sln", "VSSolutionFile");
+            d.Add(".vcproj", "CPPProject_SolutionExplorerNode");
+			d.Add(".vcxproj", "CPPProject_SolutionExplorerNode");
+			d.Add(".csproj", "CSharpProject_SolutionExplorerNode");
+			d.Add(".shfbproj", "CSharpProject_SolutionExplorerNode");
+			d.Add(".wxs", "CSharpProject_SolutionExplorerNode");
+			d.Add(".wixproj", "CSharpProject_SolutionExplorerNode");
 			d.Add(".cpp", "CPPFile_SolutionExplorerNode_24");
 			d.Add(".h", "Include_13490_24");
 			d.Add(".txt", "resource_32xMD");
@@ -5652,8 +5649,8 @@ namespace VSParsers
 			d.Add(".rtf", "resource_32xMD");
 			d.Add(".targets", "resource_32xMD");
 			d.Add(".dll", "Library_6213");
-			d.Add(".xml", "XMLFile_828_16x");
-			d.Add(".xaml", "XMLFile_828_16x");
+			d.Add(".xml", "XMLFile");
+			d.Add(".xaml", "XMLFile");
 			d.Add(".json", "resourcefile");
 			d.Add(".cur", "cursor");
 			d.Add(".shproj", "shared");
@@ -5677,73 +5674,7 @@ namespace VSParsers
 			d.Add(".vb", "vb");
 
 
-			d.Add("ASSEMBLY", "ASSEMBLY");
-			d.Add("CLASS", "CLASS");
-			d.Add("CLASS_FRIEND", "CLASS_FRIEND");
-			d.Add("CLASS_PRIVATE", "CLASS_PRIVATE");
-			d.Add("CLASS_PROTECTED", "CLASS_PROTECTED");
-			d.Add("CLASS_SEALED", "CLASS_SEALED");
-			d.Add("CONSTANT", "CONSTANT");
-			d.Add("CONSTANT_FRIEND", "CONSTANT_FRIEND");
-			d.Add("CONSTANT_PRIVATE", "CONSTANT_PRIVATE");
-			d.Add("CONSTANT_PROTECTED", "CONSTANT_PROTECTED");
-			d.Add("CONSTANT_SEALED", "CONSTANT_SEALED");
-			d.Add("DELEGATE", "DELEGATE");
-			d.Add("DELEGATE_FRIEND", "DELEGATE_FRIEND");
-			d.Add("DELEGATE_PRIVATE", "DELEGATE_PRIVATE");
-			d.Add("DELEGATE_PROTECTED", "DELEGATE_PROTECTED");
-			d.Add("DELEGATE_SEALED", "DELEGATE_SEALED");
-			d.Add("ENUM", "ENUM");
-			d.Add("ENUM_FRIEND", "ENUM_FRIEND");
-			d.Add("ENUM_PROTECTED", "ENUM_PROTECTED");
-			d.Add("ENUM_SEALED", "ENUM_SEALED");
-			d.Add("EVENT", "EVENT");
-			d.Add("EVENT_FRIEND", "EVENT_FRIEND");
-			d.Add("EVENT_PRIVATE", "EVENT_PRIVATE");
-			d.Add("EVENT_PROTECTED", "EVENT_PROTECTED");
-			d.Add("EVENT_SEALED", "EVENT_SEALED");
-			d.Add("FIELD", "FIELD");
-			d.Add("FIELD_FRIEND", "FIELD_FRIEND");
-			d.Add("FIELD_PRIVATE", "FIELD_PRIVATE");
-			d.Add("FIELD_PROTECTED", "FIELD_PROTECTED");
-			d.Add("FIELD_SEALED", "FIELD_SEALED");
-			d.Add("INTERFACE", "INTERFACE");
-			d.Add("INTERFACE_FRIEND", "INTERFACE_FRIEND");
-			d.Add("INTERFACE_PRIVATE", "INTERFACE_PRIVATE");
-			d.Add("INTERFACE_PROTECTED", "INTERFACE_PROTECTED");
-			d.Add("INTERFACE_SEALED", "INTERFACE_SEALED");
-			d.Add("METHOD", "METHOD");
-			d.Add("METHOD_FRIEND", "METHOD_FRIEND");
-			d.Add("METHOD_PRIVATE", "METHOD_PRIVATE");
-			d.Add("METHOD_PROTECTED", "METHOD_PROTECTED");
-			d.Add("METHOD_SEALED", "METHOD_SEALED");
-			d.Add("METHOD_EXTENSION", "METHOD_EXTENSION");
-			d.Add("METHODOVERLOAD", "METHODOVERLOAD");
-			d.Add("METHODOVERLOAD_FRIEND", "METHODOVERLOAD_FRIEND");
-			d.Add("METHODOVERLOAD_PRIVATE", "METHODOVERLOAD_PRIVATE");
-			d.Add("METHODOVERLOAD_PROTECTED", "METHODOVERLOAD_PROTECTED");
-			d.Add("METHODOVERLOAD_SEALED", "METHODOVERLOAD_SEALED");
-			d.Add("NAMESPACE", "NAMESPACE");
-			d.Add("NAMESPACE_FRIEND", "NAMESPACE_FRIEND");
-			d.Add("NAMESPACE_PRIVATE", "NAMESPACE_PRIVATE");
-			d.Add("NAMESPACE_PROTECTED", "NAMESPACE_PROTECTED");
-			d.Add("NAMESPACE_SEALED", "NAMESPACE_SEALED");
-			d.Add("PROPERTIES", "PROPERTIES");
-			d.Add("PROPERTIES_FRIEND", "PROPERTIES_FRIEND");
-			d.Add("PROPERTIES_PRIVATE", "PROPERTIES_PRIVATE");
-			d.Add("PROPERTIES_PROTECTED", "PROPERTIES_PROTECTED");
-			d.Add("PROPERTIES_SEALED", "PROPERTIES_SEALED");
-			d.Add("STRUCTURE", "STRUCTURE");
-			d.Add("STRUCTURE_FRIEND", "STRUCTURE_FRIEND");
-			d.Add("STRUCTURE_PRIVATE", "STRUCTURE_PRIVATE");
-			d.Add("STRUCTURE_PROTECTED", "STRUCTURE_PROTECTED");
-			d.Add("STRUCTURE_SEALED", "STRUCTURE_SEALED");
-			d.Add("VALUETYPE", "VALUETYPE");
-			d.Add("VALUETYPE_FRIEND", "VALUETYPE_FRIEND");
-			d.Add("VALUETYPE_PRIVATE", "VALUETYPE_PRIVATE");
-			d.Add("VALUETYPE_PROTECTED", "VALUETYPE_PROTECTED");
-			d.Add("VALUETYPE_SEALED", "VALUETYPE_SEALED");
-		}
+          }
 
 		ImageList imageList1 { get; set; }
 
@@ -5778,24 +5709,20 @@ namespace VSParsers
 			loads_vs_dict();
 
 			ms.dc = dc;
-
-			
+            
 			VSParsers.CSParsers.df = new Dictionary<string, ICSharpCode.NRefactory.TypeSystem.IUnresolvedFile>();
 
 			VSSolution vs = ms.tester(msv, g, "");
-
-			
-
+            
 			Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
-
-
-			foreach (ProjectItemInfo prs in ms.PL)
-			{
-				TreeNode nodes = new TreeNode();
-				nodes.Text = prs.ps.Name;
-
-				nodes.Tag = prs;
-			}
+            
+			//foreach (ProjectItemInfo prs in ms.PL)
+			//{
+			//	TreeNode nodes = new TreeNode();
+			//	nodes.Text = prs.ps.Name;
+            //
+			//	nodes.Tag = prs;
+			//}
 
 			foreach (VSProject vp in vs.Projects)
 			{
@@ -5895,62 +5822,32 @@ namespace VSParsers
 			if (dict3 == null)
 			{
 
-				addImage(ve.FolderOpen_16x, "Folder", imageList1);
+				addImage(ve.Folder_16x, "Folder", imageList1);
 				addImage(ve.FolderOpen_16x, "FolderOpen", imageList1);
 				addImage(ve.DataSourceView_16x, "DataSourceView_16x", imageList1);
 
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.AssemblyImage, ve_resourceAssembly_6212_24);
-				//imageList1.Images.Add("Class", ve_resource._class);
-				//imageList1.Images.Add("ImageClass", ve_resource.Class_yellow_256x);
-				//imageList1.Images.Add("ClassImage", ve_resource.Class_yellow_256x);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ClassInternalImage, ve_resource._class);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ClassPrivateImage, ve_resource._class);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ClassProtectedImage, ve_resource._class);
-				////imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ConstantImage, ve_resource.Constant_495_24);
-				////imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ConstantInternalImage, ve_resource.Constant_495_24);
-				////imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ConstantPrivateImage, ve_resource.Constant_Private_519_24);
-				////imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ConstantProtectedImage, ve_resource.Constant_Protected_508_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.DelegateImage, ve_resource.Delegate_540_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.DelegateInternalImage, ve_resource.Delegate_540_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.DelegatePrivateImage, ve_resource.Delegate_Private_580_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.DelegateProtectedImage, ve_resource.Delegate_Protected_573_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EnumImage, ve_resource.Enum_582_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EnumInternalImage, ve_resource.Enum_582_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EnumItemImage, ve_resource.EnumItem_588_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EnumPrivateImage, ve_resource.EnumItem_Private_592_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EnumProtectedImage, ve_resource.EnumItem_Protected_591_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ErrorImage, ve_resource.Error_6206_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EventImage, ve_resource.Event_594_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EventInternalImage, ve_resource.Event_594_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EventPrivateImage, ve_resource.Event_Private_598_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.EventProtectedImage, ve_resource.Event_Protected_597_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.FieldImage, ve_resource.FieldIcon_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.FieldInternalImage, ve_resource.FieldIcon_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.FieldPrivateImage, ve_resource.Field_Private_545_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.FieldProtectedImage, ve_resource.Field_Protected_544_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.FolderImage, ve_resource.Folder_6221_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.GrayFolderImage, ve_resource.Folder_6221_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.InterfaceImage, ve_resource.Interface_612_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.InterfaceInternalImage, ve_resource.Interface_612_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.InterfacePrivateImage, ve_resource.Interface_Private_616_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.InterfaceProtectedImage, ve_resource.Interface_Protected_615_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.MethodImage, ve_resource.Method_636);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.MethodInternalImage, ve_resource.Method_636);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.MethodPrivateImage, ve_resource.Method_Private_640_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.MethodProtectedImage, ve_resource.Method_Protected_639_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.ModuleImage, ve_resource.Module_Protected_651_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.NamespaceImage, ve_resource.Namespace_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.PropertyImage, ve_resource.PropertyIcon_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.PropertyInternalImage, ve_resource.PropertyIcon_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.PropertyPrivateImage, ve_resource.PropertyIcon_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.PropertyProtectedImage, ve_resource.ComplexProperty_12904_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.StructureImage, ve_resource.Structure_8338_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.StructureInternalImage, ve_resource.Structure_8338_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.StructurePrivateImage, ve_resource.Structure_Private_512_24);
-				//imageList1.Images.Add(AndersLiu.Reflector.Program.UI.AssemblyTreeNode.NodeImages.Keys.StructureProtectedImage, ve_resource.Structure_Protected_511_24);
-			}
+                addImage(ve.CS_16x, "CSharpFile_SolutionExplorerNode", imageList1);
+                addImage(ve.CS_ProjectSENode_16x, "CSharpProject_SolutionExplorerNode", imageList1);
+                addImage(ve.FileSource_16x, "filesource", imageList1);
+                addImage(ve.VisualStudioSolution_16x, "VSSolutionFile", imageList1);
+                addImage(ve.Property_16x, "property_16x", imageList1);
+                addImage(ve.Reference_16x, "reference_16x", imageList1);
+                addImage(ve.Image_16x, "images", imageList1);
+                addImage(ve.Audio_16x, "audio", imageList1);
+                addImage(ve.IconFile_16x, "icon", imageList1);
+                addImage(ve.Cursor_16x, "cursor", imageList1);
+                addImage(ve.XMLFile_16x, "XMLFile", imageList1);
+                addImage(ve.ConfigurationFile_16x, "config", imageList1);
+                addImage(ve.Certificate_16x, "certificate", imageList1);
+                addImage(ve.Class_yellow_16x, "class", imageList1);
+                addImage(ve.Delegate_16x, "delegate", imageList1);
+                addImage(ve.Method_purple_16x, "method", imageList1);
+                addImage(ve.EnumFriend_16x, "enums", imageList1);
+                addImage(ve.Property_16x, "property", imageList1);
+                addImage(ve.Field_blue_16x, "field", imageList1);
+            }
 
-			return imageList1;
+            return imageList1;
 		}
         public Dictionary<string, List<INamespaceOrTypeSymbol>> nts = new Dictionary<string, List<INamespaceOrTypeSymbol>>();
         static public void GetAllTypes(Compilation cc, INamespaceSymbol c, List<INamespaceOrTypeSymbol> b)

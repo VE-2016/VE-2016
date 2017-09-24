@@ -2837,6 +2837,12 @@
             Create a new text document with the specified initial text.
             </summary>
         </member>
+        <member name="M:ICSharpCode.AvalonEdit.Document.TextDocument.GetTreeAsString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:ICSharpCode.AvalonEdit.Document.TextDocument.#ctor(ICSharpCode.AvalonEdit.Document.ITextSource)">
             <summary>
             Create a new text document with the specified initial text.

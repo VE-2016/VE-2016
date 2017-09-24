@@ -949,6 +949,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ExplorerForms.resx">
+      <DependentUpon>ExplorerForms.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExternalToolsForm.resx">
       <DependentUpon>ExternalToolsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1313,6 +1316,10 @@
     <ProjectReference Include="..\NET\PeReader\PeReader.csproj">
       <Project>{34b9a0ce-df18-4cbc-8f7a-90c2b74338d5}</Project>
       <Name>PeReader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VE-Resources\VE-Resources.csproj">
+      <Project>{07d991f6-4f4e-48b0-9833-59288ac9868c}</Project>
+      <Name>VE-Resources</Name>
     </ProjectReference>
     <ProjectReference Include="..\VSParser\VSProvider.csproj">
       <Project>{161dc477-53af-433a-9f3b-6e43de47bbdd}</Project>

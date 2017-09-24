@@ -137,6 +137,37 @@ namespace AvalonEdit.Editor
         List<EntityItem> classItems = new List<EntityItem>();
         List<EntityItem> memberItems = new List<EntityItem>();
 
+        public void DoUpdateForContent(ISymbol symbol, List<ISymbol> symbols)
+        {
+
+            if (symbols == null)
+                return;
+
+            this.symbols = symbols;
+
+            this.symbolsForContent = symbols;
+
+            classItems = new List<EntityItem>();
+
+            //var c = symbols.ToArray().Select(s => s).Where(s => s.Kind == SymbolKind.NamedType);
+
+            //foreach (ISymbol s in c)
+                classItems.Add(new EntityItem(symbol, symbol.Kind));
+            
+            classItems.Sort();
+            classComboBox.ItemsSource = classItems;
+
+            var namespaceItems = new List<EntityItem>();
+
+            var c = symbol.ContainingNamespace;
+
+            //foreach (ISymbol s in c)
+                namespaceItems.Add(new EntityItem(c, c.Kind));
+
+            namespaceItems.Sort();
+            namespaceComboBox.ItemsSource = namespaceItems;
+        }
+        List<ISymbol> symbolsForContent { get; set; }
         public void DoUpdate(List<ISymbol> symbols)
         {
 
@@ -149,9 +180,11 @@ namespace AvalonEdit.Editor
 
             var c = symbols.ToArray().Select(s => s).Where(s => s.Kind == SymbolKind.NamedType);
 
+            
+
             foreach (ISymbol s in c)
                 classItems.Add(new EntityItem(s, s.Kind));
-            
+
             classItems.Sort();
             classComboBox.ItemsSource = classItems;
 
@@ -371,32 +404,110 @@ namespace AvalonEdit.Editor
             
             editorWindow.UpdateReferences(mb, dict);
         }
-
-        void classComboBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
+        void classComboBoxSelectionChangedForContent()
         {
+            
             allMembers = new List<ISymbol>();
 
-            
+            mb = new List<int>();
+
+
+            EntityItem item = classComboBox.SelectedItem as EntityItem;
+            INamedTypeSymbol selectedClass = item.typeCode == SymbolKind.NamedType ? item.Entity as INamedTypeSymbol : null;
+            memberItems = new List<EntityItem>();
+            if (selectedClass != null)
+            {
+
+                foreach (var m in symbolsForContent)
+                {
+                    if (!m.Locations[0].IsInSource)
+                        continue;
+
+                    if (m.Kind == SymbolKind.Method)
+                    {
+                        IMethodSymbol f = m as IMethodSymbol;
+                        if (f.AssociatedSymbol == null)
+                        {
+                            AddMember(selectedClass, m, m.Kind);
+                            allMembers.Add(m);
+                        }
+                    }
+                    else
+                    if (m.Kind == SymbolKind.Property)
+                    {
+
+                        AddMember(selectedClass, m, m.Kind);
+                        allMembers.Add(m);
+                    }
+                    else
+                    if (m.Kind == SymbolKind.Field)
+                    {
+                        IFieldSymbol f = m as IFieldSymbol;
+                        if (f.AssociatedSymbol == null)
+                        {
+                            AddMember(selectedClass, m, m.Kind);
+                            allMembers.Add(m);
+                        }
+                    }
+                    else
+                    if (m.Kind == SymbolKind.Event)
+                    {
+                        AddMember(selectedClass, m, m.Kind);
+                        allMembers.Add(m);
+                    }
+                    //memberItems.Sort();
+                    if (jumpOnSelectionChange)
+                    {
+                        //AnalyticsMonitorService.TrackFeature(GetType(), "JumpToClass");
+                        //JumpTo(item, selectedClass.Region);
+                    }
+                }
+                membersComboBox.ItemsSource = memberItems;
+            }
+
+            Dictionary<int, ISymbol> dict = new Dictionary<int, ISymbol>();
+
+            foreach (ISymbol s in allMembers)
+            {
+                if (dict.ContainsKey(s.Locations[0].SourceSpan.Start))
+                    continue;
+                mb.Add(s.Locations[0].SourceSpan.Start);
+                dict.Add(s.Locations[0].SourceSpan.Start, s);
+            }
+            mb.Sort();
+            mb.Reverse();
+            string d = "";
+            // foreach (int i in mb)
+            //     d += i.ToString() + " - ";
+            //MessageBox.Show("Update " + d);
+
+            //editorWindow.UpdateReferences(mb,dict);
+        }
+        void classComboBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            if (symbolsForContent != null)
+            {
+                classComboBoxSelectionChangedForContent();
+                return;
+            }
+
+            allMembers = new List<ISymbol>();
 
             mb = new List<int>();
-            // The selected class was changed.
-            // Update the list of member items to be the list of members of the current class.
+
+            
             EntityItem item = classComboBox.SelectedItem as EntityItem;
             INamedTypeSymbol selectedClass = item.typeCode == SymbolKind.NamedType ? item.Entity as INamedTypeSymbol : null;
             memberItems = new List<EntityItem>();
             if (selectedClass != null)
             {
               
-                //IClass compoundClass = selectedClass.GetCompoundClass();
                 foreach (var m in selectedClass.GetMembers())
                 {
                     if (!m.Locations[0].IsInSource)
                         continue;
-
                     
-
-                    //    AddMember(selectedClass, m, m.IsConstructor ? TYPE_CONSTRUCTOR : TYPE_METHOD);
-                    //}
                     if (m.Kind == SymbolKind.Method)
                     {
                         IMethodSymbol f = m as IMethodSymbol;

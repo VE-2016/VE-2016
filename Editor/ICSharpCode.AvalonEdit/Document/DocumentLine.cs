@@ -133,7 +133,7 @@ namespace ICSharpCode.AvalonEdit.Document
             {
                 if (IsDeleted)
                     throw new InvalidOperationException();
-                return DocumentLineTree.GetIndexFromNodeExtended(this);
+                return DocumentLineTree.GetIndexFromNodeExtended(this) + 1;
             }
         }
         /// <summary>
@@ -274,12 +274,18 @@ namespace ICSharpCode.AvalonEdit.Document
 		/// </summary>
 		public override string ToString()
 		{
-			if (IsDeleted)
-				return "[DocumentLine deleted]";
-			else
-				return string.Format(
-					CultureInfo.InvariantCulture,
-					"[DocumentLine Number={0} Offset={1} Length={2}]", LineNumber, Offset, Length);
+            if (IsDeleted)
+                return "[DocumentLine deleted]";
+            else
+            {
+                string c = this.document.Text.Substring(Offset, Length);
+                string e = "no obs";
+                if (obs != null)
+                    e = "obs";
+                return string.Format(
+                    CultureInfo.InvariantCulture,
+                    "[DocumentLine Number={0} Offset={1} Length={2}, Text={3} obs={4}]", LineNumber, Offset, Length, c, e);
+            }
 		}
         /// <summary>
         /// 

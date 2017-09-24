@@ -17,10 +17,10 @@
     </AssemblyOriginatorKeyFile>
     <DelaySign>False</DelaySign>
     <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
-<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Configuration />
     <Platform />
     <RestorePackages>false</RestorePackages>
@@ -231,6 +231,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Docking\Resources\DockIndicator_PaneDiamond_HotspotIndex_VS2012.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\VE-Resources\VE-Resources.csproj">
+      <Project>{07d991f6-4f4e-48b0-9833-59288ac9868c}</Project>
+      <Name>VE-Resources</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <UsingTask Condition=" '$(Configuration)' == 'Release' AND '$(OS)' == 'Windows_NT' AND Exists('..\gendarme\GendarmeMsBuild.dll')" AssemblyFile="..\gendarme\GendarmeMsBuild.dll" TaskName="GendarmeMsBuild.Gendarme" />
