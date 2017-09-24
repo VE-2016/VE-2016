@@ -1680,7 +1680,7 @@ namespace AvalonEdit.Editor
             if(e.Key == Key.F2)
             {
                
-                textEditor.Document.Insert(textEditor.Document.Text.Length, textEditor.Document.GetTreeAsString());
+                
             }
             else 
             if (e.Key == Key.Escape)

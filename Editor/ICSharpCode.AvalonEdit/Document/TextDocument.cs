@@ -117,16 +117,16 @@ namespace ICSharpCode.AvalonEdit.Document
 			undoStack = new UndoStack();
 			FireChangeEvents();
 		}
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-		public string GetTreeAsString()
-        {
-            if (lineTree == null)
-                return "no document line";
-            return lineTree.GetTreeAsString();
-        }
+  //      /// <summary>
+  //      /// 
+  //      /// </summary>
+  //      /// <returns></returns>
+		//public string GetTreeAsString()
+  //      {
+  //          if (lineTree == null)
+  //              return "no document line";
+  //          return lineTree.GetTreeAsString();
+  //      }
 		/// <summary>
 		/// Create a new text document with the specified initial text.
 		/// </summary>
