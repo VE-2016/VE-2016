@@ -173,7 +173,7 @@ namespace WinExplorer
         {
             this.data = obs;
 
-            CreateView_Solution.ProjectItemInfo p = obs as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo p = obs as VSParsers.ProjectItemInfo;
             if (p == null)
                 return;
             if (p.ps == null)
@@ -204,7 +204,7 @@ namespace WinExplorer
         {
             this.data = obs;
 
-            CreateView_Solution.ProjectItemInfo p = obs as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo p = obs as VSParsers.ProjectItemInfo;
             if (p == null)
                 return;
             if (p.ps == null)
@@ -235,7 +235,7 @@ namespace WinExplorer
         {
             this.data = obs;
 
-            CreateView_Solution.ProjectItemInfo p = obs as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo p = obs as VSParsers.ProjectItemInfo;
             if (p == null)
                 return;
             if (p.ps == null)
@@ -271,7 +271,7 @@ namespace WinExplorer
         {
             this.data = obs;
 
-            CreateView_Solution.ProjectItemInfo p = obs as CreateView_Solution.ProjectItemInfo;
+            VSParsers.ProjectItemInfo p = obs as VSParsers.ProjectItemInfo;
             if (p == null)
                 return;
             if (p.ps == null)
@@ -285,21 +285,21 @@ namespace WinExplorer
         // Return true if we need to convert from a string.
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
         {
-            if (sourceType == typeof(CreateView_Solution.ProjectItemInfo)) return true;
+            if (sourceType == typeof(VSParsers.ProjectItemInfo)) return true;
             return base.CanConvertFrom(context, sourceType);
         }
 
         // Return true if we need to convert into a string.
         public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)
         {
-            if (destinationType == typeof(CreateView_Solution.ProjectItemInfo)) return true;
+            if (destinationType == typeof(VSParsers.ProjectItemInfo)) return true;
             return base.CanConvertTo(context, destinationType);
         }
 
         // Convert from a ProjectItemInfo
         public override object ConvertFrom(ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value)
         {
-            if (value.GetType() == typeof(CreateView_Solution.ProjectItemInfo))
+            if (value.GetType() == typeof(VSParsers.ProjectItemInfo))
             {
                 return value;
             }
@@ -312,7 +312,7 @@ namespace WinExplorer
         
         public override object ConvertTo(ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType)
         {
-            if (destinationType == typeof(CreateView_Solution.ProjectItemInfo)) return value.ToString();
+            if (destinationType == typeof(VSParsers.ProjectItemInfo)) return value.ToString();
             return base.ConvertTo(context, culture, value, destinationType);
         }
 
