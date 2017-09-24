@@ -43,20 +43,20 @@ namespace ICSharpCode.AvalonEdit.Document
 	public partial class DocumentLine : IDocumentLine
 	{
 		#region Constructor
-		#if DEBUG
+
 		// Required for thread safety check which is done only in debug builds.
 		// To save space, we don't store the document reference in release builds as we don't need it there.
 		readonly TextDocument document;
-		#endif
+
 		
 		internal bool isDeleted;
 		
 		internal DocumentLine(TextDocument document, object obs = null)
 		{
-			#if DEBUG
+			
 			Debug.Assert(document != null);
 			this.document = document;
-#endif
+
             this.obs = obs;
 		}
 		
