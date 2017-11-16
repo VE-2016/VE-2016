@@ -22,7 +22,7 @@ namespace VSProvider
         {
             return new Solution
             {
-                preSection = (new PreSectionParser(_solutionContents)).Parse(),
+                preSections = (new PreSectionParser(_solutionContents)).Parse(),
                 Global = (new GlobalSectionParser(_solutionContents)).Parse(),
                 Projects = (new ProjectParser(_solutionContents)).Parse()
             };

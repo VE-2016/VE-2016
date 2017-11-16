@@ -1,4 +1,5 @@
 ﻿using AIMS.Libraries.Scripting.ScriptControl;
+using AIMS.Libraries.Scripting.ScriptControl.Properties;
 using System.Windows.Forms;
 
 namespace WinExplorer.UI
@@ -15,6 +16,6 @@ namespace WinExplorer.UI
             this.Controls.Add(doc);
         }
 
-        public Document doc { get; set; }
+        public AvalonDocument doc { get; set; }
     }
 }

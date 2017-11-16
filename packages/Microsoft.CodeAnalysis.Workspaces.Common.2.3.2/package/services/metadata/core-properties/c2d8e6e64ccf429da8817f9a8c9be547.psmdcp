@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<coreProperties xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.openxmlformats.org/package/2006/metadata/core-properties">
+  <dc:creator>Microsoft</dc:creator>
+  <dc:description>A shared package used by the .NET Compiler Platform ("Roslyn") including support for analyzing projects and solutions. Do not install this package manually, it will be added as a prerequisite by other packages that require it.
+
+      This package was built from the source at https://github.com/dotnet/roslyn/commit/ec1cde8b77c7bca654888681037f55aa0e62dd19</dc:description>
+  <dc:identifier>Microsoft.CodeAnalysis.Workspaces.Common</dc:identifier>
+  <version>2.3.2</version>
+  <keywords>Roslyn CodeAnalysis Compiler CSharp VB VisualBasic Parser Scanner Lexer Emit CodeGeneration Metadata IL Compilation Scripting Syntax Semantics</keywords>
+  <lastModifiedBy>NuGet, Version=4.1.0.2450, Culture=neutral, PublicKeyToken=31bf3856ad364e35;Microsoft Windows NT 6.2.9200.0;.NET Framework 4.5</lastModifiedBy>
+</coreProperties>

@@ -1,0 +1,12 @@
+C:\Users\me\Documents\Visual Studio 2015\Projects\WindowsFormsApplication7-1\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\me\Documents\Visual Studio 2015\Projects\WindowsFormsApplication7-1\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\me\Documents\Visual Studio 2015\Projects\WindowsFormsApplication7-1\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\me\Documents\Visual Studio 2015\Projects\WindowsFormsApplication7-1\UnitTestProject\bin\Debug\UnitTestProject.dll
+C:\Users\me\Documents\Visual Studio 2015\Projects\WindowsFormsApplication7-1\UnitTestProject\bin\Debug\UnitTestProject.pdb
+C:\Users\me\Documents\Visual Studio 2015\Projects\WindowsFormsApplication7-1\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\me\Documents\Visual Studio 2015\Projects\WindowsFormsApplication7-1\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\me\Documents\Visual Studio 2015\Projects\WindowsFormsApplication7-1\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\me\Documents\Visual Studio 2015\Projects\WindowsFormsApplication7-1\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\me\Documents\Visual Studio 2015\Projects\WindowsFormsApplication7-1\UnitTestProject\obj\Debug\UnitTestProject.csprojResolveAssemblyReference.cache
+C:\Users\me\Documents\Visual Studio 2015\Projects\WindowsFormsApplication7-1\UnitTestProject\obj\Debug\UnitTestProject.dll
+C:\Users\me\Documents\Visual Studio 2015\Projects\WindowsFormsApplication7-1\UnitTestProject\obj\Debug\UnitTestProject.pdb

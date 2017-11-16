@@ -292,9 +292,15 @@ namespace WeifenLuo.WinFormsUI.Docking
             get { return Form.Icon; }
             set { Form.Icon = value; }
         }
-
-        public Bitmap GetBitmap(string file)
+        public Bitmap Bitmap
         {
+            get;
+            set;
+        }
+        public Bitmap GetBitmap(string file, IDockContent content)
+        {
+            if (Bitmap != null)
+                return Bitmap;
             return ves.Service.GetBitmapFromExtension(file);
         }
 

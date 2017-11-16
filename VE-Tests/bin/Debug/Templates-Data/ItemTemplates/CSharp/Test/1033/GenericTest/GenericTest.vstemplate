@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.microsoft.com/developer/vstemplate/2005">
+	<TemplateData>
+		<Name Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="440"/>
+		<Description Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="442"/>
+		<Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="441"/>
+		<ProjectType>CSharp</ProjectType>
+		<SortOrder>80</SortOrder>
+		<DefaultName>GenericTest.GenericTest</DefaultName>
+		<TemplateGroupID>TestProject-V1</TemplateGroupID>
+		<TemplateID>TestProject-V1-GenericTest</TemplateID>
+		<ShowByDefault>false</ShowByDefault>
+		<CustomDataSignature>TestProject-V1</CustomDataSignature>
+	</TemplateData>
+	<TemplateContent>
+		<ProjectItem ReplaceParameters="true">GenericTest.GenericTest</ProjectItem>
+	</TemplateContent>
+	<TestProjectData>
+		<LongDescription Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="443"/>
+		<HelpKeyword Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="444"/>
+	</TestProjectData>
+</VSTemplate>

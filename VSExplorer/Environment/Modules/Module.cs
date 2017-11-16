@@ -70,12 +70,13 @@ namespace WinExplorer
             d.dict.Add("Copy", c);
             c = new gui.Command_Paste(ExplorerForms.ef);
             d.dict.Add("Paste", c);
-            c = new gui.Command_Redo(ExplorerForms.ef);
-            d.dict.Add("Redo", c);
-            d.temp.Add("Redo");
             c = new gui.Command_Undo(ExplorerForms.ef);
             d.dict.Add("Undo", c);
             d.temp.Add("Undo");
+            c = new gui.Command_Redo(ExplorerForms.ef);
+            d.dict.Add("Redo", c);
+            d.temp.Add("Redo");
+         
             d.temp.Add("Separator");
 
             gui.Command_Gui gc = new gui.Command_Gui(ExplorerForms.ef);
@@ -194,12 +195,13 @@ namespace WinExplorer
             d.dict.Add("Copy", c);
             c = new gui.Command_Paste(ExplorerForms.ef);
             d.dict.Add("Paste", c);
-            c = new gui.Command_Redo(ExplorerForms.ef);
-            d.dict.Add("Redo", c);
-            d.temp.Add("Redo");
             c = new gui.Command_Undo(ExplorerForms.ef);
             d.dict.Add("Undo", c);
             d.temp.Add("Undo");
+
+            c = new gui.Command_Redo(ExplorerForms.ef);
+            d.dict.Add("Redo", c);
+            d.temp.Add("Redo");
             d.temp.Add("Separator");
 
             gui.Command_Gui gc = new gui.Command_SolutionConfiguration(ExplorerForms.ef);
@@ -313,12 +315,13 @@ namespace WinExplorer
             d.dict.Add("Copy", c);
             c = new gui.Command_Paste(ExplorerForms.ef);
             d.dict.Add("Paste", c);
-            c = new gui.Command_Redo(ExplorerForms.ef);
-            d.dict.Add("Redo", c);
-            d.temp.Add("Redo");
             c = new gui.Command_Undo(ExplorerForms.ef);
             d.dict.Add("Undo", c);
             d.temp.Add("Undo");
+
+            c = new gui.Command_Redo(ExplorerForms.ef);
+            d.dict.Add("Redo", c);
+            d.temp.Add("Redo");
             d.temp.Add("Separator");
 
             gui.Command_Gui gc = new gui.Command_SolutionConfiguration(ExplorerForms.ef);

@@ -13,6 +13,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
@@ -60,6 +61,8 @@ namespace VSProvider
         public CSParsers csd { get; set; }
 
         public string OutputName { get; set; }
+
+        public ManualResetEvent auto = new ManualResetEvent(false);
 
         public string FileName
         {
@@ -1297,7 +1300,7 @@ namespace VSProvider
                 L.Add(p);
             }
 
-            if (pc == null)
+            if (pc != null)
 
                 pc.ProjectCollection.UnloadAllProjects();
 

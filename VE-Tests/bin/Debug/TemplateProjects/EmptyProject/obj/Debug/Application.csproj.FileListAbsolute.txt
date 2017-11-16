@@ -1,0 +1,4 @@
+F:\Application-Studio\MSBuildProjects2\Application\obj\Debug\Application.csprojResolveAssemblyReference.cache
+F:\Application-Studio\MSBuildProjects2\Application\obj\Debug\Application.Form1.resources
+F:\Application-Studio\MSBuildProjects2\Application\obj\Debug\Application.Properties.Resources.resources
+F:\Application-Studio\MSBuildProjects2\Application\obj\Debug\Application.csproj.GenerateResource.Cache

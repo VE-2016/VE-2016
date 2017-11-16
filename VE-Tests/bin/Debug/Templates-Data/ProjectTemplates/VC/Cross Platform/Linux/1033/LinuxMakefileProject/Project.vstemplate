@@ -1,0 +1,18 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Makefile Project (Linux)</Name>
+    <Description>A project for using an external build system for the Linux platform.</Description>
+    <ProjectType>VC</ProjectType>
+    <TemplateID>Microsoft.VisualStudio.Linux.VC.MakefileProject</TemplateID>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Project</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>Icon.ico</Icon>
+  </TemplateData>
+  <TemplateContent PreferedSolutionConfiguration="Debug|x64">
+    <Project TargetFileName="$projectname$.vcxproj" File="Project.vcxproj" ReplaceParameters="true" />
+  </TemplateContent>
+</VSTemplate>

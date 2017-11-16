@@ -37,7 +37,7 @@ namespace WeifenLuo.WinFormsUI.Docking
     public partial class DockPanel : Panel
     {
         private readonly FocusManagerImpl m_focusManager;
-        private readonly DockPaneCollection m_panes;
+        public DockPaneCollection m_panes;
         private readonly FloatWindowCollection m_floatWindows;
         private AutoHideWindowControl m_autoHideWindow;
         private DockWindowCollection m_dockWindows;
@@ -70,7 +70,19 @@ namespace WeifenLuo.WinFormsUI.Docking
             m_dummyContent = new DockContent();
             ResumeLayout();
         }
+        public void RestorePanes()
+        {
+            //var b = new DockContent();
+            //b.DockPanel = this;
+            //var d = Theme.Extender.DockPaneFactory.CreateDockPane(b, DockState.Document, true);
+            //foreach (var c in m_panes)
+            //Panes[0].Dispose();
+            //m_panes = new DockPaneCollection();
+            
+            //m_panes.AddAt(d, 0);
 
+            
+        }
         internal void ResetDummy()
         {
             DummyControl.ResetBackColor();
@@ -236,7 +248,7 @@ namespace WeifenLuo.WinFormsUI.Docking
             }
         }
 
-        private DockContentCollection m_contents = new DockContentCollection();
+        public DockContentCollection m_contents = new DockContentCollection();
         [Browsable(false)]
         public DockContentCollection Contents
         {

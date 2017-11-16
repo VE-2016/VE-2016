@@ -9,7 +9,7 @@ namespace WeifenLuo.WinFormsUI.Docking
     {
         private static List<IDockContent> _emptyList = new List<IDockContent>(0);
 
-        internal DockContentCollection()
+        public DockContentCollection()
             : base(new List<IDockContent>())
         {
         }

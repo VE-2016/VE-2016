@@ -1,0 +1,19 @@
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>样式表</Name>
+    <Description>用于定义丰富 HTML 样式的空白 CSS 文档。</Description>
+    <Icon>Stylesheet.ico</Icon>
+    <TemplateID>Microsoft.JavaScript.StyleSheet</TemplateID>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>stylesheet.css</DefaultName>
+
+    <!-- "Style Sheet" file is applicable to all JavaScript project capability -->
+    <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+    <ProjectType>JavaScript</ProjectType>
+    <ShowByDefault>false</ShowByDefault>
+    <AppliesTo>JavaScript</AppliesTo>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem OpenInEditor="true" BlendOpenInEditor="false">StyleSheet.css</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

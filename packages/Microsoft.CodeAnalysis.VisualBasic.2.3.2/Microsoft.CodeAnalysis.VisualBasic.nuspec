@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata minClientVersion="3.3">
+    <id>Microsoft.CodeAnalysis.VisualBasic</id>
+    <version>2.3.2</version>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>http://go.microsoft.com/fwlink/?LinkId=529443</licenseUrl>
+    <projectUrl>http://msdn.com/roslyn</projectUrl>
+    <description>This package was built from the source at https://github.com/dotnet/roslyn/commit/ec1cde8b77c7bca654888681037f55aa0e62dd19</description>
+    <summary>.NET Compiler Platform ("Roslyn") support for Visual Basic, Microsoft.CodeAnalysis.VisualBasic.dll.
+
+      More details at https://aka.ms/roslyn-packages</summary>
+    <releaseNotes></releaseNotes>
+    <language>en-US</language>
+    <tags>Roslyn CodeAnalysis Compiler CSharp VB VisualBasic Parser Scanner Lexer Emit CodeGeneration Metadata IL Compilation Scripting Syntax Semantics</tags>
+    <serviceable>true</serviceable>
+    <dependencies>
+      <dependency id="Microsoft.CodeAnalysis.Common" version="2.3.2" />
+    </dependencies>
+  </metadata>
+</package>

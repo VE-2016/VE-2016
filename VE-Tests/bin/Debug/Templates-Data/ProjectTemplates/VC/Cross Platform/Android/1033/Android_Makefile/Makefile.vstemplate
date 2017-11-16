@@ -1,0 +1,23 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Makefile Project (Android)</Name>
+    <Description>An Android project for using an external build system.</Description>
+    <ProjectType>VC</ProjectType>
+    <TemplateID>Microsoft.MDD.VC.Android.MakeFile</TemplateID>
+    <SortOrder>3000</SortOrder>
+    <DefaultName>Project</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>CPPPhone.ico</Icon>
+  </TemplateData>
+  <TemplateContent PreferedSolutionConfiguration="Debug|x86">
+    <Project TargetFileName="$projectname$.vcxproj" File="Project.vcxproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.vcxproj.filters">Project.vcxproj.filters</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VisualStudio.Android.Project,Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VisualStudio.Android.Wizard.NativeTemplateWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

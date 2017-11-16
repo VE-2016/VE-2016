@@ -420,105 +420,105 @@ namespace WinExplorer
 
         public void _LoadIntellisenseResults()
         {
-            ScriptControl scr = null;
+            //ScriptControl scr = null;
 
-            VSSolution vs = null;
+            //VSSolution vs = null;
 
-            string filename = "";
+            //string filename = "";
 
-            if (ef != null)
-                if (ef.scr != null)
-                    scr = ef.scr;
+            //if (ef != null)
+            //    if (ef.scr != null)
+            //        scr = ef.scr;
 
-            AIMS.Libraries.Scripting.ScriptControl.Document d = scr.GetActiveDocument();
+            //IMS.Libraries.Scripting.ScriptControl.Document d = scr.GetActiveDocument();
 
-            filename = d.FileName;
+            //filename = d.FileName;
 
-            ToolStripComboBox b = toolStripComboBox1;
+            //ToolStripComboBox b = toolStripComboBox1;
 
-            int i = b.SelectedIndex;
+            //int i = b.SelectedIndex;
 
-            VSProject vp = ef.GetVSSolution().MainVSProject;
+            //VSProject vp = ef.GetVSSolution().MainVSProject;
 
-            if (vp != null)
-                if (i == 2)
-                {
-                    foreach (IntErrors e in DD)
-                    {
-                        if (vp != null)
-                            if (e.vp != vp)
-                                continue;
+            //if (vp != null)
+            //    if (i == 2)
+            //    {
+            //        foreach (IntErrors e in DD)
+            //        {
+            //            if (vp != null)
+            //                if (e.vp != vp)
+            //                    continue;
 
-                        ListViewItem v = new ListViewItem();
-                        v.Text = "";
+            //            ListViewItem v = new ListViewItem();
+            //            v.Text = "";
 
-                        int rowId = dg.Rows.Add();
-                        DataGridViewRow row = dg.Rows[rowId];
+            //            int rowId = dg.Rows.Add();
+            //            DataGridViewRow row = dg.Rows[rowId];
 
-                        row.Cells[0].Value = "";
-                        row.Cells[0].Value = "e.Code";
-                        row.Cells[0].Value = e.e.Message;
-                        row.Cells[0].Value = Path.GetFileNameWithoutExtension(e.vp.FileName);
-                        row.Cells[0].Value = Path.GetFileName(e.file);
-                        row.Cells[0].Value = e.e.Region.BeginLine.ToString();
-                        row.Cells[0].Value = "project";
+            //            row.Cells[0].Value = "";
+            //            row.Cells[0].Value = "e.Code";
+            //            row.Cells[0].Value = e.e.Message;
+            //            row.Cells[0].Value = Path.GetFileNameWithoutExtension(e.vp.FileName);
+            //            row.Cells[0].Value = Path.GetFileName(e.file);
+            //            row.Cells[0].Value = e.e.Region.BeginLine.ToString();
+            //            row.Cells[0].Value = "project";
 
-                        v.Checked = true;
+            //            v.Checked = true;
 
-                        v.Tag = e;
+            //            v.Tag = e;
 
-                        lv.Items.Add(v);
-                    }
+            //            lv.Items.Add(v);
+             //       }
 
-                    return;
-                }
+            //        return;
+            //    }
 
-            if (i == 3)
-            {
-                foreach (IntErrors e in DD)
-                {
-                    if (filename != "")
-                        if (e.file != filename)
-                            continue;
+            //if (i == 3)
+            //{
+            //    foreach (IntErrors e in DD)
+            //    {
+            //        if (filename != "")
+            //            if (e.file != filename)
+            //                continue;
 
-                    ListViewItem v = new ListViewItem();
-                    v.Text = "";
-                    v.SubItems.Add("");
-                    v.SubItems.Add("e.Code");
-                    v.SubItems.Add(e.e.Message);
-                    v.SubItems.Add(Path.GetFileNameWithoutExtension(e.vp.FileName));
-                    v.SubItems.Add(Path.GetFileName(e.file));
-                    v.SubItems.Add(e.e.Region.BeginLine.ToString());
-                    v.SubItems.Add("project");
+            //        ListViewItem v = new ListViewItem();
+            //        v.Text = "";
+            //        v.SubItems.Add("");
+            //        v.SubItems.Add("e.Code");
+            //        v.SubItems.Add(e.e.Message);
+            //        v.SubItems.Add(Path.GetFileNameWithoutExtension(e.vp.FileName));
+            //        v.SubItems.Add(Path.GetFileName(e.file));
+            //        v.SubItems.Add(e.e.Region.BeginLine.ToString());
+            //        v.SubItems.Add("project");
 
-                    v.Checked = true;
+            //        v.Checked = true;
 
-                    v.Tag = e;
+            //        v.Tag = e;
 
-                    lv.Items.Add(v);
-                }
+            //        lv.Items.Add(v);
+            //    }
 
-                return;
-            }
+            //    return;
+            //}
 
-            foreach (IntErrors e in DD)
-            {
-                ListViewItem v = new ListViewItem();
-                v.Text = "";
-                v.SubItems.Add("");
-                v.SubItems.Add("e.Code");
-                v.SubItems.Add(e.e.Message);
-                v.SubItems.Add(Path.GetFileNameWithoutExtension(e.file));
-                v.SubItems.Add(Path.GetFileName(e.file));
-                v.SubItems.Add(e.e.Region.BeginLine.ToString());
-                v.SubItems.Add("project");
+            //foreach (IntErrors e in DD)
+            //{
+            //    ListViewItem v = new ListViewItem();
+            //    v.Text = "";
+            //    v.SubItems.Add("");
+            //    v.SubItems.Add("e.Code");
+            //    v.SubItems.Add(e.e.Message);
+            //    v.SubItems.Add(Path.GetFileNameWithoutExtension(e.file));
+            //    v.SubItems.Add(Path.GetFileName(e.file));
+            //    v.SubItems.Add(e.e.Region.BeginLine.ToString());
+            //    v.SubItems.Add("project");
 
-                v.Checked = true;
+            //    v.Checked = true;
 
-                v.Tag = e;
+            //    v.Tag = e;
 
-                lv.Items.Add(v);
-            }
+            //    lv.Items.Add(v);
+            //}
         }
 
         public ArrayList LI { get; set; }

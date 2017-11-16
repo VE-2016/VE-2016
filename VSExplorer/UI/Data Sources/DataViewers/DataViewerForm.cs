@@ -30,7 +30,7 @@ namespace WinExplorer.UI
 
                 DataTable datatable = new DataTable();
 
-                string connectionString = C[1] as string;
+                string connectionString = C[4] as string;
 
                 DataConnection dc = new DataConnection();
                 dc.connectionString = connectionString;

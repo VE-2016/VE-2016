@@ -1,0 +1,31 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <Name Package="{00FEE386-5F9F-4577-99F4-F327FAFC0FB9}" ID="901"/>
+    <Description Package="{00FEE386-5F9F-4577-99F4-F327FAFC0FB9}" ID="902"/>
+    <Icon Package="{00FEE386-5F9F-4577-99F4-F327FAFC0FB9}" ID="910"/>
+    <DefaultName>SqlServerUnitTest.cs</DefaultName>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>80</SortOrder>
+    <TemplateGroupID>TestProject-V1</TemplateGroupID>
+    <CustomDataSignature>TestProject-V1</CustomDataSignature>
+    <TemplateID>TestProject-V1-SqlUnitTest</TemplateID>
+    <ShowByDefault>true</ShowByDefault>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>System.Data</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem SubType="Component" ReplaceParameters="true" TargetFileName="$fileinputname$.cs">SqlUnitTest.cs</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="SqlDatabaseSetup.cs">SqlDatabaseSetup.cs</ProjectItem>
+    <ProjectItem TargetFileName="app.config">app.config</ProjectItem>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly> Microsoft.VisualStudio.Data.Tools.Package, version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName> Microsoft.VisualStudio.Data.Tools.Package.UnitTesting.UI.SqlUnitTestWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

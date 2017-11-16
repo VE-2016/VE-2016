@@ -94,6 +94,9 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DgmlParser">
+      <HintPath>..\packages\DgmlViewer\DgmlParser.dll</HintPath>
+    </Reference>
     <Reference Include="Esent.Interop">
       <HintPath>..\packages\Roslyn-all-in-one\Esent.Interop.dll</HintPath>
     </Reference>
@@ -123,46 +126,44 @@
     </Reference>
     <Reference Include="Microsoft.CodeAnalysis, Version=42.42.42.42, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\VSParser\packages\Microsoft.CodeAnalysis.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.Analyzers">
-      <HintPath>..\VSParser\packages\Microsoft.CodeAnalysis.Analyzers.dll</HintPath>
+      <HintPath>..\Referenced Assemblies\Microsoft.CodeAnalysis.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=42.42.42.42, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\VSParser\packages\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.CSharp.Analyzers">
-      <HintPath>..\VSParser\packages\Microsoft.CodeAnalysis.CSharp.Analyzers.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.CSharp.Scripting">
-      <HintPath>..\VSParser\packages\Microsoft.CodeAnalysis.CSharp.Scripting.dll</HintPath>
+      <HintPath>..\Referenced Assemblies\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces, Version=42.42.42.42, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\VSParser\packages\Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
+      <HintPath>..\Referenced Assemblies\Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.Scripting">
-      <HintPath>..\VSParser\packages\Microsoft.CodeAnalysis.Scripting.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.VisualBasic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.CodeAnalysis.VisualBasic, Version=42.42.42.42, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\VSParser\packages\Microsoft.CodeAnalysis.VisualBasic.dll</HintPath>
+      <HintPath>..\Referenced Assemblies\Microsoft.CodeAnalysis.VisualBasic.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.VisualBasic.Workspaces">
-      <HintPath>..\VSParser\packages\Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll</HintPath>
+    <Reference Include="Microsoft.CodeAnalysis.VisualBasic.Workspaces, Version=42.42.42.42, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referenced Assemblies\Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeAnalysis.Workspaces, Version=42.42.42.42, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\VSParser\packages\Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
+      <HintPath>..\Referenced Assemblies\Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeAnalysis.Workspaces.Desktop, Version=42.42.42.42, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\VSParser\packages\Microsoft.CodeAnalysis.Workspaces.Desktop.dll</HintPath>
+      <HintPath>..\Referenced Assemblies\Microsoft.CodeAnalysis.Workspaces.Desktop.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Diagnostics.Runtime, Version=0.8.31.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Diagnostoc.Runtime-recompiled\Microsoft.Diagnostics.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Msagl">
+      <HintPath>..\packages\DgmlViewer\Microsoft.Msagl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Msagl.Drawing">
+      <HintPath>..\packages\DgmlViewer\Microsoft.Msagl.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Msagl.WpfGraphControl">
+      <HintPath>..\packages\DgmlViewer\Microsoft.Msagl.WpfGraphControl.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=13.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -188,8 +189,53 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.SqlServer.Sdk\Microsoft.SqlServer.TransactSql.ScriptDom.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualStudio.GraphModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DgmlViewer\Microsoft.VisualStudio.GraphModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referenced Assemblies\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.AttributedModel, Version=1.0.31.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referenced Assemblies\System.Composition.AttributedModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Convention, Version=1.0.31.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referenced Assemblies\System.Composition.Convention.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Hosting, Version=1.0.31.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referenced Assemblies\System.Composition.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Runtime, Version=1.0.31.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referenced Assemblies\System.Composition.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.TypedParts, Version=1.0.31.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referenced Assemblies\System.Composition.TypedParts.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.FileVersionInfo">
+      <HintPath>..\Referenced Assemblies\System.Diagnostics.FileVersionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression">
+      <HintPath>..\Referenced Assemblies\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referenced Assemblies\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referenced Assemblies\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="System.Management.Automation" />
     <Reference Include="ICSharpCode.NRefactory, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d4bfe873e7598c49, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -257,13 +303,13 @@
       <HintPath>..\packages\System.Reflection.4.3.0\ref\net462\System.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime">
-      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <HintPath>..\Referenced Assemblies\System.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Extensions">
-      <HintPath>..\packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <HintPath>..\Referenced Assemblies\System.Runtime.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.InteropServices">
-      <HintPath>..\packages\System.Runtime.InteropServices.4.3.0\lib\net462\System.Runtime.InteropServices.dll</HintPath>
+      <HintPath>..\Referenced Assemblies\System.Runtime.InteropServices.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
@@ -277,6 +323,7 @@
     <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml.ReaderWriter">
       <HintPath>..\packages\Roslyn-all-in-one\System.Xml.ReaderWriter.dll</HintPath>
     </Reference>
@@ -284,6 +331,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Roslyn-all-in-one\System.Xml.XmlDocument.dll</HintPath>
     </Reference>
+    <Reference Include="VirtualCanvas">
+      <HintPath>..\packages\DgmlViewer\VirtualCanvas.exe</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
@@ -501,6 +552,7 @@
     <Compile Include="Services\NuGet\NuGetPacketShort.designer.cs">
       <DependentUpon>NuGetPacketShort.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\Reflection.cs" />
     <Compile Include="Services\ServiceBitmaps.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SplashForm.cs">
@@ -509,6 +561,7 @@
     <Compile Include="SplashForm.Designer.cs">
       <DependentUpon>SplashForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TeamExplorers\GitSharper.cs" />
     <Compile Include="UI\Explorer Views\Controls\TreeViewEx.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -711,6 +764,12 @@
       <DependentUpon>SQLServerSelectForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\SQLServerExplorer\TSQLPersers\TSQLParser.cs" />
+    <Compile Include="UI\SyntaxTree\SymtaxTreeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SyntaxTree\SymtaxTreeForm.Designer.cs">
+      <DependentUpon>SymtaxTreeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\TemplatePanels\ProjectItemTemplate.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1086,6 +1145,9 @@
     <EmbeddedResource Include="UI\SQLServerExplorer\SQLServerSelectForm.resx">
       <DependentUpon>SQLServerSelectForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\SyntaxTree\SymtaxTreeForm.resx">
+      <DependentUpon>SymtaxTreeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\TemplatePanels\ProjectItemTemplate.resx">
       <DependentUpon>ProjectItemTemplate.cs</DependentUpon>
     </EmbeddedResource>
@@ -1305,6 +1367,10 @@
       <Project>{5df52008-1897-488c-8aff-c764447de35c}</Project>
       <Name>GACProject</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NET\LibGit2Sharp\LibGit2Sharp.csproj">
+      <Project>{ee6ed99f-cb12-4683-b055-d28fc7357a34}</Project>
+      <Name>LibGit2Sharp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NET\MetadataHelper\MetadataHelper.csproj">
       <Project>{4a34a3c5-6176-49d7-a4c5-b2b671247f8f}</Project>
       <Name>MetadataHelper</Name>
@@ -1336,6 +1402,7 @@
     <Folder Include="WpfDesigner\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Folder_16x.png" />
     <None Include="Resources\CSFile_16x.png" />
     <None Include="VE-Resources\Files\Image_16x.png" />
     <None Include="VE-Resources\Files\Filter_16x.png" />

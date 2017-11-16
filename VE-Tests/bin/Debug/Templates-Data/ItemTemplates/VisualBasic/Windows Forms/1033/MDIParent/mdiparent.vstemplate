@@ -1,0 +1,78 @@
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3133" />
+    <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3134" />
+    <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4572" />
+    <ProjectType>VisualBasic</ProjectType>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <SortOrder>100</SortOrder>
+    <DefaultName>MDIParent.vb</DefaultName>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>Microsoft.VisualBasic.WindowsForms.MdiParent</TemplateID>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+  </TemplateData>
+  <TemplateContent>
+        <References>
+            <Reference>
+                <Assembly>System</Assembly>
+                <URL>https://www.microsoft.com</URL>
+            </Reference>
+            <Reference>
+                <Assembly>System.Drawing</Assembly>
+                <URL>https://www.microsoft.com</URL>
+            </Reference>
+            <Reference>
+                <Assembly>System.Windows.Forms</Assembly>
+                <URL>https://www.microsoft.com</URL>
+            </Reference>
+        </References>
+
+    <ProjectItem ReplaceParameters="true" SubType="Form">MDIParent.vb</ProjectItem>
+    <ProjectItem ReplaceParameters="true">MDIParent.Designer.vb</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$.resx" ReplaceParameters="false">MDIParent.resx</ProjectItem>
+    <CustomParameters>
+        <CustomParameter _locID="$IT_MD_VB_Loc_Window$" Name="$IT_MD_VB_Loc_Window$" Value="Window"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_TextFilesFilter$" Name="$IT_MD_VB_Loc_TextFilesFilter$" Value="Text Files (*.txt)|*.txt|All Files (*.*)|*.*"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_4$" Name="$IT_MD_VB_Loc_4$" Value="&amp;Contents"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_Help$" Name="$IT_MD_VB_Loc_Help$" Value="&amp;Help"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_Index$" Name="$IT_MD_VB_Loc_Index$" Value="&amp;Index"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_Search$" Name="$IT_MD_VB_Loc_Search$" Value="&amp;Search"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_About$" Name="$IT_MD_VB_Loc_About$" Value="&amp;About ..."/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_Arrange$" Name="$IT_MD_VB_Loc_Arrange$" Value="&amp;Arrange Icons"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_CloseAll$" Name="$IT_MD_VB_Loc_CloseAll$" Value="C&amp;lose All"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_NewWindow$" Name="$IT_MD_VB_Loc_NewWindow$" Value="&amp;New Window"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_Windows$" Name="$IT_MD_VB_Loc_Windows$" Value="&amp;Windows"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_Cascade$" Name="$IT_MD_VB_Loc_Cascade$" Value="&amp;Cascade"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_Vertical$" Name="$IT_MD_VB_Loc_Vertical$" Value="Tile &amp;Vertical"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_Horizontal$" Name="$IT_MD_VB_Loc_Horizontal$" Value="Tile &amp;Horizontal"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_Options$" Name="$IT_MD_VB_Loc_Options$" Value="&amp;Options"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_HelpTS$" Name="$IT_MD_VB_Loc_HelpTS$" Value="Help"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_PrintPreview$" Name="$IT_MD_VB_Loc_PrintPreview$" Value="Print Preview"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_Status$" Name="$IT_MD_VB_Loc_Status$" Value="Status"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_PrintTS$" Name="$IT_MD_VB_Loc_PrintTS$" Value="Print"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_NewTS$" Name="$IT_MD_VB_Loc_NewTS$" Value="New"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_OpenTS$" Name="$IT_MD_VB_Loc_OpenTS$" Value="Open"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_SaveTS$" Name="$IT_MD_VB_Loc_SaveTS$" Value="Save"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_PrintPreviewTS$" Name="$IT_MD_VB_Loc_PrintPreviewTS$" Value="Print Pre&amp;view"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_PrintTS_Menu$" Name="$IT_MD_VB_Loc_PrintTS_Menu$" Value="&amp;Print"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_ExitTS_Menu$" Name="$IT_MD_VB_Loc_ExitTS_Menu$" Value="E&amp;xit"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_PrintSetup_TS_Menu$" Name="$IT_MD_VB_Loc_PrintSetup_TS_Menu$" Value="Print Setup"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_SaveAsTS_Menu$" Name="$IT_MD_VB_Loc_SaveAsTS_Menu$" Value="Save &amp;As"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_NewTS_Menu$" Name="$IT_MD_VB_Loc_NewTS_Menu$" Value="&amp;New"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_FileMenu$" Name="$IT_MD_VB_Loc_FileMenu$" Value="&amp;File"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_OpenMenu$" Name="$IT_MD_VB_Loc_OpenMenu$" Value="&amp;Open"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_SaveMenu$" Name="$IT_MD_VB_Loc_SaveMenu$" Value="&amp;Save"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_EditMenu$" Name="$IT_MD_VB_Loc_EditMenu$" Value="&amp;Edit"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_UndoMenu$" Name="$IT_MD_VB_Loc_UndoMenu$" Value="&amp;Undo"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_RedoMenu$" Name="$IT_MD_VB_Loc_RedoMenu$" Value="&amp;Redo"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_CutMenu$" Name="$IT_MD_VB_Loc_CutMenu$" Value="Cu&amp;t"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_CopyMenu$" Name="$IT_MD_VB_Loc_CopyMenu$" Value="&amp;Copy"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_PasteMenu$" Name="$IT_MD_VB_Loc_PasteMenu$" Value="&amp;Paste"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_SelectAllTS_Menu$" Name="$IT_MD_VB_Loc_SelectAllTS_Menu$" Value="Select &amp;All"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_ViewMenu$" Name="$IT_MD_VB_Loc_ViewMenu$" Value="&amp;View"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_Toolbar_Menu$" Name="$IT_MD_VB_Loc_Toolbar_Menu$" Value="&amp;Toolbar"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_StatusBar_Menu$" Name="$IT_MD_VB_Loc_StatusBar_Menu$" Value="&amp;Status Bar"/>
+        <CustomParameter _locID="$IT_MD_VB_Loc_ToolsMenu$" Name="$IT_MD_VB_Loc_ToolsMenu$" Value="&amp;Tools"/>
+    </CustomParameters>
+  </TemplateContent>
+</VSTemplate>

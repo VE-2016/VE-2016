@@ -184,6 +184,60 @@ namespace AvalonEdit.Editor
 
         public VSProject vp { get; set; }
 
+        public static string GetWordUnderMouse(ICSharpCode.AvalonEdit.Document.TextDocument document, int offsets)
+        {
+            string wordHovered = string.Empty;
+
+            int offset = offsets;
+
+            if (offset >= document.TextLength)
+                offset--;
+
+            var textAtOffset = document.GetText(offset, 1);
+
+            // Get text backward of the mouse position, until the first space
+            while (!string.IsNullOrWhiteSpace(textAtOffset))
+            {
+                wordHovered = textAtOffset + wordHovered;
+
+                offset--;
+
+                if (offset < 0)
+                    break;
+
+                textAtOffset = document.GetText(offset, 1);
+
+                if (textAtOffset == "(" || textAtOffset == ")" || textAtOffset == "<" || textAtOffset == ">" || textAtOffset == "," || textAtOffset == ";")
+                    break;
+            }
+
+            // Get text forward the mouse position, until the first space
+            offset = offsets;
+            if (offset < document.TextLength - 1)
+            {
+                offset++;
+
+                textAtOffset = document.GetText(offset, 1);
+
+                while (!string.IsNullOrWhiteSpace(textAtOffset))
+                {
+                    wordHovered = wordHovered + textAtOffset;
+
+                    offset++;
+
+                    if (offset >= document.TextLength)
+                        break;
+
+                    textAtOffset = document.GetText(offset, 1);
+
+                    if (textAtOffset == "(" || textAtOffset == ")" || textAtOffset == "<" || textAtOffset == ">" || textAtOffset == "," || textAtOffset == ";")
+                        break;
+                }
+            }
+
+            return wordHovered;
+        }
+
         public static string GetWordUnderMouse(ICSharpCode.AvalonEdit.Document.TextDocument document, TextViewPosition position)
         {
             string wordHovered = string.Empty;
@@ -296,19 +350,25 @@ namespace AvalonEdit.Editor
 
             symbols = vp.vs.GetMembers(vp, filename, content);
         }
-        public List<INamespaceOrTypeSymbol> GetTypes()
-        {
-            string FileName = ProjectToLoad;// FileToLoad;// "C:\\MSBuildProjects-beta\\VSExplorer\\VSExplorer.csproj";
 
-            string filename = FileToLoad;// "C:\\MSBuildProjects-beta\\VSExplorer\\ExplorerForms.cs";
-            
+        public List<INamespaceOrTypeSymbol> typesofproject;
+
+        public List<INamespaceOrTypeSymbol> GetTypes(VSSolution vs)
+        {
+            string FileName = ProjectToLoad;
+
+            string filename = FileToLoad;
+
+            this.vs = vs;
 
             vp = vs.GetProjectbyCompileItem(filename);
 
             if (vp == null)
                 return vs.GetAllTypes("");
 
-            return vp.vs.GetAllTypes(FileName);
+            typesofproject = vp.vs.GetAllTypes(FileName);
+
+            return typesofproject;
         }
 
 
@@ -338,16 +398,24 @@ namespace AvalonEdit.Editor
 
             if (word.Contains("."))
             {
-
-                
-
-                if(r != null)
-                    if(r.Kind == SymbolKind.Method)
+                if (r != null)
                 {
+                    if (r.Kind == SymbolKind.Method)
+                    {
                         return new Tuple<string, string, ISymbol>(CSParsers.TypeToString(r.ContainingType), "", r);
+                    }
+                    else if (r.Kind == SymbolKind.Property)
+                    {
+                        IPropertySymbol ps = r as IPropertySymbol;
+                        return new Tuple<string, string, ISymbol>(CSParsers.TypeToString(ps.Type), "", r);
+                    }
+                    else if (r.Kind == SymbolKind.NamedType)
+                    {
+                        INamedTypeSymbol ps = r as INamedTypeSymbol;
+                        return new Tuple<string, string, ISymbol>(CSParsers.TypeToString(ps), "", r);
+                    }
                 }
-
-            }
+                }
             else
             {
                 if (r != null)
@@ -357,7 +425,6 @@ namespace AvalonEdit.Editor
 
                         if (containigType != null)
                         {
-
                             if (containigType.Locations != null)
                                 if (containigType.Locations[0] != null)
                                     if (containigType.Locations[0].IsInSource)

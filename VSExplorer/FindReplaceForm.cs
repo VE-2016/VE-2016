@@ -1,6 +1,7 @@
 using AIMS.Libraries.CodeEditor;
 using AIMS.Libraries.CodeEditor.Syntax;
 using AIMS.Libraries.Scripting.ScriptControl;
+using AIMS.Libraries.Scripting.ScriptControl.Properties;
 using ICSharpCode.NRefactory.TypeSystem;
 using SolutionFormProject;
 using System;
@@ -451,7 +452,7 @@ namespace WinExplorer
             }
             else if (bc == 2)
             {
-                Document doc = ef.scr.GetActiveDocument();
+                AvalonDocument doc = ef.scr.GetActiveDocument();
 
                 string filename = doc.FileName;
 
@@ -542,7 +543,7 @@ namespace WinExplorer
 
                 VSProject vp = vs.MainVSProject;
 
-                ArrayList L = scr.GetOpenFiles();
+                ArrayList L = new ArrayList();//.GetOpenFiles();
 
                 if (BB != bb || patterns != s)
                     Results = null;
@@ -675,29 +676,29 @@ namespace WinExplorer
 
                 ScriptControl scr = ef.scr;
 
-                Document doc = ef.scr.GetActiveDocument();
+                AvalonDocument doc = ef.scr.GetActiveDocument();
 
                 string filename = doc.FileName;
 
-                AIMS.Libraries.Scripting.Dom.IMember m = scr.GetCurrentBlock();
+                //AIMS.Libraries.Scripting.Dom.IMember m = scr.GetCurrentBlock();
 
-                if (m == null)
-                {
-                    Results = null;
-                    return null;
-                }
+                //if (m == null)
+                //{
+                //    Results = null;
+                //    return null;
+                //}
 
-                string text = scr.GetCurrentBlockText(m.BodyRegion);
+                //string text = "";// scr.GetCurrentBlockText(m.BodyRegion);
 
-                TextPoint p = new TextPoint(0, m.Region.BeginLine);
+                //TextPoint p = new TextPoint(0, m.Region.BeginLine);
 
-                //if (BB != bb || patterns != s || filename != filenamedoc)
+                ////if (BB != bb || patterns != s || filename != filenamedoc)
 
-                if (m != mb)
+                //if (m != mb)
 
-                    Results = null;
+                //    Results = null;
 
-                mb = m;
+                //mb = m;
 
                 filenamedoc = filename;
 
@@ -715,12 +716,12 @@ namespace WinExplorer
 
                             if (mc == false)
                             {
-                                text = text.ToLower();
+                                //text = text.ToLower();
 
                                 s = s.ToLower();
                             }
 
-                            char[] texts = text.ToCharArray();
+                            char[] texts = "text".ToCharArray();
 
                             char[] pattern = s.ToCharArray();
 
@@ -728,14 +729,14 @@ namespace WinExplorer
 
                             if (checkBox4.Checked == true)
                             {
-                                found = RegexMatch(text, s, true);
+                                //found = RegexMatch(text, s, true);
                             }
                             else
                             {
                                 found = finders.TW(pattern, pattern.Length, texts, texts.Length);
                             }
 
-                            string[] lines = text.Split("\n".ToCharArray());
+                            string[] lines = "text".Split("\n".ToCharArray());
 
                             int fp = 0;
 
@@ -754,7 +755,7 @@ namespace WinExplorer
 
                                 if (pos >= r && pos <= n)
                                 {
-                                    Results.Add(filename + "\t\t" + (pos - r) + " \t" + (p.Y + i));
+                                    Results.Add(filename + "\t\t" + (pos - r) + " \t" + (0/*p.Y*/ + i));
 
                                     fp++;
 
@@ -808,13 +809,13 @@ namespace WinExplorer
 
                 ScriptControl scr = ef.scr;
 
-                Document doc = ef.scr.GetActiveDocument();
+                AvalonDocument doc = ef.scr.GetActiveDocument();
 
                 string filename = doc.FileName;
 
                 string text = scr.GetCurrentSelection();
 
-                TextPoint p = scr.GetCurrentSelectionStart();
+                TextPoint p = new TextPoint(0, 0); // scr.GetCurrentSelectionStart();
 
                 if (BB != bb || patterns != s || filename != filenamedoc)
                     Results = null;
@@ -1056,11 +1057,11 @@ namespace WinExplorer
             {
                 //MessageBox.Show("Find for Current Document");
 
-                Document doc = ef.scr.GetActiveDocument();
+                AvalonDocument doc = ef.scr.GetActiveDocument();
 
                 string filename = doc.FileName;
 
-                string text = doc.syntaxDocument1.Text;
+                string text = "doc.syntaxDocument1.Text";
 
                 if (BB != bb || patterns != s || filename != filenamedoc)
                     Results = null;
@@ -1290,11 +1291,11 @@ namespace WinExplorer
 
             ExplorerForms ef = ExplorerForms.ef;
 
-            Document doc = ef.scr.GetActiveDocument();
+            AvalonDocument doc = ef.scr.GetActiveDocument();
 
             string filename = doc.FileName;
 
-            string text = doc.syntaxDocument1.Text;
+            string text = "doc.syntaxDocument1.Text";
 
             string filenamedoc = filename;
 
@@ -1493,7 +1494,7 @@ namespace WinExplorer
 
                 ArrayList L = ToLinesProject(Results);
 
-                Document doc = ef.scr.GetActiveDocument();
+                AvalonDocument doc = ef.scr.GetActiveDocument();
 
                 string filename = doc.FileName;
 
@@ -1509,7 +1510,7 @@ namespace WinExplorer
 
                 ArrayList L = ToLinesProject(Results);
 
-                Document doc = ef.scr.GetActiveDocument();
+                AvalonDocument doc = ef.scr.GetActiveDocument();
 
                 string filename = doc.FileName;
 

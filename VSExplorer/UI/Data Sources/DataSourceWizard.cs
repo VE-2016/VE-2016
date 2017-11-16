@@ -436,12 +436,13 @@ namespace WinExplorer.UI
 
         public static ArrayList GetConnections()
         {
-            if (File.Exists("Extensions//Databases//Connections//connections.settings") == false)
+            string folder = AppDomain.CurrentDomain.BaseDirectory;
+            if (File.Exists(folder + "\\Extensions//Databases//Connections//connections.settings") == false)
             {
-                FileStream fs = File.Create("Extensions//Databases//Connections//connections.settings");
+                FileStream fs = File.Create(folder + "\\Extensions//Databases//Connections//connections.settings");
                 fs.Close();
             }
-            string[] cs = File.ReadAllLines("Extensions//Databases//Connections//connections.settings");
+            string[] cs = File.ReadAllLines(folder + "\\Extensions//Databases//Connections//connections.settings");
             ArrayList L = new ArrayList();
             L.AddRange(cs.ToArray());
             return L;

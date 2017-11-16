@@ -1,0 +1,2 @@
+﻿<%@ Master Language="C#" MasterPageFile="$MasterPage$" AutoEventWireup="true" CodeBehind="$fileinputname$.master.cs" Inherits="$rootnamespace$.$classname$" %>
+$ContentTags$

@@ -17,8 +17,14 @@ namespace WeifenLuo.WinFormsUI.Docking
                 //Suggested as a fix by bensty regarding form resize
                 this.ParentChanged += new EventHandler(DockContent_ParentChanged);
             }
+            
+            DockAlignment = DockAlign.DockToLeft;
         }
-
+        public DockAlign DockAlignment
+        {
+            get;
+            set;
+        }
         //Suggested as a fix by bensty regarding form resize
         private void DockContent_ParentChanged(object Sender, EventArgs e)
         {
@@ -334,26 +340,30 @@ namespace WeifenLuo.WinFormsUI.Docking
         }
         #endregion
 
-        /// <summary>
-        /// Overridden to avoid resize issues with nested controls
-        /// </summary>
-        /// <remarks>
-        /// http://blogs.msdn.com/b/alejacma/archive/2008/11/20/controls-won-t-get-resized-once-the-nesting-hierarchy-of-windows-exceeds-a-certain-depth-x64.aspx
-        /// http://support.microsoft.com/kb/953934
-        /// </remarks>
-        protected override void OnSizeChanged(EventArgs e)
-        {
-            if (DockPanel != null && DockPanel.SupportDeeplyNestedContent && IsHandleCreated)
-            {
-                BeginInvoke((MethodInvoker)delegate
-                {
-                    base.OnSizeChanged(e);
-                });
-            }
-            else
-            {
-                base.OnSizeChanged(e);
-            }
-        }
+        ///// <summary>
+        ///// Overridden to avoid resize issues with nested controls
+        ///// </summary>
+        ///// <remarks>
+        ///// http://blogs.msdn.com/b/alejacma/archive/2008/11/20/controls-won-t-get-resized-once-the-nesting-hierarchy-of-windows-exceeds-a-certain-depth-x64.aspx
+        ///// http://support.microsoft.com/kb/953934
+        ///// </remarks>
+        //protected override void OnSizeChanged(EventArgs e)
+        //{
+        //    if (DockPanel != null && DockPanel.SupportDeeplyNestedContent && IsHandleCreated)
+        //    {
+        //        BeginInvoke((MethodInvoker)delegate
+        //        {
+        //            base.OnSizeChanged(e);
+        //        });
+        //    }
+        //    else
+        //    {
+        //        if(this.IsHandleCreated)
+        //        BeginInvoke((MethodInvoker)delegate
+        //        {
+        //            base.OnSizeChanged(e);
+        //        });
+        //    }
+        //}
     }
 }

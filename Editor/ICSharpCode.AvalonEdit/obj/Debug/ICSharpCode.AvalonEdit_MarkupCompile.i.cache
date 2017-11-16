@@ -4,7 +4,7 @@
 library
 C#
 .cs
-F:\ve\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\
+f:\ve\ve-2023\Editor\ICSharpCode.AvalonEdit\obj\Debug\
 ICSharpCode.AvalonEdit
 none
 false
@@ -16,5 +16,5 @@ DEBUG;
 18-937462455
 CodeCompletion\CompletionList.xaml;CodeCompletion\InsightWindow.xaml;Search\SearchPanel.xaml;Search\DropDownButton.xaml;TextEditor.xaml;themes\generic.xaml;
 
-False
+True
 

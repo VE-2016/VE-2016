@@ -1,0 +1,120 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="ProjectGroup" Locale="1033">
+    <RelativePathOnDisk>CSharp\Web\1033\WebTemplateCore</RelativePathOnDisk>
+    <TemplateFileName>WebTemplateCore.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="5005" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="5006" />
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="4" />
+        <ProjectType>CSharp</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <TemplateID>Microsoft.WAP.CSharp.ASPNET.WebCore</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>17</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebApplication</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup" Locale="1033">
+    <RelativePathOnDisk>CSharp\Web\1033\WebTemplateCoreFullFramework</RelativePathOnDisk>
+    <TemplateFileName>WebTemplateCoreFullFramework.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="5007" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="5008" />
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="4" />
+        <ProjectType>CSharp</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <TemplateID>Microsoft.WAP.CSharp.ASPNET.WebCore.FullFramework</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>17</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebApplication</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup" Locale="1033">
+    <RelativePathOnDisk>CSharp\Cloud\1033\WebTemplateCore</RelativePathOnDisk>
+    <TemplateFileName>WebTemplateCore.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="5005" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="5006" />
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="4" />
+        <ProjectType>CSharp</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <TemplateID>Microsoft.Cloud.CSharp.ASPNET.WebCore</TemplateID>
+        <SortOrder>160</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebApplication</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup" Locale="1033">
+    <RelativePathOnDisk>CSharp\Cloud\1033\WebTemplateCoreFullFramework</RelativePathOnDisk>
+    <TemplateFileName>WebTemplateCoreFullFramework.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="5007" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="5008" />
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="4" />
+        <ProjectType>CSharp</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <TemplateID>Microsoft.Cloud.CSharp.ASPNET.WebCore.FullFramework</TemplateID>
+        <SortOrder>170</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebApplication</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup" Locale="1033">
+    <RelativePathOnDisk>CSharp\.NET Core\1033\WebTemplateCore</RelativePathOnDisk>
+    <TemplateFileName>WebTemplateCore.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="5005" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="5006" />
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="4" />
+        <ProjectType>CSharp</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <TemplateID>Microsoft.DotNet.CSharp.ASPNET.WebCore</TemplateID>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <SortOrder>100</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WebApplication</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

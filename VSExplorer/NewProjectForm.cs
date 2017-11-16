@@ -710,7 +710,7 @@ namespace WinExplorer
 
             List<string> tmps = new List<string>();
 
-            ArrayList L = GetProjectTemplates(c + folders);
+            ArrayList L = GetProjectTemplates(c + "\\" + folders);
 
             foreach (string s in L)
                 tmps.Add(s);
@@ -791,7 +791,9 @@ namespace WinExplorer
         {
             ArrayList L = new ArrayList();
 
-            DirectoryInfo d = new DirectoryInfo(folders);
+            //folder = AppDomain.CurrentDomain.BaseDirectory + "\\" + folder;
+
+            DirectoryInfo d = new DirectoryInfo(folder);
 
             if (d == null)
                 return L;
@@ -1413,6 +1415,7 @@ namespace WinExplorer
             public Command_SolutionRun(ExplorerForms ef) : base(ef)
             {
                 Name = "Startup Projects";
+                //GuiHint = "ToolStripDropDownButton";
             }
 
             private ToolStripComboBoxes cb { get; set; }
@@ -1478,9 +1481,10 @@ namespace WinExplorer
         {
             public Command_RunProject(ExplorerForms ef) : base(ef)
             {
-                image = ve_resource.StartWithoutDebug_16x;
+                image = WinExplorers.ve.Run_256x;
                 shouldDisplayText = true;
                 Name = "Start";
+                GuiHint = "ToolStripDropDownButtons";
             }
 
             override public object Execute(object obs = null)
@@ -1841,7 +1845,7 @@ namespace WinExplorer
                 Name = "Navigate Forward";
                 image = ve_resource.Forward_256x;
                 keyboard = new Keys[3];
-
+                
                 keyboard[0] = Keys.Control;
                 keyboard[1] = Keys.Shift;
                 keyboard[2] = Keys.Subtract;
@@ -1972,7 +1976,7 @@ namespace WinExplorer
                 if (ef == null)
                     return ef;
 
-                //ef.BeginInvoke(new Action(() => { ef.Command_AddNewProject(); }));
+                ef.BeginInvoke(new Action(() => { ef.Command_SaveFile(); }));
 
                 return obs;
             }
@@ -2110,6 +2114,7 @@ namespace WinExplorer
                 Name = "Undo";
                 image = ve_resource.Undo_16x;
                 keyboard = new Keys[2];
+                GuiHint = "ToolStripDropDownButtons";
 
                 keyboard[0] = Keys.Control;
                 keyboard[1] = Keys.Z;
@@ -2135,6 +2140,7 @@ namespace WinExplorer
                 Name = "Redo";
                 image = ve_resource.Redo_16x;
                 keyboard = new Keys[2];
+                GuiHint = "ToolStripDropDownButtons";
 
                 keyboard[0] = Keys.Control;
                 keyboard[1] = Keys.Y;
@@ -2483,11 +2489,11 @@ namespace WinExplorer
 
                 Command.counter = 1;
 
-                NewProject nw = obs as NewProject;
+                //NewProject nw = obs as NewProject;
 
                 ef.BeginInvoke(new Action(() => { ef.Command_LoadSolution(file); }));
 
-                while (Command.counter > 0) ;
+                //while (Command.counter > 0) ;
 
                 return obs;
             }
@@ -2537,11 +2543,11 @@ namespace WinExplorer
 
                 Command.counter = 1;
 
-                AutoResetEvent autoEvent = new System.Threading.AutoResetEvent(false);
+                CountdownEvent autoEvent = new System.Threading.CountdownEvent(1);
 
                 ef.BeginInvoke(new Action(() => { ef.Command_OpenFile(file, autoEvent); }));
 
-                if (autoEvent != null) autoEvent.WaitOne();
+                if (autoEvent != null) autoEvent.Signal();
 
                 return obs;
             }
@@ -2565,11 +2571,11 @@ namespace WinExplorer
 
                 Command.counter = 1;
 
-                AutoResetEvent autoEvent = new System.Threading.AutoResetEvent(false);
+                CountdownEvent autoEvent = new System.Threading.CountdownEvent(1);
 
                 ef.BeginInvoke(new Action(() => { ef.Command_OpenFile(file, autoEvent); }));
 
-                if (autoEvent != null) autoEvent.WaitOne();
+                if (autoEvent != null) autoEvent.Signal();
 
                 return obs;
             }

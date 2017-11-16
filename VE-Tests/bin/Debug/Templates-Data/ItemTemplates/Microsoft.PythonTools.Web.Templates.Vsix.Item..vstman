@@ -1,0 +1,184 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>CloudService\NETFramework4\Web Role\Python\CloudServiceBottleWebRole</RelativePathOnDisk>
+    <TemplateFileName>CloudServiceBottleWebRole.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5026" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5027" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="406" />
+        <ProjectType>CloudServiceProject</ProjectType>
+        <DefaultName>WebRole</DefaultName>
+        <SortOrder>21</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>CloudService\NETFramework4\Web Role\Python\CloudServiceEmptyWebRole</RelativePathOnDisk>
+    <TemplateFileName>CloudServiceEmptyWebRole.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5028" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5029" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="406" />
+        <ProjectType>CloudServiceProject</ProjectType>
+        <DefaultName>WebRole</DefaultName>
+        <SortOrder>20</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>CloudService\NETFramework4\Web Role\Python\CloudServiceFlaskWebRole</RelativePathOnDisk>
+    <TemplateFileName>CloudServiceFlaskWebRole.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5030" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5031" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="406" />
+        <ProjectType>CloudServiceProject</ProjectType>
+        <DefaultName>WebRole</DefaultName>
+        <SortOrder>24</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>CloudService\NETFramework4\Worker Role\Python\CloudServiceWorkerRole</RelativePathOnDisk>
+    <TemplateFileName>WorkerRole.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5032" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5033" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="408" />
+        <ProjectType>CloudServiceProject</ProjectType>
+        <DefaultName>WorkerRole</DefaultName>
+        <SortOrder>20</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>Python\AzureCSWebRole</RelativePathOnDisk>
+    <TemplateFileName>AzureCSWebRole.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5034" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5035" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="406" />
+        <ProjectType>Python</ProjectType>
+        <DefaultName>bin</DefaultName>
+        <SortOrder>100</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>Python\AzureCSWorkerRole</RelativePathOnDisk>
+    <TemplateFileName>AzureCSWorkerRole.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5036" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5037" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="408" />
+        <ProjectType>Python</ProjectType>
+        <DefaultName>bin</DefaultName>
+        <SortOrder>100</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>Python\AzureDebugWebConfig</RelativePathOnDisk>
+    <TemplateFileName>AzureDebugWebConfig.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5038" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5039" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="412" />
+        <ProjectType>Python</ProjectType>
+        <DefaultName>web.debug.config</DefaultName>
+        <SortOrder>330</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>Python\AzureFastCGIWebConfig</RelativePathOnDisk>
+    <TemplateFileName>AzureFastCGIWebConfig.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5040" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5041" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="412" />
+        <ProjectType>Python</ProjectType>
+        <DefaultName>web.config</DefaultName>
+        <SortOrder>300</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>Python\AzureHttpPlatformWebConfig</RelativePathOnDisk>
+    <TemplateFileName>AzureHttpPlatformWebConfig.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5042" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5043" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="412" />
+        <ProjectType>Python</ProjectType>
+        <DefaultName>web.config</DefaultName>
+        <SortOrder>310</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>Python\AzureStaticWebConfig</RelativePathOnDisk>
+    <TemplateFileName>AzureStaticWebConfig.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5044" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5045" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="412" />
+        <ProjectType>Python</ProjectType>
+        <DefaultName>web.config</DefaultName>
+        <SortOrder>320</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>Python\HtmlFile</RelativePathOnDisk>
+    <TemplateFileName>HtmlFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5046" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5047" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="409" />
+        <ProjectType>Python</ProjectType>
+        <DefaultName>WebPage.html</DefaultName>
+        <SortOrder>50</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>Python\JavaScript</RelativePathOnDisk>
+    <TemplateFileName>JavaScript.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5048" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5049" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="411" />
+        <ProjectType>Python</ProjectType>
+        <DefaultName>JavaScript.js</DefaultName>
+        <SortOrder>50</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>Python\Stylesheet</RelativePathOnDisk>
+    <TemplateFileName>Stylesheet.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5050" />
+        <Description Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="5051" />
+        <Icon Package="{6dbd7c1e-1f1b-496d-ac7c-c55dae66c783}" ID="410" />
+        <ProjectType>Python</ProjectType>
+        <DefaultName>Stylesheet.css</DefaultName>
+        <SortOrder>50</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

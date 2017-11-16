@@ -1,0 +1,306 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\XAML\1033\UAPBlankPage</RelativePathOnDisk>
+    <TemplateFileName>BlankPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1113" />
+        <Description Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1114" />
+        <Icon Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="4007" />
+        <TemplateID>Microsoft.CS.UAP.BlankPage</TemplateID>
+        <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+        <AppliesTo>CSharp + SharedAssetsProject</AppliesTo>
+        <ProjectType>CSharp</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>BlankPage.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>40</SortOrder>
+        <PreviewImage>BlankPage.png</PreviewImage>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.1.0</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\XAML\1033\UAPContentDialog</RelativePathOnDisk>
+    <TemplateFileName>ContentDialog.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1117" />
+        <Description Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1118" />
+        <Icon Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="4008" />
+        <TemplateID>Microsoft.CS.UAP.ContentDialog</TemplateID>
+        <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+        <AppliesTo>CSharp + SharedAssetsProject</AppliesTo>
+        <ProjectType>CSharp</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>ContentDialog.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>41</SortOrder>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.1.0</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\XAML\1033\UAPResourceDictionary</RelativePathOnDisk>
+    <TemplateFileName>ResourceDictionary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1123" />
+        <Description Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1124" />
+        <Icon Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="4010" />
+        <TemplateID>Microsoft.CS.UAP.ResourceDictionary</TemplateID>
+        <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+        <AppliesTo>CSharp + SharedAssetsProject</AppliesTo>
+        <ProjectType>CSharp</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>Dictionary.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>70</SortOrder>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.1.0</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\XAML\1033\UAPResw</RelativePathOnDisk>
+    <TemplateFileName>Resw.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1127" />
+        <Description Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1128" />
+        <Icon Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="4006" />
+        <TemplateID>Microsoft.Templates.CSharp.UAP.Resw</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>Resources.resw</DefaultName>
+        <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+        <AppliesTo>CSharp + SharedAssetsProject</AppliesTo>
+        <ShowByDefault>false</ShowByDefault>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\XAML\1033\UAPTemplatedControl</RelativePathOnDisk>
+    <TemplateFileName>TemplatedControl.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1125" />
+        <Description Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1126" />
+        <Icon Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="4009" />
+        <TemplateID>Microsoft.CS.UAP.TemplatedControl</TemplateID>
+        <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+        <AppliesTo>CSharp + SharedAssetsProject</AppliesTo>
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>80</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>CustomControl.cs</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.1.0</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\XAML\1033\UAPUserControl</RelativePathOnDisk>
+    <TemplateFileName>UserControl.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1121" />
+        <Description Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1122" />
+        <Icon Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="4009" />
+        <TemplateID>Microsoft.CS.UAP.UserControl</TemplateID>
+        <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+        <AppliesTo>CSharp + SharedAssetsProject</AppliesTo>
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>81</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>MyUserControl.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.1.0</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\XAML\1033\XamlView</RelativePathOnDisk>
+    <TemplateFileName>XamlView.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1098" />
+        <Description Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1099" />
+        <Icon Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="4007" />
+        <TemplateID>Microsoft.CS.WinRT.XamlView</TemplateID>
+        <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+        <ProjectType>CSharp</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>MainPage.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>83</SortOrder>
+        <PreviewImage>BlankPage.png</PreviewImage>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.1.0</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\XAML\1033\UAPBlankPage</RelativePathOnDisk>
+    <TemplateFileName>BlankPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1113" />
+        <Description Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1114" />
+        <Icon Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="4007" />
+        <TemplateID>Microsoft.VB.UAP.BlankPage</TemplateID>
+        <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+        <AppliesTo>VB + SharedAssetsProject</AppliesTo>
+        <ProjectType>VisualBasic</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>BlankPage.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>40</SortOrder>
+        <PreviewImage>BlankPage.png</PreviewImage>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.1.0</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\XAML\1033\UAPContentDialog</RelativePathOnDisk>
+    <TemplateFileName>ContentDialog.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1117" />
+        <Description Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1118" />
+        <Icon Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="4008" />
+        <TemplateID>Microsoft.VB.UAP.ContentDialog</TemplateID>
+        <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+        <AppliesTo>VB + SharedAssetsProject</AppliesTo>
+        <ProjectType>VisualBasic</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>ContentDialog.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>41</SortOrder>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.1.0</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\XAML\1033\UAPResourceDictionary</RelativePathOnDisk>
+    <TemplateFileName>ResourceDictionary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1123" />
+        <Description Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1124" />
+        <Icon Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="4010" />
+        <TemplateID>Microsoft.VB.UAP.ResourceDictionary</TemplateID>
+        <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+        <AppliesTo>VB + SharedAssetsProject</AppliesTo>
+        <ProjectType>VisualBasic</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>Dictionary.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>70</SortOrder>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.1.0</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\XAML\1033\UAPResw</RelativePathOnDisk>
+    <TemplateFileName>Resw.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1127" />
+        <Description Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1128" />
+        <Icon Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="4006" />
+        <TemplateID>Microsoft.Templates.VisualBasic.UAP.Resw</TemplateID>
+        <ProjectType>VisualBasic</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>Resources.resw</DefaultName>
+        <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+        <AppliesTo>VB + SharedAssetsProject</AppliesTo>
+        <ShowByDefault>false</ShowByDefault>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\XAML\1033\UAPTemplatedControl</RelativePathOnDisk>
+    <TemplateFileName>TemplatedControl.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1125" />
+        <Description Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1126" />
+        <Icon Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="4009" />
+        <TemplateID>Microsoft.VB.UAP.TemplatedControl</TemplateID>
+        <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+        <AppliesTo>VB + SharedAssetsProject</AppliesTo>
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>80</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>CustomControl.vb</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.1.0</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\XAML\1033\UAPUserControl</RelativePathOnDisk>
+    <TemplateFileName>UserControl.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1121" />
+        <Description Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1122" />
+        <Icon Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="4009" />
+        <TemplateID>Microsoft.VB.UAP.UserControl</TemplateID>
+        <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+        <AppliesTo>VB + SharedAssetsProject</AppliesTo>
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>81</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>MyUserControl.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.1.0</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\XAML\1033\XamlView</RelativePathOnDisk>
+    <TemplateFileName>XamlView.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1098" />
+        <Description Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1099" />
+        <Icon Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="4007" />
+        <TemplateID>Microsoft.VB.WinRT.XamlView</TemplateID>
+        <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+        <ProjectType>VisualBasic</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>MainPage.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>83</SortOrder>
+        <PreviewImage>BlankPage.png</PreviewImage>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.1.0</RequiredPlatformVersion>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

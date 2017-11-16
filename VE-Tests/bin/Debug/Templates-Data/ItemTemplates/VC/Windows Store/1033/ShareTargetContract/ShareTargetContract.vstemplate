@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1028" />
+    <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1029" />
+    <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4018" />
+    <TemplateID>Microsoft.CPP.WinRT.ShareTargetContract</TemplateID>
+    <TemplateGroupID>WinRT-Native-6.3</TemplateGroupID>
+    <ProjectType>VC</ProjectType>
+    <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+    <DefaultName>ShareTargetPage.xaml</DefaultName>
+    <ShowByDefault>false</ShowByDefault>
+    <SortOrder>92</SortOrder>
+    <PreviewImage>ShareTargetContract.png</PreviewImage>
+    <TargetPlatformName>Windows</TargetPlatformName>
+    <RequiredPlatformVersion>6.2.0</RequiredPlatformVersion>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="true" OpenInEditor="true" ItemType="Page" SubType="Designer" CustomTool="MSBuild:Compile" TargetFileName="$fileinputname$.xaml">ShareTargetPage.xaml</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$.xaml.h">ShareTargetPage.xaml.h</ProjectItem>
+    <ProjectItem ReplaceParameters="true" OpenInEditor="true" TargetFileName="$fileinputname$.xaml.cpp">ShareTargetPage.xaml.cpp</ProjectItem>
+
+    <ProjectItem ReplaceParameters="false" TargetFileName="$wizardcommonprefix$ReadMe.txt">ReadMe.txt</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$wizardcommonprefix$BooleanToVisibilityConverter.h">BooleanToVisibilityConverter.h</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$wizardcommonprefix$BooleanToVisibilityConverter.cpp">BooleanToVisibilityConverter.cpp</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$wizardcommonprefix$BooleanNegationConverter.h">BooleanNegationConverter.h</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$wizardcommonprefix$BooleanNegationConverter.cpp">BooleanNegationConverter.cpp</ProjectItem>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VisualStudio.WinRT.TemplateWizards, Version=15.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VisualStudio.WinRT.TemplateWizards.SmartItem.Wizard</FullClassName>
+  </WizardExtension>
+  <WizardExtension>
+    <Assembly>Microsoft.VisualStudio.WinRT.TemplateWizards, Version=15.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VisualStudio.WinRT.TemplateWizards.DependencyProperty.Wizard</FullClassName>
+  </WizardExtension>
+  <WizardData>
+    <HasWizardSubPath>ShareTargetPage.xaml.h</HasWizardSubPath>
+    <CommonOptional>ReadMe.txt</CommonOptional>
+    <CommonRequired>BooleanToVisibilityConverter.h</CommonRequired>
+    <CommonRequired>BooleanToVisibilityConverter.cpp</CommonRequired>
+    <CommonRequired>BooleanNegationConverter.h</CommonRequired>
+    <CommonRequired>BooleanNegationConverter.cpp</CommonRequired>
+    <Activation>
+      <AppMethod Name="OnShareTargetActivated" CommentPrefix="// " Include="&quot;$safeitemname$.xaml.h&quot;"
+                 Declaration="virtual void OnShareTargetActivated(Windows::ApplicationModel::Activation::ShareTargetActivatedEventArgs^ pArgs) override;">
+        <![CDATA[
+        /// <summary>
+        /// Invoked when the application is activated as the target of a sharing operation.
+        /// </summary>
+        /// <param name="e">Details about the activation request.</param>
+        void $wizardappclass$::OnShareTargetActivated(Windows::ApplicationModel::Activation::ShareTargetActivatedEventArgs^ e)
+        {
+            auto shareTargetPage = ref new $rootnamespace$::$safeitemname$();
+            shareTargetPage->Activate(e);
+        }
+        ]]>
+      </AppMethod>
+      <AppMethodComment>
+        <![CDATA[
+        // TODO: Respond to activation as a share target
+        //
+        // The following code could not be automatically added to your application subclass,
+        // either because the appropriate class could not be located or because a method with
+        // the same name already exists.  Ensure that appropriate code deals with activation
+        // by displaying a flyout appropriate for receiving a shared item.
+        //
+        ]]>
+      </AppMethodComment>
+      <ManifestData>
+        <Extension Category="windows.shareTarget">
+          <ShareTarget>
+            <SupportedFileTypes SupportsAnyFileType="false"></SupportedFileTypes>
+            <DataFormat>text</DataFormat>
+            <DataFormat>uri</DataFormat>
+          </ShareTarget>
+        </Extension>
+      </ManifestData>
+      <ManifestComment>
+        <![CDATA[
+        // TODO: Edit the manifest to enable use as a share target
+        //
+        // The package manifest could not be automatically updated.  Open the package manifest
+        // file and ensure that support for activation as a share target is enabled.
+        ]]>
+      </ManifestComment>
+    </Activation>
+    <DependencyRegistration>
+      <ClassRegistration Include="&quot;$safeitemname$.xaml.h&quot;">
+        <![CDATA[$safeitemname$::RegisterDependencyProperties();]]>
+      </ClassRegistration>
+    </DependencyRegistration>
+  </WizardData>
+</VSTemplate>

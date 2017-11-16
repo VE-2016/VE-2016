@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+
+   <!-- Flags controlling certain features -->
+   <PropertyGroup>
+      <CppWindowsStoreUnitTestLibraryType Condition="'$(CppWindowsStoreUnitTestLibraryType)' == ''">false</CppWindowsStoreUnitTestLibraryType>
+   </PropertyGroup>
+
+   <UsingTask TaskName="Microsoft.VisualStudio.TestPlatform.BuildTasks.PackageDllIntoAppx" AssemblyFile="$(VCInstallDir)\..\Common7\IDE\CommonExtensions\Microsoft\TestWindow\Microsoft.VisualStudio.TestPlatform.BuildTasks.dll"/>
+
+
+   <Target Name="CppUnitTestPackageAppx"
+      Condition="'$(CppWindowsStoreUnitTestLibraryType)' == 'true'"
+      AfterTargets="GetPackagingOutputs">
+   
+     <PackageDllIntoAppx Inputs="@(PackagingOutputs)" TargetDirectory="$(TargetDir)">
+        <Output TaskParameter="Outputs" ItemName="UpdatedPackagingOutputs" />
+     </PackageDllIntoAppx>
+
+     <ItemGroup>
+       <PackagingOutputs Remove="@(PackagingOutputs)"/>
+       <PackagingOutputs Include="@(UpdatedPackagingOutputs)"/>
+     </ItemGroup>
+   </Target>
+
+</Project>

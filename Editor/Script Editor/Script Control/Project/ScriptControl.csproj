@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CallHierarchyViewHost.cs" />
+    <Compile Include="SyntaxTreeViewHost.cs" />
     <Compile Include="TreeViewHost.cs" />
     <Compile Include="AvalonEditHost.cs" />
     <Compile Include="Converter\CodeCompiler.cs" />
@@ -264,7 +265,7 @@
     <None Include="Properties\DataSources\AIMS.Libraries.CodeEditor.TypeExplorer.datasource" />
     <None Include="Properties\DataSources\AIMS.Libraries.CodeEditor.TypeForm.datasource" />
     <None Include="Resources\Default_Program.cs" />
-    <Compile Include="Properties\AvalonDocument.cs">
+    <Compile Include="AvalonDocument.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Windows\FileForm.cs">
@@ -384,7 +385,7 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\AvalonDocument.resx">
+    <EmbeddedResource Include="AvalonDocument.resx">
       <DependentUpon>AvalonDocument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReferenceDialog\AddWebReferenceDialog.resx">

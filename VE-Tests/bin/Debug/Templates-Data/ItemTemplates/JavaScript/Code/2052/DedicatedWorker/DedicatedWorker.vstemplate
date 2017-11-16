@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>专用辅助线程</Name>
+    <Description>用于对主应用程序并行运行脚本的后台辅助线程。这将允许执行将消息传递作为协调机制的类线程操作。</Description>
+    <Icon>DedicatedWorker.ico</Icon>
+    <TemplateID>Microsoft.JavaScript.DedicatedWorker</TemplateID>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>worker.js</DefaultName>
+
+    <!-- "Dedicated Worker" project item template is applicable to all JavaScript projects except the JavaScript/TypeScript Cordova File Monitoring Projects -->
+    <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+    <ProjectType>JavaScript</ProjectType>
+    <ShowByDefault>false</ShowByDefault>
+    <AppliesTo>JavaScript + !FileSystemBasedCordovaProject</AppliesTo>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem>worker.js</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

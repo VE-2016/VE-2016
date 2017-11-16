@@ -1,0 +1,179 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DatabaseLog">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DatabaseLogID" type="xs:int" minOccurs="0" />
+              <xs:element name="PostTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DatabaseUser" type="xs:string" minOccurs="0" />
+              <xs:element name="Event" type="xs:string" minOccurs="0" />
+              <xs:element name="Schema" type="xs:string" minOccurs="0" />
+              <xs:element name="Object" type="xs:string" minOccurs="0" />
+              <xs:element name="TSQL" type="xs:string" minOccurs="0" />
+              <xs:element name="XmlEvent" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AdventureWorksDWBuildVersion">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DBVersion" type="xs:string" minOccurs="0" />
+              <xs:element name="VersionDate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DimAccount">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AccountKey" type="xs:int" minOccurs="0" />
+              <xs:element name="ParentAccountKey" type="xs:int" minOccurs="0" />
+              <xs:element name="AccountCodeAlternateKey" type="xs:int" minOccurs="0" />
+              <xs:element name="ParentAccountCodeAlternateKey" type="xs:int" minOccurs="0" />
+              <xs:element name="AccountDescription" type="xs:string" minOccurs="0" />
+              <xs:element name="AccountType" type="xs:string" minOccurs="0" />
+              <xs:element name="Operator" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomMembers" type="xs:string" minOccurs="0" />
+              <xs:element name="ValueType" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomMemberOptions" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DimCurrency">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CurrencyKey" type="xs:int" minOccurs="0" />
+              <xs:element name="CurrencyAlternateKey" type="xs:string" minOccurs="0" />
+              <xs:element name="CurrencyName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DimCustomer">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CustomerKey" type="xs:int" minOccurs="0" />
+              <xs:element name="GeographyKey" type="xs:int" minOccurs="0" />
+              <xs:element name="CustomerAlternateKey" type="xs:string" minOccurs="0" />
+              <xs:element name="Title" type="xs:string" minOccurs="0" />
+              <xs:element name="FirstName" type="xs:string" minOccurs="0" />
+              <xs:element name="MiddleName" type="xs:string" minOccurs="0" />
+              <xs:element name="LastName" type="xs:string" minOccurs="0" />
+              <xs:element name="NameStyle" type="xs:boolean" minOccurs="0" />
+              <xs:element name="BirthDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="MaritalStatus" type="xs:string" minOccurs="0" />
+              <xs:element name="Suffix" type="xs:string" minOccurs="0" />
+              <xs:element name="Gender" type="xs:string" minOccurs="0" />
+              <xs:element name="EmailAddress" type="xs:string" minOccurs="0" />
+              <xs:element name="YearlyIncome" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalChildren" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="NumberChildrenAtHome" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="EnglishEducation" type="xs:string" minOccurs="0" />
+              <xs:element name="SpanishEducation" type="xs:string" minOccurs="0" />
+              <xs:element name="FrenchEducation" type="xs:string" minOccurs="0" />
+              <xs:element name="EnglishOccupation" type="xs:string" minOccurs="0" />
+              <xs:element name="SpanishOccupation" type="xs:string" minOccurs="0" />
+              <xs:element name="FrenchOccupation" type="xs:string" minOccurs="0" />
+              <xs:element name="HouseOwnerFlag" type="xs:string" minOccurs="0" />
+              <xs:element name="NumberCarsOwned" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="AddressLine1" type="xs:string" minOccurs="0" />
+              <xs:element name="AddressLine2" type="xs:string" minOccurs="0" />
+              <xs:element name="Phone" type="xs:string" minOccurs="0" />
+              <xs:element name="DateFirstPurchase" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CommuteDistance" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DimDate">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DateKey" type="xs:int" minOccurs="0" />
+              <xs:element name="FullDateAlternateKey" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DayNumberOfWeek" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="EnglishDayNameOfWeek" type="xs:string" minOccurs="0" />
+              <xs:element name="SpanishDayNameOfWeek" type="xs:string" minOccurs="0" />
+              <xs:element name="FrenchDayNameOfWeek" type="xs:string" minOccurs="0" />
+              <xs:element name="DayNumberOfMonth" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="DayNumberOfYear" type="xs:short" minOccurs="0" />
+              <xs:element name="WeekNumberOfYear" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="EnglishMonthName" type="xs:string" minOccurs="0" />
+              <xs:element name="SpanishMonthName" type="xs:string" minOccurs="0" />
+              <xs:element name="FrenchMonthName" type="xs:string" minOccurs="0" />
+              <xs:element name="MonthNumberOfYear" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="CalendarQuarter" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="CalendarYear" type="xs:short" minOccurs="0" />
+              <xs:element name="CalendarSemester" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="FiscalQuarter" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="FiscalYear" type="xs:short" minOccurs="0" />
+              <xs:element name="FiscalSemester" type="xs:unsignedByte" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DimDepartmentGroup">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DepartmentGroupKey" type="xs:int" minOccurs="0" />
+              <xs:element name="ParentDepartmentGroupKey" type="xs:int" minOccurs="0" />
+              <xs:element name="DepartmentGroupName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DimEmployee">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmployeeKey" type="xs:int" minOccurs="0" />
+              <xs:element name="ParentEmployeeKey" type="xs:int" minOccurs="0" />
+              <xs:element name="EmployeeNationalIDAlternateKey" type="xs:string" minOccurs="0" />
+              <xs:element name="ParentEmployeeNationalIDAlternateKey" type="xs:string" minOccurs="0" />
+              <xs:element name="SalesTerritoryKey" type="xs:int" minOccurs="0" />
+              <xs:element name="FirstName" type="xs:string" minOccurs="0" />
+              <xs:element name="LastName" type="xs:string" minOccurs="0" />
+              <xs:element name="MiddleName" type="xs:string" minOccurs="0" />
+              <xs:element name="NameStyle" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Title" type="xs:string" minOccurs="0" />
+              <xs:element name="HireDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="BirthDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LoginID" type="xs:string" minOccurs="0" />
+              <xs:element name="EmailAddress" type="xs:string" minOccurs="0" />
+              <xs:element name="Phone" type="xs:string" minOccurs="0" />
+              <xs:element name="MaritalStatus" type="xs:string" minOccurs="0" />
+              <xs:element name="EmergencyContactName" type="xs:string" minOccurs="0" />
+              <xs:element name="EmergencyContactPhone" type="xs:string" minOccurs="0" />
+              <xs:element name="SalariedFlag" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Gender" type="xs:string" minOccurs="0" />
+              <xs:element name="PayFrequency" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="BaseRate" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VacationHours" type="xs:short" minOccurs="0" />
+              <xs:element name="SickLeaveHours" type="xs:short" minOccurs="0" />
+              <xs:element name="CurrentFlag" type="xs:boolean" minOccurs="0" />
+              <xs:element name="SalesPersonFlag" type="xs:boolean" minOccurs="0" />
+              <xs:element name="DepartmentName" type="xs:string" minOccurs="0" />
+              <xs:element name="StartDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EndDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Status" type="xs:string" minOccurs="0" />
+              <xs:element name="EmployeePhoto" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DimGeography">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GeographyKey" type="xs:int" minOccurs="0" />
+              <xs:element name="City" type="xs:string" minOccurs="0" />
+              <xs:element name="StateProvinceCode" type="xs:string" minOccurs="0" />
+              <xs:element name="StateProvinceName" type="xs:string" minOccurs="0" />
+              <xs:element name="CountryRegionCode" type="xs:string" minOccurs="0" />
+              <xs:element name="EnglishCountryRegionName" type="xs:string" minOccurs="0" />
+              <xs:element name="SpanishCountryRegionName" type="xs:string" minOccurs="0" />
+              <xs:element name="FrenchCountryRegionName" type="xs:string" minOccurs="0" />
+              <xs:element name="PostalCode" type="xs:string" minOccurs="0" />
+              <xs:element name="SalesTerritoryKey" type="xs:int" minOccurs="0" />
+              <xs:element name="IpAddressLocator" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

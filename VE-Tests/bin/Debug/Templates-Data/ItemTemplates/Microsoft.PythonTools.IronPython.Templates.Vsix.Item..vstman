@@ -1,0 +1,15 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>Python\WpfWindow</RelativePathOnDisk>
+    <TemplateFileName>WpfWindow.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{af7eaf4b-5af3-3622-b39a-7ae7ed25e7b2}" ID="5000" />
+        <Description Package="{af7eaf4b-5af3-3622-b39a-7ae7ed25e7b2}" ID="5001" />
+        <Icon Package="{af7eaf4b-5af3-3622-b39a-7ae7ed25e7b2}" ID="401" />
+        <ProjectType>Python</ProjectType>
+        <DefaultName>Window</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

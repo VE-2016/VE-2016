@@ -2,6 +2,7 @@
 
 namespace VSProvider
 {
+   
     public class PreSection : ISolutionItem
     {
         public PreSection(string name)

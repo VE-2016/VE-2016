@@ -165,7 +165,7 @@ namespace AvalonEdit.Editor
                  "Data",
                  typeof(object),
                  typeof(RichTextBlock)
-            //,new PropertyMetadata("new object()")
+   
             );
 
         public object Data

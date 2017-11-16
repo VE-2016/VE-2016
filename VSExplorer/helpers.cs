@@ -17,6 +17,10 @@ namespace utils
     {
         public TreeView v { get; set; }
 
+        public ToolStripButton forwardButton { get; set; }
+
+        public ToolStripButton backwardButton { get; set; }
+
         public ArrayList N { get; set; }
 
         public int act = -1;
@@ -38,7 +42,22 @@ namespace utils
                 N.RemoveAt(0);
                 act--;
             }
+            AdjustState();
         }
+
+        public void AdjustState()
+        {
+            if (backwardButton != null)
+                if (act <= 0)
+                    backwardButton.Enabled = false;
+                else backwardButton.Enabled = true;
+
+            if (forwardButton != null)
+                if (N != null && act >= N.Count - 1)
+                    forwardButton.Enabled = false;
+                else forwardButton.Enabled = true;
+        }
+
 
         public void Prev()
         {
@@ -56,6 +75,8 @@ namespace utils
             v.SelectedNode = node;
 
             node.EnsureVisible();
+
+            AdjustState();
         }
 
         public void Next()
@@ -64,9 +85,7 @@ namespace utils
                 return;
             if (N == null)
                 return;
-            //if (act <= 0)
-            //    return;
-
+            
             act++;
 
             if (act >= N.Count)
@@ -83,6 +102,8 @@ namespace utils
 
                 node.EnsureVisible();
             }
+
+            AdjustState();
         }
     }
 

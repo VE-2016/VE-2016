@@ -1,0 +1,254 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>R\DatasetRD</RelativePathOnDisk>
+    <TemplateFileName>datasetrd.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="3005" />
+        <Description Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="3015" />
+        <Icon Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="503" />
+        <TemplateID>Microsoft.RTools.DatasetRD</TemplateID>
+        <ProjectType>R</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>RTools</AppliesTo>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>dataset.rd</DefaultName>
+        <SortOrder>12</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>R\EmptyRD</RelativePathOnDisk>
+    <TemplateFileName>emptyrd.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="3003" />
+        <Description Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="3013" />
+        <Icon Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="503" />
+        <TemplateID>Microsoft.RTools.EmptyRD</TemplateID>
+        <ProjectType>R</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>RTools</AppliesTo>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>document.rd</DefaultName>
+        <SortOrder>10</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>R\EmptyRMD</RelativePathOnDisk>
+    <TemplateFileName>emptyrmd.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="3002" />
+        <Description Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="3012" />
+        <Icon Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="502" />
+        <TemplateID>Microsoft.RTools.EmptyRMD</TemplateID>
+        <ProjectType>R</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>RTools</AppliesTo>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>markdown.rmd</DefaultName>
+        <SortOrder>20</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>R\FunctionRD</RelativePathOnDisk>
+    <TemplateFileName>functionrd.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="3004" />
+        <Description Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="3014" />
+        <Icon Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="503" />
+        <TemplateID>Microsoft.RTools.FunctionRD</TemplateID>
+        <ProjectType>R</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>RTools</AppliesTo>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>function.rd</DefaultName>
+        <SortOrder>11</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>R\RScript</RelativePathOnDisk>
+    <TemplateFileName>rscript.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="3001" />
+        <Description Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="3011" />
+        <Icon Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="501" />
+        <TemplateID>Microsoft.RTools.RScript</TemplateID>
+        <ProjectType>R</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>RTools</AppliesTo>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>Script.R</DefaultName>
+        <SortOrder>0</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>R\RSettings</RelativePathOnDisk>
+    <TemplateFileName>rsettings.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="3008" />
+        <Description Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="3018" />
+        <Icon Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="501" />
+        <TemplateID>Microsoft.RTools.RSettings</TemplateID>
+        <ProjectType>R</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>RTools</AppliesTo>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>Settings.R</DefaultName>
+        <SortOrder>0</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>R\SqlQuery</RelativePathOnDisk>
+    <TemplateFileName>SqlQuery.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="3006" />
+        <Description Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="3016" />
+        <Icon Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="504" />
+        <TemplateID>Microsoft.RTools.SqlQuery</TemplateID>
+        <ProjectType>R</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>RTools</AppliesTo>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>SqlQuery.sql</DefaultName>
+        <SortOrder>36</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>R\SqlSProc</RelativePathOnDisk>
+    <TemplateFileName>SqlSProc.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="9001" />
+        <Description Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="3017" />
+        <Icon Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="505" />
+        <TemplateID>Microsoft.RTools.SqlSProc</TemplateID>
+        <ProjectType>R</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>RTools</AppliesTo>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>SqlSProc</DefaultName>
+        <SortOrder>0</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>R\TextFile</RelativePathOnDisk>
+    <TemplateFileName>TextFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2316" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2317" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4536" />
+        <TemplateID>Microsoft.RTools.TextFile</TemplateID>
+        <ProjectType>R</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>RTools</AppliesTo>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>TextFile.txt</DefaultName>
+        <SortOrder>33</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>R\WebHtmlPage</RelativePathOnDisk>
+    <TemplateFileName>WebHtmlPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3070" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3071" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4537" />
+        <TemplateID>Microsoft.RTools.HTMLPage</TemplateID>
+        <ProjectType>R</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>RTools</AppliesTo>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>HtmlPage.html</DefaultName>
+        <SortOrder>31</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>R\WebStyleSheet</RelativePathOnDisk>
+    <TemplateFileName>WebStyleSheet.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3072" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3073" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4538" />
+        <TemplateID>Microsoft.RTools.WebStyleSheet</TemplateID>
+        <ProjectType>R</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>RTools</AppliesTo>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>StyleSheet.css</DefaultName>
+        <SortOrder>32</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>R\XMLFile</RelativePathOnDisk>
+    <TemplateFileName>XMLFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2244" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2279" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4524" />
+        <TemplateID>Microsoft.RTools.XmlFile</TemplateID>
+        <ProjectType>R</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>RTools</AppliesTo>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>XMLFile.xml</DefaultName>
+        <SortOrder>34</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>R\XMLSchema</RelativePathOnDisk>
+    <TemplateFileName>XMLSchema.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2275" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2276" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4523" />
+        <TemplateID>Microsoft.RTools.XmlSchema</TemplateID>
+        <ProjectType>R</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>RTools</AppliesTo>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>XMLSchema.xsd</DefaultName>
+        <SortOrder>35</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>R\XSLTFile</RelativePathOnDisk>
+    <TemplateFileName>XSLTFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2356" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2357" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4566" />
+        <TemplateID>Microsoft.RTools.XsltFile</TemplateID>
+        <ProjectType>R</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>RTools</AppliesTo>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>XSLTFile.xslt</DefaultName>
+        <SortOrder>36</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

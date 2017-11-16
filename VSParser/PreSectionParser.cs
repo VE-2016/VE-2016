@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace VSProvider
@@ -11,16 +12,19 @@ namespace VSProvider
         {
         }
 
-        public PreSection Parse()
+        public List<PreSection> Parse()
         {
             var match = s_globalPattern.Match(SolutionContents);
-            //while (match.Success)
+            List<PreSection> sections = new List<PreSection>();
+            while (match.Success)
             {
                 var section = CreatePreSectionFromMatch(match);
+                sections.Add(section);
                 PopulateSectionEntries(match, section);
-                return section;
-                //match = match.NextMatch();
+                //return section;
+                match = match.NextMatch();
             }
+            return sections;
         }
 
         private static void PopulateSectionEntries(Match match, PreSection section)

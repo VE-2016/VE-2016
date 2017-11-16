@@ -43,3 +43,13 @@ F:\ve\VE-2016\VE-Resources\obj\Debug\VE-Resources.csproj.CoreCompileInputs.cache
 F:\ve\VE-2016\VE-Resources\obj\Debug\VE-Resources.dll
 F:\ve\VE-2016\VE-Resources\obj\Debug\VE-Resources.pdb
 F:\ve\VE-2016\VE-Resources\obj\Debug\VE-Resources.csprojResolveAssemblyReference.cache
+f:\ve\ve-2023\VE-Resources\bin\Debug\VE-Resources.dll.config
+f:\ve\ve-2023\VE-Resources\bin\Debug\VE-Resources.dll
+f:\ve\ve-2023\VE-Resources\bin\Debug\VE-Resources.pdb
+f:\ve\ve-2023\VE-Resources\obj\Debug\VE-Resources.csprojResolveAssemblyReference.cache
+f:\ve\ve-2023\VE-Resources\obj\Debug\WinExplorers.Properties.Resources.resources
+f:\ve\ve-2023\VE-Resources\obj\Debug\WinExplorers.ve.resources
+f:\ve\ve-2023\VE-Resources\obj\Debug\VE-Resources.csproj.GenerateResource.Cache
+f:\ve\ve-2023\VE-Resources\obj\Debug\VE-Resources.csproj.CoreCompileInputs.cache
+f:\ve\ve-2023\VE-Resources\obj\Debug\VE-Resources.dll
+f:\ve\ve-2023\VE-Resources\obj\Debug\VE-Resources.pdb

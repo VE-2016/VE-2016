@@ -752,7 +752,7 @@ namespace WinExplorer
 
         public TreeView _maintv { get; set; }
 
-        public TreeView _SolutionTreeView { get; set; }
+        public TreeViewEx _SolutionTreeView { get; set; }
 
         public Dictionary<string, string> ds { get; set; }
 
@@ -1586,25 +1586,21 @@ namespace WinExplorer
                 }
             }
         }
-
-
-
-        public void AnalyzeCSharpFile(string path, TreeNode nods, bool newnode)
+        
+        static public void AnalyzeCSharpFile(string path, TreeNode nods)
         {
             StringBuilder b = new StringBuilder();
-
-
-
+            
             CacheManager wm = new CacheManager();
 
             SyntaxTree syntax = null;
 
-            mapper = new ClassMapper();
+            ClassMapper mapper = new ClassMapper();
 
-            if (mappers == null)
-                mappers = new ArrayList();
+            //if (mappers == null)
+            //    mappers = new ArrayList();
 
-            mappers.Add(mapper);
+            //mappers.Add(mapper);
 
             mapper.filename = path;
 
@@ -1647,12 +1643,6 @@ namespace WinExplorer
 
             syntax = syntaxTree2;
 
-            if (newnode == false)
-            {
-                //CreateSyntaxView(_SolutionTreeView, syntax, nods);
-                //  return;
-            }
-
             string ents = nods.Text;
 
             ents = mapper.classname;
@@ -1677,10 +1667,14 @@ namespace WinExplorer
 
                     if (asc.GetType() == typeof(DelegateDeclaration))
                     {
+                        
                         DelegateDeclaration d = (DelegateDeclaration)asc;
 
-                        nods.Text = d.Name;
+                        ProjectItemInfo pi = new ProjectItemInfo();
+                        pi.mapper = d;
 
+                        nods.Tag = pi;
+                        nods.Text = d.Name;
                         nods.ImageKey = "delegate";
                         nods.SelectedImageKey = "delegate";
                     }
@@ -1700,11 +1694,19 @@ namespace WinExplorer
                             nods.ImageKey = "enums";
                             nods.SelectedImageKey = "enums";
                         }
+                        else if (d.ClassType == ClassType.Struct)
+                        {
+                            nods.ImageKey = "class";
+                            nods.SelectedImageKey = "class";
+                        }
                         else
                         {
                             nods.ImageKey = "class";
                             nods.SelectedImageKey = "class";
                         }
+                        ProjectItemInfo pi = new ProjectItemInfo();
+                        pi.mapper = d;
+                        nods.Tag = pi;
                     }
                 }
 
@@ -1713,15 +1715,16 @@ namespace WinExplorer
                     if (ast.NodeType.ToString() == "MemberType" || ast.NodeType.ToString() == "Member" || ast.NodeType.ToString() == "Field")
                     {
                         ProjectItemInfo pr = new ProjectItemInfo();
-                        pr.filepath = mapper.filename;
-
+                       
                         TreeNode nv = new TreeNode(ast.ToString() + "-----" + ast.NodeType.ToString() + "----" + ast.GetType().FullName);
 
                         Type T = ast.GetType();
-
+                        
                         if (ast.GetType() == typeof(MethodDeclaration))
                         {
                             MethodDeclaration dec2 = (MethodDeclaration)ast;
+                            pr.mapper = dec2;
+                            nv.Tag = pr;
 
                             foreach (Statement s in dec2.Body.Statements)
                             {
@@ -1768,16 +1771,16 @@ namespace WinExplorer
                             else nv.ImageKey = "method";// "PROPERTIES";//Method_636_322";
 
                             nv.SelectedImageKey = "method";
-
-                            //Interface_Shortcut_617_24
-
-                            nv.Tag = path + "@" + dec2.Region.BeginLine;
+                            
+                            //nv.Tag = path + "@" + dec2.Region.BeginLine;
 
                             nods.Nodes.Add(nv);
                         }
                         else if (ast.GetType() == typeof(ConstructorDeclaration))
                         {
                             ConstructorDeclaration dec2 = (ConstructorDeclaration)ast;
+                            pr.mapper = dec2;
+                            nv.Tag = pr;
 
                             nv.Text = dec2.Name;
 
@@ -1793,13 +1796,15 @@ namespace WinExplorer
                             nv.ImageKey = "class";
                             nv.SelectedImageKey = "class";
 
-                            nv.Tag = path + "@" + dec2.Region.BeginLine;
+                            //nv.Tag = path + "@" + dec2.Region.BeginLine;
 
                             nods.Nodes.Add(nv);
                         }
                         else if (ast.GetType() == typeof(FieldDeclaration))
                         {
                             FieldDeclaration dec3 = (FieldDeclaration)ast;
+                            pr.mapper = dec3;
+                            nv.Tag = pr;
 
                             nv.Text = dec3.Name;
 
@@ -1815,13 +1820,15 @@ namespace WinExplorer
                             nv.ImageKey = "field";
                             nv.SelectedImageKey = "field";
 
-                            nv.Tag = path + "@" + dec3.Region.BeginLine;
+                            //nv.Tag = path + "@" + dec3.Region.BeginLine;
 
                             nods.Nodes.Add(nv);
                         }
                         else if (ast.GetType() == typeof(ConstructorDeclaration))
                         {
                             ConstructorDeclaration dec4 = (ConstructorDeclaration)ast;
+                            pr.mapper = dec4;
+                            nv.Tag = pr;
 
                             nv.Text = dec4.Name;
 
@@ -1839,6 +1846,8 @@ namespace WinExplorer
                         else if (ast.GetType() == typeof(PropertyDeclaration))
                         {
                             PropertyDeclaration dec5 = (PropertyDeclaration)ast;
+                            pr.mapper = dec5;
+                            nv.Tag = pr;
 
                             nv.Text = dec5.Name;
 
@@ -1855,7 +1864,7 @@ namespace WinExplorer
 
                             nods.Nodes.Add(nv);
 
-                            nv.Tag = path + "@" + dec5.Region.BeginLine;
+                            //nv.Tag = path + "@" + dec5.Region.BeginLine;
 
                        
                         }
@@ -2346,7 +2355,7 @@ namespace WinExplorer
         public ListBox hstb { get; set; }
         public ScriptControl scr { get; set; }
 
-        public void doinit(Form form, SplitContainer sp, Control master, TreeView t, TreeView ps, ListView listviews, PropertyGrid pgs)
+        public void doinit(Form form, SplitContainer sp, Control master, TreeViewEx t, TreeView ps, ListView listviews, PropertyGrid pgs)
         {
 
             ToolCommands.TFF = new ArrayList();
@@ -3914,7 +3923,11 @@ namespace WinExplorer
             if (scr == null)
                 return;
 
-            scr.Save();
+            var s = scr.Save();
+
+            _SolutionTreeView.UpdateNode(s);
+
+            
 
             //_saveallButton.Enabled = false;
         }
@@ -4095,7 +4108,7 @@ namespace WinExplorer
             return L;
         }
 
-        public IEnumerable<EntityDeclaration> getentity(SyntaxTree syntax, string ents)
+        static public IEnumerable<EntityDeclaration> getentity(SyntaxTree syntax, string ents)
         {
             string classname = ents;
 
@@ -4624,15 +4637,9 @@ namespace WinExplorer
         {
             if (mapper == null)
                 mapper = new ClassMapper();
-
-            
-
             if (File.Exists(s) == false)
                 return;
-
-            
-
-            AnalyzeCSharpFile(s, ns, newnode);
+            AnalyzeCSharpFile(s, ns);
         }
 
         public string SetProperties(string file)
@@ -5411,37 +5418,41 @@ namespace WinExplorer
             ppf.LoadResourcesView(r);
         }
 
-        public void LoadFile(string file, VSSolution vs,  AutoResetEvent autoEvent = null  )
+        //public void LoadFile(string file, VSSolution vs,  AutoResetEvent autoEvent = null  )
+        //{
+        //    if (script == null)
+        //        return;
+
+
+       
+        //    script.BeginInvoke(new Action(() => { script.OpenDocuments(file, vs, autoEvent);
+
+       
+        //        Command.counter--;
+
+                
+        //    }));
+            
+        //}
+
+        public void LoadFile(string file, VSSolution vs, CountdownEvent autoEvent = null)
         {
             if (script == null)
                 return;
 
 
-            //if(vs != null)
-            //if (vp.IsResourceEmbedded(file) == true)
-            //{
-            //    DocumentForm df = OpenDocumentForm(file);
 
-            //    df.FileName = vp.FileName;
+            script.BeginInvoke(new Action(() => {
+                script.OpenDocuments(file, vs, autoEvent);
 
-            //    df.resource = file;
-
-            //    LoadListTabs(df, file);
-
-            //    return;
-            //}
-
-            script.BeginInvoke(new Action(() => { script.OpenDocuments(file, vs, autoEvent);
-
-                //if (autoEvent != null)
-                //    autoEvent.Set();
 
                 Command.counter--;
 
-                
+
             }));
-            
+
         }
+
 
         public void LoadFile(string file, string name)
         {
@@ -5458,11 +5469,26 @@ namespace WinExplorer
             script.SelectText(start, sc, length);
         }
 
-        public DocumentForm OpenDocumentForm(string project)
+        public DocumentForm OpenDocumentForm(string project, bool newcreate = true)
         {
             if (script == null)
                 return null;
-            DocumentForm df = script.OpenDocumentForm();
+            DocumentForm df;
+            if (!newcreate)
+            {
+
+                var ns = script.DocumentOpened();
+                if(ns.Count > 0)
+                {
+                    df = ns[0];
+                    df.FileName = project;
+                    df.TabText = project;
+                    return df;
+                }
+
+
+            }
+            df = script.OpenDocumentForm();
             df.FileName = project;
             df.TabText = project;
             return df;
@@ -6076,11 +6102,13 @@ namespace WinExplorer
         }
         public void ReloadRecentSolutions()
         {
-            FileInfo info = new FileInfo(filename);
+            string folder = AppDomain.CurrentDomain.BaseDirectory;
+
+            FileInfo info = new FileInfo(folder + "\\" + filename);
 
             if (info.Exists == false)
             {
-                FileStream f = File.Create(filename);
+                FileStream f = File.Create(folder + "\\" + filename);
                 f.Close();
 
                 return;
@@ -6107,7 +6135,8 @@ namespace WinExplorer
             {
                 if (g.Trim() == "")
                     continue;
-
+                if (!char.IsLetterOrDigit(g[0]))
+                    continue;
                 TreeNode node = new TreeNode();
                 string img = "solution";
                 node.ImageKey = img;
@@ -6124,13 +6153,15 @@ namespace WinExplorer
         }
         public List<string> GetRecentSolutions()
         {
+            string folder = AppDomain.CurrentDomain.BaseDirectory;
+
             List<string> rs = new List<string>();
 
-            FileInfo info = new FileInfo(filename);
+            FileInfo info = new FileInfo(folder + "\\" + filename);
 
             if (info.Exists == false)
             {
-                FileStream f = File.Create(filename);
+                FileStream f = File.Create(folder + "\\" + filename);
                 f.Close();
 
                 return rs;
@@ -6155,6 +6186,8 @@ namespace WinExplorer
 
         public void savelinkerfile()
         {
+            string folder = AppDomain.CurrentDomain.BaseDirectory;
+
             int N = L.Count;
 
             string c = "";
@@ -6176,7 +6209,7 @@ namespace WinExplorer
                 i++;
             }
 
-            File.WriteAllText(filename, c);
+            File.WriteAllText(folder + "\\" + filename, c);
         }
     }
 }

@@ -1,0 +1,32 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="115" />
+    <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="116" />
+    <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="401" />
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>Web</ProjectSubType>
+    <TemplateGroupID>Web</TemplateGroupID>
+    <TemplateID>Microsoft.Wap.CSharp.Wcf</TemplateID>
+    <SortOrder>50</SortOrder>
+    <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>WcfService</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="WcfService.csproj" ReplaceParameters="true">
+      <Folder Name="App_Data" TargetFolderName="App_Data"/>
+      <ProjectItem ReplaceParameters="true" TargetFileName="IService1.cs">IService1.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Service1.svc">Service1.svc</ProjectItem>
+      <ProjectItem OpenInEditor="true" OpenOrder="10" ReplaceParameters="true" TargetFileName="Service1.svc.cs">Service1.svc.cs</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

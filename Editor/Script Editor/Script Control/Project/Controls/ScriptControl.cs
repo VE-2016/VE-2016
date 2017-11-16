@@ -18,13 +18,7 @@ using System.IO;
 using AIMS.Libraries.Scripting.NRefactory;
 using AIMS.Libraries.Scripting.Dom.NRefactoryResolver;
 using AIMS.Libraries.Scripting.Dom;
-using AIMS.Libraries.Scripting.Dom.CSharp;
-using AIMS.Libraries.Scripting.Dom.VBNet;
-using AIMS.Libraries.Scripting.CodeCompletion;
-using AIMS.Libraries.Scripting.ScriptControl.CodeCompletion;
-using AIMS.Libraries.Scripting.ScriptControl.Project;
-using AIMS.Libraries.Scripting.ScriptControl.ReferenceDialog;
-//using AIMS.Libraries.Forms.Docking;
+
 using WeifenLuo.WinFormsUI.Docking;
 using AIMS.Libraries.Scripting.ScriptControl;
 
@@ -38,13 +32,15 @@ using AIMS.Libraries.Scripting.ScriptControl.Properties;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.FindSymbols;
 using Microsoft.CodeAnalysis.Text;
+using AvalonEdit.Editor;
+using System.Linq;
 
 namespace AIMS.Libraries.Scripting.ScriptControl
 {
     public partial class ScriptControl : UserControl
     {
         private ScriptLanguage _scriptLanguage;
-       
+
         private IDictionary<string, object> _RemoteVariables = null;
         public event EventHandler Execute;
 
@@ -56,17 +52,18 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         public static Breakpointer br { get; set; }
 
-        protected override void OnResize(EventArgs e)
-        {
-            if (this.Parent != null)
-                this.Parent.Dock = DockStyle.Fill;
-            base.OnResize(e);
-        }
 
-        public void ResizeControl(EventArgs e)
-        {
-            OnResize(e);
-        }
+        //protected override void OnResize(EventArgs e)
+        //{
+        //    if (this.Parent != null)
+        //        this.Parent.Dock = DockStyle.Fill;
+        //    base.OnResize(e);
+        //}
+
+        //public void ResizeControl(EventArgs e)
+        //{
+        //    OnResize(e);
+        //}
 
         protected virtual void OnExecute()
         {
@@ -76,7 +73,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             }
         }
 
-        
+        public AvalonDocument AvalonDocumentToPreview { get; set;}
 
         public void SelectAll()
         {
@@ -102,180 +99,35 @@ namespace AIMS.Libraries.Scripting.ScriptControl
            // toolStrip1.Visible = visible;
         }
 
-        public ScriptLanguage ScriptLanguage
+        public void AvalonFileModified(EditorWindow ew)
         {
-            get { return _scriptLanguage; }
-            set
+            foreach(IDockContent ve in dockContainer1.Documents)
             {
-                if (value == ScriptLanguage.CSharp)
+                if (!(ve is AvalonDocument))
+                    continue;
+                AvalonDocument av = ve as AvalonDocument;
+                if(av.Editor.dv == ew)
                 {
-                   // tsbSelectLanguage.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.VSProject_CSCodefile;
-                   // tsbSelectLanguage.ImageTransparentColor = System.Drawing.Color.Magenta;
+                    if (!av.Text.Contains("*"))
+                        av.Text = av.Text + "*";
+                    return;
                 }
-                else
-                {
-                  //  tsbSelectLanguage.Image = global::AIMS.Libraries.Scripting.ScriptControl.Properties.Resources.VSProject_VBCodefile;
-                  //  tsbSelectLanguage.ImageTransparentColor = System.Drawing.Color.Magenta;
-                }
-                ConvertToLanguage(_scriptLanguage, value);
-                _scriptLanguage = value;
+
             }
         }
-
-        private void ConvertToLanguage(ScriptLanguage OldLang, ScriptLanguage NewLanguage)
-        {
-            ResetParserLanguage(NewLanguage);
-            //Disable On Change Event
-            foreach (IDockContent docWin in dockContainer1.Contents)
-            {
-                Document doc = null;
-                if (docWin is Document)
-                {
-                    doc = docWin as Document;
-                    DocumentEvents(doc, false);
-                    if (OldLang != NewLanguage)
-                    {
-                        doc.FileName = Path.GetFileNameWithoutExtension(doc.FileName) + (NewLanguage == ScriptLanguage.CSharp ? ".cs" : ".vb");
-                        if (NewLanguage == ScriptLanguage.CSharp)
-                        {
-                            doc.ScriptLanguage = NewLanguage;
-                            doc.Contents = Parser.ProjectParser.GetFileContents(doc.FileName);
-                        }
-                        else
-                        {
-                            doc.Contents = Parser.ProjectParser.GetFileContents(doc.FileName);
-                            doc.ScriptLanguage = NewLanguage;
-                        }
-                    }
-
-                    DocumentEvents(doc, true);
-                }
-            }
-           
-        }
-
-
-
-
-
-        private string GetAddObjectSrcCode()
-        {
-            //Add AddObject & ReturnCode stuff;
-            StringBuilder sb = new StringBuilder();
-            foreach (string key in _RemoteVariables.Keys)
-            {
-                object obj = null;
-                if (_RemoteVariables.TryGetValue(key, out obj))
-                {
-                    sb.Append("\t\tpublic static ");
-                    sb.Append(obj.GetType().BaseType.FullName);
-                    sb.Append(" ");
-
-                    sb.Append(key);
-                    sb.Append(" = null;");
-                    sb.AppendLine();
-                }
-            }
-            sb.AppendLine();
-            return sb.ToString();
-        }
-
-        public void AddObject(string Name, object Value)
-        {
-            try
-            {
-                _RemoteVariables.Add(Name, Value);
-            }
-            catch (Exception Ex)
-            {
-                throw Ex;
-            }
-        }
-
+ 
         public string GetCurrentSelection()
         {
             string text = "";
 
-            EditViewControl e = GetCurrentView();
-            if (e != null)
-            {
-                text = e.Selection.Text;
+            if (LastActiveAvalonDocument == null)
                 return text;
-            }
+
+            text = LastActiveAvalonDocument.Editor.dv.GetSelectedText();
 
             return text;
         }
-        public TextPoint GetCurrentSelectionStart()
-        {
-            EditViewControl e = GetCurrentView();
-            if (e != null)
-            {
-                TextPoint p = e.Document.IntPosToPoint(e.Selection.SelStart);
-                return p;
-            }
-
-            return null;
-        }
-
-        public IMember GetCurrentBlock()
-        {
-            AIMS.Libraries.Scripting.ScriptControl.Document d = dockContainer1.ActiveDocument as AIMS.Libraries.Scripting.ScriptControl.Document;
-
-            if (d == null)
-                return null;
-
-            IMember m = d.quickClassBrowserPanel.GetCurrentMember();
-
-
-
-            return m;
-        }
-
-        public string GetCurrentBlockText(DomRegion r)
-        {
-            EditViewControl e = GetCurrentView();
-
-            if (e == null)
-                return "";
-
-            string text = "";
-
-            int i = r.BeginLine;
-            while (i < r.EndLine)
-            {
-                text += e.Document[i].Text + "\n";
-
-
-                i++;
-            }
-
-
-
-            return text;
-        }
-
-
-
-
-        public void ShowFind()
-        {
-            Document doc = this.dockContainer1.ActiveDocument as Document;
-
-            if (doc == null)
-                return;
-
-            doc.Editor.ShowFind();
-        }
-
-        public void ShowReplace()
-        {
-            Document doc = this.dockContainer1.ActiveDocument as Document;
-
-            if (doc == null)
-                return;
-
-            doc.Editor.ShowReplace();
-        }
+        
         Form form { get; set; }
 
         public AvalonDocument LastActiveAvalonDocument = null;
@@ -306,13 +158,8 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
                 else this.dockContainer1.Theme = new VS2013BlueTheme();
             }
-
-
-           
-            InitilizeDocks();
-
-            Parser.ProjectParser.Initilize(SupportedLanguage.CSharp);
-            UpdateCutCopyToolbar();
+            
+            dockContainer1.ActiveDocumentChanged += new EventHandler(dockContainer1_ActiveDocumentChanged);
 
             _RemoteVariables = new Dictionary<string, object>();
 
@@ -322,25 +169,37 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
             hst = new History();
 
-           // toolStripContainer1.RightToolStripPanelVisible = false;
-
             CodeEditorControl.IntErrors = new Intellisense();
 
             this.BackColor = Color.White;
 
             VSSolution.OpenFile += VSSolution_OpenFile;
 
-
+            dockContainer1.Layout += DockContainer1_SizeChanged;
 
             dockContainer1.ActiveDocumentChanged += DockContainer1_ActiveDocumentChanged;
-
+            
             //VSSolution.Errors += VSSolution_Errors;
-
-            //MouseMoveTimer = new System.Threa ding.Timer(new TimerCallback(TimerProc), null, 1000, 1000);
-
-
+            
 
         }
+
+        private void DockContainer1_SizeChanged(object sender, EventArgs e)
+        {
+             if(bounders != null)
+             bounders.Invoke(dockContainer1.DocumentWindowBounds);
+        }
+
+        ~ScriptControl()
+        {
+
+        }
+        public void Dispose()
+        {
+
+        }
+
+        public event EventHandler<AvalonDocument> handler;
 
         private void DockContainer1_ActiveDocumentChanged(object sender, EventArgs e)
         {
@@ -348,7 +207,11 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             {
                 LastActiveAvalonDocument.OnActivated(false);
             }
-
+            if(AvalonDocumentPreview != null)
+            {
+                if (!dockContainer1.Documents.ToList().Contains(AvalonDocumentPreview))
+                    AvalonDocumentPreview = null;
+            }
             if (!(dockContainer1.ActiveDocument is AvalonDocument))
                 return;
 
@@ -356,7 +219,8 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
             LastActiveAvalonDocument.OnActivated(true);
 
-            
+            if (handler!=null)
+                handler(this, LastActiveAvalonDocument);
         }
 
         //private void VSSolution_Errors(object sender, OpenFileEventArgs e)
@@ -374,7 +238,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             else
             {
                 if(e.symbol != null)
-                OpenDocumentsWithContent(e.content, vs, null, e.symbol);
+                OpenDocumentsWithContentForPreview(e.content, vs, null, null, e.symbol);
             }
         }
 
@@ -403,40 +267,9 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             this.Invoke(new Action(() => { OpenDocument(e.content, e.vp); }));
         }
 
-        private void ResetParserLanguage(ScriptLanguage lang)
-        {
-            if (lang == ScriptLanguage.CSharp)
-                Parser.ProjectParser.Language = SupportedLanguage.CSharp;
-            else
-                Parser.ProjectParser.Language = SupportedLanguage.VBNet;
-        }
+        
 
-        private void InitilizeDocks()
-        {
-
-            dockContainer1.ActiveDocumentChanged += new EventHandler(dockContainer1_ActiveDocumentChanged);
-
-        }
-
-
-     
-
-        private Document GetExistingFile(string FileName)
-        {
-            Document doc = null;
-            foreach (DockContent docWin in dockContainer1.Contents)
-            {
-                if (docWin is Document)
-                {
-                    doc = docWin as Document;
-                    if (doc.FileName == FileName)
-                    {
-                        return doc;
-                    }
-                }
-            }
-            return null;
-        }
+        
 
         public AvalonDocument ShowFile(string FileName)
         {
@@ -464,10 +297,24 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             }
             return doc;
         }
+        public List<DocumentForm> DocumentOpened()
+        {
+            List<DocumentForm> ns = new List<DocumentForm>();
 
+            foreach (DockContent docWin in dockContainer1.Contents)
+            {
+                if (docWin is DocumentForm)
+                {
+                    ns.Add(docWin as DocumentForm);
+                    
+                }
+            }
+            return ns;
+        }
         public AvalonDocument FileOpened(string FileName, bool shouldactivate = true)
         {
             AvalonDocument doc = null;
+            
             foreach (DockContent docWin in dockContainer1.Contents)
             {
                 if (docWin is AvalonDocument)
@@ -510,11 +357,11 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         
 
-        public Document GetActiveDocument(bool focused = false)
+        public AvalonDocument GetActiveDocument(bool focused = false)
         {
             if (dockContainer1.ActiveDocument == null)
                 return null;
-            return dockContainer1.ActiveDocument as Document;
+            return dockContainer1.ActiveDocument as AvalonDocument;
         }
         public void FocusActiveDocument()
         {
@@ -636,15 +483,10 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                 if (ev != null)
                     ev.CodeEditor.HideIntellisense();
             }
-            //UpdateCutCopyToolbar();
 
             if (activeDocument != null)
                 activeDocument(this, new EventArgs());
         }
-
-
-
-
         public Document AddDocument(string Name)
         {
             return AddDocument(Name, false);
@@ -655,7 +497,6 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             Document doc = new Document(form);
             doc.FileName = Name;
             doc.Text = Path.GetFileNameWithoutExtension(Name);
-            doc.Tag = "USERDOCUMENT";
             doc.HideOnClose = false;
             doc.ScriptLanguage = _scriptLanguage;
             DocumentEvents(doc, true);
@@ -664,49 +505,36 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             return doc;
         }
 
-        public Document AddGenericDocument(string Name)
+        public AvalonDocument AddGenericDocument(string Name)
         {
-            Document doc = new Document(form);
+            AvalonDocument doc = new AvalonDocument(vs);
             doc.FileName = Name;
             doc.Text = Path.GetFileNameWithoutExtension(Name);
             doc.Tag = "USERDOCUMENT";
             doc.HideOnClose = false;
-            doc.ScriptLanguage = ScriptLanguage.XML;
+            //doc.ScriptLanguage = ScriptLanguage.XML;
             //DocumentEvents(doc, true);
             return doc;
         }
 
+        public static Func<Rectangle, string> bounders { get; set; }
 
         public void SetActiveDocument()
         {
-            //d.Size = new Size(this.Size.Width - 10, this.Size.Height);
-
-            if (dockContainer1.ActiveDocumentPane == null)
-                return;
-
             
-
-            // this.dockContainer1.ActiveDocumentPane.Size = new Size(this.Size.Width, this.Size.Height);
-
-            // this.dockContainer1.ActiveDocumentPane.master = this;
-
-            // this.dockContainer1.ActiveDocumentPane.DoResize();
         }
 
         public DocumentForm OpenDocumentForm()
         {
+            
             DocumentForm doc = new DocumentForm(this);
-            //DocumentEvents(doc, true);
+            
             doc.Show(dockContainer1, DockState.Document);
-
-                       
-
             return doc;
         }
 
         private void ActivePane_IsActivatedChanged(object sender, EventArgs e)
         {
-            
         }
 
         public WebForm OpenWebForm(string web, string url)
@@ -736,34 +564,31 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         public ParseInformation parse { get; set; }
 
 
-        public AvalonDocument OpenDocuments(string Name, VSProvider.VSSolution vs, AutoResetEvent autoEvent = null, OpenFileEventArgs ofa = null/*ReferenceLocation? Location = null*/)
+        public AvalonDocument OpenDocuments(string Name, VSProvider.VSSolution vs, CountdownEvent autoEvent = null, OpenFileEventArgs ofa = null/*ReferenceLocation? Location = null*/)
         {
-
             var d = FileOpened(Name);
-
-
             if (d != null)
             {
                 d.Activate();
-
                 return d;
-
             }
-
-                       
-
             this.SuspendLayout();
-                        
-
-            AvalonDocument doc = new AvalonDocument(Name);
+            AvalonDocument doc = new AvalonDocument(vs, Name);
             doc.Text = Path.GetFileNameWithoutExtension(Name);
+            doc.FileName = Name;
+            doc.ToolTipText = Name;
             doc.Show(dockContainer1, DockState.Document);
             doc.Activate();
-           
-            if(vs != null)
-            doc.Editor.dv.LoadFromProject(vs);
+            
+            dockContainer1.Refresh();
+
+            if (vs != null)
+                doc.Editor.dv.LoadFromProject(vs, false);
 
             this.ResumeLayout();
+
+            if (autoEvent != null)
+                autoEvent.Signal();
 
             if (ofa == null)
                 return doc;
@@ -782,14 +607,138 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                 doc.Editor.dv.SelectText(start, length);
             }
             
+            return doc;
+        }
 
+        AvalonDocument AvalonDocumentPreview { get; set; }
+
+        public AvalonDocument OpenDocumentsForPreview(string Name, VSProvider.VSSolution vs, CountdownEvent autoEvent = null, OpenFileEventArgs ofa = null/*ReferenceLocation? Location = null*/)
+        {
+            var d = FileOpened(Name);
+            if (d != null)
+            {
+                d.Activate();
+                //dockContainer1.Refresh();
+                return d;
+            }
+            if (!File.Exists(Name))
+                return null;
+            AvalonDocument doc = AvalonDocumentPreview;
+            if (doc != null)
+            {
+                doc.Text = Path.GetFileNameWithoutExtension(Name);
+                doc.FileName = Name;
+                doc.DockAlignment = DockAlign.DockToRight;
+                doc.Editor.Load(Name);
+                doc.Activate();
+                //dockContainer1.Refresh();
+            }
+            else
+            {
+                this.SuspendLayout();
+                doc = new AvalonDocument(vs, Name);
+                doc.Text = Path.GetFileNameWithoutExtension(Name);
+                doc.FileName = Name;
+                doc.DockAlignment = DockAlign.DockToRight;
+                doc.Show(dockContainer1, DockState.Document);
+                doc.Activate();
+                //dockContainer1.Refresh();
+                this.ResumeLayout();
+            }
+            if (vs != null)
+                doc.Editor.dv.LoadFromProject(vs, false);
+
+            AvalonDocumentPreview = doc;
+
+            if (autoEvent != null)
+                autoEvent.Signal();
+
+            if (ofa == null)
+                return doc;
+
+            if (ofa.Location != null)
+            {
+                int start = ofa.Location.Value.Location.SourceSpan.Start;
+                int length = ofa.Location.Value.Location.SourceSpan.Length;
+                doc.Editor.dv.SelectText(start, length);
+            }
+            else if (ofa.Span != null)
+            {
+                TextSpan? Span = ofa.Span;
+                int start = Span.Value.Start;
+                int length = ofa.Span.Value.Length;
+                doc.Editor.dv.SelectText(start, length);
+            }
+
+            return doc;
+        }
+        public AvalonDocument OpenDocumentsWithContentForPreview(string content, VSProvider.VSSolution vs, CountdownEvent autoEvent = null, OpenFileEventArgs ofa = null/*ReferenceLocation? Location = null*/, ISymbol symbol = null)
+        {
+            var d = FileOpened(Name);
+            if (d != null)
+            {
+                d.Activate();
+                dockContainer1.Refresh();
+                return d;
+            }
            
-              
+            AvalonDocument doc = AvalonDocumentPreview;
+            if (doc != null)
+            {
+                doc.Text = symbol.Name;
+                doc.FileName = symbol.Name;
+                doc.DockAlignment = DockAlign.DockToRight;
+                doc.LoadText(content);
+                doc.Activate();
+                dockContainer1.Refresh();
+            }
+            else
+            {
+                this.SuspendLayout();
+                doc = new AvalonDocument(vs);
+                doc.Text = symbol.Name;
+                doc.FileName = symbol.Name;
+                doc.LoadText(content);
+                doc.DockAlignment = DockAlign.DockToRight;
+                doc.Show(dockContainer1, DockState.Document);
+                doc.Activate();
+                dockContainer1.Refresh();
+                this.ResumeLayout();
+            }
+            if (vs != null)
+                doc.Editor.dv.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    doc.Editor.dv.LoadFromProject(vs, true, symbol);
+                    doc.Activate();
+                    doc.Editor.Focus();
+                    doc.Editor.dv.Focus();
+                }));
+
+            AvalonDocumentPreview = doc;
+
+            if (autoEvent != null)
+                autoEvent.Signal();
+
+            if (ofa == null)
+                return doc;
+
+            if (ofa.Location != null)
+            {
+                int start = ofa.Location.Value.Location.SourceSpan.Start;
+                int length = ofa.Location.Value.Location.SourceSpan.Length;
+                doc.Editor.dv.SelectText(start, length);
+            }
+            else if (ofa.Span != null)
+            {
+                TextSpan? Span = ofa.Span;
+                int start = Span.Value.Start;
+                int length = ofa.Span.Value.Length;
+                doc.Editor.dv.SelectText(start, length);
+            }
 
             return doc;
         }
 
-     
         public AvalonDocument OpenDocumentsWithContent(string content, VSProvider.VSSolution vs, AutoResetEvent autoEvent = null, ISymbol symbol = null)
         {
             
@@ -800,7 +749,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                 return d;
             }
             this.SuspendLayout();
-            AvalonDocument doc = new AvalonDocument();
+            AvalonDocument doc = new AvalonDocument(vs);
             doc.LoadText(content);
             if (symbol != null)
             {
@@ -813,7 +762,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             if (vs != null)
                 doc.Editor.dv.Dispatcher.BeginInvoke(new Action(() =>
                 {
-                    doc.Editor.dv.LoadFromProject(vs, symbol);
+                    doc.Editor.dv.LoadFromProject(vs, true, symbol);
                     doc.Activate();
                     doc.Editor.Focus();
                     doc.Editor.dv.Focus();
@@ -1180,22 +1129,22 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         private void doc_CaretChange(object sender, EventArgs e)
         {
-            string text = "";
-            UpdateCutCopyToolbar();
-            string file = ((Document)sender).FileName;
-            Caret c = ((Document)sender).Editor.ActiveViewControl.Caret;
+            //string text = "";
+            //UpdateCutCopyToolbar();
+            //string file = ((Document)sender).FileName;
+            //Caret c = ((Document)sender).Editor.ActiveViewControl.Caret;
 
-            if (c.CurrentRow != null)
-                text = c.CurrentRow.Text;
-            //tCursorPos.Text = "Ln " + c.Position.Y + ", Col " + c.Position.X;
-            if (label != null)
-            {
-                label.Text = "Ln " + c.Position.Y;
-                labels.Text = "Col " + c.Position.X;
-            }
-            bool changed = hst.AddIfShould(file, c.Position.Y, text);
-            if (HistoryChange != null)
-                HistoryChange(this, new EventArgs());
+            //if (c.CurrentRow != null)
+            //    text = c.CurrentRow.Text;
+            ////tCursorPos.Text = "Ln " + c.Position.Y + ", Col " + c.Position.X;
+            //if (label != null)
+            //{
+            //    label.Text = "Ln " + c.Position.Y;
+            //    labels.Text = "Col " + c.Position.X;
+            //}
+            //bool changed = hst.AddIfShould(file, c.Position.Y, text);
+            //if (HistoryChange != null)
+            //    HistoryChange(this, new EventArgs());
         }
 
         private void doc_TextChange(object sender, EventArgs e)
@@ -1918,28 +1867,16 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             }
         }
 
-        public void Save()
+        public string Save()
         {
-            CodeEditor.WinForms.EditViewControl view = GetCurrentView();
-            if (view != null)
-            {
-                Document ddd = dockContainer1.ActiveDocument as Document;
 
-                string file = ddd.FileName;
-
-                string content = ddd.Contents;
-
-                File.WriteAllText(file, content);
-
-                ddd.ReadyToSave = false;
-
-                ddd.Text = ddd.Text.Replace("*", "");
-
-
-                view.Refresh();
-            }
-
+            AvalonDocument doc = dockContainer1.ActiveDocument as AvalonDocument;
+            if (doc == null)
+                return "";
+            doc.Save();
+            doc.Text = doc.Text.Replace("*", "");
             dockContainer1.Refresh();
+            return doc.FileName;
         }
 
 
@@ -1954,6 +1891,17 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             // ddd.Saved = true;
         }
 
+        public SourceControl GetSourceControl()
+        {
+
+            SourceControl sourceControl = hst.sourceControl;
+            if(sourceControl == null)
+            {
+                sourceControl = new SourceControl();
+                hst.sourceControl = sourceControl;
+            }
+            return sourceControl;
+        }
 
         public void SaveAll()
         {
@@ -2061,12 +2009,13 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                 if (doc.GetType() == typeof(AvalonDocument))
                 {
                     AvalonDocument d = doc as AvalonDocument;
+                    if(d.Editor.dv != null)
                     d.Editor.dv.LoadFromProject(vs);
                 }
             }
         }
 
-        public ArrayList LoadSolutionFiles()
+        public ArrayList LoadSolutionFiles(VSSolution vs)
         {
             ArrayList L = new ArrayList();
 
@@ -2082,7 +2031,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                 hst = new History();
                 this.hst = hst;
             }
-
+            
             if (hst.acts == null)
                 return L;
 
@@ -2116,9 +2065,17 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                     else
                     if (s.StartsWith("@") == false)
                     {
+                        var d = FileOpened(s);
+                        if (d != null)
+                        {
+                            continue;
+                        }
                         //VSProject p = vs.GetVSProject(s);
-                        AvalonDocument doc = new AvalonDocument(s);
+                        AvalonDocument doc = new AvalonDocument(vs, s);
                         doc.Text = Path.GetFileName(s);
+                        doc.ToolTipText = s;
+                        if (vs != null)
+                            doc.Editor.dv.LoadFromProject(vs, false);
                         doc.Show(dockContainer1, DockState.Document);
                         dockContainer1.Refresh();
                     }
@@ -2127,12 +2084,12 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                 }
                 catch (Exception e) { }
 
-                this.BeginInvoke(new Action(() =>
-                {
+               // this.BeginInvoke(new Action(() =>
+                //{
                     //if (vs != null)
                     //    if (hst.MainProjectFile != null)
                     //        vs.MainVSProject = vs.GetProjectbyFileName(hst.MainProjectFile);
-                }));
+               // }));
 
                 //this.vs = vs;
             }
@@ -2234,10 +2191,10 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                 string folder = AppDomain.CurrentDomain.BaseDirectory;
 
 
-                if (File.Exists(folder + "settings.suo") == true)
-                    File.Delete(folder + "settings.suo");
+                if (File.Exists(folder + "\\folder + settings.suo") == true)
+                    File.Delete(folder + "\\folder + settings.suo");
 
-                FileStream fs = File.Create("folder + settings.suo");
+                FileStream fs = File.Create(folder + "\\folder + settings.suo");
 
                 fs.Close();
 
@@ -2256,7 +2213,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
                 }
                 foreach (DockPane doc in L)
                 {
-                    doc.CloseActiveContent();
+                    //doc.CloseActiveContent();
 
                     //dockContainer1.RemovePane(doc);
                 }
@@ -2272,36 +2229,42 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         public void CloseAll()
         {
             ArrayList L = new ArrayList();
-
-
-           // dockContainer1.RemovePanes();
+            
 
             foreach (DockContent doc in dockContainer1.Documents)
             {
-                if (doc.GetType() == typeof(Document))
+                if (doc.GetType() == typeof(AvalonDocument))
                 {
-                    Document d = doc as Document;
-                    d.syntaxDocument1.Dispose();
-                    d.Editor.Document.Parser.Language.BlockTypeDispose();
+                    AvalonDocument d = doc as AvalonDocument;
+                    //d.syntaxDocument1.Dispose();
+                    //d.Editor.Document.Parser.Language.BlockTypeDispose();
+                    //d.Editor.Dispose();
+
+                    d.Editor.dv.Dispose();
+                    d.Editor.dv = null;
                     d.Editor.Dispose();
-                    L.Add(d.Pane);
+                    
+                    L.Add(d/*.Pane*/);
+                    
                 }
                 else if (doc.GetType() == typeof(DocumentForm))
                 {
                     DocumentForm d = doc as DocumentForm;
-                    L.Add(d.Pane);
+                    L.Add(d/*.Pane*/);
+                    
                 }
+                //dockContainer1.Refresh();
             }
-            foreach (DockPane doc in L)
+            //MessageBox.Show("Found AvalonDocuments " + L.Count.ToString());
+            foreach (DockContent doc in L)
             {
-                doc.CloseActiveContent();
-
-               // dockContainer1.RemovePane(doc);
-
-
+                doc.Close();
+               
 
                 doc.Dispose();
             }
+
+            
 
             dockContainer1.Refresh();
 
@@ -2324,20 +2287,20 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             if (VSProject.dcc != null)
                 VSProject.dcc.Clear();
 
-
+            GC.Collect();
         }
 
-        public ArrayList GetOpenFiles()
+        public List<string> GetOpenFiles()
         {
-            ArrayList L = new ArrayList();
+            List<string> list = new List<string>();
 
             foreach (DockContent doc in dockContainer1.Documents)
             {
-                if (doc.GetType() == typeof(Document))
-                    L.Add(((Document)doc).FileName);
+                if (doc.GetType() == typeof(AvalonDocument))
+                    list.Add(((AvalonDocument)doc).FileName);
             }
-
-            return L;
+            
+            return list;
         }
         public ArrayList GetOpenDocuments()
         {
@@ -2345,8 +2308,8 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
             foreach (DockContent doc in dockContainer1.Documents)
             {
-                if (doc.GetType() == typeof(Document))
-                    L.Add(((Document)doc));
+                if (doc.GetType() == typeof(AvalonDocument))
+                    L.Add(((AvalonDocument)doc));
             }
 
             return L;
@@ -2451,6 +2414,8 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         public DataSourceItems dataSources { get; set; }
 
+        public SourceControl sourceControl { get; set; }
+
         public History()
         {
             hst = new ArrayList();
@@ -2539,7 +2504,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
             FileStream stream = File.Open(files, FileMode.Open);
             BinaryFormatter formatter = new BinaryFormatter();
-            Console.WriteLine("DeSerializing files arraylist");
+            //Console.WriteLine("DeSerializing files arraylist");
             try
             {
                 hst = formatter.Deserialize(stream) as History;
@@ -2862,5 +2827,22 @@ namespace AIMS.Libraries.Scripting.ScriptControl
             StringReader textReader = new StringReader(xml);
             return (Breakpointer)s.Deserialize(textReader);
         }
+    }
+    public enum SourceControlled
+    {
+        none,
+        git,
+        tfs,
+        other
+    }
+    [Serializable]
+    public class SourceControl
+    {
+        public SourceControl()
+        {
+            sourceControlled = SourceControlled.none;
+        }
+
+        public SourceControlled sourceControlled { get; set; }
     }
 }

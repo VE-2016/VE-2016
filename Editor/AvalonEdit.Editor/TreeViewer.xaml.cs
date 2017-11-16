@@ -14,13 +14,15 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
+using System.Windows.Threading;
 using VSProvider;
 
 namespace AvalonEdit.Editor
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
-    /// </summary>
+    /// Interaction logic
+    /// 
+    /// /// </summary>
 
     public partial class TreeViewer : UserControl
     {
@@ -32,135 +34,7 @@ namespace AvalonEdit.Editor
             InitializeComponent();
 
             treeListView.SelectedItemChanged += TreeListView_SelectedItemChanged;
-
-           // TreeListViewItem v = new TreeListViewItem();
-           // v.Header = "String";
-
-
-            //Source c = new Source();
-            //c.Name = "test";
-
-
-            //SourceData d = new SourceData();
-            //d.Name = "class window";
-
-            //d.Project = "Project";
-            //d.File = "file";
-            //d.Line = "10";
-            //d.Column = "50";
-
-            //List<SourceData> data = new List<SourceData>();
-            //data.Add(d);
-
-            //d = new SourceData();
-            //d.Name = "class control";
-
-            //d.Project = "Project-2";
-            //d.File = "file-2";
-            //d.Line = "100";
-            //d.Column = "500";
-            //data.Add(d);
-
-            //c.Data = data;
-
-            //Sources.Add(c);
-
-
-
-            //TreeListViewItem p = new TreeListViewItem();
-            //p.ItemsSource = data;
-
-            //treeListView.ItemsSource = Sources;
-
-
-            //Source c = new Source();
-            //c.Name = "test";
             
-            //SourceData d = new SourceData();
-            //d.Name = "class window";
-
-            //d.Project = "Project";
-            //d.File = "file";
-            //d.Line = "10";
-            //d.Column = "50";
-
-            //List<SourceData> data = new List<SourceData>();
-            //data.Add(d);
-            //c.Data = data;
-
-
-            ////SourceData dc = new SourceData();
-            ////dc.Name = "class control";
-
-            ////dc.Project = "Project-2";
-            ////dc.File = "file-2";
-            ////dc.Line = "100";
-            ////dc.Column = "500";
-            ////data.Add(dc);
-
-
-            //SourceRefData d2 = new SourceRefData();
-            //d2.Name = "class window reference - 1";
-
-            //d2.Project = "Project";
-            //d2.File = "file";
-            //d2.Line = "10";
-            //d2.Column = "50";
-
-            //List<SourceRefData> data2 = new List<SourceRefData>();
-
-            //d.Data = data2;
-
-            //data2.Add(d2);
-
-            //d2 = new SourceRefData();
-            //d2.Name = "class window reference - 2";
-
-            //d2.Project = "Project";
-            //d2.File = "file";
-            //d2.Line = "10";
-            //d2.Column = "50";
-
-            //data2.Add(d2);
-
-           
-
-
-            //Source d3 = new Source();
-            //d3.Name = "class window";
-
-            //d3.Project = "Project";
-            //d3.File = "file";
-            //d3.Line = "10";
-            //d3.Column = "50";
-
-            //List<Source> data3 = new List<Source>();
-            //d3.Data = data3;
-
-           
-
-            
-
-
-
-            //c.Data = data;
-
-
-
-
-
-
-           // Sources.Add(c);
-
-
-
-            //TreeListViewItem p = new TreeListViewItem();
-            //p.ItemsSource = data;
-
-           // treeListView.ItemsSource = Sources;
-
-
-
             ButtonCopy.MouseDown += Button_Click;
 
             ButtonCopy.Source = Convert(WinExplorers.ve.Copy_32x);
@@ -174,9 +48,7 @@ namespace AvalonEdit.Editor
             this.treeListView.SelectedItemChanged += TreeListView_SelectedItemChanged;
 
             treeList = treeListView;
-
-            //treeListView.Height = 200;
-            //treeListView.Width = 900;
+            
         }
 
         public TreeListView treeList { get; set; }
@@ -326,13 +198,7 @@ namespace AvalonEdit.Editor
                     }
                 }
                 
-                //d = new SourceData();
-                //d.Name = "class control";
-                //d.Project = "Project-2";
-                //d.File = "file-2";
-                //d.Line = "100";
-                //d.Column = "500";
-                //data.Add(d);
+            
 
             }
 
@@ -340,6 +206,35 @@ namespace AvalonEdit.Editor
 
             treeListView.ItemsSource = Sources;
 
+            ExpandAll();
+        }
+
+        private void ExpandAll(ItemsControl items, bool expand)
+        {
+            foreach (object obj in items.Items)
+            {
+                ItemsControl childControl = items.ItemContainerGenerator.ContainerFromItem(obj) as ItemsControl;
+                if (childControl != null)
+                {
+                    ExpandAll(childControl, expand);
+                }
+                TreeViewItem item = childControl as TreeViewItem;
+                if (item != null)
+                    item.IsExpanded = true;
+            }
+        }
+
+
+        private void ExpandAll()
+        {
+
+            foreach (object item in this.treeListView.Items)
+            {
+                var treeItem = this.treeListView.ItemContainerGenerator.ContainerFromItem(item);
+                //if (treeItem != null)
+                //    ExpandAll(treeItem, true);
+                //treeItem.IsExpanded = true;
+            }
         }
 
         private void TreeListView_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -573,7 +468,7 @@ namespace AvalonEdit.Editor
 
         public int Offset { get; set; }
 
-
+        
         public ReferenceLocation? refs { get; set; }
 
         public object words { get; set; }
@@ -622,6 +517,7 @@ namespace AvalonEdit.Editor
             {
                 handler(this, new PropertyChangedEventArgs(info));
             }
+           
         }
 
 

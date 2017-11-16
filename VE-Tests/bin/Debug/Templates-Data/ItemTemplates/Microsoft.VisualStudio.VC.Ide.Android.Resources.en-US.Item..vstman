@@ -1,0 +1,17 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VC\Cross Platform\Android\Java\1033</RelativePathOnDisk>
+    <TemplateFileName>Java.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{905FD3EB-1BAF-4257-ABEB-70F577F48512}" ID="302" />
+        <Description Package="{905FD3EB-1BAF-4257-ABEB-70F577F48512}" ID="303" />
+        <Icon Package="{905FD3EB-1BAF-4257-ABEB-70F577F48512}" ID="401" />
+        <TemplateID>Microsoft.MDD.Java.Source</TemplateID>
+        <ProjectType>AndroidPackaging</ProjectType>
+        <DefaultName>Source.java</DefaultName>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

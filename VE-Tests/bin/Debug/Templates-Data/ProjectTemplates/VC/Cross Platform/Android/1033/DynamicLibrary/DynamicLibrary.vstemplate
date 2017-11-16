@@ -1,0 +1,27 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Dynamic Shared Library (Android)</Name>
+    <Description>A project for creating a dynamic shared library for the Android Platform.</Description>
+    <ProjectType>VC</ProjectType>
+    <TemplateID>Microsoft.MDD.VC.Android.Dll</TemplateID>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>SharedObject</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>CPPPhoneDynamic.ico</Icon>
+  </TemplateData>
+  <TemplateContent PreferedSolutionConfiguration="Debug|x86">
+    <Project TargetFileName="$projectname$.vcxproj" File="StaticObject.vcxproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.cpp">staticObject.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.h">staticObject.h</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.vcxproj.filters">StaticObject.vcxproj.filters</ProjectItem>
+      <ProjectItem ReplaceParameters="true">pch.h</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VisualStudio.Android.Project,Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VisualStudio.Android.Wizard.NativeTemplateWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

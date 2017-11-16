@@ -125,6 +125,7 @@ F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataHelper\obj\Debug\MetadataHelpe
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataHelper\obj\Debug\MetadataHelper.csproj.CoreCompileInputs.cache
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataHelper\obj\Debug\Microsoft.Cci.MetadataHelper.dll
 F:\Windows-Enterprise-VE-2016\VE-2016\NET\MetadataHelper\obj\Debug\Microsoft.Cci.MetadataHelper.pdb
+F:\ve\VE-2016\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.dll.config
 F:\ve\VE-2016\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.XML
 F:\ve\VE-2016\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.dll
 F:\ve\VE-2016\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
@@ -135,3 +136,14 @@ F:\ve\VE-2016\NET\MetadataHelper\obj\Debug\MetadataHelper.csprojResolveAssemblyR
 F:\ve\VE-2016\NET\MetadataHelper\obj\Debug\MetadataHelper.csproj.CoreCompileInputs.cache
 F:\ve\VE-2016\NET\MetadataHelper\obj\Debug\Microsoft.Cci.MetadataHelper.dll
 F:\ve\VE-2016\NET\MetadataHelper\obj\Debug\Microsoft.Cci.MetadataHelper.pdb
+f:\ve\ve-2023\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.dll.config
+f:\ve\ve-2023\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.XML
+f:\ve\ve-2023\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.dll
+f:\ve\ve-2023\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
+f:\ve\ve-2023\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataModel.dll
+f:\ve\ve-2023\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+f:\ve\ve-2023\NET\MetadataHelper\bin\Debug\Microsoft.Cci.MetadataModel.xml
+f:\ve\ve-2023\NET\MetadataHelper\obj\Debug\MetadataHelper.csprojResolveAssemblyReference.cache
+f:\ve\ve-2023\NET\MetadataHelper\obj\Debug\MetadataHelper.csproj.CoreCompileInputs.cache
+f:\ve\ve-2023\NET\MetadataHelper\obj\Debug\Microsoft.Cci.MetadataHelper.dll
+f:\ve\ve-2023\NET\MetadataHelper\obj\Debug\Microsoft.Cci.MetadataHelper.pdb

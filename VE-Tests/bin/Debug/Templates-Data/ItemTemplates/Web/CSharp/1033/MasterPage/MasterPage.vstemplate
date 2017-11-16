@@ -1,0 +1,30 @@
+﻿<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+	<TemplateData>
+		<Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3171"/>
+		<Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3172"/>
+		<Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4709"/>
+        <TemplateID>Microsoft.Web.CSharp.MasterPage</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>CSharp</ProjectSubType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <SupportsCodeSeparation>true</SupportsCodeSeparation>
+        <SupportsMasterPage>true</SupportsMasterPage>
+        <DefaultName>MasterPage.master</DefaultName>
+        <SortOrder>20</SortOrder>
+	</TemplateData>
+    <TemplateContent>
+        <CustomParameters>
+            <CustomParameter Name="$language$" Value="c#"/>
+        </CustomParameters>
+
+        <ProjectItem ReplaceParameters="true">MasterPage.master</ProjectItem>
+		<ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$.$fileinputextension$">MasterPage_cb.master</ProjectItem>
+        	<ProjectItem TargetFileName="$fileinputname$.$fileinputextension$" ReplaceParameters="true">LinkedMasterPage.master</ProjectItem>
+	        <ProjectItem TargetFileName="$fileinputname$.$fileinputextension$" ReplaceParameters="true">LinkedMasterPage_cb.master</ProjectItem>
+		<ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$.$fileinputextension$.cs">CodeBeside.cs</ProjectItem>
+	</TemplateContent>
+    <WizardExtension>
+        <Assembly>Microsoft.VisualStudio.Web, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+        <FullClassName>Microsoft.VisualStudio.Web.Wizard.VsMasterPageItemTemplateWizard</FullClassName>
+    </WizardExtension>
+</VSTemplate>

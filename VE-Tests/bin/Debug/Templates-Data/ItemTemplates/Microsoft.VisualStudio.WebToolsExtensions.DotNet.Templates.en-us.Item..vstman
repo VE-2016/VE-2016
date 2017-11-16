@@ -1,0 +1,673 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateDir>
+    <RelativePath>AspNetCore</RelativePath>
+    <LocalizedName Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="6008" />
+    <SortOrder>100</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>AspNetCore\Code</RelativePath>
+    <LocalizedName Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="6004" />
+    <SortOrder>100</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>AspNetCore\General</RelativePath>
+    <LocalizedName Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="6003" />
+    <SortOrder>100</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>AspNetCore\Web</RelativePath>
+    <LocalizedName Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="6006" />
+    <SortOrder>300</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>AspNetCore\Web\ASP.NET</RelativePath>
+    <LocalizedName Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="6005" />
+    <SortOrder>100</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>AspNetCore\Web\Content</RelativePath>
+    <LocalizedName Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="6007" />
+    <SortOrder>300</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>AspNetCore\Web\General</RelativePath>
+    <LocalizedName Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="6003" />
+    <SortOrder>100</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>AspNetCore\Web\Scripts</RelativePath>
+    <LocalizedName Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="6002" />
+    <SortOrder>100</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Code\1033\AssemblyInfo</RelativePathOnDisk>
+    <TemplateFileName>AssemblyInfo.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2405" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2406" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4601" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.AssemblyInfo</TemplateID>
+        <DefaultName>AssemblyInfo.cs</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>60</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Code\1033\Class</RelativePathOnDisk>
+    <TemplateFileName>Class.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3020" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3021" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4703" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.Class</TemplateID>
+        <DefaultName>Class.cs</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>40</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Code\1033\Interface</RelativePathOnDisk>
+    <TemplateFileName>Interface.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2413" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2414" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4586" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.Interface</TemplateID>
+        <DefaultName>Interface.cs</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>50</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Code\1033\Resource</RelativePathOnDisk>
+    <TemplateFileName>Resource.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2390" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2391" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4565" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.Resource</TemplateID>
+        <DefaultName>Resource.resx</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>160</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\General\1033\TextFile</RelativePathOnDisk>
+    <TemplateFileName>TextFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3054" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3055" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4529" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.TextFile</TemplateID>
+        <DefaultName>TextFile.txt</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>170</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\ASP.NET\1033\Middleware</RelativePathOnDisk>
+    <TemplateFileName>Middleware.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1140" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1141" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4703" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.Middleware</TemplateID>
+        <DefaultName>Middleware.cs</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>130</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\ASP.NET\1033\MvcController</RelativePathOnDisk>
+    <TemplateFileName>MvcController.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1128" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1129" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4703" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.MvcController</TemplateID>
+        <DefaultName>HomeController.cs</DefaultName>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <SortOrder>60</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\ASP.NET\1033\MvcLayout</RelativePathOnDisk>
+    <TemplateFileName>MvcLayout.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1148" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1149" />
+        <Icon Package="{B54016DB-B3E6-4960-8262-81772C777DE9}" ID="22002" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.MvcLayout</TemplateID>
+        <DefaultName>_Layout.cshtml</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>90</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\ASP.NET\1033\MvcView</RelativePathOnDisk>
+    <TemplateFileName>MvcView.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1130" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1131" />
+        <Icon Package="{B54016DB-B3E6-4960-8262-81772C777DE9}" ID="22002" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.MvcView</TemplateID>
+        <DefaultName>Index.cshtml</DefaultName>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <SortOrder>80</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\ASP.NET\1033\MvcViewImports</RelativePathOnDisk>
+    <TemplateFileName>MvcViewImports.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1144" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1145" />
+        <Icon Package="{B54016DB-B3E6-4960-8262-81772C777DE9}" ID="22002" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.MvcViewImports</TemplateID>
+        <DefaultName>_ViewImports.cshtml</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>110</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\ASP.NET\1033\MvcViewStart</RelativePathOnDisk>
+    <TemplateFileName>MvcViewStart.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1146" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1147" />
+        <Icon Package="{B54016DB-B3E6-4960-8262-81772C777DE9}" ID="22002" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.MvcViewStart</TemplateID>
+        <DefaultName>_ViewStart.cshtml</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>100</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\ASP.NET\1033\StartupClass</RelativePathOnDisk>
+    <TemplateFileName>Startup.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1134" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1135" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4703" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.Startup</TemplateID>
+        <DefaultName>Startup.cs</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>140</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\ASP.NET\1033\TagHelper</RelativePathOnDisk>
+    <TemplateFileName>TagHelper.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1142" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1143" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4703" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.TagHelper</TemplateID>
+        <DefaultName>RazorTagHelper.cs</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>120</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\ASP.NET\1033\WebApiController</RelativePathOnDisk>
+    <TemplateFileName>WebApiController.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1136" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1137" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4703" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.WebApiController</TemplateID>
+        <DefaultName>ValuesController.cs</DefaultName>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <SortOrder>70</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\ASP.NET\1033\WebConfig</RelativePathOnDisk>
+    <TemplateFileName>WebConfig.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3076" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3077" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4540" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.WebConfig</TemplateID>
+        <DefaultName>web.config</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>595</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\Content\1033\HTMLPage</RelativePathOnDisk>
+    <TemplateFileName>HTMLPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3070" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3071" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4537" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.HtmlPage</TemplateID>
+        <DefaultName>htmlpage.html</DefaultName>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <SortOrder>510</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\Content\1033\StyleSheet</RelativePathOnDisk>
+    <TemplateFileName>StyleSheet.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3072" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3073" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4538" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.StyleSheet</TemplateID>
+        <DefaultName>StyleSheet.css</DefaultName>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <SortOrder>530</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\Content\1033\StyleSheetLess</RelativePathOnDisk>
+    <TemplateFileName>StyleSheetLess.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1101" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1100" />
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="2100" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.StyleSheetLESS</TemplateID>
+        <DefaultName>StyleSheet.less</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>680</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\Content\1033\StyleSheetScss</RelativePathOnDisk>
+    <TemplateFileName>StyleSheetScss.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1103" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1102" />
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="2101" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.StyleSheetSCSS</TemplateID>
+        <DefaultName>StyleSheet.scss</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>690</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\General\1033\AppSettings</RelativePathOnDisk>
+    <TemplateFileName>AppSettings.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1126" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1127" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4540" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.AppSettings</TemplateID>
+        <DefaultName>appsettings.json</DefaultName>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <SortOrder>150</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\General\1033\BowerJson</RelativePathOnDisk>
+    <TemplateFileName>BowerJson.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1124" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1151" />
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="2200" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.BowerJson</TemplateID>
+        <DefaultName>bower.json</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>540</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\General\1033\Gruntfile</RelativePathOnDisk>
+    <TemplateFileName>Gruntfile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1118" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1119" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4528" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.Gruntfile</TemplateID>
+        <DefaultName>Gruntfile.js</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>570</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\General\1033\Gulpfile</RelativePathOnDisk>
+    <TemplateFileName>Gulpfile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1120" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1121" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4528" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.Gulpfile</TemplateID>
+        <DefaultName>gulpfile.js</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>560</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\General\1033\JSON</RelativePathOnDisk>
+    <TemplateFileName>Json.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1104" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1105" />
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="2200" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.Json</TemplateID>
+        <DefaultName>json.json</DefaultName>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <SortOrder>580</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\General\1033\JSONSchema</RelativePathOnDisk>
+    <TemplateFileName>JsonSchema.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1106" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1107" />
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="2200" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.JsonSchema</TemplateID>
+        <DefaultName>json-schema.json</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>590</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\General\1033\PackageJson</RelativePathOnDisk>
+    <TemplateFileName>PackageJson.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1132" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1133" />
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="2200" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.PackageJson</TemplateID>
+        <DefaultName>package.json</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>550</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\General\1033\XmlFile</RelativePathOnDisk>
+    <TemplateFileName>XmlFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3074" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3075" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4539" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.XmlFile</TemplateID>
+        <DefaultName>XMLFile.xml</DefaultName>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <SortOrder>600</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\Scripts\1033\AngularControllerAs</RelativePathOnDisk>
+    <TemplateFileName>AngularControllerAs.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1108" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1109" />
+        <Icon>icon.png</Icon>
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.AngularControllerAs</TemplateID>
+        <DefaultName>controller.js</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>620</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\Scripts\1033\AngularControllerUsingScope</RelativePathOnDisk>
+    <TemplateFileName>AngularControllerUsingScope.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1110" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1111" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.AngularControllerUsingScope</TemplateID>
+        <DefaultName>controller.js</DefaultName>
+        <Icon>icon.png</Icon>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>630</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\Scripts\1033\AngularDirective</RelativePathOnDisk>
+    <TemplateFileName>AngularDirective.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1112" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1113" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.AngularDirective</TemplateID>
+        <DefaultName>directive.js</DefaultName>
+        <Icon>icon.png</Icon>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>640</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\Scripts\1033\AngularFactory</RelativePathOnDisk>
+    <TemplateFileName>AngularFactory.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1114" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1115" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.AngularFactory</TemplateID>
+        <DefaultName>factory.js</DefaultName>
+        <Icon>icon.png</Icon>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>650</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\Scripts\1033\AngularModule</RelativePathOnDisk>
+    <TemplateFileName>AngularModule.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1116" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1117" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.AngularModule</TemplateID>
+        <DefaultName>app.js</DefaultName>
+        <Icon>icon.png</Icon>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>660</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\Scripts\1033\CoffeeScript</RelativePathOnDisk>
+    <TemplateFileName>CoffeeScript.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1001" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1000" />
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="2000" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.CoffeeScript</TemplateID>
+        <DefaultName>CoffeeScript.coffee</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <SortOrder>670</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\Scripts\1033\JScript</RelativePathOnDisk>
+    <TemplateFileName>JScript.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3052" />
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3053" />
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4528" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.JScript</TemplateID>
+        <DefaultName>JavaScript.js</DefaultName>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <SortOrder>520</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\Scripts\1033\JSX</RelativePathOnDisk>
+    <TemplateFileName>jsx.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1122" />
+        <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1123" />
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="2300" />
+        <TemplateID>Microsoft.DNX.JSX</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>AspNetCore.JSX</TemplateID>
+        <DefaultName>jsx.jsx</DefaultName>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <SortOrder>600</SortOrder>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

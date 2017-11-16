@@ -9,8 +9,14 @@ namespace WeifenLuo.WinFormsUI.Docking
         DockContentHandler DockHandler { get; }
         void OnActivated(EventArgs e);
         void OnDeactivate(EventArgs e);
+        DockAlign DockAlignment { get; set; }
     }
-
+    public enum DockAlign
+    {
+        DockToLeft,
+        DockToRight,
+        None
+    }
     public interface IContextMenuStripHost
     {
         void ApplyTheme();

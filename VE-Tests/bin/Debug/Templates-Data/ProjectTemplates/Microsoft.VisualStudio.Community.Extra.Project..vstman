@@ -1,0 +1,22 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateDir>
+    <RelativePath>VC\Windows Root</RelativePath>
+    <LocalizedName Package="{a1609ac6-6b91-42e1-8b92-6c8593cb4a8d}" ID="1000" />
+    <SortOrder>210</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>VC\Windows Root\Store Apps</RelativePath>
+    <LocalizedName Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1059" />
+    <SortOrder>20</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>VC\Windows Root\Store Apps\Universal Apps</RelativePath>
+    <LocalizedName Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1060" />
+    <SortOrder>10</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>VC\Windows Root\Store Apps\Windows Store</RelativePath>
+    <LocalizedName Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1050" />
+    <SortOrder>20</SortOrder>
+  </VSTemplateDir>
+</VSTemplateManifest>

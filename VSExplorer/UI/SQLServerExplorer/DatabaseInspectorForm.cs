@@ -2033,7 +2033,7 @@ namespace WinExplorer.UI
             ScriptingOptions sc = new ScriptingOptions();
             sc.ScriptData = false;
             sc.ScriptSchema = true;
-            string s = SQLScripter.CreateTableScript("localhost", "sa", "sa", "database", b.Name, sc);
+            string s = SQLScripter.CreateTableScript("localhost", "sa", "sasa", "database", b.Name, sc);
 
             DocumentForm df = ExplorerForms.ef.Command_OpenDocumentForm("tables");
             ViewCodeForm dvf = new ViewCodeForm(s);
@@ -2058,8 +2058,7 @@ namespace WinExplorer.UI
             server.ConnectionContext.Connect();
             var database = server.Databases[databases];
 
-            //using (FileStream fs = new FileStream(@"H:\database_scripts\Gaurav.sql", FileMode.Append, FileAccess.Write))
-            //using (StreamWriter sw = new StreamWriter(fs))
+            
             {
                 //foreach(Table table in database.Tables)
                 {

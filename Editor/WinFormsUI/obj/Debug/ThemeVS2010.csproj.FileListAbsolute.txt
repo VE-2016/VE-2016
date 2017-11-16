@@ -50,7 +50,6 @@ F:\Windows-Enterprise-VE-2016\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinF
 F:\Windows-Enterprise-VE-2016\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2010.pdb
 F:\ve\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2010.dll
 F:\ve\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2010.pdb
-F:\ve\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
 F:\ve\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2010.Resources.resources
 F:\ve\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2012.Resources.resources
 F:\ve\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2012.Strings.resources
@@ -60,5 +59,16 @@ F:\ve\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS20
 F:\ve\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2010.pdb
 F:\ve\VE-2016\Editor\WinFormsUI\obj\Debug\ThemeVS2010.csprojResolveAssemblyReference.cache
 F:\ve\VE-2016\Editor\WinFormsUI\bin\Debug\VE-Resources.dll
+F:\ve\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
 F:\ve\VE-2016\Editor\WinFormsUI\bin\Debug\VE-Resources.pdb
 F:\ve\VE-2016\Editor\WinFormsUI\bin\Debug\VE-Resources.dll.config
+f:\ve\ve-2023\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2010.dll
+f:\ve\ve-2023\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2010.pdb
+f:\ve\ve-2023\Editor\WinFormsUI\obj\Debug\ThemeVS2010.csprojResolveAssemblyReference.cache
+f:\ve\ve-2023\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2010.Resources.resources
+f:\ve\ve-2023\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2012.Resources.resources
+f:\ve\ve-2023\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2012.Strings.resources
+f:\ve\ve-2023\Editor\WinFormsUI\obj\Debug\ThemeVS2010.csproj.GenerateResource.Cache
+f:\ve\ve-2023\Editor\WinFormsUI\obj\Debug\ThemeVS2010.csproj.CoreCompileInputs.cache
+f:\ve\ve-2023\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2010.dll
+f:\ve\ve-2023\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2010.pdb

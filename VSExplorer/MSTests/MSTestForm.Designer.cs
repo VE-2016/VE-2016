@@ -50,11 +50,11 @@
             this.searchTextBox1 = new WinExplorer.UI.SearchTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.labelEx2 = new WinExplorer.UI.LabelEx();
+            this.labelEx1 = new WinExplorer.UI.LabelEx();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.labelEx1 = new WinExplorer.UI.LabelEx();
-            this.labelEx2 = new WinExplorer.UI.LabelEx();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -86,6 +86,7 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 
@@ -257,6 +258,29 @@
             this.panel2.Size = new System.Drawing.Size(338, 192);
             this.panel2.TabIndex = 10;
             // 
+            // labelEx2
+            // 
+            this.labelEx2.AutoSize = true;
+            this.labelEx2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEx2.ForeColor = System.Drawing.Color.Blue;
+            this.labelEx2.Location = new System.Drawing.Point(278, 104);
+            this.labelEx2.Name = "labelEx2";
+            this.labelEx2.Size = new System.Drawing.Size(47, 13);
+            this.labelEx2.TabIndex = 2;
+            this.labelEx2.Text = "labelEx2";
+            // 
+            // labelEx1
+            // 
+            this.labelEx1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelEx1.AutoSize = true;
+            this.labelEx1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEx1.ForeColor = System.Drawing.Color.Blue;
+            this.labelEx1.Location = new System.Drawing.Point(275, 15);
+            this.labelEx1.Name = "labelEx1";
+            this.labelEx1.Size = new System.Drawing.Size(47, 13);
+            this.labelEx1.TabIndex = 1;
+            this.labelEx1.Text = "labelEx1";
+            // 
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
@@ -285,30 +309,7 @@
             this.treeView1.Size = new System.Drawing.Size(223, 153);
             this.treeView1.TabIndex = 8;
             // 
-            // labelEx1
-            // 
-            this.labelEx1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelEx1.AutoSize = true;
-            this.labelEx1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEx1.ForeColor = System.Drawing.Color.Blue;
-            this.labelEx1.Location = new System.Drawing.Point(275, 15);
-            this.labelEx1.Name = "labelEx1";
-            this.labelEx1.Size = new System.Drawing.Size(47, 13);
-            this.labelEx1.TabIndex = 1;
-            this.labelEx1.Text = "labelEx1";
-            // 
-            // labelEx2
-            // 
-            this.labelEx2.AutoSize = true;
-            this.labelEx2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEx2.ForeColor = System.Drawing.Color.Blue;
-            this.labelEx2.Location = new System.Drawing.Point(278, 104);
-            this.labelEx2.Name = "labelEx2";
-            this.labelEx2.Size = new System.Drawing.Size(47, 13);
-            this.labelEx2.TabIndex = 2;
-            this.labelEx2.Text = "labelEx2";
-            // 
-            // MSTestForm
+            // TreeViewer_WinformsHost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -319,7 +320,7 @@
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "MSTestForm";
+            this.Name = "TreeViewer_WinformsHost";
             this.Text = "MSTestForm";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

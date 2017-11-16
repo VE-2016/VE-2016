@@ -240,16 +240,23 @@ namespace WinExplorer.UI
             int h = 23;
             foreach (string c in rs)
             {
-                string name = Path.GetFileName(c);
-                OpenItemShort s = new OpenItemShort();
-                s.filename = c;
-                s.Location = new Point(0, h);
-                s.Width = pa.Width - 25;
-                s.Height = 47;
-                s.SetMainText(name + "\n" + c);
-                s.SetAsBold(name);
-                pa.Controls.Add(s);
-                h += 47;
+                try
+                {
+                    string name = Path.GetFileName(c);
+                    OpenItemShort s = new OpenItemShort();
+                    s.filename = c;
+                    s.Location = new Point(0, h);
+                    s.Width = pa.Width - 25;
+                    s.Height = 47;
+                    s.SetMainText(name + "\n" + c);
+                    s.SetAsBold(name);
+                    pa.Controls.Add(s);
+                    h += 47;
+                }
+                catch(Exception ex)
+                {
+
+                }
             }
          }
 

@@ -49,6 +49,7 @@ namespace WinExplorer
             InitializeComponent();
             ts = toolStrip1;
             lb = listView1;
+            
             tf = textBox1;
             tf.Enabled = false;
             toolStrip1.GripStyle = ToolStripGripStyle.Hidden;
@@ -81,6 +82,8 @@ namespace WinExplorer
 
             lb.SmallImageList = new ImageList();
 
+            lb.SmallImageList.ColorDepth = ColorDepth.Depth32Bit;
+
             lb.HeaderStyle = ColumnHeaderStyle.None;
         }
 
@@ -90,7 +93,7 @@ namespace WinExplorer
 
             foreach (string str in drives)
             {
-                System.Console.WriteLine(str);
+                //System.Console.WriteLine(str);
                 CreateButton(str);
             }
         }
@@ -197,14 +200,16 @@ namespace WinExplorer
                     DestroyIcon(shinfo.hIcon);        // Cleanup
 
                     //lb.SmallImageList.Images.Add(".dir", bmp);
-                    lb.SmallImageList.Images.Add(".dir", ve_resource.FolderOpen_16x);
+                    lb.SmallImageList.Images.Add(".dir", ve_resource.Folder_16x);
+                    //lb.SmallImageList.TransparentColor = Color.Magenta;
+                    
                 }
 
                 ListViewItem b = new ListViewItem();
                 b.Text = dir.Name;
                 b.ImageKey = ".dir";
                 b.Tag = dir;
-
+                
                 lb.Items.Add(b);
             }
             // then list the files
@@ -229,7 +234,8 @@ namespace WinExplorer
 
                         bc.Dispose();
                         DestroyIcon(shinfo.hIcon);
-
+                        lb.SmallImageList.TransparentColor = Color.Magenta;
+                        
                         lb.SmallImageList.Images.Add(file.Extension, bmp);
                     }
                     catch (Exception e)
@@ -241,7 +247,8 @@ namespace WinExplorer
                 b.Text = file.Name;
                 b.ImageKey = file.Extension;
                 b.Tag = file;
-
+                
+                
                 lb.Items.Add(b);
             }
 
@@ -249,6 +256,7 @@ namespace WinExplorer
 
             tf.Text = pwd;
         }
+    
 
         public void Refreshes()
         {

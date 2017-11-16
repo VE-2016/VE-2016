@@ -1,0 +1,14 @@
+C:\Users\pb\Downloads\libgit2sharp-vNext\libgit2sharp-vNext\LibGit2Sharp\bin\Debug\LibGit2Sharp.xml
+C:\Users\pb\Downloads\libgit2sharp-vNext\libgit2sharp-vNext\LibGit2Sharp\bin\Debug\LibGit2Sharp.dll
+C:\Users\pb\Downloads\libgit2sharp-vNext\libgit2sharp-vNext\LibGit2Sharp\bin\Debug\LibGit2Sharp.pdb
+C:\Users\pb\Downloads\libgit2sharp-vNext\libgit2sharp-vNext\LibGit2Sharp\obj\Debug\LibGit2Sharp.csprojResolveAssemblyReference.cache
+C:\Users\pb\Downloads\libgit2sharp-vNext\libgit2sharp-vNext\LibGit2Sharp\obj\Debug\LibGit2Sharp.csproj.CoreCompileInputs.cache
+C:\Users\pb\Downloads\libgit2sharp-vNext\libgit2sharp-vNext\LibGit2Sharp\obj\Debug\LibGit2Sharp.dll
+C:\Users\pb\Downloads\libgit2sharp-vNext\libgit2sharp-vNext\LibGit2Sharp\obj\Debug\LibGit2Sharp.pdb
+F:\ve\ve-2023\NET\LibGit2Sharp\obj\Debug\LibGit2Sharp.csprojResolveAssemblyReference.cache
+F:\ve\ve-2023\NET\LibGit2Sharp\obj\Debug\LibGit2Sharp.csproj.CoreCompileInputs.cache
+F:\ve\ve-2023\NET\LibGit2Sharp\obj\Debug\LibGit2Sharp.dll
+F:\ve\ve-2023\NET\LibGit2Sharp\obj\Debug\LibGit2Sharp.pdb
+F:\ve\ve-2023\NET\LibGit2Sharp\bin\Debug\LibGit2Sharp.xml
+F:\ve\ve-2023\NET\LibGit2Sharp\bin\Debug\LibGit2Sharp.dll
+F:\ve\ve-2023\NET\LibGit2Sharp\bin\Debug\LibGit2Sharp.pdb

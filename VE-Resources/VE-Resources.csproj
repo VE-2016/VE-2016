@@ -961,5 +961,59 @@
   <ItemGroup>
     <None Include="Resources\VisualStudioSolution_16x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_16x.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_16x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PreviewTab_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShowAllFiles_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FilterPending_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SolutionsAndFolders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Backward_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forward_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CategorizedView_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SortAscending_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Monitor_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_Up_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExpandChevronUp_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LockCyan_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_thin_10x_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusOK_16xSM.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

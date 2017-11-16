@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RoleTemplateData RoleProjectTargetFramework="4.0" RoleProjectMaxFramework="4.0" MinWindowsAzureToolsVersion="2.9" MaxWindowsAzureToolsVersion="2.9" RoleProjectGuid="01DB50B2-F3D7-4C8F-93C3-C5139BBD34AD">
+  <VsTemplate Name="WebApplicationProject40.zip" Language="VisualBasic" TargetFramework="4.0" />
+  <ProjectItems>
+    <ProjectItem>WebRole.vb</ProjectItem>
+  </ProjectItems>
+</RoleTemplateData>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <Name Package="{905FD3EB-1BAF-4257-ABEB-70F577F48512}" ID="302" />
+    <Description Package="{905FD3EB-1BAF-4257-ABEB-70F577F48512}" ID="303" />
+    <Icon Package="{905FD3EB-1BAF-4257-ABEB-70F577F48512}" ID="401" />
+    <TemplateID>Microsoft.MDD.Java.Source</TemplateID>
+    <ProjectType>AndroidPackaging</ProjectType>
+    <DefaultName>Source.java</DefaultName>
+    <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem TargetFileName="$fileinputname$.java" ReplaceParameters="true" OpenInEditor="true">Source.java</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

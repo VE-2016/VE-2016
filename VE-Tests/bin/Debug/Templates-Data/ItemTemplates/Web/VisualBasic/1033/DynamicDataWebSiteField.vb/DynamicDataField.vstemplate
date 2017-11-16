@@ -1,0 +1,38 @@
+﻿<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <DefaultName>DynamicDataField.ascx</DefaultName>
+    <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3375"/>
+    <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3376"/>
+    <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4735"/>
+    <TemplateID>Microsoft.Web.VisualBasic.DynamicDataWebSiteField</TemplateID>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>VisualBasic</ProjectSubType>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+    <SupportsCodeSeparation>true</SupportsCodeSeparation>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>System.Web</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>System.Web.Extensions</Assembly>
+      </Reference>
+    </References>
+    <Folder Name="\DynamicData" >
+      <Folder Name="FieldTemplates" >
+        <ProjectItem SubType="Code" TargetFileName="$fileinputname$.$fileinputextension$" ReplaceParameters="true">DynamicDataField.ascx</ProjectItem>
+        <ProjectItem SubType="Code" TargetFileName="$fileinputname$_Edit.$fileinputextension$" ReplaceParameters="true">DynamicDataField_Edit.ascx</ProjectItem>
+        <ProjectItem SubType="Code" TargetFileName="$fileinputname$.$fileinputextension$" ReplaceParameters="true">DynamicDataField_cb.ascx</ProjectItem>
+        <ProjectItem SubType="Code" TargetFileName="$fileinputname$.$fileinputextension$.vb" ReplaceParameters="true">CodeBeside.vb</ProjectItem>
+        <ProjectItem SubType="Code" TargetFileName="$fileinputname$_Edit.$fileinputextension$" ReplaceParameters="true">DynamicDataField_Edit_cb.ascx</ProjectItem>
+        <ProjectItem SubType="Code" TargetFileName="$fileinputname$_Edit.$fileinputextension$.vb" ReplaceParameters="true">CodeBeside_Edit.vb</ProjectItem>
+      </Folder>
+    </Folder>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VisualStudio.Web, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VisualStudio.Web.Wizard.VsWebDynamicDataFieldItemTemplateWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

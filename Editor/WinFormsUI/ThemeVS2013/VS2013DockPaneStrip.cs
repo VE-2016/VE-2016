@@ -892,6 +892,14 @@ namespace WeifenLuo.WinFormsUI.ThemeVS2013
             Rectangle rectTabOnly = TabsRectangle;
             Rectangle rectTab = Rectangle.Empty;
             TabVS2013 tabActive = null;
+            foreach(TabVS2013 tab in Tabs)
+            {
+                if(tab.Content.DockAlignment == DockAlign.DockToRight)
+                {
+                    tab.TabX = rectTabStrip.Right - tab.TabWidth - 30;
+                    rectTabStrip.Inflate(-tab.TabWidth - 30, 0);
+                }
+            }
             g.SetClip(DrawHelper.RtlTransform(this, rectTabOnly));
             for (int i = 0; i < count; i++)
             {
@@ -1308,7 +1316,7 @@ namespace WeifenLuo.WinFormsUI.ThemeVS2013
             foreach (TabVS2013 tab in Tabs)
             {
                 IDockContent content = tab.Content;
-                ToolStripItem item = SelectMenu.Items.Add(content.DockHandler.TabText, /*content.DockHandler.Icon.ToBitmap()*/content.DockHandler.GetBitmap(content.DockHandler.TabText));
+                ToolStripItem item = SelectMenu.Items.Add(content.DockHandler.TabText, /*content.DockHandler.Icon.ToBitmap()*/content.DockHandler.GetBitmap(content.DockHandler.TabText, content));
                 item.Tag = tab.Content;
                 item.Click += new EventHandler(ContextMenuItem_Click);
             }
@@ -1417,8 +1425,8 @@ namespace WeifenLuo.WinFormsUI.ThemeVS2013
 
         protected override int HitTest(Point point)
         {
-            if (!TabsRectangle.Contains(point))
-                return -1;
+            //if (!TabsRectangle.Contains(point))
+            //    return -1;
 
             foreach (Tab tab in Tabs)
             {

@@ -580,21 +580,25 @@ namespace WeifenLuo.WinFormsUI.Docking
         protected override void OnLayout(LayoutEventArgs e)
         {
             SetIsHidden(DisplayingContents.Count == 0);
+            
             if (!IsHidden)
             {
-                CaptionControl.Bounds = CaptionRectangle;
-                TabStripControl.Bounds = TabStripRectangle;
+                //this.BeginInvoke(new Action(() =>
+                //{
+                    CaptionControl.Bounds = CaptionRectangle;
+                    TabStripControl.Bounds = TabStripRectangle;
 
-                SetContentBounds();
+                    SetContentBounds();
 
-                foreach (IDockContent content in Contents)
-                {
-                    if (DisplayingContents.Contains(content))
-                        if (content.DockHandler.FlagClipWindow && content.DockHandler.Form.Visible)
-                            content.DockHandler.FlagClipWindow = false;
-                }
+                    foreach (IDockContent content in Contents)
+                    {
+                        if (DisplayingContents.Contains(content))
+                            if (content.DockHandler.FlagClipWindow && content.DockHandler.Form.Visible)
+                                content.DockHandler.FlagClipWindow = false;
+                    }
+                //}));
             }
-
+            
             base.OnLayout(e);
         }
 
@@ -608,6 +612,8 @@ namespace WeifenLuo.WinFormsUI.Docking
             foreach (IDockContent content in Contents)
                 if (content.DockHandler.Pane == this)
                 {
+                    if (rectContent.Height <= 0)
+                        continue;
                     if (content == ActiveContent)
                         content.DockHandler.Form.Bounds = rectContent;
                     else

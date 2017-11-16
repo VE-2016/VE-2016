@@ -453,7 +453,7 @@
               </DockPanel>
             </Border>
                         
-          </ControlTemplate>
+                    </ControlTemplate>
         </Setter.Value>
       </Setter>
     </Style>
@@ -522,7 +522,7 @@
             </StackPanel>
         </StackPanel>
         <ScrollViewer Name="scroll1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-            <l:TreeListView x:Name="treeListView" Background="AliceBlue" Margin="0,0,0,0" ItemsSource="{x:Static l:TreeViewer.Sources}" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalAlignment="Stretch">
+            <l:TreeListView x:Name="treeListView" Background="AliceBlue" Margin="0,0,0,0" ItemsSource="{x:Static l:TreeViewer.Sources}" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalAlignment="Stretch" VirtualizingStackPanel.IsVirtualizing="True">
                 <l:TreeListView.Columns>
                     <GridViewColumn Header="Code" CellTemplate="{StaticResource CellTemplate_Name}" />
                     <GridViewColumn Header="File" DisplayMemberBinding="{Binding File}" Width="60" />
@@ -531,7 +531,7 @@
                     <GridViewColumn Header="Project" DisplayMemberBinding="{Binding Project}" />
 
                 </l:TreeListView.Columns>
-
+               
                 <!--<l:TreeListView.ItemTemplate>
                 <HierarchicalDataTemplate  DataType="{x:Type l:Source}" ItemsSource="{Binding Path=Data}">
 

@@ -34,16 +34,11 @@ namespace AvalonEdit.Editor
         public CompletionControls(CompletionWindow completionWindow)
         {
             InitializeComponent();
-
             this.Effect = null;
-            
             this.completionWindow = completionWindow;
-
             completionWindow.Width = 350;
             this.Width = 350;
-
             AddStandards();
-
             LoadStacks();
         }
 
@@ -160,9 +155,6 @@ namespace AvalonEdit.Editor
             d.Search = "";
             d.obs = "Snippets";
             std.Add(d);
-
-
-
         }
 
         public class ConvertBitmapToBitmapImage
@@ -178,8 +170,10 @@ namespace AvalonEdit.Editor
                 ((System.Drawing.Bitmap)src).Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                 BitmapImage image = new BitmapImage();
                 image.BeginInit();
+                
                 ms.Seek(0, SeekOrigin.Begin);
                 image.StreamSource = ms;
+                image.DecodePixelWidth = 16;
                 image.EndInit();
                 return image;
             }
@@ -238,7 +232,7 @@ namespace AvalonEdit.Editor
             b.Stretch = Stretch.UniformToFill;
 
             b.HorizontalAlignment = HorizontalAlignment.Left;
-            b.Margin = new Thickness(2, 2, 2, 2);
+         //   b.Margin = new Thickness(2, 2, 2, 2);
             return b;
 
         }
@@ -263,26 +257,21 @@ namespace AvalonEdit.Editor
         static public System.Windows.Media.ImageSource GetImageSource(System.Drawing.Bitmap b)
         {
             return ConvertBitmapToBitmapImage.Convert(b);
-            
-
         }
         List<object> std = new List<object>();
 
         public void LoadStacks(List<object> register = null) 
         {
-
             if (register == null)
             {
                 System.Windows.Controls.Image b = GetImage();
                 //stacks.Children.Add(b);
                 b = GetImage();
-                
-                //stacks.Children.Add(b);
+                 //stacks.Children.Add(b);
             }
             else
             {
                 stacks.Children.Clear();
-                
                 foreach(var c in register)
                 {
 
@@ -335,12 +324,8 @@ namespace AvalonEdit.Editor
         }
         public void FilterByKind(object obs, bool add = true)
         {
-           
-
             ICSharpCode.AvalonEdit.CodeCompletion.CompletionListBox c = completionList.ListBox;
-
             var b = completionList.Master;
-            
             List<CsCompletionData> d = new List<CsCompletionData>();
             if (add)
             {
@@ -422,61 +407,38 @@ namespace AvalonEdit.Editor
         static public int GetHashCode(object obs)
         {
             int a = 0;
-
             int b = 0;
-
             int c = 0;
-
             int d = 0;
-
             if (obs is ISymbol)
             {
                 ISymbol ts = (ISymbol)obs;
-
                 a = (int)ts.Kind;
-
                 c = (int)ts.DeclaredAccessibility;
             }
-
-
             if (obs is ITypeSymbol)
             {
                 ITypeSymbol ts = (ITypeSymbol)obs;
-
-
-
                 b = (int)ts.TypeKind;
             }
-
             if(obs is string)
             {
                 string s = (string)obs;
                 d = s.GetHashCode();
             }
-
-            
             int? []e = { a, b, c, d };
-
             return computeHashCode(e);
-
-            
-
         }
 
         static int GetHashCode(int a, int b, int c, int d)
         {
-
             int?[] e = { a, b, c, d };
-
             return computeHashCode(e);
-
         }
 
         static public System.Windows.Media.ImageSource GetImageSource(object symbol, List<object> register = null)
         {
-
             System.Windows.Controls.Image s = null;
-
             int hc = GetHashCode(symbol);
             if (dict.ContainsKey(hc))
                 s = dict[hc];
@@ -485,116 +447,11 @@ namespace AvalonEdit.Editor
             if (register != null)
                 if (!register.Contains(hc))
                     register.Add(hc);
-
             return s.Source;
-
-
-          //  if (register != null) {
-
-          //      if(((ISymbol)symbol).Kind == SymbolKind.Local || ((ISymbol)symbol).Kind == SymbolKind.Parameter){
-          //          if (!register.Contains(SymbolKind.Local))
-          //              register.Add(SymbolKind.Local);
-          //      }
-          //      else
-
-          //      if (symbol is INamedTypeSymbol)
-          //      {
-          //          if (!register.Contains(((INamedTypeSymbol)symbol).TypeKind))
-          //              register.Add(((INamedTypeSymbol)symbol).TypeKind);
-          //      }
-          //      else
-          //      if (symbol is ISymbol)
-          //          if (!register.Contains(((ISymbol)symbol).Kind))
-          //              register.Add(((ISymbol)symbol).Kind);
-
-          //  }
-            
-          //  if (symbol is IMethodSymbol)
-          //  {
-                
-                   
-          //      IMethodSymbol t = symbol as IMethodSymbol;
-          //      if (t.IsSealed)
-          //      {
-
-          //      }
-          //      if (t.IsStatic)
-          //      {
-
-          //      }
-                
-          //      switch (t.DeclaredAccessibility)
-          //      {
-          //          case Microsoft.CodeAnalysis.Accessibility.Private:
-          //              s = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.MethodPrivate_16x);
-          //              return s;
-          //          case Microsoft.CodeAnalysis.Accessibility.Protected:
-          //              s = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.MethodProtect_16x);
-          //              return s;
-          //          default:
-          //              s = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.MethodFriend_16x);
-          //              return s;
-          //      }
-          //  }
-          //  if (symbol is INamedTypeSymbol)
-          //  {
-          //      INamedTypeSymbol t = symbol as INamedTypeSymbol;
-          //      switch (t.TypeKind)
-          //      {
-          //          case TypeKind.Class:
-          //              s = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Class_yellow_16x);
-          //              return s;
-          //          case TypeKind.Interface:
-          //              s = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Interface_blue_16x);
-          //              return s;
-          //          case TypeKind.Enum:
-          //              s = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Property_16x);
-          //              return s;
-          //          case TypeKind.Delegate:
-          //              s = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Delegate_16x);
-          //              return s;
-          //          case TypeKind.Struct:
-          //              s = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Structure_16x);
-          //              return s;
-          //          default:
-          //              s = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Property_16x);
-          //              return s;
-          //      }
-          //  }
-          //else 
-          //  switch (((ISymbol)symbol).Kind)
-          //  {
-          //      case SymbolKind.Namespace:
-          //          s = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Namespace_16x);
-          //          return s;
-          //      case SymbolKind.Method:
-          //          s = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Method_purple_16x);
-          //          return s;
-          //      case SymbolKind.Property:
-          //          s = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Property_16x);
-          //          return s;
-          //      case SymbolKind.Field:
-          //          s = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Field_blue_16x);
-          //          return s;
-          //      case SymbolKind.Event:
-          //          s = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Event_orange_16x);
-          //          return s;
-          //     case SymbolKind.Local:
-          //          s = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.LocalVariable_16x);
-          //          return s;
-          //     case SymbolKind.Parameter:
-          //          s = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.LocalVariable_16x);
-          //         return s;
-          //      }
-
-          //  s = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Class_yellow_256x);
-          //  return s;
-
         }
         static public System.Windows.Media.ImageSource GetImageSource(object symbol)
         {
             BitmapImage s = null;
-
             if (symbol is TypeKind)
             {
                 TypeKind t = (TypeKind)symbol;
@@ -621,10 +478,8 @@ namespace AvalonEdit.Editor
                 }
             }
             else if(symbol is SymbolKind)
-
-
                 switch (((SymbolKind)symbol))
-            {
+                {
                 case SymbolKind.Namespace:
                     s = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Namespace_16x);
                     return s;
@@ -646,19 +501,12 @@ namespace AvalonEdit.Editor
                     case SymbolKind.Parameter:
                         s = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.LocalVariable_16x);
                         return s;
-
                 }
-
             s = ConvertBitmapToBitmapImage.Convert(WinExplorers.ve.Class_yellow_256x);
             return s;
-
         }
-
         private class Accesibillity
         {
         }
     }
-
-    
-    
 }

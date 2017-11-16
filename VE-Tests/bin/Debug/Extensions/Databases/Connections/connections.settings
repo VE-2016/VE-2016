@@ -1,0 +1,4 @@
+SQL Server - Data Source=localhost;User Id=sa;Password=sa;Initial Catalog=AdventureworksDW2016CTP3;
+SQL Server - Data Source=localhost;User Id=sa;Password=sa;Initial Catalog=database;
+Oracle - Data Source=orcl;User Id=sys;Password=sys;DBA Privilege = sysdba;
+SQL Server - Data Source=localhost;User Id=sa;Password=sasa;Initial Catalog=master;

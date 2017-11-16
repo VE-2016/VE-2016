@@ -1,0 +1,2144 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item" Locale="1028">
+    <RelativePathOnDisk>JavaScript\1028\TextFile</RelativePathOnDisk>
+    <TemplateFileName>TextFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>文字檔</Name>
+        <Description>空的文字檔。</Description>
+        <Icon>TextFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.TextFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>textfile.txt</DefaultName>
+        <!-- "Text File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1029">
+    <RelativePathOnDisk>JavaScript\1029\TextFile</RelativePathOnDisk>
+    <TemplateFileName>TextFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Textový soubor</Name>
+        <Description>Prázdný textový soubor.</Description>
+        <Icon>TextFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.TextFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>textfile.txt</DefaultName>
+        <!-- "Text File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1031">
+    <RelativePathOnDisk>JavaScript\1031\TextFile</RelativePathOnDisk>
+    <TemplateFileName>TextFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Textdatei</Name>
+        <Description>Eine leere Textdatei.</Description>
+        <Icon>TextFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.TextFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>textfile.txt</DefaultName>
+        <!-- "Text File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>JavaScript\1033\TextFile</RelativePathOnDisk>
+    <TemplateFileName>TextFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name _locID="JSP_Item_TextFileName">Text File</Name>
+        <Description _locID="JSP_Item_TextFileDesc">An empty text file.</Description>
+        <Icon>TextFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.TextFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>textfile.txt</DefaultName>
+        <!-- "Text File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1036">
+    <RelativePathOnDisk>JavaScript\1036\TextFile</RelativePathOnDisk>
+    <TemplateFileName>TextFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Fichier texte</Name>
+        <Description>Fichier texte vide.</Description>
+        <Icon>TextFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.TextFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>textfile.txt</DefaultName>
+        <!-- "Text File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1040">
+    <RelativePathOnDisk>JavaScript\1040\TextFile</RelativePathOnDisk>
+    <TemplateFileName>TextFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>File di testo</Name>
+        <Description>File di testo vuoto.</Description>
+        <Icon>TextFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.TextFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>textfile.txt</DefaultName>
+        <!-- "Text File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1041">
+    <RelativePathOnDisk>JavaScript\1041\TextFile</RelativePathOnDisk>
+    <TemplateFileName>TextFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>テキスト ファイル</Name>
+        <Description>空のテキスト ファイルです。</Description>
+        <Icon>TextFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.TextFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>textfile.txt</DefaultName>
+        <!-- "Text File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1042">
+    <RelativePathOnDisk>JavaScript\1042\TextFile</RelativePathOnDisk>
+    <TemplateFileName>TextFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>텍스트 파일</Name>
+        <Description>비어 있는 텍스트 파일입니다.</Description>
+        <Icon>TextFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.TextFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>textfile.txt</DefaultName>
+        <!-- "Text File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1045">
+    <RelativePathOnDisk>JavaScript\1045\TextFile</RelativePathOnDisk>
+    <TemplateFileName>TextFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Plik tekstowy</Name>
+        <Description>Pusty plik tekstowy.</Description>
+        <Icon>TextFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.TextFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>textfile.txt</DefaultName>
+        <!-- "Text File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1046">
+    <RelativePathOnDisk>JavaScript\1046\TextFile</RelativePathOnDisk>
+    <TemplateFileName>TextFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Arquivo de Texto</Name>
+        <Description>Um arquivo de texto vazio.</Description>
+        <Icon>TextFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.TextFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>textfile.txt</DefaultName>
+        <!-- "Text File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1049">
+    <RelativePathOnDisk>JavaScript\1049\TextFile</RelativePathOnDisk>
+    <TemplateFileName>TextFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Текстовый файл</Name>
+        <Description>Пустой текстовый файл.</Description>
+        <Icon>TextFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.TextFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>textfile.txt</DefaultName>
+        <!-- "Text File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1055">
+    <RelativePathOnDisk>JavaScript\1055\TextFile</RelativePathOnDisk>
+    <TemplateFileName>TextFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Metin Dosyası</Name>
+        <Description>Boş bir metin dosyası.</Description>
+        <Icon>TextFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.TextFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>textfile.txt</DefaultName>
+        <!-- "Text File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="2052">
+    <RelativePathOnDisk>JavaScript\2052\TextFile</RelativePathOnDisk>
+    <TemplateFileName>TextFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>文本文件</Name>
+        <Description>空白文本文件。</Description>
+        <Icon>TextFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.TextFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>textfile.txt</DefaultName>
+        <!-- "Text File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="3082">
+    <RelativePathOnDisk>JavaScript\3082\TextFile</RelativePathOnDisk>
+    <TemplateFileName>TextFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Archivo de texto</Name>
+        <Description>Archivo de texto vacío.</Description>
+        <Icon>TextFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.TextFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <DefaultName>textfile.txt</DefaultName>
+        <!-- "Text File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1028">
+    <RelativePathOnDisk>JavaScript\Code\1028\DedicatedWorker</RelativePathOnDisk>
+    <TemplateFileName>DedicatedWorker.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>專用背景工作</Name>
+        <Description>用於平行執行指令碼至主應用程式的背景工作。如此可允許像是執行緒的作業內含做為協調機制的訊息傳遞功能。</Description>
+        <Icon>DedicatedWorker.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.DedicatedWorker</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>worker.js</DefaultName>
+        <!-- "Dedicated Worker" project item template is applicable to all JavaScript projects except the JavaScript/TypeScript Cordova File Monitoring Projects -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript + !FileSystemBasedCordovaProject</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1028">
+    <RelativePathOnDisk>JavaScript\Code\1028\HTMLPage</RelativePathOnDisk>
+    <TemplateFileName>HTMLPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>HTML 頁面</Name>
+        <Description>空的 HTML 網頁。</Description>
+        <Icon>HTMLPage.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.HTMLPage</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>page.html</DefaultName>
+        <!-- "HTML Page" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1028">
+    <RelativePathOnDisk>JavaScript\Code\1028\JScript</RelativePathOnDisk>
+    <TemplateFileName>JScript.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>JavaScript 檔</Name>
+        <Description>包含 JavaScript 程式碼的指令碼檔。</Description>
+        <Icon>JScript.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.JavaScript</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>script.js</DefaultName>
+        <!-- "JavaScript" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1028">
+    <RelativePathOnDisk>JavaScript\Code\1028\Stylesheet</RelativePathOnDisk>
+    <TemplateFileName>Stylesheet.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>樣式表</Name>
+        <Description>用來定義 Rich HTML 樣式的空白 CSS 文件。</Description>
+        <Icon>Stylesheet.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.StyleSheet</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>stylesheet.css</DefaultName>
+        <!-- "Style Sheet" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1028">
+    <RelativePathOnDisk>JavaScript\Code\1028\XSLTFile</RelativePathOnDisk>
+    <TemplateFileName>XSLTFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>XSLT 檔</Name>
+        <Description>用來轉換 XML 文件的樣式表。</Description>
+        <Icon>XSLTFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XSLTFile</TemplateID>
+        <ProjectType>JavaScript</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xsltfile.xslt</DefaultName>
+        <!-- "XSLT"File is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1029">
+    <RelativePathOnDisk>JavaScript\Code\1029\DedicatedWorker</RelativePathOnDisk>
+    <TemplateFileName>DedicatedWorker.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Vyhrazený pracovník</Name>
+        <Description>Pracovník na pozadí, který souběžně s hlavní aplikací spouští skripty. Ten umožní vláknu s předáváním zpráv podobné operace jako koordinační mechanismus.</Description>
+        <Icon>DedicatedWorker.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.DedicatedWorker</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>worker.js</DefaultName>
+        <!-- "Dedicated Worker" project item template is applicable to all JavaScript projects except the JavaScript/TypeScript Cordova File Monitoring Projects -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript + !FileSystemBasedCordovaProject</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1029">
+    <RelativePathOnDisk>JavaScript\Code\1029\HTMLPage</RelativePathOnDisk>
+    <TemplateFileName>HTMLPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Stránka HTML</Name>
+        <Description>Prázdná stránka HTML.</Description>
+        <Icon>HTMLPage.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.HTMLPage</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>page.html</DefaultName>
+        <!-- "HTML Page" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1029">
+    <RelativePathOnDisk>JavaScript\Code\1029\JScript</RelativePathOnDisk>
+    <TemplateFileName>JScript.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Soubor JavaScript</Name>
+        <Description>Soubor skriptu obsahující kód JavaScript.</Description>
+        <Icon>JScript.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.JavaScript</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>script.js</DefaultName>
+        <!-- "JavaScript" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1029">
+    <RelativePathOnDisk>JavaScript\Code\1029\Stylesheet</RelativePathOnDisk>
+    <TemplateFileName>Stylesheet.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Šablona stylů</Name>
+        <Description>Prázdný dokument šablony stylů CSS používaný k definování bohatých stylů jazyka HTML.</Description>
+        <Icon>Stylesheet.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.StyleSheet</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>stylesheet.css</DefaultName>
+        <!-- "Style Sheet" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1029">
+    <RelativePathOnDisk>JavaScript\Code\1029\XSLTFile</RelativePathOnDisk>
+    <TemplateFileName>XSLTFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Soubor XSLT</Name>
+        <Description>Šablona stylů používaná k transformaci dokumentů XML.</Description>
+        <Icon>XSLTFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XSLTFile</TemplateID>
+        <ProjectType>JavaScript</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xsltfile.xslt</DefaultName>
+        <!-- "XSLT"File is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1031">
+    <RelativePathOnDisk>JavaScript\Code\1031\DedicatedWorker</RelativePathOnDisk>
+    <TemplateFileName>DedicatedWorker.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Dezidierter Worker</Name>
+        <Description>Ein Hintergrundworker, um Skripts parallel zur Hauptanwendung auszuführen. Dadurch werden threadähnliche Vorgänge mit Meldungsübergabe als Koordinationsmechanismus möglich.</Description>
+        <Icon>DedicatedWorker.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.DedicatedWorker</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>worker.js</DefaultName>
+        <!-- "Dedicated Worker" project item template is applicable to all JavaScript projects except the JavaScript/TypeScript Cordova File Monitoring Projects -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript + !FileSystemBasedCordovaProject</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1031">
+    <RelativePathOnDisk>JavaScript\Code\1031\HTMLPage</RelativePathOnDisk>
+    <TemplateFileName>HTMLPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>HTML-Seite</Name>
+        <Description>Eine leere HTML-Seite</Description>
+        <Icon>HTMLPage.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.HTMLPage</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>page.html</DefaultName>
+        <!-- "HTML Page" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1031">
+    <RelativePathOnDisk>JavaScript\Code\1031\JScript</RelativePathOnDisk>
+    <TemplateFileName>JScript.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>JavaScript-Datei</Name>
+        <Description>Eine Skriptdatei, die JavaScript-Code enthält.</Description>
+        <Icon>JScript.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.JavaScript</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>script.js</DefaultName>
+        <!-- "JavaScript" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1031">
+    <RelativePathOnDisk>JavaScript\Code\1031\Stylesheet</RelativePathOnDisk>
+    <TemplateFileName>Stylesheet.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Stylesheet</Name>
+        <Description>Leeres CSS-Dokument zur Definition von HTML-Formaten.</Description>
+        <Icon>Stylesheet.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.StyleSheet</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>stylesheet.css</DefaultName>
+        <!-- "Style Sheet" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1031">
+    <RelativePathOnDisk>JavaScript\Code\1031\XSLTFile</RelativePathOnDisk>
+    <TemplateFileName>XSLTFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>XSLT-Datei</Name>
+        <Description>Ein Stylesheet zur Umwandlung von XML-Dokumenten.</Description>
+        <Icon>XSLTFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XSLTFile</TemplateID>
+        <ProjectType>JavaScript</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xsltfile.xslt</DefaultName>
+        <!-- "XSLT"File is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>JavaScript\Code\1033\DedicatedWorker</RelativePathOnDisk>
+    <TemplateFileName>DedicatedWorker.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name _locID="JSP_Item_DedicatedWorkerName">Dedicated Worker</Name>
+        <Description _locID="JSP_Item_DedicatedWorkerDesc">A background worker for running scripts in parallel to the main application. This allows for thread-like operation with message-passing as the coordination mechanism.</Description>
+        <Icon>DedicatedWorker.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.DedicatedWorker</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>worker.js</DefaultName>
+        <!-- "Dedicated Worker" project item template is applicable to all JavaScript projects except the JavaScript/TypeScript Cordova File Monitoring Projects -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript + !FileSystemBasedCordovaProject</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>JavaScript\Code\1033\HTMLPage</RelativePathOnDisk>
+    <TemplateFileName>HTMLPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name _locID="JSP_Item_HTMLName">HTML Page</Name>
+        <Description _locID="JSP_Item_HTMLDesc">An empty HTML page.</Description>
+        <Icon>HTMLPage.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.HTMLPage</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>page.html</DefaultName>
+        <!-- "HTML Page" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>JavaScript\Code\1033\JScript</RelativePathOnDisk>
+    <TemplateFileName>JScript.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name _locID="JSP_Item_JScriptName">JavaScript File</Name>
+        <Description _locID="JSP_Item_JScriptDesc">A script file containing JavaScript code.</Description>
+        <Icon>JScript.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.JavaScript</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>script.js</DefaultName>
+        <!-- "JavaScript" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>JavaScript\Code\1033\Stylesheet</RelativePathOnDisk>
+    <TemplateFileName>Stylesheet.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name _locID="JSP_Item_CSSName">Style Sheet</Name>
+        <Description _locID="JSP_Item_CSSDesc">A blank CSS document used to define rich HTML styles.</Description>
+        <Icon>Stylesheet.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.StyleSheet</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>stylesheet.css</DefaultName>
+        <!-- "Style Sheet" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>JavaScript\Code\1033\XSLTFile</RelativePathOnDisk>
+    <TemplateFileName>XSLTFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name _locID="JSP_Item_XSLTFileName">XSLT File</Name>
+        <Description _locID="JSP_Item_XSLTFileDesc">A stylesheet used to transform XML documents.</Description>
+        <Icon>XSLTFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XSLTFile</TemplateID>
+        <ProjectType>JavaScript</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xsltfile.xslt</DefaultName>
+        <!-- "XSLT"File is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1036">
+    <RelativePathOnDisk>JavaScript\Code\1036\DedicatedWorker</RelativePathOnDisk>
+    <TemplateFileName>DedicatedWorker.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Processus de travail dédié</Name>
+        <Description>Processus de travail d'arrière-plan pour une exécution de scripts en parallèle à l'application principale. Cela autorise une opération comparable à un thread avec transmission de message comme mécanisme de coordination.</Description>
+        <Icon>DedicatedWorker.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.DedicatedWorker</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>worker.js</DefaultName>
+        <!-- "Dedicated Worker" project item template is applicable to all JavaScript projects except the JavaScript/TypeScript Cordova File Monitoring Projects -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript + !FileSystemBasedCordovaProject</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1036">
+    <RelativePathOnDisk>JavaScript\Code\1036\HTMLPage</RelativePathOnDisk>
+    <TemplateFileName>HTMLPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Page HTML</Name>
+        <Description>Page HTML vide.</Description>
+        <Icon>HTMLPage.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.HTMLPage</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>page.html</DefaultName>
+        <!-- "HTML Page" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1036">
+    <RelativePathOnDisk>JavaScript\Code\1036\JScript</RelativePathOnDisk>
+    <TemplateFileName>JScript.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Fichier JavaScript</Name>
+        <Description>Fichier contenant du code JavaScript</Description>
+        <Icon>JScript.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.JavaScript</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>script.js</DefaultName>
+        <!-- "JavaScript" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1036">
+    <RelativePathOnDisk>JavaScript\Code\1036\Stylesheet</RelativePathOnDisk>
+    <TemplateFileName>Stylesheet.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Feuille de style</Name>
+        <Description>Document CSS vide utilisé pour définir les styles HTML enrichis.</Description>
+        <Icon>Stylesheet.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.StyleSheet</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>stylesheet.css</DefaultName>
+        <!-- "Style Sheet" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1036">
+    <RelativePathOnDisk>JavaScript\Code\1036\XSLTFile</RelativePathOnDisk>
+    <TemplateFileName>XSLTFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Fichier XSLT</Name>
+        <Description>Feuille de style utilisée pour transformer les documents XML.</Description>
+        <Icon>XSLTFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XSLTFile</TemplateID>
+        <ProjectType>JavaScript</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xsltfile.xslt</DefaultName>
+        <!-- "XSLT"File is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1040">
+    <RelativePathOnDisk>JavaScript\Code\1040\DedicatedWorker</RelativePathOnDisk>
+    <TemplateFileName>DedicatedWorker.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Processo di lavoro dedicato</Name>
+        <Description>Processo di lavoro in background per l'esecuzione di script in parallelo all'applicazione principale. Consente l'operazione di tipo thread con il passaggio di messaggi come meccanismo di coordinazione.</Description>
+        <Icon>DedicatedWorker.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.DedicatedWorker</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>worker.js</DefaultName>
+        <!-- "Dedicated Worker" project item template is applicable to all JavaScript projects except the JavaScript/TypeScript Cordova File Monitoring Projects -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript + !FileSystemBasedCordovaProject</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1040">
+    <RelativePathOnDisk>JavaScript\Code\1040\HTMLPage</RelativePathOnDisk>
+    <TemplateFileName>HTMLPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Pagina HTML</Name>
+        <Description>Pagina HTML vuota.</Description>
+        <Icon>HTMLPage.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.HTMLPage</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>page.html</DefaultName>
+        <!-- "HTML Page" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1040">
+    <RelativePathOnDisk>JavaScript\Code\1040\JScript</RelativePathOnDisk>
+    <TemplateFileName>JScript.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>File JavaScript</Name>
+        <Description>File di script contenente codice JavaScript.</Description>
+        <Icon>JScript.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.JavaScript</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>script.js</DefaultName>
+        <!-- "JavaScript" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1040">
+    <RelativePathOnDisk>JavaScript\Code\1040\Stylesheet</RelativePathOnDisk>
+    <TemplateFileName>Stylesheet.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Foglio di stile</Name>
+        <Description>Documento CSS vuoto utilizzato per la definizione di stili HTML.</Description>
+        <Icon>Stylesheet.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.StyleSheet</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>stylesheet.css</DefaultName>
+        <!-- "Style Sheet" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1040">
+    <RelativePathOnDisk>JavaScript\Code\1040\XSLTFile</RelativePathOnDisk>
+    <TemplateFileName>XSLTFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>File XSLT</Name>
+        <Description>Foglio di stile utilizzato per la trasformazione di documenti XML.</Description>
+        <Icon>XSLTFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XSLTFile</TemplateID>
+        <ProjectType>JavaScript</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xsltfile.xslt</DefaultName>
+        <!-- "XSLT"File is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1041">
+    <RelativePathOnDisk>JavaScript\Code\1041\DedicatedWorker</RelativePathOnDisk>
+    <TemplateFileName>DedicatedWorker.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>専用のワーカー</Name>
+        <Description>メイン アプリケーションと並行してスクリプトを実行するためのバックグラウンド ワーカーです。これにより、調整メカニズムとしてメッセージを渡す、スレッドに似た動作が可能になります。</Description>
+        <Icon>DedicatedWorker.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.DedicatedWorker</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>worker.js</DefaultName>
+        <!-- "Dedicated Worker" project item template is applicable to all JavaScript projects except the JavaScript/TypeScript Cordova File Monitoring Projects -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript + !FileSystemBasedCordovaProject</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1041">
+    <RelativePathOnDisk>JavaScript\Code\1041\HTMLPage</RelativePathOnDisk>
+    <TemplateFileName>HTMLPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>HTML ページ</Name>
+        <Description>空の HTML ページです。</Description>
+        <Icon>HTMLPage.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.HTMLPage</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>page.html</DefaultName>
+        <!-- "HTML Page" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1041">
+    <RelativePathOnDisk>JavaScript\Code\1041\JScript</RelativePathOnDisk>
+    <TemplateFileName>JScript.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>JavaScript ファイル</Name>
+        <Description>JavaScript コードが格納されたスクリプト ファイルです。</Description>
+        <Icon>JScript.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.JavaScript</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>script.js</DefaultName>
+        <!-- "JavaScript" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1041">
+    <RelativePathOnDisk>JavaScript\Code\1041\Stylesheet</RelativePathOnDisk>
+    <TemplateFileName>Stylesheet.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>スタイル シート</Name>
+        <Description>リッチ HTML スタイルの定義に使用される空白の CSS ドキュメントです。</Description>
+        <Icon>Stylesheet.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.StyleSheet</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>stylesheet.css</DefaultName>
+        <!-- "Style Sheet" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1041">
+    <RelativePathOnDisk>JavaScript\Code\1041\XSLTFile</RelativePathOnDisk>
+    <TemplateFileName>XSLTFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>XSLT ファイル</Name>
+        <Description>XML ドキュメントの変換に使用されるスタイル シートです。</Description>
+        <Icon>XSLTFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XSLTFile</TemplateID>
+        <ProjectType>JavaScript</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xsltfile.xslt</DefaultName>
+        <!-- "XSLT"File is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1042">
+    <RelativePathOnDisk>JavaScript\Code\1042\DedicatedWorker</RelativePathOnDisk>
+    <TemplateFileName>DedicatedWorker.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>전용 작업자</Name>
+        <Description>주 응용 프로그램과 병렬로 스크립트를 실행하기 위한 백그라운드 작업자입니다. 이렇게 하면 메시지 전달을 통한 스레드 방식 작업을 조정 메커니즘으로 사용할 수 있습니다.</Description>
+        <Icon>DedicatedWorker.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.DedicatedWorker</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>worker.js</DefaultName>
+        <!-- "Dedicated Worker" project item template is applicable to all JavaScript projects except the JavaScript/TypeScript Cordova File Monitoring Projects -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript + !FileSystemBasedCordovaProject</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1042">
+    <RelativePathOnDisk>JavaScript\Code\1042\HTMLPage</RelativePathOnDisk>
+    <TemplateFileName>HTMLPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>HTML 페이지</Name>
+        <Description>빈 HTML 페이지입니다.</Description>
+        <Icon>HTMLPage.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.HTMLPage</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>page.html</DefaultName>
+        <!-- "HTML Page" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1042">
+    <RelativePathOnDisk>JavaScript\Code\1042\JScript</RelativePathOnDisk>
+    <TemplateFileName>JScript.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>JavaScript 파일</Name>
+        <Description>JavaScript 코드가 포함된 스크립트 파일입니다.</Description>
+        <Icon>JScript.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.JavaScript</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>script.js</DefaultName>
+        <!-- "JavaScript" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1042">
+    <RelativePathOnDisk>JavaScript\Code\1042\Stylesheet</RelativePathOnDisk>
+    <TemplateFileName>Stylesheet.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>스타일시트</Name>
+        <Description>서식 있는 HTML 스타일을 정의하는 데 사용되는 빈 CSS 문서입니다.</Description>
+        <Icon>Stylesheet.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.StyleSheet</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>stylesheet.css</DefaultName>
+        <!-- "Style Sheet" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1042">
+    <RelativePathOnDisk>JavaScript\Code\1042\XSLTFile</RelativePathOnDisk>
+    <TemplateFileName>XSLTFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>XSLT 파일</Name>
+        <Description>XML 문서를 변환하는 데 사용되는 스타일시트입니다.</Description>
+        <Icon>XSLTFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XSLTFile</TemplateID>
+        <ProjectType>JavaScript</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xsltfile.xslt</DefaultName>
+        <!-- "XSLT"File is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1045">
+    <RelativePathOnDisk>JavaScript\Code\1045\DedicatedWorker</RelativePathOnDisk>
+    <TemplateFileName>DedicatedWorker.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Dedykowany pracownik</Name>
+        <Description>Działający w tle proces roboczy, który służy do uruchamiania skryptów równolegle do głównej aplikacji. Umożliwia to działanie przypominające działanie wątków, przy czym mechanizmem koordynacji jest mechanizm przekazywania komunikatów.</Description>
+        <Icon>DedicatedWorker.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.DedicatedWorker</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>worker.js</DefaultName>
+        <!-- "Dedicated Worker" project item template is applicable to all JavaScript projects except the JavaScript/TypeScript Cordova File Monitoring Projects -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript + !FileSystemBasedCordovaProject</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1045">
+    <RelativePathOnDisk>JavaScript\Code\1045\HTMLPage</RelativePathOnDisk>
+    <TemplateFileName>HTMLPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Strona HTML</Name>
+        <Description>Pusta strona HTML.</Description>
+        <Icon>HTMLPage.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.HTMLPage</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>page.html</DefaultName>
+        <!-- "HTML Page" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1045">
+    <RelativePathOnDisk>JavaScript\Code\1045\JScript</RelativePathOnDisk>
+    <TemplateFileName>JScript.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Plik JavaScript</Name>
+        <Description>Plik skryptu zawierający kod JavaScript.</Description>
+        <Icon>JScript.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.JavaScript</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>script.js</DefaultName>
+        <!-- "JavaScript" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1045">
+    <RelativePathOnDisk>JavaScript\Code\1045\Stylesheet</RelativePathOnDisk>
+    <TemplateFileName>Stylesheet.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Arkusz stylów</Name>
+        <Description>Pusty dokument CSS używany do definiowania stylów sformatowanego HTML.</Description>
+        <Icon>Stylesheet.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.StyleSheet</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>stylesheet.css</DefaultName>
+        <!-- "Style Sheet" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1045">
+    <RelativePathOnDisk>JavaScript\Code\1045\XSLTFile</RelativePathOnDisk>
+    <TemplateFileName>XSLTFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Plik XSLT</Name>
+        <Description>Arkusz stylów używany do transformacji dokumentów XML</Description>
+        <Icon>XSLTFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XSLTFile</TemplateID>
+        <ProjectType>JavaScript</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xsltfile.xslt</DefaultName>
+        <!-- "XSLT"File is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1046">
+    <RelativePathOnDisk>JavaScript\Code\1046\DedicatedWorker</RelativePathOnDisk>
+    <TemplateFileName>DedicatedWorker.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Atividade dedicada</Name>
+        <Description>Um trabalhor em segundo plano para a execução de scripts em paralelo ao aplicativo principal. Isso permite operações semelhantes a thread, com transmissão de mensagens como seu mecanismo de coordenação.</Description>
+        <Icon>DedicatedWorker.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.DedicatedWorker</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>worker.js</DefaultName>
+        <!-- "Dedicated Worker" project item template is applicable to all JavaScript projects except the JavaScript/TypeScript Cordova File Monitoring Projects -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript + !FileSystemBasedCordovaProject</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1046">
+    <RelativePathOnDisk>JavaScript\Code\1046\HTMLPage</RelativePathOnDisk>
+    <TemplateFileName>HTMLPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Página HTML</Name>
+        <Description>Uma página HTML vazia.</Description>
+        <Icon>HTMLPage.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.HTMLPage</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>page.html</DefaultName>
+        <!-- "HTML Page" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1046">
+    <RelativePathOnDisk>JavaScript\Code\1046\JScript</RelativePathOnDisk>
+    <TemplateFileName>JScript.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Arquivo JavaScript</Name>
+        <Description>Um arquivo de script com código JavaScript.</Description>
+        <Icon>JScript.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.JavaScript</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>script.js</DefaultName>
+        <!-- "JavaScript" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1046">
+    <RelativePathOnDisk>JavaScript\Code\1046\Stylesheet</RelativePathOnDisk>
+    <TemplateFileName>Stylesheet.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Folha de Estilos</Name>
+        <Description>Um documento CSS em branco usado para definir estilos HTML avançados.</Description>
+        <Icon>Stylesheet.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.StyleSheet</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>stylesheet.css</DefaultName>
+        <!-- "Style Sheet" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1046">
+    <RelativePathOnDisk>JavaScript\Code\1046\XSLTFile</RelativePathOnDisk>
+    <TemplateFileName>XSLTFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Arquivo XSLT</Name>
+        <Description>Uma folha de estilos usada para transformar documentos XML.</Description>
+        <Icon>XSLTFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XSLTFile</TemplateID>
+        <ProjectType>JavaScript</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xsltfile.xslt</DefaultName>
+        <!-- "XSLT"File is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1049">
+    <RelativePathOnDisk>JavaScript\Code\1049\DedicatedWorker</RelativePathOnDisk>
+    <TemplateFileName>DedicatedWorker.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Выделенный рабочий процесс</Name>
+        <Description>Фоновый рабочий процесс для выполнения скриптов параллельно с основным приложением. Это позволяет реализовать механизм координации, напоминающий потоки и использующий передачу сообщений.</Description>
+        <Icon>DedicatedWorker.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.DedicatedWorker</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>worker.js</DefaultName>
+        <!-- "Dedicated Worker" project item template is applicable to all JavaScript projects except the JavaScript/TypeScript Cordova File Monitoring Projects -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript + !FileSystemBasedCordovaProject</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1049">
+    <RelativePathOnDisk>JavaScript\Code\1049\HTMLPage</RelativePathOnDisk>
+    <TemplateFileName>HTMLPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>HTML-страница</Name>
+        <Description>Пустая HTML-страница.</Description>
+        <Icon>HTMLPage.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.HTMLPage</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>page.html</DefaultName>
+        <!-- "HTML Page" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1049">
+    <RelativePathOnDisk>JavaScript\Code\1049\JScript</RelativePathOnDisk>
+    <TemplateFileName>JScript.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Файл JavaScript</Name>
+        <Description>Файл скрипта, содержащий код JavaScript.</Description>
+        <Icon>JScript.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.JavaScript</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>script.js</DefaultName>
+        <!-- "JavaScript" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1049">
+    <RelativePathOnDisk>JavaScript\Code\1049\Stylesheet</RelativePathOnDisk>
+    <TemplateFileName>Stylesheet.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Таблица стилей</Name>
+        <Description>Пустой CSS-документ для определения расширенных стилей HTML.</Description>
+        <Icon>Stylesheet.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.StyleSheet</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>stylesheet.css</DefaultName>
+        <!-- "Style Sheet" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1049">
+    <RelativePathOnDisk>JavaScript\Code\1049\XSLTFile</RelativePathOnDisk>
+    <TemplateFileName>XSLTFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>XSLT-файл</Name>
+        <Description>Таблица стилей для преобразования XML-документов.</Description>
+        <Icon>XSLTFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XSLTFile</TemplateID>
+        <ProjectType>JavaScript</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xsltfile.xslt</DefaultName>
+        <!-- "XSLT"File is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1055">
+    <RelativePathOnDisk>JavaScript\Code\1055\DedicatedWorker</RelativePathOnDisk>
+    <TemplateFileName>DedicatedWorker.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Adanmış Çalışan</Name>
+        <Description>Ana uygulamaya paralel olarak çalışan komut dosyaları için arka plandaki bir çalışan. Bu iş parçacığı benzeri işlemi eşgüdüm mekanizması olarak ileti geçirmesine olanak sağlar.</Description>
+        <Icon>DedicatedWorker.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.DedicatedWorker</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>worker.js</DefaultName>
+        <!-- "Dedicated Worker" project item template is applicable to all JavaScript projects except the JavaScript/TypeScript Cordova File Monitoring Projects -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript + !FileSystemBasedCordovaProject</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1055">
+    <RelativePathOnDisk>JavaScript\Code\1055\HTMLPage</RelativePathOnDisk>
+    <TemplateFileName>HTMLPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>HTML Sayfası</Name>
+        <Description>Boş HTML sayfası.</Description>
+        <Icon>HTMLPage.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.HTMLPage</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>page.html</DefaultName>
+        <!-- "HTML Page" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1055">
+    <RelativePathOnDisk>JavaScript\Code\1055\JScript</RelativePathOnDisk>
+    <TemplateFileName>JScript.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>JavaScript Dosyası</Name>
+        <Description>JavaScript kodu içeren bir komut dosyası.</Description>
+        <Icon>JScript.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.JavaScript</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>script.js</DefaultName>
+        <!-- "JavaScript" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1055">
+    <RelativePathOnDisk>JavaScript\Code\1055\Stylesheet</RelativePathOnDisk>
+    <TemplateFileName>Stylesheet.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Stil Sayfası</Name>
+        <Description>Zengin HTML stillerini tanımlamak için kullanılmış boş bir CSS belgesi.</Description>
+        <Icon>Stylesheet.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.StyleSheet</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>stylesheet.css</DefaultName>
+        <!-- "Style Sheet" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1055">
+    <RelativePathOnDisk>JavaScript\Code\1055\XSLTFile</RelativePathOnDisk>
+    <TemplateFileName>XSLTFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>XSLT Dosyası</Name>
+        <Description>XML belgelerini dönüştürmek için stil sayfası.</Description>
+        <Icon>XSLTFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XSLTFile</TemplateID>
+        <ProjectType>JavaScript</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xsltfile.xslt</DefaultName>
+        <!-- "XSLT"File is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="2052">
+    <RelativePathOnDisk>JavaScript\Code\2052\DedicatedWorker</RelativePathOnDisk>
+    <TemplateFileName>DedicatedWorker.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>专用辅助线程</Name>
+        <Description>用于对主应用程序并行运行脚本的后台辅助线程。这将允许执行将消息传递作为协调机制的类线程操作。</Description>
+        <Icon>DedicatedWorker.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.DedicatedWorker</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>worker.js</DefaultName>
+        <!-- "Dedicated Worker" project item template is applicable to all JavaScript projects except the JavaScript/TypeScript Cordova File Monitoring Projects -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript + !FileSystemBasedCordovaProject</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="2052">
+    <RelativePathOnDisk>JavaScript\Code\2052\HTMLPage</RelativePathOnDisk>
+    <TemplateFileName>HTMLPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>HTML 页</Name>
+        <Description>空 HTML 页。</Description>
+        <Icon>HTMLPage.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.HTMLPage</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>page.html</DefaultName>
+        <!-- "HTML Page" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="2052">
+    <RelativePathOnDisk>JavaScript\Code\2052\JScript</RelativePathOnDisk>
+    <TemplateFileName>JScript.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>JavaScript 文件</Name>
+        <Description>包含 JavaScript 代码的脚本文件。</Description>
+        <Icon>JScript.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.JavaScript</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>script.js</DefaultName>
+        <!-- "JavaScript" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="2052">
+    <RelativePathOnDisk>JavaScript\Code\2052\Stylesheet</RelativePathOnDisk>
+    <TemplateFileName>Stylesheet.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>样式表</Name>
+        <Description>用于定义丰富 HTML 样式的空白 CSS 文档。</Description>
+        <Icon>Stylesheet.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.StyleSheet</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>stylesheet.css</DefaultName>
+        <!-- "Style Sheet" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="2052">
+    <RelativePathOnDisk>JavaScript\Code\2052\XSLTFile</RelativePathOnDisk>
+    <TemplateFileName>XSLTFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>XSLT 文件</Name>
+        <Description>用于转换 XML 文档的样式表。</Description>
+        <Icon>XSLTFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XSLTFile</TemplateID>
+        <ProjectType>JavaScript</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xsltfile.xslt</DefaultName>
+        <!-- "XSLT"File is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="3082">
+    <RelativePathOnDisk>JavaScript\Code\3082\DedicatedWorker</RelativePathOnDisk>
+    <TemplateFileName>DedicatedWorker.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Proceso de trabajo dedicado</Name>
+        <Description>Proceso de trabajo en segundo plano para ejecutar scripts en paralelo a la aplicación principal. Esto permite usar una operación de tipo subproceso con especificación de mensajes como mecanismo de coordinación.</Description>
+        <Icon>DedicatedWorker.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.DedicatedWorker</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>worker.js</DefaultName>
+        <!-- "Dedicated Worker" project item template is applicable to all JavaScript projects except the JavaScript/TypeScript Cordova File Monitoring Projects -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript + !FileSystemBasedCordovaProject</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="3082">
+    <RelativePathOnDisk>JavaScript\Code\3082\HTMLPage</RelativePathOnDisk>
+    <TemplateFileName>HTMLPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Página HTML</Name>
+        <Description>Página HTML vacía.</Description>
+        <Icon>HTMLPage.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.HTMLPage</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>page.html</DefaultName>
+        <!-- "HTML Page" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="3082">
+    <RelativePathOnDisk>JavaScript\Code\3082\JScript</RelativePathOnDisk>
+    <TemplateFileName>JScript.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Archivo JavaScript</Name>
+        <Description>Archivo de script que contiene código JavaScript.</Description>
+        <Icon>JScript.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.JavaScript</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>script.js</DefaultName>
+        <!-- "JavaScript" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="3082">
+    <RelativePathOnDisk>JavaScript\Code\3082\Stylesheet</RelativePathOnDisk>
+    <TemplateFileName>Stylesheet.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Hoja de estilos</Name>
+        <Description>Documento CSS en blanco usado para definir estilos HTML enriquecidos.</Description>
+        <Icon>Stylesheet.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.StyleSheet</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>stylesheet.css</DefaultName>
+        <!-- "Style Sheet" file is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="3082">
+    <RelativePathOnDisk>JavaScript\Code\3082\XSLTFile</RelativePathOnDisk>
+    <TemplateFileName>XSLTFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Archivo XSLT</Name>
+        <Description>Hoja de estilos usada para transformar documentos XML.</Description>
+        <Icon>XSLTFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XSLTFile</TemplateID>
+        <ProjectType>JavaScript</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xsltfile.xslt</DefaultName>
+        <!-- "XSLT"File is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1028">
+    <RelativePathOnDisk>JavaScript\Data\1028\XMLFile</RelativePathOnDisk>
+    <TemplateFileName>XMLFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>XML 檔</Name>
+        <Description>空的 XML 檔。</Description>
+        <Icon>XMLFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xmlfile.xml</DefaultName>
+        <!-- "XML File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1028">
+    <RelativePathOnDisk>JavaScript\Data\1028\XMLSchema</RelativePathOnDisk>
+    <TemplateFileName>XMLSchema.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>XML 結構描述</Name>
+        <Description>用來描述 XML 文件的結構描述。</Description>
+        <Icon>XMLSchema.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLSchema</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>schema.xsd</DefaultName>
+        <!-- "XML Schema" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1029">
+    <RelativePathOnDisk>JavaScript\Data\1029\XMLFile</RelativePathOnDisk>
+    <TemplateFileName>XMLFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Soubor XML</Name>
+        <Description>Prázdný soubor XML.</Description>
+        <Icon>XMLFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xmlfile.xml</DefaultName>
+        <!-- "XML File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1029">
+    <RelativePathOnDisk>JavaScript\Data\1029\XMLSchema</RelativePathOnDisk>
+    <TemplateFileName>XMLSchema.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Schéma XML</Name>
+        <Description>Schéma používané k popisu XML dokumentů.</Description>
+        <Icon>XMLSchema.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLSchema</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>schema.xsd</DefaultName>
+        <!-- "XML Schema" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1031">
+    <RelativePathOnDisk>JavaScript\Data\1031\XMLFile</RelativePathOnDisk>
+    <TemplateFileName>XMLFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>XML-Datei</Name>
+        <Description>Leere XML-Datei.</Description>
+        <Icon>XMLFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xmlfile.xml</DefaultName>
+        <!-- "XML File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1031">
+    <RelativePathOnDisk>JavaScript\Data\1031\XMLSchema</RelativePathOnDisk>
+    <TemplateFileName>XMLSchema.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>XML-Schema</Name>
+        <Description>Ein Schema zur Beschreibung von XML-Dokumenten.</Description>
+        <Icon>XMLSchema.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLSchema</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>schema.xsd</DefaultName>
+        <!-- "XML Schema" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>JavaScript\Data\1033\XMLFile</RelativePathOnDisk>
+    <TemplateFileName>XMLFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name _locID="JSP_Item_XMLFileName">XML File</Name>
+        <Description _locID="JSP_Item_XMLFileDesc">A blank XML file.</Description>
+        <Icon>XMLFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xmlfile.xml</DefaultName>
+        <!-- "XML File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>JavaScript\Data\1033\XMLSchema</RelativePathOnDisk>
+    <TemplateFileName>XMLSchema.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name _locID="JSP_Item_XMLSchemaName">XML Schema</Name>
+        <Description _locID="JSP_Item_XMLSchemaDesc">A schema used to describe XML documents.</Description>
+        <Icon>XMLSchema.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLSchema</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>schema.xsd</DefaultName>
+        <!-- "XML Schema" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1036">
+    <RelativePathOnDisk>JavaScript\Data\1036\XMLFile</RelativePathOnDisk>
+    <TemplateFileName>XMLFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Fichier XML</Name>
+        <Description>Fichier XML vide.</Description>
+        <Icon>XMLFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xmlfile.xml</DefaultName>
+        <!-- "XML File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1036">
+    <RelativePathOnDisk>JavaScript\Data\1036\XMLSchema</RelativePathOnDisk>
+    <TemplateFileName>XMLSchema.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Schéma XML</Name>
+        <Description>Schéma utilisé pour décrire les documents XML.</Description>
+        <Icon>XMLSchema.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLSchema</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>schema.xsd</DefaultName>
+        <!-- "XML Schema" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1040">
+    <RelativePathOnDisk>JavaScript\Data\1040\XMLFile</RelativePathOnDisk>
+    <TemplateFileName>XMLFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>File XML</Name>
+        <Description>File XML vuoto.</Description>
+        <Icon>XMLFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xmlfile.xml</DefaultName>
+        <!-- "XML File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1040">
+    <RelativePathOnDisk>JavaScript\Data\1040\XMLSchema</RelativePathOnDisk>
+    <TemplateFileName>XMLSchema.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>XML Schema</Name>
+        <Description>Schema utilizzato per la descrizione di documenti XML.</Description>
+        <Icon>XMLSchema.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLSchema</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>schema.xsd</DefaultName>
+        <!-- "XML Schema" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1041">
+    <RelativePathOnDisk>JavaScript\Data\1041\XMLFile</RelativePathOnDisk>
+    <TemplateFileName>XMLFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>XML ファイル</Name>
+        <Description>空の XML ファイルです。</Description>
+        <Icon>XMLFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xmlfile.xml</DefaultName>
+        <!-- "XML File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1041">
+    <RelativePathOnDisk>JavaScript\Data\1041\XMLSchema</RelativePathOnDisk>
+    <TemplateFileName>XMLSchema.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>XML スキーマ</Name>
+        <Description>XML ドキュメントの記述に使用されるスキーマです。</Description>
+        <Icon>XMLSchema.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLSchema</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>schema.xsd</DefaultName>
+        <!-- "XML Schema" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1042">
+    <RelativePathOnDisk>JavaScript\Data\1042\XMLFile</RelativePathOnDisk>
+    <TemplateFileName>XMLFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>XML 파일</Name>
+        <Description>빈 XML 파일입니다.</Description>
+        <Icon>XMLFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xmlfile.xml</DefaultName>
+        <!-- "XML File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1042">
+    <RelativePathOnDisk>JavaScript\Data\1042\XMLSchema</RelativePathOnDisk>
+    <TemplateFileName>XMLSchema.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>XML 스키마</Name>
+        <Description>XML 문서를 설명하는 데 사용되는 스키마입니다.</Description>
+        <Icon>XMLSchema.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLSchema</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>schema.xsd</DefaultName>
+        <!-- "XML Schema" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1045">
+    <RelativePathOnDisk>JavaScript\Data\1045\XMLFile</RelativePathOnDisk>
+    <TemplateFileName>XMLFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Plik XML</Name>
+        <Description>Pusty plik XML.</Description>
+        <Icon>XMLFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xmlfile.xml</DefaultName>
+        <!-- "XML File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1045">
+    <RelativePathOnDisk>JavaScript\Data\1045\XMLSchema</RelativePathOnDisk>
+    <TemplateFileName>XMLSchema.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Schemat XML</Name>
+        <Description>Schemat używany do opisywania dokumentów XML.</Description>
+        <Icon>XMLSchema.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLSchema</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>schema.xsd</DefaultName>
+        <!-- "XML Schema" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1046">
+    <RelativePathOnDisk>JavaScript\Data\1046\XMLFile</RelativePathOnDisk>
+    <TemplateFileName>XMLFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Arquivo XML</Name>
+        <Description>Um arquivo XML em branco.</Description>
+        <Icon>XMLFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xmlfile.xml</DefaultName>
+        <!-- "XML File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1046">
+    <RelativePathOnDisk>JavaScript\Data\1046\XMLSchema</RelativePathOnDisk>
+    <TemplateFileName>XMLSchema.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Esquema XML</Name>
+        <Description>Um esquema usado para descrever documentos XML.</Description>
+        <Icon>XMLSchema.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLSchema</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>schema.xsd</DefaultName>
+        <!-- "XML Schema" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1049">
+    <RelativePathOnDisk>JavaScript\Data\1049\XMLFile</RelativePathOnDisk>
+    <TemplateFileName>XMLFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>XML-файл</Name>
+        <Description>Пустой XML-файл.</Description>
+        <Icon>XMLFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xmlfile.xml</DefaultName>
+        <!-- "XML File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1049">
+    <RelativePathOnDisk>JavaScript\Data\1049\XMLSchema</RelativePathOnDisk>
+    <TemplateFileName>XMLSchema.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Схема XML</Name>
+        <Description>Схема для описания XML-документов.</Description>
+        <Icon>XMLSchema.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLSchema</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>schema.xsd</DefaultName>
+        <!-- "XML Schema" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1055">
+    <RelativePathOnDisk>JavaScript\Data\1055\XMLFile</RelativePathOnDisk>
+    <TemplateFileName>XMLFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>XML Dosyası</Name>
+        <Description>Boş XML dosyası</Description>
+        <Icon>XMLFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xmlfile.xml</DefaultName>
+        <!-- "XML File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1055">
+    <RelativePathOnDisk>JavaScript\Data\1055\XMLSchema</RelativePathOnDisk>
+    <TemplateFileName>XMLSchema.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>XML Şeması</Name>
+        <Description>XML belgelerini açıklamak için kullanılan şema.</Description>
+        <Icon>XMLSchema.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLSchema</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>schema.xsd</DefaultName>
+        <!-- "XML Schema" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="2052">
+    <RelativePathOnDisk>JavaScript\Data\2052\XMLFile</RelativePathOnDisk>
+    <TemplateFileName>XMLFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>XML 文件</Name>
+        <Description>空白 XML 文件。</Description>
+        <Icon>XMLFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xmlfile.xml</DefaultName>
+        <!-- "XML File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="2052">
+    <RelativePathOnDisk>JavaScript\Data\2052\XMLSchema</RelativePathOnDisk>
+    <TemplateFileName>XMLSchema.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>XML 架构</Name>
+        <Description>用于描述 XML 文档的架构。</Description>
+        <Icon>XMLSchema.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLSchema</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>schema.xsd</DefaultName>
+        <!-- "XML Schema" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="3082">
+    <RelativePathOnDisk>JavaScript\Data\3082\XMLFile</RelativePathOnDisk>
+    <TemplateFileName>XMLFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Archivo XML</Name>
+        <Description>Archivo XML en blanco.</Description>
+        <Icon>XMLFile.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>xmlfile.xml</DefaultName>
+        <!-- "XML File" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="3082">
+    <RelativePathOnDisk>JavaScript\Data\3082\XMLSchema</RelativePathOnDisk>
+    <TemplateFileName>XMLSchema.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Esquema XML</Name>
+        <Description>Esquema usado para describir documentos XML.</Description>
+        <Icon>XMLSchema.ico</Icon>
+        <TemplateID>Microsoft.JavaScript.XMLSchema</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>schema.xsd</DefaultName>
+        <!-- "XML Schema" is applicable to all JavaScript project capability -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

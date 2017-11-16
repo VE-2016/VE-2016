@@ -131,6 +131,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="Migrated rules for MetadataHelper %282%29.ruleset" />
     <None Include="Migrated rules for MetadataHelper.ruleset" />
   </ItemGroup>

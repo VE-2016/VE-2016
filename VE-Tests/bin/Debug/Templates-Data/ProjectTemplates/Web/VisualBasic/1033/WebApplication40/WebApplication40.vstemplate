@@ -1,0 +1,106 @@
+﻿<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3008" />
+    <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3383"/>
+    <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4504"/>
+    <TemplateID>Microsoft.Web.VisualBasic.WebApplication40</TemplateID>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>VisualBasic</ProjectSubType>
+    <SortOrder>10</SortOrder>
+    <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+    <MaxFrameworkVersion>4.1</MaxFrameworkVersion>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>WebSite</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <LocationField>Hidden</LocationField>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="WebApplication.webproj" ReplaceParameters="true">
+      <Folder Name="App_Code">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AuthConfig.vb">AuthConfig.vb</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="RouteConfig.vb">RouteConfig.vb</ProjectItem>
+      </Folder>
+      <Folder Name="App_Data" />
+      <Folder Name="Account">
+        <ProjectItem ReplaceParameters="true">Login.aspx</ProjectItem>
+        <ProjectItem ReplaceParameters="true">Login.aspx.vb</ProjectItem>
+        <ProjectItem ReplaceParameters="true">Manage.aspx</ProjectItem>
+        <ProjectItem ReplaceParameters="true">Manage.aspx.vb</ProjectItem>
+        <ProjectItem ReplaceParameters="true">OpenAuthProviders.ascx</ProjectItem>
+        <ProjectItem ReplaceParameters="true">OpenAuthProviders.ascx.vb</ProjectItem>
+        <ProjectItem ReplaceParameters="true">Register.aspx</ProjectItem>
+        <ProjectItem ReplaceParameters="true">Register.aspx.vb</ProjectItem>
+        <ProjectItem ReplaceParameters="true">RegisterExternalLogin.aspx</ProjectItem>
+        <ProjectItem ReplaceParameters="true">RegisterExternalLogin.aspx.vb</ProjectItem>
+        <ProjectItem ReplaceParameters="true">Web.config</ProjectItem>
+      </Folder>
+      <Folder Name="Content">
+        <ProjectItem ReplaceParameters="false">Site.css</ProjectItem>
+      </Folder>
+      <Folder Name="Images" TargetFolderName="Images">
+        <ProjectItem ReplaceParameters="false">accent.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false">bullet.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false">heroAccent.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false">orderedList0.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false">orderedList1.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false">orderedList2.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false">orderedList3.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false">orderedList4.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false">orderedList5.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false">orderedList6.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false">orderedList7.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false">orderedList8.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false">orderedList9.png</ProjectItem>
+      </Folder>
+      <Folder Name="Scripts" TargetFolderName="Scripts"/>
+      <ProjectItem ReplaceParameters="true">About.aspx</ProjectItem>
+      <ProjectItem ReplaceParameters="true">About.aspx.vb</ProjectItem>
+      <ProjectItem ReplaceParameters="true">Contact.aspx</ProjectItem>
+      <ProjectItem ReplaceParameters="true">Contact.aspx.vb</ProjectItem>
+      <ProjectItem OpenInEditor="true" OpenOrder="10" ReplaceParameters="true">Default.aspx</ProjectItem>
+      <ProjectItem ReplaceParameters="true">Default.aspx.vb</ProjectItem>
+      <ProjectItem>favicon.ico</ProjectItem>
+      <ProjectItem ReplaceParameters="true">Global.asax</ProjectItem>
+      <ProjectItem ReplaceParameters="true">Site.master</ProjectItem>
+      <ProjectItem ReplaceParameters="true">Site.master.vb</ProjectItem>
+      <ProjectItem ReplaceParameters="true">Site.Mobile.master</ProjectItem>
+      <ProjectItem ReplaceParameters="true">Site.Mobile.master.vb</ProjectItem>
+      <ProjectItem ReplaceParameters="true">ViewSwitcher.ascx</ProjectItem>
+      <ProjectItem ReplaceParameters="true">ViewSwitcher.ascx.vb</ProjectItem>
+
+      <ProjectItem ReplaceParameters="true">Web.config</ProjectItem>      
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
+  </WizardExtension>
+  <WizardData>
+    <packages repository="registry" keyName="WebFormsVS15" isPreunzipped="true">
+      <package id="Microsoft.Web.Infrastructure" version="1.0.0.0" skipAssemblyReferences="true" />
+      <package id="jQuery" version="1.8.2" />
+      <package id="jQuery.UI.Combined" version="1.8.24" />
+      <package id="Modernizr" version="2.6.2" />
+      <package id="AspNet.ScriptManager.jQuery" version="1.8.2" skipAssemblyReferences="true" />
+      <package id="AspNet.ScriptManager.jQuery.UI.Combined" version="1.8.24" skipAssemblyReferences="true" />
+      <package id="EntityFramework" version="6.1.3" skipAssemblyReferences="true" />
+      <package id="Microsoft.AspNet.Providers.Core" version="2.0.0" skipAssemblyReferences="true" />
+      <package id="Microsoft.AspNet.Providers.LocalDB" version="2.0.1" skipAssemblyReferences="true" />
+      <package id="DotNetOpenAuth.Core" version="4.1.4.12333" skipAssemblyReferences="true" />
+      <package id="DotNetOpenAuth.OAuth.Core" version="4.1.4.12333" skipAssemblyReferences="true" />
+      <package id="DotNetOpenAuth.OAuth.Consumer" version="4.1.4.12333" skipAssemblyReferences="true" />
+      <package id="DotNetOpenAuth.OpenId.Core" version="4.1.4.12333" skipAssemblyReferences="true" />
+      <package id="DotNetOpenAuth.OpenId.RelyingParty" version="4.1.4.12333" skipAssemblyReferences="true" />
+      <package id="DotNetOpenAuth.AspNet" version="4.1.4.12333" skipAssemblyReferences="true" />
+      <package id="Microsoft.AspNet.Membership.OpenAuth" version="2.0.1" skipAssemblyReferences="true" />
+      <package id="Microsoft.AspNet.FriendlyUrls.Core" version="1.0.0" skipAssemblyReferences="true" />
+     
+    </packages>
+  </WizardData>
+  <WizardExtension>
+    <Assembly>Microsoft.VisualStudio.Web, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VisualStudio.Web.Wizard.WebTemplateWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

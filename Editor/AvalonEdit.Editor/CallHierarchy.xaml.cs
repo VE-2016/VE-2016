@@ -27,16 +27,11 @@ namespace AvalonEdit.Editor
         {
             InitializeComponent();
             
-
             RefreshButton.Source = Convert(WinExplorers.ve.Refresh_16x);
             CancelButton.Source = Convert(WinExplorers.ve.Cancel_16x);
             ButtonPanel.Source = Convert(WinExplorers.ve.ListMembers_16x);
             ButtonPanel.MouseDown += ButtonPanel_MouseDown;
-
-            //MethodButton.Source = Convert(WinExplorers.ve.Method_purple_16x);
-            //FolderButton.Source = Convert(WinExplorers.ve.FolderOpen_16x);
-            //MethodButtons.Source = Convert(WinExplorers.ve.Method_purple_16x);
-
+            
             this.LocationsListView.SizeChanged += TreeListView_SizeChanged;
 
             grid.SizeChanged += Grid_SizeChanged;
@@ -65,7 +60,6 @@ namespace AvalonEdit.Editor
 
             LocationsListView.SelectionChanged += LocationsListView_SelectionChanged;
         }
-
         private void LocationsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var s = LocationsListView.SelectedItem;
@@ -74,7 +68,6 @@ namespace AvalonEdit.Editor
                 return;
             editorWindow.vs.LoadFileFromProject("", null, source.FileName, null, null, source.Span);
         }
-
         public enum kind {
 
             method,
@@ -102,7 +95,6 @@ namespace AvalonEdit.Editor
 
             return v;
         }
-
         private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             LocationsListView.InvalidateVisual();

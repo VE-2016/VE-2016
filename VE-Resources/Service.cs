@@ -26,6 +26,10 @@ namespace ves
 
         static public Bitmap GetBitmapFromExtension(string file)
         {
+           if(file == "Start Page")
+            {
+                return (Bitmap)imageList.Images["startup"];
+            }
             string exts = Path.GetExtension(file);
             if (dc.ContainsKey(exts))
                 return (Bitmap)imageList.Images[dc[exts]];
@@ -80,7 +84,7 @@ namespace ves
             d.Add(".datasource", "datasource");
             d.Add(".cs", "CSharpFile_SolutionExplorerNode");
             d.Add(".vb", "vb");
-
+            d.Add(".sp", "startup");
 
         }
 
@@ -137,6 +141,7 @@ namespace ves
                 addImage(ve.EnumFriend_16x, "enums", imageList);
                 addImage(ve.Property_16x, "property", imageList);
                 addImage(ve.Field_blue_16x, "field", imageList);
+                addImage(ve.ShowStartPage_256x, "startup", imageList);
             }
 
             return imageList;

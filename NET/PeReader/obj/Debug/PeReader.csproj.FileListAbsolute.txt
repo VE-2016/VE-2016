@@ -202,6 +202,7 @@ F:\ve\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.dll
 F:\ve\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.dll
 F:\ve\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
 F:\ve\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.xml
+F:\ve\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.dll.config
 F:\ve\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.pdb
 F:\ve\VE-2016\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.xml
 F:\ve\VE-2016\NET\PeReader\obj\Debug\PeReader.csprojResolveAssemblyReference.cache
@@ -210,3 +211,19 @@ F:\ve\VE-2016\NET\PeReader\obj\Debug\PeReader.csproj.GenerateResource.Cache
 F:\ve\VE-2016\NET\PeReader\obj\Debug\PeReader.csproj.CoreCompileInputs.cache
 F:\ve\VE-2016\NET\PeReader\obj\Debug\Microsoft.Cci.PeReader.dll
 F:\ve\VE-2016\NET\PeReader\obj\Debug\Microsoft.Cci.PeReader.pdb
+f:\ve\ve-2023\NET\PeReader\bin\Debug\Microsoft.Cci.PeReader.xml
+f:\ve\ve-2023\NET\PeReader\bin\Debug\Microsoft.Cci.PeReader.dll
+f:\ve\ve-2023\NET\PeReader\bin\Debug\Microsoft.Cci.PeReader.pdb
+f:\ve\ve-2023\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.dll
+f:\ve\ve-2023\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.dll
+f:\ve\ve-2023\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.pdb
+f:\ve\ve-2023\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.xml
+f:\ve\ve-2023\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataHelper.dll.config
+f:\ve\ve-2023\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+f:\ve\ve-2023\NET\PeReader\bin\Debug\Microsoft.Cci.MetadataModel.xml
+f:\ve\ve-2023\NET\PeReader\obj\Debug\PeReader.csprojResolveAssemblyReference.cache
+f:\ve\ve-2023\NET\PeReader\obj\Debug\Microsoft.Cci.PeReaderErrorMessages.resources
+f:\ve\ve-2023\NET\PeReader\obj\Debug\PeReader.csproj.GenerateResource.Cache
+f:\ve\ve-2023\NET\PeReader\obj\Debug\PeReader.csproj.CoreCompileInputs.cache
+f:\ve\ve-2023\NET\PeReader\obj\Debug\Microsoft.Cci.PeReader.dll
+f:\ve\ve-2023\NET\PeReader\obj\Debug\Microsoft.Cci.PeReader.pdb

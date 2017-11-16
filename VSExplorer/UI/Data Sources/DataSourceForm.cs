@@ -236,6 +236,8 @@ namespace WinExplorer.UI
             }
             string bb = AppDomain.CurrentDomain.BaseDirectory;
 
+            vp = ExplorerForms.ef.GetVSProject();
+
             string s = vp.GetProjectFolder();
 
             string d = s + "\\" + data.name + ".xsd";

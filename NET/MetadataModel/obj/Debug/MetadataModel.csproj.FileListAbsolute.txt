@@ -82,4 +82,10 @@ F:\ve\VE-2016\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.pdb
 F:\ve\VE-2016\NET\MetadataModel\obj\Debug\MetadataModel.csproj.CoreCompileInputs.cache
 F:\ve\VE-2016\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.dll
 F:\ve\VE-2016\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.pdb
-f:\ve\VE-2016\NET\MetadataModel\obj\Debug\MetadataModel.csprojResolveAssemblyReference.cache
+f:\ve\ve-2023\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.xml
+f:\ve\ve-2023\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.dll
+f:\ve\ve-2023\NET\MetadataModel\bin\Debug\Microsoft.Cci.MetadataModel.pdb
+f:\ve\ve-2023\NET\MetadataModel\obj\Debug\MetadataModel.csproj.CoreCompileInputs.cache
+f:\ve\ve-2023\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.dll
+f:\ve\ve-2023\NET\MetadataModel\obj\Debug\Microsoft.Cci.MetadataModel.pdb
+F:\ve\ve-2023\NET\MetadataModel\obj\Debug\MetadataModel.csprojResolveAssemblyReference.cache

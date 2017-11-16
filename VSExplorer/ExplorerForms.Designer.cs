@@ -202,6 +202,7 @@ namespace WinExplorer
             this.toolStripMenuItem81 = new System.Windows.Forms.ToolStripSeparator();
             this.powerShellWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xmlDocumentOutlineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.syntaxTreeVisualizatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem79 = new System.Windows.Forms.ToolStripMenuItem();
             this.standardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -294,10 +295,6 @@ namespace WinExplorer
             this.projectToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.guiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip4 = new System.Windows.Forms.ToolStrip();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.miniToolStrip = new System.Windows.Forms.ToolStrip();
             this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.viewInObjectBrowserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -353,6 +350,7 @@ namespace WinExplorer
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem40 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -376,7 +374,6 @@ namespace WinExplorer
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             this.contextMenuStrip3.SuspendLayout();
             this.contextMenuStrip4.SuspendLayout();
             this.contextMenuStrip5.SuspendLayout();
@@ -401,7 +398,7 @@ namespace WinExplorer
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(892, 459);
+            this.splitContainer1.Size = new System.Drawing.Size(892, 481);
             this.splitContainer1.SplitterDistance = 435;
             this.splitContainer1.TabIndex = 2;
             // 
@@ -416,7 +413,7 @@ namespace WinExplorer
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(435, 459);
+            this.tabControl1.Size = new System.Drawing.Size(435, 481);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -426,7 +423,7 @@ namespace WinExplorer
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(427, 433);
+            this.tabPage1.Size = new System.Drawing.Size(427, 455);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Folders";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -466,7 +463,7 @@ namespace WinExplorer
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(427, 433);
+            this.tabPage2.Size = new System.Drawing.Size(427, 455);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Project";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -488,8 +485,8 @@ namespace WinExplorer
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.treeView4);
-            this.splitContainer3.Size = new System.Drawing.Size(421, 427);
-            this.splitContainer3.SplitterDistance = 353;
+            this.splitContainer3.Size = new System.Drawing.Size(421, 449);
+            this.splitContainer3.SplitterDistance = 370;
             this.splitContainer3.TabIndex = 3;
             // 
             // treeView2
@@ -501,7 +498,7 @@ namespace WinExplorer
             this.treeView2.context2 = null;
             this.treeView2.Location = new System.Drawing.Point(6, 55);
             this.treeView2.Name = "treeView2";
-            this.treeView2.Size = new System.Drawing.Size(412, 285);
+            this.treeView2.Size = new System.Drawing.Size(412, 302);
             this.treeView2.TabIndex = 3;
             // 
             // toolStrip5
@@ -546,7 +543,7 @@ namespace WinExplorer
             this.treeView4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView4.Location = new System.Drawing.Point(0, 0);
             this.treeView4.Name = "treeView4";
-            this.treeView4.Size = new System.Drawing.Size(421, 70);
+            this.treeView4.Size = new System.Drawing.Size(421, 75);
             this.treeView4.TabIndex = 0;
             // 
             // tabPage3
@@ -554,7 +551,7 @@ namespace WinExplorer
             this.tabPage3.Controls.Add(this.treeView1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(427, 433);
+            this.tabPage3.Size = new System.Drawing.Size(427, 455);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "VSolution";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -568,7 +565,7 @@ namespace WinExplorer
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(427, 433);
+            this.treeView1.Size = new System.Drawing.Size(427, 455);
             this.treeView1.TabIndex = 0;
             // 
             // tabPage5
@@ -583,7 +580,7 @@ namespace WinExplorer
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(427, 433);
+            this.tabPage5.Size = new System.Drawing.Size(427, 455);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "New File";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -665,7 +662,7 @@ namespace WinExplorer
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(427, 433);
+            this.tabPage6.Size = new System.Drawing.Size(427, 455);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Recent";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -683,7 +680,7 @@ namespace WinExplorer
             // 
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(4, 402);
+            this.progressBar1.Location = new System.Drawing.Point(4, 424);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(417, 23);
             this.progressBar1.TabIndex = 2;
@@ -735,7 +732,7 @@ namespace WinExplorer
             | System.Windows.Forms.AnchorStyles.Right)));
             this.treeView3.Location = new System.Drawing.Point(3, 58);
             this.treeView3.Name = "treeView3";
-            this.treeView3.Size = new System.Drawing.Size(418, 338);
+            this.treeView3.Size = new System.Drawing.Size(418, 360);
             this.treeView3.TabIndex = 0;
             this.treeView3.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView3_AfterSelect);
             // 
@@ -745,8 +742,8 @@ namespace WinExplorer
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.splitContainer2.Size = new System.Drawing.Size(453, 459);
-            this.splitContainer2.SplitterDistance = 225;
+            this.splitContainer2.Size = new System.Drawing.Size(453, 481);
+            this.splitContainer2.SplitterDistance = 234;
             this.splitContainer2.TabIndex = 1;
             // 
             // contextMenuStrip1
@@ -1575,26 +1572,7 @@ namespace WinExplorer
             // 
             // findToolStripMenuItem1
             // 
-            this.findToolStripMenuItem1.Name = "findToolStripMenuItem1";
-            this.findToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
-            this.findToolStripMenuItem1.Text = "Find";
-            this.findToolStripMenuItem1.Click += new System.EventHandler(this.findToolStripMenuItem1_Click);
-            // 
-            // findAndReplaceToolStripMenuItem
-            // 
-            this.findAndReplaceToolStripMenuItem.Name = "findAndReplaceToolStripMenuItem";
-            this.findAndReplaceToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.findAndReplaceToolStripMenuItem.Text = "Find and Replace";
-            this.findAndReplaceToolStripMenuItem.Click += new System.EventHandler(this.findAndReplaceToolStripMenuItem_Click);
-            // 
-            // advancedToolStripMenuItem
-            // 
-            this.advancedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.commentSectionToolStripMenuItem,
-            this.uncommentSectionToolStripMenuItem});
-            this.advancedToolStripMenuItem.Name = "advancedToolStripMenuItem";
-            this.advancedToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.advancedToolStripMenuItem.Text = "Advanced";
+          
             // 
             // commentSectionToolStripMenuItem
             // 
@@ -1798,7 +1776,8 @@ namespace WinExplorer
             this.dataSourcesToolStripMenuItem,
             this.toolStripMenuItem81,
             this.powerShellWindowToolStripMenuItem,
-            this.xmlDocumentOutlineToolStripMenuItem});
+            this.xmlDocumentOutlineToolStripMenuItem,
+            this.syntaxTreeVisualizatorToolStripMenuItem});
             this.toolStripMenuItem65.Name = "toolStripMenuItem65";
             this.toolStripMenuItem65.Size = new System.Drawing.Size(216, 22);
             this.toolStripMenuItem65.Text = "Other Windows";
@@ -1806,43 +1785,50 @@ namespace WinExplorer
             // commandWindowToolStripMenuItem
             // 
             this.commandWindowToolStripMenuItem.Name = "commandWindowToolStripMenuItem";
-            this.commandWindowToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.commandWindowToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.commandWindowToolStripMenuItem.Text = "Command Window";
             this.commandWindowToolStripMenuItem.Click += new System.EventHandler(this.commandWindowToolStripMenuItem_Click);
             // 
             // webBrowserToolStripMenuItem
             // 
             this.webBrowserToolStripMenuItem.Name = "webBrowserToolStripMenuItem";
-            this.webBrowserToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.webBrowserToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.webBrowserToolStripMenuItem.Text = "Web Browser";
             // 
             // dataSourcesToolStripMenuItem
             // 
             this.dataSourcesToolStripMenuItem.Image = global::WinExplorer.ve_resource.DataSourceView_16x;
             this.dataSourcesToolStripMenuItem.Name = "dataSourcesToolStripMenuItem";
-            this.dataSourcesToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.dataSourcesToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.dataSourcesToolStripMenuItem.Text = "Data Sources";
             this.dataSourcesToolStripMenuItem.Click += new System.EventHandler(this.dataSourcesToolStripMenuItem_Click);
             // 
             // toolStripMenuItem81
             // 
             this.toolStripMenuItem81.Name = "toolStripMenuItem81";
-            this.toolStripMenuItem81.Size = new System.Drawing.Size(190, 6);
+            this.toolStripMenuItem81.Size = new System.Drawing.Size(193, 6);
             this.toolStripMenuItem81.Click += new System.EventHandler(this.toolStripMenuItem81_Click);
             // 
             // powerShellWindowToolStripMenuItem
             // 
             this.powerShellWindowToolStripMenuItem.Name = "powerShellWindowToolStripMenuItem";
-            this.powerShellWindowToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.powerShellWindowToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.powerShellWindowToolStripMenuItem.Text = "PowerShell Window";
             this.powerShellWindowToolStripMenuItem.Click += new System.EventHandler(this.powerShellWindowToolStripMenuItem_Click);
             // 
             // xmlDocumentOutlineToolStripMenuItem
             // 
             this.xmlDocumentOutlineToolStripMenuItem.Name = "xmlDocumentOutlineToolStripMenuItem";
-            this.xmlDocumentOutlineToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.xmlDocumentOutlineToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.xmlDocumentOutlineToolStripMenuItem.Text = "XmlDocument Outline";
             this.xmlDocumentOutlineToolStripMenuItem.Click += new System.EventHandler(this.xmlDocumentOutlineToolStripMenuItem_Click);
+            // 
+            // syntaxTreeVisualizatorToolStripMenuItem
+            // 
+            this.syntaxTreeVisualizatorToolStripMenuItem.Name = "syntaxTreeVisualizatorToolStripMenuItem";
+            this.syntaxTreeVisualizatorToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.syntaxTreeVisualizatorToolStripMenuItem.Text = "Syntax Tree Visualizator";
+            this.syntaxTreeVisualizatorToolStripMenuItem.Click += new System.EventHandler(this.syntaxTreeVisualizatorToolStripMenuItem_Click);
             // 
             // toolStripSeparator27
             // 
@@ -2517,38 +2503,6 @@ namespace WinExplorer
             this.toolStrip4.Text = "toolStrip4";
             this.toolStrip4.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip4_ItemClicked);
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel2,
-            this.toolStripStatusLabel1,
-            this.toolStripStatusLabel3});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 562);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1049, 22);
-            this.statusStrip1.TabIndex = 5;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(1034, 17);
-            this.toolStripStatusLabel2.Spring = true;
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Margin = new System.Windows.Forms.Padding(0);
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 0);
-            this.toolStripStatusLabel1.Tag = "cs";
-            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
-            // 
-            // toolStripStatusLabel3
-            // 
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(0, 17);
-            // 
             // miniToolStrip
             // 
             this.miniToolStrip.AutoSize = false;
@@ -2939,20 +2893,28 @@ namespace WinExplorer
             // 
             // toolStripContainer1.ContentPanel
             // 
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.panel1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.splitContainer1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1049, 513);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1049, 535);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 24);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(1049, 538);
+            this.toolStripContainer1.Size = new System.Drawing.Size(1049, 560);
             this.toolStripContainer1.TabIndex = 7;
             this.toolStripContainer1.Text = "toolStripContainer1";
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 514);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1049, 21);
+            this.panel1.TabIndex = 3;
             // 
             // ExplorerForms
             // 
             this.ClientSize = new System.Drawing.Size(1049, 584);
             this.Controls.Add(this.toolStripContainer1);
-            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.helpProvider1.SetHelpKeyword(this, "Explorer");
             this.MainMenuStrip = this.menuStrip1;
@@ -2995,8 +2957,6 @@ namespace WinExplorer
             this.contextMenuStrip2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.contextMenuStrip3.ResumeLayout(false);
             this.contextMenuStrip4.ResumeLayout(false);
             this.contextMenuStrip5.ResumeLayout(false);
@@ -3041,7 +3001,6 @@ namespace WinExplorer
         private MenuStrip menuStrip1;
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStrip toolStrip4;
-        private StatusStrip statusStrip1;
         private ToolStripMenuItem editToolStripMenuItem;
         private ToolStripMenuItem viewToolStripMenuItem;
         private TabControl tabControl1;
@@ -3104,7 +3063,6 @@ namespace WinExplorer
         private ToolStripMenuItem commentSectionToolStripMenuItem;
         private ToolStripMenuItem uncommentSectionToolStripMenuItem;
         private ToolStripMenuItem selectAllToolStripMenuItem;
-        private ToolStripStatusLabel toolStripStatusLabel1;
         private ToolStripMenuItem buildSolutionToolStripMenuItem;
         private ToolStripMenuItem rebuildSolutionToolStripMenuItem;
         private ToolStripMenuItem cleanSolutionToolStripMenuItem;
@@ -3123,8 +3081,6 @@ namespace WinExplorer
         private ContextMenuStrip contextMenuStrip5;
         private ToolStripMenuItem decompileTypeToolStripMenuItem;
         private ToolStripMenuItem typeInfoToolStripMenuItem;
-        private ToolStripStatusLabel toolStripStatusLabel2;
-        private ToolStripStatusLabel toolStripStatusLabel3;
         private ToolStripMenuItem toolStripMenuItem13;
         private ToolStripMenuItem toolStripMenuItem14;
         private ToolStripMenuItem classViewToolStripMenuItem;
@@ -3348,5 +3304,7 @@ namespace WinExplorer
         private ToolStripMenuItem repositoryToolStripMenuItem;
         private ToolStripMenuItem websiteToolStripMenuItem;
         private ToolStripMenuItem projectFromSourcesToolStripMenuItem;
+        private ToolStripMenuItem syntaxTreeVisualizatorToolStripMenuItem;
+        private Panel panel1;
     }
 }

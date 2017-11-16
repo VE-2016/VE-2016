@@ -1,0 +1,22 @@
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3097" />
+    <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3098" />
+    <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4543" />
+    <ProjectType>VisualBasic</ProjectType>
+    <SortOrder>250</SortOrder>
+    <DefaultName>AssemblyInfo.vb</DefaultName>
+    <Hidden>true</Hidden>
+    <TemplateID>Microsoft.VisualBasic.Internal.AssemblyInfo</TemplateID>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+  </TemplateData>
+  <TemplateContent>
+            <References>
+                <Reference>
+                    <Assembly>System</Assembly>
+                </Reference>
+            </References>
+
+    <ProjectItem ReplaceParameters="true" OpenInEditor="false">AssemblyInfo.vb</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

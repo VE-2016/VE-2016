@@ -1,0 +1,90 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>CSharp\Windows\1033\WPFApplication</RelativePathOnDisk>
+    <TemplateFileName>csWPFApplication.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4650" />
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4651" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4602" />
+        <TemplateID>Microsoft.CSharp.WPFApplication</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+        <SortOrder>10</SortOrder>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WpfApp</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>false</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <CreateInPlace>false</CreateInPlace>
+        <AppIdFilter>blend</AppIdFilter>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>CSharp\Windows\1033\WPFControlLibrary</RelativePathOnDisk>
+    <TemplateFileName>csWPFControlLibrary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4654" />
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4655" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4600" />
+        <TemplateID>Microsoft.CSharp.WPFControlLibrary</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WpfControlLibrary</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>false</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <CreateInPlace>true</CreateInPlace>
+        <AppIdFilter>blend</AppIdFilter>
+        <SortOrder>22</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>CSharp\Windows\1033\WPFCustomControl</RelativePathOnDisk>
+    <TemplateFileName>csWPFCustomControl.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4673" />
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4674" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4604" />
+        <TemplateID>Microsoft.CSharp.WPFCustomControlLibrary</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WpfCustomControlLibrary</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>false</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <CreateInPlace>true</CreateInPlace>
+        <SortOrder>21</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>CSharp\Windows\1033\WPFBrowserApplication</RelativePathOnDisk>
+    <TemplateFileName>csWPFBrowserApplication.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4652" />
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4653" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4601" />
+        <TemplateID>Microsoft.CSharp.WPFBrowserApplication</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+        <SortOrder>60</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WpfBrowserApp</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>false</PromptForSaveOnCreation>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <CreateInPlace>true</CreateInPlace>
+        <SortOrder>20</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

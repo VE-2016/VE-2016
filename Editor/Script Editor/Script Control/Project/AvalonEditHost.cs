@@ -26,7 +26,7 @@ namespace AvalonEdit.Host
     [DesignerSerializer("System.ComponentModel.Design.Serialization.TypeCodeDomSerializer , System.Design", "System.ComponentModel.Design.Serialization.CodeDomSerializer, System.Design")]
     public class Editor_WinformsHost : System.Windows.Forms.Integration.ElementHost
     {
-        public EditorWindow dv;// = new EditorWindow();
+        public EditorWindow dv;
 
 
 
@@ -41,19 +41,10 @@ namespace AvalonEdit.Host
 
             this.BackColorTransparent = true;
 
-            //dv = EditorWindow.LoadXaml(s) as EditorWindow;
-
-            //dv.EditorWindows();//// dv = d[0] as EditorWindow;
-
-            // dv = Activator.CreateInstance(typeof(EditorWindow)) as EditorWindow;
+          
             base.Child = dv;
-            // dv.Width = 800;
-            //dv.Height = 800;
-            //dv.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
-            //dv.VerticalAlignment = VerticalAlignment.Stretch;
-            //this.Dock = DockStyle.Fill;
-            //this.Size = new System.Drawing.Size(800, 800);
-            //this.Resize += Editor_WinformsHost_Resize;
+
+            
         }
         Size size = new System.Windows.Size();
         private void Editor_WinformsHost_Resize(object sender, EventArgs e)

@@ -4,17 +4,17 @@
 library
 C#
 .cs
-F:\ve\VE-2016\Editor\AvalonEdit.Editor\obj\Debug\
+F:\ve\ve-2023\Editor\AvalonEdit.Editor\obj\Debug\
 AvalonEdit.Editor
 none
 false
 DEBUG;TRACE
 
-6-1666488155
+71720914217
 
-25616069802
-861128568316
-CompletionControls.xaml;EditorWindow.xaml;FindForm.xaml;LinkViewer.xaml;TreeViewer.xaml;CallHierarchy.xaml;
+26-2014128331
+862061781483
+CompletionControls.xaml;EditorWindow.xaml;FindForm.xaml;SyntaxTreeViewer.xaml;LinkViewer.xaml;TreeViewer.xaml;CallHierarchy.xaml;
 
 True
 

@@ -12,6 +12,8 @@ using VSProvider;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.IO;
+using WinExplorer.Services;
+using System.Reflection;
 
 namespace WinExplorer
 {
@@ -73,6 +75,28 @@ namespace WinExplorer
             rb = richTextBox1;
 
             v.AfterSelect += V_AfterSelect;
+
+            v.DoubleClick += V_DoubleClick;
+        }
+
+        private void V_DoubleClick(object sender, EventArgs e)
+        {
+            TreeNode node = v.SelectedNode;
+            if (node == null)
+                return;
+            MethodInfo method = node.Tag as MethodInfo;
+            if (method == null)
+                return;
+            var type = method.DeclaringType;
+            var p = type.GetProperty("ef");
+            var obj = Activator.CreateInstance(type);
+            p.SetValue(obj, ExplorerForms.ef);
+            Task.Run(async () =>
+            {
+                method.Invoke(obj, new object[0]);
+
+               
+            });
         }
 
         private void Se_Click(object sender, EventArgs e)
@@ -218,13 +242,33 @@ namespace WinExplorer
             v.Nodes.Clear();
         }
 
+        public void LoadTest(List<MethodInfo> methods)
+        {
+            List<string> m = new List<string>();
+            if (methods.Count <= 0)
+                return;
+            TreeNode node = new TreeNode();
+            node.Text = "Not Run Tests";
+            
+            v.Nodes.Add(node);
+
+            foreach (MethodInfo c in methods)
+            {
+                TreeNode nodes = new TreeNode();
+                nodes.Text = c.Name;
+                nodes.ImageKey = "StatusInformation_exp_16x";
+                nodes.SelectedImageKey = "StatusInformation_exp_16x";
+                nodes.Tag = c;
+                
+                
+                node.Nodes.Add(nodes);
+            }
+        }
+
         public void LoadTest(VSProject vp, List<string> s)
         {
-
-
-            if (s.Count <= 0)
+             if (s.Count <= 0)
                 return;
-
             TreeNode node = new TreeNode();
             node.Text = "Not Run Tests";
 
@@ -249,6 +293,63 @@ namespace WinExplorer
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        public void LoadTestNodes(List<MethodInfo> methods)
+        {
+
+
+        }
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            LoadSelfTests();
+        }
+        public void LoadSelfTests()
+        {
+            ClearTests();
+            VSSolution vs = ExplorerForms.ef.GetVSSolution();
+            if (vs == null)
+                return;
+           // foreach (VSProject vp in vs.Projects)
+            {
+                //VSProject vp = vs.GetProjectbyName("VE-Tests");
+             //   msbuilder_alls.MSTest mstest = new msbuilder_alls.MSTest();
+             //   mstest.msTestPath = AppDomain.CurrentDomain.BaseDirectory + "\\Extensions\\_starters-discovery.bat";
+            var names = AppDomain.CurrentDomain.BaseDirectory + "\\Plugins\\VE-Tests.dll";
+
+            var types = Reflection.AttributesOfTypes(names, "TestClassAttribute");
+
+                //var methods = Reflection.AttributesOfMethods(names, "VSExplorerSolution_Test", "TestMethodAttribute");
+
+                if (types == null)
+                    return;
+                    //    continue;
+                var methods = Reflection.AttributesOfMethodsFromTypes(names, types, "TestMethodAttribute");
+
+                LoadTest(methods);
+
+                
+
+
+            }
+
+
+
+            //string name = AppDomain.CurrentDomain.BaseDirectory + "" + "Plugins\\VE-Tests.dll";
+
+            ////var types = Reflection.AttributesOfTypes(name, "TestClassAttribute");
+            ////var methods = Reflection.AttributesOfMethods(name, "VSExplorerSolution_Test", "TestMethodAttribute");
+
+            ////var methods = Reflection.AttributesOfMethods(name, "VSExplorerSolution_Test", "TestMethodAttribute");
+            ////  var type = ats.Select(s => s).Where(s => s.Name == "VSExplorerSolution_Test").FirstOrDefault();
+            ////  var attrs = Reflection.Attributes<TestClassAttribute>(ats).Select(s => s).Where(s => s.Name == "VSExplorerSolution_Test").FirstOrDefault();
+            ////  var methods = Reflection.AttributesOfMethods<TestMethodAttribute>(type);
+            //var p = types[0].GetProperty("ef");
+            //var obj = Activator.CreateInstance(types[0]);
+            //p.SetValue(obj, this);
+
+            ////var method = methods.Where(s => s.Name == "OpenSolutionAndFilesFromProject_Test").FirstOrDefault();
+            ////var method = methods.Where(s => s.Name == "CheckIfCompileItemsArePresentInSolutionTree").FirstOrDefault();
+            //var method = methods.Where(s => s.Name == "OpenSolutionAndFindMethodsInArbitraryFile").FirstOrDefault();
         }
     }
 }

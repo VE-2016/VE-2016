@@ -1,0 +1,60 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Windows\1033\WindowsApplication</RelativePathOnDisk>
+    <TemplateFileName>windowsapplication.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3014" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3015" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4507" />
+        <ProjectType>VisualBasic</ProjectType>
+        <TemplateID>Microsoft.VisualBasic.Windows.WindowsApplication</TemplateID>
+        <SortOrder>11</SortOrder>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>false</CreateInPlace>
+        <DefaultName>WindowsApp</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Windows\1033\WindowsControl</RelativePathOnDisk>
+    <TemplateFileName>WindowsControlLibrary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3016" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3017" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4508" />
+        <ProjectType>VisualBasic</ProjectType>
+        <TemplateID>Microsoft.VisualBasic.Windows.WindowsControlLibrary</TemplateID>
+        <SortOrder>23</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WindowsControlLibrary</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <CreateInPlace>true</CreateInPlace>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Windows\1033\WindowsService</RelativePathOnDisk>
+    <TemplateFileName>windowsservice.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3018" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3019" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4509" />
+        <ProjectType>VisualBasic</ProjectType>
+        <TemplateID>Microsoft.VisualBasic.Windows.WindowsService</TemplateID>
+        <SortOrder>18</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WindowsService</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <CreateInPlace>false</CreateInPlace>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

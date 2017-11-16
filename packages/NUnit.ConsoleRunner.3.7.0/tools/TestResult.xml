@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run id="2" testcasecount="5" result="Failed" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.7.0.0" clr-version="4.0.30319.42000" start-time="2017-10-24 14:48:56Z" end-time="2017-10-24 14:49:41Z" duration="44.459487">
+  <command-line><![CDATA[nunit3-console   f:\\ve\VE-2016\\VE-Tests\\bin\\Debug\\VE-Tests.dll --test=VE_Tests.VSExplorerSolution_Test.Open_Solution_And_FindMethodsInRandomFile_Test --inprocess --agents=1]]></command-line>
+  <filter>
+    <test>VE_Tests.VSExplorerSolution_Test.Open_Solution_And_FindMethodsInRandomFile_Test</test>
+  </filter>
+  <test-suite type="Assembly" id="0-1006" name="VE-Tests.dll" fullname="f:\ve\VE-2016\VE-Tests\bin\Debug\VE-Tests.dll" runstate="Runnable" testcasecount="5" result="Failed" site="Child" start-time="2017-10-24 14:48:57Z" end-time="2017-10-24 14:49:41Z" duration="43.789352" total="1" passed="0" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="0">
+    <environment framework-version="3.8.1.0" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 10.0.15063.0" platform="Win32NT" cwd="f:\ve\VE-2016\VE-Tests\bin\Debug" machine-name="DESKTOP-AOBSI6F" user="pb" user-domain="DESKTOP-AOBSI6F" culture="en-US" uiculture="en-US" os-architecture="x64" />
+    <settings>
+      <setting name="ProcessModel" value="InProcess" />
+      <setting name="DisposeRunners" value="True" />
+      <setting name="WorkDirectory" value="F:\ve\VE-2016\packages\NUnit.ConsoleRunner.3.7.0\tools" />
+      <setting name="MaxAgents" value="1" />
+      <setting name="ImageRuntimeVersion" value="4.0.30319" />
+      <setting name="ImageTargetFrameworkName" value=".NETFramework,Version=v4.7" />
+      <setting name="ImageRequiresX86" value="False" />
+      <setting name="ImageRequiresDefaultAppDomainAssemblyResolver" value="False" />
+      <setting name="NumberOfTestWorkers" value="4" />
+    </settings>
+    <properties>
+      <property name="_PID" value="11664" />
+      <property name="_APPDOMAIN" value="domain-" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="TestSuite" id="0-1007" name="VE_Tests" fullname="VE_Tests" runstate="Runnable" testcasecount="5" result="Failed" site="Child" start-time="2017-10-24 14:48:57Z" end-time="2017-10-24 14:49:41Z" duration="43.752021" total="1" passed="0" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="0">
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestFixture" id="0-1000" name="VSExplorerSolution_Test" fullname="VE_Tests.VSExplorerSolution_Test" classname="VE_Tests.VSExplorerSolution_Test" runstate="Runnable" testcasecount="5" result="Failed" site="Child" start-time="2017-10-24 14:48:57Z" end-time="2017-10-24 14:49:41Z" duration="43.742408" total="1" passed="0" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="0">
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="0-1005" name="Open_Solution_And_FindMethodsInRandomFile_Test" fullname="VE_Tests.VSExplorerSolution_Test.Open_Solution_And_FindMethodsInRandomFile_Test" methodname="Open_Solution_And_FindMethodsInRandomFile_Test" classname="VE_Tests.VSExplorerSolution_Test" runstate="Runnable" seed="682771542" result="Failed" label="Error" start-time="2017-10-24 14:48:57Z" end-time="2017-10-24 14:49:41Z" duration="43.722480" asserts="0">
+          <properties>
+            <property name="ApartmentState" value="STA" />
+          </properties>
+          <failure>
+            <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+          </failure>
+          <output><![CDATA[SQL Server WMI provider is not available on DESKTOP-AOBSI6F.
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
