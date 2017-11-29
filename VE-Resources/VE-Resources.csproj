@@ -1015,5 +1015,17 @@
   <ItemGroup>
     <None Include="Resources\StatusOK_16xSM.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Control_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserControl_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Component_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusOffline_16xSM.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

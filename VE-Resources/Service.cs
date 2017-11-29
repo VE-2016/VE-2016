@@ -35,7 +35,26 @@ namespace ves
                 return (Bitmap)imageList.Images[dc[exts]];
             return (Bitmap)imageList.Images[0];
         }
-
+        static public Bitmap GetBitmapFromSubtype(string subtype)
+        {
+            if (subtype.ToLower() == "form")
+            {
+                return (Bitmap)imageList.Images["forms"];
+            }
+            else if (subtype.ToLower() == "component")
+            {
+                return (Bitmap)imageList.Images["component"];
+            }
+            else if (subtype.ToLower() == "control")
+            {
+                return (Bitmap)imageList.Images["control"];
+            }
+            else if (subtype.ToLower() == "usercontrol")
+            {
+                return (Bitmap)imageList.Images["usercontrol"];
+            }
+            return null;
+        }
         static public void LoadDictionary()
         {
             if (dc == null)
@@ -100,8 +119,10 @@ namespace ves
 
             if (bmp != null)
             {
+                if (imgL.Images.Keys.Contains(name))
+                    imgL.Images.RemoveByKey(name);
+
                 imgL.Images.Add(name, (Image)bmp);
-               
             }
 
             return imgL;
@@ -142,6 +163,14 @@ namespace ves
                 addImage(ve.Property_16x, "property", imageList);
                 addImage(ve.Field_blue_16x, "field", imageList);
                 addImage(ve.ShowStartPage_256x, "startup", imageList);
+                addImage(ve.Field_blue_16x, "field", imageList);
+                addImage(ve.LockCyan_16x, "LockCyan_16x", imageList);
+                addImage(ve.Add_thin_10x_16x, "Add_thin", imageList);
+                addImage(ve.StatusOK_16xSM, "Status_OK", imageList);
+                addImage(ve.WindowsForm_256x, "forms", imageList);
+                addImage(ve.Control_16x, "control", imageList);
+                addImage(ve.Component_16x, "component", imageList);
+                addImage(ve.UserControl_16x, "usercontrol", imageList);
             }
 
             return imageList;
