@@ -1,17 +1,10 @@
-using AIMS.Libraries.Scripting.ScriptControl.Project;
-using Microsoft.Win32;
 using System;
 using System.Collections;
-using System.IO;
-using System.Reflection;
-using System.Reflection.Emit;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 
-namespace AIMS.Libraries.Scripting.ScriptControl.Converter
+namespace ScriptControl.Converter
 {
- 
-
     public class ReportEventEventArgs : EventArgs
     {
         public ImporterEventKind EventKind;
@@ -87,11 +80,5 @@ namespace AIMS.Libraries.Scripting.ScriptControl.Converter
         {
             OnReportEvent(e);
         }
-
-    
-
-     
-
-     
     }
 }

@@ -1,5 +1,4 @@
-using AIMS.Libraries.CodeEditor.Syntax;
-using AIMS.Libraries.Scripting.ScriptControl;
+using ScriptControl;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -185,31 +184,8 @@ namespace WinExplorer
             doc.HideOnClose = false;
             doc.FormBorderStyle = FormBorderStyle.None;
             doc.Dock = DockStyle.Fill;
-            //doc.BackColor = SystemColors.InactiveBorder;
-            doc.Contents = text;
-            //doc.ScriptLanguage = _scriptLanguage;
-            //doc.vp = pp;
-            //doc.LoadVSProject(pp);
-            //Language lg = doc.lgs;// syntaxDocument1.Parser.Language;
-
-            //doc.dc = dc;
-
-            //doc.bmp = bmp;
-
-            //if (doc.bmp != null)
-            //{
-            //    doc.bmp.MakeTransparent(Color.White);
-            //    System.IntPtr icH = doc.bmp.GetHicon();
-            //    Icon ico = Icon.FromHandle(icH);
-            //    doc.bmp.Dispose();
-            //    doc.Icon = ico;
-            //}
 
             doc.TopLevel = false;
-
-            //DocumentEvents(doc, true);
-            //doc.Show(dockContainer1, DockState.Document);
-            //doc.Contents = contents;
 
             this.Controls.Add(doc);
 
@@ -226,17 +202,6 @@ namespace WinExplorer
 
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
-            AIMS.Libraries.CodeEditor.Syntax.SyntaxDocument d = document.syntaxDocument1;
-
-            int i = 10;
-            while (i < d.Count)
-            {
-                Row r = d[i];
-
-                d.CollapseRow(r);
-
-                i++;
-            }
         }
     }
 }

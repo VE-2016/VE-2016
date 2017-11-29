@@ -1,19 +1,15 @@
 ﻿using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VSProvider;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.IO;
 using WinExplorer.Services;
-using System.Reflection;
 
 namespace WinExplorer
 {
@@ -38,7 +34,7 @@ namespace WinExplorer
 
             v.Parent = ps;
             v.Dock = DockStyle.Fill;
-            
+
             st.Parent = ps;
             st.Dock = DockStyle.Bottom;
 
@@ -50,7 +46,7 @@ namespace WinExplorer
             font = toolStripLabel1.Font;
 
             fontstroked = new Font(font, FontStyle.Underline);
-            
+
             toolStripLabel1.MouseHover += Label_MouseHover;
             toolStripLabel1.MouseLeave += Label_MouseLeave;
             toolStripSplitButton2.MouseHover += Label_MouseHover;
@@ -94,8 +90,6 @@ namespace WinExplorer
             Task.Run(async () =>
             {
                 method.Invoke(obj, new object[0]);
-
-               
             });
         }
 
@@ -106,21 +100,20 @@ namespace WinExplorer
             ExplorerForms.ef.OpenFileXY(filename, 0, line, 0);
         }
 
-        RichTextBox rb { get; set; }
+        private RichTextBox rb { get; set; }
 
-        WinExplorer.UI.LabelEx le { get; set; }
+        private WinExplorer.UI.LabelEx le { get; set; }
 
-        WinExplorer.UI.LabelEx se { get; set; }
+        private WinExplorer.UI.LabelEx se { get; set; }
 
-        VSProject vpp { get; set; }
+        private VSProject vpp { get; set; }
 
-        int line = 0;
+        private int line = 0;
 
-        string filename { get; set; }
+        private string filename { get; set; }
 
         private void V_AfterSelect(object sender, TreeViewEventArgs e)
         {
-
             rb.Clear();
             rb.AppendText("\n" + e.Node.Text);
             SetAsBold(e.Node.Text, rb);
@@ -144,9 +137,8 @@ namespace WinExplorer
             se.Visible = true;
         }
 
-        string FindSource(VSProject vp, string method)
+        private string FindSource(VSProject vp, string method)
         {
-
             VSSolution vs = vp.vs;
 
             if (vs == null)
@@ -170,7 +162,7 @@ namespace WinExplorer
             //Finds all references to M()
             //var referencesToM = SymbolFinder.FindReferencesAsync(methodSymbol, doc.Project.Solution).Result;
 
-            foreach(SyntaxTree syntaxTree in comp.SyntaxTrees)
+            foreach (SyntaxTree syntaxTree in comp.SyntaxTrees)
             {
                 var members = syntaxTree.GetRoot().DescendantNodes().OfType<MemberDeclarationSyntax>();
                 foreach (var member in members)
@@ -206,7 +198,6 @@ namespace WinExplorer
 
         private void DropDown_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            
             ToolStripDropDownMenu b = sender as ToolStripDropDownMenu;
             b.OwnerItem.Text = e.ClickedItem.Text;
         }
@@ -216,11 +207,10 @@ namespace WinExplorer
             ToolStripItem b = sender as ToolStripItem;
             b.ForeColor = Color.Black;
             b.Font = font;
-            
         }
 
-        Font font { get; set; }
-        Font fontstroked { get; set; }
+        private Font font { get; set; }
+        private Font fontstroked { get; set; }
 
         private void Label_MouseHover(object sender, EventArgs e)
         {
@@ -249,7 +239,7 @@ namespace WinExplorer
                 return;
             TreeNode node = new TreeNode();
             node.Text = "Not Run Tests";
-            
+
             v.Nodes.Add(node);
 
             foreach (MethodInfo c in methods)
@@ -259,22 +249,21 @@ namespace WinExplorer
                 nodes.ImageKey = "StatusInformation_exp_16x";
                 nodes.SelectedImageKey = "StatusInformation_exp_16x";
                 nodes.Tag = c;
-                
-                
+
                 node.Nodes.Add(nodes);
             }
         }
 
         public void LoadTest(VSProject vp, List<string> s)
         {
-             if (s.Count <= 0)
+            if (s.Count <= 0)
                 return;
             TreeNode node = new TreeNode();
             node.Text = "Not Run Tests";
 
             v.Nodes.Add(node);
 
-            foreach(string c in s)
+            foreach (string c in s)
             {
                 TreeNode nodes = new TreeNode();
                 nodes.Text = c;
@@ -287,52 +276,45 @@ namespace WinExplorer
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
         }
+
         public void LoadTestNodes(List<MethodInfo> methods)
         {
-
-
         }
+
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             LoadSelfTests();
         }
+
         public void LoadSelfTests()
         {
             ClearTests();
             VSSolution vs = ExplorerForms.ef.GetVSSolution();
             if (vs == null)
                 return;
-           // foreach (VSProject vp in vs.Projects)
+            // foreach (VSProject vp in vs.Projects)
             {
                 //VSProject vp = vs.GetProjectbyName("VE-Tests");
-             //   msbuilder_alls.MSTest mstest = new msbuilder_alls.MSTest();
-             //   mstest.msTestPath = AppDomain.CurrentDomain.BaseDirectory + "\\Extensions\\_starters-discovery.bat";
-            var names = AppDomain.CurrentDomain.BaseDirectory + "\\Plugins\\VE-Tests.dll";
+                //   msbuilder_alls.MSTest mstest = new msbuilder_alls.MSTest();
+                //   mstest.msTestPath = AppDomain.CurrentDomain.BaseDirectory + "\\Extensions\\_starters-discovery.bat";
+                var names = AppDomain.CurrentDomain.BaseDirectory + "\\Plugins\\VE-Tests.dll";
 
-            var types = Reflection.AttributesOfTypes(names, "TestClassAttribute");
+                var types = Reflection.AttributesOfTypes(names, "TestClassAttribute");
 
                 //var methods = Reflection.AttributesOfMethods(names, "VSExplorerSolution_Test", "TestMethodAttribute");
 
                 if (types == null)
                     return;
-                    //    continue;
+                //    continue;
                 var methods = Reflection.AttributesOfMethodsFromTypes(names, types, "TestMethodAttribute");
 
                 LoadTest(methods);
-
-                
-
-
             }
-
-
 
             //string name = AppDomain.CurrentDomain.BaseDirectory + "" + "Plugins\\VE-Tests.dll";
 

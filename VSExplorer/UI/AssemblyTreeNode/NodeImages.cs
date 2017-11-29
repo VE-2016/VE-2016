@@ -1,8 +1,6 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-using WinExplorer;
-
 namespace AndersLiu.Reflector.Program.UI.AssemblyTreeNode
 {
     public class NodeImages

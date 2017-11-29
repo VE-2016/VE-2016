@@ -1,12 +1,11 @@
 using System;
-using System.Windows.Controls;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Documents;
 using System.Windows.Media;
-using System.Text.RegularExpressions;
-using System.Collections.Generic;
-using VSProvider;
-using System.Windows.Controls.Primitives;
 
 namespace AvalonEdit.Editor
 {
@@ -21,7 +20,7 @@ namespace AvalonEdit.Editor
         {
             return item is TreeListViewItem;
         }
-        
+
         #region Public Properties
 
         /// <summary> GridViewColumn List</summary>
@@ -40,17 +39,15 @@ namespace AvalonEdit.Editor
 
         private GridViewColumnCollection _columns;
 
-        #endregion
+        #endregion Public Properties
     }
 
     public class TreeListViewItem : TreeViewItem
     {
-
-
         public TreeListViewItem()
         {
             this.Background = System.Windows.Media.Brushes.AliceBlue;
-            
+
             this.MouseEnter += TreeListViewItem_MouseEnter;
             this.MouseLeave += TreeListViewItem_MouseLeave;
             this.MouseDown += TreeListViewItem_MouseDown;
@@ -69,7 +66,7 @@ namespace AvalonEdit.Editor
                 popup.IsOpen = false;
         }
 
-        static Popup popup { get; set; }
+        private static Popup popup { get; set; }
 
         private void TreeListViewItem_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
@@ -81,19 +78,16 @@ namespace AvalonEdit.Editor
             if (source == null)
                 return;
 
-            if(popup == null)
+            if (popup == null)
             {
                 popup = new Popup();
                 popup.Height = 100;
                 popup.KeyDown += Popup_KeyDown;
                 popup.Placement = PlacementMode.Mouse;
-                
             }
 
-            
-
             string lines = source.Lines;
-            if(lines == null)
+            if (lines == null)
             {
                 popup.IsOpen = false;
                 e.Handled = false;
@@ -105,13 +99,11 @@ namespace AvalonEdit.Editor
             popup.IsOpen = true;
 
             e.Handled = false;
-
-           
         }
 
         private void Popup_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
-           if(e.Key == System.Windows.Input.Key.Escape)
+            if (e.Key == System.Windows.Input.Key.Escape)
             {
                 popup.IsOpen = false;
             }
@@ -133,7 +125,6 @@ namespace AvalonEdit.Editor
             }
         }
 
-
         protected override DependencyObject GetContainerForItemOverride()
         {
             return new TreeListViewItem();
@@ -146,9 +137,9 @@ namespace AvalonEdit.Editor
 
         private int _level = -1;
     }
+
     public class RichTextBlock : TextBlock
     {
-
         public RichTextBlock() : base()
         {
             this.Initialized += RichTextBlock_Initialized;
@@ -165,7 +156,7 @@ namespace AvalonEdit.Editor
                  "Data",
                  typeof(object),
                  typeof(RichTextBlock)
-   
+
             );
 
         public object Data
@@ -173,9 +164,9 @@ namespace AvalonEdit.Editor
             get { return (object)GetValue(DataProperty); }
             set { SetValue(DataProperty, value); }
         }
+
         private void RichTextBlock_Initialized(object sender, EventArgs e)
         {
-
             object obs = this.Data;
 
             if (obs == null)
@@ -206,7 +197,6 @@ namespace AvalonEdit.Editor
             string s = "";
             foreach (Match match in matches)
             {
-
                 var word = match.Value;
                 int start = match.Index;
                 int length = match.Length;
@@ -230,11 +220,10 @@ namespace AvalonEdit.Editor
                 }
 
                 prev = start + length;
-
             }
             if (prev < text.Length - 1)
             {
-                s = text.Substring(prev, text.Length  - prev);
+                s = text.Substring(prev, text.Length - prev);
                 Inlines.Add(new Run(s) { Foreground = Brushes.Black });
             }
         }

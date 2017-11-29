@@ -1,4 +1,4 @@
-using AIMS.Libraries.CodeEditor;
+using ScriptControl;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -63,7 +63,7 @@ namespace WinExplorer
             rb.SelectionColor = SystemColors.HotTrack;
         }
 
-        void SelectTemplate(string filename)
+        private void SelectTemplate(string filename)
         {
             string file = Path.GetFileName(filename);
             ListViewItem v = lv.FindItemWithText(file);
@@ -72,6 +72,7 @@ namespace WinExplorer
             v.Selected = true;
             lv.Select();
         }
+
         public NewProject Project(NewProject nw = null)
         {
             if (nw == null)
@@ -107,9 +108,9 @@ namespace WinExplorer
 
         public void LoadSettings()
         {
-            if (CodeEditorControl.settings != null)
+            if (ScriptControl.ScriptControl.settings != null)
             {
-                Settings s = CodeEditorControl.settings;
+                Settings s = ScriptControl.ScriptControl.settings;
 
                 if (s.Theme == "VS2012Light")
                 {
@@ -254,13 +255,10 @@ namespace WinExplorer
             vsc = new TreeNode();
             vsc.Text = "Visual Basic";
             tmp.Nodes.Add(vsc);
-
-
         }
 
         public void LoadVSTemplates()
         {
-
             TreeNode node = new TreeNode();
             node.Text = "Installed-2";
             tv.Nodes.Add(node);
@@ -297,7 +295,6 @@ namespace WinExplorer
             vsc.Text = "Azure Data Lake";
             node.Nodes.Add(vsc);
 
-
             vsc = new TreeNode();
             vsc.Text = "JavaScript";
             node.Nodes.Add(vsc);
@@ -318,7 +315,6 @@ namespace WinExplorer
             TreeNode vs = new TreeNode();
             vs.Text = "Visual Studio Solution";
             vsc.Nodes.Add(vs);
-
         }
 
         public string templates = "Templates-Data";
@@ -337,22 +333,18 @@ namespace WinExplorer
 
             foreach (string s in d)
             {
-
                 pp = new PreviewInfo();
 
                 vsc = new TreeNode();
                 vsc.Text = Path.GetFileName(s);
 
-
                 if (s.Contains("Windows 10"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 else if (s.EndsWith("Mobile Apps"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 else continue;
 
@@ -380,17 +372,14 @@ namespace WinExplorer
 
             foreach (string s in d)
             {
-
                 pp = new PreviewInfo();
 
                 vsc = new TreeNode();
                 vsc.Text = Path.GetFileName(s);
 
-
                 if (s.Contains("Windows UAP"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 else if (s.EndsWith("Windows"))
                 {
@@ -400,32 +389,26 @@ namespace WinExplorer
                 else if (s.EndsWith("Web"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 else if (s.EndsWith(".NET Core"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 else if (s.EndsWith("Cloud"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 else if (s.EndsWith("Extensibility"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 else if (s.EndsWith("WCF"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 else if (s.EndsWith("Test"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 else continue;
 
@@ -462,17 +445,14 @@ namespace WinExplorer
 
             foreach (string s in d)
             {
-
                 pp = new PreviewInfo();
 
                 vsc = new TreeNode();
                 vsc.Text = Path.GetFileName(s);
 
-
                 if (s.Contains("Windows UAP"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 else if (s.EndsWith("Windows"))
                 {
@@ -482,7 +462,6 @@ namespace WinExplorer
                 else if (s.EndsWith("Web"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 //else if (s.EndsWith(".NET Core"))
                 //{
@@ -492,22 +471,18 @@ namespace WinExplorer
                 else if (s.EndsWith("Cloud"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 else if (s.EndsWith("Extensibility"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 else if (s.EndsWith("WCF"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 else if (s.EndsWith("Test"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 else continue;
 
@@ -530,14 +505,11 @@ namespace WinExplorer
             node.Tag = p;
         }
 
-
         public void LoadAndroid(TreeNode node, string folder, PreviewInfo p)
         {
             string folders = AppDomain.CurrentDomain.BaseDirectory + templates + "\\Extensions\\Xamarin.VisualStudio\\T\\PT\\CSharp\\Android";
 
             string[] d = Directory.GetFiles(folders);
-
-
 
             foreach (string s in d)
             {
@@ -549,10 +521,8 @@ namespace WinExplorer
 
                 ListViewItem v = LoadListViewItems(s, c);
 
-
                 p.v.Add(v);
             }
-
         }
 
         public void LoadWindowsUniversal(TreeNode node, string folder, PreviewInfo p)
@@ -561,8 +531,6 @@ namespace WinExplorer
 
             string[] d = Directory.GetDirectories(folders);
 
-
-
             foreach (string s in d)
             {
                 TreeNode vsc = new TreeNode();
@@ -573,20 +541,16 @@ namespace WinExplorer
 
                 ListViewItem v = LoadListViewItems(s, c);
 
-
-
                 p.v.Add(v);
             }
-
         }
+
         public void LoadWindowsClassic(TreeNode node, string folder, PreviewInfo p)
         {
             string folders = folder + "\\1033";
 
             string[] d = Directory.GetDirectories(folders);
 
-
-
             foreach (string s in d)
             {
                 TreeNode vsc = new TreeNode();
@@ -597,15 +561,12 @@ namespace WinExplorer
 
                 ListViewItem v = LoadListViewItems(s, c);
 
-
-
                 p.v.Add(v);
             }
-
         }
-        PreviewInfo LoadTemplateXml(TreeNode node, string folder)
-        {
 
+        private PreviewInfo LoadTemplateXml(TreeNode node, string folder)
+        {
             PreviewInfo p = new PreviewInfo();
 
             p.folder = folder;
@@ -624,7 +585,6 @@ namespace WinExplorer
 
             if (xml != null)
             {
-
                 XmlNode a = FindNode(xml.ChildNodes, "PreviewImage");
 
                 XmlNode b = FindNode(xml.ChildNodes, "Description");
@@ -632,7 +592,6 @@ namespace WinExplorer
                     p.image = a.InnerText;
                 if (b != null)
                     p.description = b.InnerText;
-
             }
 
             node.Tag = p;
@@ -668,7 +627,6 @@ namespace WinExplorer
                     if (node.Name.Equals(nodeName)) return node;
                     if (node.HasChildNodes)
                     {
-
                         XmlNode nodes = FindNode(node.ChildNodes, nodeName);
 
                         if (nodes != null)
@@ -750,8 +708,6 @@ namespace WinExplorer
                 v.SubItems.Add(s.FullName);
 
                 lv.Items.Add(v);
-
-
             }
         }
 
@@ -766,7 +722,6 @@ namespace WinExplorer
             if (p == null)
                 return;
             richTextBox1.Text = p.description;
-
         }
 
         public ArrayList GetTemplates(string folder)
@@ -787,6 +742,7 @@ namespace WinExplorer
 
             return L;
         }
+
         static public ArrayList GetProjectTemplates(string folder)
         {
             ArrayList L = new ArrayList();
@@ -807,6 +763,7 @@ namespace WinExplorer
 
             return L;
         }
+
         public string GetProjectFile()
         {
             int i = GetSelectedIndex(lv);
@@ -943,18 +900,16 @@ namespace WinExplorer
             }
             catch (Exception ex)
             {
-
             }
         }
     }
 
     public class NewProject
     {
-
         public string projectName { get; set; }
 
         public string projectFolder { get; set; }
-        
+
         public string ProjectName { get; set; }
 
         public string Location { get; set; }
@@ -1401,7 +1356,6 @@ namespace WinExplorer
                 if (ef == null)
                     return obs;
 
-
                 ef.BeginInvoke(new Action(() => { cb.Items.Clear(); ArrayList P = ef.Command_LoadConfigurations(); LoadPlatforms(P); }));
 
                 return obs;
@@ -1512,7 +1466,6 @@ namespace WinExplorer
                 return obs;
             }
         }
-
 
         public class Command_Customize : Command
         {
@@ -1845,7 +1798,7 @@ namespace WinExplorer
                 Name = "Navigate Forward";
                 image = ve_resource.Forward_256x;
                 keyboard = new Keys[3];
-                
+
                 keyboard[0] = Keys.Control;
                 keyboard[1] = Keys.Shift;
                 keyboard[2] = Keys.Subtract;
@@ -2584,7 +2537,6 @@ namespace WinExplorer
 
     public class PreviewInfo
     {
-
         public List<ListViewItem> v { get; set; }
 
         public string folder { get; set; }
@@ -2598,6 +2550,4 @@ namespace WinExplorer
             v = new List<ListViewItem>();
         }
     }
-
-   
 }

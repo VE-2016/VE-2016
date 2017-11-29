@@ -1,4 +1,4 @@
-namespace AIMS.Libraries.Scripting.ScriptControl
+namespace ScriptControl
 {
     partial class FileForm
     {
@@ -52,7 +52,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         #endregion
 
-        public AIMS.Libraries.CodeEditor.Syntax.SyntaxDocument syntaxDocument1;
+        
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.RichTextBox richTextBox1;
     }

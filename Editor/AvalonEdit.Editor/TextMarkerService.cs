@@ -1,14 +1,14 @@
 ﻿// Copyright (c) 2014 AlphaSierraPapa for the SharpDevelop Team
-// 
+//
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this
 // software and associated documentation files (the "Software"), to deal in the Software
 // without restriction, including without limitation the rights to use, copy, modify, merge,
 // publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons
 // to whom the Software is furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in all copies or
 // substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
 // INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
 // PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
@@ -16,6 +16,8 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+using ICSharpCode.AvalonEdit.Document;
+using ICSharpCode.AvalonEdit.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -23,9 +25,6 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
-using ICSharpCode.AvalonEdit.Document;
-using ICSharpCode.AvalonEdit.Rendering;
-
 
 namespace AvalonEdit.Editor
 {
@@ -34,8 +33,8 @@ namespace AvalonEdit.Editor
     /// </summary>
     public sealed class TextMarkerService : DocumentColorizingTransformer, IBackgroundRenderer, ITextMarkerService, ITextViewConnect
     {
-        TextSegmentCollection<TextMarker> markers;
-        TextDocument document;
+        private TextSegmentCollection<TextMarker> markers;
+        private TextDocument document;
 
         public TextMarkerService(TextDocument document)
         {
@@ -46,6 +45,7 @@ namespace AvalonEdit.Editor
         }
 
         #region ITextMarkerService
+
         public ITextMarker Create(int startOffset, int length)
         {
             if (markers == null)
@@ -116,9 +116,11 @@ namespace AvalonEdit.Editor
         }
 
         public event EventHandler RedrawRequested;
-        #endregion
+
+        #endregion ITextMarkerService
 
         #region DocumentColorizingTransformer
+
         protected override void ColorizeLine(DocumentLine line)
         {
             if (markers == null)
@@ -136,7 +138,8 @@ namespace AvalonEdit.Editor
                 ChangeLinePart(
                     Math.Max(marker.StartOffset, lineStart),
                     Math.Min(marker.EndOffset, lineEnd),
-                    element => {
+                    element =>
+                    {
                         if (foregroundBrush != null)
                         {
                             element.TextRunProperties.SetForegroundBrush(foregroundBrush);
@@ -152,9 +155,11 @@ namespace AvalonEdit.Editor
                 );
             }
         }
-        #endregion
+
+        #endregion DocumentColorizingTransformer
 
         #region IBackgroundRenderer
+
         public KnownLayer Layer
         {
             get
@@ -242,15 +247,17 @@ namespace AvalonEdit.Editor
             }
         }
 
-        IEnumerable<Point> CreatePoints(Point start, Point end, double offset, int count)
+        private IEnumerable<Point> CreatePoints(Point start, Point end, double offset, int count)
         {
             for (int i = 0; i < count; i++)
                 yield return new Point(start.X + i * offset, start.Y - ((i + 1) % 2 == 0 ? offset : 0));
         }
-        #endregion
+
+        #endregion IBackgroundRenderer
 
         #region ITextViewConnect
-        readonly List<TextView> textViews = new List<TextView>();
+
+        private readonly List<TextView> textViews = new List<TextView>();
 
         void ITextViewConnect.AddToTextView(TextView textView)
         {
@@ -269,12 +276,13 @@ namespace AvalonEdit.Editor
                 textViews.Remove(textView);
             }
         }
-        #endregion
+
+        #endregion ITextViewConnect
     }
 
     public sealed class TextMarker : TextSegment, ITextMarker
     {
-        readonly TextMarkerService service;
+        private readonly TextMarkerService service;
 
         public TextMarker(TextMarkerService service, int startOffset, int length)
         {
@@ -304,12 +312,12 @@ namespace AvalonEdit.Editor
                 Deleted(this, EventArgs.Empty);
         }
 
-        void Redraw()
+        private void Redraw()
         {
             service.Redraw(this);
         }
 
-        Color? backgroundColor;
+        private Color? backgroundColor;
 
         public Color? BackgroundColor
         {
@@ -324,7 +332,7 @@ namespace AvalonEdit.Editor
             }
         }
 
-        Color? foregroundColor;
+        private Color? foregroundColor;
 
         public Color? ForegroundColor
         {
@@ -339,7 +347,7 @@ namespace AvalonEdit.Editor
             }
         }
 
-        FontWeight? fontWeight;
+        private FontWeight? fontWeight;
 
         public FontWeight? FontWeight
         {
@@ -354,7 +362,7 @@ namespace AvalonEdit.Editor
             }
         }
 
-        FontStyle? fontStyle;
+        private FontStyle? fontStyle;
 
         public FontStyle? FontStyle
         {
@@ -371,7 +379,7 @@ namespace AvalonEdit.Editor
 
         public object Tag { get; set; }
 
-        TextMarkerTypes markerTypes;
+        private TextMarkerTypes markerTypes;
 
         public TextMarkerTypes MarkerTypes
         {
@@ -386,7 +394,7 @@ namespace AvalonEdit.Editor
             }
         }
 
-        Color markerColor;
+        private Color markerColor;
 
         public Color MarkerColor
         {
@@ -403,6 +411,7 @@ namespace AvalonEdit.Editor
 
         public object ToolTip { get; set; }
     }
+
     /// <summary>
 	/// Represents a text marker.
 	/// </summary>
@@ -487,14 +496,17 @@ namespace AvalonEdit.Editor
         /// Use no marker
         /// </summary>
         None = 0x0000,
+
         /// <summary>
         /// Use squiggly underline marker
         /// </summary>
         SquigglyUnderline = 0x001,
+
         /// <summary>
         /// Normal underline.
         /// </summary>
         NormalUnderline = 0x002,
+
         /// <summary>
         /// Dotted underline.
         /// </summary>
@@ -504,14 +516,17 @@ namespace AvalonEdit.Editor
         /// Horizontal line in the scroll bar.
         /// </summary>
         LineInScrollBar = 0x0100,
+
         /// <summary>
         /// Small triangle in the scroll bar, pointing to the right.
         /// </summary>
         ScrollBarRightTriangle = 0x0400,
+
         /// <summary>
         /// Small triangle in the scroll bar, pointing to the left.
         /// </summary>
         ScrollBarLeftTriangle = 0x0800,
+
         /// <summary>
         /// Small circle in the scroll bar.
         /// </summary>

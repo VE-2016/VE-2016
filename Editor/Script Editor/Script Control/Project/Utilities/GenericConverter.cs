@@ -1,8 +1,6 @@
-
-using System;
 using System.ComponentModel;
 
-namespace AIMS.Libraries.Scripting.ScriptControl
+namespace ScriptControl
 {
     /// <summary>
     /// Provides static conversion functions to quickly convert types

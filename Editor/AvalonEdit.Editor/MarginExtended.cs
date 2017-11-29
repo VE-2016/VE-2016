@@ -4,68 +4,67 @@ using ICSharpCode.AvalonEdit.Editing;
 using ICSharpCode.AvalonEdit.Rendering;
 using ICSharpCode.AvalonEdit.Utils;
 using Microsoft.CodeAnalysis;
+
 //using Microsoft.CodeAnalysis.Differencing;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.TextFormatting;
-using System.Windows.Shapes;
 using VSParsers;
 using VSProvider;
 
 namespace AvalonEdit.Editor
 {
-	public partial class MarginExtended : UserControl
-	{
+    public partial class MarginExtended : UserControl
+    {
+    }
 
+    public class BreakPointMargin : AbstractMargin
+    {
+        public BreakPointMargin()
+        {
+            //Margin = new Thickness(30, 0, 0, 0);
+            background = System.Windows.Media.Brushes.White;
+        }
 
-	}
-	public class BreakPointMargin : AbstractMargin
-	{
-		public BreakPointMargin()
-		{
-			//Margin = new Thickness(30, 0, 0, 0);
-			background = System.Windows.Media.Brushes.White;
-		}
-		public int margin = 20;
-		protected override HitTestResult HitTestCore(PointHitTestParameters hitTestParameters)
-		{
-			return new PointHitTestResult(this, hitTestParameters.HitPoint);
-		}
-		protected override System.Windows.Size MeasureOverride(System.Windows.Size availableSize)
-		{
-			return new System.Windows.Size(margin, 0);
-		}
-		//Size RenderSize = new Size(70, 1000);
+        public int margin = 20;
 
-		public SolidColorBrush background { get; set; }
+        protected override HitTestResult HitTestCore(PointHitTestParameters hitTestParameters)
+        {
+            return new PointHitTestResult(this, hitTestParameters.HitPoint);
+        }
 
-		public System.Windows.Media.Pen pen { get; set; }
+        protected override System.Windows.Size MeasureOverride(System.Windows.Size availableSize)
+        {
+            return new System.Windows.Size(margin, 0);
+        }
 
-		protected override void OnRender(DrawingContext drawingContext)
-		{
-			System.Windows.Size renderSize = new System.Windows.Size(margin, ((FrameworkElement)this).RenderSize.Height);
-			drawingContext.DrawRectangle(background, null,
-										 new Rect(0, 0, renderSize.Width, renderSize.Height));
-			if (pen != null)
-				drawingContext.DrawLine(pen, new System.Windows.Point(renderSize.Width - 5, 0), new System.Windows.Point(renderSize.Width - 5, renderSize.Height));
+        //Size RenderSize = new Size(70, 1000);
 
-			base.OnRender(drawingContext);
-		}
+        public SolidColorBrush background { get; set; }
+
+        public System.Windows.Media.Pen pen { get; set; }
+
+        protected override void OnRender(DrawingContext drawingContext)
+        {
+            System.Windows.Size renderSize = new System.Windows.Size(margin, ((FrameworkElement)this).RenderSize.Height);
+            drawingContext.DrawRectangle(background, null,
+                                         new Rect(0, 0, renderSize.Width, renderSize.Height));
+            if (pen != null)
+                drawingContext.DrawLine(pen, new System.Windows.Point(renderSize.Width - 5, 0), new System.Windows.Point(renderSize.Width - 5, renderSize.Height));
+
+            base.OnRender(drawingContext);
+        }
+
         //protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         //{
-
         //}
 
         //public Line line {get; set;}
@@ -77,9 +76,9 @@ namespace AvalonEdit.Editor
         //	this.AddVisualChild(line);
         //}
     }
-	public class Editor
-	{
 
+    public class Editor
+    {
         //Stack<int> stack = null;
         //void Parse(string c, int offset)
         //{
@@ -113,7 +112,6 @@ namespace AvalonEdit.Editor
         //    p = 0;
         //    do
         //    {
-
         //        p = c.IndexOf(")", p);
         //        if (p >= 0)
         //        {
@@ -172,12 +170,10 @@ namespace AvalonEdit.Editor
         //            }
         //        }
 
-
-
         //    }
 
         //}
-        
+
         public List<Microsoft.CodeAnalysis.ISymbol> methods { get; set; }
 
         public VSSolution vs { get; set; }
@@ -319,6 +315,7 @@ namespace AvalonEdit.Editor
 
             return wordBeforeDot;
         }
+
         public List<ISymbol> symbols { get; set; }
 
         public string SolutionToLoad { get; set; }
@@ -337,7 +334,6 @@ namespace AvalonEdit.Editor
 
             if ((!string.IsNullOrEmpty(filename)))
             {
-
                 if (string.IsNullOrEmpty(text))
                     content = File.ReadAllText(filename);
 
@@ -348,7 +344,7 @@ namespace AvalonEdit.Editor
                 symbols = vs.GetMembers(text, addProperties);
             else
 
-            symbols = vp.vs.GetMembers(vp, filename, content);
+                symbols = vp.vs.GetMembers(vp, filename, content);
         }
 
         public List<INamespaceOrTypeSymbol> typesofproject;
@@ -371,6 +367,16 @@ namespace AvalonEdit.Editor
             return typesofproject;
         }
 
+        public List<INamespaceOrTypeSymbol> ProjectTypes(VSSolution vs)
+        {
+            string FileName = ProjectToLoad;
+
+            string filename = FileToLoad;
+
+            typesofproject = vs.ProjecTypes(filename);
+
+            return typesofproject;
+        }
 
         public Tuple<string, string, ISymbol> GetType(TextEditor textEditor)
         {
@@ -379,7 +385,7 @@ namespace AvalonEdit.Editor
             string word = GetWordUnderMouse(textEditor.Document, textEditor.TextArea.Caret.Position);
 
             if (string.IsNullOrEmpty(word))
-                return new Tuple<string, string, ISymbol>(null,null,null);
+                return new Tuple<string, string, ISymbol>(null, null, null);
 
             string FileName = SolutionToLoad;// "C:\\MSBuildProjects-beta\\VSExplorer\\VSExplorer.csproj";
 
@@ -415,7 +421,7 @@ namespace AvalonEdit.Editor
                         return new Tuple<string, string, ISymbol>(CSParsers.TypeToString(ps), "", r);
                     }
                 }
-                }
+            }
             else
             {
                 if (r != null)
@@ -430,43 +436,36 @@ namespace AvalonEdit.Editor
                                     if (containigType.Locations[0].IsInSource)
                                     {
                                         return new Tuple<string, string, ISymbol>("", containigType.Locations[0].SourceTree.FilePath, r);
-
                                     }
-
-
                         }
                     }
             }
-             List<INamespaceOrTypeSymbol> s = /*vp.*/vs.GetAllTypes(file);
+            List<INamespaceOrTypeSymbol> s = /*vp.*/vs.GetAllTypes(file);
 
             word = word.ToLower();
 
-           // var data = s.Select(bc => bc).Where(cd => cd.Name.ToLower().Contains(word)).ToList();
+            // var data = s.Select(bc => bc).Where(cd => cd.Name.ToLower().Contains(word)).ToList();
 
             foreach (INamespaceOrTypeSymbol b in s)
             {
                 if (word.Contains("."))
                 {
-
                 }
-                else if(b.Name.ToLower() ==  word)
+                else if (b.Name.ToLower() == word)
                 {
                     if (b.IsType)
                     {
                         if (b.Locations != null)
                             if (b.Locations[0] != null)
-                                if(b.Locations[0].IsInSource )
-                            {
+                                if (b.Locations[0].IsInSource)
+                                {
                                     return new Tuple<string, string, ISymbol>("", b.Locations[0].SourceTree.FilePath, b);
-                                
-                            }
+                                }
                         return new Tuple<string, string, ISymbol>(CSParsers.TypeToString(b), "", b);
-                        
                     }
-                    
                 }
             }
-            return new Tuple<string, string, ISymbol>("","", null);
+            return new Tuple<string, string, ISymbol>("", "", null);
         }
 
         public TextEditor textEditor { get; set; }
@@ -475,24 +474,19 @@ namespace AvalonEdit.Editor
 
         public bool shouldUpdate = false;
 
-        int RealOffset(int offset)
+        private int RealOffset(int offset)
         {
             int realLineNumber = -1;
             int Offset = 0;
             DocumentLine current = textEditor.Document.GetLineByOffset(0);
             while (current != null)
             {
-
-
                 if (!(current.obs is ISymbol))
                     realLineNumber++;
                 else
                 {
-
                     Offset += (current.Offset + current.Length + current.DelimiterLength);
-
                 }
-                
 
                 current = current.NextLine;
 
@@ -502,13 +496,9 @@ namespace AvalonEdit.Editor
             return Offset;
         }
 
-
-
         public void CodeCompletionPreview()
         {
-
         }
-
 
         public void TypesWithDelay(int KeyChar, ICSharpCode.AvalonEdit.Document.TextDocument textDocument, TextEditor textEditor, string FileName, int offset)
         {
@@ -530,7 +520,7 @@ namespace AvalonEdit.Editor
                 shouldUpdate = false;
 
                 this.textEditor = textEditor;
-                
+
                 TextViewPosition textViewPosition = new TextViewPosition(textEditor.TextArea.Caret.Location);
 
                 string name = GetWordUnderMouse(textDocument, textViewPosition);
@@ -550,7 +540,6 @@ namespace AvalonEdit.Editor
                 else
                 if (name.EndsWith("."))
                 {
-                    
                     shouldUpdate = true;
                 }
                 else if (name.Length == 1)
@@ -558,7 +547,6 @@ namespace AvalonEdit.Editor
                     shouldUpdate = true;
                     name = "";
                 }
-                
                 else
                 if (name.Length > 1 && !name.Contains("."))
                 {
@@ -569,13 +557,11 @@ namespace AvalonEdit.Editor
 
                 // offset = RealOffset(offset);
 
-
                 List<Microsoft.CodeAnalysis.ISymbol> sn = LoadProjectTypes(vp, FileName, textDocument.Text, offset, name, "");
-                
 
                 sns = sn;
 
-                if(sn.Count <= 0)
+                if (sn.Count <= 0)
                 {
                     if (name.Contains("."))
                     {
@@ -588,11 +574,10 @@ namespace AvalonEdit.Editor
                 foreach (var b in sn)
                 {
                     //if (b.Kind == SymbolKind.Local)
-                      //  if (b is INamedTypeSymbol)
+                    //  if (b is INamedTypeSymbol)
 
                     //        if (((INamedTypeSymbol)b).TypeKind == TypeKind.Class)
                     //            sn.Remove(b);
-
                 }
 
                 {
@@ -612,7 +597,6 @@ namespace AvalonEdit.Editor
                     //cc = cc.Trim();
                     //if (cc.EndsWith("="))
                     //{
-
                     //    string[] nc = Selection.GetCaretString().Trim().Split("=".ToCharArray());
                     //    if (nc.Length > 1)
                     //    {
@@ -647,7 +631,6 @@ namespace AvalonEdit.Editor
 
                     //        //				ins.SetVirtualMode();
 
-
                     //        //				ins.AutoSize();
 
                     //        //				ins.Refresh();
@@ -655,87 +638,84 @@ namespace AvalonEdit.Editor
                     //        return;
                     //    }
                     //}
-             //       string[] words = cc.Trim().Split(".".ToCharArray()).Select(s => s).Where(t => t != "").ToArray();
+                    //       string[] words = cc.Trim().Split(".".ToCharArray()).Select(s => s).Where(t => t != "").ToArray();
 
-             //       string name = "";
+                    //       string name = "";
 
-             //       Parse(Selection.GetCaretString(), offset);
+                    //       Parse(Selection.GetCaretString(), offset);
 
-             //       if (cc.StartsWith(".this"))
-             //           name = "this";
-             //       else
-             //       if (KeyChar == 8 && words.Length > 1)
-             //       {
-             //           //ins.Hide();
-             //           //form.Hide();
-             //           //if (dfs != null)
-             //           //	dfs.Close();
-             //           return;
-             //       }
-             //       else if (cc.StartsWith("."))
-             //       {
-             //           name = words[0];
-             //           if (/*name.Contains(")") && */name.Contains("("))
-             //           {
-             //               string[] dd = name.Split("(".ToCharArray());
+                    //       if (cc.StartsWith(".this"))
+                    //           name = "this";
+                    //       else
+                    //       if (KeyChar == 8 && words.Length > 1)
+                    //       {
+                    //           //ins.Hide();
+                    //           //form.Hide();
+                    //           //if (dfs != null)
+                    //           //	dfs.Close();
+                    //           return;
+                    //       }
+                    //       else if (cc.StartsWith("."))
+                    //       {
+                    //           name = words[0];
+                    //           if (/*name.Contains(")") && */name.Contains("("))
+                    //           {
+                    //               string[] dd = name.Split("(".ToCharArray());
 
-             //               //name = "." + dd[0];
-             //               name = dd[dd.Length - 1];//dd[0]
-             //           }
-             //       }
-             //       else if (cc.StartsWith("("))
-             //       {
-             //           name = words[0];
-             //           if (name.Contains("("))
-             //               if (name.Contains(")"))
-             //               {
-             //                   string[] dd = name.Split(",".ToCharArray());
-             //                   if (Selection.IsCaretInWord())
-             //                       name = "";
-             //               }
-             //       }
-             //       else if (cc.StartsWith(")"))
-             //       {
-             //           name = words[0];
-             //           if (name.Contains("("))
-             //               if (name.Contains(")"))
-             //               {
-             //                   if (Selection.IsCaretInWord())
-             //                       name = "";
-             //               }
-             //       }
-             //       Point pp = Selection.GetCursor();
-             //       pp.X = pp.X * ActiveViewControl.View.CharWidth;
-             //       pp.Y = (ActiveViewControl.Document[p.Y].VisibleIndex - ActiveViewControl.View.FirstVisibleRow + 1) * ActiveViewControl.View.RowHeight + 3;
-             //  //     form.Location = this.PointToScreen(pp);
-             //       List<Microsoft.CodeAnalysis.ISymbol> sn = ins.LoadProjectTypes(vp, FileName, Document.Text, offset, name, cc);
-             //       if (name.StartsWith("("))
-             //       {
-             //           //ins.Hide();
-             //           //form.Hide();
-             ////           LoadDefinition(sn, this.PointToScreen(pp));
-             //           methods = sn;
-             //           return;
-             //       }
-             //       else if (name.StartsWith(")"))
-             //       {
-             //           //ins.Hide();
-             //           //form.Hide();
-             //           //if (dfs != null)
-             //           //	dfs.Hide();
-             //           return;
-             //       }
-             //       //ins.SetVirtualMode();
+                    //               //name = "." + dd[0];
+                    //               name = dd[dd.Length - 1];//dd[0]
+                    //           }
+                    //       }
+                    //       else if (cc.StartsWith("("))
+                    //       {
+                    //           name = words[0];
+                    //           if (name.Contains("("))
+                    //               if (name.Contains(")"))
+                    //               {
+                    //                   string[] dd = name.Split(",".ToCharArray());
+                    //                   if (Selection.IsCaretInWord())
+                    //                       name = "";
+                    //               }
+                    //       }
+                    //       else if (cc.StartsWith(")"))
+                    //       {
+                    //           name = words[0];
+                    //           if (name.Contains("("))
+                    //               if (name.Contains(")"))
+                    //               {
+                    //                   if (Selection.IsCaretInWord())
+                    //                       name = "";
+                    //               }
+                    //       }
+                    //       Point pp = Selection.GetCursor();
+                    //       pp.X = pp.X * ActiveViewControl.View.CharWidth;
+                    //       pp.Y = (ActiveViewControl.Document[p.Y].VisibleIndex - ActiveViewControl.View.FirstVisibleRow + 1) * ActiveViewControl.View.RowHeight + 3;
+                    //  //     form.Location = this.PointToScreen(pp);
+                    //       List<Microsoft.CodeAnalysis.ISymbol> sn = ins.LoadProjectTypes(vp, FileName, Document.Text, offset, name, cc);
+                    //       if (name.StartsWith("("))
+                    //       {
+                    //           //ins.Hide();
+                    //           //form.Hide();
+                    ////           LoadDefinition(sn, this.PointToScreen(pp));
+                    //           methods = sn;
+                    //           return;
+                    //       }
+                    //       else if (name.StartsWith(")"))
+                    //       {
+                    //           //ins.Hide();
+                    //           //form.Hide();
+                    //           //if (dfs != null)
+                    //           //	dfs.Hide();
+                    //           return;
+                    //       }
+                    //       //ins.SetVirtualMode();
 
-           //         ins.FindSimilarWords(w);
+                    //         ins.FindSimilarWords(w);
 
                     //ins.AutoSize();
 
                     //ins.Refresh();
-
                 }
-                
-
 
                 //			if (form.Visible == true)
                 //				form.SetTopMost();
@@ -743,7 +723,6 @@ namespace AvalonEdit.Editor
                 //		this.Focus();
 
                 //		_runnings = false;
-
             }
         }
 
@@ -762,11 +741,12 @@ namespace AvalonEdit.Editor
         //    df.Location = pp;
         //    df.Refresh();
         //}
-        
-        ArrayList S { get; set; }
-        ArrayList T { get; set; }
+
+        private ArrayList S { get; set; }
+        private ArrayList T { get; set; }
 
         public List<Microsoft.CodeAnalysis.ISymbol> sns { get; set; }
+
         public List<Microsoft.CodeAnalysis.ISymbol> LoadProjectTypes(VSProject vp, string filename, string content, int offset, string name, string names)
         {
             List<Microsoft.CodeAnalysis.ISymbol> sn = GetCodeCompletion(vp, filename, content, offset, name, names);
@@ -776,7 +756,6 @@ namespace AvalonEdit.Editor
                 return sn;
             //v.Items.Clear();
 
-
             LoadSymbols(sn);
 
             if (names.Contains("."))
@@ -784,18 +763,19 @@ namespace AvalonEdit.Editor
             else ReloadTypes(true);
 
             sns = sn;
-            
+
             return sn;
         }
-     
+
         public List<Microsoft.CodeAnalysis.ISymbol> GetCodeCompletion(VSProject vp, string filename, string content, int offset, string name, string names)
         {
             return vp.vs.GetCodeCompletion(vp, filename, content, offset, name, names);
         }
-        ArrayList E = new ArrayList();
-        void LoadSymbols(List<Microsoft.CodeAnalysis.ISymbol> sn, bool alls = false)
+
+        private ArrayList E = new ArrayList();
+
+        private void LoadSymbols(List<Microsoft.CodeAnalysis.ISymbol> sn, bool alls = false)
         {
-            
             //if (S != null)
             //    foreach (ListViewItem s in S)
             //        T.Remove(s);
@@ -813,7 +793,6 @@ namespace AvalonEdit.Editor
 
             //foreach (Microsoft.CodeAnalysis.ISymbol dd in sn)
             //{
-
             //    if (dd != null)
             //    {
             //        ListViewItem v;
@@ -844,21 +823,18 @@ namespace AvalonEdit.Editor
 
             //    }
             //}
-
         }
+
         public void ReloadTypes(bool alls = true)
         {
-
             //SuspendLayout();
             //cc = new List<ListViewItem>();
             ////T.Sort(new SortComparer());
             //if (alls == true)
             //{
-
             //    foreach (ListViewItem b in T)
             //        cc.Add(b);
             //    int i = 0;
-
 
             //    foreach (ListViewItem c in E)
             //        if (!cc.Contains(c))
@@ -924,9 +900,8 @@ namespace AvalonEdit.Editor
 
             ////ResumeLayout();
         }
-
-
     }
+
     /// <summary>
     /// Makes all text after a colon (until the end of line) upper-case.
     /// </summary>
@@ -956,14 +931,14 @@ namespace AvalonEdit.Editor
             DocumentLine line = CurrentContext.Document.GetLineByOffset(offset);
             if (line.Offset == offset)
                 if (offset != line.EndOffset)
-            return new UppercaseText(CurrentContext.VisualLine, line.EndOffset - offset);
+                    return new UppercaseText(CurrentContext.VisualLine, line.EndOffset - offset);
             return null;
         }
 
         /// <summary>
         /// Displays a portion of the document text, but upper-cased.
         /// </summary>
-        class UppercaseText : VisualLineText
+        private class UppercaseText : VisualLineText
         {
             public UppercaseText(VisualLine parentVisualLine, int length) : base(parentVisualLine, length)
             {
@@ -978,16 +953,14 @@ namespace AvalonEdit.Editor
             {
                 if (context == null)
                     throw new ArgumentNullException("context");
-                
+
                 int relativeOffset = startVisualColumn - VisualColumn;
                 StringSegment text = context.GetText(context.VisualLine.FirstDocumentLine.Offset + RelativeTextOffset + relativeOffset, DocumentLength - relativeOffset);
                 char[] uppercase = new char[text.Count];
-                
-                
-               for (int i = 0; i < text.Count; i++)
+
+                for (int i = 0; i < text.Count; i++)
                 {
                     uppercase[i] = text.Text[text.Offset + i];
-                   
                 }
                 if (RelativeTextOffset == 0)
                     if (char.IsWhiteSpace(uppercase[0]))
@@ -998,26 +971,25 @@ namespace AvalonEdit.Editor
                         {
                             if (!char.IsWhiteSpace(uppercase[j]))
                                 break;
-                            if((j % 4) == 0)
-                            uppercase[j] = (char)124;
+                            if ((j % 4) == 0)
+                                uppercase[j] = (char)124;
 
                             j++;
                         }
-
-
                     }
                 return new TextCharacters(uppercase, 0, uppercase.Length, this.TextRunProperties);
             }
         }
     }
+
     public class LinkGenerator : VisualLineElementGenerator
     {
-        readonly static Regex imageRegex = new Regex(@"<mylink>", RegexOptions.IgnoreCase);
+        private static readonly Regex imageRegex = new Regex(@"<mylink>", RegexOptions.IgnoreCase);
 
         public LinkGenerator()
         { }
 
-        Match FindMatch(int startOffset)
+        private Match FindMatch(int startOffset)
         {
             // fetch the end offset of the VisualLine being generated
             int endOffset = CurrentContext.VisualLine.LastDocumentLine.EndOffset;
@@ -1051,12 +1023,12 @@ namespace AvalonEdit.Editor
             return null;
         }
     }
+
     /// <summary>
     /// VisualLineElement that represents a piece of text and is a clickable link.
     /// </summary>
     public class CustomLinkVisualLineText : VisualLineText
     {
-
         public delegate void CustomLinkClickHandler(string link);
 
         public event CustomLinkClickHandler CustomLinkClicked;
@@ -1081,7 +1053,6 @@ namespace AvalonEdit.Editor
             Link = theLink;
         }
 
-
         public override TextRun CreateTextRun(int startVisualColumn, ITextRunConstructionContext context)
         {
             TextRunProperties.SetForegroundBrush(System.Windows.Media.Brushes.GreenYellow);
@@ -1089,7 +1060,7 @@ namespace AvalonEdit.Editor
             return base.CreateTextRun(startVisualColumn, context);
         }
 
-        bool LinkIsClickable()
+        private bool LinkIsClickable()
         {
             if (string.IsNullOrEmpty(Link))
                 return false;
@@ -1098,7 +1069,6 @@ namespace AvalonEdit.Editor
             else
                 return true;
         }
-
 
         protected override void OnQueryCursor(QueryCursorEventArgs e)
         {
@@ -1113,19 +1083,16 @@ namespace AvalonEdit.Editor
         {
             if (e.ChangedButton == MouseButton.Left && !e.Handled && LinkIsClickable())
             {
-
                 if (CustomLinkClicked != null)
                 {
                     CustomLinkClicked(Link);
                     e.Handled = true;
                 }
-
             }
         }
 
         protected override VisualLineText CreateInstance(int length)
         {
-
             var a = new CustomLinkVisualLineText(Link, ParentVisualLine, length)
             {
                 RequireControlModifierForClick = RequireControlModifierForClick
@@ -1138,7 +1105,6 @@ namespace AvalonEdit.Editor
 
     public class LineNumberMarginExtended : LineNumberMargin
     {
-
         public bool enableLineExtended = true;
 
         public System.Windows.Media.Brush background = System.Windows.Media.Brushes.White;
@@ -1149,7 +1115,7 @@ namespace AvalonEdit.Editor
             System.Windows.Size renderSize = new System.Windows.Size(((FrameworkElement)this).Width, ((FrameworkElement)this).RenderSize.Height);
             drawingContext.DrawRectangle(background, null,
                                          new Rect(0, 0, renderSize.Width, renderSize.Height));
-            
+
             //base.OnRender(drawingContext);
 
             TextView textView = this.TextView;
@@ -1160,10 +1126,10 @@ namespace AvalonEdit.Editor
                 foreach (VisualLine line in textView.VisualLines)
                 {
                     if (enableLineExtended == true)
-                    
-                    if (line.FirstDocumentLine.obs != null)
-                        continue;
-                       
+
+                        if (line.FirstDocumentLine.obs != null)
+                            continue;
+
                     int lineNumber = line.FirstDocumentLine.LineNumberExtended;
 
                     if (enableLineExtended == false)
@@ -1171,34 +1137,28 @@ namespace AvalonEdit.Editor
                         lineNumber = line.FirstDocumentLine.LineNumber;
                     }
 
-                        FormattedText text = TextFormatterFactory.CreateFormattedText(
-                        this,
-                        lineNumber.ToString(CultureInfo.CurrentCulture),
-                        typeface, emSize, foreground
-                    );
+                    FormattedText text = TextFormatterFactory.CreateFormattedText(
+                    this,
+                    lineNumber.ToString(CultureInfo.CurrentCulture),
+                    typeface, emSize, foreground
+                );
                     double y = line.GetTextLineVisualYPosition(line.TextLines[0], VisualYPosition.TextTop);
-                    
-                        
+
                     drawingContext.DrawText(text, new System.Windows.Point(renderSize.Width - text.Width, y - textView.VerticalOffset));
                 }
             }
         }
-        
+
         protected void OnMouseLeftButtonDowns(MouseButtonEventArgs e)
         {
-
-           
-           // var position = Mouse.GetPosition(this);
+            // var position = Mouse.GetPosition(this);
 
             //if (position.X > 50)
             //    return;
 
             //base.OnMouseLeftButtonDown(e);
 
-           // e.Handled = false;
-
-
-
+            // e.Handled = false;
 
             //if (!e.Handled && TextView != null && textArea != null)
             //{
@@ -1228,7 +1188,8 @@ namespace AvalonEdit.Editor
             //    }
             //}
         }
-        void ExtendSelection(SimpleSegment currentSeg)
+
+        private void ExtendSelection(SimpleSegment currentSeg)
         {
             if (currentSeg.Offset < selectionStart.Offset)
             {
@@ -1241,7 +1202,8 @@ namespace AvalonEdit.Editor
                 textArea.Selection = Selection.Create(textArea, selectionStart.Offset, currentSeg.Offset + currentSeg.Length);
             }
         }
-        SimpleSegment GetTextLineSegment(MouseEventArgs e)
+
+        private SimpleSegment GetTextLineSegment(MouseEventArgs e)
         {
             System.Windows.Point pos = e.GetPosition(TextView);
             pos.X = 0;
@@ -1261,5 +1223,4 @@ namespace AvalonEdit.Editor
             return new SimpleSegment(startOffset, endOffset - startOffset);
         }
     }
-    
 }

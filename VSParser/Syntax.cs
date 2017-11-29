@@ -16,7 +16,6 @@ namespace VSParsers
 {
     public class Syntaxer
     {
-
         public Syntaxer()
         {
             var options = new CSharpCompilationOptions(
@@ -39,15 +38,13 @@ namespace VSParsers
                 string margin = "";
                 if (index >= 0)
                 {
-                   margin = content.Substring(index, b.SpanStart - index);
-
+                    margin = content.Substring(index, b.SpanStart - index);
                 }
                 br.Insert(b.SpanStart, "//References - " + margin);
             }
             SyntaxTree s = CSharpSyntaxTree.ParseText(br.ToString());
             return s;
         }
-
 
         public static List<MethodDeclarationSyntax> MethodMembers(VSSolution vs, SyntaxTree syntaxTree)
         {
@@ -74,8 +71,8 @@ namespace VSParsers
             vs.UpdateSyntaxTree(syntaxTree.FilePath, s.ToString());
             c = s.GetRoot().DescendantNodes().OfType<MethodDeclarationSyntax>().ToList();
             return c;
-           
         }
+
         public CSharpCompilation cc { get; set; }
 
         public Dictionary<int, Diagnostic> hc = new Dictionary<int, Diagnostic>();
@@ -336,6 +333,7 @@ namespace VSParsers
 
         public VSProject vp { get; set; }
     }
+
     public class Finder
     {
         public int MAX(int x, int y)
@@ -542,6 +540,7 @@ namespace VSParsers
     public class SearchEngine
     {
     }
+
     public enum SearchDomain
     {
         file,
@@ -552,5 +551,4 @@ namespace VSParsers
         solutionwithexternals,
         block
     }
-
 }

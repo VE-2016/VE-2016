@@ -1,5 +1,5 @@
 using AIMS.Libraries.CodeEditor;
-using AIMS.Libraries.Scripting.ScriptControl;
+using ScriptControl;
 using NUnit;
 using DockProject;
 using GACProject;
@@ -1622,7 +1622,7 @@ namespace WinExplorer
 
         public DockPanel dock { get; set; }
 
-        public ScriptControl scr { get; set; }
+        public ScriptControl.ScripControlscr { get; set; }
 
         private DeserializeDockContent _deserializeDockContent;
 
@@ -2215,7 +2215,7 @@ namespace WinExplorer
                     s = "Script control DC Pane- " + scriptControl1.dockContainer1.ActiveDocumentPane.Size.Width + " - " + scriptControl1.dockContainer1.ActiveDocumentPane.Height + "\n";
                     richTextBox1.AppendText(s);
 
-                    AIMS.Libraries.Scripting.ScriptControl.Document d = scriptControl1.dockContainer1.ActiveDocument as AIMS.Libraries.Scripting.ScriptControl.Document;
+                    ScriptControl.Document d = scriptControl1.dockContainer1.ActiveDocument as ScriptControl.Document;
 
                     d.ShowQuickClassBrowserPanel();
 
@@ -2251,7 +2251,7 @@ namespace WinExplorer
                     s = "Script control DC Pane- " + scriptControl1.dockContainer1.ActiveDocumentPane.Size.Width + " - " + scriptControl1.dockContainer1.ActiveDocumentPane.Height + "\n";
                     richTextBox1.AppendText(s);
 
-                    AIMS.Libraries.Scripting.ScriptControl.Document d = scriptControl1.dockContainer1.ActiveDocument as AIMS.Libraries.Scripting.ScriptControl.Document;
+                    ScriptControl.Document d = scriptControl1.dockContainer1.ActiveDocument as ScriptControl.Document;
 
                     d.ShowQuickClassBrowserPanel();
 
@@ -2765,7 +2765,7 @@ namespace WinExplorer
             _sv._projectList.SetDrawMode(true);
         }
 
-        private AIMS.Libraries.Scripting.ScriptControl.DocumentForm df { get; set; }
+        private ScriptControl.DocumentForm df { get; set; }
 
         private void toolStripButton10_Click(object sender, EventArgs e)
         {

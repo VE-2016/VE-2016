@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Diagnostics;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace WinExplorer.UI
 {
@@ -23,8 +17,6 @@ namespace WinExplorer.UI
             rb.MouseEnter += Rb_MouseEnter;
             rb.MouseLeave += Rb_MouseLeave;
             rb.ReadOnly = true;
-            
-            
         }
 
         private void Rb_MouseLeave(object sender, EventArgs e)
@@ -55,8 +47,8 @@ namespace WinExplorer.UI
             rb.Select(c, 1);
             if (rb.SelectionFont.Bold)
             {
-                if(rb.Cursor != Cursors.Hand)
-                rb.Cursor = Cursors.Hand;
+                if (rb.Cursor != Cursors.Hand)
+                    rb.Cursor = Cursors.Hand;
             }
             else
             {
@@ -72,6 +64,7 @@ namespace WinExplorer.UI
             //richTextBox.Width = e.NewRectangle.Width;
             richTextBox.Height = e.NewRectangle.Height;
         }
+
         public string url { get; set; }
         public RichTextBox rb { get; set; }
     }

@@ -1,14 +1,14 @@
 ﻿// Copyright (c) 2009 Daniel Grunwald
-// 
+//
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this
 // software and associated documentation files (the "Software"), to deal in the Software
 // without restriction, including without limitation the rights to use, copy, modify, merge,
 // publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons
 // to whom the Software is furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in all copies or
 // substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
 // INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
 // PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
@@ -16,14 +16,10 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using System;
-using System.Windows;
-using System.Windows.Media;
-
-using ICSharpCode.AvalonEdit.Document;
 using ICSharpCode.AvalonEdit.Rendering;
-using System.Text.RegularExpressions;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using System.Windows.Media;
 
 namespace AvalonEdit.Editor
 {
@@ -32,10 +28,9 @@ namespace AvalonEdit.Editor
     /// </summary>
     public class Colorizer : DocumentColorizingTransformer
     {
+        private MatchCollection matches = null;
 
-        MatchCollection matches = null;
-
-        List<int> lines  { get; set;}
+        private List<int> lines { get; set; }
 
         public TextView textView { get; set; }
 
@@ -47,7 +42,7 @@ namespace AvalonEdit.Editor
 
             lines = new List<int>();
 
-            foreach(Match match in matches)
+            foreach (Match match in matches)
             {
                 int start = match.Index;
                 int end = match.Index + match.Length;
@@ -56,24 +51,21 @@ namespace AvalonEdit.Editor
                 for (int i = starts; i <= ends; i++)
                     if (!lines.Contains(i))
                         lines.Add(i);
-
             }
             lines.Sort();
         }
-
-
 
         public Colorizer(EditorWindow editorWindow)
         {
             this.editorWindow = editorWindow;
             this.textView = editorWindow.textEditor.TextArea.TextView;
-           // textView.VisualLineConstructionStarting += TextView_VisualLineConstructionStarting; 
+            // textView.VisualLineConstructionStarting += TextView_VisualLineConstructionStarting;
             //textView.Document.TextChanged += TextView_VisualLineConstructionStarting;
         }
 
         private void TextView_VisualLineConstructionStarting(object sender, VisualLineConstructionStartEventArgs e)
         {
-           // Comments();
+            // Comments();
         }
 
         public EditorWindow editorWindow { get; set; }
@@ -82,13 +74,12 @@ namespace AvalonEdit.Editor
 
         protected override void ColorizeLine(ICSharpCode.AvalonEdit.Document.DocumentLine line)
         {
-            
             if (!line.IsDeleted)
             {
-                if(lines != null)
-                    if(lines.Count > 0)
-                if (lines.BinarySearch(line.LineNumber) >= 0)
-                    return;
+                if (lines != null)
+                    if (lines.Count > 0)
+                        if (lines.BinarySearch(line.LineNumber) >= 0)
+                            return;
 
                 string text = editorWindow.textEditor.Document.Text.Substring(line.Offset, line.EndOffset - line.Offset);
 
@@ -99,7 +90,6 @@ namespace AvalonEdit.Editor
                 //editorWindow.Errors[0].Location.SourceSpan.Start
 
                 {
-
                     ChangeLinePart(line.Offset, line.EndOffset, ApplyChanges);
                 }
                 else
@@ -110,9 +100,6 @@ namespace AvalonEdit.Editor
 
                     if (sc.Count <= 0)
                         return;
-
-
-
 
                     if (testusing.StartsWith("using"))
                     {
@@ -126,34 +113,29 @@ namespace AvalonEdit.Editor
 
                     foreach (Match s in matches)
                     {
-
-
                         if (sc.Contains(s.Value.GetHashCode()))
                         {
-
-
                             ChangeLinePart(line.Offset + s.Index, line.Offset + s.Index + s.Length, ApplyChangesForType);
                         }
                     }
                 }
             }
         }
-        void ApplyChanges(VisualLineElement element)
+
+        private void ApplyChanges(VisualLineElement element)
         {
-            
             element.TextRunProperties.SetForegroundBrush(Brushes.Gray);
         }
-        void ApplyChangesForUsing(VisualLineElement element)
-        {
 
+        private void ApplyChangesForUsing(VisualLineElement element)
+        {
             element.TextRunProperties.SetForegroundBrush(Brushes.Black);
         }
-        void ApplyChangesForType(VisualLineElement element)
+
+        private void ApplyChangesForType(VisualLineElement element)
         {
-            if(((SolidColorBrush)element.TextRunProperties.ForegroundBrush).Color != Colors.Green && ((SolidColorBrush)element.TextRunProperties.ForegroundBrush).Color != Colors.Maroon)
+            if (((SolidColorBrush)element.TextRunProperties.ForegroundBrush).Color != Colors.Green && ((SolidColorBrush)element.TextRunProperties.ForegroundBrush).Color != Colors.Maroon)
                 element.TextRunProperties.SetForegroundBrush(brush);
         }
     }
 }
-
-

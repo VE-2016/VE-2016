@@ -4,22 +4,19 @@
     xmlns:ca="clr-namespace:Microsoft.CodeAnalysis;assembly=Microsoft.CodeAnalysis"
     xmlns:cc="clr-namespace:AvalonEdit.Editor"
              Width="300"
-             Height=" 400"
-    >
+             Height=" 400">
 
     <UserControl.Resources>
-       
     </UserControl.Resources>
 
-    <Grid HorizontalAlignment="Stretch" >
+    <Grid HorizontalAlignment="Stretch">
         <Grid.RowDefinitions>
-       
+
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="5"></RowDefinition>
             <RowDefinition MaxHeight="200" Height="*"></RowDefinition>
-   
         </Grid.RowDefinitions>
-       
+
         <DockPanel Grid.Row="0" LastChildFill="True" VerticalAlignment="Stretch">
             <Grid DockPanel.Dock="Top">
                 <Grid.ColumnDefinitions>
@@ -27,14 +24,13 @@
                     <ColumnDefinition Width="90" />
                 </Grid.ColumnDefinitions>
                 <TextBlock
-        Grid.Column="0"
-    />
+        Grid.Column="0" />
                 <Button Grid.Column="1" x:Name="legendButton">Legend</Button>
             </Grid>
             <TreeView x:Name="treeView">
                 <TreeView.Resources>
                     <HierarchicalDataTemplate DataType="{x:Type cc:Nodes}" ItemsSource="{Binding Path=nodes}">
-                        <cc:TextBlocks Text="{Binding Language}" Data="{Binding}"/>
+                        <cc:TextBlocks Text="{Binding Language}" Data="{Binding}" />
                     </HierarchicalDataTemplate>
                 </TreeView.Resources>
             </TreeView>
@@ -62,19 +58,14 @@
             <DataGrid Name="dg" AutoGenerateColumns="False" HeadersVisibility="Row" IsReadOnly="True" RowHeaderWidth="20" HorizontalGridLinesBrush="LightGray"
           VerticalGridLinesBrush="LightGray" SelectionUnit="Cell" BorderBrush="LightGray">
                 <DataGrid.Resources>
-                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" 
-                   Color="LightBlue"/>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
+                   Color="LightBlue" />
                 </DataGrid.Resources>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Width="150" Header="ID" Binding="{Binding Key}"/>
-                    <DataGridTextColumn Width="*" Header="Date" Binding="{Binding Value}"/>
+                    <DataGridTextColumn Width="150" Header="ID" Binding="{Binding Key}" />
+                    <DataGridTextColumn Width="*" Header="Date" Binding="{Binding Value}" />
                 </DataGrid.Columns>
-                
-
             </DataGrid>
         </DockPanel>
-
     </Grid>
-    
 </UserControl>
-    

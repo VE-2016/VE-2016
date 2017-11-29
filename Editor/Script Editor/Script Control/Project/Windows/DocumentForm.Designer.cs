@@ -1,4 +1,4 @@
-namespace AIMS.Libraries.Scripting.ScriptControl
+namespace ScriptControl
 {
     partial class DocumentForm
     {
@@ -28,19 +28,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         /// </summary>
         private void InitializeComponent()
         {
-            this.syntaxDocument1 = new AIMS.Libraries.CodeEditor.Syntax.SyntaxDocument();
-            this.SuspendLayout();
-            // 
-            // syntaxDocument1
-            // 
-            this.syntaxDocument1.Lines = new string[] {
-        ""};
-            this.syntaxDocument1.MaxUndoBufferSize = 1000;
-            this.syntaxDocument1.Modified = false;
-            this.syntaxDocument1.UndoStep = 0;
-            // 
-            // Document
-            // 
+           
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(454, 335);
             this.DoubleBuffered = true;
@@ -51,6 +39,6 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         #endregion
 
-        public AIMS.Libraries.CodeEditor.Syntax.SyntaxDocument syntaxDocument1;
+       
     }
 }

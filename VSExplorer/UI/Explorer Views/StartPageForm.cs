@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.ServiceModel.Syndication;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -115,7 +111,7 @@ namespace WinExplorer.UI
             this.BackColor = Color.DarkGreen;
             this.Controls.Remove(sp);
             this.Controls.Add(sp);
- 
+
             ResumeLayout();
             button = pictureBox1;
             button.Image = Rotate(ve_resource.Expander_24x);
@@ -130,28 +126,31 @@ namespace WinExplorer.UI
             cs = source.Token;
             StartTimer(cs);
             this.FormClosing += StartPageForm_FormClosing;
-              
         }
-        CancellationTokenSource source { get; set; }
+
+        private CancellationTokenSource source { get; set; }
+
         private void StartPageForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             source.Cancel();
         }
 
-        CancellationToken cs { get; set; }
+        private CancellationToken cs { get; set; }
 
         public async Task StartTimer(CancellationToken c)
         {
-                while (true)
-                {
+            while (true)
+            {
                 MouseInPanel();
-                    await Task.Delay(1000, c);
-                    if (c.IsCancellationRequested)
-                        break;
-                }
+                await Task.Delay(1500, c);
+                if (c.IsCancellationRequested)
+                    break;
+            }
         }
-        bool showed = false;
-        void MouseInPanel()
+
+        private bool showed = false;
+
+        private void MouseInPanel()
         {
             Point s = System.Windows.Forms.Control.MousePosition;
             Rectangle r = this.RectangleToScreen(pa.Bounds);
@@ -163,7 +162,7 @@ namespace WinExplorer.UI
                             ShowHideScrollbars(pa, true);
                             return;
                         }
-           ShowHideScrollbars(pa, false);
+            ShowHideScrollbars(pa, false);
         }
 
         private void Lbi_Clicked(object sender, EventArgs e)
@@ -181,7 +180,7 @@ namespace WinExplorer.UI
             ExplorerForms.ef.Command_AddNewProject();
         }
 
-        int pw;
+        private int pw;
 
         private void Button_Click(object sender, EventArgs e)
         {
@@ -201,9 +200,9 @@ namespace WinExplorer.UI
             //Sp_Resize(null, null);
         }
 
-        PictureBox button { get; set; }
+        private PictureBox button { get; set; }
 
-        static Color InvertColor(Color ColourToInvert)
+        private static Color InvertColor(Color ColourToInvert)
         {
             return Color.FromArgb((byte)~ColourToInvert.R, (byte)~ColourToInvert.G, (byte)~ColourToInvert.B);
         }
@@ -217,17 +216,17 @@ namespace WinExplorer.UI
 
             return img;
         }
-        PanelEx pa { get; set; }
-        Panel pp { get; set; }
-        Panel pb { get; set; }
-        Panel ptfs { get; set; }
 
-        string[] d = { "Open Project / Solution", "Open Folder", "Open Website" };
-        Bitmap[] bmps = { ve_resource.VisualStudioSolution_256x, ve_resource.FolderOpen_16x, ve_resource.WebURL_32x };
+        private PanelEx pa { get; set; }
+        private Panel pp { get; set; }
+        private Panel pb { get; set; }
+        private Panel ptfs { get; set; }
+
+        private string[] d = { "Open Project / Solution", "Open Folder", "Open Website" };
+        private Bitmap[] bmps = { ve_resource.VisualStudioSolution_256x, ve_resource.FolderOpen_16x, ve_resource.WebURL_32x };
 
         public void LoadRecent()
         {
-
             if (ExplorerForms.ef == null)
                 return;
             List<string> rs = ExplorerForms.ef.Command_RecentSolutions();
@@ -253,12 +252,11 @@ namespace WinExplorer.UI
                     pa.Controls.Add(s);
                     h += 47;
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
-
                 }
             }
-         }
+        }
 
         public void ShowHideScrollbars(PanelEx panel, bool show = true)
         {
@@ -286,7 +284,6 @@ namespace WinExplorer.UI
 
         public void LoadProject()
         {
-         
             int h = 5;
             int i = 0;
             foreach (string c in d)
@@ -297,15 +294,14 @@ namespace WinExplorer.UI
                 s.Height = 27;
                 s.SetMainText(c);
                 s.LoadBitmap(bmps[i++]);
-                if(i == 1)
-                s.GetAndClearLink().Click += StartPageForm_Click;
-                else if(i == 2)
-                s.GetAndClearLink().Click += StartPageForm_FolderClick;
+                if (i == 1)
+                    s.GetAndClearLink().Click += StartPageForm_Click;
+                else if (i == 2)
+                    s.GetAndClearLink().Click += StartPageForm_FolderClick;
                 s.SetTipInfoText(c);
                 pp.Controls.Add(s);
                 h += 27;
             }
-
         }
 
         private void StartPageForm_FolderClick(object sender, EventArgs e)
@@ -320,7 +316,6 @@ namespace WinExplorer.UI
 
         public void LoadTfs()
         {
-
             int h = 1;
             //foreach (string c in d)
             {
@@ -333,8 +328,8 @@ namespace WinExplorer.UI
                 ptfs.Controls.Add(s);
                 h += 27;
             }
-
         }
+
         public void LoadProjectTemplate()
         {
             List<string> tmps = NewProjectForm.GetProjectTemplates();
@@ -352,7 +347,6 @@ namespace WinExplorer.UI
                 pb.Controls.Add(s);
                 h += 27;
             }
-
         }
 
         private void StartPageForm_Click1(object sender, EventArgs e)
@@ -380,6 +374,7 @@ namespace WinExplorer.UI
             rb.SelectionFont = new Font("Verdana", 8.25f, FontStyle.Bold);
             rb.SelectionColor = SystemColors.HotTrack;
         }
+
         public void SetAsGrayed(string s, RichTextBox rb)
         {
             rb.Find(s, RichTextBoxFinds.MatchCase);
@@ -387,6 +382,7 @@ namespace WinExplorer.UI
             rb.SelectionFont = new Font("Verdana", 8.25f, FontStyle.Regular);
             rb.SelectionColor = SystemColors.GrayText;
         }
+
         public void SetAsRed(string s, RichTextBox rb)
         {
             rb.Find(s, RichTextBoxFinds.MatchCase);
@@ -394,13 +390,15 @@ namespace WinExplorer.UI
             rb.SelectionFont = new Font("Verdana", 8.25f, FontStyle.Regular);
             rb.SelectionColor = Color.Red;
         }
+
         private void Pd_Resize(object sender, EventArgs e)
         {
             foreach (Control c in pd.Controls)
                 c.Width = pd.Width - 25;
         }
 
-        DevNewsPanel p = null;
+        private DevNewsPanel p = null;
+
         public void LoadDevs()
         {
             //p = new DevNewsPanel();
@@ -444,15 +442,14 @@ namespace WinExplorer.UI
                     SetAsRed("NEW", ps.rb);
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-
             }
 
             sp.Panel2.Controls.Remove(p);
         }
 
-        DevNewsPanel AddFeedPanel()
+        private DevNewsPanel AddFeedPanel()
         {
             DevNewsPanel d = new DevNewsPanel();
             int h = 15;
@@ -464,22 +461,20 @@ namespace WinExplorer.UI
             return d;
         }
 
-        int mw = 700;
+        private int mw = 700;
 
         private void Sp_Resize(object sender, EventArgs e)
         {
             sp.Location = new Point(0, 0);
 
             sp.Size = this.ClientSize;
-           
+
             if (this.Width < 700 + 305)
             {
-          
                 sp.Width = 700 + 305;
-            sp.Height = this.Size.Height - 30;
+                sp.Height = this.Size.Height - 30;
             }
-            
-        
+
             int h = pl.Height;
             int w = mw;
             int x = 0;
@@ -488,50 +483,44 @@ namespace WinExplorer.UI
                 x = (int)((pl.Width - mw) * 0.5);
             pc.Location = new Point(x, y);
             pc.Size = new Size(w, h);
-            
-
         }
 
-        Font HFont { get; set; }
-        Font HLFont { get; set; }
-        Font HLVFont { get; set; }
+        private Font HFont { get; set; }
+        private Font HLFont { get; set; }
+        private Font HLVFont { get; set; }
         // https://vsstartpage.blob.core.windows.net/news/vs
 
+        private LabelEx lbh = null;
+        private LabelEx lbr = null;
+        private LabelEx lbs = null;
+        private LabelEx lbo = null;
 
-        LabelEx lbh = null;
-        LabelEx lbr = null;
-        LabelEx lbs = null;
-        LabelEx lbo = null;
+        private TextBox tbo = null;
 
-        TextBox tbo = null;
+        private LabelEx lbn = null;
 
+        private LabelEx lbi = null;
 
-        LabelEx lbn = null;
+        private LabelEx lbe = null;
 
-        LabelEx lbi = null;
+        private LabelEx lbc = null;
 
-        LabelEx lbe = null;
+        private LabelEx lbnp = null;
 
-        LabelEx lbc = null;
+        private LabelEx lbcp = null;
 
-        LabelEx lbnp = null;
+        private SplitContainer sp = null;
 
-        LabelEx lbcp = null;
-
-
-
-        SplitContainer sp = null;
-
-        Panel pl { get; set; }
-        Panel pr { get; set; }
-        Panel pc { get; set; }
-        Panel pd { get; set; }
+        private Panel pl { get; set; }
+        private Panel pr { get; set; }
+        private Panel pc { get; set; }
+        private Panel pd { get; set; }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
         }
     }
+
     public class PanelEx : Panel
     {
         [DllImport("user32.dll")]

@@ -1,14 +1,14 @@
 ﻿// Copyright (c) 2009 Daniel Grunwald
-// 
+//
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this
 // software and associated documentation files (the "Software"), to deal in the Software
 // without restriction, including without limitation the rights to use, copy, modify, merge,
 // publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons
 // to whom the Software is furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in all copies or
 // substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
 // INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
 // PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
@@ -16,10 +16,11 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
 using ICSharpCode.AvalonEdit.Document;
 using ICSharpCode.AvalonEdit.Folding;
+using System;
+using System.Collections.Generic;
+
 #if NREFACTORY
 //using ICSharpCode.NRefactory.Editor;
 #endif
@@ -102,6 +103,7 @@ namespace AvalonEdit.Editor
             return newFoldings;
         }
     }
+
     /// <summary>
 	/// Allows producing foldings from a document based on braces.
 	/// </summary>
@@ -141,14 +143,14 @@ namespace AvalonEdit.Editor
             firstErrorOffset = -1;
             return CreateNewFoldings(document);
         }
-        
+
         /// <summary>
         /// Create <see cref="NewFolding"/>s for the specified document.
         /// </summary>
         public IEnumerable<NewFolding> CreateNewFoldings(ICSharpCode.AvalonEdit.Document.ITextSource document)
         {
             List<NewFolding> newFoldings = new List<NewFolding>();
-            
+
             Stack<int> startOffsets = new Stack<int>();
             int lastNewLineOffset = 0;
             char openingBrace = this.OpeningBrace;
@@ -163,8 +165,8 @@ namespace AvalonEdit.Editor
                     char d = document.GetCharAt(i + 1);
                     if (d == '/')
                     {
-                        if(!newfoldingstarted)
-                        startOffsets.Push(i);
+                        if (!newfoldingstarted)
+                            startOffsets.Push(i);
                         newlinefound = false;
                         newfoldingstarted = true;
                     }

@@ -1,5 +1,4 @@
-
-namespace AIMS.Libraries.Scripting.ScriptControl.Converter
+namespace ScriptControl.Converter
 {
     internal class CodeCompiler
     {

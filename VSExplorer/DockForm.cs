@@ -1,5 +1,3 @@
-using AIMS.Libraries.Scripting.ScriptControl;
-
 //using AIMS.Libraries.Forms.Docking;
 
 using DockProject;
@@ -33,7 +31,7 @@ namespace WinExplorer
 
             this.Controls.Add(dock);
 
-            scr = new ScriptControl(this);
+            scr = new ScriptControl.ScriptControl(this);
 
             scr.Dock = DockStyle.Fill;
 
@@ -49,7 +47,7 @@ namespace WinExplorer
 
         private DockPanel dock { get; set; }
 
-        public ScriptControl scr { get; set; }
+        public ScriptControl.ScriptControl scr { get; set; }
 
         public ToolWindow tw { get; set; }
 

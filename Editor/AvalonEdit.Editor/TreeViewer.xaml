@@ -1,7 +1,7 @@
 ﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	    xmlns:s='clr-namespace:System;assembly=mscorlib' 
-	    xmlns:l='clr-namespace:AvalonEdit.Editor' 
+	    xmlns:s='clr-namespace:System;assembly=mscorlib'
+	    xmlns:l='clr-namespace:AvalonEdit.Editor'
 		x:Class="AvalonEdit.Editor.TreeViewer"
         Background="AliceBlue">
 
@@ -24,7 +24,6 @@
 
         <Color x:Key="ControlMouseOverColor">#FF3843C4</Color>
         <Color x:Key="ControlPressedColor">#FF211AA9</Color>
-
 
         <Color x:Key="GlyphColor">#FF444444</Color>
         <Color x:Key="GlyphMouseOver">sc#1, 0.004391443, 0.002428215, 0.242281124</Color>
@@ -80,11 +79,11 @@
         <Style x:Key="ExpandCollapseToggleStyle"
            TargetType="{x:Type ToggleButton}">
             <Setter Property="Focusable"
-              Value="False"/>
+              Value="False" />
             <Setter Property="Width"
-              Value="19"/>
+              Value="19" />
             <Setter Property="Height"
-              Value="13"/>
+              Value="13" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ToggleButton}">
@@ -102,16 +101,16 @@
                                        EndPoint="1,1">
                                         <LinearGradientBrush.GradientStops>
                                             <GradientStop Color="White"
-                                    Offset=".2"/>
+                                    Offset=".2" />
                                             <GradientStop Color="#FFC0B7A6"
-                                    Offset="1"/>
+                                    Offset="1" />
                                         </LinearGradientBrush.GradientStops>
                                     </LinearGradientBrush>
                                 </Border.Background>
                                 <Path x:Name="ExpandPath"
                       Margin="1,1,1,1"
                       Fill="Black"
-                      Data="M 0 2 L 0 3 L 2 3 L 2 5 L 3 5 L 3 3 L 5 3 L 5 2 L 3 2 L 3 0 L 2 0 L 2 2 Z"/>
+                      Data="M 0 2 L 0 3 L 2 3 L 2 5 L 3 5 L 3 3 L 5 3 L 5 2 L 3 2 L 3 0 L 2 0 L 2 2 Z" />
                             </Border>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -119,13 +118,12 @@
                        Value="True">
                                 <Setter Property="Data"
                         TargetName="ExpandPath"
-                        Value="M 0 2 L 0 3 L 5 3 L 5 2 Z"/>
+                        Value="M 0 2 L 0 3 L 5 3 L 5 2 Z" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-
         </Style>
 -->
         <Style x:Key="ExpandCollapseToggleStyle"
@@ -266,8 +264,8 @@
                             <ToggleButton x:Name="Expander"
                         Style="{StaticResource ExpandCollapseToggleStyle}"
                         ClickMode="Press"
-                        IsChecked="{Binding IsExpanded, 
-            RelativeSource={RelativeSource TemplatedParent}}"/>
+                        IsChecked="{Binding IsExpanded,
+            RelativeSource={RelativeSource TemplatedParent}}" />
                             <Border x:Name="Bd"
                   Grid.Column="1"
                   Background="{TemplateBinding Background}"
@@ -276,7 +274,7 @@
                   Padding="{TemplateBinding Padding}">
                                 <ContentPresenter x:Name="PART_Header"
                               ContentSource="Header"
-                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
                             </Border>
                             <ItemsPresenter x:Name="ItemsHost"
                           Grid.Row="1"
@@ -319,47 +317,44 @@
             </Setter>
         </Style>
 
-        <l:LevelToIndentConverter x:Key="LevelToIndentConverter"/>
-
+        <l:LevelToIndentConverter x:Key="LevelToIndentConverter" />
 
     <DataTemplate x:Key="CellTemplate_Name">
       <DockPanel>
-                
-                <ToggleButton x:Name="Expander" 
+
+                <ToggleButton x:Name="Expander"
                         Style="{StaticResource ExpandCollapseToggleStyle}"
                       Margin="{Binding Level,Converter={StaticResource LevelToIndentConverter},RelativeSource={RelativeSource AncestorType={x:Type l:TreeListViewItem}}}"
                       IsChecked="{Binding Path=Expanded,RelativeSource={RelativeSource AncestorType={x:Type l:TreeListViewItem}}}"
-                      ClickMode="Press" Click="Expander_Click"/> 
+                      ClickMode="Press" Click="Expander_Click" />
                 <!-- Connecting Lines -->
-                
-                <!-- Vertical line -->
-                <Rectangle x:Name="VerLn" Width="6" Stroke="#DCDCDC" Margin="-15,0,1,0" Grid.RowSpan="1" SnapsToDevicePixels="true" Fill="LightGray" Visibility="Hidden"/>
-                <l:RichTextBlock x:Name="ItemText" FontWeight="Bold" 
-                Text="{Binding Name}" Data="{Binding Words, NotifyOnTargetUpdated=True}"
-      ></l:RichTextBlock >
 
+                <!-- Vertical line -->
+                <Rectangle x:Name="VerLn" Width="6" Stroke="#DCDCDC" Margin="-15,0,1,0" Grid.RowSpan="1" SnapsToDevicePixels="true" Fill="LightGray" Visibility="Hidden" />
+                <l:RichTextBlock x:Name="ItemText" FontWeight="Bold"
+                Text="{Binding Name}" Data="{Binding Words, NotifyOnTargetUpdated=True}"
+      ></l:RichTextBlock>
             </DockPanel>
       <DataTemplate.Triggers>
-        <DataTrigger Binding="{Binding Path=HasItems,RelativeSource={RelativeSource AncestorType={x:Type l:TreeListViewItem}}}" 
+        <DataTrigger Binding="{Binding Path=HasItems,RelativeSource={RelativeSource AncestorType={x:Type l:TreeListViewItem}}}"
                      Value="False">
           <Setter TargetName="Expander"
                   Property="Visibility"
-                  Value="Hidden"/>
+                  Value="Hidden" />
                     <Setter TargetName="VerLn"
                   Property="Visibility"
-                  Value="Visible"/>
+                  Value="Visible" />
                     <Setter TargetName="VerLn"
                   Property="Visibility"
-                  Value="Visible"/>
+                  Value="Visible" />
                     <Setter TargetName="ItemText"
                   Property="Foreground"
-                  Value="Blue"/>
+                  Value="Blue" />
                     <Setter TargetName="ItemText"
                   Property="FontWeight"
-                  Value="Normal"/>
+                  Value="Normal" />
                 </DataTrigger>
       </DataTemplate.Triggers>
-        
     </DataTemplate>
 
     <Style TargetType="{x:Type l:TreeListViewItem}">
@@ -372,8 +367,8 @@
                       BorderBrush="{TemplateBinding BorderBrush}"
                       BorderThickness="{TemplateBinding BorderThickness}"
                       Padding="{TemplateBinding Padding}">
-                <GridViewRowPresenter x:Name="PART_Header" 
-                                      Content="{TemplateBinding Header}" 
+                <GridViewRowPresenter x:Name="PART_Header"
+                                      Content="{TemplateBinding Header}"
                                       Columns="{Binding Path=Columns,RelativeSource={RelativeSource AncestorType={x:Type l:TreeListView}}}" />
               </Border>
               <ItemsPresenter x:Name="ItemsHost" />
@@ -383,62 +378,61 @@
                        Value="false">
                 <Setter TargetName="ItemsHost"
                         Property="Visibility"
-                        Value="Collapsed"/>
+                        Value="Collapsed" />
               </Trigger>
               <MultiTrigger>
                 <MultiTrigger.Conditions>
                   <Condition Property="HasHeader"
-                             Value="false"/>
+                             Value="false" />
                   <Condition Property="Width"
-                             Value="Auto"/>
+                             Value="Auto" />
                 </MultiTrigger.Conditions>
                 <Setter TargetName="PART_Header"
                         Property="MinWidth"
-                        Value="75"/>
+                        Value="75" />
               </MultiTrigger>
               <MultiTrigger>
                 <MultiTrigger.Conditions>
                   <Condition Property="HasHeader"
-                             Value="false"/>
+                             Value="false" />
                   <Condition Property="Height"
-                             Value="Auto"/>
+                             Value="Auto" />
                 </MultiTrigger.Conditions>
                 <Setter TargetName="PART_Header"
                         Property="MinHeight"
-                        Value="19"/>
+                        Value="19" />
               </MultiTrigger>
               <Trigger Property="IsSelected"
                        Value="true">
                 <Setter TargetName="Bd"
                         Property="Background"
-                        Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                        Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
                 <Setter Property="Foreground"
-                        Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                        Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" />
               </Trigger>
               <MultiTrigger>
                 <MultiTrigger.Conditions>
                   <Condition Property="IsSelected"
-                             Value="true"/>
+                             Value="true" />
                   <Condition Property="IsSelectionActive"
-                             Value="false"/>
+                             Value="false" />
                 </MultiTrigger.Conditions>
                 <Setter TargetName="Bd"
                         Property="Background"
-                        Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                        Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
                 <Setter Property="Foreground"
-                        Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                        Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
               </MultiTrigger>
               <Trigger Property="IsEnabled"
                        Value="false">
                 <Setter Property="Foreground"
-                        Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                        Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
               </Trigger>
             </ControlTemplate.Triggers>
           </ControlTemplate>
         </Setter.Value>
       </Setter>
     </Style>
-
 
     <Style TargetType="{x:Type l:TreeListView}">
       <Setter Property="Template">
@@ -448,19 +442,17 @@
                     BorderThickness="{TemplateBinding BorderThickness}">
               <DockPanel>
                 <GridViewHeaderRowPresenter Columns="{Binding Path=Columns,RelativeSource={RelativeSource TemplatedParent}}"
-                                            DockPanel.Dock="Top"/>
-                <ItemsPresenter/>
+                                            DockPanel.Dock="Top" />
+                <ItemsPresenter />
               </DockPanel>
             </Border>
-                        
                     </ControlTemplate>
         </Setter.Value>
       </Setter>
     </Style>
-       
     </UserControl.Resources>
-   
-    <DockPanel >
+
+    <DockPanel>
         <StackPanel DockPanel.Dock="Top" VerticalAlignment="Stretch" HorizontalAlignment="Left" Orientation="Horizontal" Margin="0,0,0,0" Width="6320" Height="20"  Background="Lavender">
             <ComboBox IsReadOnly="True" IsEditable="True" SelectedIndex="0" Background="White" Width="160">
                 <ComboBoxItem Background="White">Entire Solution</ComboBoxItem>
@@ -509,15 +501,15 @@
                 <ComboBoxItem>Definition then Path</ComboBoxItem>
                 <ComboBoxItem>No Grouping</ComboBoxItem>
                 <ComboBox.ToolTip>
-                    <ToolTip Content="Group by"/>
+                    <ToolTip Content="Group by" />
                 </ComboBox.ToolTip>
             </ComboBox>
             <Rectangle VerticalAlignment="Stretch" Width="1" Margin="2,0,2,0" Stroke="Black" />
             <StackPanel Orientation="Horizontal">
                 <Image Width="16" Height="16" x:Name="ButtonKeepResults" />
-                <TextBlock Width="80" VerticalAlignment="Center" Text="Keep Results"/>
+                <TextBlock Width="80" VerticalAlignment="Center" Text="Keep Results" />
                 <StackPanel.ToolTip>
-                    <ToolTip Content="Keep Results"/>
+                    <ToolTip Content="Keep Results" />
                 </StackPanel.ToolTip>
             </StackPanel>
         </StackPanel>
@@ -529,32 +521,30 @@
                     <GridViewColumn Header="Line" DisplayMemberBinding="{Binding Line}" />
                     <GridViewColumn Header="Col" DisplayMemberBinding="{Binding Column}" />
                     <GridViewColumn Header="Project" DisplayMemberBinding="{Binding Project}" />
-
                 </l:TreeListView.Columns>
-               
+
                 <!--<l:TreeListView.ItemTemplate>
                 <HierarchicalDataTemplate  DataType="{x:Type l:Source}" ItemsSource="{Binding Path=Data}">
 
                     <HierarchicalDataTemplate.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock> <Run Text="{Binding Path=Name}"/><Run Text="test"/></TextBlock>
+                            <TextBlock> <Run Text="{Binding Path=Name}" /><Run Text="test" /></TextBlock>
                         </DataTemplate>
                     </HierarchicalDataTemplate.ItemTemplate>
                 </HierarchicalDataTemplate>
                 </l:TreeListView.ItemTemplate>-->
                 <l:TreeListView.Resources>
                 <HierarchicalDataTemplate  DataType="{x:Type l:Source}" ItemsSource="{Binding Path=Data}">
-                            <TextBlock> <Run Text="{Binding Path=Name}"/><Run Text="test"/></TextBlock>
+                            <TextBlock> <Run Text="{Binding Path=Name}" /><Run Text="test" /></TextBlock>
                 </HierarchicalDataTemplate>
                 <HierarchicalDataTemplate  DataType="{x:Type l:SourceData}" ItemsSource="{Binding Path=Data}">
-                                <TextBlock> <Run Text="{Binding Path=Name}"/><Run Text="test"/></TextBlock>
+                                <TextBlock> <Run Text="{Binding Path=Name}" /><Run Text="test" /></TextBlock>
                 </HierarchicalDataTemplate>
                 <HierarchicalDataTemplate  DataType="{x:Type l:SourceRefData}" ItemsSource="{Binding Path=Data}">
-                        <TextBlock> <Run Text="{Binding Path=Name}"/><Run Text="test"/></TextBlock>
+                        <TextBlock> <Run Text="{Binding Path=Name}" /><Run Text="test" /></TextBlock>
                 </HierarchicalDataTemplate>
                 </l:TreeListView.Resources>
             </l:TreeListView>
         </ScrollViewer>
     </DockPanel>
 </UserControl>
-

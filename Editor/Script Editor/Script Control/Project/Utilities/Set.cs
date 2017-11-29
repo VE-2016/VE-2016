@@ -1,8 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace AIMS.Libraries.Scripting.ScriptControl
+namespace ScriptControl
 {
     /// <summary>
     /// Set container class. Contains a sorted list of unique objects.
@@ -14,6 +13,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         private SortedDictionary<T, object> _dict;
 
         #region Constructors
+
         public Set()
         {
             _dict = new SortedDictionary<T, object>();
@@ -41,7 +41,8 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         {
             AddRange(list);
         }
-        #endregion
+
+        #endregion Constructors
 
         public void Add(T element)
         {

@@ -371,7 +371,6 @@ namespace WinExplorer
             if (!string.IsNullOrEmpty(v2017))
                 if (Directory.Exists(v2017))
                 {
-
                     Array.Resize(ref dd, dd.Length + 1);
                     dd[dd.Length - 1] = new DirectoryInfo(v2017);
                 }
@@ -401,7 +400,6 @@ namespace WinExplorer
                     }
                 }
             }
-
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)

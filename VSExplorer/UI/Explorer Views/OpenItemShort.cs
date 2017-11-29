@@ -12,7 +12,6 @@ namespace WinExplorer.UI
         {
             InitializeComponent();
 
-           
             rb = richTextBox1;
             rb.ReadOnly = true;
             rb.WordWrap = false;
@@ -21,7 +20,7 @@ namespace WinExplorer.UI
             // this.Controls.Remove(panel);
             //this.Controls.Remove(button);
 
-           // rb.Resize += Rb_Resize;
+            // rb.Resize += Rb_Resize;
 
             //rb.Controls.Add(button);
             //rb.Controls.Add(panel);
@@ -62,10 +61,6 @@ namespace WinExplorer.UI
         {
             Rb_Resize(null, null);
         }
-
-      
-
-        
 
         private void GetDescription(int c)
         {
@@ -114,16 +109,11 @@ namespace WinExplorer.UI
             //if(this.Parent == null)
             //    return;
             //this.Width = Parent.ClientRectangle.Width - 1;
-            rb.RightMargin = rb.Width  - 5;
+            rb.RightMargin = rb.Width - 5;
         }
-
-        
-
-        
 
         private void NuGetPacketShort_MouseClick(object sender, MouseEventArgs e)
         {
-            
         }
 
         private Label vLabel { get; set; }
@@ -235,7 +225,6 @@ namespace WinExplorer.UI
 
             //if (c.Parent != null)
             //{
-                
             //    foreach (Control cs in c.Parent.Controls)
             //    {
             //        cs.BackColor = Color.FromKnownColor(KnownColor.AliceBlue);
@@ -244,9 +233,8 @@ namespace WinExplorer.UI
             //    }
             //}
 
-
             button.BackColor = Color.FromKnownColor(KnownColor.AliceBlue);
-           // panel.BackColor = Color.FromKnownColor(KnownColor.AliceBlue);
+            // panel.BackColor = Color.FromKnownColor(KnownColor.AliceBlue);
             rb.BackColor = Color.FromKnownColor(KnownColor.AliceBlue);
         }
     }
@@ -257,10 +245,13 @@ namespace WinExplorer.UI
         {
             Selectable = false;
         }
-        const int WM_SETFOCUS = 0x0007;
-        const int WM_KILLFOCUS = 0x0008;
+
+        private const int WM_SETFOCUS = 0x0007;
+        private const int WM_KILLFOCUS = 0x0008;
+
         [DefaultValue(true)]
         public bool Selectable { get; set; }
+
         protected override void WndProc(ref Message m)
         {
             if (m.Msg == WM_SETFOCUS && !Selectable)
@@ -269,5 +260,4 @@ namespace WinExplorer.UI
             base.WndProc(ref m);
         }
     }
-
 }

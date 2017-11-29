@@ -1,15 +1,5 @@
 ﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.Editing;
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-
 
 namespace WindowsFormsApp3
 {
@@ -30,16 +20,13 @@ namespace WindowsFormsApp3
             List<INamedTypeSymbol> b = new List<INamedTypeSymbol>();
             while (symbol.BaseType != null)
             {
-
                 b.Add(symbol.BaseType);
 
                 symbol = symbol.BaseType;
             }
 
             return b;
-
         }
-
 
         //        public static SymbolVisibility GetResultantVisibility(this ISymbol symbol)
         //        {
@@ -477,10 +464,6 @@ namespace WindowsFormsApp3
         //            return (symbol as ITypeSymbol)?.IsAttribute() == true;
         //        }
 
-
-
-
-
         //        public static bool IsStaticType(this ISymbol symbol)
         //        {
         //            return symbol != null && symbol.Kind == SymbolKind.NamedType && symbol.IsStatic;
@@ -504,8 +487,6 @@ namespace WindowsFormsApp3
         //            {
         //                return false;
         //            }
-
-
 
         //            // PERF: Avoid allocating a lambda capture as this method is recursive
         //            foreach (var namedType in namespaceOrType.GetTypeMembers())
@@ -548,7 +529,7 @@ namespace WindowsFormsApp3
         //        }
 
         //        /// <returns>
-        //        /// Returns true if symbol is a local variable and its declaring syntax node is 
+        //        /// Returns true if symbol is a local variable and its declaring syntax node is
         //        /// after the current position, false otherwise (including for non-local symbols)
         //        /// </returns>
         //        public static bool IsInaccessibleLocal(this ISymbol symbol, int position)
@@ -568,9 +549,6 @@ namespace WindowsFormsApp3
         //            var declarationSyntax = symbol.DeclaringSyntaxReferences.Select(r => r.GetSyntax()).FirstOrDefault();
         //            return declarationSyntax != null && position < declarationSyntax.SpanStart;
         //        }
-
-
-
 
         //        private const int TypeLibTypeFlagsFHidden = 0x0010;
         //        private const int TypeLibFuncFlagsFHidden = 0x0040;
@@ -617,10 +595,6 @@ namespace WindowsFormsApp3
         //            return false;
         //        }
 
-
-
-
-
         //        public static bool IsEventAccessor(this ISymbol symbol)
         //        {
         //            var method = symbol as IMethodSymbol;
@@ -635,8 +609,6 @@ namespace WindowsFormsApp3
 
         //        public static bool IsNonImplicitAndFromSource(this ISymbol symbol)
         //            => !symbol.IsImplicitlyDeclared && symbol.IsFromSource();
-
-
 
         //        public static ITypeSymbol GetSymbolType(this ISymbol symbol)
         //        {
@@ -672,8 +644,6 @@ namespace WindowsFormsApp3
 
         //            return symbol as ITypeSymbol;
         //        }
-
-
 
         //        /// <summary>
         //        /// If the <paramref name="symbol"/> is a method symbol, returns <see langword="true"/> if the method's return type is "awaitable", but not if it's <see langword="dynamic"/>.
@@ -731,7 +701,7 @@ namespace WindowsFormsApp3
         //            // NOTE: (rather than any OnCompleted method conforming to a certain pattern).
         //            // NOTE: Should this code be updated to match the spec?
 
-        //            // void OnCompleted(Action) 
+        //            // void OnCompleted(Action)
         //            // Actions are delegates, so we'll just check for delegates.
         //            if (!methods.Any(x => x.Name == WellKnownMemberNames.OnCompleted && x.ReturnsVoid && x.Parameters.Length == 1 && x.Parameters.First().Type.TypeKind == TypeKind.Delegate))
         //            {
@@ -741,9 +711,6 @@ namespace WindowsFormsApp3
         //            // void GetResult() || T GetResult()
         //            return methods.Any(m => m.Name == WellKnownMemberNames.GetResult && !m.Parameters.Any());
         //        }
-
-
-
 
         //    }
         //    public static class SymbolDisplayFormats
@@ -809,7 +776,6 @@ namespace WindowsFormsApp3
         //            {
         //                _builder = builder;
         //            }
-
 
         //            public T[] A
         //            {
@@ -881,7 +847,7 @@ namespace WindowsFormsApp3
         //        }
 
         //        /// <summary>
-        //        /// Write <paramref name="value"/> to slot <paramref name="index"/>. 
+        //        /// Write <paramref name="value"/> to slot <paramref name="index"/>.
         //        /// Fills in unallocated slots preceding the <paramref name="index"/>, if any.
         //        /// </summary>
         //        public void SetItem(int index, T value)
@@ -1075,7 +1041,7 @@ namespace WindowsFormsApp3
         //        #region Poolable
 
         //        // To implement Poolable, you need two things:
-        //        // 1) Expose Freeing primitive. 
+        //        // 1) Expose Freeing primitive.
         //        public void Free()
         //        {
         //            var pool = _pool;
@@ -1086,9 +1052,9 @@ namespace WindowsFormsApp3
         //                // After about 50 (just 67) we have a long tail of infrequently used builder sizes.
         //                // However we have builders with size up to 50K   (just one such thing)
         //                //
-        //                // We do not want to retain (potentially indefinitely) very large builders 
+        //                // We do not want to retain (potentially indefinitely) very large builders
         //                // while the chance that we will need their size is diminishingly small.
-        //                // It makes sense to constrain the size to some "not too small" number. 
+        //                // It makes sense to constrain the size to some "not too small" number.
         //                // Overall perf does not seem to be very sensitive to this number, so I picked 128 as a limit.
         //                if (_builder.Capacity < 128)
         //                {
@@ -1182,7 +1148,7 @@ namespace WindowsFormsApp3
         //            }
 
         //            // bucketize
-        //            // prevent reallocation. it may not have 'count' entries, but it won't have more. 
+        //            // prevent reallocation. it may not have 'count' entries, but it won't have more.
         //            var accumulator = new Dictionary<K, ArrayBuilder<T>>(Count, comparer);
         //            for (int i = 0; i < Count; i++)
         //            {
@@ -1258,7 +1224,6 @@ namespace WindowsFormsApp3
 
         //        public void Clip(int limit)
         //        {
-
         //            _builder.Count = limit;
         //        }
 
@@ -1357,7 +1322,6 @@ namespace WindowsFormsApp3
         //}
         //    public class ObjectPool<T> where T : class
         //    {
-
         //        public struct Element
         //        {
         //            public T Value;
@@ -1379,16 +1343,12 @@ namespace WindowsFormsApp3
         //        // than "new T()".
         //        private readonly Factory _factory;
 
-
-
-
         //        public ObjectPool(Factory factory)
         //            : this(factory, Environment.ProcessorCount * 2)
         //        { }
 
         //        public ObjectPool(Factory factory, int size)
         //        {
-
         //            _factory = factory;
         //            _items = new Element[size - 1];
         //        }
@@ -1404,13 +1364,13 @@ namespace WindowsFormsApp3
         //        /// </summary>
         //        /// <remarks>
         //        /// Search strategy is a simple linear probing which is chosen for it cache-friendliness.
-        //        /// Note that Free will try to store recycled objects close to the start thus statistically 
+        //        /// Note that Free will try to store recycled objects close to the start thus statistically
         //        /// reducing how far we will typically search.
         //        /// </remarks>
         //        internal T Allocate()
         //        {
         //            // PERF: Examine the first element. If that fails, AllocateSlow will look at the remaining elements.
-        //            // Note that the initial read is optimistically not synchronized. That is intentional. 
+        //            // Note that the initial read is optimistically not synchronized. That is intentional.
         //            // We will interlock only when we have a candidate. in a worst case we may miss some
         //            // recently returned objects. Not a big deal.
         //            T inst = _firstItem;
@@ -1418,7 +1378,6 @@ namespace WindowsFormsApp3
         //            {
         //                inst = AllocateSlow();
         //            }
-
 
         //            return inst;
         //        }
@@ -1429,7 +1388,7 @@ namespace WindowsFormsApp3
 
         //            for (int i = 0; i < items.Length; i++)
         //            {
-        //                // Note that the initial read is optimistically not synchronized. That is intentional. 
+        //                // Note that the initial read is optimistically not synchronized. That is intentional.
         //                // We will interlock only when we have a candidate. in a worst case we may miss some
         //                // recently returned objects. Not a big deal.
         //                T inst = items[i].Value;
@@ -1450,7 +1409,7 @@ namespace WindowsFormsApp3
         //        /// </summary>
         //        /// <remarks>
         //        /// Search strategy is a simple linear probing which is chosen for it cache-friendliness.
-        //        /// Note that Free will try to store recycled objects close to the start thus statistically 
+        //        /// Note that Free will try to store recycled objects close to the start thus statistically
         //        /// reducing how far we will typically search in Allocate.
         //        /// </remarks>
         //        internal void Free(T obj)
@@ -1460,7 +1419,7 @@ namespace WindowsFormsApp3
 
         //            if (_firstItem == null)
         //            {
-        //                // Intentionally not using interlocked here. 
+        //                // Intentionally not using interlocked here.
         //                // In a worst case scenario two objects may be stored into same slot.
         //                // It is very unlikely to happen and will only mean that one of the objects will get collected.
         //                _firstItem = obj;
@@ -1478,7 +1437,7 @@ namespace WindowsFormsApp3
         //            {
         //                if (items[i].Value == null)
         //                {
-        //                    // Intentionally not using interlocked here. 
+        //                    // Intentionally not using interlocked here.
         //                    // In a worst case scenario two objects may be stored into same slot.
         //                    // It is very unlikely to happen and will only mean that one of the objects will get collected.
         //                    items[i].Value = obj;
@@ -1488,11 +1447,11 @@ namespace WindowsFormsApp3
         //        }
 
         //        /// <summary>
-        //        /// Removes an object from leak tracking.  
-        //        /// 
-        //        /// This is called when an object is returned to the pool.  It may also be explicitly 
+        //        /// Removes an object from leak tracking.
+        //        ///
+        //        /// This is called when an object is returned to the pool.  It may also be explicitly
         //        /// called if an object allocated from the pool is intentionally not being returned
-        //        /// to the pool.  This can be of use with pooled arrays if the consumer wants to 
+        //        /// to the pool.  This can be of use with pooled arrays if the consumer wants to
         //        /// return a larger array to the pool than was originally allocated.
         //        /// </summary>
 
@@ -1500,12 +1459,8 @@ namespace WindowsFormsApp3
         //        {
         //        }
 
-
-
-
         //        private void Validate(object obj)
         //        {
-
         //            var items = _items;
         //            for (int i = 0; i < items.Length; i++)
         //            {
@@ -1514,7 +1469,6 @@ namespace WindowsFormsApp3
         //                {
         //                    return;
         //                }
-
 
         //            }
         //        }
@@ -1553,6 +1507,3 @@ namespace WindowsFormsApp3
         //        }
     }
 }
-
-
-

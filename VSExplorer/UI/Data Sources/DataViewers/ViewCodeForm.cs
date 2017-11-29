@@ -1,5 +1,4 @@
-﻿using AIMS.Libraries.Scripting.ScriptControl;
-using AIMS.Libraries.Scripting.ScriptControl.Properties;
+﻿using ScriptControl.Properties;
 using System.Windows.Forms;
 
 namespace WinExplorer.UI

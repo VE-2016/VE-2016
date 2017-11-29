@@ -1,14 +1,14 @@
 ﻿// Copyright (c) 2014 AlphaSierraPapa for the SharpDevelop Team
-// 
+//
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this
 // software and associated documentation files (the "Software"), to deal in the Software
 // without restriction, including without limitation the rights to use, copy, modify, merge,
 // publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons
 // to whom the Software is furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in all copies or
 // substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
 // INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
 // PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
@@ -22,8 +22,8 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Input;
+
 //using ICSharpCode.WpfDesign.UIExtensions;
 
 namespace AvalonEdit.Editor
@@ -40,19 +40,20 @@ namespace AvalonEdit.Editor
             Hyperlink = hyperlink;
         }
     }
+
     public partial class LinkViewer : Window
     {
-
         public LinkViewer()
         {
             InitializeComponent();
             this.WindowStyle = WindowStyle.None;
             this.AllowsTransparency = true;
             this.KeyDown += LinkViewer_KeyDown;
-            
         }
+
         public string SelectedLinkItem { get; set; }
         public ReferenceLocation Location { get; set; }
+
         private void MouseDownOverLinkItem(object sender, MouseButtonEventArgs e)
         {
             TextBlock b = sender as TextBlock;
@@ -63,7 +64,7 @@ namespace AvalonEdit.Editor
             LinkItem linkItem = b.Tag as LinkItem;
 
             SelectedLinkItem = b.Text;
-  
+
             this.DialogResult = true;
 
             this.Close();
@@ -84,25 +85,25 @@ namespace AvalonEdit.Editor
         {
             LinkItems = v;
             itemsListBox.ItemsSource = v;
-
         }
+
         public ReferenceLocation? GetLocation(string FilePath)
         {
-                 foreach (LinkItem linkItem in LinkItems)
-                {
-                    ReferenceLocation? Location = linkItem.Location;
+            foreach (LinkItem linkItem in LinkItems)
+            {
+                ReferenceLocation? Location = linkItem.Location;
 
-                    if (Location.Value.Location.SourceTree.FilePath == FilePath)
-                        return Location;
-                }
-                return null;
+                if (Location.Value.Location.SourceTree.FilePath == FilePath)
+                    return Location;
+            }
+            return null;
         }
     }
+
     public class StringReplace
     {
         public static string Replace(string source)
         {
-            
             Regex reg = new Regex(@"\  References");
             MatchEvaluator eval = match =>
             {
@@ -113,8 +114,22 @@ namespace AvalonEdit.Editor
                 }
             };
             return reg.Replace(source, eval);
-            
         }
+
+        public static string ReplaceUndo(string source)
+        {
+            Regex reg = new Regex(@"\//References");
+            MatchEvaluator eval = match =>
+            {
+                switch (match.Value)
+                {
+                    case "//References": return "  References";
+                    default: throw new Exception("Unexpected match!");
+                }
+            };
+            return reg.Replace(source, eval);
+        }
+
         public static int FindExtended(string source, int offset)
         {
             Regex exp = new Regex(@"\//References\s+.*", RegexOptions.IgnoreCase | RegexOptions.Multiline);
@@ -126,8 +141,8 @@ namespace AvalonEdit.Editor
                 if (m.Index > offset)
                     if (i > 0)
                         return i - 1;
-                else
-                    return i;
+                    else
+                        return i;
                 i++;
             }
             return i;

@@ -1,11 +1,9 @@
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Windows.Forms;
-
-using Microsoft.Win32;
 
 namespace AIMS.Libraries.Scripting
 {
@@ -315,7 +313,7 @@ namespace AIMS.Libraries.Scripting
         /// </summary>
         private static void SearchDirectory(string directory, string filemask, List<string> collection, bool searchSubdirectories, bool ignoreHidden)
         {
-            // If Directory.GetFiles() searches the 8.3 name as well as the full name so if the filemask is 
+            // If Directory.GetFiles() searches the 8.3 name as well as the full name so if the filemask is
             // "*.xpt" it will return "Template.xpt~"
             bool isExtMatch = Regex.IsMatch(filemask, @"^\*\..{3}$");
             string ext = null;
@@ -452,7 +450,7 @@ namespace AIMS.Libraries.Scripting
             int srclen = src.Length;
             char next_char;
 
-            for (;;)
+            for (; ; )
             {
                 if (patidx == patlen)
                     return (srcidx == srclen);

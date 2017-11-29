@@ -1,16 +1,13 @@
-using AIMS.Libraries.CodeEditor;
-
-//using AIMS.Libraries.CodeEditor.Syntax;
-using AIMS.Libraries.Scripting.ScriptControl;
-using AIMS.Libraries.Scripting.ScriptControl.Properties;
 using Microsoft.CodeAnalysis;
+using ScriptControl;
+using ScriptControl.Properties;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
-using VSParsers;
 using VSProvider;
 
 namespace WinExplorer
@@ -36,7 +33,7 @@ namespace WinExplorer
             //InitializeListView();
             InitializeDataGrid();
             LoadSettings();
-            CodeEditorControl.IntErrors.ContentChanged += IntError_ContentChanged;
+            //CodeEditorControl.IntErrors.ContentChanged += IntError_ContentChanged;
             toolStripComboBox1.SelectedIndex = 0;
             toolStripComboBox2.SelectedIndex = 0;
             VSSolution.Errors += VSSolution_Errors;
@@ -47,29 +44,25 @@ namespace WinExplorer
         {
             //MessageBox.Show("Errors found - " + e.Errors.Count);
 
+            string filename = e.filename;
+
+            filename = Path.GetFileName(filename);
+
+            var ns = dg.Rows.Cast<DataGridViewRow>().Where(s => (string)s.Cells["File"].Value == filename).ToList();
+
+            foreach (var b in ns)
+            {
+                dg.Rows.Remove(b);
+                Diagnostic dc = b.Tag as Diagnostic;
+                RemoveFromHash(dc);
+            }
+
             LoadIntellisenseResults(e.Errors);
         }
 
         private Dictionary<int, Diagnostic> hc { get; set; }
 
         private ToolStripButton _messagesButton { get; set; }
-
-        private void IntError_ContentChanged(object sender, EventArgs e)
-        {
-            Intellisense ie = CodeEditorControl.IntErrors;
-
-            ArrayList E = ie.errors;
-
-            hc = ie.hc;
-
-            DD = E;
-
-            lv.Items.Clear();
-
-            LoadResults();
-
-            //MessageBox.Show(E.Count + " errors have been found");
-        }
 
         public void LoadEF(ExplorerForms c)
         {
@@ -86,9 +79,9 @@ namespace WinExplorer
 
         public void LoadSettings()
         {
-            if (CodeEditorControl.settings != null)
+            if (ScriptControl.ScriptControl.settings != null)
             {
-                Settings s = CodeEditorControl.settings;
+                Settings s = ScriptControl.ScriptControl.settings;
 
                 if (s.Theme == "VS2012Light")
                 {
@@ -239,11 +232,16 @@ namespace WinExplorer
 
             dg.CellMouseLeave += Dg_CellMouseLeave;
 
-            dg.SelectionChanged += Dg_SelectionChanged;
+            dg.CellContentDoubleClick += Dg_CellContentDoubleClick;
 
             dg.CellValueNeeded += Dg_CellValueNeeded;
 
             ResumeLayout();
+        }
+
+        private void Dg_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Dg_SelectionChanged(null, null);
         }
 
         private void Dg_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
@@ -408,7 +406,7 @@ namespace WinExplorer
 
             if (b.SelectedIndex == 0 || b.SelectedIndex == 2)
             {
-               // LoadIntellisenseResults(hc);
+                // LoadIntellisenseResults(hc);
             }
             if (b.SelectedIndex == 0 || b.SelectedIndex == 1)
             {
@@ -420,7 +418,7 @@ namespace WinExplorer
 
         public void _LoadIntellisenseResults()
         {
-            //ScriptControl scr = null;
+            //ScriptControl.ScripControlscr = null;
 
             //VSSolution vs = null;
 
@@ -468,7 +466,7 @@ namespace WinExplorer
             //            v.Tag = e;
 
             //            lv.Items.Add(v);
-             //       }
+            //       }
 
             //        return;
             //    }
@@ -527,6 +525,14 @@ namespace WinExplorer
 
         private Dictionary<int, DataGridViewRow> hcd = new Dictionary<int, DataGridViewRow>();
 
+        public void RemoveFromHash(Diagnostic dc)
+        {
+            int hash = dc.GetMessage().GetHashCode();
+
+            if (hcd.ContainsKey(hash))
+                hcd.Remove(hash);
+        }
+
         public void LoadIntellisenseResults(List<Diagnostic> hc)
         {
             lock (s_obs)
@@ -534,7 +540,7 @@ namespace WinExplorer
                 if (ef == null)
                     return;
 
-                ScriptControl scr = null;
+                ScriptControl.ScriptControl scr = null;
 
                 VSSolution vs = null;
 
@@ -599,7 +605,6 @@ namespace WinExplorer
                     if (hc != null)
                     {
                     }
-                    
 
                     //filename = d.FileName;
 
@@ -614,7 +619,6 @@ namespace WinExplorer
                         filename = dc.Location.SourceTree.FilePath;
 
                         AvalonDocument d = scr.FileOpened(filename, false);
-
 
                         int hash = dc.GetMessage().GetHashCode();
 

@@ -1,73 +1,56 @@
-﻿    using System;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Data;
-    using System.Drawing;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Windows.Forms;
-    using VSProvider;
-    using WinExplorer;
-
-    using System.Diagnostics;
-
-
-using System.Threading;
-
-using VSParsers;
-using Microsoft.CodeAnalysis;
+﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using AIMS.Libraries.Scripting.ScriptControl.Properties;
 using Microsoft.CodeAnalysis.FindSymbols;
-
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ScriptControl.Properties;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using VSParsers;
+using VSProvider;
+using WinExplorer;
+
 //using NUnit;
 //using NUnit.Framework;
 
 namespace VE_Tests
+{
+    public class Context
     {
-
-       
-        public class Context
-        {
         public TestContext testContext { get; set; }
         public string info { get; set; }
-        }
+    }
 
     public class VSSolutionStub
     {
         private Dictionary<string, ArrayList> dict { get; set; }
-
 
         public void GetSubTypes(Microsoft.Build.Evaluation.Project pc, VSProject vp)
         {
             dict = vp.GetSubtypes(pc);
         }
 
-        
         public void CheckIfCompileItemsArePresentInSolutionExplorerTree(TreeView v)
         {
             Microsoft.Build.Evaluation.Project pc = null;
 
-
             TreeNode b = v.Nodes[0];
-
 
             VSSolution vs = v.Tag as VSSolution;
 
-           // Assert.IsNotNull(b);
+            // Assert.IsNotNull(b);
 
-           // Assert.IsNotNull(vs);
+            // Assert.IsNotNull(vs);
 
             if (vs == null)
                 return;
 
             foreach (VSProject p in vs.projects)
             {
-
                 if (p.ProjectType == "SolutionFolder")
                     continue;
 
@@ -78,7 +61,7 @@ namespace VE_Tests
 
                 TreeNode node = bb.GetProjectNode(b, p);
 
-             //   Assert.That(node, Is.Not.Null);
+                //   Assert.That(node, Is.Not.Null);
 
                 int i = 0;
                 foreach (string s in dict.Keys)
@@ -100,7 +83,9 @@ namespace VE_Tests
                 }
             }
         }
+
         public ExplorerForms ef { get; set; }
+
         public string RandomCompileItem()
         {
             Random r = new Random();
@@ -110,15 +95,17 @@ namespace VE_Tests
             int index = (int)(b.Count * r.NextDouble());
             return b[index];
         }
+
         public void OpenFile(string file)
         {
             CountdownEvent are = new CountdownEvent(1);
-            ef.Invoke(new Action(()=> ef.Command_OpenFile(file, are) ));
+            ef.Invoke(new Action(() => ef.Command_OpenFile(file, are)));
             //Task.Run(() => are.WaitOne()).Wait();
             //VSSolution vs = ef.GetVSSolution();
             //ManualResetEvent mre = vs.SynchronizedEventForCompileFile(file);
             //Task.Run(() => mre.WaitOne()).Wait();
         }
+
         async public void OpenFile(string file, CountdownEvent e)
         {
             AutoResetEvent are = new AutoResetEvent(false);
@@ -127,8 +114,8 @@ namespace VE_Tests
             VSSolution vs = ef.GetVSSolution();
             ManualResetEvent mre = vs.SynchronizedEventForCompileFile(file);
             Task.Run(() => mre.WaitOne()).Wait();
-            
         }
+
         public bool CheckIfOpened(string file)
         {
             List<AvalonDocument> b = ef.Command_OpenedFiles();
@@ -137,10 +124,11 @@ namespace VE_Tests
                     return true;
             return false;
         }
+
         public void MethodMembers()
         {
             string file = "";
-            
+
             VSSolution vs = ef.GetVSSolution();
             List<MethodDeclarationSyntax> cs = new List<MethodDeclarationSyntax>();
             while (cs.Count <= 0)
@@ -162,32 +150,26 @@ namespace VE_Tests
             {
                 var symbol = vs.GetSymbolAtLocation(me.Identifier.SpanStart, file);
                 VSProject vp = vs.GetProjectbyCompileItem(file);
-                var refs = vs.GetAllSymbolReferences(symbol, file, vp).ToList();
+                var refs = vs.GetAllSymbolReferences(symbol, file, vp).Result.ToList();
                 MessageBox.Show("References - " + refs.Count);
                 foreach (LocationSource c in d)
                 {
                     foreach (ReferencedSymbol se in refs)
                     {
-
                         foreach (ReferenceLocation b in se.Locations)
                         {
                             if (c.textSpan.Start > b.Location.SourceSpan.Start && c.Source.FilePath == b.Location.SourceTree.FilePath)
                                 MessageBox.Show("Location found " + b.Location.ToString());
                         }
-
                     }
                 }
             }
         }
     }
 
-
     [TestClass]
     public class VSExplorerSolution_Test
-        {
-
-       
-
+    {
         private VSSolution vs { get; set; }
 
         private TreeView b { get; set; }
@@ -200,25 +182,23 @@ namespace VE_Tests
         //[Apartment(ApartmentState.STA)]
         async public void Open_Solution_Tests()
         {
-
             //Context c = new Context();
             //c.info = "f:\\ve\\VE-2016\\VE-Tests\\Sources\\Live-Charts-master\\LiveCharts.sln";
             string folder = AppDomain.CurrentDomain.BaseDirectory + "\\Sources\\Live-Charts-master\\LiveCharts.sln";
             ManualResetEvent mre = new ManualResetEvent(false);
-            ef.BeginInvoke(new Action(() => {
-                
+            ef.BeginInvoke(new Action(() =>
+            {
                 ef.Command_OpenSolution(folder, mre);
-                
             }));
             await Task.Run(() => mre.WaitOne());
-
         }
+
         [TestMethod]
         public CountdownEvent OpenSolutionAndFilesFromProject_Test()
         {
-           
             string folder = AppDomain.CurrentDomain.BaseDirectory + "\\Sources\\Live-Charts-master\\LiveCharts.sln";
-            ef.Invoke(new Action(() => {
+            ef.Invoke(new Action(() =>
+            {
                 ef.Command_CloseSolution();
                 ef.Command_OpenSolution(folder);
             }));
@@ -229,24 +209,22 @@ namespace VE_Tests
                 foreach (var s in fs)
                     ef.Command_OpenFile(s, e);
             }));
-            return e;   
+            return e;
         }
+
         [TestMethod]
         public void OpenSolutionAndFindMethodsInArbitraryFile()
         {
-            
             //string folder = AppDomain.CurrentDomain.BaseDirectory + "\\Sources\\Live-Charts-master\\LiveCharts.sln";
-            
+
             VSSolutionStub vss = new VSSolutionStub();
             vss.ef = ef;
             vss.MethodMembers();
-
-
         }
+
         [TestMethod]
         public void CheckIfCompileItemsArePresentInSolutionTree()
         {
-    
             //string folder = AppDomain.CurrentDomain.BaseDirectory + "\\Sources\\Live-Charts-master\\LiveCharts.sln";
             //ef.Invoke(new Action(() => {
             //    ef.Command_CloseSolution();
@@ -259,14 +237,12 @@ namespace VE_Tests
             vss.CheckIfCompileItemsArePresentInSolutionExplorerTree(v);
             //NUnit.Framework.TestContext.WriteLine("Open solution for " + folder + " and check compile items completed successfully ");
             //mf.BeginInvoke(new Action(() => this.Close()));
-
         }
+
         [TestMethod]
-       //[Apartment(ApartmentState.STA)]
+        //[Apartment(ApartmentState.STA)]
         public void Open_Solution_Test()
         {
-
-                       
             Context c = new Context();
             //c.testContext = new TestContext(TestExecutionContext.CurrentContext);
             c.info = "f:\\ve\\VE-2016\\VE-Tests\\Sources\\Live-Charts-master\\LiveCharts.sln";
@@ -275,55 +251,51 @@ namespace VE_Tests
             //   Application.Run(new TestForm(TestForm.PerformDelegateName.opensolution, c));
             Application.Run(new ExplorerForms());
         }
+
         [TestMethod]
         //[Apartment(ApartmentState.STA)]
         public void Open_Solution_And_Project_Files_Test()
         {
-
             Context c = new Context();
             c.info = "f:\\ve\\VE-2016\\VE-Tests\\Sources\\Live-Charts-master\\LiveCharts.sln";
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new TestForm(TestForm.PerformDelegateName.opensolutionandfilesfromproject, c));
-            
         }
+
         [TestMethod]
         //[Apartment(ApartmentState.STA)]
         public void Open_Solution_And_Project_Files_With_Repeat_Test()
         {
-
             Context c = new Context();
             c.info = "f:\\ve\\VE-2016\\VE-Tests\\Sources\\Live-Charts-master\\LiveCharts.sln";
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new TestForm(TestForm.PerformDelegateName.opensolutionandfilesfromprojectwithrepeat, c));
-
         }
+
         [TestMethod]
         //[Apartment(ApartmentState.STA)]
         public void Open_Solution_And_CheckIfCompileItemsArePresentInSolutionTreeView_Test()
         {
-
             Context c = new Context();
             //c.testContext = new TestContext(TestExecutionContext.CurrentContext);
             c.info = "f:\\ve\\VE-2016\\VE-Tests\\Sources\\Live-Charts-master\\LiveCharts.sln";
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new TestForm(TestForm.PerformDelegateName.opensolutionandcheckifcompileitemsarepresentinsolutiontree, c));
-
         }
+
         [TestMethod]
         //[Apartment(ApartmentState.STA)]
         public void Open_Solution_And_FindMethodsInRandomFile_Test()
         {
-
             Context c = new Context();
-          //  c.testContext = new TestContext(TestExecutionContext.CurrentContext);
+            //  c.testContext = new TestContext(TestExecutionContext.CurrentContext);
             c.info = "f:\\ve\\VE-2016\\VE-Tests\\Sources\\Live-Charts-master\\LiveCharts.sln";
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new TestForm(TestForm.PerformDelegateName.findmethodsinarbitraryfile, c));
-
         }
     }
-    }
+}

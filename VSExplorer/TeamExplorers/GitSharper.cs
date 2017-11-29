@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LibGit2Sharp;
-using VSProvider;
+﻿using LibGit2Sharp;
+using System;
 using System.IO;
+using VSProvider;
 
 namespace WinExplorer.TeamExplorers
 {
@@ -19,13 +15,13 @@ namespace WinExplorer.TeamExplorers
 
             return r;
         }
+
         public void AddVSSolution(VSSolution vs)
         {
             string repoPath = Path.GetDirectoryName(vs.solutionFileName);
 
             using (var repo = new Repository(repoPath))
             {
-
                 foreach (VSProject vp in vs.projects)
                 {
                     var compileItems = vp.GetCompileItems();
@@ -44,7 +40,6 @@ namespace WinExplorer.TeamExplorers
 
                 Branch firstCommitBranch = repo.Branches["master"];
                 repo.Checkout(firstCommitBranch);
-
             }
         }
     }

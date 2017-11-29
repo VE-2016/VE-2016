@@ -58,7 +58,6 @@ namespace utils
                 else forwardButton.Enabled = true;
         }
 
-
         public void Prev()
         {
             if (v == null)
@@ -85,7 +84,7 @@ namespace utils
                 return;
             if (N == null)
                 return;
-            
+
             act++;
 
             if (act >= N.Count)
@@ -2476,8 +2475,10 @@ namespace SolutionFormProject
 
             private static readonly Type s_SolutionParser;
             private static readonly MethodInfo s_SolutionParser_parseSolution;
+
             //private static readonly PropertyInfo s_SolutionParser_projects;
             private static readonly FieldInfo s_SolutionParser_projects;
+
             private static readonly PropertyInfo s_SolutionParser_solutionReader;
             private List<VSProject> _projects;
             private string _solutionFileName;
@@ -2493,7 +2494,6 @@ namespace SolutionFormProject
                 s_SolutionParser_solutionReader = s_SolutionParser.GetProperty("SolutionReader", BindingFlags.NonPublic | BindingFlags.Instance);
                 s_SolutionParser_projects = s_SolutionParser.GetField("_projects", BindingFlags.NonPublic | BindingFlags.Instance);
                 s_SolutionParser_parseSolution = s_SolutionParser.GetMethod("Parse", BindingFlags.Public | BindingFlags.Static);
-
             }
 
             public VSSolution(string solutionFileName)
@@ -2600,10 +2600,8 @@ namespace SolutionFormProject
                 s_ProjectRootElement = Type.GetType("Microsoft.Build.Construction.ProjectRootElement, Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
                 s_ProjectRootElementCache = Type.GetType("Microsoft.Build.Evaluation.ProjectRootElementCache, Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
 
-
                 s_ProjectRootElement = Type.GetType("Microsoft.Build.Construction.ProjectRootElement, Microsoft.Build, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
                 s_ProjectRootElementCache = Type.GetType("Microsoft.Build.Evaluation.ProjectRootElementCache, Microsoft.Build, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
-
 
                 s_ProjectRootElement_Items = s_ProjectRootElement.GetProperty("Items", BindingFlags.Public | BindingFlags.Instance);
             }

@@ -59,16 +59,15 @@ namespace WinExplorer
 
             C = new ArrayList();
 
-
             string[] cc = null;
 
             try
             {
                 cc = File.ReadAllLines("a.txt");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                while(c == null)
+                while (c == null)
                 {
                     Thread.Sleep(2000);
                     cc = File.ReadAllLines("a.txt");

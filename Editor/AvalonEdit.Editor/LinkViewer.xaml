@@ -6,20 +6,17 @@
 
     <Window.Resources>
         <DataTemplate DataType="{x:Type cc:LinkItem}">
-            <TextBlock >
+            <TextBlock>
         <TextBlock Text="{Binding Text}" Tag="Binding cc:LinkItem"  Margin="1" />
         <Hyperlink>
-            <TextBlock Text="{Binding Hyperlink}" Margin="1" MouseDown="MouseDownOverLinkItem" FontSize="11px"/>
+            <TextBlock Text="{Binding Hyperlink}" Margin="1" MouseDown="MouseDownOverLinkItem" FontSize="11px" />
         </Hyperlink>
     </TextBlock>
         </DataTemplate>
     </Window.Resources>
-    
+
     <Grid>
-       
+
         <ListBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding LinkItems}" x:Name="itemsListBox" />
-        
     </Grid>
-    
 </Window>
-    

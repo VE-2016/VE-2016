@@ -195,8 +195,8 @@ namespace VSProvider
 
                 csd.addProjectFiles(L);
 
-                if(vp.csd.snx.cc != null)
-                csd.snx.cc = csd.snx.cc.AddReferences(vp.csd.snx.cc.References);
+                if (vp.csd.snx.cc != null)
+                    csd.snx.cc = csd.snx.cc.AddReferences(vp.csd.snx.cc.References);
             }
         }
 
@@ -242,7 +242,6 @@ namespace VSProvider
         {
             s_ProjectInSolution = Type.GetType("Microsoft.Build.Construction.ProjectInSolution, Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
             s_ProjectInSolution = Type.GetType("Microsoft.Build.Construction.ProjectInSolution, Microsoft.Build, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
-            
 
             s_ProjectInSolution_ProjectName = s_ProjectInSolution.GetProperty("ProjectName", BindingFlags.NonPublic | BindingFlags.Instance);
             s_ProjectInSolution_ProjectType = s_ProjectInSolution.GetProperty("ProjectType", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -258,7 +257,6 @@ namespace VSProvider
             s_ProjectRootElement = Type.GetType("Microsoft.Build.Construction.ProjectRootElement, Microsoft.Build, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
             s_ProjectRootElementCache = Type.GetType("Microsoft.Build.Evaluation.ProjectRootElementCache, Microsoft.Build, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
 
-
             s_ProjectRootElement_Items = s_ProjectRootElement.GetProperty("Items", BindingFlags.Public | BindingFlags.Instance);
 
             s_ProjectRootElement_OutputType = s_ProjectRootElement.GetProperty("Properties", BindingFlags.Public | BindingFlags.Instance);
@@ -266,10 +264,8 @@ namespace VSProvider
 
         public Microsoft.CodeAnalysis.Project Project { get; set; }
 
-
         public Document GetDocument(string filename)
         {
-
             Document d = vs.GetDocument(FileName, filename);
 
             return d;
@@ -351,8 +347,6 @@ namespace VSProvider
             this.ProjectType = s.ProjectType.ToString();
             this.RelativePath = s.RelativePath;
             this.ProjectGuid = s.ProjectGuid;
-
-            
 
             _internalSolutionProject = internalSolutionProject;
 
@@ -2534,6 +2528,7 @@ namespace VSProvider
             }
             return di;
         }
+
         public object LoadProjectToMemorys()
         {
             MemoryStream dd = new MemoryStream();
@@ -2545,9 +2540,10 @@ namespace VSProvider
             MemoryStream bb = new MemoryStream(dd.ToArray());
             XmlReader xmls = new XmlTextReader(bb);
             pc = new Microsoft.Build.Evaluation.Project(xmls);
-           
+
             return pc;
         }
+
         public Microsoft.Build.Evaluation.Project LoadProjectToMemory()
         {
             try
@@ -2564,9 +2560,8 @@ namespace VSProvider
 
                 return pc;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-
             }
             return null;
         }

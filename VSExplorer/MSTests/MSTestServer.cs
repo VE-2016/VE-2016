@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace WinExplorer
 {
@@ -16,10 +13,9 @@ namespace WinExplorer
         private static readonly TcpListener listener = new TcpListener(IPAddress.Any, 6543);
 
         static public bool running = false;
-        
+
         public MSTestServer()
         {
-            
             listener.Start();
             Console.WriteLine("Started MSTest TCP server.");
 
@@ -38,15 +34,16 @@ namespace WinExplorer
                 break;
             }
         }
+
         public void Shutdown()
         {
             listener.Stop();
         }
+
         private void ServeMSTestData(object clientSocket)
         {
             Console.WriteLine("Started MSTest thread  " + Thread.CurrentThread.ManagedThreadId);
 
-            
             running = true;
 
             var rnd = new Random();
@@ -64,14 +61,13 @@ namespace WinExplorer
 
                 while (running)
                 {
-                    
                     {
                         int c = 0;
                         try
                         {
                             c = stream.Read(msg, 0, msg.Length);
                         }
-                        catch(Exception e)
+                        catch (Exception e)
                         {
                             Shutdown();
                             return;
@@ -95,17 +91,16 @@ namespace WinExplorer
                         }
                         else prev = null;
 
-                       
                         foreach (string b in cc)
                         {
                             if (b == null)
                                 continue;
                             //if (b.StartsWith("$") == false)
                             //    continue;
-                            
+
                             {
                                 string[] dd = b.Trim().Replace("\r", "").Split("\n".ToCharArray());
-                                
+
                                 string[] gg = new string[dd.Length];
                                 int p = 0;
                                 foreach (string w in dd)
@@ -121,16 +116,10 @@ namespace WinExplorer
 
                                 dd = gg;
 
-                            
                                 i++;
                             }
-                   
-                
-                        
                         }
                     }
-                
-                
                 }
             }
             catch (SocketException e)
@@ -144,5 +133,4 @@ namespace WinExplorer
             listener.Stop();
         }
     }
-
 }

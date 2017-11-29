@@ -3,14 +3,10 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WinExplorer.Services.Extensions
 {
-
     public class Publisher
     {
         public string publisherId { get; set; }
@@ -59,34 +55,30 @@ namespace WinExplorer.Services.Extensions
 
     public class ExtensionManager
     {
-
         public RootObject GetExtensions()
         {
             JsonTextReader reader = null;
 
+            try
+            {
+                string exts = LoadExtensions();
 
-            try { 
-
-             string exts = LoadExtensions();
-
-
-            JObject result = JObject.Parse(exts);
-            reader = new JsonTextReader(new System.IO.StringReader(result.ToString()));
-            reader.SupportMultipleContent = true;
-        }
-        catch(Exception)
-        {}
+                JObject result = JObject.Parse(exts);
+                reader = new JsonTextReader(new System.IO.StringReader(result.ToString()));
+                reader.SupportMultipleContent = true;
+            }
+            catch (Exception)
+            { }
 
             if (reader == null)
                 return null;
 
             JsonSerializer serializer = new JsonSerializer();
 
-            RootObject r  = serializer.Deserialize<RootObject>(reader);
+            RootObject r = serializer.Deserialize<RootObject>(reader);
 
             return r;
-}
-
+        }
 
         public string LoadExtensions()
         {
@@ -103,7 +95,6 @@ namespace WinExplorer.Services.Extensions
             var postData = post;// richTextBox1.Text;
 
             var data = System.Text.ASCIIEncoding.UTF8.GetBytes(postData);
-
 
             //var httpClient = new WebClient();
             //httpClient.Headers.Add("Content-Type", "application/json");
@@ -123,7 +114,6 @@ namespace WinExplorer.Services.Extensions
             request.ContentLength = data.Length;
             request.Accept = "api-version=3.0-preview.1";
 
-
             //var writer = new System.IO.StreamWriter(request.GetRequestStream());
             //writer.Write(postData);
             //writer.Close();
@@ -131,18 +121,13 @@ namespace WinExplorer.Services.Extensions
             //var reader = new System.IO.StreamReader(response.GetResponseStream());
             //var responseText = reader.ReadToEnd();
 
-
-
-
             using (var stream = request.GetRequestStream())
             {
                 stream.Write(data, 0, data.Length);
-
             }
 
             try
             {
-
                 var response = (HttpWebResponse)request.GetResponse();
 
                 var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
@@ -150,17 +135,12 @@ namespace WinExplorer.Services.Extensions
                 //richTextBox1.Text = responseString;
 
                 return responseString;
-
             }
             catch (WebException ex)
             {
-                
             }
 
             return "";
         }
-
-
-
     }
 }

@@ -2,19 +2,16 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace AvalonEdit.Editor
 {
-
     public class ServiceContainer : IServiceProvider, IServiceContainer, IDisposable
     {
-        readonly ConcurrentStack<IServiceProvider> fallbackProviders = new ConcurrentStack<IServiceProvider>();
-        readonly Dictionary<Type, object> services = new Dictionary<Type, object>();
-        readonly List<Type> servicesToDispose = new List<Type>();
-        readonly Dictionary<Type, object> taskCompletionSources = new Dictionary<Type, object>(); // object = TaskCompletionSource<T> for various T
+        private readonly ConcurrentStack<IServiceProvider> fallbackProviders = new ConcurrentStack<IServiceProvider>();
+        private readonly Dictionary<Type, object> services = new Dictionary<Type, object>();
+        private readonly List<Type> servicesToDispose = new List<Type>();
+        private readonly Dictionary<Type, object> taskCompletionSources = new Dictionary<Type, object>(); // object = TaskCompletionSource<T> for various T
 
         public ServiceContainer()
         {
@@ -37,7 +34,6 @@ namespace AvalonEdit.Editor
                     ServiceCreatorCallback callback = instance as ServiceCreatorCallback;
                     if (callback != null)
                     {
-
                         instance = callback(this, serviceType);
                         if (instance != null)
                         {
@@ -64,7 +60,6 @@ namespace AvalonEdit.Editor
 
         public void Dispose()
         {
-
             Type[] disposableTypes;
             lock (services)
             {
@@ -88,13 +83,12 @@ namespace AvalonEdit.Editor
                 }
                 if (disposable != null)
                 {
-
                     disposable.Dispose();
                 }
             }
         }
 
-        void OnServiceInitialized(Type serviceType, object serviceInstance)
+        private void OnServiceInitialized(Type serviceType, object serviceInstance)
         {
             IDisposable disposableService = serviceInstance as IDisposable;
             if (disposableService != null)

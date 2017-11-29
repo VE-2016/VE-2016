@@ -9,7 +9,7 @@
     <ProjectGuid>{9DCFA218-4E5F-4106-B14C-CAB7C0705AD0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AIMS.Libraries.Scripting.ScriptControl</RootNamespace>
+    <RootNamespace>ScriptControls</RootNamespace>
     <AssemblyName>ScriptControl</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileUpgradeFlags>
@@ -88,170 +88,7 @@
     <Compile Include="Converter\CodeCompiler.cs" />
     <Compile Include="Converter\CodeConverter.cs" />
     <Compile Include="Converter\TlbImp.cs" />
-    <Compile Include="Dom\Ambience.cs" />
     <None Include="ClassDiagram1.cd" />
-    <None Include="Dom\CecilReader.cs" />
-    <Compile Include="Dom\ClassFinder.cs" />
-    <Compile Include="Dom\CSharp\CSharpAmbience.cs" />
-    <Compile Include="Dom\CSharp\ExpressionFinder.cs" />
-    <Compile Include="Dom\CtrlSpaceResolveHelper.cs" />
-    <Compile Include="Dom\DiffUtility.cs" />
-    <Compile Include="Dom\EasyCodeDom.cs" />
-    <Compile Include="Dom\ExpressionContext.cs" />
-    <Compile Include="Dom\FilePosition.cs" />
-    <Compile Include="Dom\FoldingRegion.cs" />
-    <Compile Include="Dom\Functional.cs" />
-    <Compile Include="Dom\FusionNative.cs" />
-    <Compile Include="Dom\GacInterop.cs" />
-    <Compile Include="Dom\HostCallback.cs" />
-    <Compile Include="Dom\IComment.cs" />
-    <Compile Include="Dom\IExpressionFinder.cs" />
-    <Compile Include="Dom\Implementations\AbstractDecoration.cs" />
-    <Compile Include="Dom\Implementations\AbstractMember.cs" />
-    <Compile Include="Dom\Implementations\AbstractNamedEntity.cs" />
-    <Compile Include="Dom\Implementations\AbstractReturnType.cs" />
-    <Compile Include="Dom\Implementations\AnonymousMethodReturnType.cs" />
-    <Compile Include="Dom\Implementations\ArrayReturnType.cs" />
-    <Compile Include="Dom\Implementations\CombinedReturnType.cs" />
-    <Compile Include="Dom\Implementations\CompoundClass.cs" />
-    <Compile Include="Dom\Implementations\ConstructedReturnType.cs" />
-    <Compile Include="Dom\Implementations\DefaultAttribute.cs" />
-    <Compile Include="Dom\Implementations\DefaultClass.cs" />
-    <Compile Include="Dom\Implementations\DefaultComment.cs" />
-    <Compile Include="Dom\Implementations\DefaultCompilationUnit.cs" />
-    <Compile Include="Dom\Implementations\DefaultEvent.cs" />
-    <Compile Include="Dom\Implementations\DefaultField.cs" />
-    <Compile Include="Dom\Implementations\DefaultMethod.cs" />
-    <Compile Include="Dom\Implementations\DefaultParameter.cs" />
-    <Compile Include="Dom\Implementations\DefaultProperty.cs" />
-    <Compile Include="Dom\Implementations\DefaultReturnType.cs" />
-    <Compile Include="Dom\Implementations\DefaultTypeParameter.cs" />
-    <Compile Include="Dom\Implementations\DefaultUsing.cs" />
-    <Compile Include="Dom\Implementations\GenericReturnType.cs" />
-    <Compile Include="Dom\Implementations\GetClassReturnType.cs" />
-    <Compile Include="Dom\Implementations\NullReturnType.cs" />
-    <Compile Include="Dom\Implementations\ProxyReturnType.cs" />
-    <Compile Include="Dom\Implementations\SearchClassReturnType.cs" />
-    <Compile Include="Dom\Implementations\SystemTypes.cs" />
-    <Compile Include="Dom\Interfaces\ClassType.cs" />
-    <Compile Include="Dom\Interfaces\ExplicitInterfaceImplementation.cs" />
-    <Compile Include="Dom\Interfaces\IAttribute.cs" />
-    <Compile Include="Dom\Interfaces\IClass.cs" />
-    <Compile Include="Dom\Interfaces\ICompilationUnit.cs" />
-    <Compile Include="Dom\Interfaces\IDecoration.cs" />
-    <Compile Include="Dom\Interfaces\IEvent.cs" />
-    <Compile Include="Dom\Interfaces\IField.cs" />
-    <Compile Include="Dom\Interfaces\IMember.cs" />
-    <Compile Include="Dom\Interfaces\IMethod.cs" />
-    <Compile Include="Dom\Interfaces\IParameter.cs" />
-    <Compile Include="Dom\Interfaces\IProperty.cs" />
-    <Compile Include="Dom\Interfaces\IReturnType.cs" />
-    <Compile Include="Dom\Interfaces\ITypeParameter.cs" />
-    <Compile Include="Dom\Interfaces\IUsing.cs" />
-    <Compile Include="Dom\Interfaces\ModifierEnum.cs" />
-    <Compile Include="Dom\Interfaces\ParameterModifiers.cs" />
-    <Compile Include="Dom\Interfaces\Region.cs" />
-    <Compile Include="Dom\IResolver.cs" />
-    <Compile Include="Dom\LanguageProperties.cs" />
-    <Compile Include="Dom\LoggingService.cs" />
-    <Compile Include="Dom\MemberLookupHelper.cs" />
-    <Compile Include="Dom\NRefactoryResolver\NRefactoryASTConvertVisitor.cs" />
-    <Compile Include="Dom\NRefactoryResolver\NRefactoryInformationProvider.cs" />
-    <Compile Include="Dom\NRefactoryResolver\NRefactoryResolver.cs" />
-    <Compile Include="Dom\NRefactoryResolver\TypeVisitor.cs" />
-    <Compile Include="Dom\ProjectContent\DefaultProjectContent.cs" />
-    <Compile Include="Dom\ProjectContent\DomAssemblyName.cs" />
-    <Compile Include="Dom\ProjectContent\IProjectContent.cs" />
-    <Compile Include="Dom\ProjectContent\ParseInformation.cs" />
-    <Compile Include="Dom\ProjectContent\ProjectContentRegistry.cs" />
-    <Compile Include="Dom\ProjectContent\ReflectionProjectContent.cs" />
-    <Compile Include="Dom\Refactoring\CodeGenerator.cs" />
-    <Compile Include="Dom\Refactoring\CodeGeneratorOptions.cs" />
-    <Compile Include="Dom\Refactoring\IDocument.cs" />
-    <Compile Include="Dom\Refactoring\NRefactoryCodeGenerator.cs" />
-    <Compile Include="Dom\Refactoring\NRefactoryRefactoringProvider.cs" />
-    <Compile Include="Dom\Refactoring\RefactoringProvider.cs" />
-    <Compile Include="Dom\ReflectionLayer\DomPersistence.cs" />
-    <Compile Include="Dom\ReflectionLayer\ReflectionClass.cs" />
-    <Compile Include="Dom\ReflectionLayer\ReflectionEvent.cs" />
-    <Compile Include="Dom\ReflectionLayer\ReflectionField.cs" />
-    <Compile Include="Dom\ReflectionLayer\ReflectionLoader.cs" />
-    <Compile Include="Dom\ReflectionLayer\ReflectionMethod.cs" />
-    <Compile Include="Dom\ReflectionLayer\ReflectionParameter.cs" />
-    <Compile Include="Dom\ReflectionLayer\ReflectionProperty.cs" />
-    <Compile Include="Dom\ReflectionLayer\ReflectionReturnType.cs" />
-    <Compile Include="Dom\ResolveResult.cs" />
-    <Compile Include="Dom\Tag.cs" />
-    <Compile Include="Dom\VBNet\ExpressionFinder.cs" />
-    <Compile Include="Dom\VBNet\VBNetAmbience.cs" />
-    <Compile Include="Dom\XmlDoc.cs" />
-    <Compile Include="NRefactory\Ast\AbstractNode.cs" />
-    <Compile Include="NRefactory\Ast\Enums.cs" />
-    <Compile Include="NRefactory\Ast\General\BlockStatement.cs" />
-    <Compile Include="NRefactory\Ast\General\CompilationUnit.cs" />
-    <Compile Include="NRefactory\Ast\General\Expression.cs" />
-    <Compile Include="NRefactory\Ast\General\LocalVariableDeclaration.cs" />
-    <Compile Include="NRefactory\Ast\General\PrimitiveExpression.cs" />
-    <Compile Include="NRefactory\Ast\General\Statement.cs" />
-    <Compile Include="NRefactory\Ast\Generated.cs" />
-    <Compile Include="NRefactory\Ast\INode.cs" />
-    <Compile Include="NRefactory\Ast\INullable.cs" />
-    <Compile Include="NRefactory\Ast\TypeReference.cs" />
-    <Compile Include="NRefactory\EnvironmentInformationProvider.cs" />
-    <Compile Include="NRefactory\IAstVisitor.cs" />
-    <Compile Include="NRefactory\Lexer\AbstractLexer.cs" />
-    <Compile Include="NRefactory\Lexer\CSharp\Keywords.cs" />
-    <Compile Include="NRefactory\Lexer\CSharp\Lexer.cs" />
-    <Compile Include="NRefactory\Lexer\CSharp\Tokens.cs" />
-    <Compile Include="NRefactory\Lexer\ILexer.cs" />
-    <Compile Include="NRefactory\Lexer\LookupTable.cs" />
-    <Compile Include="NRefactory\Lexer\Special\BlankLine.cs" />
-    <Compile Include="NRefactory\Lexer\Special\Comment.cs" />
-    <Compile Include="NRefactory\Lexer\Special\CommentType.cs" />
-    <Compile Include="NRefactory\Lexer\Special\ISpecial.cs" />
-    <Compile Include="NRefactory\Lexer\Special\PreProcessingDirective.cs" />
-    <Compile Include="NRefactory\Lexer\Special\SpecialTracker.cs" />
-    <Compile Include="NRefactory\Lexer\Special\TagComment.cs" />
-    <Compile Include="NRefactory\Lexer\Token.cs" />
-    <Compile Include="NRefactory\Lexer\VBNet\Keywords.cs" />
-    <Compile Include="NRefactory\Lexer\VBNet\Lexer.cs" />
-    <Compile Include="NRefactory\Lexer\VBNet\Tokens.cs" />
-    <Compile Include="NRefactory\Location.cs" />
-    <Compile Include="NRefactory\ParserFactory.cs" />
-    <Compile Include="NRefactory\Parser\AbstractParser.cs" />
-    <Compile Include="NRefactory\Parser\CSharp\CSharpParser.cs" />
-    <Compile Include="NRefactory\Parser\CSharp\Parser.cs" />
-    <Compile Include="NRefactory\Parser\Errors.cs" />
-    <Compile Include="NRefactory\Parser\IParser.cs" />
-    <Compile Include="NRefactory\Parser\ModifierList.cs" />
-    <Compile Include="NRefactory\Parser\VBNet\ParamModifierList.cs" />
-    <Compile Include="NRefactory\Parser\VBNet\Parser.cs" />
-    <Compile Include="NRefactory\Parser\VBNet\VBNetParser.cs" />
-    <Compile Include="NRefactory\PrettyPrinter\AbstractOutputFormatter.cs" />
-    <Compile Include="NRefactory\PrettyPrinter\AbstractPrettyPrintOptions.cs" />
-    <Compile Include="NRefactory\PrettyPrinter\CSharp\CSharpOutputVisitor.cs" />
-    <Compile Include="NRefactory\PrettyPrinter\CSharp\OutputFormatter.cs" />
-    <Compile Include="NRefactory\PrettyPrinter\CSharp\PrettyPrintOptions.cs" />
-    <Compile Include="NRefactory\PrettyPrinter\IOutputAstVisitor.cs" />
-    <Compile Include="NRefactory\PrettyPrinter\NodeInformVisitor.cs" />
-    <Compile Include="NRefactory\PrettyPrinter\SpecialNodesInserter.cs" />
-    <Compile Include="NRefactory\PrettyPrinter\VBNet\VBNetOutputFormatter.cs" />
-    <Compile Include="NRefactory\PrettyPrinter\VBNet\VBNetOutputVisitor.cs" />
-    <Compile Include="NRefactory\PrettyPrinter\VBNet\VBNetPrettyPrintOptions.cs" />
-    <Compile Include="NRefactory\SnippetParser.cs" />
-    <Compile Include="NRefactory\Visitors\AbstractAstTransformer.cs" />
-    <Compile Include="NRefactory\Visitors\AbstractASTVisitor.cs" />
-    <Compile Include="NRefactory\Visitors\CodeDOMOutputVisitor.cs" />
-    <Compile Include="NRefactory\Visitors\CodeDOMVerboseOutputGenerator.cs" />
-    <Compile Include="NRefactory\Visitors\CSharpConstructsVisitor.cs" />
-    <Compile Include="NRefactory\Visitors\CSharpToVBNetConvertVisitor.cs" />
-    <Compile Include="NRefactory\Visitors\LookupTableVisitor.cs" />
-    <Compile Include="NRefactory\Visitors\NodeTrackingAstVisitor.cs" />
-    <Compile Include="NRefactory\Visitors\PrefixFieldsVisitor.cs" />
-    <Compile Include="NRefactory\Visitors\ToCSharpConvertVisitor.cs" />
-    <Compile Include="NRefactory\Visitors\ToVBNetConvertVisitor.cs" />
-    <Compile Include="NRefactory\Visitors\VBNetConstructsConvertVisitor.cs" />
-    <Compile Include="NRefactory\Visitors\VBNetToCSharpConvertVisitor.cs" />
     <None Include="Properties\DataSources\AIMS.Libraries.CodeEditor.CodeEditorControl.datasource" />
     <None Include="Properties\DataSources\AIMS.Libraries.CodeEditor.Intellisense.datasource" />
     <None Include="Properties\DataSources\AIMS.Libraries.CodeEditor.IntError.datasource" />
@@ -286,21 +123,6 @@
     <Compile Include="Windows\DocumentForm.Designer.cs">
       <DependentUpon>DocumentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\NewFileDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\NewFileDialog.Designer.cs">
-      <DependentUpon>NewFileDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Parser\CSharpParser.cs" />
-    <Compile Include="Parser\IParser.cs" />
-    <Compile Include="Parser\ProjectParser.cs" />
-    <Compile Include="Parser\VbExpressionFinder.cs" />
-    <Compile Include="Parser\VbParser.cs" />
-    <Compile Include="Parser\ProjectContentItem.cs" />
-    <Compile Include="Controls\QuickClassBrowserPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Windows\Document.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,93 +130,23 @@
       <DependentUpon>Document.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\GenericConverter.cs" />
-    <Compile Include="Project\ComReferenceProjectItem.cs" />
-    <Compile Include="Project\DefaultProject.cs" />
-    <Compile Include="Project\FileProjectItem.cs" />
-    <Compile Include="Project\ImportProjectItem.cs" />
-    <Compile Include="Project\ProjectReferenceProjectItem.cs" />
-    <Compile Include="Project\ReferenceProjectItem.cs" />
-    <Compile Include="Project\UnknownProjectItem.cs" />
-    <Compile Include="Project\WebReferencesProjectItem.cs" />
-    <Compile Include="Project\WebReferenceUrl.cs" />
     <Compile Include="Utilities\ReadOnlyCollectionWrapper.cs" />
-    <Compile Include="CodeCompletion\CodeCompletionOptions.cs" />
-    <Compile Include="CodeCompletion\AmbienceReflectionDecorator.cs" />
-    <Compile Include="CodeCompletion\CodeCompletionBinding.cs" />
-    <Compile Include="CodeCompletion\CSharpCompletionBinding.cs" />
-    <Compile Include="CodeCompletion\EventHandlerCompletitionDataProvider.cs" />
-    <Compile Include="CodeCompletion\VBNetCompletionBinding.cs" />
-    <Compile Include="CompletionProviders\AbstractCompletionDataProvider.cs" />
-    <Compile Include="CompletionProviders\AttributesDataProvider.cs" />
-    <Compile Include="CompletionProviders\CachedCompletionDataProvider.cs" />
-    <Compile Include="CompletionProviders\CodeCompletionData.cs" />
-    <Compile Include="CompletionProviders\CodeCompletionDataProvider.cs" />
-    <Compile Include="CompletionProviders\CodeCompletionDataUsageCache.cs" />
-    <Compile Include="CompletionProviders\CommentCompletionDataProvider.cs" />
-    <Compile Include="CompletionProviders\CtrlSpaceCompletionDataProvider.cs" />
-    <Compile Include="CodeCompletion\NRefactoryCodeCompletionBinding.cs" />
-    <Compile Include="CompletionProviders\OverrideCompletionDataProvider.cs" />
-    <Compile Include="CompletionProviders\TextCompletionDataProvider.cs" />
     <Compile Include="Utilities\FileUtility.cs" />
-    <Compile Include="InsightWindow\IndexerInsightDataProvider.cs" />
-    <Compile Include="InsightWindow\MethodInsightDataProvider.cs" />
-    <Compile Include="Project\IProject.cs" />
-    <Compile Include="Project\ItemType.cs" />
-    <Compile Include="Project\ProjectItem.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ReferenceDialog\AddWebReferenceDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReferenceDialog\AssemblyReferencePanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ReferenceDialog\AsyncDiscoveryState.cs" />
-    <Compile Include="ReferenceDialog\COMReferencePanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ReferenceDialog\DiscoveryNetworkCredential.cs" />
-    <Compile Include="ReferenceDialog\GacReferencePanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ReferenceDialog\HttpAuthenticationHeader.cs" />
-    <Compile Include="ReferenceDialog\SelectReferenceDialog.cs" />
-    <Compile Include="ReferenceDialog\UserCredentialsDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReferenceDialog\WebReference.cs" />
-    <Compile Include="ReferenceDialog\WebReferenceChanges.cs" />
-    <Compile Include="ReferenceDialog\WebServiceDiscoveryClientProtocol.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ReferenceDialog\WebServicesView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Controls\ScriptControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ScriptControl.Designer.cs">
-      <DependentUpon>ScriptControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Set.cs" />
-    <Compile Include="Project\TypeLibrary.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AvalonDocument.resx">
       <DependentUpon>AvalonDocument.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReferenceDialog\AddWebReferenceDialog.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>AddWebReferenceDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReferenceDialog\WebServicesView.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>WebServicesView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\FileForm.resx">
       <DependentUpon>FileForm.cs</DependentUpon>
@@ -408,22 +160,10 @@
       <DependentUpon>DocumentForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\NewFileDialog.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>NewFileDialog.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <SubType>Designer</SubType>
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\QuickClassBrowserPanel.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>QuickClassBrowserPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReferenceDialog\SelectReferenceDialog.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>SelectReferenceDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ScriptControl.resx">
       <SubType>Designer</SubType>
@@ -543,20 +283,13 @@
     <None Include="Resources\Icons\WebService\Icons.16x16.BrowserAfter.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="NRefactory\Lexer\BuildKeywords.pl" />
-    <None Include="NRefactory\Parser\CSharp\cs.ATG" />
-    <None Include="NRefactory\Parser\Frames\Parser.frame" />
-    <None Include="NRefactory\Parser\Frames\Scanner.frame" />
-    <None Include="NRefactory\Parser\VBNet\VBNET.ATG" />
     <None Include="Resources\Icons\WebService\Icons.16x16.WebSearchIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="NRefactory\Lexer\CSharp\KeywordList.txt" />
-    <Content Include="NRefactory\Lexer\VBNet\KeywordList.txt" />
-    <Content Include="NRefactory\Parser\CSharp\trace.txt" />
-    <Content Include="NRefactory\Parser\Frames\SharpCoco.exe" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\VE-Resources\VE-Resources.csproj">
+      <Project>{07d991f6-4f4e-48b0-9833-59288ac9868c}</Project>
+      <Name>VE-Resources</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\VSParser\VSProvider.csproj">
       <Project>{161dc477-53af-433a-9f3b-6e43de47bbdd}</Project>
       <Name>VSProvider</Name>
@@ -565,18 +298,6 @@
       <Project>{ee9713d5-cd63-4836-88ff-75c3809ff1db}</Project>
       <Name>AvalonEdit.Editor</Name>
       <Private>True</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\CodeEditor\CodeEditor.csproj">
-      <Project>{94bfa44a-f4d0-4605-88e6-3add498f5e16}</Project>
-      <Name>CodeEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\SyntaxDocument\CodeEditor.SyntaxDocument.csproj">
-      <Project>{3f43bab0-22b4-4fd6-9655-8ba214a093a5}</Project>
-      <Name>CodeEditor.SyntaxDocument</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\SyntaxFiles\CodeEditor.SyntaxFiles.csproj">
-      <Project>{3814f627-858a-42a3-9aaf-cd649413f2a8}</Project>
-      <Name>CodeEditor.SyntaxFiles</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\WinFormsUI\ThemeVS2010.csproj">
       <Project>{e9efe270-83bc-4d18-a1bf-7902ba8b83d6}</Project>

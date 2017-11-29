@@ -754,13 +754,14 @@
             <param name="offset">Starting offset of the text to be removed.</param>
             <param name="length">Length of the text to be removed.</param>
         </member>
-        <member name="M:ICSharpCode.AvalonEdit.Document.IDocument.Replace(System.Int32,System.Int32,System.String)">
+        <member name="M:ICSharpCode.AvalonEdit.Document.IDocument.Replace(System.Int32,System.Int32,System.String,System.Object)">
             <summary>
             Replaces text.
             </summary>
             <param name="offset">The starting offset of the text to be replaced.</param>
             <param name="length">The length of the text to be replaced.</param>
             <param name="newText">The new text.</param>
+            <param name="obs">info.</param>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.Document.IDocument.Replace(System.Int32,System.Int32,ICSharpCode.AvalonEdit.Document.ITextSource)">
             <summary>
@@ -2913,7 +2914,7 @@
               <item><description>Start of change group (on undo stack)</description></item>
               <item><description><see cref="E:ICSharpCode.AvalonEdit.Document.TextDocument.UpdateStarted"/> event is raised</description></item>
               </list></item>
-            <item><description><b><see cref="!:Insert(int,string)">Insert()</see> / <see cref="M:ICSharpCode.AvalonEdit.Document.TextDocument.Remove(System.Int32,System.Int32)">Remove()</see> / <see cref="M:ICSharpCode.AvalonEdit.Document.TextDocument.Replace(System.Int32,System.Int32,System.String)">Replace()</see></b></description>
+            <item><description><b><see cref="!:Insert(int,string)">Insert()</see> / <see cref="M:ICSharpCode.AvalonEdit.Document.TextDocument.Remove(System.Int32,System.Int32)">Remove()</see> / <see cref="!:Replace(int,int,string)">Replace()</see></b></description>
               <list type="bullet">
               <item><description><see cref="E:ICSharpCode.AvalonEdit.Document.TextDocument.Changing"/> event is raised</description></item>
               <item><description>The document is changed</description></item>
@@ -3104,13 +3105,14 @@
             Replaces text.
             </summary>
         </member>
-        <member name="M:ICSharpCode.AvalonEdit.Document.TextDocument.Replace(System.Int32,System.Int32,System.String)">
+        <member name="M:ICSharpCode.AvalonEdit.Document.TextDocument.Replace(System.Int32,System.Int32,System.String,System.Object)">
             <summary>
             Replaces text.
             </summary>
             <param name="offset">The starting offset of the text to be replaced.</param>
             <param name="length">The length of the text to be replaced.</param>
             <param name="text">The new text.</param>
+            <param name="obs">info</param>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.Document.TextDocument.Replace(System.Int32,System.Int32,ICSharpCode.AvalonEdit.Document.ITextSource)">
             <summary>
@@ -3597,7 +3599,7 @@
             Maximum length of a line number, in characters
             </summary>
         </member>
-        <member name="M:ICSharpCode.AvalonEdit.Editing.LineNumberMargin.OnMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)">
+        <member name="M:ICSharpCode.AvalonEdit.Editing.LineNumberMargin.OnMouseLeftButtonDowns(System.Windows.Input.MouseButtonEventArgs)">
             <inheritdoc/>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.Editing.LineNumberMargin.OnMouseMove(System.Windows.Input.MouseEventArgs)">
@@ -10466,6 +10468,11 @@
         <member name="T:ICSharpCode.AvalonEdit.Utils.Empty`1">
             <summary>
             Provides immutable empty list instances.
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.AvalonEdit.Utils.ExtensionMethods">
+            <summary>
+            
             </summary>
         </member>
         <member name="F:ICSharpCode.AvalonEdit.Utils.ExtensionMethods.Epsilon">

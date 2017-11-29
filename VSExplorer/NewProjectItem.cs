@@ -85,13 +85,10 @@ namespace WinExplorer
             node = new TreeNode();
             node.Text = "Installed-2";
             tv.Nodes.Add(node);
-
-
         }
 
         public void LoadVSTemplates()
         {
-
             TreeNode node = new TreeNode();
             node.Text = "Installed-2";
             tv.Nodes.Add(node);
@@ -101,7 +98,6 @@ namespace WinExplorer
             node.Nodes.Add(vsc);
 
             LoadCSharpTemplates(vsc);
-
         }
 
         public string templates = "Templates-Data";
@@ -120,57 +116,46 @@ namespace WinExplorer
 
             foreach (string s in d)
             {
-
                 pp = new PreviewInfo();
 
                 vsc = new TreeNode();
                 vsc.Text = Path.GetFileName(s);
 
-
                 if (s.Contains("Code"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 else if (s.EndsWith("Data"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-                    
                 }
                 else if (s.EndsWith("General"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 else if (s.EndsWith("SQL Server"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 else if (s.EndsWith("Test"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 else if (s.EndsWith("Web"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 else if (s.EndsWith("Windows Forms"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 else if (s.EndsWith("WPF"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 else if (s.EndsWith("XAML"))
                 {
                     LoadWindowsUniversal(vsc, s, pp);
-
                 }
                 else continue;
 
@@ -188,7 +173,7 @@ namespace WinExplorer
             //LoadAndroid(vsc, "", pp);
             //vsc.Tag = pp;
             //p.v.AddRange(pp.v);
-            
+
             node.Tag = p;
         }
 
@@ -197,8 +182,6 @@ namespace WinExplorer
             string folders = folder + "\\1033";
 
             string[] d = Directory.GetDirectories(folders);
-
-
 
             foreach (string s in d)
             {
@@ -210,16 +193,12 @@ namespace WinExplorer
 
                 ListViewItem v = LoadListViewItems(s, c);
 
-
-
                 p.v.Add(v);
             }
-
         }
 
-        PreviewInfo LoadTemplateXml(TreeNode node, string folder)
+        private PreviewInfo LoadTemplateXml(TreeNode node, string folder)
         {
-
             PreviewInfo p = new PreviewInfo();
 
             p.folder = folder;
@@ -238,7 +217,6 @@ namespace WinExplorer
 
             if (xml != null)
             {
-
                 XmlNode a = FindNode(xml.ChildNodes, "PreviewImage");
 
                 XmlNode b = FindNode(xml.ChildNodes, "Description");
@@ -246,7 +224,6 @@ namespace WinExplorer
                     p.image = a.InnerText;
                 if (b != null)
                     p.description = b.InnerText;
-
             }
 
             node.Tag = p;
@@ -263,7 +240,6 @@ namespace WinExplorer
                     if (node.Name.Equals(nodeName)) return node;
                     if (node.HasChildNodes)
                     {
-
                         XmlNode nodes = FindNode(node.ChildNodes, nodeName);
 
                         if (nodes != null)
@@ -625,9 +601,7 @@ namespace WinExplorer
             //}
             //catch (Exception ex)
             //{
-
             //}
-            
         }
     }
 }

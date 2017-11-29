@@ -70,7 +70,7 @@ namespace VSProvider
             //{
             //    throw new LoggerException("Too many parameters passed.");
             //}
-            
+
             try
             {
                 // Open the file
@@ -2343,6 +2343,7 @@ namespace VSProvider
         }
     }
 }
+
 //public static class BuildEngineExtensions
 //{
 //    const BindingFlags bindingFlags = BindingFlags.NonPublic | BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public;
@@ -2357,7 +2358,6 @@ namespace VSProvider
 //        {
 //            return items.Select(x => x.EvaluatedInclude);
 //        }
-
 
 //        var properties = projectInstance.Properties
 //            .Where(x => string.Equals(x.Name, key, StringComparison.InvariantCultureIgnoreCase)).ToList();
@@ -2410,4 +2410,3 @@ namespace VSProvider
 
 //    return true;
 //}
-

@@ -1,24 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms.Integration;
-using System.Windows.Forms;
-using System.ComponentModel;
-using System.Windows.Forms.Design;
-using System.Windows;
-using System.ComponentModel.Design.Serialization;
-using System.Windows.Markup;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-//using System.Windows.Threading;
+﻿//using System.Windows.Threading;
 
-
-using System.Collections.ObjectModel;
-using System.IO;
 using AvalonEdit.Editor;
+using System;
+using System.ComponentModel;
+using System.ComponentModel.Design.Serialization;
+using System.Windows;
 
 namespace AvalonEdit.Host
 {
@@ -27,20 +13,20 @@ namespace AvalonEdit.Host
     public class TreeViewer_WinformsHost : System.Windows.Forms.Integration.ElementHost
     {
         public TreeViewer dv;
-        
+
         public TreeViewer_WinformsHost()
         {
-
             this.BackColor = System.Drawing.Color.White;
-            
+
             dv = new TreeViewer();
 
             this.BackColorTransparent = true;
 
             base.Child = dv;
-           
         }
-        Size size = new System.Windows.Size();
+
+        private Size size = new System.Windows.Size();
+
         private void Editor_WinformsHost_Resize(object sender, EventArgs e)
         {
             if (dv == null)
@@ -51,11 +37,10 @@ namespace AvalonEdit.Host
                 dv.Height = this.ClientSize.Height;
             }
         }
-       
+
         public void Load(string file)
         {
             this.Show();
-            
         }
     }
 }

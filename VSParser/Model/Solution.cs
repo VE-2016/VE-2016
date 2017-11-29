@@ -9,6 +9,7 @@ namespace VSProvider
         public List<PreSection> preSections { get; set; }
         public IEnumerable<GlobalSection> Global { get; set; }
         public IEnumerable<Project> Projects { get; set; }
+
         public PreSection GetPresection(string presection, string sections)
         {
             foreach (PreSection section in preSections)
@@ -17,7 +18,6 @@ namespace VSProvider
                     continue;
                 if (section.Entries.Any(s => s.Key.Contains(presection) && s.Value == sections))
                     return section;
-                
             }
             return null;
         }

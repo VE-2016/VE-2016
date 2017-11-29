@@ -73,3 +73,16 @@ f:\ve\ve-2023\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS20
 f:\ve\ve-2023\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2013.pdb
 f:\ve\ve-2023\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2012.Strings.resources
 f:\ve\ve-2023\Editor\WinFormsUI\obj\Debug\ThemeVS2013.csproj.CoreCompileInputs.cache
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2013.dll
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2013.pdb
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\bin\Debug\VE-Resources.dll
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\bin\Debug\VE-Resources.pdb
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\bin\Debug\VE-Resources.dll.config
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2012.Resources.resources
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2012.Strings.resources
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2013.Resources.resources
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\obj\Debug\ThemeVS2013.csproj.GenerateResource.Cache
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\obj\Debug\ThemeVS2013.csproj.CoreCompileInputs.cache
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2013.dll
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2013.pdb

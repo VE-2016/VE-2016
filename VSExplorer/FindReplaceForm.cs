@@ -1,8 +1,6 @@
-using AIMS.Libraries.CodeEditor;
-using AIMS.Libraries.CodeEditor.Syntax;
-using AIMS.Libraries.Scripting.ScriptControl;
-using AIMS.Libraries.Scripting.ScriptControl.Properties;
 using ICSharpCode.NRefactory.TypeSystem;
+using ScriptControl;
+using ScriptControl.Properties;
 using SolutionFormProject;
 using System;
 using System.Collections;
@@ -54,9 +52,9 @@ namespace WinExplorer
 
         public void LoadSettings()
         {
-            if (CodeEditorControl.settings != null)
+            if (ScriptControl.ScriptControl.settings != null)
             {
-                Settings s = CodeEditorControl.settings;
+                Settings s = ScriptControl.ScriptControl.settings;
 
                 if (s.Theme == "VS2012Light")
                 {
@@ -511,8 +509,6 @@ namespace WinExplorer
 
         public int BB { get; set; }
 
-        private AIMS.Libraries.Scripting.Dom.IMember mb { get; set; }
-
         public ArrayList FindAll()
         {
             ArrayList results = new ArrayList();
@@ -539,7 +535,7 @@ namespace WinExplorer
             {
                 MessageBox.Show("Find for All Open Documents");
 
-                ScriptControl scr = ef.scr;
+                ScriptControl.ScriptControl scr = ef.scr;
 
                 VSProject vp = vs.MainVSProject;
 
@@ -674,13 +670,13 @@ namespace WinExplorer
             {
                 MessageBox.Show("Find for Current Block");
 
-                ScriptControl scr = ef.scr;
+                ScriptControl.ScriptControl scr = ef.scr;
 
                 AvalonDocument doc = ef.scr.GetActiveDocument();
 
                 string filename = doc.FileName;
 
-                //AIMS.Libraries.Scripting.Dom.IMember m = scr.GetCurrentBlock();
+                //Dom.IMember m = scr.GetCurrentBlock();
 
                 //if (m == null)
                 //{
@@ -807,7 +803,7 @@ namespace WinExplorer
             {
                 MessageBox.Show("Find for Current Selection");
 
-                ScriptControl scr = ef.scr;
+                ScriptControl.ScriptControl scr = ef.scr;
 
                 AvalonDocument doc = ef.scr.GetActiveDocument();
 
@@ -815,7 +811,7 @@ namespace WinExplorer
 
                 string text = scr.GetCurrentSelection();
 
-                TextPoint p = new TextPoint(0, 0); // scr.GetCurrentSelectionStart();
+                //TextPoint p = new TextPoint(0, 0); // scr.GetCurrentSelectionStart();
 
                 if (BB != bb || patterns != s || filename != filenamedoc)
                     Results = null;
@@ -875,7 +871,7 @@ namespace WinExplorer
 
                                 if (pos >= r && pos <= n)
                                 {
-                                    Results.Add(filename + "\t\t" + (pos - r) + " \t" + (p.Y + i));
+                                    // Results.Add(filename + "\t\t" + (pos - r) + " \t" + (p.Y + i));
 
                                     fp++;
 
@@ -927,7 +923,7 @@ namespace WinExplorer
             {
                 //MessageBox.Show("Find for Project");
 
-                ScriptControl scr = ef.scr;
+                ScriptControl.ScriptControl scr = ef.scr;
 
                 //string filename = doc.FileName;
 
@@ -1164,7 +1160,7 @@ namespace WinExplorer
 
                 int c2 = Convert.ToInt32(cc[1]);
 
-                ScriptControl scr = ef.scr;
+                ScriptControl.ScriptControl scr = ef.scr;
 
                 filename = doc.FileName;
 
@@ -1490,7 +1486,7 @@ namespace WinExplorer
 
             if (bb == 2)
             {
-                ScriptControl scr = ef.scr;
+                ScriptControl.ScriptControl scr = ef.scr;
 
                 ArrayList L = ToLinesProject(Results);
 
@@ -1506,7 +1502,7 @@ namespace WinExplorer
             }
             else if (bb == 3)
             {
-                ScriptControl scr = ef.scr;
+                ScriptControl.ScriptControl scr = ef.scr;
 
                 ArrayList L = ToLinesProject(Results);
 
@@ -1544,7 +1540,7 @@ namespace WinExplorer
 
             ArrayList R = ToArray();
 
-            ef.scr.LoadSelectedWords(R);
+            //ef.scr.LoadSelectedWords(R);
 
             act = 0;
         }
@@ -1561,7 +1557,7 @@ namespace WinExplorer
 
             int[] d = R[act] as int[];
 
-            ef.scr.SelectTextXYL(d[0], d[1], d[2]);
+            //ef.scr.SelectTextXYL(d[0], d[1], d[2]);
         }
 
         public ArrayList ToArray()

@@ -62,7 +62,7 @@ namespace VSProvider
         public string GetSubType(out string dependentupon)
         {
             Microsoft.Build.Construction.ProjectItemElement c = (Microsoft.Build.Construction.ProjectItemElement)_internalProjectItem;
-            
+
             dependentupon = "";
 
             string subtype = "";
@@ -100,7 +100,7 @@ namespace VSProvider
             get
             {
                 //if (File.Exists(fileName) == false)
-                    return null;
+                return null;
                 //return File.ReadAllBytes(fileName);
             }
         }

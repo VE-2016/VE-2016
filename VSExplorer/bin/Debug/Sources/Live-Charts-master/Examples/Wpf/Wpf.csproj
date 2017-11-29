@@ -2,8 +2,10 @@
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Configuration Condition=" '$(Configuration)' == '' ">
+    </Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">
+    </Platform>
     <ProjectGuid>{537FF5D4-19FB-415E-B3D2-B83CB93E968B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -30,6 +32,8 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <Configuration />
+    <Platform />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -128,6 +132,12 @@
       <DependentUpon>SectionMouseMoveSample.xaml</DependentUpon>
     </Compile>
     <Compile Include="CartesianChart\SectionsMouseMove\ViewModel.cs" />
+    <Compile Include="CartesianChart\StackedBar\GroupedStackedColumnExample.xaml.cs">
+      <DependentUpon>GroupedStackedColumnExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CartesianChart\StackedBar\GroupedStackedRowExample.xaml.cs">
+      <DependentUpon>GroupedStackedRowExample.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CartesianChart\ThreadSafe\RelyCommand.cs" />
     <Compile Include="CartesianChart\ThreadSafe\ThreadSafeViewModel.cs" />
     <Compile Include="CartesianChart\ThreadSafe\ThreadSafeExample.xaml.cs">
@@ -326,6 +336,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CartesianChart\StackedArea\VerticalStackedAreaExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CartesianChart\StackedBar\GroupedStackedColumnExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CartesianChart\StackedBar\GroupedStackedRowExample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,8 +1,6 @@
-
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.FindSymbols;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
@@ -11,7 +9,6 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
-using System.Windows.Data;
 using System.Windows.Media.Imaging;
 using VSProvider;
 
@@ -26,29 +23,28 @@ namespace AvalonEdit.Editor
         public CallHierarchyViewer()
         {
             InitializeComponent();
-            
+
             RefreshButton.Source = Convert(WinExplorers.ve.Refresh_16x);
             CancelButton.Source = Convert(WinExplorers.ve.Cancel_16x);
             ButtonPanel.Source = Convert(WinExplorers.ve.ListMembers_16x);
             ButtonPanel.MouseDown += ButtonPanel_MouseDown;
-            
+
             this.LocationsListView.SizeChanged += TreeListView_SizeChanged;
 
             grid.SizeChanged += Grid_SizeChanged;
 
             GridViewColumn column = ((GridView)LocationsListView.View).Columns[0];
 
- ((System.ComponentModel.INotifyPropertyChanged)column).PropertyChanged += (sender, e) =>
- {
-     if (e.PropertyName == "ActualWidth")
-     {
-         var workingWidth = this.LocationsListView.ActualWidth - 1;
-         var col0 = ((GridView)LocationsListView.View).Columns[0].Width;
-         var col1 = workingWidth - col0;
-         ((GridView)LocationsListView.View).Columns[1].Width = col1;
-     }
-     
- };
+            ((System.ComponentModel.INotifyPropertyChanged)column).PropertyChanged += (sender, e) =>
+            {
+                if (e.PropertyName == "ActualWidth")
+                {
+                    var workingWidth = this.LocationsListView.ActualWidth - 1;
+                    var col0 = ((GridView)LocationsListView.View).Columns[0].Width;
+                    var col1 = workingWidth - col0;
+                    ((GridView)LocationsListView.View).Columns[1].Width = col1;
+                }
+            };
             TreeViewItem v0 = CreateTreeViewItem(kind.method, "method");
             TreeViewItem v1 = CreateTreeViewItem(kind.folder, "folder");
             TreeViewItem v2 = CreateTreeViewItem(kind.none, "item");
@@ -60,6 +56,7 @@ namespace AvalonEdit.Editor
 
             LocationsListView.SelectionChanged += LocationsListView_SelectionChanged;
         }
+
         private void LocationsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var s = LocationsListView.SelectedItem;
@@ -68,21 +65,23 @@ namespace AvalonEdit.Editor
                 return;
             editorWindow.vs.LoadFileFromProject("", null, source.FileName, null, null, source.Span);
         }
-        public enum kind {
 
+        public enum kind
+        {
             method,
             folder,
             none
         }
+
         public TreeViewItem CreateTreeViewItem(kind d, string s)
         {
             TreeViewItem v = new TreeViewItem();
             StackPanel p = new StackPanel();
             p.Orientation = Orientation.Horizontal;
             System.Windows.Controls.Image image = new System.Windows.Controls.Image();
-            if(d == kind.method)
-            image.Source = Convert(WinExplorers.ve.Method_purple_16x);
-            else if(d == kind.folder)
+            if (d == kind.method)
+                image.Source = Convert(WinExplorers.ve.Method_purple_16x);
+            else if (d == kind.folder)
                 image.Source = Convert(WinExplorers.ve.FolderOpen_16x);
             else image.Source = Convert(WinExplorers.ve.Method_purple_16x);
 
@@ -95,19 +94,22 @@ namespace AvalonEdit.Editor
 
             return v;
         }
+
         private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             LocationsListView.InvalidateVisual();
         }
 
-        int lastVisibleWidth = 0;
+        private int lastVisibleWidth = 0;
+
         private void ButtonPanel_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-                if(grid.ColumnDefinitions[2].Width.Value != 0)
+            if (grid.ColumnDefinitions[2].Width.Value != 0)
             {
                 lastVisibleWidth = (int)grid.ColumnDefinitions[0].ActualWidth;
                 grid.ColumnDefinitions[2].Width = new GridLength(0.0);
-            }   else
+            }
+            else
             {
                 int w = (int)grid.ActualWidth;
 
@@ -128,8 +130,6 @@ namespace AvalonEdit.Editor
 
             ((GridView)LocationsListView.View).Columns[0].Width = workingWidth * col0;
             ((GridView)LocationsListView.View).Columns[1].Width = workingWidth * col1;
-            
-
         }
 
         public void LoadData(ISymbol symbol, List<ReferencedSymbol> b, VSSolution vs)
@@ -146,15 +146,13 @@ namespace AvalonEdit.Editor
                             continue;
                         SourceRefData d = new SourceRefData();
                         VSProject vp = vs.GetProjectbyCompileItem(pl.Location.SourceTree.FilePath);
-                         {
+                        {
                             int length = 10;
                             string cs = pl.Location.SourceTree.GetRoot().GetText().ToString();
                             var method = pl.Location.SourceTree.GetRoot().FindNode(pl.Location.SourceSpan).FirstAncestorOrSelf<BaseMethodDeclarationSyntax>();
                             {
-                               
                                 if (method != null)
                                 {
-                                    
                                     if (method is ConstructorDeclarationSyntax)
                                     {
                                         d.Offset = ((ConstructorDeclarationSyntax)method).Identifier.SpanStart;
@@ -165,7 +163,6 @@ namespace AvalonEdit.Editor
                                         d.Offset = ((DestructorDeclarationSyntax)method).Identifier.SpanStart;
                                         length = ((DestructorDeclarationSyntax)method).Identifier.Span.Length;
                                     }
-
                                     else
                                     {
                                         d.Offset = ((MethodDeclarationSyntax)method).Identifier.SpanStart;
@@ -178,11 +175,9 @@ namespace AvalonEdit.Editor
                                 }
                                 else
                                 {
-
                                     var property = pl.Location.SourceTree.GetRoot().FindNode(pl.Location.SourceSpan).FirstAncestorOrSelf<PropertyDeclarationSyntax>();
                                     if (property != null)
                                     {
-
                                         d.Offset = ((PropertyDeclarationSyntax)property).Identifier.SpanStart;
                                         var lineNumber = cs.Take(d.Offset).Count(c => c == '\n');
                                         d.name = cs.Split("\n".ToCharArray())[lineNumber].Trim();
@@ -198,7 +193,7 @@ namespace AvalonEdit.Editor
                         int Line = pl.Location.GetLineSpan().StartLinePosition.Line;
                         var Lines = pl.Location.SourceTree.GetText().Lines;
                         d.Name = pl.Location.SourceTree.GetText().Lines[Line].ToString().Trim();
-                        
+
                         d.Project = Path.GetFileNameWithoutExtension(vp.FileName);
                         d.File = Path.GetFileName(pl.Location.SourceTree.FilePath);
                         d.FileName = pl.Location.SourceTree.FilePath;
@@ -225,6 +220,7 @@ namespace AvalonEdit.Editor
             v0.Items.Add(v1);
             treeListView.Items.Add(v0);
         }
+
         public void FindNextCalls(List<ReferencedSymbol> b, TreeViewItem v)
         {
             TreeViewItem v0 = CreateTreeViewItem(kind.method, "method");
@@ -269,7 +265,7 @@ namespace AvalonEdit.Editor
                         int Line = pl.Location.GetLineSpan().StartLinePosition.Line;
                         var Lines = pl.Location.SourceTree.GetText().Lines;
                         d.Name = pl.Location.SourceTree.GetText().Lines[Line].ToString().Trim();
-                        
+
                         d.File = Path.GetFileName(pl.Location.SourceTree.FilePath);
                         d.FileName = pl.Location.SourceTree.FilePath;
                         int line = pl.Location.GetLineSpan().StartLinePosition.Line;
@@ -291,7 +287,7 @@ namespace AvalonEdit.Editor
                     }
                 }
             }
-         }
+        }
 
         private void V3_Expanded(object sender, RoutedEventArgs e)
         {
@@ -315,7 +311,7 @@ namespace AvalonEdit.Editor
 
             e.Handled = true;
         }
-        
+
         private void V2_Selected(object sender, RoutedEventArgs e)
         {
             TreeViewItem v = sender as TreeViewItem;
@@ -346,9 +342,9 @@ namespace AvalonEdit.Editor
             image.EndInit();
             return image;
         }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
             double w = this.ActualWidth;
             double h = this.ActualHeight;
 
@@ -358,27 +354,19 @@ namespace AvalonEdit.Editor
             ff = new FindForm();
             ff.Width = wf;
             ff.Height = hf;
-            
+
             Popup popup = new Popup();
-            
+
             popup.Child = ff;
             popup.Placement = PlacementMode.Relative;
             popup.HorizontalOffset = w - wf - 15 - 2;
             popup.VerticalOffset = 20;
             popup.PlacementTarget = treeListView;
             popup.IsOpen = true;
-
-
-
-
         }
 
-        FindForm ff { get; set; }
+        private FindForm ff { get; set; }
 
         static public ObservableCollection<Source> Sources = new ObservableCollection<Source>();
-
     }
-   
-
-  
 }

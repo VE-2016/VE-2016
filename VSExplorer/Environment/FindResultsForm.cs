@@ -1,5 +1,4 @@
-using AIMS.Libraries.CodeEditor.Syntax;
-using AIMS.Libraries.Scripting.ScriptControl;
+using ScriptControl;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -184,7 +183,7 @@ namespace WinExplorer
             doc.FormBorderStyle = FormBorderStyle.None;
             doc.Dock = DockStyle.Fill;
             // doc.BackColor = SystemColors.InactiveBorder;
-            doc.Contents = text;
+            //doc.Contents = text;
             //doc.ScriptLanguage = _scriptLanguage;
             //doc.vp = pp;
             //doc.LoadVSProject(pp);
@@ -224,17 +223,6 @@ namespace WinExplorer
 
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
-            AIMS.Libraries.CodeEditor.Syntax.SyntaxDocument d = document.syntaxDocument1;
-
-            int i = 10;
-            while (i < d.Count)
-            {
-                Row r = d[i];
-
-                d.CollapseRow(r);
-
-                i++;
-            }
         }
 
         private void toolStripButton6_Click(object sender, EventArgs e)

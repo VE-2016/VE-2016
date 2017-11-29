@@ -1,24 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms.Integration;
-using System.Windows.Forms;
-using System.ComponentModel;
-using System.Windows.Forms.Design;
-using System.Windows;
-using System.ComponentModel.Design.Serialization;
-using System.Windows.Markup;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Collections.ObjectModel;
-using System.IO;
-using AvalonEdit.Editor;
-using VSProvider;
+﻿using AvalonEdit.Editor;
 using Microsoft.CodeAnalysis;
-using AIMS.Libraries.Scripting.ScriptControl;
+using System;
+using System.ComponentModel;
+using System.ComponentModel.Design.Serialization;
+using System.Windows;
+using VSProvider;
 
 namespace AvalonEdit.Host
 {
@@ -27,32 +13,29 @@ namespace AvalonEdit.Host
     public class SyntaxTreeViewHost : System.Windows.Forms.Integration.ElementHost
     {
         public SyntaxTreeViewer dv;
-        
-        public SyntaxTreeViewHost(ScriptControl scr = null)
-        {
 
+        public SyntaxTreeViewHost(ScriptControl.ScriptControl scr = null)
+        {
             this.BackColor = System.Drawing.Color.White;
-            
+
             dv = new SyntaxTreeViewer();
 
             this.BackColorTransparent = true;
 
             base.Child = dv;
 
-            if(scr != null)
+            if (scr != null)
                 scr.handler += Scr_handler;
-           
-
         }
 
-        private void Scr_handler(object sender, AIMS.Libraries.Scripting.ScriptControl.Properties.AvalonDocument e)
+        private void Scr_handler(object sender, ScriptControl.Properties.AvalonDocument e)
         {
             if (this.Visible == false)
                 return;
             Load(e.FileName, e.vs);
         }
 
-        Size size = new System.Windows.Size();
+        private Size size = new System.Windows.Size();
 
         private void Editor_WinformsHost_Resize(object sender, EventArgs e)
         {
@@ -64,15 +47,13 @@ namespace AvalonEdit.Host
                 dv.Height = this.ClientSize.Height;
             }
         }
-       
+
         public void Load(string filename, VSSolution vs)
         {
             if (vs == null)
                 return;
             SyntaxTree syntaxTree = vs.GetSyntaxTree(filename);
             dv.LoadSyntaxTree(syntaxTree);
-            
-            
         }
     }
 }

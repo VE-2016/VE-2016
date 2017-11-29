@@ -62,3 +62,15 @@ f:\ve\ve-2023\Editor\WinFormsUI\obj\Debug\WinFormsUI.csproj.GenerateResource.Cac
 f:\ve\ve-2023\Editor\WinFormsUI\obj\Debug\WinFormsUI.csproj.CoreCompileInputs.cache
 f:\ve\ve-2023\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.dll
 f:\ve\ve-2023\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.pdb
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.dll
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\bin\Debug\VE-Resources.dll
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\bin\Debug\VE-Resources.pdb
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\bin\Debug\VE-Resources.dll.config
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\obj\Debug\WinFormsUI.csprojResolveAssemblyReference.cache
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.Resources.resources
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.Strings.resources
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\obj\Debug\WinFormsUI.csproj.GenerateResource.Cache
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\obj\Debug\WinFormsUI.csproj.CoreCompileInputs.cache
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.dll
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.pdb

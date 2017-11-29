@@ -1,5 +1,4 @@
-using AIMS.Libraries.CodeEditor;
-using AIMS.Libraries.Scripting.ScriptControl;
+using ScriptControl;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,7 +13,7 @@ namespace WinExplorer
         {
             InitializeComponent();
             tev = treeView1;
-            settings = CodeEditorControl.settings;
+            settings = ScriptControl.ScriptControl.settings;
 
             sp = splitContainer1;
 
@@ -204,7 +203,7 @@ namespace WinExplorer
 
         public TreeView tev { get; set; }
 
-        public ScriptControl scr { get; set; }
+        public ScriptControl.ScriptControl scr { get; set; }
 
         private TabControl tc { get; set; }
 
@@ -421,9 +420,9 @@ namespace WinExplorer
         private void button3_Click(object sender, EventArgs e)
         {
             if (comboBox4.SelectedIndex == 0)
-                CodeEditorControl.settings.Theme = "VS2012Light";
+                ScriptControl.ScriptControl.settings.Theme = "VS2012Light";
             else
-                CodeEditorControl.settings.Theme = "VS2013Blue";
+                ScriptControl.ScriptControl.settings.Theme = "VS2013Blue";
 
             Close();
         }
@@ -435,11 +434,11 @@ namespace WinExplorer
                 return;
             if (i == 1)
             {
-                CodeEditorControl.settings.ResumeAtStartup = "yes";
+                ScriptControl.ScriptControl.settings.ResumeAtStartup = "yes";
             }
             else
 
-                CodeEditorControl.settings.ResumeAtStartup = "no";
+                ScriptControl.ScriptControl.settings.ResumeAtStartup = "no";
         }
 
         private void tabPage9_Click(object sender, EventArgs e)

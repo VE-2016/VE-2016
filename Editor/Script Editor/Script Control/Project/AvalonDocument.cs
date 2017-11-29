@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using VSProvider;
 using WeifenLuo.WinFormsUI.Docking;
 
-using AvalonEdit.Host;
-using VSProvider;
-
-namespace AIMS.Libraries.Scripting.ScriptControl.Properties
+namespace ScriptControl.Properties
 {
     public class AvalonDocument : DockContent
     {
-
         public AvalonEdit.Host.Editor_WinformsHost Editor { get; set; }
 
         public string FileName { get; set; }
@@ -22,7 +16,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl.Properties
         public AvalonDocument(VSSolution vs, string FileName = "")
         {
             this.FileName = FileName;
- 
+
             this.vs = vs;
             Editor = new AvalonEdit.Host.Editor_WinformsHost();
             Editor.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -36,8 +30,12 @@ namespace AIMS.Libraries.Scripting.ScriptControl.Properties
 
         public void OnActivated(bool activated)
         {
-            if(Editor.dv != null)
-            Editor.dv.Activated(activated);
+            if (Editor.dv != null)
+            {
+                var r = Editor.dv.Activated(activated);
+                if (r.Status == TaskStatus.Faulted)
+                    Editor.dv.referenced = false;
+            }
         }
 
         private void AvalonDocument_Resize(object sender, EventArgs e)
@@ -45,7 +43,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl.Properties
             Editor.Size = this.Size;
             if (Editor.dv == null)
                 return;
-           // if (dv.Width != this.ClientSize.Width || dv.Height != this.ClientSize.Height)
+            // if (dv.Width != this.ClientSize.Width || dv.Height != this.ClientSize.Height)
             {
                 Editor.dv.Width = this.ClientSize.Width;
                 Editor.dv.Height = this.ClientSize.Height;
@@ -56,35 +54,39 @@ namespace AIMS.Libraries.Scripting.ScriptControl.Properties
         {
             return Editor.dv.GetLineExtended(line);
         }
+
         public void LoadText(string content)
         {
             Editor.dv.LoadContent(content);
-            
         }
+
         private void InitializeComponent()
         {
             this.SuspendLayout();
-            // 
+            //
             // AvalonDocument
-            // 
+            //
             this.ClientSize = new System.Drawing.Size(513, 400);
             this.Name = "AvalonDocument";
             this.ResumeLayout(false);
-
         }
+
         public string GetSelection()
         {
             string selectedText = "";
             selectedText = Editor.dv.GetSelectedText();
             return selectedText;
         }
+
         public void Save()
         {
             Editor.dv.Save();
         }
+
         ~AvalonDocument()
         {
-            Editor.Dispose();
+            if (!Editor.IsDisposed)
+                Editor.Dispose();
         }
     }
 }

@@ -1,4 +1,3 @@
-
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.FindSymbols;
 using Microsoft.CodeAnalysis.Text;
@@ -12,21 +11,18 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
-using System.Windows.Data;
 using System.Windows.Media.Imaging;
-using System.Windows.Threading;
 using VSProvider;
 
 namespace AvalonEdit.Editor
 {
     /// <summary>
     /// Interaction logic
-    /// 
+    ///
     /// /// </summary>
 
     public partial class TreeViewer : UserControl
     {
-
         static public VSSolution vs { get; set; }
 
         public TreeViewer()
@@ -34,7 +30,7 @@ namespace AvalonEdit.Editor
             InitializeComponent();
 
             treeListView.SelectedItemChanged += TreeListView_SelectedItemChanged;
-            
+
             ButtonCopy.MouseDown += Button_Click;
 
             ButtonCopy.Source = Convert(WinExplorers.ve.Copy_32x);
@@ -48,7 +44,6 @@ namespace AvalonEdit.Editor
             this.treeListView.SelectedItemChanged += TreeListView_SelectedItemChanged;
 
             treeList = treeListView;
-            
         }
 
         public TreeListView treeList { get; set; }
@@ -65,14 +60,13 @@ namespace AvalonEdit.Editor
 
             if (source == null)
                 return;
-            editorWindow.OpenFile( source);
+            editorWindow.OpenFile(source);
 
             this.treeListView.Focus();
         }
 
         public void LoadData(ISymbol symbol, List<ReferencedSymbol> b, VSSolution vs)
         {
-
             List<string> tw = editorWindow.GetTypesNames();
             List<string> kw = (List<string>)editorWindow.Words;
 
@@ -80,9 +74,7 @@ namespace AvalonEdit.Editor
             aw[0] = tw;
             aw[1] = kw;
 
-
             Dictionary<string, List<SourceData>> dict = new Dictionary<string, List<SourceData>>();
-
 
             //Sources.Clear();
 
@@ -93,19 +85,17 @@ namespace AvalonEdit.Editor
 
             List<SourceRefData> data = new List<SourceRefData>();
 
-           // c.Data = data;
+            // c.Data = data;
 
             foreach (var s in b)
             {
                 if (s.Locations != null)
                 {
-
                     foreach (var pl in s.Locations)
                     {
-                        
                         if (!pl.Location.IsInSource)
                             continue;
-                       VSProject vp = vs.GetProjectbyCompileItem(pl.Location.SourceTree.FilePath);
+                        VSProject vp = vs.GetProjectbyCompileItem(pl.Location.SourceTree.FilePath);
                         string name = Path.GetFileNameWithoutExtension(vp.FileName);
 
                         if (dict.ContainsKey(name))
@@ -126,20 +116,13 @@ namespace AvalonEdit.Editor
                             List<SourceRefData> dataref = new List<SourceRefData>();
                             sourcedata.Data = dataref;
 
-
-
                             data = dataref;
 
-                           
-
-                
                             dict.Add(name, datasource);
-
-                         
 
                             Sources.Add(c);
                         }
-                        
+
                         SourceRefData d = new SourceRefData();
                         int Line = pl.Location.GetLineSpan().StartLinePosition.Line;
                         var Lines = pl.Location.SourceTree.GetText().Lines;
@@ -150,10 +133,10 @@ namespace AvalonEdit.Editor
                         int i = Line - 3;
                         if (i < 0)
                             Line = 0;
-                        while(i <= Line)
+                        while (i <= Line)
                         {
                             string loc = Lines[i].ToString();
-                            
+
                             loc = loc.Replace("\t", " ");
                             int pos = loc.TakeWhile(sa => char.IsWhiteSpace(sa)).Count();
                             if (pos < min)
@@ -163,7 +146,7 @@ namespace AvalonEdit.Editor
                             i++;
                         }
                         i = Line + 1;
-                        while(i <= Line + 3 && i < Lines.Count - 1)
+                        while (i <= Line + 3 && i < Lines.Count - 1)
                         {
                             string loc = Lines[i].ToString();
                             loc = loc.Replace("\t", " ");
@@ -194,15 +177,9 @@ namespace AvalonEdit.Editor
                         d.Column = pl.Location.GetLineSpan().StartLinePosition.Character.ToString();
                         d.refs = pl;
                         data.Add(d);
-                       
                     }
                 }
-                
-            
-
             }
-
-           
 
             treeListView.ItemsSource = Sources;
 
@@ -224,10 +201,8 @@ namespace AvalonEdit.Editor
             }
         }
 
-
         private void ExpandAll()
         {
-
             foreach (object item in this.treeListView.Items)
             {
                 var treeItem = this.treeListView.ItemContainerGenerator.ContainerFromItem(item);
@@ -239,8 +214,7 @@ namespace AvalonEdit.Editor
 
         private void TreeListView_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            
-            var workingWidth = this.treeListView.ActualWidth-5;
+            var workingWidth = this.treeListView.ActualWidth - 5;
             if (workingWidth <= 0)
                 return;
             var col0 = 0.25;
@@ -269,9 +243,9 @@ namespace AvalonEdit.Editor
             image.EndInit();
             return image;
         }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
             double w = this.ActualWidth;
             double h = this.ActualHeight;
 
@@ -281,22 +255,18 @@ namespace AvalonEdit.Editor
             ff = new FindForm();
             ff.Width = wf;
             ff.Height = hf;
-            
+
             Popup popup = new Popup();
-            
+
             popup.Child = ff;
             popup.Placement = PlacementMode.Relative;
             popup.HorizontalOffset = w - wf - 15 - 2;
             popup.VerticalOffset = 20;
             popup.PlacementTarget = treeListView;
             popup.IsOpen = true;
-
-
-
-
         }
 
-        FindForm ff { get; set; }
+        private FindForm ff { get; set; }
 
         static public ObservableCollection<Source> Sources = new ObservableCollection<Source>();
 
@@ -308,7 +278,6 @@ namespace AvalonEdit.Editor
             b.IsChecked = !b.IsChecked;
         }
     }
-
 
     //public class Source: INotifyPropertyChanged
     //{
@@ -325,7 +294,6 @@ namespace AvalonEdit.Editor
     //private List<Source> data;
 
     //public List<Source> Data {
-
     //    get { return data; }
     //    set
     //    {
@@ -346,7 +314,7 @@ namespace AvalonEdit.Editor
     //}
 
     //}
-    public class Source :  INotifyPropertyChanged
+    public class Source : INotifyPropertyChanged
     {
         public string Name { get; set; }
 
@@ -380,17 +348,16 @@ namespace AvalonEdit.Editor
 
         public List<SourceData> Data
         {
-
             get { return data; }
             set
             {
                 data = value;
                 OnPropertyChanged("Data");
             }
-
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         protected void OnPropertyChanged(String info)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
@@ -399,9 +366,8 @@ namespace AvalonEdit.Editor
                 handler(this, new PropertyChangedEventArgs(info));
             }
         }
-
-
     }
+
     public class SourceData : INotifyPropertyChanged
     {
         public string Name { get; set; }
@@ -436,17 +402,16 @@ namespace AvalonEdit.Editor
 
         public List<SourceRefData> Data
         {
-
             get { return data; }
             set
             {
                 data = value;
                 OnPropertyChanged("Data");
             }
-
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         protected void OnPropertyChanged(String info)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
@@ -455,9 +420,8 @@ namespace AvalonEdit.Editor
                 handler(this, new PropertyChangedEventArgs(info));
             }
         }
-
-
     }
+
     public class SourceRefData : INotifyPropertyChanged
     {
         public string Name { get; set; }
@@ -468,7 +432,6 @@ namespace AvalonEdit.Editor
 
         public int Offset { get; set; }
 
-        
         public ReferenceLocation? refs { get; set; }
 
         public object words { get; set; }
@@ -499,17 +462,16 @@ namespace AvalonEdit.Editor
 
         public List<SourceRefData> Data
         {
-
             get { return data; }
             set
             {
                 data = value;
                 OnPropertyChanged("Data");
             }
-
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         protected void OnPropertyChanged(String info)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
@@ -517,10 +479,6 @@ namespace AvalonEdit.Editor
             {
                 handler(this, new PropertyChangedEventArgs(info));
             }
-           
         }
-
-
     }
-
 }

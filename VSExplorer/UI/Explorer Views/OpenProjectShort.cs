@@ -1,5 +1,4 @@
-﻿using NuGet;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
@@ -12,10 +11,7 @@ namespace WinExplorer.UI
         {
             InitializeComponent();
 
-           
-            
             button = pictureBox1;
-
 
             textLink = labelEx1;
 
@@ -27,10 +23,9 @@ namespace WinExplorer.UI
 
             this.Resize += NuGetPacketShort_Resize;
 
-
             button.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.Image = ve_resource.Cloud_256x;
-           
+
             this.AutoScroll = false;
             this.VScroll = false;
             this.VerticalScroll.Enabled = false;
@@ -50,8 +45,8 @@ namespace WinExplorer.UI
             TipInfoText = tipstring;
         }
 
-        System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
-        
+        private System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+
         private void TextLink_Click(object sender, EventArgs e)
         {
             RunLink();
@@ -71,11 +66,10 @@ namespace WinExplorer.UI
             return textLink;
         }
 
-
         public void RunLink()
         {
-            if(!string.IsNullOrEmpty(urls))
-            Process.Start(urls);
+            if (!string.IsNullOrEmpty(urls))
+                Process.Start(urls);
         }
 
         public void LoadBitmap(Bitmap bmp)
@@ -88,19 +82,9 @@ namespace WinExplorer.UI
             Rb_Resize(null, null);
         }
 
-      
-
-        
-
-    
         private void Rb_Resize(object sender, EventArgs e)
         {
-           
-           
-           
         }
-
-     
 
         private void SetHandlers(Control c)
         {
@@ -110,20 +94,12 @@ namespace WinExplorer.UI
 
         private void NuGetPacketShort_Resize(object sender, EventArgs e)
         {
-           
-            
         }
-
-        
-
-        
 
         private void NuGetPacketShort_MouseClick(object sender, MouseEventArgs e)
         {
-            
         }
 
-      
         private PictureBox button { get; set; }
 
         private LabelEx textLink { get; set; }
@@ -138,10 +114,8 @@ namespace WinExplorer.UI
             MainText = text;
         }
 
-  
         public void SetAsBold(string s)
         {
-           
         }
 
         public void SetIcon(Bitmap icon)
@@ -169,8 +143,6 @@ namespace WinExplorer.UI
 
         private void NuGetPacketShort_MouseLeave(object sender, EventArgs e)
         {
-           
-
             Control cc = sender as Control;
 
             cc.BackColor = Color.FromKnownColor(KnownColor.Control);
@@ -186,7 +158,7 @@ namespace WinExplorer.UI
             }
 
             button.BackColor = Color.FromKnownColor(KnownColor.Control);
-           // panel.BackColor = Color.FromKnownColor(KnownColor.Control);
+            // panel.BackColor = Color.FromKnownColor(KnownColor.Control);
             textLink.BackColor = Color.FromKnownColor(KnownColor.Control);
             this.Invalidate();
             this.Refresh();
@@ -201,7 +173,7 @@ namespace WinExplorer.UI
                 cc.BackColor = Color.FromKnownColor(KnownColor.AliceBlue);
 
             button.BackColor = Color.FromKnownColor(KnownColor.AliceBlue);
-           // panel.BackColor = Color.FromKnownColor(KnownColor.AliceBlue);
+            // panel.BackColor = Color.FromKnownColor(KnownColor.AliceBlue);
             textLink.BackColor = Color.FromKnownColor(KnownColor.AliceBlue);
         }
     }

@@ -76,7 +76,7 @@ namespace WinExplorer
             c = new gui.Command_Redo(ExplorerForms.ef);
             d.dict.Add("Redo", c);
             d.temp.Add("Redo");
-         
+
             d.temp.Add("Separator");
 
             gui.Command_Gui gc = new gui.Command_Gui(ExplorerForms.ef);
@@ -218,7 +218,7 @@ namespace WinExplorer
             gc.Names = "Startup Projects";
             d.dict.Add("Startup Projects", gc);
             d.temp.Add("Startup Projects");
-            
+
             c = new gui.Command_RunProject(ExplorerForms.ef);
             d.dict.Add("Start", c);
             d.temp.Add("Start");
@@ -338,7 +338,6 @@ namespace WinExplorer
             gc.Names = "Startup Projects";
             d.dict.Add("Startup Projects", gc);
             d.temp.Add("Startup Projects");
-            
 
             c = new gui.Command_RunProject(ExplorerForms.ef);
             d.dict.Add("Start", c);

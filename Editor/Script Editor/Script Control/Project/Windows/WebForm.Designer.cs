@@ -1,4 +1,4 @@
-namespace AIMS.Libraries.Scripting.ScriptControl
+namespace ScriptControl
 {
     partial class WebForm
     {
@@ -29,17 +29,10 @@ namespace AIMS.Libraries.Scripting.ScriptControl
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.syntaxDocument1 = new AIMS.Libraries.CodeEditor.Syntax.SyntaxDocument(this.components);
+            
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
-            // 
-            // syntaxDocument1
-            // 
-            this.syntaxDocument1.Lines = new string[] {
-        ""};
-            this.syntaxDocument1.MaxUndoBufferSize = 1000;
-            this.syntaxDocument1.Modified = false;
-            this.syntaxDocument1.UndoStep = 0;
+            
             // 
             // webBrowser1
             // 
@@ -63,7 +56,7 @@ namespace AIMS.Libraries.Scripting.ScriptControl
 
         #endregion
 
-        public AIMS.Libraries.CodeEditor.Syntax.SyntaxDocument syntaxDocument1;
+     
         private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }

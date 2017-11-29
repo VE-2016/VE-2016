@@ -1,14 +1,14 @@
 ﻿// Copyright (c) 2014 AlphaSierraPapa for the SharpDevelop Team
-// 
+//
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this
 // software and associated documentation files (the "Software"), to deal in the Software
 // without restriction, including without limitation the rights to use, copy, modify, merge,
 // publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons
 // to whom the Software is furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in all copies or
 // substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
 // INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
 // PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
@@ -25,11 +25,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
-using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
-using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Xml.Linq;
@@ -76,19 +74,16 @@ namespace AvalonEdit.Editor
 
         public void UpdateProperties(Nodes node)
         {
-
             SyntaxNode s = node.syntaxNode.AsNode();
 
             List<DataItem> b = new List<DataItem>();
 
             if (s != null)
             {
+                PropertyInfo[] ps = s.GetType().GetProperties();
 
-                PropertyInfo [] ps = s.GetType().GetProperties();
-
-                foreach(PropertyInfo p in ps)
+                foreach (PropertyInfo p in ps)
                 {
-
                     DataItem dd = new DataItem();
                     dd.Key = p.Name;
                     object obs = p.GetValue(s);
@@ -97,7 +92,6 @@ namespace AvalonEdit.Editor
                         dd.Value = obs.ToString();
                         b.Add(dd);
                     }
-                    
                 }
                 dg.ItemsSource = b;
                 return;
@@ -105,12 +99,10 @@ namespace AvalonEdit.Editor
             SyntaxToken t = node.syntaxNode.AsToken();
             if (t != null)
             {
-
                 PropertyInfo[] ps = t.GetType().GetProperties();
 
                 foreach (PropertyInfo p in ps)
                 {
-
                     DataItem dd = new DataItem();
                     dd.Key = p.Name;
                     object obs = p.GetValue(t);
@@ -119,12 +111,10 @@ namespace AvalonEdit.Editor
                         dd.Value = obs.ToString();
                         b.Add(dd);
                     }
-
                 }
                 dg.ItemsSource = b;
                 return;
             }
-
 
             DataItem d = new DataItem();
             d.Key = "ContainsAnnotations";
@@ -143,7 +133,7 @@ namespace AvalonEdit.Editor
 
             d = new DataItem();
             d.Key = "FullSpan";
-            d.Value = "[" + node.syntaxNode.SpanStart.ToString() + "..." + (node.syntaxNode.SpanStart +  node.syntaxNode.Span.Length).ToString() + "]";
+            d.Value = "[" + node.syntaxNode.SpanStart.ToString() + "..." + (node.syntaxNode.SpanStart + node.syntaxNode.Span.Length).ToString() + "]";
             b.Add(d);
 
             d = new DataItem();
@@ -167,10 +157,10 @@ namespace AvalonEdit.Editor
             b.Add(d);
 
             dg.ItemsSource = b;
-
         }
-        
-        Popup popup { get; set; }
+
+        private Popup popup { get; set; }
+
         private void LegendButton_Click(object sender, RoutedEventArgs e)
         {
             popup = new Popup();
@@ -257,7 +247,6 @@ namespace AvalonEdit.Editor
             popup.PlacementTarget = legendButton;
 
             popup.IsOpen = true;
-
         }
 
         private void D_MouseDown(object sender, MouseButtonEventArgs e)
@@ -272,15 +261,13 @@ namespace AvalonEdit.Editor
             var f = syntaxTree.GetRoot().DescendantNodes().OfType<ConstructorDeclarationSyntax>().ToList();
             foreach (ConstructorDeclarationSyntax es in f)
             {
-
             }
-         }
+        }
 
-        ContextMenu contextMenu { get; set; }
+        private ContextMenu contextMenu { get; set; }
 
         public ContextMenu CreateContextMenu()
         {
-
             contextMenu = new ContextMenu();
             MenuItem me = new MenuItem();
             me.Header = "View Directed Syntax Graph";
@@ -303,7 +290,6 @@ namespace AvalonEdit.Editor
             me.Header = "View Constant Value (if any)";
             contextMenu.Items.Add(me);
 
-
             return contextMenu;
         }
 
@@ -313,26 +299,22 @@ namespace AvalonEdit.Editor
                 return;
             var b = syntaxTree.GetRoot().DescendantNodes().OfType<InvocationExpressionSyntax>().ToList();
 
-            foreach(InvocationExpressionSyntax es in b)
+            foreach (InvocationExpressionSyntax es in b)
             {
-            if(es.Expression is MemberAccessExpressionSyntax)
+                if (es.Expression is MemberAccessExpressionSyntax)
                 {
                     MemberAccessExpressionSyntax sa = es.Expression as MemberAccessExpressionSyntax;
                     string name = sa.Name.ToString();
                     string member = sa.Expression.ToString();
-
-                }   
+                }
             }
             //var c = syntaxTree.GetRoot().DescendantNodes().OfType<MemberDeclarationSyntax>().ToList();
 
-
-
             //foreach (MemberDeclarationSyntax es in c)
             //{
-                
             //}
-            
-            XElement xe  = Roslyn.SyntaxVisualizer.DgmlHelper.SyntaxDgmlHelper.ToDgml(syntaxTree.GetRoot());
+
+            XElement xe = Roslyn.SyntaxVisualizer.DgmlHelper.SyntaxDgmlHelper.ToDgml(syntaxTree.GetRoot());
 
             VSSolution.OpenSyntaxGraphTool(xe);
         }
@@ -342,14 +324,13 @@ namespace AvalonEdit.Editor
             Nodes node = treeView.SelectedItem as Nodes;
             if (node == null)
                 return;
-            if(node.syntaxNode.IsNode)
-            typeTextBlock.Text = "SyntaxNode";
+            if (node.syntaxNode.IsNode)
+                typeTextBlock.Text = "SyntaxNode";
             else typeTextBlock.Text = "TokenNode";
             kindTextBlock.Text = node.Kind.ToString();
             UpdateProperties(node);
         }
 
-       
         public void LoadSyntaxTree(SyntaxTree s)
         {
             if (s == null)
@@ -376,12 +357,10 @@ namespace AvalonEdit.Editor
 
             treeView.ItemsSource = nodes;
             treeView.InvalidateVisual();
-
-
         }
-        Nodes SyntaxNodeToNodes(SyntaxNode s)
-        {
 
+        private Nodes SyntaxNodeToNodes(SyntaxNode s)
+        {
             Nodes node = new Nodes();
             node.Kind = s.Kind();
             node.Language = s.Kind().ToString() + " [" + s.SpanStart + "..." + s.Span.End + "]";
@@ -389,12 +368,11 @@ namespace AvalonEdit.Editor
 
             if (s.HasLeadingTrivia)
             {
-
                 SyntaxTriviaList d = s.GetLeadingTrivia();
                 foreach (SyntaxTrivia t in d)
                 {
                     Nodes tr = new Nodes();
-                    tr.Language = "Leading: " + t.ToString().Replace("\n","") + " [" + t.SpanStart + "..." + t.Span.End + "]";
+                    tr.Language = "Leading: " + t.ToString().Replace("\n", "") + " [" + t.SpanStart + "..." + t.Span.End + "]";
                     node.nodes.Add(tr);
                 }
                 node.IsLeadingTrivia = true;
@@ -410,19 +388,17 @@ namespace AvalonEdit.Editor
                 }
 
                 node.IsTrailingTrivia = true;
-
             }
             foreach (SyntaxNodeOrToken c in s.ChildNodesAndTokens())
             {
-
                 Nodes ng = SyntaxNodeToNodes(c);
                 node.nodes.Add(ng);
             }
             return node;
         }
-        Nodes SyntaxNodeToNodes(SyntaxNodeOrToken s)
+
+        private Nodes SyntaxNodeToNodes(SyntaxNodeOrToken s)
         {
-            
             Nodes node = new Nodes();
             node.Kind = s.Kind();
             node.Language = s.Kind().ToString() + " [" + s.SpanStart + "..." + s.Span.End + "]";
@@ -430,7 +406,6 @@ namespace AvalonEdit.Editor
 
             if (s.HasLeadingTrivia)
             {
-                
                 SyntaxTriviaList d = s.GetLeadingTrivia();
                 foreach (SyntaxTrivia t in d)
                 {
@@ -449,33 +424,33 @@ namespace AvalonEdit.Editor
                     tr.Language = "Trailing: " + t.ToString() + " [" + t.SpanStart + "..." + t.Span.End + "]";
                     node.nodes.Add(tr);
                 }
-               
-                node.IsTrailingTrivia = true;
 
+                node.IsTrailingTrivia = true;
             }
             foreach (SyntaxNodeOrToken c in s.ChildNodesAndTokens())
             {
-            
                 Nodes ng = SyntaxNodeToNodes(c);
                 node.nodes.Add(ng);
             }
             return node;
         }
     }
+
     public class Nodes
     {
         public Nodes()
         {
             nodes = new ObservableCollection<Nodes>();
         }
+
         public string Language { get; set; }
         public SyntaxKind Kind { get; set; }
         public ObservableCollection<Nodes> nodes { get; set; }
         public SyntaxNodeOrToken syntaxNode { get; set; }
         public bool IsLeadingTrivia = false;
         public bool IsTrailingTrivia = false;
-
     }
+
     public class TextBlocks : TextBlock
     {
         public static readonly DependencyProperty DataProperty = DependencyProperty.Register
@@ -503,27 +478,26 @@ namespace AvalonEdit.Editor
                 return;
             if (Data.syntaxNode == null)
                 return;
-            if(Data.syntaxNode.IsNode)
+            if (Data.syntaxNode.IsNode)
             {
                 if (Data.IsTrailingTrivia || Data.IsLeadingTrivia)
                     this.Foreground = Brushes.Maroon;
                 else
-                this.Foreground = Brushes.Blue;
-            }        
+                    this.Foreground = Brushes.Blue;
+            }
             else
             {
                 if (Data.IsTrailingTrivia || Data.IsLeadingTrivia)
                     this.Foreground = Brushes.Maroon;
                 else
-                this.Foreground = Brushes.Green;
+                    this.Foreground = Brushes.Green;
             }
-
         }
     }
+
     public class DataItem
     {
         public string Key { get; set; }
         public string Value { get; set; }
-        
     }
 }

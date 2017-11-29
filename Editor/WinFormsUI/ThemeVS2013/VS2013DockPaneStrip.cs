@@ -892,13 +892,17 @@ namespace WeifenLuo.WinFormsUI.ThemeVS2013
             Rectangle rectTabOnly = TabsRectangle;
             Rectangle rectTab = Rectangle.Empty;
             TabVS2013 tabActive = null;
+            int X = 0;
             foreach(TabVS2013 tab in Tabs)
             {
-                if(tab.Content.DockAlignment == DockAlign.DockToRight)
+                if (tab.Content.DockAlignment == DockAlign.DockToRight)
                 {
                     tab.TabX = rectTabStrip.Right - tab.TabWidth - 30;
                     rectTabStrip.Inflate(-tab.TabWidth - 30, 0);
+                    X += tab.TabWidth;
                 }
+                else tab.TabX -= X;
+                
             }
             g.SetClip(DrawHelper.RtlTransform(this, rectTabOnly));
             for (int i = 0; i < count; i++)

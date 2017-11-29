@@ -253,7 +253,7 @@ namespace WinExplorer.UI
 
             pb = new PictureBox();
             pb.Bounds = new Rectangle(1, 1, 15, 15);
-            pb.Image = new Bitmap(ve_resource.Search_16x, 13,13);
+            pb.Image = new Bitmap(ve_resource.Search_16x, 13, 13);
             pb.Anchor = AnchorStyles.Left | AnchorStyles.Top;
             pb.BorderStyle = BorderStyle.None;
             this.Controls.Add(pb);
@@ -266,12 +266,8 @@ namespace WinExplorer.UI
 
             tb.Enter += Tb_Enter;
 
-        
-
             ResumeLayout();
         }
-
-        
 
         private void Tb_Enter(object sender, EventArgs e)
         {
@@ -282,19 +278,19 @@ namespace WinExplorer.UI
 
         public TextBox tb { get; set; }
 
-        
-
         public string GetText()
         {
             return tb.Text;
         }
+
         public void SetText(string s)
         {
             tb.Text = s;
         }
+
         public void SetTextColor(Color c)
         {
-            tb.ForeColor  = c;
+            tb.ForeColor = c;
         }
     }
 }

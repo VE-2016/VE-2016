@@ -193,7 +193,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\DgmlViewer\Microsoft.VisualStudio.GraphModel.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -302,8 +302,9 @@
     <Reference Include="System.Reflection">
       <HintPath>..\packages\System.Reflection.4.3.0\ref\net462\System.Reflection.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime">
-      <HintPath>..\Referenced Assemblies\System.Runtime.dll</HintPath>
+    <Reference Include="System.Reflection.Metadata, Version=1.4.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referenced Assemblies\System.Reflection.Metadata.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Extensions">
       <HintPath>..\Referenced Assemblies\System.Runtime.Extensions.dll</HintPath>
@@ -1311,10 +1312,6 @@
       <Project>{EE9713D5-CD63-4836-88FF-75C3809FF1DB}</Project>
       <Name>AvalonEdit.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Editor\CodeEditor\CodeEditor.csproj">
-      <Project>{94bfa44a-f4d0-4605-88e6-3add498f5e16}</Project>
-      <Name>CodeEditor</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Editor\ICSharpCode.AvalonEdit\ICSharpCode.AvalonEdit.csproj">
       <Project>{6c55b776-26d4-4db3-a6ab-87e783b2f3d1}</Project>
       <Name>ICSharpCode.AvalonEdit</Name>
@@ -1322,14 +1319,6 @@
     <ProjectReference Include="..\Editor\Script Editor\Script Control\Project\ScriptControl.csproj">
       <Project>{9dcfa218-4e5f-4106-b14c-cab7c0705ad0}</Project>
       <Name>ScriptControl</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Editor\SyntaxDocument\CodeEditor.SyntaxDocument.csproj">
-      <Project>{3f43bab0-22b4-4fd6-9655-8ba214a093a5}</Project>
-      <Name>CodeEditor.SyntaxDocument</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Editor\SyntaxFiles\CodeEditor.SyntaxFiles.csproj">
-      <Project>{3814f627-858a-42a3-9aaf-cd649413f2a8}</Project>
-      <Name>CodeEditor.SyntaxFiles</Name>
     </ProjectReference>
     <ProjectReference Include="..\Editor\WinFormsUI\ThemeVS2010.csproj">
       <Project>{e9efe270-83bc-4d18-a1bf-7902ba8b83d6}</Project>

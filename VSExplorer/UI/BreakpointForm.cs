@@ -1,4 +1,4 @@
-using AIMS.Libraries.Scripting.ScriptControl;
+using ScriptControl;
 using System.Collections;
 using System.Drawing;
 using System.IO;
@@ -14,9 +14,9 @@ namespace WinExplorer.UI
 
             Init();
 
-            ScriptControl.br.breakPointEvent += Br_breakPointEvent;
+            ScriptControl.ScriptControl.br.breakPointEvent += Br_breakPointEvent;
 
-            ScriptControl.br.breakPointStateEvent += Br_breakPointStateEvent;
+            ScriptControl.ScriptControl.br.breakPointStateEvent += Br_breakPointStateEvent;
         }
 
         private void Br_breakPointStateEvent(object sender, Breakpoint e)
@@ -24,7 +24,7 @@ namespace WinExplorer.UI
             editbox.BeginUpdate();
             editbox.Nodes.Clear();
             v.Items.Clear();
-            foreach (Breakpoint b in ScriptControl.br.breakpoints.breakpoints)
+            foreach (Breakpoint b in ScriptControl.ScriptControl.br.breakpoints.breakpoints)
                 InsertBreakpoint(b);
             editbox.EndUpdate();
         }
@@ -357,7 +357,7 @@ namespace WinExplorer.UI
                 b.enabled = false;
             }
 
-            ScriptControl.br.LoadBreakpoint(b, state, false);
+            ScriptControl.ScriptControl.br.LoadBreakpoint(b, state, false);
         }
 
         private void ListView_Resize(object sender, System.EventArgs e)
@@ -505,12 +505,12 @@ namespace WinExplorer.UI
 
         private void toolStripButton3_Click(object sender, System.EventArgs e)
         {
-            ScriptControl.br.LoadBreakpoints(3, true);
+            ScriptControl.ScriptControl.br.LoadBreakpoints(3, true);
         }
 
         private void toolStripButton2_Click(object sender, System.EventArgs e)
         {
-            ScriptControl.br.LoadBreakpoints(4, true);
+            ScriptControl.ScriptControl.br.LoadBreakpoints(4, true);
         }
 
         private void toolStripButton1_Click(object sender, System.EventArgs e)
@@ -521,7 +521,7 @@ namespace WinExplorer.UI
             Breakpoint b = GetBreakpoint(node);
             if (b == null)
                 return;
-            ScriptControl.br.LoadBreakpoint(b, 0, false);
+            ScriptControl.ScriptControl.br.LoadBreakpoint(b, 0, false);
 
             editbox.Nodes.Remove(node);
         }
@@ -534,7 +534,7 @@ namespace WinExplorer.UI
             Breakpoint b = GetBreakpoint(node);
             if (b == null)
                 return;
-            ScriptControl.br.LoadBreakpoint(b, 0, false);
+            ScriptControl.ScriptControl.br.LoadBreakpoint(b, 0, false);
 
             editbox.Nodes.Remove(node);
         }
@@ -547,7 +547,7 @@ namespace WinExplorer.UI
                 return;
             string file = ofd.FileName;
 
-            string xml = ScriptControl.br.Serialize();
+            string xml = ScriptControl.ScriptControl.br.Serialize();
 
             File.WriteAllText(file, xml);
         }

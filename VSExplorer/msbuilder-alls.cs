@@ -641,6 +641,7 @@ namespace WinExplorer
 
             return proc;
         }
+
         public class MSTest
         {
             public string msTestPath { get; set; }
@@ -664,7 +665,6 @@ namespace WinExplorer
                     return;
                 string content = File.ReadAllText(msTestPath);
 
-                
                 file_library = Path.GetFileName(file);
 
                 folder_library = Path.GetDirectoryName(file);
@@ -674,7 +674,7 @@ namespace WinExplorer
                 string filename = Path.GetFileName(file);
 
                 file = file.Replace(filename, filename.Remove(0, 1));
-                
+
                 msTestPath = file;
 
                 file_library = Path.GetFileName(file);
@@ -685,12 +685,12 @@ namespace WinExplorer
 
                 File.WriteAllText(msTestPath, content);
             }
-            
+
             public string GetMSTest()
             {
                 return "";
             }
-            
+
             public List<string> GetDiscoveredTests()
             {
                 List<string> b = new System.Collections.Generic.List<string>();
@@ -708,7 +708,6 @@ namespace WinExplorer
 
                 foreach (string d in cc)
                 {
-                    
                     if (d.StartsWith("The following Tests are available"))
                     {
                         found = true;
@@ -716,12 +715,12 @@ namespace WinExplorer
                     }
                     if (found)
                         if (!string.IsNullOrEmpty(d))
-                    b.Add(d);
-
+                            b.Add(d);
                 }
                 return b;
             }
         }
+
         static public Process ExecuteMsTests(MSTest mstest)
         {
             string args = mstest.GetMSTest();
@@ -747,6 +746,7 @@ namespace WinExplorer
 
             return proc;
         }
+
         static public void checkprojectreferences(string path, string projectname)
         {
             //         VSProvider.VSSolution vs = new VSSolution(Path.GetFullPath(path));
@@ -949,14 +949,12 @@ namespace WinExplorer
             return vs;
         }
 
-
         public static string GetDependentResource(string data, string resource, string depends)
         {
             string[] cc = data.Split("\\".ToCharArray());
 
             //if (!depends.EndsWith(".resx"))
             //{
-
             //    string d = data.Replace(cc[cc.Length - 1], "");
 
             //    return d + resource;
@@ -1161,7 +1159,7 @@ namespace WinExplorer
                         {
                             if (b.ItemType != "Compile")
                                 continue;
-                                                       
+
                             string g = Path.GetFullPath(ps.FileName).Replace(Path.GetFileName(ps.FileName), "");
 
                             string p = b.EvaluatedInclude.Replace(g, "");
@@ -1268,8 +1266,6 @@ namespace WinExplorer
 
                 foreach (VSProjectItem pi in ps.Items)
                 {
-
-
                     //if (pi.Include.Contains("C:\\Program Files (x86)\\MSBuild\\14.0\\bin\\amd64\\CSharp.ProjectItemsSchema.xaml"))
                     //    MessageBox.Show("found");
 
@@ -1279,7 +1275,6 @@ namespace WinExplorer
                     pr3.psi = pi;
                     pr3.Include = pi.Include;
 
-      
                     string g = pi.fileName;
 
                     string dependentupon = "";
@@ -1367,7 +1362,6 @@ namespace WinExplorer
                         pr3.Include = pi.Info;
                     }
 
-                  
                     if (pi.ItemType == "Content")
                     {
                         CDD.Add(pi);
@@ -1380,7 +1374,6 @@ namespace WinExplorer
                     else
                     if (pi.ItemType == "None" && pi.Info != null)
                     {
-                        
                         pi.Include = pi.Info;
                         pi.fileName = ps.FileName;
                         CDD.Add(pi);
@@ -1400,7 +1393,6 @@ namespace WinExplorer
                         if (Path.GetExtension(pi.Include) == ".datasource")
                             DDD.Add(pi);
 
-                        
                         TreeNode ns = new TreeNode();
                         ns.Text = pi.Include;
                         ns.Tag = pr3;
@@ -1432,10 +1424,8 @@ namespace WinExplorer
                     else
                         if (pi.ItemType == "Compile")
                     {
-
-                       // if (pi.Include.Contains("Build\\version.cs"))
-                       //     MessageBox.Show("bv");
-
+                        // if (pi.Include.Contains("Build\\version.cs"))
+                        //     MessageBox.Show("bv");
 
                         TreeNode res = t;
 
@@ -1454,11 +1444,9 @@ namespace WinExplorer
 
                         filepath = filepath.Replace(ps.GetProjectFolder() + "\\", "");
 
-                        
                         if (pi.Info != null)
                         {
                             filepath = pi.Info;
-                            
                         }
 
                         string[] cc = filepath.Split("\\".ToCharArray());
@@ -1507,7 +1495,7 @@ namespace WinExplorer
                                 ppp.Include = cc[0];
                                 ppb.psi = ppp;
                                 ppb.Include = cc[0];
-                        
+
                                 t.Nodes.Add(bbb);
 
                                 bbb.Tag = ppb;
@@ -1554,9 +1542,8 @@ namespace WinExplorer
 
                         t = res;
                     }
-                    else if (pi.ItemType == "Folder" ||  pi.ItemType == "WCFMetadata")
+                    else if (pi.ItemType == "Folder" || pi.ItemType == "WCFMetadata")
                     {
-                        
                         FDD.Add(pi.Include);
                     }
                     else if (pi.ItemType == "EmbeddedResource")
@@ -1564,7 +1551,7 @@ namespace WinExplorer
                         if (!pi.Include.EndsWith(".resx") || dependentupon == "")
                         {
                             pi.fileName = ps.FileName;
-                      
+
                             TreeNode ns = new TreeNode();
                             ns.Text = pi.Include;
                             ns.Tag = pr3;
@@ -1829,19 +1816,18 @@ namespace WinExplorer
                     ProjectSubForms(EMB, t, node, node.Text);
                 }
 
-              
                 ProjectCleanUp(t);
-               
+
                 AppendEmptyFolders(t, FDD, vs, ps);
-                
+
                 MoveFolderNodes(t);
-                
+
                 MoveEmbeddedResources(t, EMB);
-                
+
                 MoveOtherNodes(tv, t, NL);
 
                 MoveProjectOtherNodes(EMB, tv, t);
-                
+
                 MoveContent(t, CDD);
 
                 MoveContent(t, DDD);
@@ -1849,7 +1835,7 @@ namespace WinExplorer
                 MoveContent(t, DSN);
 
                 ProjectCleanUp(t);
-              
+
                 MoveContent(t, "Resources");
                 //if (ps.Name == "VSExplorer")
                 //    MessageBox.Show("ve");
@@ -2443,7 +2429,7 @@ namespace WinExplorer
                         pp.ps = new VSProject();
                         pp.psi = new VSProjectItem();
                         pp.psi.Include = d;
-                       // pp.Include = pc.Include; 
+                        // pp.Include = pc.Include;
                         ns.Tag = pp;
                         pp.psi.fileName = pi.fileName;
 
@@ -2577,9 +2563,9 @@ namespace WinExplorer
             }
 
             foreach (TreeNode n in N)
-                if(n.Parent.Text == n.Text)
-                    
-                n.Parent.Nodes.Remove(n);
+                if (n.Parent.Text == n.Text)
+
+                    n.Parent.Nodes.Remove(n);
         }
 
         public void MoveContentTo(TreeNode master)
@@ -2588,21 +2574,19 @@ namespace WinExplorer
 
             foreach (TreeNode node in P)
             {
-
-                
                 if (node == null)
                     continue;
                 VSParsers.ProjectItemInfo p = node.Tag as VSParsers.ProjectItemInfo;
                 if (p == null)
                     continue;
-                if(p.psi.ItemType == "None" || p.psi.ItemType == "EmbeddedResource")
+                if (p.psi.ItemType == "None" || p.psi.ItemType == "EmbeddedResource")
                 {
                     master.Nodes.Remove(node);
                     string s = p.Include;
-                    string []cc = s.Split("\\".ToCharArray());
+                    string[] cc = s.Split("\\".ToCharArray());
                     string name = "";
                     TreeNode nodes = master;
-                  
+
                     int i = 0;
                     foreach (string d in cc)
                     {
@@ -2619,8 +2603,8 @@ namespace WinExplorer
                             pp.psi = new VSProjectItem();
                             pp.psi.Include = name;
                             ns.Tag = pp;
-                         //   ns.SelectedImageKey = "Folder";
-                         //   ns.ImageKey = "Folder";
+                            //   ns.SelectedImageKey = "Folder";
+                            //   ns.ImageKey = "Folder";
                             pp.Include = name;
 
                             if (i < cc.Length - 1)
@@ -2643,7 +2627,7 @@ namespace WinExplorer
                                     ns.SelectedImageKey = "Folder";
                                     ns.ImageKey = "Folder";
                                 }
-                                
+
                                 nodes.Nodes.Add(ns);
                                 SetExtensions(ns);
                             }
@@ -2653,7 +2637,6 @@ namespace WinExplorer
                         else nodes = ns;
                         i++;
                     }
-                    
                 }
             }
         }
@@ -3064,7 +3047,6 @@ namespace WinExplorer
 
             //L = SortNodes(L);
 
-           
             master.Nodes.Clear();
 
             foreach (TreeNode node in L)
@@ -3750,10 +3732,9 @@ namespace WinExplorer
 
                     if (p0.Include == p1.Include)
                     {
-
                         if (ng.Text == ns.Text)
-                            if(!ng.Equals(ns))
-                            L.Remove(ng);
+                            if (!ng.Equals(ns))
+                                L.Remove(ng);
 
                         if (ng.Text == "")
                             L.Remove(ng);
@@ -4413,12 +4394,12 @@ namespace WinExplorer
 
                 if (p != null)
                 {
-                    if(p.IsProjectNode)
-                    if (p.ps != null)
-                    {
-                        if (p.ps.Name == vp.Name)
+                    if (p.IsProjectNode)
+                        if (p.ps != null)
+                        {
+                            if (p.ps.Name == vp.Name)
                                 return ns;
-                    }
+                        }
                 }
                 TreeNode ng = GetProjectNode(ns, vp);
 
@@ -4437,14 +4418,13 @@ namespace WinExplorer
 
                 if (p != null)
                 {
-                    if(p.IsProjectNode)
-                        
+                    if (p.IsProjectNode)
 
-                    if (p.ps != null)
-                    {
-                        if (p.ps.Name == vp.Name)
-                            return ns;
-                    }
+                        if (p.ps != null)
+                        {
+                            if (p.ps.Name == vp.Name)
+                                return ns;
+                        }
                 }
 
                 TreeNode ng = GetProjectNode(ns, vp);
@@ -4496,9 +4476,8 @@ namespace WinExplorer
                 }
             }
 
-                foreach (TreeNode ns in master.Nodes)
+            foreach (TreeNode ns in master.Nodes)
             {
-
                 p = ns.Tag as VSParsers.ProjectItemInfo;
 
                 if (p != null)
@@ -4507,7 +4486,7 @@ namespace WinExplorer
                     {
                         string include = p.Include.ToUpper().Trim();
 
-                        if (include.Contains( Include))
+                        if (include.Contains(Include))
                             return ns;
                     }
 
@@ -4534,6 +4513,7 @@ namespace WinExplorer
 
             return L;
         }
+
         public ArrayList FindNodesByInclude(TreeView master, string name, ArrayList L)
         {
             name = name.ToUpper();
@@ -4542,7 +4522,7 @@ namespace WinExplorer
 
             if (!string.IsNullOrEmpty(p0.Include))
                 if (p0.Include.ToUpper() == name)
-                L.Add(master);
+                    L.Add(master);
 
             foreach (TreeNode node in master.Nodes)
             {
@@ -4552,39 +4532,41 @@ namespace WinExplorer
                 VSParsers.ProjectItemInfo p1 = node.Tag as VSParsers.ProjectItemInfo;
                 if (!string.IsNullOrEmpty(p1.Include))
                     if (p1.Include.ToUpper() == name)
-                    L.Add(master);
+                        L.Add(master);
 
                 FindNodesByInclude(node, name, L);
             }
 
             return L;
         }
+
         public ArrayList FindNodesByInclude(TreeNode master, string name, ArrayList L)
         {
             name = name.ToUpper();
 
             VSParsers.ProjectItemInfo p0 = master.Tag as VSParsers.ProjectItemInfo;
 
-            if(!string.IsNullOrEmpty(p0.Include))
-            if (p0.Include.ToUpper().Contains(name))
-                L.Add(master);
+            if (!string.IsNullOrEmpty(p0.Include))
+                if (p0.Include.ToUpper().Contains(name))
+                    L.Add(master);
 
             foreach (TreeNode node in master.Nodes)
             {
-               // if (node.Text.ToUpper().Contains(name) == true)
-               //     L.Add(node);
+                // if (node.Text.ToUpper().Contains(name) == true)
+                //     L.Add(node);
 
-                VSParsers.ProjectItemInfo p1= node.Tag as VSParsers.ProjectItemInfo;
+                VSParsers.ProjectItemInfo p1 = node.Tag as VSParsers.ProjectItemInfo;
 
                 if (!string.IsNullOrEmpty(p1.Include))
                     if (p1.Include.ToUpper().Contains(name))
-                    L.Add(master);
+                        L.Add(master);
 
                 FindNodesByInclude(node, name, L);
             }
 
             return L;
         }
+
         public ArrayList FindNodes(TreeNode master, string name)
         {
             ArrayList L = new ArrayList();

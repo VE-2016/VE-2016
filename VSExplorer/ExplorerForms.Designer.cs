@@ -696,7 +696,7 @@ namespace WinExplorer
             this.toolStrip3.Size = new System.Drawing.Size(421, 25);
             this.toolStrip3.TabIndex = 1;
             this.toolStrip3.Text = "toolStrip3";
-            this.toolStrip3.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip3_ItemClicked);
+           // this.toolStrip3.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip3_ItemClicked);
             // 
             // toolStripButton5
             // 
@@ -723,7 +723,7 @@ namespace WinExplorer
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(71, 22);
             this.toolStripButton2.Text = "Clear All";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click_1);
+           // this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click_1);
             // 
             // treeView3
             // 
@@ -3166,7 +3166,7 @@ namespace WinExplorer
         private ToolStripMenuItem toolStripMenuItem48;
         private TreeViews treeView2;
         private /*TreeViews*/  UI.TreeViewEx treeView1;
-        private AIMS.Libraries.Scripting.ScriptControl.ScriptControl scriptControl1;
+        private ScriptControl.ScriptControl scriptControl1;
         private ToolStripMenuItem outputWindowToolStripMenuItem1;
         private ToolStripMenuItem errorListToolStripMenuItem;
         private ToolStripMenuItem findResultsToolStripMenuItem;

@@ -1,14 +1,12 @@
-﻿using System;
+﻿using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Media;
-using Microsoft.CodeAnalysis;
-using System.Linq;
-using System.Windows;
-using ICSharpCode.AvalonEdit.Document;
 using VSProvider;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.CodeAnalysis.CSharp;
 
 namespace AvalonEdit.Editor
 {
@@ -17,7 +15,6 @@ namespace AvalonEdit.Editor
     /// </summary>
     public partial class QuickClassBrowser
     {
-
         public EditorWindow editorWindow { get; set; }
 
         public List<TypeDeclarationSyntax> symbols { get; set; }
@@ -28,20 +25,21 @@ namespace AvalonEdit.Editor
         public ComboBox membersComboBox { get; set; }
 
         // type codes are used for sorting entities by type
-        const int TYPE_CLASS = 0;
-        const int TYPE_CONSTRUCTOR = 1;
-        const int TYPE_METHOD = 2;
-        const int TYPE_PROPERTY = 3;
-        const int TYPE_FIELD = 4;
-        const int TYPE_EVENT = 5;
+        private const int TYPE_CLASS = 0;
+
+        private const int TYPE_CONSTRUCTOR = 1;
+        private const int TYPE_METHOD = 2;
+        private const int TYPE_PROPERTY = 3;
+        private const int TYPE_FIELD = 4;
+        private const int TYPE_EVENT = 5;
 
         /// <summary>
         /// ViewModel used for combobox items.
         /// </summary>
-        class EntityItem : IComparable<EntityItem>
+        private class EntityItem : IComparable<EntityItem>
         {
-            MemberDeclarationSyntax entity;
-            INamespaceSymbol entityNamespace { get; set; }
+            private MemberDeclarationSyntax entity;
+            private INamespaceSymbol entityNamespace { get; set; }
             public ImageSource image { get; set; }
             public string text { get; set; }
             public SymbolKind typeCode; // type code is used for sorting entities by type
@@ -50,13 +48,16 @@ namespace AvalonEdit.Editor
             {
                 get { return entity; }
             }
+
             public EntityItem(MemberDeclarationSyntax entity)
             {
                 this.IsInSamePart = true;
                 this.entity = entity;
-                
+
                 if (entity is TypeDeclarationSyntax)
-                    text = ((TypeDeclarationSyntax)entity).Identifier.ToString(); 
+                    text = ((TypeDeclarationSyntax)entity).Identifier.ToString();
+                else if (entity is ConstructorDeclarationSyntax)
+                    text = ((ConstructorDeclarationSyntax)entity).Identifier.ToString();
                 else if (entity is MethodDeclarationSyntax)
                     text = ((MethodDeclarationSyntax)entity).Identifier.ToString();
                 else if (entity is PropertyDeclarationSyntax)
@@ -73,10 +74,10 @@ namespace AvalonEdit.Editor
                 else if (entity is NamespaceDeclarationSyntax)
                 {
                     text = ((NamespaceDeclarationSyntax)entity).Name.ToString();
-                   
                 }
                 image = CompletionControls.GetImageData(entity).Source;
             }
+
             public EntityItem(INamespaceSymbol entity)
             {
                 this.IsInSamePart = true;
@@ -84,6 +85,7 @@ namespace AvalonEdit.Editor
                 text = entity.Name;
                 image = CompletionControls.GetImageData(entity).Source;
             }
+
             /// <summary>
             /// Text to display in combo box.
             /// </summary>
@@ -91,6 +93,7 @@ namespace AvalonEdit.Editor
             {
                 get { return text; }
             }
+
             /// <summary>
             /// Image to use in combox box
             /// </summary>
@@ -101,6 +104,7 @@ namespace AvalonEdit.Editor
                     return image;
                 }
             }
+
             /// <summary>
             /// Gets/Sets whether the item is in the current file.
             /// </summary>
@@ -134,11 +138,12 @@ namespace AvalonEdit.Editor
         {
             //InitializeComponent();
         }
+
         public SemanticModel model { get; set; }
 
-        public void Load(VSSolution vs, string FileToLoad)
+        public void Load(VSSolution vs, string FileToLoad, string content)
         {
-            SyntaxTree synTree = vs.GetSyntaxTree(FileToLoad);
+            SyntaxTree synTree = vs.GetSyntaxTree(FileToLoad, content);
             if (synTree == null)
                 return;
 
@@ -173,12 +178,12 @@ namespace AvalonEdit.Editor
 
         // The lists of items currently visible in the combo boxes.
         // These should never be null.
-        List<EntityItem> classItems = new List<EntityItem>();
-        List<EntityItem> memberItems = new List<EntityItem>();
+        private List<EntityItem> classItems = new List<EntityItem>();
+
+        private List<EntityItem> memberItems = new List<EntityItem>();
 
         public void DoUpdateForContent(TypeDeclarationSyntax symbol, List<TypeDeclarationSyntax> symbols)
         {
-
             if (symbols == null)
                 return;
 
@@ -192,7 +197,7 @@ namespace AvalonEdit.Editor
 
             foreach (TypeDeclarationSyntax s in symbols)
                 classItems.Add(new EntityItem(s));
-            
+
             classItems.Sort();
             classComboBox.ItemsSource = classItems;
 
@@ -204,15 +209,16 @@ namespace AvalonEdit.Editor
             var c = model.GetTypeInfo(symbol).Type.ContainingNamespace;
 
             //foreach (ISymbol s in c)
-                namespaceItems.Add(new EntityItem(c));
+            namespaceItems.Add(new EntityItem(c));
 
             namespaceItems.Sort();
             namespaceComboBox.ItemsSource = namespaceItems;
         }
-        List<TypeDeclarationSyntax> symbolsForContent { get; set; }
+
+        private List<TypeDeclarationSyntax> symbolsForContent { get; set; }
+
         public void DoUpdate(List<TypeDeclarationSyntax> symbols, List<NamespaceDeclarationSyntax> n)
         {
-
             if (symbols == null)
                 return;
 
@@ -221,7 +227,7 @@ namespace AvalonEdit.Editor
             classItems = new List<EntityItem>();
 
             var c = symbols.ToArray().Select(s => s).Where(s => s is TypeDeclarationSyntax);
-            
+
             foreach (TypeDeclarationSyntax s in c)
                 classItems.Add(new EntityItem(s));
 
@@ -230,8 +236,8 @@ namespace AvalonEdit.Editor
 
             var namespaceItems = new List<EntityItem>();
 
-            var dg = model.GetDiagnostics();
-                
+            //var dg = model.GetDiagnostics();
+
             //foreach (TypeDeclarationSyntax s in c)
             //{
             //    var ts = model.GetTypeInfo(s);
@@ -243,26 +249,25 @@ namespace AvalonEdit.Editor
             //}
             foreach (NamespaceDeclarationSyntax s in n)
             {
-                
-                    namespaceItems.Add(new EntityItem(s));
-           
+                namespaceItems.Add(new EntityItem(s));
             }
             namespaceItems.Sort();
             namespaceComboBox.ItemsSource = namespaceItems;
         }
 
-        bool IsDropDownOpen
+        private bool IsDropDownOpen
         {
             get { return classComboBox.IsDropDownOpen || membersComboBox.IsDropDownOpen; }
         }
 
         // Delayed execution - avoid changing combo boxes while the user is browsing the dropdown list.
-        bool runUpdateWhenDropDownClosed;
-       List<ISymbol> runUpdateWhenDropDownClosedCU;
-        bool runSelectItemWhenDropDownClosed;
-        Location runSelectItemWhenDropDownClosedLocation;
+        private bool runUpdateWhenDropDownClosed;
 
-        void ComboBox_DropDownClosed(object sender, EventArgs e)
+        private List<ISymbol> runUpdateWhenDropDownClosedCU;
+        private bool runSelectItemWhenDropDownClosed;
+        private Location runSelectItemWhenDropDownClosedLocation;
+
+        private void ComboBox_DropDownClosed(object sender, EventArgs e)
         {
             if (runUpdateWhenDropDownClosed)
             {
@@ -277,7 +282,7 @@ namespace AvalonEdit.Editor
             }
         }
 
-       
+        public bool CaretPositionAdjustNeeded = true;
 
         /// <summary>
         /// Selects the class and member closest to the specified location.
@@ -291,9 +296,8 @@ namespace AvalonEdit.Editor
             DoSelectItem(location);
         }
 
-        void DoSelectItem(Location location)
+        private void DoSelectItem(Location location)
         {
-            
             EntityItem matchInside = null;
             EntityItem nearestMatch = null;
             int nearestMatchDistance = int.MaxValue;
@@ -327,6 +331,9 @@ namespace AvalonEdit.Editor
             {
                 classComboBox.SelectedItem = matchInside ?? nearestMatch;
                 // the SelectedItem setter will update the list of member items
+                if (classComboBox.SelectedIndex < 0)
+                    if (classComboBox.Items.Count > 0)
+                        classComboBox.SelectedIndex = 0;
             }
             finally
             {
@@ -337,7 +344,6 @@ namespace AvalonEdit.Editor
             {
                 if (item.IsInSamePart)
                 {
-                    
                     MemberDeclarationSyntax member = (MemberDeclarationSyntax)item.Entity;
                     if (member.Span.OverlapsWith(location.SourceSpan))
                     {
@@ -349,14 +355,21 @@ namespace AvalonEdit.Editor
             try
             {
                 membersComboBox.SelectedItem = matchInside;
+                if (matchInside == null)
+                    if (membersComboBox.Items.Count > 0)
+                        membersComboBox.SelectedIndex = 0;
             }
             finally
             {
                 jumpOnSelectionChange = true;
             }
+            if (namespaceComboBox.Items.Count > 0)
+                namespaceComboBox.SelectedIndex = 0;
         }
 
-        bool jumpOnSelectionChange = true;
+        public bool jumpOnSelectionChange = false;
+
+        public bool jumpOnSelectionChanged = false;
 
         public List<MemberDeclarationSyntax> allMembers { get; set; }
 
@@ -364,9 +377,8 @@ namespace AvalonEdit.Editor
 
         public void UpdateSourceDocument()
         {
-            
             allMembers = new List<MemberDeclarationSyntax>();
-            
+
             mb = new List<int>();
             // The selected class was changed.
             // Update the list of member items to be the list of members of the current class.
@@ -375,12 +387,9 @@ namespace AvalonEdit.Editor
                 TypeDeclarationSyntax selectedClass = item is TypeDeclarationSyntax ? item.Entity as TypeDeclarationSyntax : null;
                 if (selectedClass != null)
                 {
-
                     //IClass compoundClass = selectedClass.GetCompoundClass();
                     foreach (var m in selectedClass.Members)
                     {
-                        
-                        
                         //    AddMember(selectedClass, m, m.IsConstructor ? TYPE_CONSTRUCTOR : TYPE_METHOD);
                         //}
                         if (m.Kind() == SyntaxKind.MethodDeclaration)
@@ -395,7 +404,6 @@ namespace AvalonEdit.Editor
                         else
                         if (m.Kind() == SyntaxKind.PropertyDeclaration)
                         {
-
                             //AddMember(selectedClass, m, m.Kind);
                             //allMembers.Add(m);
                         }
@@ -413,7 +421,7 @@ namespace AvalonEdit.Editor
                         if (m.Kind() == SyntaxKind.EventDeclaration)
                         {
                             //AddMember(selectedClass, m, m.Kind);
-            //                allMembers.Add(m);
+                            //                allMembers.Add(m);
                         }
                         //memberItems.Sort();
                         if (jumpOnSelectionChange)
@@ -427,14 +435,10 @@ namespace AvalonEdit.Editor
             }
             Dictionary<int, ISymbol> dict = new Dictionary<int, ISymbol>();
 
-          
-
             foreach (ISymbol s in allMembers)
             {
                 if (!dict.ContainsKey(s.Locations[0].SourceSpan.Start))
                 {
-
-                   
                     if (s.Locations[0].IsInSource)
                     {
                         if (s.Locations[0].SourceTree.FilePath == filename)
@@ -444,21 +448,19 @@ namespace AvalonEdit.Editor
                         }
                     }
                 }
-                
             }
 
             mb.Sort();
             mb.Reverse();
-            
+
             editorWindow.UpdateReferences(mb, dict);
         }
-        void classComboBoxSelectionChangedForContent()
+
+        private void classComboBoxSelectionChangedForContent()
         {
-            
             allMembers = new List<MemberDeclarationSyntax>();
 
             mb = new List<int>();
-
 
             EntityItem item = classComboBox.SelectedItem as EntityItem;
             if (item == null)
@@ -467,10 +469,18 @@ namespace AvalonEdit.Editor
             memberItems = new List<EntityItem>();
             if (selectedClass != null)
             {
-
                 foreach (var m in selectedClass.Members)
                 {
-                 
+                    if (m.Kind() == SyntaxKind.ConstructorDeclaration)
+                    {
+                        ConstructorDeclarationSyntax f = m as ConstructorDeclarationSyntax;
+                        //if (f.AssociatedSymbol == null)
+                        {
+                            AddMember(selectedClass, m);
+                            allMembers.Add(m);
+                        }
+                    }
+                    else
                     if (m.Kind() == SyntaxKind.MethodDeclaration)
                     {
                         MethodDeclarationSyntax f = m as MethodDeclarationSyntax;
@@ -483,7 +493,6 @@ namespace AvalonEdit.Editor
                     else
                     if (m.Kind() == SyntaxKind.PropertyDeclaration)
                     {
-
                         AddMember(selectedClass, m);
                         allMembers.Add(m);
                     }
@@ -531,9 +540,9 @@ namespace AvalonEdit.Editor
 
             //editorWindow.UpdateReferences(mb,dict);
         }
-        void classComboBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
+        private void classComboBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
             if (symbolsForContent != null)
             {
                 classComboBoxSelectionChangedForContent();
@@ -541,7 +550,7 @@ namespace AvalonEdit.Editor
             }
             allMembers = new List<MemberDeclarationSyntax>();
             mb = new List<int>();
-            
+
             EntityItem item = classComboBox.SelectedItem as EntityItem;
             if (item == null)
                 return;
@@ -551,8 +560,17 @@ namespace AvalonEdit.Editor
             {
                 foreach (var m in selectedClass.Members)
                 {
-                                        
-                    if (m.Kind() == SyntaxKind.MethodDeclaration)
+                    if (m.Kind() == SyntaxKind.ConstructorDeclaration)
+                    {
+                        ConstructorDeclarationSyntax f = m as ConstructorDeclarationSyntax;
+                        //if (f.AssociatedSymbol == null)
+                        {
+                            AddMember(selectedClass, m);
+                            allMembers.Add(m);
+                        }
+                    }
+                    else
+                   if (m.Kind() == SyntaxKind.MethodDeclaration)
                     {
                         MethodDeclarationSyntax f = m as MethodDeclarationSyntax;
                         //if (f.AssociatedSymbol == null)
@@ -564,7 +582,6 @@ namespace AvalonEdit.Editor
                     else
                     if (m.Kind() == SyntaxKind.PropertyDeclaration)
                     {
-
                         AddMember(selectedClass, m);
                         allMembers.Add(m);
                     }
@@ -606,30 +623,33 @@ namespace AvalonEdit.Editor
             mb.Sort();
             mb.Reverse();
             string d = "";
-           // foreach (int i in mb)
-           //     d += i.ToString() + " - ";
+            // foreach (int i in mb)
+            //     d += i.ToString() + " - ";
             //MessageBox.Show("Update " + d);
 
             //editorWindow.UpdateReferences(mb,dict);
         }
 
-        void AddMember(TypeDeclarationSyntax c, MemberDeclarationSyntax member)
+        private void AddMember(TypeDeclarationSyntax c, MemberDeclarationSyntax member)
         {
-                bool isInSamePart = true;// (member.DeclaringType == selectedClass);
+            bool isInSamePart = true;// (member.DeclaringType == selectedClass);
             memberItems.Add(new EntityItem(member));
         }
 
-        void membersComboBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void membersComboBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            CaretPositionAdjustNeeded = false;
+            jumpOnSelectionChanged = true;
             EntityItem item = membersComboBox.SelectedItem as EntityItem;
             if (item != null)
             {
-                ISymbol member = item.Entity as ISymbol;
+                //ISymbol member = item.Entity as ISymbol;
+                MemberDeclarationSyntax member = item.Entity as MemberDeclarationSyntax;
                 if (member != null && jumpOnSelectionChange)
                 {
                     //AnalyticsMonitorService.TrackFeature(GetType(), "JumpToMember");
                     //JumpTo(item, member.Region);
-                    editorWindow.View(member.Locations[0].SourceSpan.Start);
+                    editorWindow.View(member.SpanStart);
                 }
             }
         }
@@ -657,8 +677,6 @@ namespace AvalonEdit.Editor
         public void Dispose()
         {
             symbols = null;
-            
         }
     }
-    
 }

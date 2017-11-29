@@ -8,6 +8,5 @@ namespace VSProvider
 
         IEnumerable<GlobalSection> Global { get; }
         IEnumerable<Project> Projects { get; }
-        
     }
 }

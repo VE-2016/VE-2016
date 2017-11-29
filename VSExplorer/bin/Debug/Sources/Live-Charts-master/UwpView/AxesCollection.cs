@@ -34,6 +34,7 @@ namespace LiveCharts.Uwp
         /// <summary>
         /// Initializes a new instance of AxisCollection class
         /// </summary>
+  References - 5             
         public AxesCollection()
         {
             NoisyCollectionChanged += OnNoisyCollectionChanged;
@@ -47,6 +48,7 @@ namespace LiveCharts.Uwp
         /// </value>
         public Chart Chart { get; internal set; }
 
+  References - 1             
         private void OnNoisyCollectionChanged(IEnumerable<Axis> oldItems, IEnumerable<Axis> newItems)
         {
             Chart?.Model?.Updater.Run();

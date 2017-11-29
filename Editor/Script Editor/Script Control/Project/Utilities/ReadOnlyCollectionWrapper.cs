@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace AIMS.Libraries.Scripting.ScriptControl
+namespace ScriptControl
 {
     /// <summary>
     /// Wraps any collection to make it read-only.

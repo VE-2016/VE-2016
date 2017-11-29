@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Msagl.WpfGraphControl</name>
+    </assembly>
+    <members>
+        <member name="F:Microsoft.Msagl.WpfGraphControl.GraphViewer.RunLayoutAsync">
+            <summary>
+            if set to true will layout in a task
+            </summary>
+        </member>
+        <member name="P:Microsoft.Msagl.WpfGraphControl.GraphViewer.GraphCanvas">
+            <summary>
+            the canvas to draw the graph
+            </summary>
+        </member>
+        <member name="M:Microsoft.Msagl.WpfGraphControl.GraphViewer.BindToPanel(System.Windows.Controls.Panel)">
+            <summary>
+            adds the main panel of the viewer to the children of the parent
+            </summary>
+            <param name="panel"></param>
+        </member>
+        <member name="M:Microsoft.Msagl.WpfGraphControl.GraphViewer.ZoomAbout(System.Double,System.Windows.Point)">
+            <summary>
+            keeps centerOfZoom pinned to the screen and changes the scale by zoomFactor
+            </summary>
+            <param name="zoomFactor"></param>
+            <param name="centerOfZoom"></param>
+        </member>
+        <member name="M:Microsoft.Msagl.WpfGraphControl.GraphViewer.SetTransformFromTwoPoints(System.Windows.Point,Microsoft.Msagl.Core.Geometry.Point)">
+            <summary>
+            this function pins the sourcePoint to screenPoint
+            </summary>
+            <param name="screenPoint"></param>
+            <param name="sourcePoint"></param>
+        </member>
+        <member name="M:Microsoft.Msagl.WpfGraphControl.GraphViewer.PointToCenter(Microsoft.Msagl.Core.Geometry.Point)">
+            <summary>
+            Moves the point to the center of the viewport
+            </summary>
+            <param name="sourcePoint"></param>
+        </member>
+        <member name="P:Microsoft.Msagl.WpfGraphControl.GraphViewer.ZoomFactor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Microsoft.Msagl.WpfGraphControl.GraphViewer.LayoutEditingEnabled">
+            <summary>
+            the layout editing with the mouse is enabled if and only if this field is set to false
+            </summary>
+        </member>
+        <member name="M:Microsoft.Msagl.WpfGraphControl.GraphViewer.CreateIViewerNode(Microsoft.Msagl.Drawing.Node)">
+            <summary>
+            creates a viewer node
+            </summary>
+            <param name="drawingNode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Msagl.WpfGraphControl.GraphViewer.SetInitialTransform">
+            <summary>
+            zooms to the default view
+            </summary>
+        </member>
+        <member name="P:Microsoft.Msagl.WpfGraphControl.GraphViewer.CancelToken">
+            <summary>
+            the cancel token used to cancel a long running layout
+            </summary>
+        </member>
+        <member name="P:Microsoft.Msagl.WpfGraphControl.GraphViewer.NeedToRemoveOverlapOnly">
+            <summary>
+            no layout is done, but the overlap is removed for graphs with geometry
+            </summary>
+        </member>
+        <member name="P:Microsoft.Msagl.WpfGraphControl.GvMouseEventArgs.Clicks">
+            <summary>
+                number of clicks
+            </summary>
+        </member>
+        <member name="T:Microsoft.Msagl.WpfGraphControl.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Msagl.WpfGraphControl.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Msagl.WpfGraphControl.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Msagl.WpfGraphControl.VNode.IsCollapsedChanged">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Msagl.WpfGraphControl.VNode.MarkedForDragging">
+            <summary>
+            Implements a property of an interface IEditViewer
+            </summary>
+        </member>
+        <member name="T:Microsoft.Msagl.WpfGraphControl.WpfGraphViewer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Microsoft.Msagl.WpfGraphControl.WpfGraphViewer.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Microsoft.Msagl.WpfGraphControl.WpfGraphViewer.OpenGraph(Microsoft.Msagl.Drawing.Graph)">
+            <summary>
+            
+            </summary>
+            <param name="graph"></param>
+        </member>
+    </members>
+</doc>

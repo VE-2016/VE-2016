@@ -1,7 +1,5 @@
 // VSSolution
 
-
-
 using Microsoft.Build.Construction;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -25,30 +23,30 @@ using VSParsers;
 
 namespace VSProvider
 {
-	public class Program
-	{
-		public static void Mains()
-		{
-			string file = "C:\\MSBuildProjects-beta\\VStudio.sln";
-			VSSolutionLoader rw = new VSSolutionLoader();
-			System.Windows.Forms.TreeView vv = rw.LoadProject(file);
+    public class Program
+    {
+        public static void Mains()
+        {
+            string file = "C:\\MSBuildProjects-beta\\VStudio.sln";
+            VSSolutionLoader rw = new VSSolutionLoader();
+            System.Windows.Forms.TreeView vv = rw.LoadProject(file);
 
-			VSSolution vs = vv.Tag as VSSolution;
+            VSSolution vs = vv.Tag as VSSolution;
 
-			MessageBox.Show("VSolution loaded.." + vs.Name);
+            MessageBox.Show("VSolution loaded.." + vs.Name);
 
-			vs.CompileSolution();
-		}
-	}
-
+            vs.CompileSolution();
+        }
+    }
 
     public class VSSolution
     {
-        
         private static readonly Type s_SolutionParser;
         private static readonly MethodInfo s_SolutionParser_parseSolution;
+
         //private static readonly PropertyInfo s_SolutionParser_projects;
         private static readonly FieldInfo s_SolutionParser_projects;
+
         private static readonly PropertyInfo s_SolutionParser_solutionReader;
 
         public List<VSProject> projects;
@@ -58,14 +56,11 @@ namespace VSProvider
 
         static VSSolution()
         {
-
             s_SolutionParser = Type.GetType("Microsoft.Build.Construction.SolutionParser, Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
             s_SolutionParser_solutionReader = s_SolutionParser.GetProperty("SolutionReader", BindingFlags.NonPublic | BindingFlags.Instance);
             //s_SolutionParser_projects = s_SolutionParser.GetProperty("Projects", BindingFlags.NonPublic | BindingFlags.Instance);
             s_SolutionParser_parseSolution = s_SolutionParser.GetMethod("ParseSolution", BindingFlags.NonPublic | BindingFlags.Instance);
-            
 
-            
             s_SolutionParser = Type.GetType("Microsoft.Build.Construction.SolutionFile, Microsoft.Build, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false, false);
             s_SolutionParser_solutionReader = s_SolutionParser.GetProperty("SolutionReader", BindingFlags.NonPublic | BindingFlags.Instance);
             s_SolutionParser_projects = s_SolutionParser.GetField("_projects", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -75,6 +70,7 @@ namespace VSProvider
         public VSSolution()
         {
         }
+
         public Solution SolutionParsed { get; set; }
 
         public void SetAutoResetEvent(bool b)
@@ -84,6 +80,7 @@ namespace VSProvider
                     vp.auto.Reset();
                 else vp.auto.Set();
         }
+
         public void SetAutoResetEventForProjectName(string ProjectName, bool b)
         {
             var vp = GetProjectbyName(ProjectName);
@@ -92,8 +89,8 @@ namespace VSProvider
             if (!b)
                 vp.auto.Reset();
             else vp.auto.Set();
-
         }
+
         public ManualResetEvent SynchronizedEventForCompileFile(string file)
         {
             var b = GetProjectbyCompileItem(file);
@@ -101,6 +98,7 @@ namespace VSProvider
                 MessageBox.Show("No project for " + file);
             return b.auto;
         }
+
         public VSProject GetProjectbyName(string name)
         {
             foreach (VSProject p in projects)
@@ -121,9 +119,10 @@ namespace VSProvider
             args.vp = vp;
             args.symbol = symbol;
 
-            if(OpenFile != null)
+            if (OpenFile != null)
                 OpenFile(null, args);
         }
+
         public void LoadFileFromProject(string content, VSProject vp, string name, ISymbol symbol = null, ReferenceLocation? Location = null, TextSpan? Span = null)
         {
             OpenFileEventArgs args = new OpenFileEventArgs();
@@ -134,17 +133,17 @@ namespace VSProvider
             args.symbol = symbol;
             args.Location = Location;
             args.Span = Span;
-            
-            if(OpenFile != null)
-                 OpenFile(null,args);
 
+            if (OpenFile != null)
+                OpenFile(null, args);
         }
+
         public static event EventHandler<OpenReferenceEventArgs> OpenReferences;
 
         public void OpenReferencesTool(string content, VSProject vp, string name, ISymbol symbol = null)
         {
             OpenReferenceEventArgs args = new OpenReferenceEventArgs();
-            
+
             args.filename = name;
             args.content = content;
             args.vp = vp;
@@ -153,6 +152,7 @@ namespace VSProvider
             if (OpenReferences != null)
                 OpenReferences(null, args);
         }
+
         public static event EventHandler<OpenReferenceEventArgs> OpenCallHierarchy;
 
         public void OpenCallHierarchyTool(string content, VSProject vp, string name, ISymbol symbol = null)
@@ -167,6 +167,7 @@ namespace VSProvider
             if (OpenCallHierarchy != null)
                 OpenCallHierarchy(null, args);
         }
+
         public static event EventHandler<OpenSearchEventArgs> OpenSearch;
 
         public void OpenSearchTool(string filename, SearchDomain searchDomain = SearchDomain.file)
@@ -175,10 +176,11 @@ namespace VSProvider
 
             args.filename = filename;
             args.searchDomain = searchDomain;
-        
+
             if (OpenSearch != null)
                 OpenSearch(null, args);
         }
+
         public static event EventHandler<OpenSyntaxGraphEventArgs> OpenSyntaxGraph;
 
         public static void OpenSyntaxGraphTool(XElement xe)
@@ -186,21 +188,21 @@ namespace VSProvider
             OpenSyntaxGraphEventArgs args = new OpenSyntaxGraphEventArgs();
 
             args.xe = xe;
-           
 
             if (OpenSyntaxGraph != null)
                 OpenSyntaxGraph(null, args);
         }
-        public void LoadErrors(VSProject vp, List<Diagnostic> errors)
+
+        public void LoadErrors(VSProject vp, List<Diagnostic> errors, string FileName)
         {
             OpenFileEventArgs args = new OpenFileEventArgs();
-           
+
+            args.filename = FileName;
             args.Errors = errors;
             args.vp = vp;
 
             if (Errors != null)
                 Errors(null, args);
-
         }
 
         public static event EventHandler<OpenFileEventArgs> Errors;
@@ -213,15 +215,16 @@ namespace VSProvider
 
             return null;
         }
+
         public string GetProjectExec(string name)
         {
             VSProject p = GetProjectbyName(name);
-            if(p != null)
-            return p.GetProjectExec();
+            if (p != null)
+                return p.GetProjectExec();
 
-            
             return "";
         }
+
         public VSProject GetProjectbyFileName(string name)
         {
             foreach (VSProject p in projects)
@@ -230,7 +233,8 @@ namespace VSProvider
 
             return null;
         }
-        object obs = new object();
+
+        private object obs = new object();
 
         public VSProject GetProjectbyCompileItem(string name)
         {
@@ -245,14 +249,30 @@ namespace VSProvider
                     ArrayList C = p.GetCompileItems();
 
                     foreach (string file in C)
-                        if (file.ToLower().Trim().Equals( name.ToLower().Trim()))
+                        if (file.ToLower().Trim().Equals(name.ToLower().Trim()))
                         {
-
                             return p;
                         }
                 }
 
                 return null;
+            }
+        }
+
+        public Dictionary<string, VSProject> GetCompileItemsOfProjects()
+        {
+            Dictionary<string, VSProject> d = new Dictionary<string, VSProject>();
+            {
+                foreach (VSProject p in projects)
+                {
+                    ArrayList C = p.GetCompileItems();
+
+                    foreach (string file in C)
+                        if (!d.ContainsKey(file))
+                            d.Add(file, p);
+                }
+
+                return d;
             }
         }
 
@@ -288,7 +308,6 @@ namespace VSProvider
             //    projects.Add(new VSProject(this, array.GetValue(i)));
             //}
 
-
             foreach (string s in array.Keys)
             {
                 projects.Add(new VSProject(this, array[s]));
@@ -316,6 +335,7 @@ namespace VSProvider
 
             return null;
         }
+
         public VSProject GetVSProjectByName(string name)
         {
             //file = file.Replace("\\\\", "\\");
@@ -324,12 +344,11 @@ namespace VSProvider
             {
                 if (name == p.Name)
                     return p;
-
-                
             }
 
             return null;
         }
+
         public string Name
         {
             get
@@ -367,7 +386,6 @@ namespace VSProvider
                 b.Add(ns);
                 foreach (INamedTypeSymbol s in ns.GetTypeMembers())
                 {
-                  
                     b.Add(s);
                 }
                 GetAllTypes(cc, ns, b);
@@ -411,6 +429,7 @@ namespace VSProvider
             Marshal.FreeHGlobal(ptr);
             return bytes;
         }
+
         public static object Deserialize(byte[] bytes, Type T)
         {
             int size = bytes.Length;
@@ -421,18 +440,35 @@ namespace VSProvider
             Marshal.FreeHGlobal(ptr);
             return obs;
         }
+
         public Dictionary<string, List<INamespaceOrTypeSymbol>> nts = new Dictionary<string, List<INamespaceOrTypeSymbol>>();
+
+        public List<INamespaceOrTypeSymbol> ProjecTypes(string FileName)
+        {
+            List<INamespaceOrTypeSymbol> ns = new List<INamespaceOrTypeSymbol>();
+            var vp = GetProjectbyCompileItem(FileName);
+            if (vp == null)
+            {
+                MessageBox.Show("no vp");
+                return ns;
+            }
+            if (named == null)
+                return ns;
+            if (named.ContainsKey(vp.FileName))
+                return named[vp.FileName];
+            return ns;
+        }
 
         public List<INamespaceOrTypeSymbol> GetAllTypes(string FileName)
         {
             if (string.IsNullOrEmpty(FileName))
             {
                 List<INamespaceOrTypeSymbol> bs = new List<INamespaceOrTypeSymbol>();
-                foreach(string s in nts.Keys)
+                foreach (string s in nts.Keys)
                 {
                     bs.AddRange(nts[s]);
                 }
-            
+
                 return bs;
             }
 
@@ -462,7 +498,7 @@ namespace VSProvider
                 return names;
             string file = vp.FileName;
             var b = GetAllTypes(file);
-            
+
             foreach (var name in b)
                 if (!names.Contains(name.Name))
                     names.Add(name.Name);
@@ -471,7 +507,6 @@ namespace VSProvider
 
         public ISymbol GetSymbol(ISymbol symbol)
         {
-
             foreach (Compilation c in comp.Values)
             {
                 List<INamespaceOrTypeSymbol> d = GetAllTypes(c);
@@ -479,7 +514,6 @@ namespace VSProvider
                 {
                     if (d.Select(s => s).Any(s => s.Equals(symbol)))
                         return d.Select(s => s).Where(p => p.Equals(symbol)).FirstOrDefault();
-                            
                 }
             }
             return null;
@@ -498,12 +532,12 @@ namespace VSProvider
         public Microsoft.CodeAnalysis.Solution solution { get; set; }
 
         public MSBuildWorkspace workspace { get; set; }
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void CompileSolution()
         {
-
             Stopwatch sw = Stopwatch.StartNew();
 
             //bool success = true;
@@ -514,7 +548,7 @@ namespace VSProvider
 
             var _ = typeof(Microsoft.CodeAnalysis.CSharp.Formatting.CSharpFormattingOptions);
 
-			comp = new Dictionary<string, Compilation>();
+            comp = new Dictionary<string, Compilation>();
 
             named = new Dictionary<string, List<INamespaceOrTypeSymbol>>();
 
@@ -558,51 +592,40 @@ namespace VSProvider
 
             foreach (ProjectId projectId in projectGraph.GetTopologicallySortedProjects())
             {
-                
-               
                 Compilation projectCompilation = solution.GetProject(projectId).GetCompilationAsync().Result;
 
-               
-                
                 Microsoft.CodeAnalysis.Project project = solution.GetProject(projectId);
-                
 
                 VSProject vv = this.GetProjectbyFileName(project.FilePath);
 
-                if(vv != null)
+                if (vv != null)
                 {
                     vv.Project = project;
                 }
 
                 comp.Add(project.FilePath, projectCompilation);
-                
+
                 List<INamespaceOrTypeSymbol> ns = GetAllTypes(project.FilePath);
 
-                
                 named.Add(project.FilePath, ns);
-                   }
+            }
             sw.Stop();
 
             System.Diagnostics.Debug.WriteLine("Time compilation: {0}ms", sw.Elapsed.TotalMilliseconds);
-
-       
-
         }
+
         public event EventHandler SolutionCompiled;
 
-        EventHandler OnSolutionCompiled;
-
+        private EventHandler OnSolutionCompiled;
 
         public Dictionary<DocumentId, Document> documents { get; set; }
-       
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="solutionFileName"></param>
         public async void CompileSolution(string solutionFileName)
         {
-
-
             documents = new Dictionary<DocumentId, Document>();
 
             Stopwatch sw = Stopwatch.StartNew();
@@ -659,7 +682,7 @@ namespace VSProvider
 
             foreach (ProjectId projectId in projectGraph.GetTopologicallySortedProjects())
             {
-               // Stopwatch sw = Stopwatch.StartNew();
+                // Stopwatch sw = Stopwatch.StartNew();
 
                 Compilation projectCompilation = solution.GetProject(projectId).GetCompilationAsync().Result;
 
@@ -668,9 +691,6 @@ namespace VSProvider
                 //System.Diagnostics.Debug.WriteLine("Time taken compilation creation: {0}ms", sw.Elapsed.TotalMilliseconds);
 
                 Microsoft.CodeAnalysis.Project project = solution.GetProject(projectId);
-
-               
-
 
                 //VSProject vv = this.GetProjectbyFileName(project.FilePath);
 
@@ -683,25 +703,20 @@ namespace VSProvider
 
                 //List<INamespaceOrTypeSymbol> ns = GetAllTypes(project.FilePath);
 
-
                 //named.Add(project.FilePath, ns);
-
-                
-
             }
             sw.Stop();
 
             System.Diagnostics.Debug.WriteLine("Time taken compilation creation: {0}ms", sw.Elapsed.TotalMilliseconds);
 
-
             //MessageBox.Show("Time of compilation - " + sw.Elapsed.TotalMilliseconds);
 
-            if(OnSolutionCompiled != null)
+            if (OnSolutionCompiled != null)
             {
                 OnSolutionCompiled(this, new EventArgs());
             }
-
         }
+
         private static SyntaxNode GetNode(SyntaxTree tree)
         {
             var syntaxRoot = tree.GetRoot();
@@ -760,6 +775,7 @@ namespace VSProvider
 
             return names;
         }
+
         private string ExtractMemberName(string name)
         {
             string names = name;
@@ -772,6 +788,7 @@ namespace VSProvider
 
             return names;
         }
+
         private enum methods
         {
             start,
@@ -857,14 +874,14 @@ namespace VSProvider
                                    typeof(object).Assembly.Location))
                               .AddSyntaxTrees(syntaxTree);
 
-           // var compilation = comp.Values.First();
+            // var compilation = comp.Values.First();
 
-           // compilation = compilation.AddSyntaxTrees(syntaxTree);
+            // compilation = compilation.AddSyntaxTrees(syntaxTree);
 
             var model = compilation.GetSemanticModel(syntaxTree);
             IEnumerable<MethodDeclarationSyntax> methods = root.DescendantNodes()
             .OfType<MethodDeclarationSyntax>().ToList();
-            
+
             IEnumerable<ConstructorDeclarationSyntax> constructors = root.DescendantNodes()
             .OfType<ConstructorDeclarationSyntax>().ToList();
             IEnumerable<PropertyDeclarationSyntax> properties = root.DescendantNodes()
@@ -873,10 +890,8 @@ namespace VSProvider
          .OfType<OperatorDeclarationSyntax>().ToList();
             IEnumerable<IndexerDeclarationSyntax> indexers = root.DescendantNodes()
         .OfType<IndexerDeclarationSyntax>().ToList();
-            IEnumerable<EventFieldDeclarationSyntax> events = root.DescendantNodes() 
+            IEnumerable<EventFieldDeclarationSyntax> events = root.DescendantNodes()
        .OfType<EventFieldDeclarationSyntax>().ToList();
-
-            
 
             foreach (var p in constructors)
 
@@ -899,23 +914,18 @@ namespace VSProvider
                     EventFieldDeclarationSyntax ev = p;
                     TypeSyntax type = ev.Declaration.Type;
                     SyntaxToken identifier = ev.Declaration.Variables[0].Identifier;
-                    
-                 
+
                     EventDeclarationSyntax evt = SyntaxFactory.EventDeclaration(type, identifier);
-                    var df = model.LookupSymbols(p.GetLocation().SourceSpan.Start, null,identifier.Text).FirstOrDefault();
-                    
-                    
+                    var df = model.LookupSymbols(p.GetLocation().SourceSpan.Start, null, identifier.Text).FirstOrDefault();
+
                     b.Add(/*model.GetDeclaredSymbol(p)*/ df);
                 }
             }
             //var cs = root.DescendantNodes().OfType<ClassDeclarationSyntax>().ToList();
 
-
             //foreach (var c in cs)
             //{
-
             //    var createCommandList = new List<ISymbol>();
-
 
             //    {
             //        b.Add(model.GetDeclaredSymbol(c));
@@ -924,11 +934,8 @@ namespace VSProvider
             //}
             //var ns = root.DescendantNodes().OfType<NamespaceDeclarationSyntax>().ToList();
 
-
             //foreach (var c in ns)
             //{
-
-
             //    {
             //        b.Add(model.GetDeclaredSymbol(c));
             //    }
@@ -936,9 +943,9 @@ namespace VSProvider
             //}
             return b;
         }
+
         public bool HasMembers(VSProject vp, string filename, string content)
         {
-
             List<ISymbol> b = new List<ISymbol>();
 
             if (comp == null)
@@ -956,8 +963,7 @@ namespace VSProvider
 
             if (syntaxTree == null)
                 return false;
-           
-           
+
             var semanticModel = cc.GetSemanticModel(syntaxTree);
 
             var root = syntaxTree.GetRoot();
@@ -970,29 +976,48 @@ namespace VSProvider
                 return true;
             else return false;
         }
-            public List<ISymbol> GetMembers(VSProject vp, string filename, string content)
+
+        public List<ISymbol> GetMembers(VSProject vp, string filename, string content = "")
         {
+            var id = solution.GetDocumentIdsWithFilePath(filename);
+            var project = solution.GetDocument(id[0]).Project;
+            var syntaxTree = solution.GetDocument(id[0]).GetSyntaxTreeAsync().Result;
+            var cc = project.GetCompilationAsync().Result;
+            if (content != "")
+            {
+                var newSyntaxTree = CSharpSyntaxTree.ParseText(content, CSharpParseOptions.Default, filename);
+                cc = cc.ReplaceSyntaxTree(syntaxTree, newSyntaxTree);
+                syntaxTree = newSyntaxTree;
+            }
 
             List<ISymbol> b = new List<ISymbol>();
 
-            if (comp == null)
-                return b;
+            //if (comp == null)
+            //    return b;
 
-            if (!comp.ContainsKey(vp.FileName))
-                return b;
+            //if (vp == null || vp.FileName == null)
+            //    vp = GetProjectbyCompileItem(filename);
 
-            Compilation cc = comp[vp.FileName];
+            //if (!comp.ContainsKey(vp.FileName))
+            //    return b;
 
-            SyntaxTree syntaxTree = cc.SyntaxTrees.Select(s => s).Where(t => t.FilePath == filename).FirstOrDefault();
+            //Compilation cc = comp[vp.FileName];
 
-            if (syntaxTree == null)
-                return b;
+            //SyntaxTree syntaxTree = cc.SyntaxTrees.Select(s => s).Where(t => t.FilePath == filename).FirstOrDefault();
 
-            SyntaxTree syntaxTreeUdated = CSharpSyntaxTree.ParseText(content, CSharpParseOptions.Default, filename);
+            //if (syntaxTree == null)
+            //    return b;
 
-            cc = cc.ReplaceSyntaxTree(syntaxTree, syntaxTreeUdated);
+            //if (content != "")
+            //{
+            //    SyntaxTree syntaxTreeUdated = CSharpSyntaxTree.ParseText(content, CSharpParseOptions.Default, filename);
 
-            syntaxTree = cc.SyntaxTrees.Select(s => s).Where(t => t.FilePath == filename).First();
+            //    cc = cc.ReplaceSyntaxTree(syntaxTree, syntaxTreeUdated);
+
+            //    comp[vp.FileName] = cc;
+
+            //    syntaxTree = cc.SyntaxTrees.Select(s => s).Where(t => t.FilePath == filename).First();
+            //}
 
             if (syntaxTree == null)
                 return b;
@@ -1002,102 +1027,125 @@ namespace VSProvider
             var root = syntaxTree.GetRoot();
             IEnumerable<MethodDeclarationSyntax> methods = root.DescendantNodes()
             .OfType<MethodDeclarationSyntax>().ToList();
-            
+
             var cs = root.DescendantNodes().OfType<ClassDeclarationSyntax>().ToList();
 
-            
             foreach (var c in cs)
             {
-
                 var createCommandList = new List<ISymbol>();
-                
+
                 //foreach (var d in c.Members)
                 {
                     b.Add(semanticModel.GetDeclaredSymbol(c));
                 }
-
             }
             var ns = root.DescendantNodes().OfType<NamespaceDeclarationSyntax>().ToList();
 
-            
             foreach (var c in ns)
             {
-
                 //var createCommandList = new List<ISymbol>();
-                
+
                 //foreach (var d in c.Members)
                 {
                     b.Add(semanticModel.GetDeclaredSymbol(c));
                 }
-
             }
             return b;
 
-                ////.Select(s => s.GetCompilation()
-                //               //                             .GetTypeByMetadataName(className))
-                //               //               .FirstOrDefault();
-                //var method = @c.GetMembers(methodName)
-                //                    .AsList()
-                //                    .Where(s => s.Kind == CommonSymbolKind.Method)
-                //                    .Cast<MethodSymbol>()
-                //                    .FirstOrDefault();
-                //var returnType = method.ReturnType as TypeSymbol;
-                //var returnTypeProperties = returnType.GetMembers()
-                //                                     .AsList()
-                //                                     .Where(s => s.Kind == SymbolKind.Property)
-                //                                     .Select(s => s.Name);
+            ////.Select(s => s.GetCompilation()
+            //               //                             .GetTypeByMetadataName(className))
+            //               //               .FirstOrDefault();
+            //var method = @c.GetMembers(methodName)
+            //                    .AsList()
+            //                    .Where(s => s.Kind == CommonSymbolKind.Method)
+            //                    .Cast<MethodSymbol>()
+            //                    .FirstOrDefault();
+            //var returnType = method.ReturnType as TypeSymbol;
+            //var returnTypeProperties = returnType.GetMembers()
+            //                                     .AsList()
+            //                                     .Where(s => s.Kind == SymbolKind.Property)
+            //                                     .Select(s => s.Name);
+        }
 
+        public ISymbol GetSymbolAtLocation(string filename, int position, string content = "")
+        {
+            var id = solution.GetDocumentIdsWithFilePath(filename);
+            var project = solution.GetDocument(id[0]).Project;
+            var syntaxTree = solution.GetDocument(id[0]).GetSyntaxTreeAsync().Result;
+            var cc = project.GetCompilationAsync().Result;
+            if (content != "")
+            {
+                var newSyntaxTree = CSharpSyntaxTree.ParseText(content, CSharpParseOptions.Default, filename);
+                cc = cc.ReplaceSyntaxTree(syntaxTree, newSyntaxTree);
+                syntaxTree = newSyntaxTree;
+            }
+            SemanticModel model = null;
+            model = cc.GetSemanticModel(syntaxTree);
 
-          
+            var d = SymbolFinder.FindSymbolAtPositionAsync(model, position, solution.Workspace).Result;
 
+            return d;
         }
 
         public ISymbol GetSymbolAtLocation(VSProject vp, string filename, int position, string content = "")
         {
-            if (comp == null)
-                return null;
-
-
-            
-                Compilation cc = null;
-                SyntaxTree syntaxTree = null;
-                SemanticModel model = null;
-
-            if (comp == null || vp == null || string.IsNullOrEmpty(vp.FileName))
+            var id = solution.GetDocumentIdsWithFilePath(filename);
+            var project = solution.GetDocument(id[0]).Project;
+            var syntaxTree = solution.GetDocument(id[0]).GetSyntaxTreeAsync().Result;
+            var cc = project.GetCompilationAsync().Result;
+            if (content != "")
             {
+                var newSyntaxTree = CSharpSyntaxTree.ParseText(content, CSharpParseOptions.Default, filename);
+                cc = cc.ReplaceSyntaxTree(syntaxTree, newSyntaxTree);
+                syntaxTree = newSyntaxTree;
             }
-            else
-            {
-                cc = comp[vp.FileName];
-                syntaxTree = null;
-                model = null;
+            SemanticModel model = null;
+            model = cc.GetSemanticModel(syntaxTree);
 
+            var d = SymbolFinder.FindSymbolAtPositionAsync(model, position, solution.Workspace).Result;
 
+            return d;
 
-                cc = comp[vp.FileName];
-                syntaxTree = cc.SyntaxTrees.Select(s => s).Where(t => t.FilePath == filename).First();
+            //if (comp == null)
+            //    return null;
 
-                if (!string.IsNullOrEmpty(content))
-                {
-                    SyntaxTree newSyntaxTree = CSharpSyntaxTree.ParseText(content, null, filename);
-                    
-                    cc = cc.ReplaceSyntaxTree(syntaxTree, newSyntaxTree);
-                    syntaxTree = cc.SyntaxTrees.Select(s => s).Where(t => t.FilePath == filename).First();
-                }
+            //    Compilation cc = null;
+            //    SyntaxTree syntaxTree = null;
+            //    SemanticModel model = null;
 
-                model = cc.GetSemanticModel(syntaxTree);
+            //if (comp == null || vp == null || string.IsNullOrEmpty(vp.FileName))
+            //{
+            //}
+            //else
+            //{
+            //    cc = comp[vp.FileName];
+            //    syntaxTree = null;
+            //    model = null;
 
-                var d = SymbolFinder.FindSymbolAtPositionAsync(model, position, solution.Workspace).Result;
+            //    cc = comp[vp.FileName];
+            //    syntaxTree = cc.SyntaxTrees.Select(s => s).Where(t => t.FilePath == filename).First();
 
-                return d;
-             
+            //    if (!string.IsNullOrEmpty(content))
+            //    {
+            //        SyntaxTree newSyntaxTree = CSharpSyntaxTree.ParseText(content, null, filename);
 
-            }
-            
+            //        cc = cc.ReplaceSyntaxTree(syntaxTree, newSyntaxTree);
+            //        syntaxTree = cc.SyntaxTrees.Select(s => s).Where(t => t.FilePath == filename).First();
+            //    }
 
-            return null;
+            //    model = cc.GetSemanticModel(syntaxTree);
+
+            //    var d = SymbolFinder.FindSymbolAtPositionAsync(model, position, solution.Workspace).Result;
+
+            //    return d;
+
+            //}
+
+            //return null;
         }
-        object obsc = new object();
+
+        private object obsc = new object();
+
         public void UpdateSyntaxTree(string FileToLoad, string content)
         {
             lock (obsc)
@@ -1114,7 +1162,6 @@ namespace VSProvider
                 }
                 else
                 {
-
                     cc = comp[vp.FileName];
                     syntaxTree = null;
                     model = null;
@@ -1124,41 +1171,63 @@ namespace VSProvider
 
                     SyntaxTree newSyntaxTree = CSharpSyntaxTree.ParseText(content, CSharpParseOptions.Default, FileToLoad);
 
-                    
-                    
-                    Document d = solution.GetDocument(syntaxTree);
-                   // if(solution.ContainsDocument(d.Id))
-                   // solution = solution.RemoveDocument(d.Id);
-                    solution = solution.WithDocumentSyntaxRoot(d.Id, newSyntaxTree.GetRoot());
+                    //Document d = solution.GetDocument(syntaxTree);
 
-                    var st = solution.GetDocument(d.Id).GetSyntaxTreeAsync().Result;
-                    if (syntaxTree != null)
-                        cc = cc.ReplaceSyntaxTree(syntaxTree, st);
-                    else cc.AddSyntaxTrees(newSyntaxTree);
+                    //if (d == null)
+                    {
+                        comp[vp.FileName] = cc.ReplaceSyntaxTree(syntaxTree, newSyntaxTree);
+                    }
+                    //else
+                    //{
+                    //    // if(solution.ContainsDocument(d.Id))
+                    //    // solution = solution.RemoveDocument(d.Id);
+                    //    solution = solution.WithDocumentSyntaxRoot(d.Id, newSyntaxTree.GetRoot());
 
-                    d = solution.GetDocument(d.Id);
+                    //    var st = solution.GetDocument(d.Id).GetSyntaxTreeAsync().Result;
+                    //    if (syntaxTree != null)
+                    //        cc = cc.ReplaceSyntaxTree(syntaxTree, st);
+                    //    else cc = cc.AddSyntaxTrees(newSyntaxTree);
 
-                    cc = d.Project.GetCompilationAsync().Result;
-                    comp[vp.FileName] = cc;
+                    //    d = solution.GetDocument(d.Id);
+
+                    //    cc = d.Project.GetCompilationAsync().Result;
+
+                    //    comp[vp.FileName] = cc;
+                    //}
                 }
             }
         }
-        public SyntaxTree GetSyntaxTree(string filename)
+
+        public SyntaxTree GetSyntaxTree(string filename, string content = "")
         {
-            VSProject vp = GetProjectbyCompileItem(filename);
+            //VSProject vp = GetProjectbyCompileItem(filename);
 
-            if (vp == null || comp == null)
-                return null;
+            //if (vp == null || comp == null)
+            //    return null;
 
-            if (!comp.ContainsKey(vp.FileName))
-                return null;
+            //if (!comp.ContainsKey(vp.FileName))
+            //    return null;
 
-            Compilation c = comp[vp.FileName];
+            //Compilation c = comp[vp.FileName];
 
-            SyntaxTree s = c.SyntaxTrees.Select(b => b).Where(d => d.FilePath == filename).FirstOrDefault();
-            
-            return s;
+            //SyntaxTree s = c.SyntaxTrees.Select(b => b).Where(d => d.FilePath == filename).FirstOrDefault();
+
+            //return s;
+
+            var id = solution.GetDocumentIdsWithFilePath(filename);
+            var project = solution.GetDocument(id[0]).Project;
+            var syntaxTree = solution.GetDocument(id[0]).GetSyntaxTreeAsync().Result;
+            var cc = project.GetCompilationAsync().Result;
+            if (content != "")
+            {
+                var newSyntaxTree = CSharpSyntaxTree.ParseText(content, CSharpParseOptions.Default, filename);
+                cc = cc.ReplaceSyntaxTree(syntaxTree, newSyntaxTree);
+                syntaxTree = newSyntaxTree;
+            }
+
+            return syntaxTree;
         }
+
         public SemanticModel GetSemanticModel(string filename)
         {
             VSProject vp = GetProjectbyCompileItem(filename);
@@ -1175,6 +1244,7 @@ namespace VSProvider
 
             return c.GetSemanticModel(s);
         }
+
         public string GetSyntaxTreeText(string filename)
         {
             string content = "";
@@ -1184,8 +1254,8 @@ namespace VSProvider
             if (vp == null)
                 return content;
 
-            if(!comp.ContainsKey(vp.FileName))
-            return content;
+            if (!comp.ContainsKey(vp.FileName))
+                return content;
 
             Compilation c = comp[vp.FileName];
 
@@ -1195,15 +1265,17 @@ namespace VSProvider
                 return content;
             return s.GetText().ToString();
         }
+
         public ISymbol GetSymbolAtLocation(int offset, string FileToLoad)
         {
             VSProject vp = GetProjectbyCompileItem(FileToLoad);
 
             ISymbol s = GetSymbolAtLocation(vp, FileToLoad, offset);
-            
+
             return s;
         }
-        public IEnumerable<ReferencedSymbol> FindReferences(int offset, string FileToLoad)
+
+        public IEnumerable<ReferencedSymbol> FindReferences(int offset, string FileToLoad, Func<Task<int>> dereferences = null)
         {
             VSProject vp = GetProjectbyCompileItem(FileToLoad);
 
@@ -1211,108 +1283,158 @@ namespace VSProvider
             if (s == null)
                 return null;
 
-            IEnumerable<ReferencedSymbol> r = GetAllSymbolReferences(s, FileToLoad, vp);
+            IEnumerable<ReferencedSymbol> r = GetAllSymbolReferences(s, FileToLoad, vp, dereferences).Result;
 
             if (r != null)
             {
                 List<ReferencedSymbol> list = r.ToList();
-                
             }
             return r;
         }
-        public IEnumerable<ReferencedSymbol> GetAllSymbolReferences(ISymbol symbol, string filename, VSProject vp)
+
+        public static Func<Task<int>> Dereference { get; set; }
+
+        public async Task<IEnumerable<ReferencedSymbol>> GetAllSymbolReferences(ISymbol symbol, string filename, VSProject vp, Func<Task<int>> dereferences = null)
         {
             IEnumerable<ReferencedSymbol> references = null;
 
             List<ReferencedSymbol> referenced = new List<ReferencedSymbol>();
 
-            if (comp == null)
-                return references;
+            //if (comp == null)
+            //    return references;
+            //{
+            //    Compilation cc = null;
+            //    SyntaxTree syntaxTree = null;
+            //    SemanticModel model = null;
 
-        
+            //    if (comp == null || vp == null || string.IsNullOrEmpty(vp.FileName))
+            //    {
+            //    }
+            //    else {
+            //        cc = comp[vp.FileName];
+            //        syntaxTree = null;
+            //        model = null;
+
+            //        cc = comp[vp.FileName];
+            //        syntaxTree = cc.SyntaxTrees.Select(s => s).Where(t => t.FilePath == filename).First();
+            //        model = cc.GetSemanticModel(syntaxTree);
+            //        //if (symbol.Name == ".ctor")
+            //        //{
+            //        //    var ns = syntaxTree.GetRoot().DescendantNodes().OfType<ConstructorDeclarationSyntax>().Where(s => s.Identifier.ToString() == symbol.Name).FirstOrDefault();
+            //        //}
+            //        //else
+            //        //{
+            //        //    var ns = syntaxTree.GetRoot().DescendantNodes().OfType<MethodDeclarationSyntax>().Where(s => s.Identifier.ToString() == symbol.Name).FirstOrDefault();
+            //        //    if (ns == null)
+            //        //        MessageBox.Show("Syntax Tree updated");
+            //        //}
+            //        //if (symbol.Locations != null)
+            //        //    if (symbol.Locations.Count() > 0)
+            //        //        if (symbol.Locations[0].SourceTree != null)
+            //        //        {
+            //        //            int start = symbol.Locations[0].GetLineSpan().Span.Start.Line;
+
+            //        //            var d = SymbolFinder.FindSymbolAtPositionAsync(model, start, solution.Workspace).Result;
+
+            //        //            if(d == null)
+            //        //            {
+            //        //                MessageBox.Show("SyntaxTree update needed...");
+            //        //            }
+            //        //            else
+            //        //            if (d != null)
+            //        //            {
+            //        //                if (d.Locations[0].GetLineSpan().Span.Start.Line != start)
+            //        //                {
+            //        //                    MessageBox.Show("SyntaxTree update needed...");
+            //        //                }
+            //        //            }
+            //        //        }
+            //}
+
+            var id = solution.GetDocumentIdsWithFilePath(filename);
+            var project = solution.GetDocument(id[0]).Project;
+            var syntaxTree = solution.GetDocument(id[0]).GetSyntaxTreeAsync().Result;
+            var cc = project.GetCompilationAsync().Result;
+            SemanticModel model = null;
+            model = cc.GetSemanticModel(syntaxTree);
+
+            IEnumerable<SyntaxNode> methodInvocations = null;
+
+            ISymbol methodSymbol = null;
+
+            SyntaxNode methodInvocation = null;
+
+            if (symbol is IMethodSymbol)
             {
-                Compilation cc = null;
-                SyntaxTree syntaxTree = null;
-                SemanticModel model = null;
+                IMethodSymbol m = symbol as IMethodSymbol;
 
-                if (comp == null || vp == null || string.IsNullOrEmpty(vp.FileName))
+                if (m.Name == ".ctor")
                 {
-                }
-                else {
-                    cc = comp[vp.FileName];
-                    syntaxTree = null;
-                    model = null;
-
-                    cc = comp[vp.FileName];
-                    syntaxTree = cc.SyntaxTrees.Select(s => s).Where(t => t.FilePath == filename).First();
-                    model = cc.GetSemanticModel(syntaxTree);
-
-            }
-                
-                IEnumerable<SyntaxNode> methodInvocations = null;
-
-                ISymbol methodSymbol = null;
-
-                SyntaxNode methodInvocation = null;
-
-                if (symbol is IMethodSymbol)
-                {
-
-                    IMethodSymbol m = symbol as IMethodSymbol;
-
-                    if (m.Name == ".ctor")
-                    {
-                        if (comp == null || vp == null || string.IsNullOrEmpty(vp.FileName))
-                            methodSymbol = symbol;
-                        else
-                        {
-                            methodInvocations = syntaxTree.GetRootAsync().Result.DescendantNodes().OfType<ConstructorDeclarationSyntax>().Where(s => s.Identifier.Text == symbol.ContainingType.Name);
-                            methodInvocation = methodInvocations.FirstOrDefault();
-                            if (methodInvocation == null)
-                                return references;
-                            methodSymbol = model.GetDeclaredSymbol(methodInvocation);
-                        }
-                        references = SymbolFinder.FindReferencesAsync(methodSymbol, this.solution).Result;
-                        referenced.AddRange(references);
-
-                    }
+                    if (comp == null || vp == null || string.IsNullOrEmpty(vp.FileName))
+                        methodSymbol = symbol;
                     else
                     {
-                        if (comp == null || vp == null || string.IsNullOrEmpty(vp.FileName))
-                            methodSymbol = symbol;
-                        else
-                        {
-                            methodInvocations = syntaxTree.GetRootAsync().Result.DescendantNodes().OfType<MethodDeclarationSyntax>().Where(s => s.Identifier.Text == symbol.Name);
-                            methodInvocation = methodInvocations.FirstOrDefault();
-                            if (methodInvocation == null)
-                                return references;
-                            methodSymbol = model.GetDeclaredSymbol(methodInvocation);
-                        }
-                        references = SymbolFinder.FindReferencesAsync(methodSymbol, this.solution).Result;
-                        referenced.AddRange(references);
+                        methodInvocations = syntaxTree.GetRootAsync().Result.DescendantNodes().OfType<ConstructorDeclarationSyntax>().Where(s => s.Identifier.Text == symbol.ContainingType.Name);
+                        methodInvocation = methodInvocations.FirstOrDefault();
+                        if (methodInvocation == null)
+                            return references;
+                        methodSymbol = model.GetDeclaredSymbol(methodInvocation);
                     }
 
+                    references = (SymbolFinder.FindReferencesAsync(methodSymbol, this.solution)).Result;
 
+                    referenced.AddRange(references);
                 }
                 else
                 {
-                    references = SymbolFinder.FindReferencesAsync(symbol, this.solution).Result;
+                    if (comp == null || vp == null || string.IsNullOrEmpty(vp.FileName))
+                        methodSymbol = symbol;
+                    else
+                    {
+                        methodInvocations = syntaxTree.GetRootAsync().Result.DescendantNodes().OfType<MethodDeclarationSyntax>().Where(s => s.Identifier.Text == symbol.Name);
+                        methodInvocation = methodInvocations.FirstOrDefault();
+                        if (methodInvocation == null)
+                            return references;
+                        methodSymbol = model.GetDeclaredSymbol(methodInvocation);
+                    }
+                    try
+                    {
+                        references = SymbolFinder.FindReferencesAsync(methodSymbol, this.solution).Result;
+                    }
+                    catch (Exception ex)
+                    {
+                        if (dereferences != null)
+                            await dereferences();
+                    }
                     referenced.AddRange(references);
                 }
             }
+            else
+            {
+                try
+                {
+                    references = SymbolFinder.FindReferencesAsync(symbol, this.solution).Result;
+                }
+                catch (Exception ex)
+                {
+                    if (dereferences != null)
+                        await dereferences();
+                }
+                referenced.AddRange(references);
+            }
+
             return referenced;
-            
         }
 
         public Document GetDocument(string FileName, string filename)
         {
-
             Compilation cc = comp[FileName];
 
             SyntaxTree syntaxTree = cc.SyntaxTrees.Select(s => s).Where(t => t.FilePath == filename).First();
 
             return solution.GetDocument(syntaxTree);
         }
+
         public List<Diagnostic> GetParserErrors(VSProject vp, string filename, string content)
         {
             List<ISymbol> b = new List<ISymbol>();
@@ -1325,8 +1447,10 @@ namespace VSProvider
 
             cc = cc.ReplaceSyntaxTree(syntaxTree, syntaxTreeUdated);
 
+            comp[vp.FileName] = cc;
+
             syntaxTree = cc.SyntaxTrees.Select(s => s).Where(t => t.FilePath == filename).First();
-            
+
             if (syntaxTree == null)
                 return new List<Diagnostic>();
 
@@ -1335,8 +1459,7 @@ namespace VSProvider
             return semanticModel.GetDiagnostics().ToList();
         }
 
-
-            public List<ISymbol> GetCodeCompletion(VSProject vp, string filename, string content, int offset, string name, string names)
+        public List<ISymbol> GetCodeCompletion(VSProject vp, string filename, string content, int offset, string name, string names)
         {
             List<ISymbol> b = new List<ISymbol>();
 
@@ -1357,7 +1480,6 @@ namespace VSProvider
 
             var semanticModel = cc.GetSemanticModel(syntaxTree);
 
-            
             if (name == "this")
             {
                 var nv = semanticModel.LookupNamespacesAndTypes(offset).Select(s => s).Where(t => t.Kind == SymbolKind.NamedType).FirstOrDefault();
@@ -1382,9 +1504,9 @@ namespace VSProvider
                     name = ExtractMethodName(name);
                     me = methods.start;
                 }
-                
+
                 var symbols = semanticModel.LookupSymbols(offset/*, includeReducedExtensionMethods: true*/).Select(s => s).Where(t => t.Name == name);
-                
+
                 if (symbols.Count() <= 0)
                 {
                     var np = semanticModel.LookupNamespacesAndTypes(offset).Select(s => s).Where(t => t.Kind == SymbolKind.NamedType).FirstOrDefault();
@@ -1404,7 +1526,7 @@ namespace VSProvider
                 if (symbols != null && symbols.Count() > 0 && symbols.FirstOrDefault() != null && symbols.FirstOrDefault().ContainingType == null)
                 {
                     var d = symbols.FirstOrDefault();
-                    if(d is INamedTypeSymbol)
+                    if (d is INamedTypeSymbol)
                     {
                         INamedTypeSymbol ns = (INamedTypeSymbol)d;
                         return ns.GetMembers().OrderBy(f => f.Name).GroupBy(f => f.Name, f => f).Select(g => g.First()).ToList();
@@ -1415,21 +1537,20 @@ namespace VSProvider
                 {
                     var d = symbols.FirstOrDefault();
 
-                    if(d != null && (d.Kind == SymbolKind.Parameter || d.Kind == SymbolKind.Local)){
-
-                        if(d is IParameterSymbol)
+                    if (d != null && (d.Kind == SymbolKind.Parameter || d.Kind == SymbolKind.Local))
+                    {
+                        if (d is IParameterSymbol)
                         {
                             IParameterSymbol v = (IParameterSymbol)d;
                             return v.Type.GetMembers().Concat(BaseClassMembers(v.Type)).OrderBy(f => f.Name).GroupBy(f => f.Name, f => f).Select(g => g.First()).ToList();
-                        }     
-                        if(d is ILocalSymbol)
+                        }
+                        if (d is ILocalSymbol)
                         {
                             ILocalSymbol v = (ILocalSymbol)d;
                             return v.Type.GetMembers().OrderBy(f => f.Name).GroupBy(f => f.Name, f => f).Select(g => g.First()).ToList();
                         }
-
                     }
-                    else 
+                    else
                     if (d != null && d.ContainingType != null)
                     {
                         var property = d.ContainingType.GetMembers()
@@ -1441,10 +1562,10 @@ namespace VSProvider
                         if (property != null)
                         {
                             d = property.Type;
-                            
-                            if(property.Type.TypeKind == TypeKind.Enum)
 
-                            return property.Type.GetMembers().ToList();
+                            if (property.Type.TypeKind == TypeKind.Enum)
+
+                                return property.Type.GetMembers().ToList();
 
                             return property.Type.GetMembers().Concat(BaseClassMembers(property.Type)).OrderBy(f => f.Name).GroupBy(f => f.Name, f => f).Select(g => g.First()).ToList();
                         }
@@ -1506,7 +1627,10 @@ namespace VSProvider
                         if (br != null && br.Count > 0)
                             return br;
                     }
-                    var types = semanticModel.LookupNamespacesAndTypes(offset).Select(s => s).Where(t => t.Kind == SymbolKind.NamedType).First().ContainingType.GetMembers().Select(s => s).Where(t => t.Name == name).OrderBy(f => f.Name).GroupBy(f => f.Name, f => f).Select(g => g.FirstOrDefault()).ToList();
+                    List<ISymbol> types = new List<ISymbol>();
+                    var types_enum = semanticModel.LookupNamespacesAndTypes(offset).Select(s => s).Where(t => t.Kind == SymbolKind.NamedType).First().ContainingType.GetMembers().Select(s => s).Where(t => t.Name == name).OrderBy(f => f.Name).GroupBy(f => f.Name, f => f).Select(g => g.FirstOrDefault());//.ToList();
+                    if (types_enum != null)
+                        types = types_enum.ToList();
                     //      types.AddRange(named[vp.FileName].Select(s => s).OrderBy(f => f.Name).GroupBy(f => f.Name, f => f).Select(g => g.First()).ToList());
 
                     var ns = semanticModel.LookupNamespacesAndTypes(offset).Select(s => s).Where(t => t.Kind == SymbolKind.Namespace).ToList();
@@ -1514,7 +1638,7 @@ namespace VSProvider
                     return types;
                 }
             }
-             
+
             var type = semanticModel.LookupSymbols(offset).OrderBy(f => f.Name).GroupBy(f => f.Name, f => f).Select(g => g.First()).ToList();
             var ps = semanticModel.LookupNamespacesAndTypes(offset).Select(s => s).Where(t => t.Kind == SymbolKind.Namespace).ToList();
             type.AddRange(ps);
@@ -1587,9 +1711,10 @@ namespace VSProvider
 
             return E;
         }
+
         public List<LocationSource> FindString(string texttofind, string content, string filename, string files, string block, SearchDomain searchDomain = SearchDomain.file)
         {
-            List<LocationSource> locations = new List<LocationSource>(); 
+            List<LocationSource> locations = new List<LocationSource>();
 
             if (searchDomain == SearchDomain.openfiles)
             {
@@ -1611,7 +1736,7 @@ namespace VSProvider
                     content = syntaxTree.GetText().ToString();
                     char[] tt = texttofind.ToCharArray();
                     char[] te = content.ToCharArray();
-                    
+
                     var s = finder.TW(tt, tt.Length, te, te.Length);
                     foreach (int c in s)
                     {
@@ -1620,13 +1745,12 @@ namespace VSProvider
                         LocationSource ls = LocationSource.Create(ts, syntaxTree);
                         locations.Add(ls);
                     }
-                   
                 }
                 return locations;
             }
-            else 
+            else
             {
-                if(searchDomain == SearchDomain.file)
+                if (searchDomain == SearchDomain.file)
                 {
                     if (string.IsNullOrEmpty(texttofind) || string.IsNullOrEmpty(filename))
                         return locations;
@@ -1634,7 +1758,7 @@ namespace VSProvider
                     char[] te = content.ToCharArray();
                     Finder finder = new Finder();
                     var s = finder.TW(tt, tt.Length, te, te.Length);
-                    foreach(int c in s)
+                    foreach (int c in s)
                     {
                         TextSpan ts = new TextSpan(c, texttofind.Length);
                         LinePositionSpan lp = new LinePositionSpan();
@@ -1643,7 +1767,7 @@ namespace VSProvider
                     }
                     return locations;
                 }
-                else if(searchDomain == SearchDomain.project)
+                else if (searchDomain == SearchDomain.project)
                 {
                     VSProject vp = GetProjectbyCompileItem(filename);
                     Finder finder = new Finder();
@@ -1669,7 +1793,6 @@ namespace VSProvider
                 }
                 else if (searchDomain == SearchDomain.solution)
                 {
-                    
                     Finder finder = new Finder();
                     foreach (VSProject vp in Projects)
                     {
@@ -1697,6 +1820,7 @@ namespace VSProvider
             }
             return locations;
         }
+
         public ArrayList GetDependencyOrder(ArrayList T)
         {
             ArrayList L = new ArrayList();
@@ -1935,8 +2059,6 @@ namespace VSProvider
 
             File.WriteAllText(file, content);
         }
-
-        
     }
 
     public class vsproject
@@ -2019,21 +2141,22 @@ namespace VSProvider
     {
         public ArrayList P { get; set; }
     }
+
     public class OpenFileEventArgs : EventArgs
     {
         public int Threshold { get; set; }
         public string filename { get; set; }
+        public string Subtype { get; set; }
         public string content { get; set; }
         public VSProject vp { get; set; }
         public ISymbol symbol { get; set; }
         public List<Diagnostic> Errors { get; set; }
         public ReferenceLocation? Location { get; set; }
         public TextSpan? Span { get; set; }
-        
     }
+
     public class OpenReferenceEventArgs : EventArgs
     {
-        
         public string filename { get; set; }
         public string content { get; set; }
         public VSProject vp { get; set; }
@@ -2042,12 +2165,12 @@ namespace VSProvider
         public ReferenceLocation? Location { get; set; }
         public int Line { get; set; }
     }
+
     public class OpenSyntaxGraphEventArgs : EventArgs
     {
-
         public XElement xe { get; set; }
-      
     }
+
     public class OpenSearchEventArgs : EventArgs
     {
         public string texttofind { get; set; }
@@ -2055,6 +2178,7 @@ namespace VSProvider
         public SearchDomain searchDomain { get; set; }
         public List<string> openfiles { get; set; }
     }
+
     public class LocationSource
     {
         public LocationSource(TextSpan t, SyntaxTree s)
@@ -2062,10 +2186,12 @@ namespace VSProvider
             textSpan = t;
             Source = s;
         }
+
         public static LocationSource Create(TextSpan t, SyntaxTree s)
         {
             return new VSProvider.LocationSource(t, s);
         }
+
         public TextSpan textSpan { get; set; }
         public SyntaxTree Source { get; set; }
     }

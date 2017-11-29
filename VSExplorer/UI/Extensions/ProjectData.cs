@@ -57,8 +57,15 @@ namespace WinExplorer
             else
                 return value.ToString();
         }
-        private bool ShouldSerializeTe() { return false; }
-        private void ResetTe() {  }
+
+        private bool ShouldSerializeTe()
+        {
+            return false;
+        }
+
+        private void ResetTe()
+        {
+        }
     }
 
     public enum BuildAction
@@ -108,23 +115,19 @@ namespace WinExplorer
 
     public class ProjectFileData : object
     {
-
         [DisplayName("Build Action")]
         [Description("How the file relates to the build and deployment processes")]
         [TypeConverter(typeof(EnumConverters))]
         public BuildAction ba { get; set; }
-
 
         [DisplayName("Copy To Output Directory")]
         [Description("Specifies the source file will be copied to the output directory")]
         [TypeConverter(typeof(EnumConverters))]
         public CopyToOutput cp { get; set; }
 
-
         [DisplayName("Custom Tool")]
         [Description("Specifies the tool that transforms a file at design time and places the output of that transformation into another For example a dataset (.xsd) file comes with default custom tool")]
         public string ts { get; set; }
-
 
         [DisplayName("Custom Tool Namespace")]
         [Description("The namespace into which the output of the custom tool is placed")]
@@ -137,19 +140,20 @@ namespace WinExplorer
         [DisplayName("Full Path")]
         [Description("Location of the file")]
         public string filePath { get; }
+
         private object m_data;
 
-        [DisplayName("Data")]
-        [Description("Data")]
-        [TypeConverter(typeof(ProjectItemInfoConverter))]
-        public object data
-        {
-            get { return m_data; }
-            set { m_data = value; }
-        }
+        //[DisplayName("Data")]
+        //[Description("Data")]
+        //[TypeConverter(typeof(ProjectItemInfoConverter))]
+        //public object data
+        //{
+        //    get { return m_data; }
+        //    set { m_data = value; }
+        //}
         public ProjectFileData(object obs)
         {
-            this.data = obs;
+            //    this.data = obs;
             VSParsers.ProjectItemInfo p = obs as VSParsers.ProjectItemInfo;
             if (p == null)
                 return;
@@ -158,19 +162,46 @@ namespace WinExplorer
             file = Path.GetFileName(p.ps.FileName);
             filePath = Path.GetDirectoryName(p.ps.FileName);
         }
-        private void ResetfilePath(){ }
-        private bool ShouldSerializefilePath(){ return false; }
-        private void Resetfile(){ }
-        private bool ShouldSerializefile(){ return false; }
-        private void ResetCopyba() { }
-        private bool ShouldSerializeba() { return false; }
-        private void ResetCopycp(){ }
-        private bool ShouldSerializecp(){ return false; }
+
+        private void ResetfilePath()
+        {
+        }
+
+        private bool ShouldSerializefilePath()
+        {
+            return false;
+        }
+
+        private void Resetfile()
+        {
+        }
+
+        private bool ShouldSerializefile()
+        {
+            return false;
+        }
+
+        private void ResetCopyba()
+        {
+        }
+
+        private bool ShouldSerializeba()
+        {
+            return false;
+        }
+
+        private void ResetCopycp()
+        {
+        }
+
+        private bool ShouldSerializecp()
+        {
+            return false;
+        }
     }
 
     public class ProjectReferenceItem : object
     {
-
         [DisplayName("(Name)")]
         [Description("Display name of the reference.")]
         public string Name { get; set; }
@@ -228,6 +259,7 @@ namespace WinExplorer
         public bool Version { get; set; }
 
         private object m_data;
+
         [DisplayName("Data")]
         [Description("Data")]
         [TypeConverter(typeof(ProjectItemInfoConverter))]
@@ -236,6 +268,7 @@ namespace WinExplorer
             get { return m_data; }
             set { m_data = value; }
         }
+
         public ProjectReferenceItem(object obs)
         {
             this.data = obs;
@@ -246,43 +279,146 @@ namespace WinExplorer
             if (p.ps == null)
                 return;
             Name = p.Include;
-           
         }
-        private void ResetfileName() { }
-        private bool ShouldSerializeName() { return false; }
-        private void ResetAliases() { }
-        private bool ShouldSerializeAliases() { return false; }
-        private void ResetfileCopyLocal() { }
-        private bool ShouldSerializeCopyLocal() { return false; }
-        private void ResetCulture() { }
-        private bool ShouldSerializeCulture() { return false; }
-        private void ResetfileDescription() { }
-        private bool ShouldSerializeDescription() { return false; }
-        private void ResetInterop() { }
-        private bool ShouldSerializeInterop() { return false; }
-        private void ResetfileFileType() { }
-        private bool ShouldSerializeFileType() { return false; }
-        private void ResetIdentity() { }
-        private bool ShouldSerializeIdentity() { return false; }
-        private void ResetfilePath() { }
-        private bool ShouldSerializePath() { return false; }
-        private void ResetResolved() { }
-        private bool ShouldSerializeResolved() { return false; }
-        private void ResetfileRuntime() { }
-        private bool ShouldSerializeRuntime() { return false; }
-        private void ResetSpecificVersion() { }
-        private bool ShouldSerializeSpecificVersion() { return false; }
-        private void ResetfileStrongName() { }
-        private bool ShouldSerializeStrongName() { return false; }
-        private void ResetVersion() { }
-        private bool ShouldSerializeVersion() { return false; }
-        private void ResetData() { }
-        private bool ShouldSerializeData() { return false; }
 
+        private void ResetfileName()
+        {
+        }
+
+        private bool ShouldSerializeName()
+        {
+            return false;
+        }
+
+        private void ResetAliases()
+        {
+        }
+
+        private bool ShouldSerializeAliases()
+        {
+            return false;
+        }
+
+        private void ResetfileCopyLocal()
+        {
+        }
+
+        private bool ShouldSerializeCopyLocal()
+        {
+            return false;
+        }
+
+        private void ResetCulture()
+        {
+        }
+
+        private bool ShouldSerializeCulture()
+        {
+            return false;
+        }
+
+        private void ResetfileDescription()
+        {
+        }
+
+        private bool ShouldSerializeDescription()
+        {
+            return false;
+        }
+
+        private void ResetInterop()
+        {
+        }
+
+        private bool ShouldSerializeInterop()
+        {
+            return false;
+        }
+
+        private void ResetfileFileType()
+        {
+        }
+
+        private bool ShouldSerializeFileType()
+        {
+            return false;
+        }
+
+        private void ResetIdentity()
+        {
+        }
+
+        private bool ShouldSerializeIdentity()
+        {
+            return false;
+        }
+
+        private void ResetfilePath()
+        {
+        }
+
+        private bool ShouldSerializePath()
+        {
+            return false;
+        }
+
+        private void ResetResolved()
+        {
+        }
+
+        private bool ShouldSerializeResolved()
+        {
+            return false;
+        }
+
+        private void ResetfileRuntime()
+        {
+        }
+
+        private bool ShouldSerializeRuntime()
+        {
+            return false;
+        }
+
+        private void ResetSpecificVersion()
+        {
+        }
+
+        private bool ShouldSerializeSpecificVersion()
+        {
+            return false;
+        }
+
+        private void ResetfileStrongName()
+        {
+        }
+
+        private bool ShouldSerializeStrongName()
+        {
+            return false;
+        }
+
+        private void ResetVersion()
+        {
+        }
+
+        private bool ShouldSerializeVersion()
+        {
+            return false;
+        }
+
+        private void ResetData()
+        {
+        }
+
+        private bool ShouldSerializeData()
+        {
+            return false;
+        }
     }
+
     public class ProjectFile : object
     {
-  
         [DisplayName("Project File")]
         [Description("The name of the file containing build, configuration, and other information about the project")]
         public string file { get; set; }
@@ -290,19 +426,20 @@ namespace WinExplorer
         [DisplayName("Project Folder")]
         [Description("The location of the project file")]
         public string filePath { get; set; }
+
         private object m_data;
 
-        [DisplayName("Data")]
-        [Description("Data")]
-        [TypeConverter(typeof(ProjectItemInfoConverter))]
-        public object data
-        {
-            get { return m_data; }
-            set { m_data = value; }
-        }
+        //[DisplayName("Data")]
+        //[Description("Data")]
+        //[TypeConverter(typeof(ProjectItemInfoConverter))]
+        //public object data
+        //{
+        //    get { return m_data; }
+        //    set { m_data = value; }
+        //}
         public ProjectFile(object obs)
         {
-            this.data = obs;
+            //    this.data = obs;
 
             VSParsers.ProjectItemInfo p = obs as VSParsers.ProjectItemInfo;
             if (p == null)
@@ -312,22 +449,34 @@ namespace WinExplorer
             file = Path.GetFileName(p.ps.FileName);
             filePath = Path.GetDirectoryName(p.ps.FileName);
         }
-        private void ResetfilePath() { }
-        private bool ShouldSerializefilePath() { return false; }
-        private void Resetfile() { }
-        private bool ShouldSerializefile() { return false; }
+
+        private void ResetfilePath()
+        {
+        }
+
+        private bool ShouldSerializefilePath()
+        {
+            return false;
+        }
+
+        private void Resetfile()
+        {
+        }
+
+        private bool ShouldSerializefile()
+        {
+            return false;
+        }
     }
+
     public class ProjectTypeFromFile : object
     {
-
         [DisplayName("Name")]
         [Description("The name of this item")]
         public string Name { get; set; }
 
         public ProjectTypeFromFile(object obs)
         {
-            
-
             VSParsers.ProjectItemInfo p = obs as VSParsers.ProjectItemInfo;
             if (p == null)
                 return;
@@ -335,7 +484,7 @@ namespace WinExplorer
             if (e == null)
                 return;
             Name = e.Name;
-            if(e is FieldDeclaration)
+            if (e is FieldDeclaration)
             {
                 FieldDeclaration f = e as FieldDeclaration;
                 Name = f.Name;
@@ -344,9 +493,8 @@ namespace WinExplorer
                         if (f.Variables.Count > 0)
                             Name = f.Variables.ToList()[0].Name;
             }
-            
-            
         }
+
         public static string Description(EntityDeclaration e)
         {
             if (e == null)
@@ -369,34 +517,38 @@ namespace WinExplorer
                 return "Enum";
             else if (t.IsInterface)
                 return "Interface";
-            
             else return "";
-
-
         }
-        private void ResetName() { }
-        private bool ShouldSerializeName() { return false; }
+
+        private void ResetName()
+        {
+        }
+
+        private bool ShouldSerializeName()
+        {
+            return false;
+        }
     }
 
     public class SolutionFolder : object
     {
-        
         [DisplayName("(Name)")]
         [Description("(The name of the Solution Folder")]
         public string folderName { get; set; }
+
         private object m_data;
-        
-        [DisplayName("Data")]
-        [Description("Data")]
-        [TypeConverter(typeof(ProjectItemInfoConverter))]
-        public object data
-        {
-            get { return m_data; }
-            set { m_data = value; }
-        }
+
+        //[DisplayName("Data")]
+        //[Description("Data")]
+        //[TypeConverter(typeof(ProjectItemInfoConverter))]
+        //public object data
+        //{
+        //    get { return m_data; }
+        //    set { m_data = value; }
+        //}
         public SolutionFolder(object obs)
         {
-            this.data = obs;
+            //    this.data = obs;
 
             VSParsers.ProjectItemInfo p = obs as VSParsers.ProjectItemInfo;
             if (p == null)
@@ -404,29 +556,37 @@ namespace WinExplorer
             if (p.ps == null)
                 return;
             folderName = Path.GetFileName(p.ps.FileName);
-            
         }
-        private void ResetfolderName() { }
-        private bool ShouldSerializefolderName() { return false; }
-     }
+
+        private void ResetfolderName()
+        {
+        }
+
+        private bool ShouldSerializefolderName()
+        {
+            return false;
+        }
+    }
+
     public class ProjectFolder : object
     {
         [DisplayName("Folder Name")]
         [Description("Name of this folder")]
         public string folderName { get; set; }
+
         private object m_data;
 
-        [DisplayName("Data")]
-        [Description("Data")]
-        [TypeConverter(typeof(ProjectItemInfoConverter))]
-        public object data
-        {
-            get { return m_data; }
-            set { m_data = value; }
-        }
+        //[DisplayName("Data")]
+        //[Description("Data")]
+        //[TypeConverter(typeof(ProjectItemInfoConverter))]
+        //public object data
+        //{
+        //    get { return m_data; }
+        //    set { m_data = value; }
+        //}
         public ProjectFolder(object obs)
         {
-            this.data = obs;
+            //    this.data = obs;
 
             VSParsers.ProjectItemInfo p = obs as VSParsers.ProjectItemInfo;
             if (p == null)
@@ -434,63 +594,63 @@ namespace WinExplorer
             if (p.ps == null)
                 return;
             folderName = p.Include;
-
         }
-        private void ResetfolderName() { }
-        private bool ShouldSerializefolderName() { return false; }
 
+        private void ResetfolderName()
+        {
+        }
+
+        private bool ShouldSerializefolderName()
+        {
+            return false;
+        }
     }
+
     public class SolutionFile : object
     {
-
         //[CategoryAttribute("Misc")]
         [DisplayName("(Name)")]
         [Description("The name of the solution file")]
         public string file { get; set; }
 
-              
         [DisplayName("Active config")]
         [Description("The configuration to build for the soluton. Access the Property Pages dialog box for the solution to modify the solutions's configurations")]
         public DropDownListProperty conf { get; set; }
+
         private object m_data;
 
-        
         [DisplayName("Description")]
         [Description("Text that will be placed in the solution file that describes the solution")]
-        
         public string description { get; set; }
+
         private object m_desc;
 
-        
         [DisplayName("Lightweight load")]
         [Description("Load projects as necessary")]
         public string load { get; }
 
-        
         [DisplayName("Path")]
-        
         [Description("The path to the solution file")]
         public String/*PropertyDescriptor*/ filePath { get; set; }
+
         private object m_path;
 
-        
         [DisplayName("Startup project")]
         [Description("Specify which project will start when you run debugger")]
         [DefaultValue("")]
         public string startup { get; set; }
-        
-        
-        [DisplayName("Data")]
-        [Description("Data")]
-               [TypeConverter(typeof(ProjectItemInfoConverter))]
-        public object data
-        {
-            get { return m_data; }
-            set { m_data = value; }
-        }
+
+        //[DisplayName("Data")]
+        //[Description("Data")]
+        //       [TypeConverter(typeof(ProjectItemInfoConverter))]
+        //public object data
+        //{
+        //    get { return m_data; }
+        //    set { m_data = value; }
+        //}
         public SolutionFile(object obs)
         {
-            this.data = obs;
+            //    this.data = obs;
 
             VSParsers.ProjectItemInfo p = obs as VSParsers.ProjectItemInfo;
             if (p == null)
@@ -505,12 +665,12 @@ namespace WinExplorer
                 return;
             Solution c = vs.SolutionParsed;
             var section = c.GetPresection("SolutionConfigurationPlatforms", "preSolution");
-            if(section != null)
+            if (section != null)
             {
                 List<string> b = new List<string>();
                 foreach (var s in section.Entries)
-                    if(s.Value != "preSolution")
-                    b.Add(s.Key);
+                    if (s.Value != "preSolution")
+                        b.Add(s.Key);
                 conf = new DropDownListProperty(b);
             }
             file = vs.Name;
@@ -518,16 +678,44 @@ namespace WinExplorer
             load = "Default";
             startup = ExplorerForms.ef.Command_GetStartupProject();
         }
-        private void ResetfilePath(){ }
-        private bool ShouldSerializefilePath() { return false; }
-        private void Resetload(){ }
-        private bool ShouldSerializeload(){ return false; }
-        private void Resetfile() { }
-        private bool ShouldSerializefile() { return false; }
-        private void Resetconf() { }
-        private bool ShouldSerializeconf() { return false; }
+
+        private void ResetfilePath()
+        {
+        }
+
+        private bool ShouldSerializefilePath()
+        {
+            return false;
+        }
+
+        private void Resetload()
+        {
+        }
+
+        private bool ShouldSerializeload()
+        {
+            return false;
+        }
+
+        private void Resetfile()
+        {
+        }
+
+        private bool ShouldSerializefile()
+        {
+            return false;
+        }
+
+        private void Resetconf()
+        {
+        }
+
+        private bool ShouldSerializeconf()
+        {
+            return false;
+        }
     }
-  
+
     [Editor(typeof(DropDownListPropertyEditor), typeof(System.Drawing.Design.UITypeEditor))]
     public class DropDownListProperty
     {
@@ -586,7 +774,7 @@ namespace WinExplorer
 
         private IWindowsFormsEditorService _service = null;
 
-        #endregion
+        #endregion Members
 
         /// <summary>
         /// Displays a list of available values for the specified component than sets the value.
@@ -607,9 +795,9 @@ namespace WinExplorer
                     var property = (DropDownListProperty)value;
 
                     var list = new ListBoxExtended();
-                    
+
                     list.Click += ListBox_Click;
-                    list.b.Click += B_Click; 
+                    list.b.Click += B_Click;
 
                     foreach (string item in property.Values)
                     {
@@ -636,8 +824,6 @@ namespace WinExplorer
                 _service.CloseDropDown();
         }
 
-     
-
         private void ListBox_Click(object sender, EventArgs e)
         {
             if (_service != null)
@@ -647,6 +833,7 @@ namespace WinExplorer
         public class ListBoxExtended : UserControl
         {
             public ListBox b { get; set; }
+
             public ListBoxExtended()
             {
                 b = new ListBox();
@@ -655,6 +842,7 @@ namespace WinExplorer
                 b.Font = new System.Drawing.Font(b.Font.FontFamily, 10.5f);
                 this.Controls.Add(b);
             }
+
             public ListBox.ObjectCollection Items
             {
                 get
@@ -663,10 +851,11 @@ namespace WinExplorer
                 }
                 set
                 {
-                    b.Items.AddRange( value);
+                    b.Items.AddRange(value);
                     Items = value;
                 }
             }
+
             public object SelectedItem
             {
                 get
@@ -679,6 +868,7 @@ namespace WinExplorer
                     SelectedItem = value;
                 }
             }
+
             public int SelectedIndex
             {
                 get
@@ -691,6 +881,7 @@ namespace WinExplorer
                     SelectedIndex = value;
                 }
             }
+
             protected override void OnMouseDown(MouseEventArgs e)
             {
                 base.OnMouseDown(e);
@@ -714,6 +905,7 @@ namespace WinExplorer
                     Width = oldSize.Width + (-e.Location.X + oldPoint.X);
                 }
             }
+
             public bool afterResize = false;
 
             protected override void OnMouseUp(MouseEventArgs e)
@@ -730,6 +922,7 @@ namespace WinExplorer
             private Point oldPoint;
             private Size oldSize;
         }
+
         /// <summary>
         /// Gets the editing style of the <see cref="EditValue"/> method.
         /// </summary>
@@ -741,7 +934,8 @@ namespace WinExplorer
             return UITypeEditorEditStyle.DropDown;
         }
     }
-    class ProjectItemInfoConverter : TypeConverter
+
+    internal class ProjectItemInfoConverter : TypeConverter
     {
         // Return true if we need to convert from a string.
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
@@ -770,7 +964,6 @@ namespace WinExplorer
             }
         }
 
-        
         public override object ConvertTo(ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType)
         {
             if (destinationType == typeof(VSParsers.ProjectItemInfo)) return value.ToString();
@@ -789,5 +982,4 @@ namespace WinExplorer
             return TypeDescriptor.GetProperties(value);
         }
     }
-
 }

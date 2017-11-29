@@ -6,12 +6,12 @@
 
 #endregion License
 
-using AIMS.Libraries.Scripting.ScriptControl;
 using Microsoft.SqlServer.Management.Common;
 using Microsoft.SqlServer.Management.Smo;
 using Microsoft.SqlServer.Management.Smo.Wmi;
 using Microsoft.Win32;
 using MiniSqlQuery.Core.DbModel;
+using ScriptControl;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -2058,7 +2058,6 @@ namespace WinExplorer.UI
             server.ConnectionContext.Connect();
             var database = server.Databases[databases];
 
-            
             {
                 //foreach(Table table in database.Tables)
                 {

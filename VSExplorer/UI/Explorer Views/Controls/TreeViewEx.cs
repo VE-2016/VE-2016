@@ -6,10 +6,9 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
-using System.Text;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 using VSParsers;
 using VSProvider;
 
@@ -17,28 +16,46 @@ namespace WinExplorer.UI
 {
     public class TreeViewEx : TreeView
     {
-
         public ContextMenuStrip context1 { get; set; }
 
         public ContextMenuStrip context2 { get; set; }
 
+        private const int WM_PARENT_NOTIFY = 0x210;
+
+        //public PropertyGridEx pgp { get; set; }
 
         public TreeViewEx() : base()
         {
             Init();
-            // Enable default double buffering processing (DoubleBuffered returns true)
+
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
-            // Disable default CommCtrl painting on non-Vista systems
-            //if (Environment.OSVersion.Version.Major < 6)
-            //    SetStyle(ControlStyles.UserPaint, true);
-            //DoubleBuffered = true;
-            this.Validating += TreeViewEx_Validating;
+
+            //this.Validating += TreeViewEx_Validating;
+
+            this.LostFocus += TreeViewEx_LostFocus;
+
+            this.Enter += TreeViewEx_Enter;
         }
-        public bool LostFocusEnabled = true;
-        private void TreeViewEx_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+
+        async private void TreeViewEx_Enter(object sender, EventArgs e)
         {
-            if (!LostFocusEnabled)
-                e.Cancel = true;
+            RefreshNeeded = true;
+            await Task.Run(() =>
+            {
+                Task.Delay(3000);
+                RefreshNeeded = true;
+            });
+        }
+
+        async private void TreeViewEx_LostFocus(object sender, EventArgs e)
+        {
+            RefreshNeeded = true;
+            await Task.Run(() =>
+            {
+                Task.Delay(3000);
+
+                RefreshNeeded = false;
+            });
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -55,6 +72,7 @@ namespace WinExplorer.UI
             }
             base.OnPaint(e);
         }
+
         private const int WM_VSCROLL = 0x0115;
         private const int WM_HSCROLL = 0x0114;
         private const int SB_THUMBTRACK = 5;
@@ -65,18 +83,61 @@ namespace WinExplorer.UI
 
         private const int skipMsgCount = 2;
         private int currentMsgCount;
+
+        //private bool isInWmPaintMsg = false;
+
+        private bool RefreshNeeded = true;
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct NMHDR
+        {
+            public IntPtr hwndFrom;
+            public IntPtr idFrom;
+            public int code;
+        }
+
+        private int counter = 0;
+
+        public string searchPattern { get; set; }
+
+        public bool searchPatternEnabled = false;
+
+        public Color searchBackColor = Color.Cyan;
+
         protected override void WndProc(ref Message m)
         {
-            
-            
+            //if (m.Msg == 0x204E)
+            //{
+            //    WM_REFLECT_NOTIFY
+            //   NMHDR nmhdr = (NMHDR)m.GetLParam(typeof(NMHDR));
+            //    if (nmhdr.code == -12)
+            //    { // NM_CUSTOMDRAW
+            //        if (this.Focused || RefreshNeeded/* || ExplorerForms.ef.pgp.mouseDown*/)
+            //        {
+            //            base.WndProc(ref m);
+
+            //        }
+            //        else m.Result = (IntPtr)0x0020;
+            //    }
+            //    else
+            //    {
+            //        if (this.Focused || RefreshNeeded)
+            //        {
+            //            base.WndProc(ref m);
+            //        }
+            //    }
+            //    return;
+            //}
             if (m.Msg == WM_VSCROLL || m.Msg == WM_HSCROLL)
             {
-
                 var nfy = m.WParam.ToInt32() & 0xFFFF;
                 if (nfy == SB_THUMBTRACK)
                 {
                     currentMsgCount++;
+
                     if (currentMsgCount % skipMsgCount == 0)
+                        base.WndProc(ref m);
+                    else if (m.LParam == null)
                         base.WndProc(ref m);
                     return;
                 }
@@ -88,42 +149,38 @@ namespace WinExplorer.UI
             else
                 base.WndProc(ref m);
         }
-        protected override void OnPaintBackground(    PaintEventArgs pevent)
-        {
 
-        }
-        //protected override bool DoubleBuffered { get; set; }
-        ImageList g = new ImageList();
-        void Init()
+        private ImageList g = new ImageList();
+
+        private void Init()
         {
-            
             g.Images.Add("forms", new Bitmap(ve_resource.WindowsForm_256x, new Size(25, 25)));
             this.ImageList = g;
 
             arrowpen = new Pen(Color.Black, 1);
             arrowfill = Brushes.Black;
         }
+
         public bool IsSourceControl = false;
-        VSSolution vs { get; set; }
+        private VSSolution vs { get; set; }
 
         public void ScanForMembers(TreeNode node)
         {
             VSProject vp = ProjectItemInfo.VSProjectIfAny(node);
             string file = ProjectItemInfo.FileNameIfAny(node);
-            if(vp != null)
+            if (vp != null)
                 if (!string.IsNullOrEmpty(file))
                 {
-                    
-                    if(vs.HasMembers(vp, file,""))
+                    if (vs.HasMembers(vp, file, ""))
                     {
                         TreeNode nodes = new TreeViewBase.DummyNode();
                         node.Nodes.Add(nodes);
                     }
-
                 }
             foreach (TreeNode ns in node.Nodes)
                 ScanForMembers(ns);
         }
+
         public void ScanForMembers()
         {
             VSSolution vs = Tag as VSSolution;
@@ -139,6 +196,7 @@ namespace WinExplorer.UI
                 this.Refresh();
             }));
         }
+
         /// <summary>
         /// Searches given node for Include string
         /// </summary>
@@ -149,12 +207,12 @@ namespace WinExplorer.UI
             var files = ProjectItemInfo.FileNameIfAny(nodes);
             if (file == files)
                 return nodes;
-                foreach (TreeNode node in nodes.Nodes)
-                {
-                    var ns = ScanForNode(node, file);
-                    if (ns != null)
-                        return ns;
-                }
+            foreach (TreeNode node in nodes.Nodes)
+            {
+                var ns = ScanForNode(node, file);
+                if (ns != null)
+                    return ns;
+            }
             return null;
         }
 
@@ -168,15 +226,16 @@ namespace WinExplorer.UI
             VSSolution vs = Tag as VSSolution;
             if (vs == null)
                 return null;
-                this.vs = vs;
-                foreach (TreeNode node in Nodes)
-                {
-                    var ns = ScanForNode(node, file);
-                    if (ns != null)
-                        return ns;
-                }
+            this.vs = vs;
+            foreach (TreeNode node in Nodes)
+            {
+                var ns = ScanForNode(node, file);
+                if (ns != null)
+                    return ns;
+            }
             return null;
         }
+
         public void UpdateNode(string file)
         {
             TreeNode node = ScanForNode(file);
@@ -185,6 +244,7 @@ namespace WinExplorer.UI
             UpdateSourceStatus(node);
             Refresh();
         }
+
         public void ScanForSourceStatus(TreeNode node)
         {
             //VSProject vp = ProjectItemInfo.VSProjectIfAny(node);
@@ -206,22 +266,29 @@ namespace WinExplorer.UI
             foreach (TreeNode ns in node.Nodes)
                 ScanForSourceStatus(ns);
         }
+
         public void UpdateSourceStatus(TreeNode node)
         {
-
             ProjectItemInfo p = ProjectItemInfo.ToProjectItemInfo(node);
-                if (p != null)
-                    p.status = FileStatus.Modified;
-            
+            if (p != null)
+                p.status = FileStatus.Modified;
         }
-        Repository repo { get; set; }
+
+        private Repository repo { get; set; }
 
         public void ScanForSourceStatus()
         {
             VSSolution vs = Tag as VSSolution;
             if (vs == null)
                 return;
-            repo = new Repository(vs.SolutionPath);
+            try
+            {
+                repo = new Repository(vs.SolutionPath);
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
             this.BeginInvoke(new Action(() =>
             {
                 this.vs = vs;
@@ -232,22 +299,22 @@ namespace WinExplorer.UI
                 this.Refresh();
             }));
         }
-        bool IsBitSet(Int32 b, byte nPos)
+
+        private bool IsBitSet(Int32 b, byte nPos)
         {
             return new BitArray(new[] { b })[(int)Math.Log(nPos, 2)];
         }
 
-        int ColumnWidth = 300;
+        private int ColumnWidth = 300;
 
-        Pen arrowpen { get; set; }
+        private Pen arrowpen { get; set; }
 
-        Brush arrowfill { get; set; }
+        private Brush arrowfill { get; set; }
 
-        Brush selectedNotFocused = new SolidBrush(Color.LightGray);
+        private Brush selectedNotFocused = new SolidBrush(Color.LightGray);
 
         public virtual void OnDrawTreeNode(object sender, DrawTreeNodeEventArgs e)
         {
-           
             string text = e.Node.Text;
             Rectangle itemRect = e.Bounds;
             if (e.Bounds.Height < 1 || e.Bounds.Width < 1)
@@ -274,14 +341,14 @@ namespace WinExplorer.UI
                 if (IsBitSet((int)e.State, (int)TreeNodeStates.Focused) || IsBitSet((int)e.State, (int)TreeNodeStates.Selected/*Focused*/))
                 {
                     Rectangle selRect = new Rectangle(textLeft, itemRect.Top, itemRect.Right - textLeft, itemRect.Height);
-                    VisualStyleRenderer renderer = new VisualStyleRenderer((ContainsFocus) ? VisualStyleElement.Button.PushButton.Hot
-                                                                                           : VisualStyleElement.Button.PushButton.Normal);
-           //         renderer.DrawBackground(e.Graphics, e.Bounds);
+                    //    VisualStyleRenderer renderer = new VisualStyleRenderer((ContainsFocus) ? VisualStyleElement.Button.PushButton.Hot
+                    //                                                                           : VisualStyleElement.Button.PushButton.Normal);
+                    //         renderer.DrawBackground(e.Graphics, e.Bounds);
                     Brush bodge = new SolidBrush(Color.FromArgb((IsBitSet((int)e.State, (int)TreeNodeStates.Hot)) ? 255 : 128, 255, 255, 255));
                     if (!IsBitSet((int)e.State, (int)TreeNodeStates.Focused))
                         bodge = selectedNotFocused;
                     else
-                    bodge = new SolidBrush(cs);
+                        bodge = new SolidBrush(cs);
                     e.Graphics.FillRectangle(bodge, e.Bounds);
                 }
             }
@@ -347,7 +414,6 @@ namespace WinExplorer.UI
                     s.Add(a);
                     e.Graphics.DrawLines(arrowpen, s.ToArray());
                 }
-
             }
             Point textStartPos = new Point(itemRect.Left + textLeft, itemRect.Top);
             Point textPos = new Point(textStartPos.X, textStartPos.Y);
@@ -362,16 +428,17 @@ namespace WinExplorer.UI
             drawFormat.FormatFlags = StringFormatFlags.NoWrap;
 
             Point p = new Point(e.Bounds.Location.X, e.Bounds.Location.Y);
-            if (IsSourceControl) {
+            if (IsSourceControl)
+            {
                 p.Offset(iconLeft + 5, 0);
-                if(projectItemInfo != null)
+                if (projectItemInfo != null)
                 {
                     //if (projectItemInfo.status != null)
                     {
                         if (projectItemInfo.status == FileStatus.Added)
                             e.Graphics.DrawImage(this.ImageList.Images["Add_thin"], p);
-                        else if (projectItemInfo.status ==  FileStatus.Modified)
-                            e.Graphics.DrawImage(this.ImageList.Images["Status_OK"], p);
+                        else if (projectItemInfo.status == FileStatus.Modified)
+                            e.Graphics.DrawImage(this.ImageList.Images["Status_Offline"], p);
                         else if (projectItemInfo.status == FileStatus.Unaltered)
                             e.Graphics.DrawImage(this.ImageList.Images["LockCyan_16x"], p);
                     }
@@ -379,28 +446,40 @@ namespace WinExplorer.UI
                 //e.Graphics.DrawImage(this.ImageList.Images["LockCyan_16x"], p);
                 p.Offset(13, 0);
             }
-            else 
-            p.Offset(iconLeft + 20, 0);
-            if(e.Node.ImageKey == "" || !this.ImageList.Images.ContainsKey(e.Node.ImageKey))
+            else
+                p.Offset(iconLeft + 20, 0);
+            if (e.Node.ImageKey == "" || !this.ImageList.Images.ContainsKey(e.Node.ImageKey))
                 e.Graphics.DrawImage(this.g.Images[0], p);
             else
                 e.Graphics.DrawImage(this.ImageList.Images[e.Node.ImageKey], p);
             p.X += 18;
 
-            string[] columnTextList = text.Split('|');
+            //string[] columnTextList = text.Split('|');
 
-            for (int iCol = 0; iCol < columnTextList.GetLength(0); iCol++)
+            //    for (int iCol = 0; iCol < columnTextList.GetLength(0); iCol++)
             {
                 Rectangle textRect = new Rectangle(textPos.X, textPos.Y, itemRect.Right - textPos.X, itemRect.Bottom - textPos.Y);
+
+                if (searchPatternEnabled)
+                    if (!string.IsNullOrEmpty(searchPattern))
+                    {
+                        int i = text.ToLower().IndexOf(searchPattern);
+                        if (i >= 0)
+                        {
+                            e.Graphics.FillRectangle(Brushes.LightCyan, new Rectangle(p.X + i * 5, p.Y, 20, e.Bounds.Height));
+                        }
+                    }
+
                 if (IsBitSet((int)e.State, (int)TreeNodeStates.Focused))
                     TextRenderer.DrawText(e.Graphics, text, textFont, p, Color.White);
                 else
                     TextRenderer.DrawText(e.Graphics, text, textFont, p, SystemColors.ControlDarkDark);
+
                 textPos.X += ColumnWidth;
             }
 
             // Draw Focussing box around the text
-            if (e.State == TreeNodeStates.Focused)
+            if (e.State == TreeNodeStates.Focused || e.State == TreeNodeStates.Selected)
             {
                 SizeF size = e.Graphics.MeasureString(text, textFont);
                 size.Width = (ClientRectangle.Width - 2) - textStartPos.X;
@@ -409,15 +488,17 @@ namespace WinExplorer.UI
                 e.Graphics.DrawRectangle(dotPen, rect);
             }
         }
+
         public void ExpandAllWithoutDummy()
         {
-            foreach(TreeNode node in Nodes)
+            foreach (TreeNode node in Nodes)
             {
                 var ns = node.Nodes.OfType<TreeViewBase.DummyNode>().ToList();
                 if (ns.Count <= 0)
                     ExpandAllWithoutDummy(node);
             }
         }
+
         public void ExpandAllWithoutDummy(TreeNode nodes)
         {
             nodes.Expand();
@@ -428,6 +509,7 @@ namespace WinExplorer.UI
                     ExpandAllWithoutDummy(node);
             }
         }
+
         protected override void DefWndProc(ref Message m)
         {
             if (m.Msg == 515)

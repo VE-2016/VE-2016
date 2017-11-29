@@ -1,13 +1,9 @@
-﻿using NUnit.Framework.Internal;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Windows.Forms;
-using System.IO;
 
 namespace WinExplorer.Services
 {
@@ -34,7 +30,7 @@ namespace WinExplorer.Services
             }
             var types = assembly.GetTypes();
 
-            foreach(Type t in types)
+            foreach (Type t in types)
             {
                 if (t.Name == "VSExplorerSolution_Test")
                 {
@@ -50,14 +46,12 @@ namespace WinExplorer.Services
                                 MessageBox.Show(ac.GetType().Name);
                                 var tt = ac.GetType();
                                 if (ac.GetType().Name == "TestMethodAttribute")
-                                    MessageBox.Show( "--- " + ac.ToString());
+                                    MessageBox.Show("--- " + ac.ToString());
                             }
                         }
                     }
                 }
             }
-                      
-
 
             //var methods = assembly.GetTypes()
             //          .SelectMany(t => t.GetMethods())
@@ -81,8 +75,8 @@ namespace WinExplorer.Services
             //    Console.WriteLine("  Optional=" + Param.IsOptional.ToString());
             //}
             return assembly.GetTypes();
-            
         }
+
         public static List<MethodInfo> AttributesOfMethods(string file, string typename, string attributename)
         {
             Assembly assembly;
@@ -125,7 +119,6 @@ namespace WinExplorer.Services
                                 if (ac.GetType().Name == /*"TestMethodAttribute"*/attributename)
                                     // MessageBox.Show("--- " + ac.ToString());
                                     methods.Add(m);
-
                             }
                         }
                     }
@@ -133,14 +126,14 @@ namespace WinExplorer.Services
             }
             return methods;
         }
+
         public static List<MethodInfo> AttributesOfMethodsFromTypes(string file, List<Type> types, string attributename)
         {
             List<MethodInfo> methods = new List<MethodInfo>();
 
-
             foreach (Type t in types)
             {
-//                if (t.Name == typename/*"VSExplorerSolution_Test"*/)
+                //                if (t.Name == typename/*"VSExplorerSolution_Test"*/)
                 {
                     //var attributes = t.GetCustomAttributes();
                     //foreach (var a in attributes)
@@ -156,7 +149,6 @@ namespace WinExplorer.Services
                                 if (ac.GetType().Name == /*"TestMethodAttribute"*/attributename)
                                     // MessageBox.Show("--- " + ac.ToString());
                                     methods.Add(m);
-
                             }
                         }
                     }
@@ -195,7 +187,6 @@ namespace WinExplorer.Services
 
             try
             {
-
                 var types = assembly.GetTypes();
 
                 foreach (Type t in types)
@@ -209,39 +200,48 @@ namespace WinExplorer.Services
                             //foreach (MethodInfo m in t.GetMethods())
                             {
                                 var ab = t.GetCustomAttributes();
+
                                 foreach (var ac in ab)
                                 {
                                     //          MessageBox.Show(ac.GetType().Name);
                                     //          var tt = ac.GetType();
-                                    if (ac.GetType().Name == /*"TestMethodAttribute"*/attributename)
-                                        // MessageBox.Show("--- " + ac.ToString());
-                                        Types.Add(t);
-
+                                    try
+                                    {
+                                        var tt = ac.GetType();
+                                        if (tt.Name == /*"TestMethodAttribute"*/attributename)
+                                            // MessageBox.Show("--- " + ac.ToString());
+                                            Types.Add(t);
+                                    }
+                                    catch (Exception Ex)
+                                    {
+                                    }
                                 }
                             }
                         }
                     }
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-
             }
             Directory.SetCurrentDirectory(current);
             return Types;
         }
+
         public static List<Type> Attributes<T>(Type[] types)
         {
             var attributes = new List<Type>();
             attributes = types.Where(t => t.IsDefined(typeof(T))).ToList();
             return attributes;
         }
+
         public static List<Type> Attributes<T>(Type type)
         {
             var attributes = new List<Type>();
             attributes = Enumerable.Repeat(type, 1).Where(t => t.IsDefined(typeof(T))).ToList();
             return attributes;
         }
+
         //public static List<MethodInfo> AttributesOfMethods<T>(Type type)
         //{
         //    var attributes = new List<MethodInfo>();
