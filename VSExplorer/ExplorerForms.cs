@@ -268,6 +268,8 @@ namespace WinExplorer
 
             EditorWindow.OnModified = AvalonFileModified;
 
+            EditorWindow.FindResultsRequired = FindNextRequired;
+
             ScriptControl.ScriptControl.bounders = ChangeSplitEditorLocation;
 
             ScriptControl.ScriptControl.LoadSettings();
@@ -481,6 +483,22 @@ namespace WinExplorer
             VSSolution.OpenSyntaxGraph += VSSolution_OpenSyntaxGraph;
 
             VSSolution.OpenSearch += VSSolution_OpenSearch; ;
+        }
+
+        public void FindNextRequired(Searcher searcher)
+        {
+            
+            int r = searcher.NextResultFileIndex();
+            LocationSource s = searcher.source[r];
+            
+            Task.Run(() =>
+            {
+                this.Invoke(new Action(() =>
+                {
+                    AvalonDocument d = scr.OpenDocuments(s.Source.FilePath, GetVSSolution());
+                    d.StartSearchResults(searcher);
+                }));
+            });
         }
 
         private void _SolutionTreeView_BeforeExpand(object sender, TreeViewCancelEventArgs e)

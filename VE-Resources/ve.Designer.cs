@@ -393,6 +393,16 @@ namespace WinExplorers {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap CaseSensitive_16x {
+            get {
+                object obj = ResourceManager.GetObject("CaseSensitive_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap CategorizedView_16x {
             get {
                 object obj = ResourceManager.GetObject("CategorizedView_16x", resourceCulture);
@@ -2186,6 +2196,16 @@ namespace WinExplorers {
         public static System.Drawing.Bitmap ResizeGrip_16x {
             get {
                 object obj = ResourceManager.GetObject("ResizeGrip_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ResizeGripLeft_16x {
+            get {
+                object obj = ResourceManager.GetObject("ResizeGripLeft_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

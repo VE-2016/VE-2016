@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-71720914217
+8-969342263
 
-22945131749
+23-821785797
 86-1660266080
-CompletionControls.xaml;EditorWindow.xaml;FindForm.xaml;SyntaxTreeViewer.xaml;LinkViewer.xaml;TreeViewer.xaml;CallHierarchy.xaml;
+CompletionControls.xaml;EditorWindow.xaml;FindFormPopup.xaml;FindForm.xaml;SyntaxTreeViewer.xaml;LinkViewer.xaml;TreeViewer.xaml;CallHierarchy.xaml;
 
 False
 

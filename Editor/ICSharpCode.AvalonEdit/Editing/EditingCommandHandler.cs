@@ -218,6 +218,33 @@ namespace ICSharpCode.AvalonEdit.Editing
             if (textArea != null && textArea.IsKeyboardFocused)
             {
                 textArea.PerformTextInput("\n");
+                var a = textArea.Document.GetLineByOffset(textArea.Caret.Offset);
+                var b = a.PreviousLine;
+                if (b == null)
+                    return;
+                var c = b.PreviousLine;
+                if (c == null)
+                    return;
+                if (c.obs != null)
+                {
+                    var obs = c.obs;
+                    var bs = textArea.Document.Text.Substring(b.Offset, b.Length + 2);
+                    if (!string.IsNullOrWhiteSpace(bs))
+                    {
+                        var cs = textArea.Document.Text.Substring(c.Offset, c.Length + 2);
+                        textArea.Document.Remove(c.Offset, bs.Length + cs.Length);
+                        
+                    }
+                    else
+                    {
+                        var cs = textArea.Document.Text.Substring(c.Offset, c.Length + 2);
+                        textArea.Document.Remove(c.Offset, bs.Length + cs.Length);
+                        textArea.Document.Insert(c.Offset, bs + cs);
+                        a = textArea.Document.GetLineByOffset(textArea.Caret.Offset);
+                        b = a.PreviousLine;
+                        b.obs = obs;
+                    }
+                }
                 args.Handled = true;
             }
         }
@@ -307,17 +334,53 @@ namespace ICSharpCode.AvalonEdit.Editing
                         if (endPos.Line < 1 || endPos.Column < 1)
                             endPos = new TextViewPosition(Math.Max(endPos.Line, 1), Math.Max(endPos.Column, 1));
                         // Don't select the text to be deleted; just reuse the ReplaceSelectionWithText logic
-                        var sel = new SimpleSelection(textArea, startPos, endPos);
-                        sel.ReplaceSelectionWithText(string.Empty);
+                        if (endPos.Column == 1)
+                        {
+                            var a = textArea.Document.GetLineByNumber(textArea.Caret.Line);
+
+                            var b = a.PreviousLine;
+                            if (b != null)
+                            {
+                                var c = b.PreviousLine;
+                                if (b.obs != null)
+                                {
+                                    var obs = c.obs;
+                                    var sa = textArea.Document.Text.Substring(a.Offset, a.Length + a.DelimiterLength);
+                                    var bs = textArea.Document.Text.Substring(b.Offset, b.Length + b.DelimiterLength);
+                                    var cs = textArea.Document.Text.Substring(c.Offset, c.Length + c.DelimiterLength);
+                                    textArea.Document.Remove(c.Offset + c.Length, bs.Length + sa.Length/* + c.DelimiterLength*//* + a.DelimiterLength + b.DelimiterLength*/);
+                                    textArea.Document.Insert(c.Offset + c.Length, sa);
+
+
+                                }
+                                else
+                                {
+                                    var sel = new SimpleSelection(textArea, startPos, endPos);
+                                    sel.ReplaceSelectionWithText(string.Empty);
+                                }
+                            }
+                            else
+                            {
+                                var sel = new SimpleSelection(textArea, startPos, endPos);
+                                sel.ReplaceSelectionWithText(string.Empty);
+                            }
+                        }
+                        else
+                        {
+                            var sel = new SimpleSelection(textArea, startPos, endPos);
+                            sel.ReplaceSelectionWithText(string.Empty);
+                        }
                     }
                     else
                     {
                         textArea.RemoveSelectedText();
                     }
-                    textArea.Caret.BringCaretToView();
-                    args.Handled = true;
                 }
-            };
+                        textArea.Caret.BringCaretToView();
+                        args.Handled = true;
+                 
+                };
+            
         }
 
         private static void CanDelete(object target, CanExecuteRoutedEventArgs args)

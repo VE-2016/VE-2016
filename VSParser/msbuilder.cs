@@ -979,18 +979,28 @@ namespace VSProvider
 
         public List<ISymbol> GetMembers(VSProject vp, string filename, string content = "")
         {
+            List<ISymbol> b = new List<ISymbol>();
+            if (solution == null)
+                return b;
             var id = solution.GetDocumentIdsWithFilePath(filename);
+            var document = solution.GetDocument(id[0]);
             var project = solution.GetDocument(id[0]).Project;
             var syntaxTree = solution.GetDocument(id[0]).GetSyntaxTreeAsync().Result;
             var cc = project.GetCompilationAsync().Result;
             if (content != "")
             {
+                
                 var newSyntaxTree = CSharpSyntaxTree.ParseText(content, CSharpParseOptions.Default, filename);
-                cc = cc.ReplaceSyntaxTree(syntaxTree, newSyntaxTree);
-                syntaxTree = newSyntaxTree;
+                //cc = cc.ReplaceSyntaxTree(syntaxTree, newSyntaxTree);
+                
+                solution = solution.WithDocumentSyntaxRoot(id[0], newSyntaxTree.GetRoot());
+                project = solution.GetDocument(id[0]).Project;
+                cc = project.GetCompilationAsync().Result;
+                //syntaxTree = newSyntaxTree;
+                syntaxTree = solution.GetDocument(id[0]).GetSyntaxTreeAsync().Result;
             }
 
-            List<ISymbol> b = new List<ISymbol>();
+          
 
             //if (comp == null)
             //    return b;
@@ -1198,7 +1208,7 @@ namespace VSProvider
             }
         }
 
-        public SyntaxTree GetSyntaxTree(string filename, string content = "")
+        public SyntaxTree GetSyntaxTree(string filename, string content = "", bool overwrite = true)
         {
             //VSProject vp = GetProjectbyCompileItem(filename);
 
@@ -1214,18 +1224,29 @@ namespace VSProvider
 
             //return s;
 
+            
             var id = solution.GetDocumentIdsWithFilePath(filename);
-            var project = solution.GetDocument(id[0]).Project;
-            var syntaxTree = solution.GetDocument(id[0]).GetSyntaxTreeAsync().Result;
-            var cc = project.GetCompilationAsync().Result;
-            if (content != "")
+            if (id.Length > 0)
             {
-                var newSyntaxTree = CSharpSyntaxTree.ParseText(content, CSharpParseOptions.Default, filename);
-                cc = cc.ReplaceSyntaxTree(syntaxTree, newSyntaxTree);
-                syntaxTree = newSyntaxTree;
-            }
 
-            return syntaxTree;
+                var project = solution.GetDocument(id[0]).Project;
+                var syntaxTree = solution.GetDocument(id[0]).GetSyntaxTreeAsync().Result;
+                var cc = project.GetCompilationAsync().Result;
+                if (content != "")
+                {
+                    var newSyntaxTree = CSharpSyntaxTree.ParseText(content, CSharpParseOptions.Default, filename);
+                    if(overwrite)
+                    cc = cc.ReplaceSyntaxTree(syntaxTree, newSyntaxTree);
+                    syntaxTree = newSyntaxTree;
+                }
+                return syntaxTree;
+            }
+            else
+            {
+                var syntaxTree = CSharpSyntaxTree.ParseText(content, CSharpParseOptions.Default, filename);
+                return syntaxTree;
+            }
+            
         }
 
         public SemanticModel GetSemanticModel(string filename)
@@ -1370,9 +1391,9 @@ namespace VSProvider
 
                 if (m.Name == ".ctor")
                 {
-                    if (comp == null || vp == null || string.IsNullOrEmpty(vp.FileName))
-                        methodSymbol = symbol;
-                    else
+                    //if (comp == null || vp == null || string.IsNullOrEmpty(vp.FileName))
+                    //    methodSymbol = symbol;
+                    //else
                     {
                         methodInvocations = syntaxTree.GetRootAsync().Result.DescendantNodes().OfType<ConstructorDeclarationSyntax>().Where(s => s.Identifier.Text == symbol.ContainingType.Name);
                         methodInvocation = methodInvocations.FirstOrDefault();
@@ -1387,9 +1408,9 @@ namespace VSProvider
                 }
                 else
                 {
-                    if (comp == null || vp == null || string.IsNullOrEmpty(vp.FileName))
-                        methodSymbol = symbol;
-                    else
+                   // if (comp == null || vp == null || string.IsNullOrEmpty(vp.FileName))
+                   //     methodSymbol = symbol;
+                   // else
                     {
                         methodInvocations = syntaxTree.GetRootAsync().Result.DescendantNodes().OfType<MethodDeclarationSyntax>().Where(s => s.Identifier.Text == symbol.Name);
                         methodInvocation = methodInvocations.FirstOrDefault();
@@ -1728,6 +1749,8 @@ namespace VSProvider
                 if (args.openfiles == null)
                     return locations;
                 Finder finder = new Finder();
+                LocationSource act = null;
+                int id = 0;
                 foreach (string file in args.openfiles)
                 {
                     SyntaxTree syntaxTree = GetSyntaxTree(file);
@@ -1736,14 +1759,20 @@ namespace VSProvider
                     content = syntaxTree.GetText().ToString();
                     char[] tt = texttofind.ToCharArray();
                     char[] te = content.ToCharArray();
-
+                    
                     var s = finder.TW(tt, tt.Length, te, te.Length);
+                   
                     foreach (int c in s)
                     {
                         TextSpan ts = new TextSpan(c, texttofind.Length);
-                        //LinePositionSpan lp = new LinePositionSpan();
                         LocationSource ls = LocationSource.Create(ts, syntaxTree);
+                        ls.id = id;
+                        ls.prev = act;
+                        if(act != null)
+                            act.next = ls;
                         locations.Add(ls);
+                        act = ls;
+                        id++;
                     }
                 }
                 return locations;
@@ -1758,12 +1787,21 @@ namespace VSProvider
                     char[] te = content.ToCharArray();
                     Finder finder = new Finder();
                     var s = finder.TW(tt, tt.Length, te, te.Length);
+                    LocationSource act = null;
+                    int id = 0;
                     foreach (int c in s)
                     {
                         TextSpan ts = new TextSpan(c, texttofind.Length);
                         LinePositionSpan lp = new LinePositionSpan();
                         LocationSource ls = LocationSource.Create(ts, null);
                         locations.Add(ls);
+                        ls.id = id;
+                        ls.prev = act;
+                        if (act != null)
+                            act.next = ls;
+                      
+                        act = ls;
+                        id++;
                     }
                     return locations;
                 }
@@ -1771,6 +1809,8 @@ namespace VSProvider
                 {
                     VSProject vp = GetProjectbyCompileItem(filename);
                     Finder finder = new Finder();
+                    LocationSource act = null;
+                    int id = 0;
                     foreach (string FileName in vp.GetCompileItems())
                     {
                         SyntaxTree syntaxTree = GetSyntaxTree(FileName);
@@ -1787,6 +1827,13 @@ namespace VSProvider
                             LinePositionSpan lp = new LinePositionSpan();
                             LocationSource ls = LocationSource.Create(ts, syntaxTree);
                             locations.Add(ls);
+                            ls.id = id;
+                            ls.prev = act;
+                            if (act != null)
+                                act.next = ls;
+                           
+                            act = ls;
+                            id++;
                         }
                     }
                     return locations;
@@ -1794,6 +1841,8 @@ namespace VSProvider
                 else if (searchDomain == SearchDomain.solution)
                 {
                     Finder finder = new Finder();
+                    LocationSource act = null;
+                    int id = 0;
                     foreach (VSProject vp in Projects)
                     {
                         foreach (string FileName in vp.GetCompileItems())
@@ -1812,6 +1861,14 @@ namespace VSProvider
                                 //LinePositionSpan lp = new LinePositionSpan();
                                 LocationSource ls = LocationSource.Create(ts, syntaxTree);
                                 locations.Add(ls);
+                                ls.id = id;
+                                ls.prev = act;
+                                if (act != null)
+                                    act.next = ls;
+                                
+                                act = ls;
+                                id++;
+
                             }
                         }
                     }
@@ -2191,7 +2248,9 @@ namespace VSProvider
         {
             return new VSProvider.LocationSource(t, s);
         }
-
+        public int id = 0;
+        public LocationSource prev;
+        public LocationSource next;
         public TextSpan textSpan { get; set; }
         public SyntaxTree Source { get; set; }
     }

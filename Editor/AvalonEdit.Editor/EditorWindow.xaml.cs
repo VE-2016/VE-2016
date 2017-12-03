@@ -7,6 +7,7 @@ using ICSharpCode.AvalonEdit.Highlighting;
 using ICSharpCode.AvalonEdit.Highlighting.Xshd;
 using ICSharpCode.AvalonEdit.Rendering;
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.FindSymbols;
 using Microsoft.CodeAnalysis.Text;
 
@@ -82,6 +83,11 @@ namespace AvalonEdit.Editor
             staticEditorWindow.BorderThickness = new Thickness(1, 1, 1, 1);
             staticEditorWindow.BorderBrush = Brushes.LightGray;
             staticEditorWindow.Opacity = 1;
+        }
+
+        public void StartSearchResults(Searcher searcher)
+        {
+            commandFind.Execute(searcher);
         }
 
         static public void LoadStaticContent(string content, VSSolution vs)
@@ -930,7 +936,43 @@ namespace AvalonEdit.Editor
             {
             }
         }
+        public class CommandFind : ICommand
+        {
 
+            public EditorWindow fe { get; set; }
+
+            public bool CanExecute(object parameter)
+            {
+                return true;
+            }
+            FindFormPopup ff { get; set; }
+            public void Execute(object parameter)
+            {
+                //MessageBox.Show("It Worked - Ctrl+F");
+                ff = new FindFormPopup();
+                
+                ff.Placement = PlacementMode.Relative;
+                ff.HorizontalOffset = fe.ActualWidth - 300/*ff.ActualWidth*/ - 15; 
+
+                ff.VerticalOffset = 21;
+                ff.PlacementTarget = fe;
+                
+                ff.IsOpen = true;
+                ff.forms.editorWindow = fe;   
+
+                if(parameter is Searcher)
+                {
+                    ff.forms.OpenSearchResults((Searcher)parameter);
+                }
+            }
+
+            public event EventHandler CanExecuteChanged;
+
+            public CommandFind(EditorWindow t)
+            {
+                fe = t;
+            }
+        }
         public class ShowCommandGesture : KeyGesture
         {
             private readonly Key _key;
@@ -1267,8 +1309,204 @@ namespace AvalonEdit.Editor
             textEditor.InputBindings.Add(new InputBinding(new CommandCopy(), new KeyGesture(Key.C, ModifierKeys.Control)));
             textEditor.InputBindings.Add(new InputBinding(new CommandPaste(), new KeyGesture(Key.V, ModifierKeys.Control)));
 
+            CommandFind commandFind = new CommandFind(editorWindow);
+            editorWindow.commandFind = commandFind;
+            textEditor.InputBindings.Add(new InputBinding(commandFind, new KeyGesture(Key.F, ModifierKeys.Control)));
+
             return contextMenu;
         }
+        static public Action<Searcher> FindResultsRequired { get; set; }
+
+        List<int> SearchResultsToIndices(Searcher searcher)
+        {
+            List<LocationSource> source = searcher.source;
+            List<int> r = new List<int>();
+            List<LocationSource> s = new List<LocationSource>();
+            foreach (var c in source)
+                if(c.Source == null || c.Source.FilePath == FileToLoad)
+                s.Add(c);
+            s = s.OrderBy(p => p.textSpan.Start).ToList();
+            foreach (var c in s)
+                r.Add(c.textSpan.Start);
+            searcher.sources = s;
+            
+            return r;
+        }
+        public void ShowOffset(int offset)
+        {
+            textEditor.TextArea.Caret.Offset = offset;
+            textEditor.TextArea.Caret.BringCaretToView();
+        }
+        public Searcher searcher { get; set; }
+        public void FirstVisibleOffset(Searcher s)
+        {
+            var v = textEditor.TextArea.TextView.VisualLines;
+            if (v.Count <= 0)
+                return;
+            int first = v[0].FirstDocumentLine.Offset;
+            int last = v[v.Count - 1].LastDocumentLine.EndOffset;
+
+            var b = s.Offsets.Where(d => d >= first).FirstOrDefault();
+            s.Id/*Active*/ = b;
+
+        }
+        public Searcher Search(string texttofind, SearchDomain searchDomain = SearchDomain.file)
+        {
+            if (vs == null)
+                return null;
+            List<LocationSource> s = null;
+            if(searchDomain == SearchDomain.solution)
+                s = vs.FindString(texttofind, textEditor.Document.Text, FileToLoad, "", "", searchDomain);
+            else
+                s = vs.FindString(texttofind, textEditor.Document.Text, FileToLoad, "", "", searchDomain);
+
+            searcher = new Searcher();
+            searcher.texttofind = texttofind;
+            searcher.source = s;
+            searcher.Active = -1;
+            searcher.editorWindow = this;
+
+            if(s.Count <= 0)
+            {
+                r.searchResultIndices = null;
+                textEditor.TextArea.InvalidateVisual();
+                return null;
+            }
+
+            r.searchResultIndices = SearchResultsToIndices(searcher);
+            searcher.Offsets = r.searchResultIndices;
+            r.searchResultLength = texttofind.Length;
+
+            FirstVisibleOffset(searcher);
+
+            textEditor.TextArea.InvalidateVisual();
+
+            return searcher;
+        }
+        public Searcher Search(Searcher searcher)
+        {
+            
+            List<LocationSource> s = searcher.source;
+
+            searcher.editorWindow = this;
+
+            if (s.Count <= 0)
+            {
+                r.searchResultIndices = null;
+                textEditor.TextArea.InvalidateVisual();
+                return null;
+            }
+
+            r.searchResultIndices = SearchResultsToIndices(searcher);
+            searcher.Offsets = r.searchResultIndices;
+            r.searchResultLength = searcher.texttofind.Length;
+
+            FirstVisibleOffset(searcher);
+
+            textEditor.TextArea.InvalidateVisual();
+
+            return searcher;
+        }
+        static SyntaxNode GetNode(SyntaxTree tree, int lineNumber)
+        {
+            var lineSpan = tree.GetText().Lines[lineNumber - 1].Span;
+            return tree.GetRoot().DescendantNodes(null, true)
+                .LastOrDefault(n => lineSpan.IntersectsWith(n.Span));
+        }
+        public string GetCurrentBlock()
+        {
+
+            string block = "";
+
+            int line = textEditor.TextArea.Caret.Line;
+
+            SyntaxTree s = vs.GetSyntaxTree(FileToLoad, textEditor.Document.Text, false);
+
+            SyntaxNode node = GetNode(s, line);
+
+            if (node == null)
+                return "";
+
+            var c = node.AncestorsAndSelf().OfType<MemberDeclarationSyntax>().ToList();
+
+            foreach(var b in c)
+            {
+
+                if(b is ConstructorDeclarationSyntax)
+                {
+                    ConstructorDeclarationSyntax d = b as ConstructorDeclarationSyntax;
+                    if (block == "")
+                        block = d.Identifier.ToString();
+                    else block = d.Identifier.ToString() + "." + block;
+
+                } else if(b is MethodDeclarationSyntax)
+                {
+                    MethodDeclarationSyntax d = b as MethodDeclarationSyntax;
+                    if (block == "")
+                        block = d.Identifier.ToString();
+                    else block = d.Identifier.ToString() + "." + block;
+                }
+                else if(b is PropertyDeclarationSyntax)
+                {
+                    PropertyDeclarationSyntax d = b as PropertyDeclarationSyntax;
+                    if (block == "")
+                        block = d.Identifier.ToString();
+                    else block = d.Identifier.ToString() + "." + block;
+
+                }
+                else if(b is FieldDeclarationSyntax)
+                {
+                    //FieldDeclarationSyntax d = b as FieldDeclarationSyntax;
+                    //if (block == "")
+                    //    block = d.Identifier.ToString();
+                    //else block = d.Identifier.ToString() + "." + block;
+                }
+                else if(b is EventDeclarationSyntax)
+                {
+                    EventDeclarationSyntax d = b as EventDeclarationSyntax;
+                    if (block == "")
+                        block = d.Identifier.ToString();
+                    else block = d.Identifier.ToString() + "." + block;
+                }
+                else if(b is DelegateDeclarationSyntax)
+                {
+                    DelegateDeclarationSyntax d = b as DelegateDeclarationSyntax;
+                    if (block == "")
+                        block = d.Identifier.ToString();
+                    else block = d.Identifier.ToString() + "." + block;
+                }
+                else if(b is ClassDeclarationSyntax)
+                {
+                    ClassDeclarationSyntax d = b as ClassDeclarationSyntax;
+                    if (block == "")
+                        block = d.Identifier.ToString();
+                    else block = d.Identifier.ToString() + "." + block;
+                }
+                else if (b is NamespaceDeclarationSyntax)
+                {
+                    NamespaceDeclarationSyntax d = b as NamespaceDeclarationSyntax;
+                    if (block == "")
+                        block = d.Name.ToString();
+                    else block = d.Name.ToString() + "." + block;
+                }
+                
+            }
+
+            //var b = vs.GetSymbolAtLocation(offset, FileToLoad);
+            //block = b.Name;
+            //while(b != null)
+            //{
+            //    b = b.ContainingSymbol;
+            //    if(b != null)
+            //    {
+            //        block += b.Name + "." + block;
+            //    }
+            //}
+            
+            return block;
+        }
+
+        public CommandFind commandFind { get; set; }
 
         public static TreeViewer treeViewer { get; set; }
 
@@ -1719,7 +1957,7 @@ namespace AvalonEdit.Editor
             {
                 //LoadReferences(vs);
                 if (vs != null)
-                    this.qcb.Load(vs, FileToLoad, textEditor.Document.Text);
+                    this.qcb.Load(vs, FileToLoad, textEditor.Document.Text, false);
                 shouldUpdate = false;
             }
 
@@ -1736,6 +1974,7 @@ namespace AvalonEdit.Editor
                     this.qcb.SelectItemAtCaretPosition(b);
                     qcb.CaretPositionAdjustNeeded = false;
                 }
+                VerifyReferences();
             }
 
             if (!textEditor.TextArea.IsFocused)
@@ -3038,12 +3277,31 @@ namespace AvalonEdit.Editor
             return 0;
         }
 
+        void VerifyReferences()
+        {
+            foreach(var d in textEditor.Document.Lines)
+            {
+                if (d.NextLine == null)
+                    break;
+                if(d.obs != null)
+                    
+                    if(d.NextLine.Length == 0)
+                    {
+                        d.NextLine.obs = d.obs;
+                        d.obs = null;
+                        textEditor.TextArea.InvalidateVisual();
+                    }
+            }
+        }
+
         public bool modified = false;
 
         private void textEditor_TextArea_TextEntered(object sender, TextCompositionEventArgs e)
         {
             modified = true;
 
+
+         
             // shouldUpdate = true;
 
             if (string.IsNullOrEmpty(e.Text))
@@ -4239,7 +4497,7 @@ namespace AvalonEdit.Editor
             {
                 EnableFolding = false;
                 //this.textEditor.Document.Text = content;
-                this.textEditor.Document = document;
+                //this.textEditor.Document = document;
                 ////EnableFolding = true;
                 string cs = StringReplace.Replace(textEditor.Document.Text);
                 //vs.UpdateSyntaxTree(FileToLoad, cs);
@@ -4260,8 +4518,70 @@ namespace AvalonEdit.Editor
 
             return 0;
         }
-
         public async Task<int> References_Update()
+        {
+            double offset = 0.0;
+
+            AvalonReferencer r = new AvalonReferencer();
+
+            ICSharpCode.AvalonEdit.Document.TextDocument document = null;
+
+            string content = "";
+
+            this.Dispatcher.Invoke(new Action(() =>
+            {
+                offset = textEditor.VerticalOffset;
+                string c = StringReplace.Replace(textEditor.Document.Text);
+                textEditor.Document.Text = c;
+                //    vs.UpdateSyntaxTree(FileToLoad, c);
+
+                this.UpdateSourceDocumentAsync(true, c);
+            }));
+
+            this.Dispatcher.Invoke(new Action(() =>
+            {
+                content = textEditor.Document.Text;
+                document = textEditor.Document;// new ICSharpCode.AvalonEdit.Document.TextDocument(content);
+                r.document = document;
+                r.vp = editor.vp;
+                r.vs = vs;
+                r.FileToLoad = FileToLoad;
+            }));
+
+
+            await r.LoadReferences(dict);
+
+
+            content = document.Text;
+
+            this.Dispatcher.Invoke(new Action(() =>
+            {
+                EnableFolding = false;
+                //this.textEditor.Document.Text = content;
+//                this.textEditor.Document = document;
+                ////EnableFolding = true;
+                string cs = StringReplace.Replace(textEditor.Document.Text);
+                //vs.UpdateSyntaxTree(FileToLoad, cs);
+                textEditor.Document.Text = StringReplace.ReplaceUndo(cs);
+
+                this.UpdateSourceDocumentAsync(true, cs);
+
+                this.References_Insert(document, mb, dict, r.offsets, r.data, true);
+
+                cs = StringReplace.Replace(textEditor.Document.Text);
+                this.UpdateSourceDocumentAsync(true, cs);
+                this.References_Insert(document, mb, dict);
+
+                //string cs = StringReplace.Replace(textEditor.Document.Text);
+
+                //vs.UpdateSyntaxTree(FileToLoad, this.textEditor.Document.Text);
+
+                textEditor.ScrollToVerticalOffset(offset);
+            }));
+
+            return 0;
+        }
+        public async Task<int> References_Updates()
         {
             AvalonReferencer r = new AvalonReferencer();
 
@@ -4319,6 +4639,8 @@ namespace AvalonEdit.Editor
 
         public bool shouldHighlight = false;
 
+
+
         public FrameworkElement v { get; set; }
 
         public TextEditor textEditor { get; set; }
@@ -4330,6 +4652,10 @@ namespace AvalonEdit.Editor
         private System.Windows.Media.Pen penOutline = new System.Windows.Media.Pen(new SolidColorBrush(System.Windows.Media.Color.FromArgb(50, 80, 80, 80)), 1);
 
         public string word { get; set; }
+
+        public List<int> searchResultIndices { get; set; }
+
+        public int searchResultLength = 0;
 
         private int prevStart = 0;
 
@@ -4346,7 +4672,7 @@ namespace AvalonEdit.Editor
             if (shouldHighlight)
                 drawingContext.DrawRectangle(brush, pen, new Rect(0, Position.Y - textView.VerticalOffset, v.ActualWidth, EndPosition.Y - Position.Y));
 
-            if (string.IsNullOrEmpty(word))
+            if (string.IsNullOrEmpty(word) && searchResultIndices == null)
                 return;
 
             if (!textView.VisualLinesValid)
@@ -4361,95 +4687,118 @@ namespace AvalonEdit.Editor
 
             textView.EnsureVisualLines();
             var currentLine = textEditor.Document.GetLineByOffset(textEditor.CaretOffset);
-
-            string text = textView.Document.Text.Substring(viewStart, viewEnd - viewStart);
-            int i = text.IndexOf(word);
-            while (i >= 0)
+            if (word != null && word != "")
             {
-                if (i + viewStart < currentLine.Offset || i + viewStart > currentLine.EndOffset + currentLine.DelimiterLength)
+                string text = textView.Document.Text.Substring(viewStart, viewEnd - viewStart);
+                int i = text.IndexOf(word);
+                while (i >= 0)
+                {
+                    if (i + viewStart < currentLine.Offset || i + viewStart > currentLine.EndOffset + currentLine.DelimiterLength)
+                    {
+                        BackgroundGeometryBuilder geoBuilder = new BackgroundGeometryBuilder();
+                        //geoBuilder.AlignToMiddleOfPixels = true;
+                        geoBuilder.CornerRadius = 1;
+                        TextSegment s = new TextSegment();
+                        s.StartOffset = viewStart + i;
+                        s.EndOffset = viewStart + i + word.Length;
+
+                        geoBuilder.AddSegment(textView, s);
+                        Geometry geometry = geoBuilder.CreateGeometry();
+                        if (geometry != null)
+                        {
+                            drawingContext.DrawGeometry(brush, pen, geometry);
+                        }
+                    }
+                    i = text.IndexOf(word, i + word.Length);
+
+                    if (i >= text.Length)
+                        break;
+                }
+
+                penOutline.DashStyle = DashStyles.Dash;
+                VisualLine ve = visualLines.First();
+                int start = 0;
+                i = 0;
+                while (i < visualLines.Count() - 1)
+                {
+                    ve = visualLines[i];
+
+                    VisualLine e = visualLines[i + 1];
+
+                    int viewFirst = ve.FirstDocumentLine.Offset;
+                    int viewLast = ve.LastDocumentLine.EndOffset;
+                    string s = textView.Document.Text.Substring(viewFirst, viewLast - viewFirst);
+                    int count = s.Length;
+                    int last = 0;
+
+                    start = 0;
+                    bool isWhitespace = true;
+                    int stride = 13;// (int)(ve.GetVisualPosition(4, VisualYPosition.LineTop).X - ve.GetVisualPosition(0, VisualYPosition.LineTop).X);
+                    while (isWhitespace)
+                    {
+                        var p = ve.GetVisualPosition(start, VisualYPosition.LineTop);
+                        p.Y -= textView.VerticalOffset;
+
+                        var pe = e.GetVisualPosition(start, VisualYPosition.LineTop);
+                        pe.Y -= textView.VerticalOffset;
+                        pe.X = p.X;
+
+                        if (string.IsNullOrEmpty(s))
+                        {
+                            if (start > prevStart)
+                                isWhitespace = false;
+                            else
+                            {
+                                if ((start % 4) == 0)
+                                {
+                                    p.X = (start / 4) * stride;
+                                    pe.X = p.X;
+                                    drawingContext.DrawLine(penOutline, p, pe);
+                                    last = start;
+                                }
+                                start++;
+                            }
+                        }
+                        else
+                        {
+                            if (char.IsWhiteSpace(s[start]))
+                            {
+                                if ((start % 4) == 0)
+                                {
+                                    drawingContext.DrawLine(penOutline, p, pe);
+                                    last = start;
+                                }
+
+                                start++;
+                            }
+                            else isWhitespace = false;
+                            if (start >= count)
+                                break;
+                        }
+                    }
+                    prevStart = last;
+                    i++;
+                }
+            }
+            if (searchResultIndices != null)
+            {
+
+                var r = searchResultIndices.Where(p => p >= viewStart && p <= viewEnd);
+                foreach(var ch in r)
                 {
                     BackgroundGeometryBuilder geoBuilder = new BackgroundGeometryBuilder();
-                    //geoBuilder.AlignToMiddleOfPixels = true;
                     geoBuilder.CornerRadius = 1;
                     TextSegment s = new TextSegment();
-                    s.StartOffset = viewStart + i;
-                    s.EndOffset = viewStart + i + word.Length;
+                    s.StartOffset = ch;
+                    s.EndOffset = ch + searchResultLength;
 
                     geoBuilder.AddSegment(textView, s);
                     Geometry geometry = geoBuilder.CreateGeometry();
                     if (geometry != null)
                     {
-                        drawingContext.DrawGeometry(brush, pen, geometry);
+                        drawingContext.DrawGeometry(Brushes.Orange, pen, geometry);
                     }
                 }
-                i = text.IndexOf(word, i + word.Length);
-
-                if (i >= text.Length)
-                    break;
-            }
-            penOutline.DashStyle = DashStyles.Dash;
-            VisualLine ve = visualLines.First();
-            int start = 0;
-            i = 0;
-            while (i < visualLines.Count() - 1)
-            {
-                ve = visualLines[i];
-
-                VisualLine e = visualLines[i + 1];
-
-                int viewFirst = ve.FirstDocumentLine.Offset;
-                int viewLast = ve.LastDocumentLine.EndOffset;
-                string s = textView.Document.Text.Substring(viewFirst, viewLast - viewFirst);
-                int count = s.Length;
-                int last = 0;
-
-                start = 0;
-                bool isWhitespace = true;
-                int stride = 13;// (int)(ve.GetVisualPosition(4, VisualYPosition.LineTop).X - ve.GetVisualPosition(0, VisualYPosition.LineTop).X);
-                while (isWhitespace)
-                {
-                    var p = ve.GetVisualPosition(start, VisualYPosition.LineTop);
-                    p.Y -= textView.VerticalOffset;
-
-                    var pe = e.GetVisualPosition(start, VisualYPosition.LineTop);
-                    pe.Y -= textView.VerticalOffset;
-                    pe.X = p.X;
-
-                    if (string.IsNullOrEmpty(s))
-                    {
-                        if (start > prevStart)
-                            isWhitespace = false;
-                        else
-                        {
-                            if ((start % 4) == 0)
-                            {
-                                p.X = (start / 4) * stride;
-                                pe.X = p.X;
-                                drawingContext.DrawLine(penOutline, p, pe);
-                                last = start;
-                            }
-                            start++;
-                        }
-                    }
-                    else
-                    {
-                        if (char.IsWhiteSpace(s[start]))
-                        {
-                            if ((start % 4) == 0)
-                            {
-                                drawingContext.DrawLine(penOutline, p, pe);
-                                last = start;
-                            }
-
-                            start++;
-                        }
-                        else isWhitespace = false;
-                        if (start >= count)
-                            break;
-                    }
-                }
-                prevStart = last;
-                i++;
             }
 
             foreach (var rect in BackgroundGeometryBuilder.GetRectsForSegment(textView, currentLine))
@@ -4967,6 +5316,44 @@ namespace AvalonEdit.Editor
             offsets.Reverse();
 
             return 0;
+        }
+    }
+    public class Searcher
+    {
+        public string texttofind { get; set; }
+        public List<int> Offsets { get; set; }
+        public List<LocationSource> source { get; set; }
+        public List<LocationSource> sources { get; set; }
+        public int Active { get; set; }
+        public int Id { get; set; }
+        public LocationSource ActiveSource { get; set; }
+        public EditorWindow editorWindow { get; set; }
+        public int NextSearchResult()
+        {
+            Active++;
+            if (Active >= Offsets.Count)
+            {
+                Active--;
+                //   Active = 0;
+                if (EditorWindow.FindResultsRequired == null)
+                    return 1;
+                
+                EditorWindow.FindResultsRequired.Invoke(this);
+                return 0;
+            }
+            editorWindow.Dispatcher.Invoke(new Action(() =>
+            {
+                editorWindow.Focus();
+                editorWindow.ShowOffset(Offsets[Active]);
+                editorWindow.textEditor.TextArea.InvalidateVisual();
+                
+            }));
+            return 1;
+        }
+        public int NextResultFileIndex()
+        {
+            var r = sources[Active].next.id;
+            return r;
         }
     }
 }

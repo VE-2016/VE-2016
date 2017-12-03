@@ -114,6 +114,7 @@
   <ItemGroup>
     <Compile Include="AvalonEditorCommands.cs" />
     <Compile Include="Converters.cs" />
+    <Compile Include="FindFormPopup.xaml.cs" />
     <Compile Include="FindForm.xaml.cs" />
     <Compile Include="SyntaxTreeViewer.cs" />
     <Compile Include="QuickClassBrowser.cs" />
@@ -140,6 +141,10 @@
     <Compile Include="EditorWindow.xaml.cs">
       <DependentUpon>EditorWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="FindFormPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="FindForm.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

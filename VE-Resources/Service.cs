@@ -55,6 +55,27 @@ namespace ves
             }
             return null;
         }
+        static public Bitmap GetTransparentOverlay(Bitmap bmp, Color t)
+        {
+            Bitmap b = new Bitmap(bmp.Width, bmp.Height);
+
+            int w = bmp.Width;
+            int h = bmp.Height;
+
+            for(int i = 0; i < w; i++)
+                for(int j = 0; j < h; j++)
+                {
+                    Color c = bmp.GetPixel(i, j);
+                    if (c.A != 255)
+                    {
+                        c = Color.FromArgb(255, t);
+                        b.SetPixel(i, j, c);
+                    }
+                    else b.SetPixel(i, j, c);
+                }
+
+            return b;
+        }
         static public void LoadDictionary()
         {
             if (dc == null)

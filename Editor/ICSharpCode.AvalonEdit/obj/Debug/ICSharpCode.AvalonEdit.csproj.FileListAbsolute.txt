@@ -98,4 +98,3 @@ F:\ve\ve-2024\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.Avalon
 F:\ve\ve-2024\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.csproj.CoreCompileInputs.cache
 F:\ve\ve-2024\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.dll
 F:\ve\ve-2024\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.pdb
-F:\ve\ve-2024\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.csprojResolveAssemblyReference.cache

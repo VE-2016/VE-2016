@@ -1027,5 +1027,11 @@
   <ItemGroup>
     <None Include="Resources\StatusOffline_16xSM.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ResizeGripLeft_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CaseSensitive_16x.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

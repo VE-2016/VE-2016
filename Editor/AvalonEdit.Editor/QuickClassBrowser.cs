@@ -141,9 +141,9 @@ namespace AvalonEdit.Editor
 
         public SemanticModel model { get; set; }
 
-        public void Load(VSSolution vs, string FileToLoad, string content)
+        public void Load(VSSolution vs, string FileToLoad, string content, bool overwrite = true)
         {
-            SyntaxTree synTree = vs.GetSyntaxTree(FileToLoad, content);
+            SyntaxTree synTree = vs.GetSyntaxTree(FileToLoad, content, overwrite);
             if (synTree == null)
                 return;
 

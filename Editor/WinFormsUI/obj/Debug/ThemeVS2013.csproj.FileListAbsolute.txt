@@ -86,3 +86,4 @@ F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\obj\Debug\ThemeVS2013.csproj.GenerateRes
 F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\obj\Debug\ThemeVS2013.csproj.CoreCompileInputs.cache
 F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2013.dll
 F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2013.pdb
+F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\obj\Debug\ThemeVS2013.csprojResolveAssemblyReference.cache

@@ -74,10 +74,6 @@ f:\ve\ve-2023\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS20
 f:\ve\ve-2023\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2010.pdb
 F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2010.dll
 F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2010.pdb
-F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\bin\Debug\VE-Resources.dll
-F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
-F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\bin\Debug\VE-Resources.pdb
-F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\bin\Debug\VE-Resources.dll.config
 F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\obj\Debug\ThemeVS2010.csprojResolveAssemblyReference.cache
 F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2010.Resources.resources
 F:\ve\ve-2024\VE-2016\Editor\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2012.Resources.resources

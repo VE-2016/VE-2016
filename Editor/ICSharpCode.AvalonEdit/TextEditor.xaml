@@ -3,6 +3,7 @@
 	xmlns:AvalonEdit="clr-namespace:ICSharpCode.AvalonEdit"
 	xmlns:editing="clr-namespace:ICSharpCode.AvalonEdit.Editing"
 >
+   
     <Style TargetType="{x:Type AvalonEdit:TextEditor}">
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" />
         <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />

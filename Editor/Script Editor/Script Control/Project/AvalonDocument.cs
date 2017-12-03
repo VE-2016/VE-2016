@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AvalonEdit.Editor;
+using System;
 using System.Threading.Tasks;
 using VSProvider;
 using WeifenLuo.WinFormsUI.Docking;
@@ -81,6 +82,11 @@ namespace ScriptControl.Properties
         public void Save()
         {
             Editor.dv.Save();
+        }
+
+        public void StartSearchResults(Searcher searcher)
+        {
+            Editor.dv.StartSearchResults(searcher);
         }
 
         ~AvalonDocument()

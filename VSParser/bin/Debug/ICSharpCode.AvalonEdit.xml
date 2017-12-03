@@ -82,9 +82,9 @@
             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.CodeCompletion.CompletionListBox.#ctor">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.CodeCompletion.CompletionListBox.OnApplyTemplate">
             <inheritdoc/>
@@ -115,10 +115,10 @@
             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.CodeCompletion.CompletionListBox.FliterItems(System.Object)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="obs"></param>
+             </summary>
+             <param name="obs"></param>
         </member>
         <member name="T:ICSharpCode.AvalonEdit.CodeCompletion.CompletionWindowBase">
             <summary>
@@ -131,9 +131,9 @@
             </summary>
         </member>
         <member name="P:ICSharpCode.AvalonEdit.CodeCompletion.CompletionWindowBase.completionWindow">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="P:ICSharpCode.AvalonEdit.CodeCompletion.CompletionWindowBase.StartOffset">
             <summary>
@@ -158,9 +158,9 @@
             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.CodeCompletion.CompletionWindowBase.LoadStartOffset">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.CodeCompletion.CompletionWindowBase._DetachEvents">
             <summary>
@@ -280,14 +280,14 @@
             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.CodeCompletion.CompletionList.SaveState">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.CodeCompletion.CompletionList.UpdateData(System.String)">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.CodeCompletion.CompletionList.OnKeyDown(System.Windows.Input.KeyEventArgs)">
             <inheritdoc/>
@@ -351,26 +351,26 @@
             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.CodeCompletion.CompletionWindow.MakeVisible(System.Boolean)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="v"></param>
+             </summary>
+             <param name="v"></param>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.CodeCompletion.CompletionWindow.SetContent(System.Object)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="completionControl"></param>
+             </summary>
+             <param name="completionControl"></param>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.CodeCompletion.CompletionWindow._AttachEvents">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.CodeCompletion.CompletionWindow._DetachEvents">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.CodeCompletion.CompletionWindow.OnClosed(System.EventArgs)">
             <inheritdoc/>
@@ -432,9 +432,9 @@
             </summary>
         </member>
         <member name="P:ICSharpCode.AvalonEdit.CodeCompletion.ICompletionData.textBlock">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.CodeCompletion.ICompletionData.Complete(ICSharpCode.AvalonEdit.Editing.TextArea,ICSharpCode.AvalonEdit.Document.ISegment,System.EventArgs)">
             <summary>
@@ -560,39 +560,39 @@
             <param name="relativeIndexChange">The relative index change - usual values are +1 or -1.</param>
         </member>
         <member name="T:ICSharpCode.AvalonEdit.CodeCompletion.TextBlockExtended">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.CodeCompletion.TextBlockExtended.#ctor">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:ICSharpCode.AvalonEdit.CodeCompletion.TextBlockExtended.SearchProperty">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:ICSharpCode.AvalonEdit.CodeCompletion.TextBlockExtended.DataProperty">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="P:ICSharpCode.AvalonEdit.CodeCompletion.TextBlockExtended.Search">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="P:ICSharpCode.AvalonEdit.CodeCompletion.TextBlockExtended.Data">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.CodeCompletion.TextBlockExtended.Update(System.String)">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="T:ICSharpCode.AvalonEdit.Document.DocumentChangeOperation">
             <summary>
@@ -1495,9 +1495,9 @@
             </summary>
         </member>
         <member name="P:ICSharpCode.AvalonEdit.Document.DocumentLine.obs">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="P:ICSharpCode.AvalonEdit.Document.DocumentLine.IsDeleted">
             <summary>
@@ -1575,10 +1575,10 @@
             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.Document.DocumentLine.toString">
-            <summary>
+             <summary>
             
-            </summary>
-            <returns></returns>
+             </summary>
+             <returns></returns>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.Document.NewLineFinder.NextNewLine(System.String,System.Int32)">
             <summary>
@@ -2764,24 +2764,24 @@
             the "\r\n" merge, returns the previous line.</returns>
         </member>
         <member name="T:ICSharpCode.AvalonEdit.Document.DocumentLineExt">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.Document.DocumentLineExt.#ctor(ICSharpCode.AvalonEdit.Document.TextDocument)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="textDocument"></param>
+             </summary>
+             <param name="textDocument"></param>
         </member>
         <member name="T:ICSharpCode.AvalonEdit.Document.DocumentLineTree">
-            <summary>
-            Data structure for efficient management of the document lines (most operations are O(lg n)).
-            This implements an augmented red-black tree.
-            See <see cref="T:ICSharpCode.AvalonEdit.Document.DocumentLine"/> for the augmented data.
+             <summary>
+             Data structure for efficient management of the document lines (most operations are O(lg n)).
+             This implements an augmented red-black tree.
+             See <see cref="T:ICSharpCode.AvalonEdit.Document.DocumentLine"/> for the augmented data.
             
-            NOTE: The tree is never empty, initially it contains an empty line.
-            </summary>
+             NOTE: The tree is never empty, initially it contains an empty line.
+             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.Document.DocumentLineTree.RebuildTree(System.Collections.Generic.List{ICSharpCode.AvalonEdit.Document.DocumentLine})">
             <summary>
@@ -2844,10 +2844,10 @@
             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.Document.TextDocument.SetVirtualLines(ICSharpCode.AvalonEdit.Document.TextDocument)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="d"></param>
+             </summary>
+             <param name="d"></param>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.Document.TextDocument.GetText(System.Int32,System.Int32)">
             <inheritdoc/>
@@ -3042,10 +3042,10 @@
             </remarks>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.Document.TextDocument.Update(ICSharpCode.AvalonEdit.Document.DocumentLine)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="b"></param>
+             </summary>
+             <param name="b"></param>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.Document.TextDocument.Insert(System.Int32,ICSharpCode.AvalonEdit.Document.ITextSource)">
             <summary>
@@ -3551,16 +3551,16 @@
             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.Editing.IReadOnlySectionProvider.GetDeletableSegments(ICSharpCode.AvalonEdit.Document.ISegment)">
-            <summary>
-            Gets the deletable segments inside the given segment.
-            </summary>
-            <remarks>
-            All segments in the result must be within the given segment, and they must be returned in order
-            (e.g. if two segments are returned, EndOffset of first segment must be less than StartOffset of second segment).
+             <summary>
+             Gets the deletable segments inside the given segment.
+             </summary>
+             <remarks>
+             All segments in the result must be within the given segment, and they must be returned in order
+             (e.g. if two segments are returned, EndOffset of first segment must be less than StartOffset of second segment).
             
-            For replacements, the last segment being returned will be replaced with the new text. If an empty list is returned,
-            no replacement will be done.
-            </remarks>
+             For replacements, the last segment being returned will be replaced with the new text. If an empty list is returned,
+             no replacement will be done.
+             </remarks>
         </member>
         <member name="T:ICSharpCode.AvalonEdit.Editing.LineNumberMargin">
             <summary>
@@ -4079,18 +4079,18 @@
             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.Editing.TextArea.EnsureSelectionValid">
-            <summary>
-            Code that updates only the caret but not the selection can cause confusion when
-            keys like 'Delete' delete the (possibly invisible) selected text and not the
-            text around the caret.
+             <summary>
+             Code that updates only the caret but not the selection can cause confusion when
+             keys like 'Delete' delete the (possibly invisible) selected text and not the
+             text around the caret.
             
-            So we'll ensure that the caret is inside the selection.
-            (when the caret is not in the selection, we'll clear the selection)
+             So we'll ensure that the caret is inside the selection.
+             (when the caret is not in the selection, we'll clear the selection)
             
-            This method is invoked using the Dispatcher so that code may temporarily violate this rule
-            (e.g. most 'extend selection' methods work by first setting the caret, then the selection),
-            it's sufficient to fix it after any event handlers have run.
-            </summary>
+             This method is invoked using the Dispatcher so that code may temporarily violate this rule
+             (e.g. most 'extend selection' methods work by first setting the caret, then the selection),
+             it's sufficient to fix it after any event handlers have run.
+             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.Editing.TextArea.AllowCaretOutsideSelection">
             <summary>
@@ -5276,22 +5276,22 @@
             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.Highlighting.HighlightingEngine.HighlightLine(ICSharpCode.AvalonEdit.Document.IDocument,ICSharpCode.AvalonEdit.Document.IDocumentLine)">
-            <summary>
-            Highlights the specified line in the specified document.
+             <summary>
+             Highlights the specified line in the specified document.
             
-            Before calling this method, <see cref="P:ICSharpCode.AvalonEdit.Highlighting.HighlightingEngine.CurrentSpanStack"/> must be set to the proper
-            state for the beginning of this line. After highlighting has completed,
-            <see cref="P:ICSharpCode.AvalonEdit.Highlighting.HighlightingEngine.CurrentSpanStack"/> will be updated to represent the state after the line.
-            </summary>
+             Before calling this method, <see cref="P:ICSharpCode.AvalonEdit.Highlighting.HighlightingEngine.CurrentSpanStack"/> must be set to the proper
+             state for the beginning of this line. After highlighting has completed,
+             <see cref="P:ICSharpCode.AvalonEdit.Highlighting.HighlightingEngine.CurrentSpanStack"/> will be updated to represent the state after the line.
+             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.Highlighting.HighlightingEngine.ScanLine(ICSharpCode.AvalonEdit.Document.IDocument,ICSharpCode.AvalonEdit.Document.IDocumentLine)">
-            <summary>
-            Updates <see cref="P:ICSharpCode.AvalonEdit.Highlighting.HighlightingEngine.CurrentSpanStack"/> for the specified line in the specified document.
+             <summary>
+             Updates <see cref="P:ICSharpCode.AvalonEdit.Highlighting.HighlightingEngine.CurrentSpanStack"/> for the specified line in the specified document.
             
-            Before calling this method, <see cref="P:ICSharpCode.AvalonEdit.Highlighting.HighlightingEngine.CurrentSpanStack"/> must be set to the proper
-            state for the beginning of this line. After highlighting has completed,
-            <see cref="P:ICSharpCode.AvalonEdit.Highlighting.HighlightingEngine.CurrentSpanStack"/> will be updated to represent the state after the line.
-            </summary>
+             Before calling this method, <see cref="P:ICSharpCode.AvalonEdit.Highlighting.HighlightingEngine.CurrentSpanStack"/> must be set to the proper
+             state for the beginning of this line. After highlighting has completed,
+             <see cref="P:ICSharpCode.AvalonEdit.Highlighting.HighlightingEngine.CurrentSpanStack"/> will be updated to represent the state after the line.
+             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.Highlighting.HighlightingEngine.Minimum(System.Text.RegularExpressions.Match[],System.Text.RegularExpressions.Match)">
             <summary>
@@ -5497,31 +5497,31 @@
             </summary>
         </member>
         <member name="E:ICSharpCode.AvalonEdit.Highlighting.IHighlighter.HighlightingStateChanged">
-            <summary>
-            Notification when the highlighter detects that the highlighting state at the
-            <b>beginning</b> of the specified lines has changed.
-            <c>fromLineNumber</c> and <c>toLineNumber</c> are both inclusive;
-            the common case of a single-line change is represented by <c>fromLineNumber == toLineNumber</c>.
+             <summary>
+             Notification when the highlighter detects that the highlighting state at the
+             <b>beginning</b> of the specified lines has changed.
+             <c>fromLineNumber</c> and <c>toLineNumber</c> are both inclusive;
+             the common case of a single-line change is represented by <c>fromLineNumber == toLineNumber</c>.
             
-            During highlighting, the highlighting of line X will cause this event to be raised
-            for line X+1 if the highlighting state at the end of line X has changed from its previous state.
-            This event may also be raised outside of the highlighting process to signalize that
-            changes to external data (not the document text; but e.g. semantic information)
-            require a re-highlighting of the specified lines.
-            </summary>
-            <remarks>
-            For implementers: there is the requirement that, during highlighting,
-            if there was no state changed reported for the beginning of line X,
-            and there were no document changes between the start of line X and the start of line Y (with Y > X),
-            then this event must not be raised for any line between X and Y (inclusive).
+             During highlighting, the highlighting of line X will cause this event to be raised
+             for line X+1 if the highlighting state at the end of line X has changed from its previous state.
+             This event may also be raised outside of the highlighting process to signalize that
+             changes to external data (not the document text; but e.g. semantic information)
+             require a re-highlighting of the specified lines.
+             </summary>
+             <remarks>
+             For implementers: there is the requirement that, during highlighting,
+             if there was no state changed reported for the beginning of line X,
+             and there were no document changes between the start of line X and the start of line Y (with Y > X),
+             then this event must not be raised for any line between X and Y (inclusive).
             
-            Equal input state + unchanged line = Equal output state.
+             Equal input state + unchanged line = Equal output state.
             
-            See the comment in the HighlightingColorizer.OnHighlightStateChanged implementation
-            for details about the requirements for a correct custom IHighlighter.
+             See the comment in the HighlightingColorizer.OnHighlightStateChanged implementation
+             for details about the requirements for a correct custom IHighlighter.
             
-            Outside of the highlighting process, this event can be raised without such restrictions.
-            </remarks>
+             Outside of the highlighting process, this event can be raised without such restrictions.
+             </remarks>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.Highlighting.IHighlighter.BeginHighlighting">
             <summary>
@@ -6519,24 +6519,24 @@
             </summary>
         </member>
         <member name="P:ICSharpCode.AvalonEdit.Rendering.BackgroundGeometryBuilder.AlignToWholePixels">
-            <summary>
-            Gets/Sets whether to align to whole pixels.
+             <summary>
+             Gets/Sets whether to align to whole pixels.
             
-            If BorderThickness is set to 0, the geometry is aligned to whole pixels.
-            If BorderThickness is set to a non-zero value, the outer edge of the border is aligned
-            to whole pixels.
+             If BorderThickness is set to 0, the geometry is aligned to whole pixels.
+             If BorderThickness is set to a non-zero value, the outer edge of the border is aligned
+             to whole pixels.
             
-            The default value is <c>false</c>.
-            </summary>
+             The default value is <c>false</c>.
+             </summary>
         </member>
         <member name="P:ICSharpCode.AvalonEdit.Rendering.BackgroundGeometryBuilder.BorderThickness">
-            <summary>
-            Gets/sets the border thickness.
+             <summary>
+             Gets/sets the border thickness.
             
-            This property only has an effect if <c>AlignToWholePixels</c> is enabled.
-            When using the resulting geometry to paint a border, set this property to the border thickness.
-            Otherwise, leave the property set to the default value <c>0</c>.
-            </summary>
+             This property only has an effect if <c>AlignToWholePixels</c> is enabled.
+             When using the resulting geometry to paint a border, set this property to the border thickness.
+             Otherwise, leave the property set to the default value <c>0</c>.
+             </summary>
         </member>
         <member name="P:ICSharpCode.AvalonEdit.Rendering.BackgroundGeometryBuilder.AlignToMiddleOfPixels">
             <summary>
@@ -7339,19 +7339,19 @@
             </summary>
         </member>
         <member name="T:ICSharpCode.AvalonEdit.Rendering.TextLayer">
-            <summary>
-            The control that contains the text.
+             <summary>
+             The control that contains the text.
             
-            This control is used to allow other UIElements to be placed inside the TextView but
-            behind the text.
-            The text rendering process (VisualLine creation) is controlled by the TextView, this
-            class simply displays the created Visual Lines.
-            </summary>
-            <remarks>
-            This class does not contain any input handling and is invisible to hit testing. Input
-            is handled by the TextView.
-            This allows UIElements that are displayed behind the text, but still can react to mouse input.
-            </remarks>
+             This control is used to allow other UIElements to be placed inside the TextView but
+             behind the text.
+             The text rendering process (VisualLine creation) is controlled by the TextView, this
+             class simply displays the created Visual Lines.
+             </summary>
+             <remarks>
+             This class does not contain any input handling and is invisible to hit testing. Input
+             is handled by the TextView.
+             This allows UIElements that are displayed behind the text, but still can react to mouse input.
+             </remarks>
         </member>
         <member name="F:ICSharpCode.AvalonEdit.Rendering.TextLayer.index">
             <summary>
@@ -7359,13 +7359,13 @@
             </summary>
         </member>
         <member name="T:ICSharpCode.AvalonEdit.Rendering.TextView">
-            <summary>
-            A virtualizing panel producing+showing <see cref="T:ICSharpCode.AvalonEdit.Rendering.VisualLine"/>s for a <see cref="T:ICSharpCode.AvalonEdit.Document.TextDocument"/>.
+             <summary>
+             A virtualizing panel producing+showing <see cref="T:ICSharpCode.AvalonEdit.Rendering.VisualLine"/>s for a <see cref="T:ICSharpCode.AvalonEdit.Document.TextDocument"/>.
             
-            This is the heart of the text editor, this class controls the text rendering process.
+             This is the heart of the text editor, this class controls the text rendering process.
             
-            Taken as a standalone control, it's a text viewer without any editing capability.
-            </summary>
+             Taken as a standalone control, it's a text viewer without any editing capability.
+             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.Rendering.TextView.#ctor">
             <summary>
@@ -7806,22 +7806,22 @@
             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.Rendering.TextView.CollapseLines(ICSharpCode.AvalonEdit.Document.DocumentLine,ICSharpCode.AvalonEdit.Document.DocumentLine)">
-            <summary>
-            Collapses lines for the purpose of scrolling. <see cref="T:ICSharpCode.AvalonEdit.Document.DocumentLine"/>s marked as collapsed will be hidden
-            and not used to start the generation of a <see cref="T:ICSharpCode.AvalonEdit.Rendering.VisualLine"/>.
-            </summary>
-            <remarks>
-            This method is meant for <see cref="T:ICSharpCode.AvalonEdit.Rendering.VisualLineElementGenerator"/>s that cause <see cref="T:ICSharpCode.AvalonEdit.Rendering.VisualLine"/>s to span
-            multiple <see cref="T:ICSharpCode.AvalonEdit.Document.DocumentLine"/>s. Do not call it without providing a corresponding
-            <see cref="T:ICSharpCode.AvalonEdit.Rendering.VisualLineElementGenerator"/>.
-            If you want to create collapsible text sections, see <see cref="T:ICSharpCode.AvalonEdit.Folding.FoldingManager"/>.
+             <summary>
+             Collapses lines for the purpose of scrolling. <see cref="T:ICSharpCode.AvalonEdit.Document.DocumentLine"/>s marked as collapsed will be hidden
+             and not used to start the generation of a <see cref="T:ICSharpCode.AvalonEdit.Rendering.VisualLine"/>.
+             </summary>
+             <remarks>
+             This method is meant for <see cref="T:ICSharpCode.AvalonEdit.Rendering.VisualLineElementGenerator"/>s that cause <see cref="T:ICSharpCode.AvalonEdit.Rendering.VisualLine"/>s to span
+             multiple <see cref="T:ICSharpCode.AvalonEdit.Document.DocumentLine"/>s. Do not call it without providing a corresponding
+             <see cref="T:ICSharpCode.AvalonEdit.Rendering.VisualLineElementGenerator"/>.
+             If you want to create collapsible text sections, see <see cref="T:ICSharpCode.AvalonEdit.Folding.FoldingManager"/>.
             
-            Note that if you want a VisualLineElement to span from line N to line M, then you need to collapse only the lines
-            N+1 to M. Do not collapse line N itself.
+             Note that if you want a VisualLineElement to span from line N to line M, then you need to collapse only the lines
+             N+1 to M. Do not collapse line N itself.
             
-            When you no longer need the section to be collapsed, call <see cref="M:ICSharpCode.AvalonEdit.Rendering.CollapsedLineSection.Uncollapse"/> on the
-            <see cref="T:ICSharpCode.AvalonEdit.Rendering.CollapsedLineSection"/> returned from this method.
-            </remarks>
+             When you no longer need the section to be collapsed, call <see cref="M:ICSharpCode.AvalonEdit.Rendering.CollapsedLineSection.Uncollapse"/> on the
+             <see cref="T:ICSharpCode.AvalonEdit.Rendering.CollapsedLineSection"/> returned from this method.
+             </remarks>
         </member>
         <member name="P:ICSharpCode.AvalonEdit.Rendering.TextView.DocumentHeight">
             <summary>
@@ -8593,7 +8593,7 @@
         </member>
         <member name="F:ICSharpCode.AvalonEdit.Rendering.VisualYPosition.TextBottom">
             <summary>
-            Returns the bottom of the text. 
+            Returns the bottom of the text.
             If the line contains inline UI elements larger than the text, TextBottom might be above LineBottom.
             For a line containing regular text (all in the editor's main font), this will be equal to LineBottom.
             </summary>
@@ -8609,20 +8609,20 @@
             </summary>
         </member>
         <member name="T:ICSharpCode.AvalonEdit.ScrollViewers">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.ScrollViewers.#ctor">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.ScrollViewers.OnScrollChanged(System.Windows.Controls.ScrollChangedEventArgs)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="e"></param>
+             </summary>
+             <param name="e"></param>
         </member>
         <member name="T:ICSharpCode.AvalonEdit.Search.Localization">
             <summary>
@@ -9388,10 +9388,10 @@
             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.TextEditor.GetDocument">
-            <summary>
+             <summary>
             
-            </summary>
-            <returns></returns>
+             </summary>
+             <returns></returns>
         </member>
         <member name="E:ICSharpCode.AvalonEdit.TextEditor.DocumentChanged">
             <summary>
@@ -10109,16 +10109,16 @@
             </summary>
         </member>
         <member name="P:ICSharpCode.AvalonEdit.TextViewPosition.IsAtEndOfLine">
-            <summary>
-            When word-wrap is enabled and a line is wrapped at a position where there is no space character;
-            then both the end of the first TextLine and the beginning of the second TextLine
-            refer to the same position in the document, and also have the same visual column.
-            In this case, the IsAtEndOfLine property is used to distinguish between the two cases:
-            the value <c>true</c> indicates that the position refers to the end of the previous TextLine;
-            the value <c>false</c> indicates that the position refers to the beginning of the next TextLine.
+             <summary>
+             When word-wrap is enabled and a line is wrapped at a position where there is no space character;
+             then both the end of the first TextLine and the beginning of the second TextLine
+             refer to the same position in the document, and also have the same visual column.
+             In this case, the IsAtEndOfLine property is used to distinguish between the two cases:
+             the value <c>true</c> indicates that the position refers to the end of the previous TextLine;
+             the value <c>false</c> indicates that the position refers to the beginning of the next TextLine.
             
-            If this position is not at such a wrapping position, the value of this property has no effect.
-            </summary>
+             If this position is not at such a wrapping position, the value of this property has no effect.
+             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.TextViewPosition.#ctor(System.Int32,System.Int32,System.Int32)">
             <summary>
@@ -10471,9 +10471,9 @@
             </summary>
         </member>
         <member name="T:ICSharpCode.AvalonEdit.Utils.ExtensionMethods">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:ICSharpCode.AvalonEdit.Utils.ExtensionMethods.Epsilon">
             <summary>
@@ -10617,11 +10617,11 @@
             </summary>
         </member>
         <member name="T:ICSharpCode.AvalonEdit.Utils.ImmutableStack`1">
-            <summary>
-            An immutable stack.
+             <summary>
+             An immutable stack.
             
-            Using 'foreach' on the stack will return the items from top to bottom (in the order they would be popped).
-            </summary>
+             Using 'foreach' on the stack will return the items from top to bottom (in the order they would be popped).
+             </summary>
         </member>
         <member name="F:ICSharpCode.AvalonEdit.Utils.ImmutableStack`1.Empty">
             <summary>
