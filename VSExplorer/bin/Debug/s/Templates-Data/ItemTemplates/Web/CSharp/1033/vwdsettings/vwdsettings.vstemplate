@@ -1,0 +1,11 @@
+﻿<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+	<TemplateData>
+		<Hidden>True</Hidden>
+            <TemplateID>Microsoft.Web.CSharp.WebSettings</TemplateID>
+        	<ProjectType>Web</ProjectType>
+        	<ProjectSubType>CSharp</ProjectSubType>
+	</TemplateData>
+	<TemplateContent>
+		<ProjectItem>vwd.webinfo</ProjectItem>
+	</TemplateContent>
+</VSTemplate>

@@ -8612,17 +8612,46 @@
              <summary>
             
              </summary>
+            <summary>
+            ScrollViewers
+            </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.ScrollViewers.#ctor">
              <summary>
             
              </summary>
         </member>
+        <member name="M:ICSharpCode.AvalonEdit.ScrollViewers.OnApplyTemplate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.AvalonEdit.ScrollViewers.panel_bottom">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.AvalonEdit.ScrollViewers.button">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.AvalonEdit.ScrollViewers.MakeSplitterButton(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="visible"></param>
+        </member>
         <member name="M:ICSharpCode.AvalonEdit.ScrollViewers.OnScrollChanged(System.Windows.Controls.ScrollChangedEventArgs)">
              <summary>
             
              </summary>
              <param name="e"></param>
+        </member>
+        <member name="M:ICSharpCode.AvalonEdit.ScrollViewers.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
         </member>
         <member name="T:ICSharpCode.AvalonEdit.Search.Localization">
             <summary>
@@ -9439,6 +9468,11 @@
         <member name="M:ICSharpCode.AvalonEdit.TextEditor.OnTextChanged(System.EventArgs)">
             <summary>
             Raises the <see cref="E:ICSharpCode.AvalonEdit.TextEditor.TextChanged"/> event.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.AvalonEdit.TextEditor.scrollViewer">
+            <summary>
+            
             </summary>
         </member>
         <member name="M:ICSharpCode.AvalonEdit.TextEditor.OnApplyTemplate">

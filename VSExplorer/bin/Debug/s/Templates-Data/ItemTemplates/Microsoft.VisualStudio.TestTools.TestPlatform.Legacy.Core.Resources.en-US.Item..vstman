@@ -1,0 +1,18 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>Test\1033\TestSettings</RelativePathOnDisk>
+    <TemplateFileName>TestSettings.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>Test Settings</Name>
+        <Description>Settings that determine how tests are processed.</Description>
+        <ProjectType>Test</ProjectType>
+        <SortOrder>80</SortOrder>
+        <DefaultName>TestSettings.testsettings</DefaultName>
+        <TemplateGroupID>TestProject-V1</TemplateGroupID>
+        <TemplateID>TestProject-V1-TestSettings</TemplateID>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

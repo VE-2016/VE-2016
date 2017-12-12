@@ -1,0 +1,17 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateDir>
+    <RelativePath>CSharp\XAML</RelativePath>
+    <LocalizedName Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1091" />
+    <SortOrder>1</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>VC\XAML</RelativePath>
+    <LocalizedName Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1091" />
+    <SortOrder>1</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>VisualBasic\XAML</RelativePath>
+    <LocalizedName Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1091" />
+    <SortOrder>1</SortOrder>
+  </VSTemplateDir>
+</VSTemplateManifest>

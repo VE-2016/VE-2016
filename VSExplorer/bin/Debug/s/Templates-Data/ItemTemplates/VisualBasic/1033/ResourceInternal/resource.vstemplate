@@ -1,0 +1,25 @@
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3105" />
+    <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3106" />
+    <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4548" />
+    <ProjectType>VisualBasic</ProjectType>
+    <SortOrder>240</SortOrder>
+    <DefaultName>Resource.resx</DefaultName>
+    <Hidden>true</Hidden>
+    <TemplateID>Microsoft.VisualBasic.Internal.Resource</TemplateID>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="false" OpenInEditor="false">resource.resx</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$itemproperties$" Value="CustomTool,CustomToolNamespace" />
+      <CustomParameter Name="$CustomToolNamespace$" Value="My.Resources" />
+      <CustomParameter Name="$CustomTool$" Value="VbMyResourcesResXFileCodeGenerator" />
+    </CustomParameters>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VisualStudio.Editors, Version=15.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VisualStudio.Editors.ResourceEditor.ResxItemWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

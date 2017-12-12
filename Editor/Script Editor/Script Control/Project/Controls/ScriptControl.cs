@@ -1099,8 +1099,13 @@ namespace ScriptControl
         {
             foreach (IDockContent doc in dockContainer1.Documents)
             {
-                if (doc.GetType() == typeof(Document))
-                    Save((Document)doc);
+                if (doc.GetType() == typeof(AvalonDocument))
+                {
+                    var cs = doc as AvalonDocument;
+                    cs.Save();
+                    cs.Text =cs.Text.Replace("*", "");
+                    dockContainer1.Refresh();
+                }
             }
 
             dockContainer1.Refresh();

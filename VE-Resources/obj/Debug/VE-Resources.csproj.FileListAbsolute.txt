@@ -56,6 +56,7 @@ f:\ve\ve-2023\VE-Resources\obj\Debug\VE-Resources.pdb
 F:\ve\ve-2024\VE-2016\VE-Resources\bin\Debug\VE-Resources.dll.config
 F:\ve\ve-2024\VE-2016\VE-Resources\bin\Debug\VE-Resources.dll
 F:\ve\ve-2024\VE-2016\VE-Resources\bin\Debug\VE-Resources.pdb
+F:\ve\ve-2024\VE-2016\VE-Resources\obj\Debug\VE-Resources.csprojResolveAssemblyReference.cache
 F:\ve\ve-2024\VE-2016\VE-Resources\obj\Debug\WinExplorers.Properties.Resources.resources
 F:\ve\ve-2024\VE-2016\VE-Resources\obj\Debug\WinExplorers.ve.resources
 F:\ve\ve-2024\VE-2016\VE-Resources\obj\Debug\VE-Resources.csproj.GenerateResource.Cache

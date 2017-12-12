@@ -1,0 +1,32 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name _locID="$templateName$">VSIX Project</Name>
+    <TemplateID>VisualBasic.VSIXProject</TemplateID>
+    <Description _locID="$templateDescription$">Build Visual Studio extensions using the Visual Studio SDK. Start with this template to extend functionality of Visual Studio by adding editor items, commands and tool windows. Then use the VSIX package to distribute your extension.</Description>
+    <ProjectType>VisualBasic</ProjectType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>VSIXProject</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>VSIXProject.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="VSIXProject.vbproj" File="VSIXProject.vbproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="source.extension.vsixmanifest">source.extension.vsixmanifest</ProjectItem>
+      <ProjectItem TargetFileName="index.html" OpenInWebBrowser="true">index.html</ProjectItem>
+      <ProjectItem TargetFileName="stylesheet.css">stylesheet.css</ProjectItem>
+      <Folder Name="My Project" TargetFolderName="My Project">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.vb">AssemblyInfo.vb</ProjectItem>
+      </Folder>
+    </Project>
+    <CustomParameters>
+      <CustomParameter _locID="$description$" Name="$description$" Value="Empty VSIX Project." />
+    </CustomParameters>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VSSDK.TemplateWizard, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VSSDK.TemplateWizard.MEFExtensionWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

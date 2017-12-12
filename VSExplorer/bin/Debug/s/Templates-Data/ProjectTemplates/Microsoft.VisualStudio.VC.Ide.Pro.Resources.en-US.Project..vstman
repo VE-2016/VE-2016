@@ -1,0 +1,27 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VC\Windows Root\Store Apps\Windows Store\1033\InstallWindows81</RelativePathOnDisk>
+    <TemplateFileName>InstallWindows81.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <TemplateID>Microsoft.VC.InstallWin81</TemplateID>
+        <Name _locID="WinRT_Project_Upgrade_To_8_1_Name">Install Windows 8.1</Name>
+        <Description _locID="WinRT_Project_Upgrade_To_8_1_Description">Windows Store app development is only supported on Windows 8.1 or higher</Description>
+        <ProjectType>VC</ProjectType>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <CreateNewFolder>false</CreateNewFolder>
+        <DefaultName>InstallWindows81</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <Icon>InstallWindows81.ico</Icon>
+        <SortOrder>100</SortOrder>
+        <PromptForSaveOnCreation>false</PromptForSaveOnCreation>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.2</RequiredPlatformVersion>
+        <MaxOSVersion>6.2</MaxOSVersion>
+        <Hidden>false</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

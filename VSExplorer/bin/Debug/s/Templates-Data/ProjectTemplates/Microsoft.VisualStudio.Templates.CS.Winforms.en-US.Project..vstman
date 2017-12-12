@@ -1,0 +1,61 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>CSharp\Windows\1033\WindowsApplication</RelativePathOnDisk>
+    <TemplateFileName>csWindowsApplication.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2318" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2319" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4554" />
+        <TemplateID>Microsoft.CSharp.WindowsFormsApplication</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <SortOrder>11</SortOrder>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WindowsFormsApp</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <CreateInPlace>false</CreateInPlace>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>CSharp\Windows\1033\WindowsControlLibrary</RelativePathOnDisk>
+    <TemplateFileName>csWindowsControlLibrary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2324" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2325" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4555" />
+        <TemplateID>Microsoft.CSharp.WindowsFormsControlLibrary</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>110</SortOrder>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WindowsFormsControlLibrary</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <CreateInPlace>true</CreateInPlace>
+        <SortOrder>23</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>CSharp\Windows\1033\WindowsService</RelativePathOnDisk>
+    <TemplateFileName>cswindowsservice.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2349" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2350" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4556" />
+        <TemplateID>Microsoft.CSharp.WindowsFormsService</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WindowsService</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <CreateInPlace>false</CreateInPlace>
+        <SortOrder>18</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

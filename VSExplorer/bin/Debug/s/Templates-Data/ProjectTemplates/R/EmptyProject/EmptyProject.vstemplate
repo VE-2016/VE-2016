@@ -1,0 +1,22 @@
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="301" />
+    <Description Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="302" />
+    <Icon Package="{6D7C5336-C0CA-4857-A7E7-2E964EA836BF}" ID="500" />
+    <TemplateID>Microsoft.RTools.Project.Empty</TemplateID>
+    <ProjectType>R</ProjectType>
+    <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>rproject</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <CreateInPlace>true</CreateInPlace>
+    <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$safeprojectname$.rproj" File="rproject.rproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName=".Rhistory">.Rhistory</ProjectItem>
+      <ProjectItem OpenInEditor="true">script.R</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
+

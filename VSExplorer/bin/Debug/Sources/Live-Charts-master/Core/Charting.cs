@@ -17,7 +17,7 @@
 //FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 //AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 //LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THEE
 //SOFTWARE.
 
 using System;
@@ -31,6 +31,7 @@ namespace LiveCharts
     /// <summary>
     /// Global LiveCharts configuration
     /// </summary>
+  References -  0        
     public class Charting
     {
         private static readonly Dictionary<Type, ConfigWrapper> Configurations;
@@ -40,6 +41,7 @@ namespace LiveCharts
         //Lets define some default configurations, all charts should be able to detect any of these types and plot
         //them correctly
 
+  References -  0        
         static Charting()
         {
             Configurations = new Dictionary<Type, ConfigWrapper>();
@@ -179,6 +181,7 @@ namespace LiveCharts
         /// <typeparam name="T">Type to configure</typeparam>
         /// <param name="config">mapper</param>
         /// <param name="orientation">mapper orientation</param>
+  References -  24        
         public static void For<T>(object config, SeriesOrientation orientation = SeriesOrientation.All)
         {
             ConfigWrapper wrapper;
@@ -210,6 +213,7 @@ namespace LiveCharts
         /// <typeparam name="T">type to look for</typeparam>
         /// <param name="orientation">orientation to look for</param>
         /// <returns></returns>
+  References -  1        
         public object GetConfig<T>(SeriesOrientation orientation = SeriesOrientation.Horizontal)
         {
             ConfigWrapper wrapper;
@@ -227,6 +231,7 @@ namespace LiveCharts
         }
     }
 
+  References -  0        
     internal class ConfigWrapper
     {
         public object HorizontalConfig { get; set; }

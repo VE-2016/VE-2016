@@ -1,0 +1,21 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name Package="{F1C25864-3097-11D2-A5C5-00C04F7968B4}" ID="10300" />
+    <Description Package="{F1C25864-3097-11D2-A5C5-00C04F7968B4}" ID="10301" />
+    <ProjectType>VC</ProjectType>
+    <TemplateID>Microsoft.VC.Shared</TemplateID>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>3000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Project</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>shared.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$projectname$.vcxitems" File="shared.vcxitems" ReplaceParameters="true">
+    </Project>
+  </TemplateContent>
+</VSTemplate>

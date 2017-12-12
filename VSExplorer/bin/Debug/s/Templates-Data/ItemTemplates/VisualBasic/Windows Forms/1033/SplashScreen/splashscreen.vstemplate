@@ -1,0 +1,38 @@
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3139" />
+    <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3140" />
+    <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4575" />
+    <ProjectType>VisualBasic</ProjectType>
+    <SortOrder>100</SortOrder>
+    <DefaultName>SplashScreen.vb</DefaultName>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>Microsoft.VisualBasic.WindowsForms.SplashScreen</TemplateID>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+  </TemplateData>
+  <TemplateContent>
+        <References>
+            <Reference>
+                <Assembly>System</Assembly>
+                <URL>https://www.microsoft.com</URL>
+            </Reference>
+            <Reference>
+                <Assembly>System.Drawing</Assembly>
+                <URL>https://www.microsoft.com</URL>
+            </Reference>
+            <Reference>
+                <Assembly>System.Windows.Forms</Assembly>
+                <URL>https://www.microsoft.com</URL>
+            </Reference>
+        </References>
+
+    <ProjectItem ReplaceParameters="true" SubType="Form">SplashScreen.vb</ProjectItem>
+    <ProjectItem ReplaceParameters="true">SplashScreen.Designer.vb</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$.resx" ReplaceParameters="false">SplashScreen.resx</ProjectItem>
+    <CustomParameters>
+        <CustomParameter _locID="$IT_SPLSH_VB_Loc_Version$" Name="$IT_SPLSH_VB_Loc_Version$" Value="Version"/>
+        <CustomParameter _locID="$IT_SPLSH_VB_Loc_Copyright$" Name="$IT_SPLSH_VB_Loc_Copyright$" Value="Copyright"/>
+        <CustomParameter _locID="$IT_SPLSH_VB_Loc_Title$" Name="$IT_SPLSH_VB_Loc_Title$" Value="Application Title"/>
+    </CustomParameters>
+  </TemplateContent>
+</VSTemplate>

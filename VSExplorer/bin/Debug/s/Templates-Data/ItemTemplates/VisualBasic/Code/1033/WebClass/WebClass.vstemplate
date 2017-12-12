@@ -1,0 +1,19 @@
+﻿<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+    <TemplateData>
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3020" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3021" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4510" />
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.WAP.VisualBasic.WebClass</TemplateID>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <ProjectType>VisualBasic</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <ShowByDefault>false</ShowByDefault>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <DefaultName>Class.vb</DefaultName>
+        <SortOrder>20</SortOrder>
+    </TemplateData>
+    <TemplateContent>
+        <ProjectItem ReplaceParameters="true">Class.vb</ProjectItem>
+    </TemplateContent>
+</VSTemplate>

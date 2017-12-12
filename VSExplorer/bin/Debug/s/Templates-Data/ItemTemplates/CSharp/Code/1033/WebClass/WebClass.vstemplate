@@ -1,0 +1,19 @@
+﻿<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+    <TemplateData>
+        <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3020"/>
+        <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3021"/>
+        <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4703"/>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.WAP.CSharp.WebClass</TemplateID>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <ProjectType>CSharp</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <ShowByDefault>false</ShowByDefault>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <DefaultName>Class.cs</DefaultName>
+        <SortOrder>20</SortOrder>
+    </TemplateData>
+    <TemplateContent>
+        <ProjectItem ReplaceParameters="true">Class.cs</ProjectItem>
+    </TemplateContent>
+</VSTemplate>

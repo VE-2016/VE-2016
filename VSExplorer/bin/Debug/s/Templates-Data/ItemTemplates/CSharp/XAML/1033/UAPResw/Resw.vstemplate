@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1127" />
+    <Description Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="1128" />
+    <Icon Package="{2581426E-BF4F-4A49-A42A-20EF9D51EF49}" ID="4006" />
+    <TemplateID>Microsoft.Templates.CSharp.UAP.Resw</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>Resources.resw</DefaultName>
+    <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+    <AppliesTo>CSharp + SharedAssetsProject</AppliesTo>
+    <ShowByDefault>false</ShowByDefault>
+    <AppIdFilter>blend</AppIdFilter>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ItemType="PRIResource">Resources.resw</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

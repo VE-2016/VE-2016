@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>전용 작업자</Name>
+    <Description>주 응용 프로그램과 병렬로 스크립트를 실행하기 위한 백그라운드 작업자입니다. 이렇게 하면 메시지 전달을 통한 스레드 방식 작업을 조정 메커니즘으로 사용할 수 있습니다.</Description>
+    <Icon>DedicatedWorker.ico</Icon>
+    <TemplateID>Microsoft.JavaScript.DedicatedWorker</TemplateID>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>worker.js</DefaultName>
+
+    <!-- "Dedicated Worker" project item template is applicable to all JavaScript projects except the JavaScript/TypeScript Cordova File Monitoring Projects -->
+    <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+    <ProjectType>JavaScript</ProjectType>
+    <ShowByDefault>false</ShowByDefault>
+    <AppliesTo>JavaScript + !FileSystemBasedCordovaProject</AppliesTo>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem>worker.js</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

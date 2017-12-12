@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>專用背景工作</Name>
+    <Description>用於平行執行指令碼至主應用程式的背景工作。如此可允許像是執行緒的作業內含做為協調機制的訊息傳遞功能。</Description>
+    <Icon>DedicatedWorker.ico</Icon>
+    <TemplateID>Microsoft.JavaScript.DedicatedWorker</TemplateID>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>worker.js</DefaultName>
+
+    <!-- "Dedicated Worker" project item template is applicable to all JavaScript projects except the JavaScript/TypeScript Cordova File Monitoring Projects -->
+    <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+    <ProjectType>JavaScript</ProjectType>
+    <ShowByDefault>false</ShowByDefault>
+    <AppliesTo>JavaScript + !FileSystemBasedCordovaProject</AppliesTo>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem>worker.js</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

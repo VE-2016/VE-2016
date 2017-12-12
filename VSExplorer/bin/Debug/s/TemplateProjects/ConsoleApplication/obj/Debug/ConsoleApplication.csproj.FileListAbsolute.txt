@@ -1,0 +1,6 @@
+C:\MSBuildProjects-beta\VSExplorer\bin\Debug\TemplateProjects\ConsoleApplication\bin\Debug\ConsoleApplication1.exe.config
+C:\MSBuildProjects-beta\VSExplorer\bin\Debug\TemplateProjects\ConsoleApplication\bin\Debug\ConsoleApplication1.exe
+C:\MSBuildProjects-beta\VSExplorer\bin\Debug\TemplateProjects\ConsoleApplication\bin\Debug\ConsoleApplication1.pdb
+C:\MSBuildProjects-beta\VSExplorer\bin\Debug\TemplateProjects\ConsoleApplication\obj\Debug\ConsoleApplication.csprojResolveAssemblyReference.cache
+C:\MSBuildProjects-beta\VSExplorer\bin\Debug\TemplateProjects\ConsoleApplication\obj\Debug\ConsoleApplication1.exe
+C:\MSBuildProjects-beta\VSExplorer\bin\Debug\TemplateProjects\ConsoleApplication\obj\Debug\ConsoleApplication1.pdb

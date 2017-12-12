@@ -1,0 +1,28 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="109" />
+    <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="110" />
+    <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="401" />
+    <SortOrder>2000</SortOrder>
+    <TemplateID>Microsoft.CSharp.WCF</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>SyndicationServiceLibrary</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="SyndicationServiceLibrary.csproj" File="RssServiceLibrary.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="App.config">App.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Feed1.cs" OpenInEditor="true">Feed1.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="IFeed1.cs">IFeed1.cs</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

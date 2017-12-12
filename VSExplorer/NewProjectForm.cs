@@ -1955,7 +1955,7 @@ namespace WinExplorer
                 if (ef == null)
                     return ef;
 
-                //ef.BeginInvoke(new Action(() => { ef.Command_AddNewProject(); }));
+                ef.BeginInvoke(new Action(() => { ef.Command_SaveAllFiles(); }));
 
                 return obs;
             }

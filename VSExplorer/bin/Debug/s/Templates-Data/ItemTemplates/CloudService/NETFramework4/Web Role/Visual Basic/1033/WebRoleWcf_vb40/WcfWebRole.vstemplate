@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{BE73B665-4B85-4690-BB3F-9DBE91254BCC}" ID="506" />
+    <Description Package="{BE73B665-4B85-4690-BB3F-9DBE91254BCC}" ID="507" />
+    <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="402" />
+    <ProjectType>CloudServiceProject</ProjectType>
+    <DefaultName>WCFServiceWebRole</DefaultName>
+    <SortOrder>15</SortOrder>
+  </TemplateData>
+  <TemplateContent>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VisualStudio.CloudService.Wizard,Version=1.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VisualStudio.CloudService.Wizard.AddItemWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

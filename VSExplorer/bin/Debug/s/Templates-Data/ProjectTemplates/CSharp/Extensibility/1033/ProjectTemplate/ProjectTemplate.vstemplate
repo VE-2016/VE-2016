@@ -1,0 +1,30 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name _locID="$templateName$">C# Project Template</Name>
+    <Description _locID="$templateDescription$">A project for building and packaging a C# Project Template.</Description>
+    <ProjectType>CSharp</ProjectType>
+    <TemplateID>{8BFA2CC8-1F29-47B8-9D53-04930D6FEB94}</TemplateID>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>ProjectTemplate</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>ProjectTemplate.ico</Icon>
+    <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      <ProjectItem TargetFileName="AssemblyInfo.cs">TemplateContent_AssemblyInfo.cs</ProjectItem>
+      <ProjectItem TargetFileName="Class1.cs">TemplateContent_Class1.cs</ProjectItem>
+      <ProjectItem TargetFileName="ProjectTemplate.csproj">TemplateContent_ClassLibrary.csproj</ProjectItem>
+      <ProjectItem TargetFileName="$zipprojectname$.vstemplate" ReplaceParameters="true" OpenInEditor="true">TemplateContent_csClassLibrary.vstemplateX</ProjectItem>
+      <ProjectItem TargetFileName="$zipprojectname$.ico">TemplateContent_ProjectTemplate.ico</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VSSDK.TemplateWizard, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VSSDK.TemplateWizard.TemplateTemplateWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

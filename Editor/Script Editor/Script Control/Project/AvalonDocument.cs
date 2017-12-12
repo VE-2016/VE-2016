@@ -88,11 +88,14 @@ namespace ScriptControl.Properties
         {
             Editor.dv.StartSearchResults(searcher);
         }
-
+        object obs = new object();
         ~AvalonDocument()
         {
-            if (!Editor.IsDisposed)
-                Editor.Dispose();
+            lock (obs)
+            {
+                if (!Editor.IsDisposed)
+                    Editor.Dispose();
+            }
         }
     }
 }

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1012" />
+    <Description Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="1013" />
+    <Icon Package="{FE426DCB-FF5C-44A9-B84D-24CF031BA095}" ID="4011" />
+    <TemplateID>Microsoft.CPP.WinRT.FileOpenPickerContract</TemplateID>
+    <TemplateGroupID>WinRT-Native-6.3</TemplateGroupID>
+    <ProjectType>VC</ProjectType>
+    <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+    <DefaultName>FileOpenPickerPage.xaml</DefaultName>
+    <ShowByDefault>false</ShowByDefault>
+    <SortOrder>90</SortOrder>
+    <PreviewImage>FileOpenPickerContract.png</PreviewImage>
+    <TargetPlatformName>Windows</TargetPlatformName>
+    <RequiredPlatformVersion>6.2.0</RequiredPlatformVersion>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="true" OpenInEditor="true" ItemType="Page" SubType="Designer" CustomTool="MSBuild:Compile" TargetFileName="$fileinputname$.xaml">FileOpenPickerPage.xaml</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$.xaml.h">FileOpenPickerPage.xaml.h</ProjectItem>
+    <ProjectItem ReplaceParameters="true" OpenInEditor="true" TargetFileName="$fileinputname$.xaml.cpp">FileOpenPickerPage.xaml.cpp</ProjectItem>
+
+    <ProjectItem ReplaceParameters="false" TargetFileName="$wizardcommonprefix$ReadMe.txt">ReadMe.txt</ProjectItem>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VisualStudio.WinRT.TemplateWizards, Version=15.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VisualStudio.WinRT.TemplateWizards.SmartItem.Wizard</FullClassName>
+  </WizardExtension>
+  <WizardExtension>
+    <Assembly>Microsoft.VisualStudio.WinRT.TemplateWizards, Version=15.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VisualStudio.WinRT.TemplateWizards.DependencyProperty.Wizard</FullClassName>
+  </WizardExtension>
+  <WizardData>
+    <HasWizardSubPath>FileOpenPickerPage.xaml.h</HasWizardSubPath>
+    <CommonOptional>ReadMe.txt</CommonOptional>
+    <Activation>
+      <AppMethod Name="OnFileOpenPickerActivated" CommentPrefix="// " Include="&quot;$safeitemname$.xaml.h&quot;"
+                 Declaration="virtual void OnFileOpenPickerActivated(Windows::ApplicationModel::Activation::FileOpenPickerActivatedEventArgs^ pArgs) override;">
+        <![CDATA[
+        /// <summary>
+        /// Invoked when the application is activated to display a file open picker.
+        /// </summary>
+        /// <param name="e">Details about the activation request.</param>
+        void $wizardappclass$::OnFileOpenPickerActivated(Windows::ApplicationModel::Activation::FileOpenPickerActivatedEventArgs^ e)
+        {
+        	auto fileOpenPickerPage = ref new $rootnamespace$::$safeitemname$();
+        	fileOpenPickerPage->Activate(e);
+        }
+        ]]>
+      </AppMethod>
+      <AppMethodComment>
+        <![CDATA[
+        // TODO: Respond to activation request for a file open picker
+        //
+        // The following code could not be automatically added to your application subclass,
+        // either because the appropriate class could not be located or because a method with
+        // the same name already exists.  Ensure that appropriate code deals with activation
+        // by displaying an appropriate file open picker.
+        //
+        ]]>
+      </AppMethodComment>
+      <ManifestData>
+        <Extension Category="windows.fileOpenPicker">
+          <FileOpenPicker>
+            <SupportedFileTypes SupportsAnyFileType="true"></SupportedFileTypes>
+          </FileOpenPicker>
+        </Extension>
+      </ManifestData>
+      <ManifestComment>
+        <![CDATA[
+        // TODO: Edit the manifest to enable file open picker support
+        //
+        // The package manifest could not be automatically updated.  Open the package manifest
+        // file and ensure that file open picker support is enabled.
+        ]]>
+      </ManifestComment>
+    </Activation>
+    <DependencyRegistration>
+      <ClassRegistration Include="&quot;$safeitemname$.xaml.h&quot;">
+        <![CDATA[$safeitemname$::RegisterDependencyProperties();]]>
+      </ClassRegistration>
+    </DependencyRegistration>
+  </WizardData>
+</VSTemplate>

@@ -288,11 +288,19 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
             TextDocument document = this.TextArea.Document;
             if (document != null)
             {
-                completionList.SelectItem(document.GetText(this.StartOffset, offset - this.StartOffset));
-                if (completionList.ListBox.Items.Count <= 0)
+                if (offset - this.StartOffset <= 0)
                 {
                     this.Visibility = Visibility.Hidden;
                     MakeVisible(false);
+                }
+                else
+                {
+                    completionList.SelectItem(document.GetText(this.StartOffset, offset - this.StartOffset));
+                    if (completionList.ListBox.Items.Count <= 0)
+                    {
+                        this.Visibility = Visibility.Hidden;
+                        MakeVisible(false);
+                    }
                 }
             }
         }

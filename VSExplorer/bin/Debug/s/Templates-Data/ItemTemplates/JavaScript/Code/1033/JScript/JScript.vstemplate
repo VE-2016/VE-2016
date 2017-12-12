@@ -1,0 +1,19 @@
+﻿<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name _locID="JSP_Item_JScriptName">JavaScript File</Name>
+    <Description _locID="JSP_Item_JScriptDesc">A script file containing JavaScript code.</Description>
+    <Icon>JScript.ico</Icon>
+    <TemplateID>Microsoft.JavaScript.JavaScript</TemplateID>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>script.js</DefaultName>
+
+    <!-- "JavaScript" file is applicable to all JavaScript project capability -->
+    <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+    <ProjectType>JavaScript</ProjectType>
+    <ShowByDefault>false</ShowByDefault>
+    <AppliesTo>JavaScript</AppliesTo>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem>JScript.js</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

@@ -457,6 +457,10 @@
   <ItemGroup>
     <Page Include="CodeCompletion\CompletionList.xaml" />
     <Page Include="CodeCompletion\InsightWindow.xaml" />
+    <Page Include="ScrollViewers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Search\SearchPanel.xaml">
       <DependentUpon>SearchPanel.cs</DependentUpon>
     </Page>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RoleTemplateData RoleProjectTargetFramework="4.5" MinWindowsAzureToolsVersion="2.1" 
+				  RoleProjectGuid="27CBEDBC-8F4B-4376-B6F1-C45F3137E633">
+  <VsTemplate Name="WebTemplateCloud45.zip" Language="CSharp" TargetFramework="4.5"/>
+  <ProjectItems>
+    <ProjectItem CustomReplaceableParameters="true">WebRole.cs</ProjectItem>
+  </ProjectItems>
+  <RoleProject Type="Web" />
+</RoleTemplateData>

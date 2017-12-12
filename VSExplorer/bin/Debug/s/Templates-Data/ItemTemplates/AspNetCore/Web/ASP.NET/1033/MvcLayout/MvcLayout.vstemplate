@@ -1,0 +1,18 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1148"/>
+    <Description Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="1149"/>
+    <Icon Package="{B54016DB-B3E6-4960-8262-81772C777DE9}" ID="22002"/>
+    <ProjectType>CSharp</ProjectType>
+    <TemplateGroupID>AspNetCore</TemplateGroupID>
+    <TemplateID>AspNetCore.MvcLayout</TemplateID>
+    <DefaultName>_Layout.cshtml</DefaultName>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <SortOrder>90</SortOrder>
+    <ShowByDefault>false</ShowByDefault>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true">_Layout.cshtml</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

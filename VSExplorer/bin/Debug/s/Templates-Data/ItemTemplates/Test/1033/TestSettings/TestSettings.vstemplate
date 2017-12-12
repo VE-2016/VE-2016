@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Test Settings</Name>
+    <Description>Settings that determine how tests are processed.</Description>
+    <ProjectType>Test</ProjectType>
+    <SortOrder>80</SortOrder>
+    <DefaultName>TestSettings.testsettings</DefaultName>
+    <TemplateGroupID>TestProject-V1</TemplateGroupID>
+    <TemplateID>TestProject-V1-TestSettings</TemplateID>
+    <ShowByDefault>false</ShowByDefault>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="true">TestSettings.testsettings</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

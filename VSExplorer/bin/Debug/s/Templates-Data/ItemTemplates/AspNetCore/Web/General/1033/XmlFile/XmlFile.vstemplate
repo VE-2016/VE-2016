@@ -1,0 +1,17 @@
+﻿<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3074"/>
+    <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3075"/>
+    <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4539"/>
+    <ProjectType>CSharp</ProjectType>
+    <TemplateGroupID>AspNetCore</TemplateGroupID>
+    <TemplateID>AspNetCore.XmlFile</TemplateID>
+    <DefaultName>XMLFile.xml</DefaultName>
+    <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+    <SortOrder>600</SortOrder>
+    <ShowByDefault>false</ShowByDefault>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem>XMLFile.xml</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

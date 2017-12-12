@@ -1,0 +1,26 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateDir>
+    <RelativePath>CSharp\Code</RelativePath>
+    <LocalizedName Package="{FAE04EC1-301F-11D3-BF4B-00C04F79EFBC}" ID="4606" />
+    <SortOrder>1</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>CSharp\Data</RelativePath>
+    <LocalizedName Package="{FAE04EC1-301F-11D3-BF4B-00C04F79EFBC}" ID="4607" />
+    <SortOrder>1</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>CSharp\General</RelativePath>
+    <LocalizedName Package="{FAE04EC1-301F-11D3-BF4B-00C04F79EFBC}" ID="4608" />
+    <SortOrder>1</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>CSharp\Web</RelativePath>
+    <LocalizedName Package="{FAE04EC1-301F-11D3-BF4B-00C04F79EFBC}" ID="4609" />
+    <SortOrder>1</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateDir>
+    <RelativePath>CSharp\Windows Forms</RelativePath>
+    <SortOrder>1</SortOrder>
+  </VSTemplateDir>
+</VSTemplateManifest>

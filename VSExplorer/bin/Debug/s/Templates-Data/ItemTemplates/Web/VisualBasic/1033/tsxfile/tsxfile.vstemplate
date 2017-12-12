@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1027"/>
+    <Description Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1028"/>
+    <Icon Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="3"></Icon>
+    <TemplateID>TypeScript.Website.tsxfile.VB</TemplateID>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>VisualBasic</ProjectSubType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <DefaultName>file.tsx</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem SubType="Code" ItemType="TypeScriptCompile" TargetFileName="$fileinputname$.tsx" ReplaceParameters="true">file.tsx</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

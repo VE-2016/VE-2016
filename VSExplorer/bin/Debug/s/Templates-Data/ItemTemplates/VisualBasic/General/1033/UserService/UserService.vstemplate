@@ -1,0 +1,31 @@
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3030" />
+    <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3031" />
+    <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4515" />
+    <ProjectType>VisualBasic</ProjectType>
+    <SortOrder>100</SortOrder>
+    <DefaultName>Service.vb</DefaultName>
+    <TemplateID>Microsoft.VisualBasic.General.UserService</TemplateID>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+  </TemplateData>
+  <TemplateContent>
+        <References>
+            <Reference>
+                <Assembly>System</Assembly>
+                <URL>https://www.microsoft.com</URL>
+            </Reference>
+            <Reference>
+                <Assembly>System.Data</Assembly>
+                <URL>https://www.microsoft.com</URL>
+            </Reference>
+            <Reference>
+                <Assembly>System.ServiceProcess</Assembly>
+                <URL>https://www.microsoft.com</URL>
+            </Reference>
+        </References>
+
+    <ProjectItem ReplaceParameters="true" SubType="Component">UserService.vb</ProjectItem>
+    <ProjectItem ReplaceParameters="true">UserService.Designer.vb</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

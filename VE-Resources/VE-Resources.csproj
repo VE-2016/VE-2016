@@ -1033,5 +1033,8 @@
   <ItemGroup>
     <None Include="Resources\CaseSensitive_16x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2Rows_16x.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

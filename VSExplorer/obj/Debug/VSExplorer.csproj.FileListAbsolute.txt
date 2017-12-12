@@ -1045,7 +1045,6 @@ F:\ve\ve-2024\VE-2016\VSExplorer\bin\Debug\System.IO.Compression.dll
 F:\ve\ve-2024\VE-2016\VSExplorer\bin\Debug\System.IO.FileSystem.dll
 F:\ve\ve-2024\VE-2016\VSExplorer\bin\Debug\System.IO.FileSystem.Primitives.dll
 F:\ve\ve-2024\VE-2016\VSExplorer\bin\Debug\System.Reflection.dll
-F:\ve\ve-2024\VE-2016\VSExplorer\bin\Debug\System.Runtime.dll
 F:\ve\ve-2024\VE-2016\VSExplorer\bin\Debug\System.Runtime.Extensions.dll
 F:\ve\ve-2024\VE-2016\VSExplorer\bin\Debug\System.Runtime.InteropServices.dll
 F:\ve\ve-2024\VE-2016\VSExplorer\bin\Debug\System.Security.Cryptography.Algorithms.dll
@@ -1066,6 +1065,7 @@ F:\ve\ve-2024\VE-2016\VSExplorer\bin\Debug\nunit.uikit.dll
 F:\ve\ve-2024\VE-2016\VSExplorer\bin\Debug\xunit.runner.data.dll
 F:\ve\ve-2024\VE-2016\VSExplorer\bin\Debug\xunit.runner.worker.exe
 F:\ve\ve-2024\VE-2016\VSExplorer\bin\Debug\System.Threading.Tasks.Dataflow.dll
+F:\ve\ve-2024\VE-2016\VSExplorer\bin\Debug\System.Runtime.dll
 F:\ve\ve-2024\VE-2016\VSExplorer\bin\Debug\System.Security.Cryptography.Primitives.dll
 F:\ve\ve-2024\VE-2016\VSExplorer\bin\Debug\System.Threading.Thread.dll
 F:\ve\ve-2024\VE-2016\VSExplorer\bin\Debug\Microsoft.Build.Utilities.v3.5.dll

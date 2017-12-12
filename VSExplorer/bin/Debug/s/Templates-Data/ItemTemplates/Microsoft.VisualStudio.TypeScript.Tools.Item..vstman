@@ -1,0 +1,349 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\Scripts\1033\tsConfigJson</RelativePathOnDisk>
+    <TemplateFileName>tsconfig.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1024" />
+        <Description Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1025" />
+        <!-- pulled from the asp.net v5 package -->
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="2200" />
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>DotNetWeb.tsConfigJson</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>tsconfig.json</DefaultName>
+        <SortOrder>536</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\Scripts\1033\TypeScriptFile</RelativePathOnDisk>
+    <TemplateFileName>tsFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1020" />
+        <Description Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1021" />
+        <Icon Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="3">
+        </Icon>
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>DotNetWeb.TypeScriptFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>file.ts</DefaultName>
+        <SortOrder>535</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>AspNetCore\Web\Scripts\1033\TypeScriptJsxFile</RelativePathOnDisk>
+    <TemplateFileName>tsxFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1027" />
+        <Description Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1028" />
+        <Icon Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="3">
+        </Icon>
+        <TemplateID>27349B45-4723-4950-AD27-9624B4A89E2A</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <TemplateGroupID>AspNetCore</TemplateGroupID>
+        <TemplateID>DotNetWeb.TypeScriptJsxFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>file.tsx</DefaultName>
+        <SortOrder>535</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>CSharp\Web\Scripts\tsconfig</RelativePathOnDisk>
+    <TemplateFileName>tsconfig.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1024" />
+        <Description Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1025" />
+        <!-- pulled from the asp.net v5 package -->
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="2200" />
+        <TemplateGroupID>Web</TemplateGroupID>
+        <TemplateID>TypeScript.Web.tsconfig.CSharp</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <DefaultName>tsconfig.json</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>CSharp\Web\Scripts\tsfile</RelativePathOnDisk>
+    <TemplateFileName>tsFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1020" />
+        <Description Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1021" />
+        <Icon Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="3">
+        </Icon>
+        <TemplateID>TypeScript.Web.tsfile.CSharp</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <DefaultName>file.ts</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>CSharp\Web\Scripts\tsxfile</RelativePathOnDisk>
+    <TemplateFileName>tsxFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1027" />
+        <Description Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1028" />
+        <Icon Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="3">
+        </Icon>
+        <TemplateID>TypeScript.Web.tsxfile.CSharp</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <DefaultName>file.tsx</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>JavaScript\Code\tsconfig</RelativePathOnDisk>
+    <TemplateFileName>tsconfig.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1024" />
+        <Description Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1025" />
+        <!-- pulled from the asp.net v5 package -->
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="2200" />
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>tsconfig.json</DefaultName>
+        <TemplateID>JavaScript.tsconfig</TemplateID>
+        <!-- TypeScript project capability is applicable to all JavaScript projects -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>JavaScript\Code\tsfile</RelativePathOnDisk>
+    <TemplateFileName>tsFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1020" />
+        <Description Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1021" />
+        <Icon Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="3">
+        </Icon>
+        <TemplateID>JavaScript.tsfile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>file.ts</DefaultName>
+        <!-- TypeScript project capability is applicable to all JavaScript projects -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>JavaScript\Code\tsxfile</RelativePathOnDisk>
+    <TemplateFileName>tsxFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1027" />
+        <Description Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1028" />
+        <Icon Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="3">
+        </Icon>
+        <TemplateID>JavaScript.tsxfile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>file.tsx</DefaultName>
+        <!-- TypeScript project capability is applicable to all JavaScript projects -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>JavaScript\Code\jsxfile</RelativePathOnDisk>
+    <TemplateFileName>jsxFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1036" />
+        <Description Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1037" />
+        <!-- pulled from the asp.net v5 package -->
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="2300" />
+        <TemplateID>JavaScript.jsxfile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>file.jsx</DefaultName>
+        <!-- TypeScript project capability is applicable to all JavaScript projects -->
+        <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+        <ProjectType>JavaScript</ProjectType>
+        <ShowByDefault>false</ShowByDefault>
+        <AppliesTo>JavaScript</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>VisualBasic\Web\Scripts\tsconfig</RelativePathOnDisk>
+    <TemplateFileName>tsconfig.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1024" />
+        <Description Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1025" />
+        <!-- pulled from the asp.net v5 package -->
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="2200" />
+        <TemplateGroupID>Web</TemplateGroupID>
+        <TemplateID>TypeScript.Web.tsconfig.VB</TemplateID>
+        <ProjectType>VisualBasic</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <DefaultName>tsconfig.json</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>VisualBasic\Web\Scripts\tsfile</RelativePathOnDisk>
+    <TemplateFileName>tsFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1020" />
+        <Description Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1021" />
+        <Icon Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="3">
+        </Icon>
+        <TemplateID>TypeScript.Web.tsfile.VB</TemplateID>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <ProjectType>VisualBasic</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <DefaultName>file.ts</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>VisualBasic\Web\Scripts\tsxfile</RelativePathOnDisk>
+    <TemplateFileName>tsxFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1020" />
+        <Description Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1021" />
+        <Icon Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="3">
+        </Icon>
+        <TemplateID>TypeScript.Web.tsxfile.VB</TemplateID>
+        <TemplateGroupID>Web</TemplateGroupID>
+        <ProjectType>VisualBasic</ProjectType>
+        <ProjectSubType>Web</ProjectSubType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <DefaultName>file.tsx</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>Web\CSharp\1033\tsfile</RelativePathOnDisk>
+    <TemplateFileName>tsfile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1020" />
+        <Description Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1021" />
+        <Icon Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="3">
+        </Icon>
+        <TemplateID>TypeScript.Website.tsconfig.CSharp</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>CSharp</ProjectSubType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <DefaultName>file.ts</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>Web\CSharp\1033\tsxfile</RelativePathOnDisk>
+    <TemplateFileName>tsxfile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1027" />
+        <Description Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1028" />
+        <Icon Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="3">
+        </Icon>
+        <TemplateID>TypeScript.Website.tsxfile.CSharp</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>CSharp</ProjectSubType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <DefaultName>file.tsx</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>Web\CSharp\1033\tsconfig</RelativePathOnDisk>
+    <TemplateFileName>tsconfig.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1024" />
+        <Description Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1025" />
+        <!-- pulled from the asp.net v5 package -->
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="2200" />
+        <TemplateID>TypeScript.Website.tsconfig.CSharp</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>CSharp</ProjectSubType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <DefaultName>tsconfig.json</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>Web\VisualBasic\1033\tsfile</RelativePathOnDisk>
+    <TemplateFileName>tsfile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1020" />
+        <Description Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1021" />
+        <Icon Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="3">
+        </Icon>
+        <TemplateID>TypeScript.Website.tsfile.VB</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>VisualBasic</ProjectSubType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <DefaultName>file.ts</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>Web\VisualBasic\1033\tsxfile</RelativePathOnDisk>
+    <TemplateFileName>tsxfile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1027" />
+        <Description Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1028" />
+        <Icon Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="3">
+        </Icon>
+        <TemplateID>TypeScript.Website.tsxfile.VB</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>VisualBasic</ProjectSubType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <DefaultName>file.tsx</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>Web\VisualBasic\1033\tsconfig</RelativePathOnDisk>
+    <TemplateFileName>tsconfig.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1024" />
+        <Description Package="{2ffe45c4-5c73-493c-b187-f2e955ff875e}" ID="1025" />
+        <!-- pulled from the asp.net v5 package -->
+        <Icon Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="2200" />
+        <TemplateID>TypeScript.Website.tsconfig.VB</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>VisualBasic</ProjectSubType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <DefaultName>tsconfig.json</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

@@ -73,6 +73,16 @@ namespace WinExplorers {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap _2Rows_16x {
+            get {
+                object obj = ResourceManager.GetObject("_2Rows_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Add_16x {
             get {
                 object obj = ResourceManager.GetObject("Add_16x", resourceCulture);

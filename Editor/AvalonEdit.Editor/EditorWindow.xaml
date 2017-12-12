@@ -331,41 +331,32 @@
 				<ComboBox x:Name="memberComboBox" HorizontalAlignment="Stretch"  IsEditable="True" IsReadOnly="True" ItemTemplate="{StaticResource cmbTemplate}" />
 			</Border>
 		</UniformGrid>
-		<Grid x:Name="editorGrid">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="100" />
-				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="20" />
-			</Grid.ColumnDefinitions>
+
+		<Grid x:Name="grid">
 			<Grid.RowDefinitions>
-				<RowDefinition Height="*" />
-				<RowDefinition Height="18" />
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="5"/>
+				<RowDefinition Height="*"/>
 			</Grid.RowDefinitions>
-
-			<DockPanel DockPanel.Dock="Top" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0" Margin="0,0,0,0" Grid.Column="0" Grid.ColumnSpan="3" Background="Gray" Opacity="1">
-
-				<ContentControl HorizontalAlignment="Stretch" Margin="0,1,0,1">
-					<avalonEdit:TextEditor
-				x:Name="textEditor"
-							 HorizontalScrollBarVisibility="Hidden"  VerticalScrollBarVisibility="Auto"
-				SyntaxHighlighting="XML" ShowLineNumbers="False" Visibility="Visible"
+			<avalonEdit:TextEditor
+				x:Name="ex_textEditor" Grid.Row="0" HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Visible"
+				 ShowLineNumbers="False" Visibility="Visible"
 				 HorizontalAlignment="Stretch"
-VerticalAlignment="Stretch" />
-				</ContentControl>
-			</DockPanel>
-			<ComboBox x:Name="zoom" VerticalAlignment="Stretch"  Background="White" IsEditable="True" IsReadOnly="True" SelectedIndex="4" IsHitTestVisible="True" Grid.Row="1" Grid.Column="0"  Height="18">
-				<ComboBoxItem Content="800%" />
-				<ComboBoxItem Content="400%" />
-				<ComboBoxItem Content="200%" />
-				<ComboBoxItem Content="150%" />
-				<ComboBoxItem Content="100%" />
-				<ComboBoxItem Content="66.67%" />
-				<ComboBoxItem Content="50%" />
-				<ComboBoxItem Content="33.333%" />
-				<ComboBoxItem Content="25%" />
-				<ComboBoxItem Content="12.5%" />
-			</ComboBox>
-			<editor:ScrollBoundScrollBar x:Name="hs" Orientation="Horizontal"  HorizontalAlignment="Stretch"   IsHitTestVisible="True" Grid.Row="1" Grid.Column="1" Height="18" />
+VerticalAlignment="Stretch">
+
+			</avalonEdit:TextEditor>
+            <GridSplitter Grid.Row="1" Height="5" HorizontalAlignment="Stretch" Background="#FFCDCDCD" x:Name="splitter" />
+
+			<avalonEdit:TextEditor
+				x:Name="textEditor"  Grid.Row="2" Margin="0 0 0 0" HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Visible"
+				 ShowLineNumbers="False" Visibility="Visible"
+				 HorizontalAlignment="Stretch"
+VerticalAlignment="Stretch" SizeChanged="textEditor_SizeChanged">
+
+			</avalonEdit:TextEditor>
+
 		</Grid>
+			
+
 	</DockPanel>
 </UserControl>

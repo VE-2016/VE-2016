@@ -1,0 +1,61 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Windows\1033\ClassLibrary</RelativePathOnDisk>
+    <TemplateFileName>classlibrary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3000" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3001" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4500" />
+        <ProjectType>VisualBasic</ProjectType>
+        <TemplateID>Microsoft.VisualBasic.Windows.ClassLibrary</TemplateID>
+        <SortOrder>15</SortOrder>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>ClassLibrary</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <CreateInPlace>true</CreateInPlace>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Windows\1033\ConsoleApplication</RelativePathOnDisk>
+    <TemplateFileName>consoleapplication.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3002" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3003" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4501" />
+        <ProjectType>VisualBasic</ProjectType>
+        <TemplateID>Microsoft.VisualBasic.Windows.ConsoleApplication</TemplateID>
+        <SortOrder>13</SortOrder>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>ConsoleApp</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <CreateInPlace>false</CreateInPlace>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Windows\1033\EmptyProject</RelativePathOnDisk>
+    <TemplateFileName>EmptyProject.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3004" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3005" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4502" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>19</SortOrder>
+        <TemplateID>Microsoft.VisualBasic.Windows.EmptyProject</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>Project</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <CreateInPlace>false</CreateInPlace>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

@@ -1,0 +1,30 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="107" />
+    <Description Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="108" />
+    <Icon Package="{2c0f61bf-3c36-468c-94b8-4021965749e7}" ID="402" />
+    <SortOrder>10</SortOrder>
+    <TemplateID>Microsoft.VisualBasic.Wcf</TemplateID>
+    <ProjectType>VisualBasic</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>WcfServiceLibrary</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="WcfServiceLibrary.vbproj" File="WcfServiceLibrary.vbproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="App.config">App.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="IService1.vb" OpenInEditor="true">IService1.vb</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Service1.vb">Service1.vb</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="My Project\AssemblyInfo.vb">AssemblyInfo.vb</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="My Project\Resources.resx">Resources.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="true"  TargetFileName="My Project\Resources.Designer.vb">Resources.Designer.vb</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="My Project\Settings.settings">Settings.settings</ProjectItem>
+      <ProjectItem ReplaceParameters="true"  TargetFileName="My Project\Settings.Designer.vb">Settings.Designer.vb</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

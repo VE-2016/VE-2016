@@ -1,0 +1,30 @@
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id="TestWindow.Microsoft.0771d463-d74d-4e95-aac2-39d3c7ec1f97" Version="15.0" Language="en-US" Publisher="Microsoft" />
+    <DisplayName>Test Explorer</DisplayName>
+    <Description>Test Explorer</Description>
+  </Metadata>
+  <Installation SystemComponent="true" InstalledByMsi="true">
+    <InstallationTarget Id="Microsoft.VisualStudio.Ultimate" Version="15.0" />
+    <InstallationTarget Id="Microsoft.VisualStudio.Premium" Version="15.0" />
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="15.0" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" Version="4.5" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="Microsoft.VisualStudio.TestWindow.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.VisualStudio.TestWindow.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.VisualStudio.TestWindow.Core.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.VisualStudio.TestWindow.VSTest.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.VisualStudio.MSTest.TestWindow.dll" />
+    <!-- Do not remove these TestPlatform assemblies, MEF needs to be seeded with these to work. See bug 306205 -->
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.VisualStudio.TestPlatform.Client.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.VisualStudio.TestPlatform.Common.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.VisualStudio.TestPlatform.Core.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.VisualStudio.TestPlatform.ObjectModel.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.VisualStudio.TestPlatform.Utilities.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.VisualStudio.TestWindow.CppUnitTestExtension.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="..\..\..\PrivateAssemblies\Microsoft.VisualStudio.SmartDevice.ProjectSystem.Base.dll" />
+  </Assets>
+</PackageManifest>

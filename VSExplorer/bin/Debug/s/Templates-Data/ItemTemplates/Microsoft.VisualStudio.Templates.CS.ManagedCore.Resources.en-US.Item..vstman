@@ -1,0 +1,204 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\1033\AppConfigInternal</RelativePathOnDisk>
+    <TemplateFileName>App.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2403" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2404" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4600" />
+        <TemplateID>Microsoft.CSharp.AppConfig.Internal</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <DefaultName>App.config</DefaultName>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\1033\AppManifestInternal</RelativePathOnDisk>
+    <TemplateFileName>appManifestInternal.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2428" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2429" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4592" />
+        <TemplateID>Microsoft.CSharp.AppManifestInternal</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <DefaultName>app.manifest</DefaultName>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\1033\AssemblyInfoInternal</RelativePathOnDisk>
+    <TemplateFileName>AssemblyInfo.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2405" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2406" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4601" />
+        <TemplateID>Microsoft.CSharp.AssemblyInfo.Internal</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <DefaultName>AssemblyInfo.cs</DefaultName>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\1033\ResourceInternal</RelativePathOnDisk>
+    <TemplateFileName>Resource.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2390" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2391" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4565" />
+        <TemplateID>Microsoft.CSharp.Resource.Internal</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <DefaultName>Resource.resx</DefaultName>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\1033\SettingsInternal</RelativePathOnDisk>
+    <TemplateFileName>Settings.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2410" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2411" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4603" />
+        <TemplateID>Microsoft.CSharp.Settings.Internal</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <DefaultName>Settings.settings</DefaultName>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\Data\1033\XMLFile</RelativePathOnDisk>
+    <TemplateFileName>XMLFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2244" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2279" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4524" />
+        <TemplateID>Microsoft.CSharp.XmlFile</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>XMLFile.xml</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\Data\1033\XMLSchema</RelativePathOnDisk>
+    <TemplateFileName>XMLSchema.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2275" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2276" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4523" />
+        <TemplateID>Microsoft.CSharp.XmlSchema</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>XMLSchema.xsd</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\Data\1033\XSLTFile</RelativePathOnDisk>
+    <TemplateFileName>XSLTFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2356" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2357" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4566" />
+        <TemplateID>Microsoft.CSharp.XsltFile</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>XSLTFile.xslt</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\General\1033\TextFile</RelativePathOnDisk>
+    <TemplateFileName>TextFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2316" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2317" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4536" />
+        <TemplateID>Microsoft.CSharp.TextFile</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>TextFile.txt</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\General\1033\WinScript</RelativePathOnDisk>
+    <TemplateFileName>WinScript.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2310" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2311" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4538" />
+        <TemplateID>Microsoft.CSharp.WinScript</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>WinScript.wsf</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\Data\1033\DataSet</RelativePathOnDisk>
+    <TemplateFileName>dataset.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2277" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2278" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4522" />
+        <TemplateID>Microsoft.CSharp.DataSet</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>DataSet.xsd</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\Data\1033\EmptyDatabase</RelativePathOnDisk>
+    <TemplateFileName>EmptyDatabase.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2408" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2409" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4602" />
+        <TemplateID>Microsoft.CSharp.EmptyDatabase</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>Database.mdf</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\General\1033\Visualizer</RelativePathOnDisk>
+    <TemplateFileName>Visualizer.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2419" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2420" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4589" />
+        <TemplateID>Microsoft.CSharp.Visualizer</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>Visualizer.cs</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

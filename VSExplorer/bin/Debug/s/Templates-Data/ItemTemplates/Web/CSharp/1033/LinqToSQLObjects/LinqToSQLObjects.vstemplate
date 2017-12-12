@@ -1,0 +1,29 @@
+﻿<!--DSL Tools Language Template-->
+<VSTemplate Version="2.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  	<TemplateData>
+		<Name Package="{aa612177-a69a-4391-b2f4-17f8a88f4bba}" ID="101"/>
+		<Description Package="{aa612177-a69a-4391-b2f4-17f8a88f4bba}" ID="102"/>
+		<Icon Package="{aa612177-a69a-4391-b2f4-17f8a88f4bba}" ID="201" />
+		<ProjectType>Web</ProjectType>
+    <ProjectSubType>CSharp</ProjectSubType>
+    <TemplateID>Microsoft.Web.CSharp.LinqToSQL</TemplateID>      
+		<RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+		<!--Default name used to start with: ORDesignerObjects-->
+		<DefaultName>DataClasses.dbml</DefaultName>
+		<AppendDefaultFileExtension>true</AppendDefaultFileExtension>
+	<!--<TemplateID>Microsoft_VisualStudio_DLinqDesigner</TemplateID>-->
+	<!--<FrameworkVersion>2.1.0</FrameworkVersion>-->
+  	</TemplateData>
+	<TemplateContent>
+    		<References>
+      			<Reference>
+        		   <Assembly>System.Core</Assembly>
+      			</Reference>  
+      			<Reference>
+        		   <Assembly>System.Data.Linq</Assembly>
+      			</Reference>  
+    		</References>
+		<ProjectItem TargetFileName="$fileinputname$.dbml">dbml.dbml</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$.dbml.layout">dbml.layout</ProjectItem>
+	</TemplateContent>
+</VSTemplate>

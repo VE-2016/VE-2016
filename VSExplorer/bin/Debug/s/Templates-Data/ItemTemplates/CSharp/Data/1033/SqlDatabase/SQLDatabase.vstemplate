@@ -1,0 +1,39 @@
+﻿<VSTemplate Version="2.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3322"/>
+    <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3323"/>
+    <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4723"/>
+    <ProjectType>CSharp</ProjectType>
+    <DefaultName>Database.mdf</DefaultName>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>Microsoft.WAP.CSharp.EmptyDatabase</TemplateID>
+    <TemplateGroupID>Web</TemplateGroupID>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <ShowByDefault>false</ShowByDefault>
+  </TemplateData>
+  <TemplateContent>
+        <References>
+            <Reference>
+                <Assembly>System</Assembly>
+                <URL>http://www.microsoft.com</URL>
+            </Reference>
+            <Reference>
+                <Assembly>System.Data</Assembly>
+                <URL>http://www.microsoft.com</URL>
+            </Reference>
+            <Reference>
+                <Assembly>System.Xml</Assembly>
+                <URL>http://www.microsoft.com</URL>
+            </Reference>
+        </References>
+
+    <ProjectItem ReplaceParameters="false" OpenInEditor="false">Database.mdf</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$QueryServiceGuid$" Value="AD028B85-FA21-41b1-AB4A-08672F633506" />
+    </CustomParameters>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VSDesigner, Version=10.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VSDesigner.ProjectWizard.SqlDatabaseFileWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

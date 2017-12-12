@@ -1,0 +1,38 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>DynamicDataField.ascx</DefaultName>
+    <Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3375"/>
+    <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3376"/>
+    <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4735"/>
+    <ProjectType>VisualBasic</ProjectType>
+    <ProjectSubType>Web</ProjectSubType>
+    <TemplateGroupID>Web</TemplateGroupID>
+    <TemplateID>Microsoft.WAP.VisualBasic.DynamicDataWAPField</TemplateID>
+    <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+    <RequiredFrameworkVersion>3.5</RequiredFrameworkVersion>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>System.Web</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>System.Web.Extensions</Assembly>
+      </Reference>
+    </References>
+    <Folder Name="\DynamicData" >
+      <Folder Name="FieldTemplates" >
+        <ProjectItem TargetFileName="$fileinputname$.ascx" ReplaceParameters="true">DynamicDataField.ascx</ProjectItem>
+        <ProjectItem TargetFileName="$fileinputname$.ascx.designer.vb" ReplaceParameters="true">DynamicDataField.ascx.designer.vb</ProjectItem>
+        <ProjectItem TargetFileName="$fileinputname$.ascx.vb" ReplaceParameters="true">DynamicDataField.ascx.vb</ProjectItem>
+        <ProjectItem TargetFileName="$fileinputname$_Edit.ascx" ReplaceParameters="true">DynamicDataField_Edit.ascx</ProjectItem>
+        <ProjectItem TargetFileName="$fileinputname$_Edit.ascx.designer.vb" ReplaceParameters="true">DynamicDataField_Edit.ascx.designer.vb</ProjectItem>
+        <ProjectItem TargetFileName="$fileinputname$_Edit.ascx.vb" ReplaceParameters="true">DynamicDataField_Edit.ascx.vb</ProjectItem>
+      </Folder>
+    </Folder>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VisualStudio.Web.Application, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VisualStudio.Web.Application.WATemplateWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

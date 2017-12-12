@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Archivo XML</Name>
+    <Description>Archivo XML en blanco.</Description>
+    <Icon>XMLFile.ico</Icon>
+    <TemplateID>Microsoft.JavaScript.XMLFile</TemplateID>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>xmlfile.xml</DefaultName>
+
+    <!-- "XML File" is applicable to all JavaScript project capability -->
+    <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+    <ProjectType>JavaScript</ProjectType>
+    <ShowByDefault>false</ShowByDefault>
+    <AppliesTo>JavaScript</AppliesTo>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem>XMLFile.xml</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

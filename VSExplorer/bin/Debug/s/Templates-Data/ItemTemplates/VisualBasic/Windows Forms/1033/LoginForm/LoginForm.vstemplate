@@ -1,0 +1,40 @@
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3137" />
+    <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3138" />
+    <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4574" />
+    <ProjectType>VisualBasic</ProjectType>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <SortOrder>100</SortOrder>
+    <DefaultName>LoginForm.vb</DefaultName>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>Microsoft.VisualBasic.WindowsForms.LoginForm</TemplateID>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+  </TemplateData>
+  <TemplateContent>
+        <References>
+            <Reference>
+                <Assembly>System</Assembly>
+                <URL>https://www.microsoft.com</URL>
+            </Reference>
+            <Reference>
+                <Assembly>System.Drawing</Assembly>
+                <URL>https://www.microsoft.com</URL>
+            </Reference>
+            <Reference>
+                <Assembly>System.Windows.Forms</Assembly>
+                <URL>https://www.microsoft.com</URL>
+            </Reference>
+        </References>
+
+    <ProjectItem ReplaceParameters="true" SubType="Form">LoginForm.vb</ProjectItem>
+    <ProjectItem ReplaceParameters="true">LoginForm.Designer.vb</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$.resx" ReplaceParameters="false">LoginForm.resx</ProjectItem>
+    <CustomParameters>
+        <CustomParameter _locID="$IT_AB_VB_Loc_Username$" Name="$IT_AB_VB_Loc_Username$" Value="&amp;User name"/>
+        <CustomParameter _locID="$IT_AB_VB_Loc_Password$" Name="$IT_AB_VB_Loc_Password$" Value="&amp;Password"/>
+        <CustomParameter _locID="$IT_AB_VB_Loc_OK$" Name="$IT_AB_VB_Loc_OK$" Value="&amp;OK"/>
+        <CustomParameter _locID="$IT_AB_VB_Loc_Cancel$" Name="$IT_AB_VB_Loc_Cancel$" Value="&amp;Cancel"/>
+    </CustomParameters>
+  </TemplateContent>
+</VSTemplate>

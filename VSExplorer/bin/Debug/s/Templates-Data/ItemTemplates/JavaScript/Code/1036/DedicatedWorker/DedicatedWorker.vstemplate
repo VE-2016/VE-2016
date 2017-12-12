@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Processus de travail dédié</Name>
+    <Description>Processus de travail d'arrière-plan pour une exécution de scripts en parallèle à l'application principale. Cela autorise une opération comparable à un thread avec transmission de message comme mécanisme de coordination.</Description>
+    <Icon>DedicatedWorker.ico</Icon>
+    <TemplateID>Microsoft.JavaScript.DedicatedWorker</TemplateID>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>worker.js</DefaultName>
+
+    <!-- "Dedicated Worker" project item template is applicable to all JavaScript projects except the JavaScript/TypeScript Cordova File Monitoring Projects -->
+    <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+    <ProjectType>JavaScript</ProjectType>
+    <ShowByDefault>false</ShowByDefault>
+    <AppliesTo>JavaScript + !FileSystemBasedCordovaProject</AppliesTo>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem>worker.js</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

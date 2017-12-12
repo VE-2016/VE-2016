@@ -983,6 +983,8 @@ namespace VSProvider
             if (solution == null)
                 return b;
             var id = solution.GetDocumentIdsWithFilePath(filename);
+            if (id.Length <= 0)
+                return b;
             var document = solution.GetDocument(id[0]);
             var project = solution.GetDocument(id[0]).Project;
             var syntaxTree = solution.GetDocument(id[0]).GetSyntaxTreeAsync().Result;
@@ -1210,20 +1212,9 @@ namespace VSProvider
 
         public SyntaxTree GetSyntaxTree(string filename, string content = "", bool overwrite = true)
         {
-            //VSProject vp = GetProjectbyCompileItem(filename);
 
-            //if (vp == null || comp == null)
-            //    return null;
-
-            //if (!comp.ContainsKey(vp.FileName))
-            //    return null;
-
-            //Compilation c = comp[vp.FileName];
-
-            //SyntaxTree s = c.SyntaxTrees.Select(b => b).Where(d => d.FilePath == filename).FirstOrDefault();
-
-            //return s;
-
+            if (solution == null)
+                return null;
             
             var id = solution.GetDocumentIdsWithFilePath(filename);
             if (id.Length > 0)
@@ -1304,7 +1295,7 @@ namespace VSProvider
             if (s == null)
                 return null;
 
-            IEnumerable<ReferencedSymbol> r = GetAllSymbolReferences(s, FileToLoad, vp, dereferences).Result;
+            IEnumerable<ReferencedSymbol> r = GetAllSymbolReferences(s, FileToLoad, vp).Result;
 
             if (r != null)
             {
@@ -1315,7 +1306,7 @@ namespace VSProvider
 
         public static Func<Task<int>> Dereference { get; set; }
 
-        public async Task<IEnumerable<ReferencedSymbol>> GetAllSymbolReferences(ISymbol symbol, string filename, VSProject vp, Func<Task<int>> dereferences = null)
+        public async Task<IEnumerable<ReferencedSymbol>> GetAllSymbolReferences(ISymbol symbol, string filename, VSProject vp)
         {
             IEnumerable<ReferencedSymbol> references = null;
 
@@ -1424,8 +1415,8 @@ namespace VSProvider
                     }
                     catch (Exception ex)
                     {
-                        if (dereferences != null)
-                            await dereferences();
+                        //if (dereferences != null)
+                        //    await dereferences();
                     }
                     referenced.AddRange(references);
                 }
@@ -1438,8 +1429,8 @@ namespace VSProvider
                 }
                 catch (Exception ex)
                 {
-                    if (dereferences != null)
-                        await dereferences();
+                    //if (dereferences != null)
+                    //    await dereferences();
                 }
                 referenced.AddRange(references);
             }

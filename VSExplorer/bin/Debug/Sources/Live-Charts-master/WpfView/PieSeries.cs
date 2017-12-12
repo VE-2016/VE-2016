@@ -17,7 +17,7 @@
 //FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 //AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 //LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THEE
 //SOFTWARE.
 
 using System;
@@ -35,12 +35,14 @@ namespace LiveCharts.Wpf
     /// <summary>
     /// The pie series should be added only in a pie chart.
     /// </summary>
+  References -  0        
     public class PieSeries : Series, IPieSeriesView
     {
         #region Constructors
         /// <summary>
         /// Initializes a new instance of PieSeries class
         /// </summary>
+  References -  23        
         public PieSeries()
         {
             Model = new PieAlgorithm(this);
@@ -51,6 +53,7 @@ namespace LiveCharts.Wpf
         /// Initializes a new instance of PieSeries class with a given mapper.
         /// </summary>
         /// <param name="configuration"></param>
+  References -  23        
         public PieSeries(object configuration)
         {
             Model = new PieAlgorithm(this);
@@ -108,6 +111,7 @@ namespace LiveCharts.Wpf
         /// <param name="point"></param>
         /// <param name="label"></param>
         /// <returns></returns>
+  References -  12        
         public override IChartPointView GetPointView(ChartPoint point, string label)
         {
             var pbv = (PiePointView) point.View;
@@ -182,6 +186,7 @@ namespace LiveCharts.Wpf
 
         #region Private Methods
 
+  References -  2        
         private void InitializeDefuaults()
         {
             SetCurrentValue(StrokeThicknessProperty, 2d);

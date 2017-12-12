@@ -3776,8 +3776,7 @@ namespace WinExplorer
                 return;
 
             scr.Save();
-
-            //_saveallButton.Enabled = false;
+            
         }
 
         public void save_active()
@@ -3788,8 +3787,7 @@ namespace WinExplorer
             var s = scr.Save();
 
             _SolutionTreeView.UpdateNode(s);
-
-            //_saveallButton.Enabled = false;
+            
         }
 
         public void save_all(object sender, EventArgs e)
@@ -3799,7 +3797,7 @@ namespace WinExplorer
 
             scr.SaveAll();
 
-            _saveallButton.Enabled = false;
+            
         }
 
         public void save_all()

@@ -1,0 +1,132 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\General\1033\PreTextTemplate</RelativePathOnDisk>
+    <TemplateFileName>PreTextTemplate.CSharp.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="116" />
+        <Description Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="114" />
+        <Icon Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="110" />
+        <TemplateID>Microsoft.CSharp.RuntimeTextTemplating</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>RuntimeTextTemplate.tt</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\General\1033\TextTemplate</RelativePathOnDisk>
+    <TemplateFileName>TextTemplate.CSharp.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="111" />
+        <Description Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="112" />
+        <Icon Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="110" />
+        <TemplateID>Microsoft.CSharp.TextTemplating</TemplateID>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>TextTemplate.tt</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\General\1033\PreTextTemplate</RelativePathOnDisk>
+    <TemplateFileName>PreTextTemplate.VisualBasic.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="116" />
+        <Description Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="115" />
+        <Icon Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="110" />
+        <TemplateID>Microsoft.VisualBasic.RuntimeTextTemplating</TemplateID>
+        <ProjectType>VisualBasic</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <DefaultName>RuntimeTextTemplate.tt</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\General\1033\TextTemplate</RelativePathOnDisk>
+    <TemplateFileName>TextTemplate.VisualBasic.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="111" />
+        <Description Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="113" />
+        <Icon Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="110" />
+        <TemplateID>Microsoft.VisualBasic.TextTemplating</TemplateID>
+        <ProjectType>VisualBasic</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <DefaultName>TextTemplate.tt</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>Web\CSharp\1033\PreTextTemplate</RelativePathOnDisk>
+    <TemplateFileName>PreTextTemplate.WebCSharp.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="116" />
+        <Description Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="114" />
+        <Icon Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="110" />
+        <TemplateID>Microsoft.CSharp.WebRuntimeTextTemplating</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>CSharp</ProjectSubType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>RuntimeTextTemplate.tt</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>Web\CSharp\1033\TextTemplate</RelativePathOnDisk>
+    <TemplateFileName>TextTemplate.WebCSharp.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="111" />
+        <Description Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="112" />
+        <Icon Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="110" />
+        <TemplateID>Microsoft.CSharp.WebTextTemplating</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>CSharp</ProjectSubType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>TextTemplate.tt</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>Web\VisualBasic\1033\PreTextTemplate</RelativePathOnDisk>
+    <TemplateFileName>PreTextTemplate.WebVisualBasic.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="116" />
+        <Description Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="115" />
+        <Icon Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="110" />
+        <TemplateID>Microsoft.VisualBasic.WebRuntimeTextTemplating</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>VisualBasic</ProjectSubType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>RuntimeTextTemplate.tt</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>Web\VisualBasic\1033\TextTemplate</RelativePathOnDisk>
+    <TemplateFileName>TextTemplate.WebVisualBasic.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="111" />
+        <Description Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="113" />
+        <Icon Package="{A9696DE6-E209-414d-BBEC-A0506FB0E924}" ID="110" />
+        <TemplateID>Microsoft.VisualBasic.WebTextTemplating</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>VisualBasic</ProjectSubType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>TextTemplate.tt</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

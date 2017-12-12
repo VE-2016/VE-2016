@@ -228,16 +228,16 @@ namespace ICSharpCode.AvalonEdit.Editing
                 if (c.obs != null)
                 {
                     var obs = c.obs;
-                    var bs = textArea.Document.Text.Substring(b.Offset, b.Length + 2);
+                    var bs = textArea.Document.Text.Substring(b.Offset, b.Length + b.DelimiterLength);
                     if (!string.IsNullOrWhiteSpace(bs))
                     {
-                        var cs = textArea.Document.Text.Substring(c.Offset, c.Length + 2);
+                        var cs = textArea.Document.Text.Substring(c.Offset, c.Length + c.DelimiterLength);
                         textArea.Document.Remove(c.Offset, bs.Length + cs.Length);
                         
                     }
                     else
                     {
-                        var cs = textArea.Document.Text.Substring(c.Offset, c.Length + 2);
+                        var cs = textArea.Document.Text.Substring(c.Offset, c.Length + c.DelimiterLength);
                         textArea.Document.Remove(c.Offset, bs.Length + cs.Length);
                         textArea.Document.Insert(c.Offset, bs + cs);
                         a = textArea.Document.GetLineByOffset(textArea.Caret.Offset);

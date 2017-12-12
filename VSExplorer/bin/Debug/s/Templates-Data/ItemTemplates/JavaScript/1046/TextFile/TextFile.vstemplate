@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Arquivo de Texto</Name>
+    <Description>Um arquivo de texto vazio.</Description>
+    <Icon>TextFile.ico</Icon>
+    <TemplateID>Microsoft.JavaScript.TextFile</TemplateID>
+    <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+    <DefaultName>textfile.txt</DefaultName>
+
+    <!-- "Text File" is applicable to all JavaScript project capability -->
+    <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+    <ProjectType>JavaScript</ProjectType>
+    <ShowByDefault>false</ShowByDefault>
+    <AppliesTo>JavaScript</AppliesTo>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem>TextFile.txt</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

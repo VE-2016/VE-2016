@@ -1,0 +1,18 @@
+﻿<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{AAB75614-2F8F-4DA6-B0A6-763C6DBB2969}" ID="7003"/>
+    <Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3337"/>
+    <Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4725"/>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>Microsoft.WAP.CSharp.SkinFile</TemplateID>
+    <TemplateGroupID>Web</TemplateGroupID>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>Web</ProjectSubType>
+    <ShowByDefault>false</ShowByDefault>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <DefaultName>Skin.skin</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem>SkinFile.skin</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

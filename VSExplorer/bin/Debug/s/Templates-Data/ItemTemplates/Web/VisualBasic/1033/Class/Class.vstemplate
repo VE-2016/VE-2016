@@ -1,0 +1,15 @@
+﻿<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+	<TemplateData>
+		<Name Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3020"/>
+		<Description Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="3021"/>
+		<Icon Package="{39c9c826-8ef8-4079-8c95-428f5b1c323f}" ID="4510"/>
+        <TemplateID>Microsoft.Web.VisualBasic.Class</TemplateID>
+        <ProjectType>Web</ProjectType>
+        <ProjectSubType>VisualBasic</ProjectSubType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <DefaultName>Class.vb</DefaultName>
+	</TemplateData>
+	<TemplateContent>
+		<ProjectItem ReplaceParameters="true">Class.vb</ProjectItem>
+	</TemplateContent>
+</VSTemplate>

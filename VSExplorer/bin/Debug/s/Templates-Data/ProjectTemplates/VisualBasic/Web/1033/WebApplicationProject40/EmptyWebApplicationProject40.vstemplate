@@ -1,0 +1,35 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name Package="{349c5850-65df-11da-9384-00065b846f21}" ID="1013" />
+    <Description Package="{349c5850-65df-11da-9384-00065b846f21}" ID="1014" />
+    <Icon Package="{349c5850-65df-11da-9384-00065b846f21}" ID="9002" />
+    <ProjectType>VisualBasic</ProjectType>
+    <ProjectSubType>Web</ProjectSubType>
+    <TemplateGroupID>Web</TemplateGroupID>
+    <TemplateID>Microsoft.WAP.VisualBasic.EmptyWebApplication40</TemplateID>
+    <SortOrder>5</SortOrder>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <MaxFrameworkVersion>4.1</MaxFrameworkVersion>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>WebApplication</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="WebApplication.vbproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="My Project\MyExtensions\MyWebExtension.vb">MyWebExtension.vb</ProjectItem>
+      <Folder Name="My Project" TargetFolderName="My Project">
+        <ProjectItem ReplaceParameters="true" TargetFileName="Application.Designer.vb">Application.Designer.vb</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Application.myapp">Application.myapp</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.vb">AssemblyInfo.vb</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Resources.Designer.vb">Resources.Designer.vb</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Resources.resx">Resources.resx</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Settings.Designer.vb">Settings.Designer.vb</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Settings.settings">Settings.settings</ProjectItem>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

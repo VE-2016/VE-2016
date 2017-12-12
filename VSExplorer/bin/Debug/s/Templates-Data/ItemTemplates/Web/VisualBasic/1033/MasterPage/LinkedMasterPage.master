@@ -1,0 +1,7 @@
+﻿<%@ Master Language="VB" MasterPageFile="$masterpage$" %>
+
+<script runat="server">
+
+</script>
+
+$pagecontent$

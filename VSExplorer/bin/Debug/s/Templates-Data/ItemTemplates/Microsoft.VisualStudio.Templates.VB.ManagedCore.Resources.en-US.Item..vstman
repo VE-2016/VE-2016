@@ -1,0 +1,357 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\1033\AppConfigurationInternal</RelativePathOnDisk>
+    <TemplateFileName>AppConfiguration.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3120" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3121" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4559" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>255</SortOrder>
+        <DefaultName>app.config</DefaultName>
+        <Hidden>true</Hidden>
+        <TemplateID>Microsoft.VisualBasic.General.AppConfigInternal</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\1033\AssemblyInfoInternal</RelativePathOnDisk>
+    <TemplateFileName>AssemblyInfo.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3097" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3098" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4543" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>250</SortOrder>
+        <DefaultName>AssemblyInfo.vb</DefaultName>
+        <Hidden>true</Hidden>
+        <TemplateID>Microsoft.VisualBasic.Internal.AssemblyInfo</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\1033\ResourceInternal</RelativePathOnDisk>
+    <TemplateFileName>resource.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3105" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3106" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4548" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>240</SortOrder>
+        <DefaultName>Resource.resx</DefaultName>
+        <Hidden>true</Hidden>
+        <TemplateID>Microsoft.VisualBasic.Internal.Resource</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Code\1033\ComClass</RelativePathOnDisk>
+    <TemplateFileName>ComClass.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3114" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3115" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4554" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>ComClass.vb</DefaultName>
+        <TemplateID>Microsoft.VisualBasic.Code.ComClass</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Code\1033\Component</RelativePathOnDisk>
+    <TemplateFileName>Component.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3024" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3025" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4512" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>95</SortOrder>
+        <DefaultName>Component.vb</DefaultName>
+        <TemplateID>Microsoft.VisualBasic.Code.Component</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Data\1033\XMLFile</RelativePathOnDisk>
+    <TemplateFileName>XMLFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3074" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3075" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4539" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>XMLFile.xml</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.VisualBasic.Data.XmlFile</TemplateID>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Data\1033\XMLSchema</RelativePathOnDisk>
+    <TemplateFileName>XMLSchema.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3036" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3037" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4518" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>XMLSchema.xsd</DefaultName>
+        <TemplateID>Microsoft.VisualBasic.Data.XMLSchema</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Data\1033\XmlToSchema</RelativePathOnDisk>
+    <TemplateFileName>XmlToSchema.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3169" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3170" />
+        <Icon>XmlToSchema.ico</Icon>
+        <ProjectType>VisualBasic</ProjectType>
+        <DefaultName>XmlToSchema.xsd</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.VisualBasic.Data.XmlToSchema</TemplateID>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Data\1033\XSLTFile</RelativePathOnDisk>
+    <TemplateFileName>XSLTFile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3090" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3091" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4542" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>XSLTFile.xslt</DefaultName>
+        <TemplateID>Microsoft.VisualBasic.Data.XSLTFile</TemplateID>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\General\1033\AppConfiguration</RelativePathOnDisk>
+    <TemplateFileName>AppConfiguration.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3120" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3121" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4559" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>app.config</DefaultName>
+        <TemplateID>Microsoft.VisualBasic.General.ApplicationConfiguration</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\General\1033\AppManifest</RelativePathOnDisk>
+    <TemplateFileName>AppManifest.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3161" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3162" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4559" />
+        <TemplateID>Microsoft.VisualBasic.General.AppManifest</TemplateID>
+        <ProjectType>VisualBasic</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>app.manifest</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\General\1033\AppManifestInternal</RelativePathOnDisk>
+    <TemplateFileName>AppManifestInternal.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3161" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3162" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4559" />
+        <TemplateID>Microsoft.VisualBasic.General.AppManifestInternal</TemplateID>
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>256</SortOrder>
+        <DefaultName>app.manifest</DefaultName>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\General\1033\Bitmap</RelativePathOnDisk>
+    <TemplateFileName>Bitmap.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3099" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3100" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4546" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>Bitmap.bmp</DefaultName>
+        <TemplateID>Microsoft.VisualBasic.General.Bitmap</TemplateID>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\General\1033\cursor</RelativePathOnDisk>
+    <TemplateFileName>Cursor.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3101" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3102" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4545" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>Cursor.cur</DefaultName>
+        <TemplateID>Microsoft.VisualBasic.General.Cursor</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\General\1033\Icon</RelativePathOnDisk>
+    <TemplateFileName>Icon.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3103" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3104" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4547" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>Icon.ico</DefaultName>
+        <TemplateID>Microsoft.VisualBasic.General.Icon</TemplateID>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\General\1033\Installer</RelativePathOnDisk>
+    <TemplateFileName>Installer.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3026" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3027" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4513" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>Installer.vb</DefaultName>
+        <TemplateID>Microsoft.VisualBasic.General.Installer</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\General\1033\resource</RelativePathOnDisk>
+    <TemplateFileName>resource.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3105" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3106" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4548" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>Resource.resx</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.VisualBasic.General.Resource</TemplateID>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\General\1033\Settings</RelativePathOnDisk>
+    <TemplateFileName>Settings.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3148" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3149" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4578" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>Settings.settings</DefaultName>
+        <TemplateID>Microsoft.VisualBasic.General.Settings</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\General\1033\Text</RelativePathOnDisk>
+    <TemplateFileName>Text.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3054" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3055" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4529" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>TextFile.txt</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.VisualBasic.General.Text</TemplateID>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\General\1033\UserService</RelativePathOnDisk>
+    <TemplateFileName>UserService.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3030" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3031" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4515" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>Service.vb</DefaultName>
+        <TemplateID>Microsoft.VisualBasic.General.UserService</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Data\1033\Dataset</RelativePathOnDisk>
+    <TemplateFileName>dataset.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3034" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3035" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4517" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>DataSet.xsd</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.VisualBasic.Data.DataSet</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Data\1033\EmptyDatabase</RelativePathOnDisk>
+    <TemplateFileName>EmptyDatabase.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3144" />
+        <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3145" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4577" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>100</SortOrder>
+        <DefaultName>Database.mdf</DefaultName>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.VisualBasic.Data.EmptyDatabase</TemplateID>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

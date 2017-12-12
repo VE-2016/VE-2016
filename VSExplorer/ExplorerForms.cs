@@ -119,22 +119,7 @@ namespace WinExplorer
             return visualStudioInstalledPath;
         }
 
-        //    const int WM_PARENT_NOTIFY = 0x004e;
-
-        //    protected override void WndProc(ref Message m)
-        //    {
-        //        Console.WriteLine(m.ToString());
-        //        switch (m.Msg)
-        //        {
-        //             The WM_ACTIVATEAPP message occurs when the application
-        //             becomes the active application or becomes inactive.
-        //            case WM_PARENT_NOTIFY:
-
-        //        return;
-        //    }
-        //        base.WndProc(ref m);
-
-        //}
+ 
 
         /// <summary>
         /// Main Form Constructor
@@ -418,9 +403,7 @@ namespace WinExplorer
 
             _sv.scr = scr;
 
-            // if (CodeEditorControl.proxy.IsBbound() == false)
-            //     CodeEditorControl.proxy.OpenFile += exitToolStripMenuItem_Click;
-
+        
             scr.DisplayTopStrip(false);
 
             scr.DisplayStatusStrip(false);
@@ -1945,6 +1928,8 @@ namespace WinExplorer
 
         public SearchTextBox searchTextBox { get; set; }
 
+        public TreePanel treePanel { get; set; }
+
         public void LoadSE(string name, bool load)
         {
             if (se == null)
@@ -2082,12 +2067,26 @@ namespace WinExplorer
                 v.DrawNode += V_DrawNode;
                 v.ShowLines = false;
                 v.HideSelection = false;
+                v.BorderStyle = BorderStyle.None;
 
-                v.Location = new Point(0, 43);
-                v.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-                v.Height = se.Height - 43;
-                v.Width = se.Width - 2;
-                se.Controls.Add(v);
+                //v.Location = new Point(0, 43);
+                //v.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+                //v.Height = se.Height - 43;
+                //v.Width = se.Width - 2;
+                
+
+                treePanel = new TreePanel(v);
+
+                treePanel.Location = new Point(0, 43);
+                treePanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+                treePanel.Height = se.Height - 43;
+                treePanel.Width = se.Width-1;
+
+                treePanel.Initialize();
+
+                //se.Controls.Add(v);
+                se.Controls.Add(treePanel);
+
 
                 se.Controls.Add(ses);
 
@@ -6337,7 +6336,9 @@ namespace WinExplorer
 
         public void Command_SaveAllFiles()
         {
-            _sv.save_active();
+            _sv.save_all();
+            ToolStripItem ge = ves.GetItem("Save All");
+            ge.Enabled = false;
         }
 
         public void Command_Undo()
@@ -10076,6 +10077,7 @@ namespace WinExplorer
 
             vscroll = new VScrollBar();
             vscroll.Width = 20;
+
 
             vscroll.Size = new Size(15, 250);
             vscroll.Location = new Point(154, 0);

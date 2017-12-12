@@ -1,0 +1,19 @@
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Strona HTML</Name>
+    <Description>Pusta strona HTML.</Description>
+    <Icon>HTMLPage.ico</Icon>
+    <TemplateID>Microsoft.JavaScript.HTMLPage</TemplateID>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>page.html</DefaultName>
+
+    <!-- "HTML Page" is applicable to all JavaScript project capability -->
+    <!-- "ShowByDefault = false" is needed for the "AppliesTo" to apply the condition(s) to projects that don't restrict specific templates -->
+    <ProjectType>JavaScript</ProjectType>
+    <ShowByDefault>false</ShowByDefault>
+    <AppliesTo>JavaScript</AppliesTo>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem>HTMLPage.html</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

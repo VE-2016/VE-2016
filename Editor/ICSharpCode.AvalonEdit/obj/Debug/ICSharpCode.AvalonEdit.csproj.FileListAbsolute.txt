@@ -85,11 +85,13 @@ F:\ve\ve-2024\VE-2016\Editor\ICSharpCode.AvalonEdit\bin\Debug\ICSharpCode.Avalon
 F:\ve\ve-2024\VE-2016\Editor\ICSharpCode.AvalonEdit\bin\Debug\ICSharpCode.AvalonEdit.dll
 F:\ve\ve-2024\VE-2016\Editor\ICSharpCode.AvalonEdit\bin\Debug\ICSharpCode.AvalonEdit.pdb
 F:\ve\ve-2024\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\CodeCompletion\CompletionList.g.cs
+F:\ve\ve-2024\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\ScrollViewers.g.cs
 F:\ve\ve-2024\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\GeneratedInternalTypeHelper.g.cs
 F:\ve\ve-2024\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit_MarkupCompile.cache
 F:\ve\ve-2024\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit_MarkupCompile.lref
 F:\ve\ve-2024\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\CodeCompletion\CompletionList.baml
 F:\ve\ve-2024\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\CodeCompletion\InsightWindow.baml
+F:\ve\ve-2024\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\ScrollViewers.baml
 F:\ve\ve-2024\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\Search\SearchPanel.baml
 F:\ve\ve-2024\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\Search\DropDownButton.baml
 F:\ve\ve-2024\VE-2016\Editor\ICSharpCode.AvalonEdit\obj\Debug\TextEditor.baml

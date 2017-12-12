@@ -1,0 +1,16 @@
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3120" />
+    <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3121" />
+    <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4559" />
+    <ProjectType>VisualBasic</ProjectType>
+    <SortOrder>255</SortOrder>
+    <DefaultName>app.config</DefaultName>
+    <Hidden>true</Hidden>
+    <TemplateID>Microsoft.VisualBasic.General.AppConfigInternal</TemplateID>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="false" OpenInEditor="false">app.config</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

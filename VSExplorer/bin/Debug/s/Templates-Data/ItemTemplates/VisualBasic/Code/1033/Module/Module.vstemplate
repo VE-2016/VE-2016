@@ -1,0 +1,15 @@
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3028" />
+    <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3029" />
+    <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4514" />
+    <ProjectType>VisualBasic</ProjectType>
+    <SortOrder>91</SortOrder>
+    <DefaultName>Module.vb</DefaultName>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>Microsoft.VisualBasic.Code.Module</TemplateID>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="true">Module.vb</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

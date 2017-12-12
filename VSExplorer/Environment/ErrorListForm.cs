@@ -669,6 +669,7 @@ namespace WinExplorer
                                 if (dc.Location.SourceTree != null)
                                     row.Cells[4].Value = Path.GetFileNameWithoutExtension(dc.Location.SourceTree.FilePath);
                         row.Cells[5].Value = Path.GetFileName(file);
+                        if(line > 0)
                         row.Cells[6].Value = d.GetLineExtended(line) + 1;
                         row.Cells[7].Value = "project";
 

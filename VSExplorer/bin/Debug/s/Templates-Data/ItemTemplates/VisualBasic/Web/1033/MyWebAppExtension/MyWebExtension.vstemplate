@@ -1,0 +1,35 @@
+﻿<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3167" />
+    <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3168" />
+    <Icon Package="{B3BAE735-386C-4030-8329-EF48EEDA4036}" ID="4591"/>
+    <ProjectType>VisualBasic</ProjectType>
+    <SortOrder>1000</SortOrder>
+    <DefaultName>MyWebExtension.vb</DefaultName>
+    <TemplateID>Microsoft.VisualBasic.Web.MyExtension</TemplateID>
+    <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+    <Hidden>true</Hidden>
+    <CustomDataSignature>Microsoft.VisualBasic.MyExtension</CustomDataSignature>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>mscorlib</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>System.Web</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem SubType="Code" 
+                 TargetFileName="$fileinputname$.vb"
+                 ReplaceParameters="true"
+                 OpenInEditor="false"
+                 OpenInWebBrowser="false"
+                 OpenInHelpBrowser="false">
+      MyWebExtension.vb
+    </ProjectItem>
+  </TemplateContent>
+</VSTemplate>

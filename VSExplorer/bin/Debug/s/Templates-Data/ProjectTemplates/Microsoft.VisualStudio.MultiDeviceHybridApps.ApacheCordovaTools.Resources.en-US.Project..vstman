@@ -1,0 +1,44 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>JavaScript\Mobile Apps\1033\BlankFileMirrorCordovaJS</RelativePathOnDisk>
+    <TemplateFileName>BlankCordovaJS.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name _locID="Cordova_JS_Blank_Name">Blank App (Apache Cordova)</Name>
+        <Description _locID="Cordova_JS_Blank_Desc">A blank project that uses Apache Cordova™ to help you build an app that targets Android, iOS, and the Windows Universal Platform.</Description>
+        <Icon>BlankCordovaJS.ico</Icon>
+        <ProjectType>JavaScript</ProjectType>
+        <TemplateID>Microsoft.JavaScript.CordovaFileMirrorBlankJS</TemplateID>
+        <SortOrder>1</SortOrder>
+        <CreateNewFolder>false</CreateNewFolder>
+        <DefaultName>BlankCordovaApp</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <CreateInPlace>true</CreateInPlace>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>TypeScript\Mobile Apps\1033\BlankFileMirrorCordovaTS</RelativePathOnDisk>
+    <TemplateFileName>BlankCordovaTS.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name _locID="Cordova_TS_Blank_Name">Blank App (Apache Cordova)</Name>
+        <Description _locID="Cordova_TS_Blank_Desc">A blank project that uses Apache Cordova™ to help you build an app that targets Android, iOS, and the Windows Universal Platform.</Description>
+        <Icon>BlankCordovaTS.ico</Icon>
+        <ProjectType>TypeScript</ProjectType>
+        <TemplateID>Microsoft.JavaScript.CordovaFileMirrorBlankTS</TemplateID>
+        <SortOrder>10</SortOrder>
+        <CreateNewFolder>false</CreateNewFolder>
+        <DefaultName>BlankCordovaApp</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <CreateInPlace>true</CreateInPlace>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

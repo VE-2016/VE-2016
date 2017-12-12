@@ -1,0 +1,14 @@
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3103" />
+    <Description Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="3104" />
+    <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4547" />
+    <ProjectType>VisualBasic</ProjectType>
+    <SortOrder>100</SortOrder>
+    <DefaultName>Icon.ico</DefaultName>
+    <TemplateID>Microsoft.VisualBasic.General.Icon</TemplateID>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="false">icon.ico</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
